@@ -1,4 +1,4 @@
-package leetcode.frequent;
+package leetcode.util;
 
 
 //  Definition for a binary tree node.

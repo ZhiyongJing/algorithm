@@ -1,6 +1,6 @@
 package leetcode.frequent.dfs;
 
-import leetcode.frequent.TreeNode;
+import leetcode.util.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

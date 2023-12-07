@@ -1,6 +1,6 @@
 package leetcode.frequent.dfs;
 
-import leetcode.frequent.TreeNode;
+import leetcode.util.TreeNode;
 
 /**
   *@Question:  226. Invert Binary Tree     

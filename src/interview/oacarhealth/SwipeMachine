@@ -1,0 +1,6 @@
+package interview.oacarhealth;
+
+public interface SwipeMachine{
+    public boolean checkValidation(String cardId, int time);
+
+}

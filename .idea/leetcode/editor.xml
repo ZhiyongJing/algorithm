@@ -388,6 +388,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_46_Permutations.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_46_Permutations.md" />
+              <option name="frontendQuestionId" value="leetcode.com46" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_46_Permutations.java" />
+              <option name="titleSlug" value="permutations" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_4_MedianOfTwoSortedArrays.java">
           <value>
             <LeetcodeEditor>
@@ -454,6 +465,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_698_PartitionToKEqualSumSubsets.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_698_PartitionToKEqualSumSubsets.md" />
+              <option name="frontendQuestionId" value="leetcode.com698" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_698_PartitionToKEqualSumSubsets.java" />
+              <option name="titleSlug" value="partition-to-k-equal-sum-subsets" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_6_ZigzagConversion.java">
           <value>
             <LeetcodeEditor>
@@ -462,6 +484,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_6_ZigzagConversion.java" />
               <option name="titleSlug" value="zigzag-conversion" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_77_Combinations.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_77_Combinations.md" />
+              <option name="frontendQuestionId" value="leetcode.com77" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_77_Combinations.java" />
+              <option name="titleSlug" value="combinations" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_78_Subsets.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_78_Subsets.md" />
+              <option name="frontendQuestionId" value="leetcode.com78" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_78_Subsets.java" />
+              <option name="titleSlug" value="subsets" />
             </LeetcodeEditor>
           </value>
         </entry>

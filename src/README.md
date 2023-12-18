@@ -7,7 +7,8 @@
 
 ## 1.1 特点
 
-- **一般用于找出所有方案**
+- **一般用于找出问题的一个解决方案或者一条路径**
+- **DFS更适合在图或树等结构上进行搜索**
 
 ## 1.2 算法模版
 
@@ -58,6 +59,46 @@ boolean DFS(int root, int target) {
 
 ## 1.3 总结
 
+深度优先搜索（DFS）是一种常用的搜索算法，适用于多种问题，尤其是图和树结构的遍历问题。以下是一些情况下使用DFS的典型场景：
+
+1. **图的遍历：** DFS 可以用于图的深度优先遍历，查找特定节点或寻找路径。
+
+2. **树的遍历：** 对于树结构，DFS可以用于先序遍历、中序遍历、后序遍历，或者其他变种。
+
+3. **连通性问题：** 如果问题涉及到判断两个节点是否连通，或者查找图中的连通分量，DFS是一个常用的方法。
+
+4. **路径问题：** 求解路径问题，如找到从起点到终点的路径，或找到满足某条件的路径。
+
+5. **拓扑排序：** DFS可以用于拓扑排序，即对有向无环图进行排序。
+
+6. **回溯算法：** 回溯算法通常使用DFS来穷举所有可能的解空间。
+
+7. **状态空间搜索：** 在某些问题中，状态可以看作图的节点，DFS用于搜索状态空间。
+
+8. **生成和验证问题：** 生成问题涉及到生成所有可能的解，验证问题涉及到验证某个解是否符合条件，DFS可以应用于这两种类型的问题。
+
+总体来说，DFS适用于那些具有树状或图状结构的问题，以及需要搜索解空间的问题。DFS的实现通常通过递归或栈来实现。需要注意的是，在某些情况下，DFS可能不是最优解决方案，因此在选择算法时需要综合考虑问题的性质和要求。
+
+回溯算法和深度优先搜索（DFS）算法有一些相似之处，但也有一些关键区别。
+
+1. **定义和目标：**
+   - **回溯算法：** 主要用于解决组合、排列、子集等问题，其目标是搜索问题的所有可能解，并在搜索过程中通过回溯（撤销之前的选择）来寻找有效解。
+   - **深度优先搜索（DFS）：** 是一种搜索算法，用于遍历或搜索图或树等数据结构的所有节点。DFS 通常用于判断两个节点之间是否连通，或者寻找路径等。
+
+2. **状态的保存：**
+   - **回溯算法：** 在回溯算法中，通常需要显式地保存和恢复状态，即在每一步选择之前保存当前状态，在选择完成后恢复到之前的状态，以实现回溯。
+   - **深度优先搜索（DFS）：** 在 DFS 中，状态的保存通常是隐式的，因为递归调用栈本身就保存了状态。在 DFS 中，通常通过递归函数的参数传递状态信息，不需要显式保存和恢复状态。
+
+3. **应用场景：**
+   - **回溯算法：** 通常应用于组合优化问题，如组合、排列、子集等。它更侧重于找到所有可能的解。
+   - **深度优先搜索（DFS）：** 通常应用于图的遍历、连通性判断、路径搜索等问题。它更侧重于在搜索过程中找到其中一个解。
+
+4. **剪枝策略：**
+   - **回溯算法：** 回溯算法通常需要考虑剪枝策略，以减少搜索空间，提高算法效率。
+   - **深度优先搜索（DFS）：** 在一些情况下，也可以使用剪枝策略，但通常不需要像回溯算法那样频繁地进行状态的保存和恢复。
+
+尽管回溯算法和深度优先搜索有一些相似之处，但它们在目标、应用场景和状态的保存方式上存在一些关键区别。在实际问题中，根据问题的性质选择合适的算法是很重要的。
+
 
 
 
@@ -74,16 +115,35 @@ boolean DFS(int root, int target) {
 ## 2.2 算法模版
 
 ~~~java
-result = []
-def backtrack(路径, 选择列表):
-    if 满足结束条件:
-        result.add(路径)
-        return
+public class Backtracking {
+    public void backtrack(List<List<Integer>> result, List<Integer> path, int[] nums, int start) {
+        // 1. 判断是否满足结束条件
+        // 如果满足，将当前路径添加到结果集中
+        if (满足结束条件) {
+            result.add(new ArrayList<>(path));
+            return;
+        }
 
-    for 选择 in 选择列表:
-        做选择
-        backtrack(路径, 选择列表)
-        撤销选择
+        // 2. 尝试每一种可能的选择
+        for (int i = start; i < nums.length; i++) {
+            // 做选择：将当前元素加入路径
+            path.add(nums[i]);
+
+            // 递归进入下一层，注意更新 start 参数
+            backtrack(result, path, nums, i + 1);
+
+            // 撤销选择：回溯到上一层，恢复状态
+            path.remove(path.size() - 1);
+        }
+    }
+
+    public List<List<Integer>> backtrackingTemplate(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> path = new ArrayList<>();
+        backtrack(result, path, nums, 0);
+        return result;
+    }
+}
 ~~~
 
 ## 2.3 总结
@@ -108,11 +168,44 @@ def backtrack(路径, 选择列表):
 # 3. Divide And Conquer
 
 - **基于有返回值DFS**
-- **Bottom Up**
 
 ## 3.1 特点
 
 ## 3.2 算法模版
+
+~~~java
+public class DivideAndConquer {
+    // 主函数，入口
+    public static int divideAndConquer(int[] nums, int left, int right) {
+        // 1. 判断递归结束条件
+        if (left == right) {
+            // 处理基本情况
+            return nums[left];
+        }
+
+        // 2. 将问题分解为子问题
+        int mid = (left + right) / 2;
+
+        // 3. 递归求解子问题
+        int leftResult = divideAndConquer(nums, left, mid);
+        int rightResult = divideAndConquer(nums, mid + 1, right);
+
+        // 4. 合并子问题的解
+        int combinedResult = combineResults(leftResult, rightResult);
+
+        return combinedResult;
+    }
+
+    // 辅助函数，用于合并子问题的解
+    private static int combineResults(int left, int right) {
+        // 根据具体问题合并子问题的解
+        return Math.max(left, right);  // 以最大值为例
+    }
+}
+
+~~~
+
+
 
 ## 3.3 总结
 
@@ -250,9 +343,112 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 ## 6.1 特点
 
 - **DP 有重复计算， 可以基于Divide and Conquer + Memorization 实现，缺点是使用递归**
-- **DP也可以通过多重循环实现，多重循环有Bottom Up 和Top Down 两种方式**
+- **DP也可以通过多重循环实现，多重循环有Bottom Up(Iteration) 和Top Down(Recursion) 两种方式**
 
 ##   6.2 算法模版
+
+### 6.2.1 从上往下实现通常使用递归和记忆化搜索
+
+~~~java 
+//自顶向下： 在解决斐波那契数列问题时，可以使用自顶向下的动态规划。定义递归函数 fib(n) 表示第 n 个斐波那契数，利用递归划分子问题。
+public class TopDownDP {
+
+    private int[] memo;
+
+    public int solveProblem(int parameter) {
+        // Initialize memoization array
+        memo = new int[parameter + 1];
+        Arrays.fill(memo, -1);
+
+        // Call the recursive function
+        return topDownHelper(parameter);
+    }
+
+    private int topDownHelper(int n) {
+        // Base case
+        if (n == 0) {
+            return 0;
+        }
+
+        // Check if the result is already computed
+        if (memo[n] != -1) {
+            return memo[n];
+        }
+
+        // Recursive calls (subproblems)
+        int result = someFunction(n);
+
+        // Memoize the result
+        memo[n] = result;
+
+        return result;
+    }
+
+    private int someFunction(int n) {
+        // Perform the actual computation for the problem
+        // This can involve recursive calls to topDownHelper
+
+        // Example: Fibonacci sequence
+        return topDownHelper(n - 1) + topDownHelper(n - 2);
+    }
+
+    public static void main(String[] args) {
+        TopDownDP topDownDP = new TopDownDP();
+        int parameter = 5;
+        int result = topDownDP.solveProblem(parameter);
+        System.out.println("The result is: " + result);
+    }
+}
+
+~~~
+
+### 6.2.2 从下往上通常通过迭代实现
+
+~~~java
+//在解决背包问题时，可以使用自底向上的动态规划。定义一个二维数组 dp[i][j] 表示在前 i 个物品中，背包容量为 j 时的最优解，通过迭代填充动态规划表
+public class KnapsackProblem {
+
+    public int knapsack(int[] weights, int[] values, int capacity) {
+        int n = weights.length;
+
+        // Step 1: Define state
+        int[][] dp = new int[n + 1][capacity + 1];
+
+        // Step 2: Initialize state
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= capacity; j++) {
+                dp[i][j] = 0;
+            }
+        }
+
+        // Step 3: State transition
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= capacity; j++) {
+                if (weights[i - 1] <= j) {
+                    dp[i][j] = Math.max(dp[i - 1][j], values[i - 1] + dp[i - 1][j - weights[i - 1]]);
+                } else {
+                    dp[i][j] = dp[i - 1][j];
+                }
+            }
+        }
+
+        // Step 4: Calculate result
+        return dp[n][capacity];
+    }
+
+    public static void main(String[] args) {
+        KnapsackProblem knapsackProblem = new KnapsackProblem();
+        int[] weights = {2, 3, 4, 5};
+        int[] values = {3, 4, 5, 6};
+        int capacity = 8;
+        int result = knapsackProblem.knapsack(weights, values, capacity);
+        System.out.println("The maximum value in the knapsack is: " + result);
+    }
+}
+
+~~~
+
+
 
 ## 6.3 总结
 
@@ -263,4 +459,36 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 - 动态规划问题有三大特性：重叠子问题、最优子结构、无后效性。
 - 如果原问题的最优解可以从子问题的最优解构建得来，则它就具有最优子结构。
 - 无后效性指对于一个状态，其未来发展只与该状态有关，而与过去经历的所有状态无关。许多组合优化问题不具有无后效性，无法使用动态规划快速求解。
+- 动态规划（Dynamic Programming）和分治（Divide and Conquer）都是解决问题的常用算法范式，它们有一些相似之处，但也存在明显的区别。
+
+  ### 相似之处：
+
+  1. **问题划分：** 在两者中，问题都被划分为一些子问题，这些子问题可以独立求解。
+
+  2. **递归求解：** 对子问题的解进行递归求解。
+
+  ### 区别：
+
+  1. **子问题重叠性：**
+     - **动态规划：** 动态规划中，子问题通常具有重叠性，即相同的子问题可能会被多次求解。为了避免重复计算，动态规划使用一种记忆化的方式（例如使用数组或哈希表）来存储已经计算过的子问题的解。
+     - **分治：** 分治通常不要求子问题有重叠性，因为分治每次都对问题进行完全划分，子问题之间没有共同的部分。
+
+  2. **最优子结构：**
+     - **动态规划：** 动态规划问题具有最优子结构性质，即全局最优解可以通过子问题的最优解来构建。
+     - **分治：** 分治问题可以没有最优子结构，即子问题的最优解并不一定能够直接构建全局最优解。
+
+  3. **问题求解方式：**
+     - **动态规划：** 动态规划通常采用自底向上的迭代方式，从最小的子问题开始逐步构建解。
+     - **分治：** 分治通常采用自顶向下的递归方式，将问题不断划分为子问题。
+
+  4. **时间复杂度：**
+     - **动态规划：** 动态规划常常具有较小的时间复杂度，因为它避免了重复计算。
+     - **分治：** 分治在不具备重叠子问题性质时可能导致较高的时间复杂度。
+
+  ### 典型应用举例：
+
+  - **动态规划：** 最短路径问题、背包问题、字符串编辑距离等。
+  - **分治：** 归并排序、快速排序。
+
+  综上所述，动态规划和分治是两种不同的解决问题的策略，选择使用哪一种策略通常取决于问题的性质和具体的解题要求。
 

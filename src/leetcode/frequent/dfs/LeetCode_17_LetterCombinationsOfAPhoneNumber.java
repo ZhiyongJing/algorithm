@@ -1,9 +1,6 @@
 package leetcode.frequent.dfs;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 
 /**
  * @Question:  17. 电话号码的字母组合
@@ -12,6 +9,12 @@ import java.util.Map;
  * @Time  Complexity: O(4^n * n)
  * @Space Complexity: O(n)
  */
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 这是一个使用回溯算法解决的问题。主要思路是对输入的数字字符串进行遍历，对于每个数字，找出其对应的所有可能的字母组合，
@@ -44,11 +47,19 @@ import java.util.Map;
 public class LeetCode_17_LetterCombinationsOfAPhoneNumber {
 
     //leetcode submit region begin(Prohibit modification and deletion)
+
     class Solution {
         private List<String> combinations = new ArrayList<>();
-        private Map<Character, String> letters = Map.of(
-                '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
-                '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz");
+        private Map<Long, String> letters = Stream.of(
+                        new Object[]{'2', "abc"},
+                        new Object[]{'3', "def"},
+                        new Object[]{'4', "ghi"},
+                        new Object[]{'5', "jkl"},
+                        new Object[]{'6', "mno"},
+                        new Object[]{'7', "pqrs"},
+                        new Object[]{'8', "tuv"},
+                        new Object[]{'9', "wxyz"})
+                .collect(Collectors.toMap(arr -> (Long) arr[0], arr -> (String) arr[1]));
         private String phoneDigits;
 
         public List<String> letterCombinations(String digits) {

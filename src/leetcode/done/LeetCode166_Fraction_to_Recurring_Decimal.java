@@ -26,6 +26,7 @@ public class LeetCode166_Fraction_to_Recurring_Decimal {
             }
             fraction.append(".");
             Map<Long, Integer> map = new HashMap<>();
+
             while (remainder != 0) {
                 if (map.containsKey(remainder)) {
                     fraction.insert(map.get(remainder), "(");

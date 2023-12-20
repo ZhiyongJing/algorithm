@@ -1,9 +1,6 @@
 package leetcode.frequent.bfs;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
   *@Question:  207. Course Schedule     
@@ -60,7 +57,7 @@ public class LeetCode_207_CourseSchedule {
          * @param prerequisites 课程之间的先修关系
          * @return 是否能完成课程学习
          */
-        public boolean canFinish(int numCourses, int[][] prerequisites) {
+        public boolean canFinish2(int numCourses, int[][] prerequisites) {
             int[] indegree = new int[numCourses];
             List<List<Integer>> adj = new ArrayList<>(numCourses);
 
@@ -74,6 +71,9 @@ public class LeetCode_207_CourseSchedule {
                 adj.get(prerequisite[1]).add(prerequisite[0]);
                 indegree[prerequisite[0]]++;
             }
+            System.out.println(adj);
+            Arrays.stream(indegree).forEach(num -> System.out.print(num + "," ));
+            System.out.println();
 
             // 使用队列进行拓扑排序
             Queue<Integer> queue = new LinkedList<>();
@@ -112,7 +112,7 @@ public class LeetCode_207_CourseSchedule {
          * @param prerequisites 课程之间的先修关系
          * @return 是否能完成课程学习
          */
-        public boolean canFinish2(int numCourses, int[][] prerequisites) {
+        public boolean canFinish(int numCourses, int[][] prerequisites) {
             List<List<Integer>> adj = new ArrayList<>(numCourses);
 
             // 初始化邻接表
@@ -157,20 +157,22 @@ public class LeetCode_207_CourseSchedule {
             if (visit[node]) {
                 return false;
             }
-            // 将当前节点标记为已访问，并加入递归栈
-            visit[node] = true;
-            inStack[node] = true;
+
 
             // 遍历当前节点的邻接节点
             for (int neighbor : adj.get(node)) {
+                // 将当前节点标记为已访问，并加入递归栈
+                visit[node] = true;
+                inStack[node] = true;
                 // 如果邻接节点构成环，返回true
                 if (dfs(neighbor, adj, visit, inStack)) {
                     return true;
                 }
+                // 移出递归栈
+                inStack[node] = false;
             }
 
-            // 移出递归栈
-            inStack[node] = false;
+
             return false;
         }
     }

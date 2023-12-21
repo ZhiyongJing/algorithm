@@ -8,6 +8,8 @@ package leetcode.frequent.binary_search;
  *@Space Complexity: O(N)
  */
 
+import java.util.Arrays;
+
 /**
  * **算法思路详解：**
  *
@@ -45,6 +47,7 @@ public class LeetCode_528_RandomPickWithWeight{
         // 构造函数，计算前缀和
         public Solution(int[] w) {
             this.prefixSums = new int[w.length];
+            System.out.println(Arrays.toString(w));
 
             int prefixSum = 0;
             for (int i = 0; i < w.length; ++i) {
@@ -52,7 +55,11 @@ public class LeetCode_528_RandomPickWithWeight{
                 this.prefixSums[i] = prefixSum;
             }
             this.totalSum = prefixSum;
+            System.out.println(Arrays.toString(prefixSums));
+
         }
+        
+
 
         // 选择随机索引
         public int pickIndex() {
@@ -77,7 +84,7 @@ public class LeetCode_528_RandomPickWithWeight{
     public static void main(String[] args) {
         // 测试代码
         // 以示例中的权重数组 [1, 3, 2] 为例
-        int[] weights = {1, 3, 2};
+        int[] weights = {1, 2, 4, 3};
 
         // 创建Solution对象
         Solution solution = new LeetCode_528_RandomPickWithWeight().new Solution(weights);

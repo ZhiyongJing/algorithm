@@ -41,7 +41,7 @@ public class LeetCode_162_FindPeakElement {
          * @param nums 包含 n 个整数的数组
          * @return 峰值的索引
          */
-        public int findPeakElement(int[] nums) {
+        public int findPeakElement2(int[] nums) {
             int l = 0, r = nums.length - 1;
             if(l == r) return l;
             if(r -l ==1) return nums[l] > nums[r] ? l: r;
@@ -61,6 +61,32 @@ public class LeetCode_162_FindPeakElement {
 
             // 最终 l == r，返回其中一个即可
             return l;
+        }
+
+        public  int findPeakElement(int[] nums) {
+            int pos = -1;
+            if (nums == null | nums.length == 0) {
+                return pos;
+            }
+            int start = 0;
+            int end = nums.length - 1;
+            int mid = start + (end - start) / 2;
+            while (start <= end && (mid - 1) >= 0 && (mid + 1) <= nums.length - 1) {
+                mid = start + (end - start) / 2;
+                if (nums[mid] >= nums[mid - 1] && nums[mid] >= nums[mid + 1]) {
+                    pos = mid;
+                    return pos;
+                } else if (nums[mid] >= nums[mid - 1] && nums[mid] <= nums[mid + 1]) {
+                    start = mid + 1;
+                } else if (nums[mid] <= nums[mid - 1] && nums[mid] >= nums[mid + 1]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+
+            }
+            return pos;
+
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

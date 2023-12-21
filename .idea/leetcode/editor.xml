@@ -135,6 +135,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_269_AlienDictionary.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/doc/content/LeetCode_269_AlienDictionary.md" />
+              <option name="frontendQuestionId" value="leetcode.com269" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_269_AlienDictionary.java" />
+              <option name="titleSlug" value="alien-dictionary" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_270_ClosestBinarySearchTreeValue.java">
           <value>
             <LeetcodeEditor>
@@ -154,6 +165,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_297_SerializeAndDeserializeBinaryTree.java" />
               <option name="titleSlug" value="serialize-and-deserialize-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_310_MinimumHeightTrees.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/doc/content/LeetCode_310_MinimumHeightTrees.md" />
+              <option name="frontendQuestionId" value="leetcode.com310" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_310_MinimumHeightTrees.java" />
+              <option name="titleSlug" value="minimum-height-trees" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -190,6 +212,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_366_FindLeavesOfBinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/doc/content/LeetCode_366_FindLeavesOfBinaryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com366" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_366_FindLeavesOfBinaryTree.java" />
+              <option name="titleSlug" value="find-leaves-of-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_417_PacificAtlanticWaterFlow.java">
           <value>
             <LeetcodeEditor>
@@ -198,6 +231,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_417_PacificAtlanticWaterFlow.java" />
               <option name="titleSlug" value="pacific-atlantic-water-flow" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_444_SequenceReconstruction.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/doc/content/LeetCode_444_SequenceReconstruction.md" />
+              <option name="frontendQuestionId" value="leetcode.com444" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_444_SequenceReconstruction.java" />
+              <option name="titleSlug" value="sequence-reconstruction" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -275,6 +319,182 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/bfs/LeetCode_98_ValidateBinarySearchTree.java" />
               <option name="titleSlug" value="validate-binary-search-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1060_MissingElementInSortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_1060_MissingElementInSortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com1060" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1060_MissingElementInSortedArray.java" />
+              <option name="titleSlug" value="missing-element-in-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1062_LongestRepeatingSubstring.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_1062_LongestRepeatingSubstring.md" />
+              <option name="frontendQuestionId" value="leetcode.com1062" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1062_LongestRepeatingSubstring.java" />
+              <option name="titleSlug" value="longest-repeating-substring" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1095_FindInMountainArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_1095_FindInMountainArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com1095" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1095_FindInMountainArray.java" />
+              <option name="titleSlug" value="find-in-mountain-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1300_SumOfMutatedArrayClosestToTarget.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_1300_SumOfMutatedArrayClosestToTarget.md" />
+              <option name="frontendQuestionId" value="leetcode.com1300" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1300_SumOfMutatedArrayClosestToTarget.java" />
+              <option name="titleSlug" value="sum-of-mutated-array-closest-to-target" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_162_FindPeakElement.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_162_FindPeakElement.md" />
+              <option name="frontendQuestionId" value="leetcode.com162" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_162_FindPeakElement.java" />
+              <option name="titleSlug" value="find-peak-element" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1891_CuttingRibbons.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_1891_CuttingRibbons.md" />
+              <option name="frontendQuestionId" value="leetcode.com1891" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_1891_CuttingRibbons.java" />
+              <option name="titleSlug" value="cutting-ribbons" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_240_SearchA2dMatrixIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_240_SearchA2dMatrixIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com240" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_240_SearchA2dMatrixIi.java" />
+              <option name="titleSlug" value="search-a-2d-matrix-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_278_FirstBadVersion.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_278_FirstBadVersion.md" />
+              <option name="frontendQuestionId" value="leetcode.com278" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_278_FirstBadVersion.java" />
+              <option name="titleSlug" value="first-bad-version" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_33_SearchInRotatedSortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_33_SearchInRotatedSortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com33" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_33_SearchInRotatedSortedArray.java" />
+              <option name="titleSlug" value="search-in-rotated-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_34_FindFirstAndLastPositionOfElementInSortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_34_FindFirstAndLastPositionOfElementInSortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com34" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_34_FindFirstAndLastPositionOfElementInSortedArray.java" />
+              <option name="titleSlug" value="find-first-and-last-position-of-element-in-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_410_SplitArrayLargestSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_410_SplitArrayLargestSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com410" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_410_SplitArrayLargestSum.java" />
+              <option name="titleSlug" value="split-array-largest-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_528_RandomPickWithWeight.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_528_RandomPickWithWeight.md" />
+              <option name="frontendQuestionId" value="leetcode.com528" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_528_RandomPickWithWeight.java" />
+              <option name="titleSlug" value="random-pick-with-weight" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_540_SingleElementInASortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_540_SingleElementInASortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com540" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_540_SingleElementInASortedArray.java" />
+              <option name="titleSlug" value="single-element-in-a-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_644_MaximumAverageSubarrayIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_644_MaximumAverageSubarrayIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com644" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_644_MaximumAverageSubarrayIi.java" />
+              <option name="titleSlug" value="maximum-average-subarray-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_69_Sqrtx.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_69_Sqrtx.md" />
+              <option name="frontendQuestionId" value="leetcode.com69" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_69_Sqrtx.java" />
+              <option name="titleSlug" value="sqrtx" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_74_SearchA2dMatrix.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/doc/content/LeetCode_74_SearchA2dMatrix.md" />
+              <option name="frontendQuestionId" value="leetcode.com74" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/binary_search/LeetCode_74_SearchA2dMatrix.java" />
+              <option name="titleSlug" value="search-a-2d-matrix" />
             </LeetcodeEditor>
           </value>
         </entry>

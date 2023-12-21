@@ -51,7 +51,7 @@ public class LeetCode_278_FirstBadVersion {
             int left = 1;
             int right = n;
 
-            while (left < right) {
+            while (left + 1 < right) {
                 // 计算中间版本号
                 int mid = left + (right - left) / 2;
 
@@ -61,12 +61,13 @@ public class LeetCode_278_FirstBadVersion {
                     right = mid;
                 } else {
                     // 如果不是错误的版本，将搜索范围缩小到右侧
-                    left = mid + 1;
+                    left = mid;
                 }
             }
+            if(isBadVersion(left)) return left;
 
             // 最终left和right相等，返回其中一个即可
-            return left;
+            return right;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

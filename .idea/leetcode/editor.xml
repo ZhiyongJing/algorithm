@@ -567,10 +567,10 @@
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_124_BinaryTreeMaximumPathSum.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_124_BinaryTreeMaximumPathSum.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_124_BinaryTreeMaximumPathSum.md" />
               <option name="frontendQuestionId" value="leetcode.com124" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_124_BinaryTreeMaximumPathSum.java" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_124_BinaryTreeMaximumPathSum.java" />
               <option name="titleSlug" value="binary-tree-maximum-path-sum" />
             </LeetcodeEditor>
           </value>
@@ -688,10 +688,10 @@
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_1_TwoSum.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_1_TwoSum.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_1_TwoSum.md" />
               <option name="frontendQuestionId" value="leetcode.com1" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_1_TwoSum.java" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_1_TwoSum.java" />
               <option name="titleSlug" value="two-sum" />
             </LeetcodeEditor>
           </value>
@@ -864,10 +864,10 @@
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_3_LongestSubstringWithoutRepeatingCharacters.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_3_LongestSubstringWithoutRepeatingCharacters.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_3_LongestSubstringWithoutRepeatingCharacters.md" />
               <option name="frontendQuestionId" value="leetcode.com3" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_3_LongestSubstringWithoutRepeatingCharacters.java" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_3_LongestSubstringWithoutRepeatingCharacters.java" />
               <option name="titleSlug" value="longest-substring-without-repeating-characters" />
             </LeetcodeEditor>
           </value>
@@ -908,10 +908,10 @@
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_4_MedianOfTwoSortedArrays.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_4_MedianOfTwoSortedArrays.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_4_MedianOfTwoSortedArrays.md" />
               <option name="frontendQuestionId" value="leetcode.com4" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_4_MedianOfTwoSortedArrays.java" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_4_MedianOfTwoSortedArrays.java" />
               <option name="titleSlug" value="median-of-two-sorted-arrays" />
             </LeetcodeEditor>
           </value>
@@ -963,10 +963,10 @@
         <entry key="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_5_LongestPalindromicSubstring.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_5_LongestPalindromicSubstring.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_5_LongestPalindromicSubstring.md" />
               <option name="frontendQuestionId" value="leetcode.com5" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_5_LongestPalindromicSubstring.java" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_5_LongestPalindromicSubstring.java" />
               <option name="titleSlug" value="longest-palindromic-substring" />
             </LeetcodeEditor>
           </value>
@@ -1125,6 +1125,281 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_point/LeetCode_125_ValidPalindrome.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_125_ValidPalindrome.md" />
+              <option name="frontendQuestionId" value="leetcode.com125" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_125_ValidPalindrome.java" />
+              <option name="titleSlug" value="valid-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_point/LeetCode_409_LongestPalindrome.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_409_LongestPalindrome.md" />
+              <option name="frontendQuestionId" value="leetcode.com409" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_409_LongestPalindrome.java" />
+              <option name="titleSlug" value="longest-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_point/LeetCode_4_MedianOfTwoSortedArrays.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_4_MedianOfTwoSortedArrays.md" />
+              <option name="frontendQuestionId" value="leetcode.com4" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_4_MedianOfTwoSortedArrays.java" />
+              <option name="titleSlug" value="median-of-two-sorted-arrays" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_point/LeetCode_5_LongestPalindromicSubstring.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_5_LongestPalindromicSubstring.md" />
+              <option name="frontendQuestionId" value="leetcode.com5" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_5_LongestPalindromicSubstring.java" />
+              <option name="titleSlug" value="longest-palindromic-substring" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_11_ContainerWithMostWater.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_11_ContainerWithMostWater.md" />
+              <option name="frontendQuestionId" value="leetcode.com11" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_11_ContainerWithMostWater.java" />
+              <option name="titleSlug" value="container-with-most-water" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_124_BinaryTreeMaximumPathSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_124_BinaryTreeMaximumPathSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com124" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_124_BinaryTreeMaximumPathSum.java" />
+              <option name="titleSlug" value="binary-tree-maximum-path-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_125_ValidPalindrome.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_125_ValidPalindrome.md" />
+              <option name="frontendQuestionId" value="leetcode.com125" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_125_ValidPalindrome.java" />
+              <option name="titleSlug" value="valid-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_15_ThreeSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_15_ThreeSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com15" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_15_ThreeSum.java" />
+              <option name="titleSlug" value="3sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_167_TwoSumIiInputArrayIsSorted.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_167_TwoSumIiInputArrayIsSorted.md" />
+              <option name="frontendQuestionId" value="leetcode.com167" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_167_TwoSumIiInputArrayIsSorted.java" />
+              <option name="titleSlug" value="two-sum-ii-input-array-is-sorted" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_16_ThreeSumClosest.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_16_ThreeSumClosest.md" />
+              <option name="frontendQuestionId" value="leetcode.com16" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_16_ThreeSumClosest.java" />
+              <option name="titleSlug" value="3sum-closest" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_186_ReverseWordsInAStringIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_186_ReverseWordsInAStringIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com186" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_186_ReverseWordsInAStringIi.java" />
+              <option name="titleSlug" value="reverse-words-in-a-string-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_18_FourSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_18_FourSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com18" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_18_FourSum.java" />
+              <option name="titleSlug" value="4sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_1_TwoSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_1_TwoSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com1" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_1_TwoSum.java" />
+              <option name="titleSlug" value="two-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_26_RemoveDuplicatesFromSortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_26_RemoveDuplicatesFromSortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com26" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_26_RemoveDuplicatesFromSortedArray.java" />
+              <option name="titleSlug" value="remove-duplicates-from-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_277_FindTheCelebrity.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_277_FindTheCelebrity.md" />
+              <option name="frontendQuestionId" value="leetcode.com277" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_277_FindTheCelebrity.java" />
+              <option name="titleSlug" value="find-the-celebrity" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_283_MoveZeroes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_283_MoveZeroes.md" />
+              <option name="frontendQuestionId" value="leetcode.com283" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_283_MoveZeroes.java" />
+              <option name="titleSlug" value="move-zeroes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_340_LongestSubstringWithAtMostKDistinctCharacters.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_340_LongestSubstringWithAtMostKDistinctCharacters.md" />
+              <option name="frontendQuestionId" value="leetcode.com340" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_340_LongestSubstringWithAtMostKDistinctCharacters.java" />
+              <option name="titleSlug" value="longest-substring-with-at-most-k-distinct-characters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_395_LongestSubstringWithAtLeastKRepeatingCharacters.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_395_LongestSubstringWithAtLeastKRepeatingCharacters.md" />
+              <option name="frontendQuestionId" value="leetcode.com395" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_395_LongestSubstringWithAtLeastKRepeatingCharacters.java" />
+              <option name="titleSlug" value="longest-substring-with-at-least-k-repeating-characters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_3_LongestSubstringWithoutRepeatingCharacters.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_3_LongestSubstringWithoutRepeatingCharacters.md" />
+              <option name="frontendQuestionId" value="leetcode.com3" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_3_LongestSubstringWithoutRepeatingCharacters.java" />
+              <option name="titleSlug" value="longest-substring-without-repeating-characters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_409_LongestPalindrome.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_409_LongestPalindrome.md" />
+              <option name="frontendQuestionId" value="leetcode.com409" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_409_LongestPalindrome.java" />
+              <option name="titleSlug" value="longest-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_424_LongestRepeatingCharacterReplacement.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_424_LongestRepeatingCharacterReplacement.md" />
+              <option name="frontendQuestionId" value="leetcode.com424" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_424_LongestRepeatingCharacterReplacement.java" />
+              <option name="titleSlug" value="longest-repeating-character-replacement" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_454_FourSumIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_454_FourSumIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com454" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_454_FourSumIi.java" />
+              <option name="titleSlug" value="4sum-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_4_MedianOfTwoSortedArrays.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_4_MedianOfTwoSortedArrays.md" />
+              <option name="frontendQuestionId" value="leetcode.com4" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_4_MedianOfTwoSortedArrays.java" />
+              <option name="titleSlug" value="median-of-two-sorted-arrays" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_5_LongestPalindromicSubstring.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_5_LongestPalindromicSubstring.md" />
+              <option name="frontendQuestionId" value="leetcode.com5" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_5_LongestPalindromicSubstring.java" />
+              <option name="titleSlug" value="longest-palindromic-substring" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_647_PalindromicSubstrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_647_PalindromicSubstrings.md" />
+              <option name="frontendQuestionId" value="leetcode.com647" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_647_PalindromicSubstrings.java" />
+              <option name="titleSlug" value="palindromic-substrings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../leet/leetcode/editor/en/AddTwoNumbers.java">
           <value>
             <LeetcodeEditor>
@@ -1139,10 +1414,10 @@
         <entry key="$PROJECT_DIR$/../leet/leetcode/editor/en/TwoSum.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/doc/content/LeetCode_1_TwoSum.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/doc/content/LeetCode_1_TwoSum.md" />
               <option name="frontendQuestionId" value="leetcode.com1" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/dfs/LeetCode_1_TwoSum.java" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/frequent/two_pointer/LeetCode_1_TwoSum.java" />
               <option name="titleSlug" value="two-sum" />
             </LeetcodeEditor>
           </value>

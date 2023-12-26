@@ -62,32 +62,25 @@ public class LeetCode_162_FindPeakElement {
             // 最终 l == r，返回其中一个即可
             return l;
         }
+        public int findPeakElement(int[] nums){
+            if(nums == null || nums.length == 0) return -1;
 
-        public  int findPeakElement(int[] nums) {
-            int pos = -1;
-            if (nums == null | nums.length == 0) {
-                return pos;
-            }
-            int start = 0;
-            int end = nums.length - 1;
-            int mid = start + (end - start) / 2;
-            while (start <= end && (mid - 1) >= 0 && (mid + 1) <= nums.length - 1) {
-                mid = start + (end - start) / 2;
-                if (nums[mid] >= nums[mid - 1] && nums[mid] >= nums[mid + 1]) {
-                    pos = mid;
-                    return pos;
-                } else if (nums[mid] >= nums[mid - 1] && nums[mid] <= nums[mid + 1]) {
-                    start = mid + 1;
-                } else if (nums[mid] <= nums[mid - 1] && nums[mid] >= nums[mid + 1]) {
-                    end = mid - 1;
-                } else {
-                    start = mid + 1;
+            int start = 0, end = nums.length -1;
+            while(start + 1 < end){
+                int mid = start + (end - start)/2;
+                if(nums[mid] < nums[mid -1]) end = mid;
+                else if(nums[mid] < nums[mid + 1]){
+                    start = mid;
                 }
-
+                else end = mid;
             }
-            return pos;
+            if(nums[start] < nums[end]){
+                return end;
+            }
+            return start;
 
         }
+
     }
     //leetcode submit region end(Prohibit modification and deletion)
 

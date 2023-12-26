@@ -28,4 +28,4 @@
  * Leetcode 1004 Max Consecutive Ones III
  * Leetcode 1658 Minimum Operations to Reduce X to Zero
  */
-package leetcode.frequent.two_point;
+package leetcode.frequent.two_pointer;

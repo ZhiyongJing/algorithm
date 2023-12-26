@@ -177,7 +177,7 @@ public class BinarySearch_LAB {
     public int binarySearchPeakMountain(List<Integer> list){
         if(list == null || list.size() == 0) return -1;
 
-        int start = 0, end = list.size() -2;
+        int start = 0, end = list.size() -1;
         while(start + 1 < end){
             int mid = start + (end - start)/2;
             if(list.get(mid) < list.get(mid -1)) end = mid;
@@ -231,7 +231,7 @@ public class BinarySearch_LAB {
 
         //find last position of target element in list
         System.out.println(binarySearchLab.binarySearchWithLastPosition(Arrays.asList(4, 4, 4, 4, 4, 5), 4));
-        System.out.println(binarySearchLab.binarySearchWithLastPosition(Arrays.asList(4, 4), 4));//reason why we use start+1 < end
+        System.out.println(binarySearchLab.binarySearchWithLastPosition(Arrays.asList(4, 4), 4));//reason why we use start+1 < end, not start < end
 
 //        //find minimum in roated sorted array
 //        System.out.println(binarySearchLab.binarySearchMinimum(Arrays.asList(4 ,5, 6, 7, 0, 1, 2, 3)));

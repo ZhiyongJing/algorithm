@@ -1,0 +1,15 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int count = 0; //the number of non zero integers 
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0){
+                nums[count] = nums[i];
+                count++;
+            }//put the nonzero integers to the begginng but the integer in original position is stil nonzero
+        }
+        while (count<nums.length) nums[count++]=0; //asign zero to the position after non zero position 
+        
+    }
+}
+//runtime:1 ms
+//memory:40.3 MB

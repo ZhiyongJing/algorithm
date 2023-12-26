@@ -51,7 +51,7 @@ public class LeetCode_69_Sqrtx {
             if (x < 2) return x;
 
             long num;
-            int pivot, left = 2, right = x / 2;
+            int pivot, left = 1, right = x / 2;
 
             // 使用二分查找法查找平方根
             while (left <= right) {
@@ -72,6 +72,48 @@ public class LeetCode_69_Sqrtx {
 
             // 返回平方根的整数部分（向下取整）
             return right;
+        }
+
+        public int mySqrt2(int x) {
+            // 如果 x 小于 2，则平方根为 x
+            if (x < 2) return x;
+
+            long num;
+            int pivot, left = 1, right = x / 2;
+            // 使用二分查找法查找平方根
+            while (left + 1 < right) {
+                pivot =  left + (right - left) / 2;
+                num = (long) pivot * pivot;
+                if (num > x) {
+                    // 如果平方大于 x，缩小搜索范围至左侧
+                    right = pivot;
+                } else {
+                    left = pivot;
+                }
+            }
+            System.out.println(left +"="+ right);
+            if( right <= x/right) return right;
+            return left;
+        }
+
+        public int mySqrt3(int x) {
+            // 如果 x 小于 2，则平方根为 x
+            if (x < 2) return x;
+
+            long num;
+            int pivot, left = 1, right = x / 2;
+            // 使用二分查找法查找平方根
+            while (left < right) {
+                pivot =  (left + right + 1) / 2;
+                num = (long) pivot * pivot;
+                if (num > x) {
+                    // 如果平方大于 x，缩小搜索范围至左侧
+                    right = pivot - 1;
+                } else {
+                    left = pivot;
+                }
+            }
+            return left;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

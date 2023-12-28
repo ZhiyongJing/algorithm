@@ -80,8 +80,35 @@ public class LeetCode_4_MedianOfTwoSortedArrays {
             return 0.0;
         }
 
+        //！！！Solution 2: merge sort， 时间复杂度不够，但是在即在输入数组不是有序数组的时候，这个算法依然有效，
+        private int p1 = 0, p2 = 0;
+        private int getMin(int[] nums1, int[] nums2) {
+            if (p1 < nums1.length && p2 < nums2.length) {
+                return nums1[p1] < nums2[p2] ? nums1[p1++] : nums2[p2++];
+            } else if (p1 < nums1.length) {
+                return nums1[p1++];
+            } else if (p2 < nums2.length) {
+                return nums2[p2++];
+            }
+            return -1;
+        }
+        public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
+            int m = nums1.length, n = nums2.length;
+            if ((m + n) % 2 == 0) {
+                for (int i = 0; i < (m + n) / 2 - 1; ++i) {
+                    int tmp = getMin(nums1, nums2);
+                }
+                return (double)(getMin(nums1, nums2) + getMin(nums1, nums2)) / 2;
+            } else {
+                for (int i = 0; i < (m + n) / 2; ++i) {
+                    int tmp = getMin(nums1, nums2);
+                }
+                return getMin(nums1, nums2);
+            }
+        }
+
         //another binary search method
-        public double findMedianSortedArrays2(int[] A, int[] B) {
+        public double findMedianSortedArrays3(int[] A, int[] B) {
             int na = A.length, nb = B.length;
             int n = na + nb;
             if ((na + nb) % 2 == 1) {

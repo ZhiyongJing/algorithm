@@ -12,4 +12,4 @@
  * Leetcode 141. Linked List Cycle (Linked List Cycle II)
  * Leetcode 92. Reverse Linked List II
  */
-package leetcode.frequent.based_on_data_structure.linkedlist;
+package leetcode.frequent.based_on_data_structure.linked_list;

@@ -1,0 +1,125 @@
+[TOC]
+
+---
+
+#### Overview
+
+In this article, we consider three solutions.
+
+Approach 1: Brute Force, $\mathcal{O}(N)$. One could iterate from $1$ to $N$, figure out all divisors in a linear time, and then return the k*th* one.
+
+![simple](https://leetcode.com/problems/the-kth-factor-of-n/solution/../Figures/1492/linear.png)
+*Fig. 1. Approach 1: Brute Force, $\mathcal{O}(N)$.
+The idea is to iterate from 1 to N to figure out all divisors.*
+
+The implementation of the next two approaches is based on the same idea.
+
+> The divisors are paired, _i.e._, if $i$ is a divisor of $N$, then $N / i$ is a divisor of $N$, too. That means it's enough to iterate up to $\sqrt{N}$.
+
+![simple](https://leetcode.com/problems/the-kth-factor-of-n/solution/../Figures/1492/sqrt.png)
+*Fig. 2. Iterate from 1 to $\sqrt{N}$ is enough.*
+
+Approach 2: Heap, $\mathcal{O}(\sqrt{N} \log k)$. The idea is to iterate from 1 to $\sqrt{N}$ and push each divisor and its pair into a max heap of size $k$.
+
+![simple](https://leetcode.com/problems/the-kth-factor-of-n/solution/../Figures/1492/heap.png)
+*Fig 3. Approach 2. Heap: Iterate from 1 to $\sqrt{N}$ is enough, and push each divisor and its pair into a max heap.*
+
+Approach 3: Math, $\mathcal{O}(\sqrt{N})$. As in Approach 2, let's iterate up to $\sqrt{N}$, and decrease $k$ by one at each step. If $k$ drops down to zero during the iterations - the k*th* divisor is here. Otherwise, the k*th* divisor is the paired one and could be found as `N / divisors[len(divisors) - k]`.
+
+![simple](https://leetcode.com/problems/the-kth-factor-of-n/solution/../Figures/1492/approach3.png)
+*Fig. 4. Approach 3. Math: Iterate from 1 to $\sqrt{N}$ is enough.*
+
+<br /> 
+<br />
+
+---
+
+#### Approach 1: Brute Force, $\mathcal{O}(N)$ time
+
+![simple](https://leetcode.com/problems/the-kth-factor-of-n/solution/../Figures/1492/linear.png)
+*Fig. 5. Approach 1: Brute Force.*
+
+**Algorithm**
+
+- Iterate by $x$ from $1$ to $N / 2$:
+
+  - If $x$ is a divisor of $N$, decrease $k$ by one. Return $x$ if $k == 0$.
+- Return $N$ if $k == 1$ and $-1$ otherwise.
+
+**Implementation**
+
+<iframe src="https://leetcode.com/playground/Xde9TT7b/shared" frameBorder="0" width="100%" height="293" name="Xde9TT7b"></iframe>
+
+**Complexity Analysis**
+
+* Time Complexity: $\mathcal{O}(N)$ to iterate from $1$ to $N$.
+
+* Space Complexity: $\mathcal{O}(1)$, since we don't allocate any additional data structures.
+
+<br /> 
+<br />
+
+---
+
+#### Approach 2: Heap, $\mathcal{O}(\sqrt{N} \times \log{k})$ time
+
+![simple](https://leetcode.com/problems/the-kth-factor-of-n/solution/../Figures/1492/heap.png)
+*Fig 6. Approach 2: Heap.*
+
+**Algorithm**
+
+- Initialize max heap. Use `PriorityQueue` in Java and `heap` in Python. `heap` is a min-heap. Hence, to implement max heap, change the sign of divisor before pushing it into the heap.
+
+- Iterate by $x$ from $1$ to $\sqrt{N}$:
+
+  - If $x$ is a divisor of $N$, push $x$ and its pair divisor $n / x$ into the heap of size $k$.
+- Return the head of the heap if its size is equal to $k$ and $-1$ otherwise.
+
+**Implementation**
+
+<iframe src="https://leetcode.com/playground/mWjMhf9A/shared" frameBorder="0" width="100%" height="500" name="mWjMhf9A"></iframe>
+
+**Complexity Analysis**
+
+* Time Complexity: $\mathcal{O}(\sqrt{N} \times \log k)$.
+
+* Space Complexity: $\mathcal{O}(\min(k, \sqrt{N}))$ to keep the heap of size $k$.
+
+<br /> 
+<br />
+
+---
+
+#### Approach 3: Math, $\mathcal{O}(\sqrt{N})$ time
+
+![simple](https://leetcode.com/problems/the-kth-factor-of-n/solution/../Figures/1492/approach3.png)
+*Fig. 7. Approach 3: Math.*
+
+**Algorithm**
+
+- Initialize a list `divisors` to store the divisors.
+
+- Iterate by $x$ from $1$ to $\sqrt{N}$:
+
+  - If $x$ is a divisor of $N$, decrease $k$ by one. Return $x$ if $k == 0$.
+- We're here because the k*th* divisor is not yet found. Although `divisors` already contains all "independent" divisors. All other divisors are "paired" ones, _i.e_, the k*th* divisor could be computed as `N / divisors[len(divisors) - k]`.
+
+  But before that, we need a small correction for the case when $N$ is a perfect square. In that case, the divisor list contains a duplicate because $\sqrt{N}$ appears two times. To skip it, we have to increase $k$ by one.
+
+- Return `N / divisors[len(divisors) - k]` if `k <= len(divisors)` and `-1` otherwise.
+
+**Implementation**
+
+<iframe src="https://leetcode.com/playground/2vUnbKuS/shared" frameBorder="0" width="100%" height="480" name="2vUnbKuS"></iframe>
+
+**Complexity Analysis**
+
+* Time Complexity: $\mathcal{O}(\sqrt{N})$.
+
+* Space Complexity: $\mathcal{O}(\min(k, \sqrt{N}))$ to store the list of divisors.
+
+<br /> 
+<br />
+
+---
+

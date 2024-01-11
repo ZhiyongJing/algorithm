@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
   *@Frequency: 43.15%      
   *@Time  Complexity: O(min(N, K) + K*log(min(N, K)))
   *@Space Complexity: O(min(N, K))
- */s
+ */
 
 /**
  * 这个问题是求解一个有序矩阵中第K小的元素。解决这个问题的关键在于利用矩阵的有序性，

@@ -1,5 +1,6 @@
 package leetcode.frequent.based_on_data_structure.stack;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**

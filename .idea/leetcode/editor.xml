@@ -14,6 +14,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_1438_LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/doc/content/LeetCode_1438_LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.md" />
+              <option name="frontendQuestionId" value="leetcode.com1438" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_1438_LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.java" />
+              <option name="titleSlug" value="longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_23_MergeKSortedLists.java">
           <value>
             <LeetcodeEditor>
@@ -47,6 +58,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_295_FindMedianFromDataStream.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/doc/content/LeetCode_295_FindMedianFromDataStream.md" />
+              <option name="frontendQuestionId" value="leetcode.com295" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_295_FindMedianFromDataStream.java" />
+              <option name="titleSlug" value="find-median-from-data-stream" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_347_TopKFrequentElements.java">
           <value>
             <LeetcodeEditor>
@@ -55,6 +77,61 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_347_TopKFrequentElements.java" />
               <option name="titleSlug" value="top-k-frequent-elements" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_378_KthSmallestElementInASortedMatrix.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/doc/content/LeetCode_378_KthSmallestElementInASortedMatrix.md" />
+              <option name="frontendQuestionId" value="leetcode.com378" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_378_KthSmallestElementInASortedMatrix.java" />
+              <option name="titleSlug" value="kth-smallest-element-in-a-sorted-matrix" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_692_TopKFrequentWords.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/doc/content/LeetCode_692_TopKFrequentWords.md" />
+              <option name="frontendQuestionId" value="leetcode.com692" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_692_TopKFrequentWords.java" />
+              <option name="titleSlug" value="top-k-frequent-words" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_767_ReorganizeString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/doc/content/LeetCode_767_ReorganizeString.md" />
+              <option name="frontendQuestionId" value="leetcode.com767" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_767_ReorganizeString.java" />
+              <option name="titleSlug" value="reorganize-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_88_MergeSortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/doc/content/LeetCode_88_MergeSortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com88" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_88_MergeSortedArray.java" />
+              <option name="titleSlug" value="merge-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_895_MaximumFrequencyStack.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/doc/content/LeetCode_895_MaximumFrequencyStack.md" />
+              <option name="frontendQuestionId" value="leetcode.com895" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/heap/LeetCode_895_MaximumFrequencyStack.java" />
+              <option name="titleSlug" value="maximum-frequency-stack" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -127,10 +204,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/linked_list/LeetCode_20_ValidParentheses.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/linked_list/doc/content/LeetCode_20_ValidParentheses.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_20_ValidParentheses.md" />
               <option name="frontendQuestionId" value="leetcode.com20" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/linked_list/LeetCode_20_ValidParentheses.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_20_ValidParentheses.java" />
               <option name="titleSlug" value="valid-parentheses" />
             </LeetcodeEditor>
           </value>
@@ -341,6 +418,160 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/queue/LeetCode_54_SpiralMatrix.java" />
               <option name="titleSlug" value="spiral-matrix" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_1209_RemoveAllAdjacentDuplicatesInStringIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_1209_RemoveAllAdjacentDuplicatesInStringIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com1209" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_1209_RemoveAllAdjacentDuplicatesInStringIi.java" />
+              <option name="titleSlug" value="remove-all-adjacent-duplicates-in-string-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_1249_MinimumRemoveToMakeValidParentheses.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_1249_MinimumRemoveToMakeValidParentheses.md" />
+              <option name="frontendQuestionId" value="leetcode.com1249" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_1249_MinimumRemoveToMakeValidParentheses.java" />
+              <option name="titleSlug" value="minimum-remove-to-make-valid-parentheses" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_1472_DesignBrowserHistory.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_1472_DesignBrowserHistory.md" />
+              <option name="frontendQuestionId" value="leetcode.com1472" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_1472_DesignBrowserHistory.java" />
+              <option name="titleSlug" value="design-browser-history" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_150_EvaluateReversePolishNotation.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_150_EvaluateReversePolishNotation.md" />
+              <option name="frontendQuestionId" value="leetcode.com150" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_150_EvaluateReversePolishNotation.java" />
+              <option name="titleSlug" value="evaluate-reverse-polish-notation" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_1550_ThreeConsecutiveOdds.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_1550_ThreeConsecutiveOdds.md" />
+              <option name="frontendQuestionId" value="leetcode.com1550" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_1550_ThreeConsecutiveOdds.java" />
+              <option name="titleSlug" value="three-consecutive-odds" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_155_MinStack.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_155_MinStack.md" />
+              <option name="frontendQuestionId" value="leetcode.com155" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_155_MinStack.java" />
+              <option name="titleSlug" value="min-stack" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_20_ValidParentheses.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_20_ValidParentheses.md" />
+              <option name="frontendQuestionId" value="leetcode.com20" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_20_ValidParentheses.java" />
+              <option name="titleSlug" value="valid-parentheses" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_224_BasicCalculator.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_224_BasicCalculator.md" />
+              <option name="frontendQuestionId" value="leetcode.com224" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_224_BasicCalculator.java" />
+              <option name="titleSlug" value="basic-calculator" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_227_BasicCalculatorIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_227_BasicCalculatorIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com227" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_227_BasicCalculatorIi.java" />
+              <option name="titleSlug" value="basic-calculator-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_232_ImplementQueueUsingStacks.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_232_ImplementQueueUsingStacks.md" />
+              <option name="frontendQuestionId" value="leetcode.com232" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_232_ImplementQueueUsingStacks.java" />
+              <option name="titleSlug" value="implement-queue-using-stacks" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_716_MaxStack.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_716_MaxStack.md" />
+              <option name="frontendQuestionId" value="leetcode.com716" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_716_MaxStack.java" />
+              <option name="titleSlug" value="max-stack" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_735_AsteroidCollision.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_735_AsteroidCollision.md" />
+              <option name="frontendQuestionId" value="leetcode.com735" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_735_AsteroidCollision.java" />
+              <option name="titleSlug" value="asteroid-collision" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_770_BasicCalculatorIv.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_770_BasicCalculatorIv.md" />
+              <option name="frontendQuestionId" value="leetcode.com770" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_770_BasicCalculatorIv.java" />
+              <option name="titleSlug" value="basic-calculator-iv" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_772_BasicCalculatorIii.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/doc/content/LeetCode_772_BasicCalculatorIii.md" />
+              <option name="frontendQuestionId" value="leetcode.com772" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/frequent/based_on_data_structure/stack/LeetCode_772_BasicCalculatorIii.java" />
+              <option name="titleSlug" value="basic-calculator-iii" />
             </LeetcodeEditor>
           </value>
         </entry>

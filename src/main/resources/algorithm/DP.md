@@ -100,14 +100,22 @@
 >   >
 >   > 例如： 在 Minimum Path Sum中， state: `dp[i][j]= min(dp[i-1, j], dp[i, j-1]) + grid[i, j]`
 >   >
+>   > 例如： 在0-1背包问题中，`dp[i, c] = max(dp[i-1, c], dp[i-1, c - wgt[i-1]] + val[i-1])`
+>   >
+>   > - **不放入物品 i**：背包容量不变，状态变化为 dp[i-1, c] 。
+>   >
+>   > - **放入物品 i** ：前 i−1件物品放入剩下的容量为c - wgt[i-1]的背包中, 即`dp[i-1, c - wgt[i-1]] + val[i-1]`
+>   >
+>   >   
+>   >
 >   > ![image-20240107131925472](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/4.png)
->
+>   
 >   3. 确定初始化 **Initialization** ， **边界条件** 和  **状态转移顺序**
->
->   > 
+>   
+>   > 例如在 爬楼梯 问题中， 初始化 `dp[1] = 1, dp[2]=2`
 >   >
 >   > ![image-20240107132007819](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/5.png)
->
+>   
 >   4. 答案 **Answer**
 >
 > 
@@ -175,3 +183,14 @@ int minPathSumDFSMem(int[][] grid, int[][] mem, int i, int j) {
 > - 时间复杂度
 > - 空间复杂度
 
+不放入物品：
+
+​	之前放过：`dp[i, c] = max(dp[i-1, c], dp[i - 1, c - wgt[i-1]] + val[i-1])`
+
+​	之前没放过：`dp[i, c] = max(dp[i-1, c], dp[i - 1, c - wgt[i-1]] + val[i-1])`
+
+放入物品：
+
+​	之前放过：``
+
+​	之前没放过：``

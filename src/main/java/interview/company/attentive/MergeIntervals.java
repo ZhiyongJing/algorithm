@@ -1,4 +1,4 @@
-package interview.attentive;
+package interview.company.attentive;
 
 import java.util.ArrayList;
 import java.util.Arrays;

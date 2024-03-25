@@ -34,6 +34,7 @@ import java.util.Arrays;
  *
  * - 维护一个长度为 `nums.length` 的数组 `dp`，其中 `dp[i]` 表示以 `nums[i]` 结尾的最长递增子序列的长度。
  * - 初始化 `dp` 数组，将每个元素初始化为 1。
+ * - 我们就可以推出 base case：dp[i] 初始值为 1，因为以 nums[i] 结尾的最长递增子序列起码要包含它自己
  * - 从数组的第二个元素开始，对于每个元素 `nums[i]`，遍历其之前的所有元素 `nums[j]`。
  *   - 如果 `nums[i] > nums[j]`，则更新 `dp[i] = max(dp[i], dp[j] + 1)`，表示可以将 `nums[i]`
  *   加入到以 `nums[j]` 结尾的子序列中，构成更长的子序列。
@@ -99,10 +100,9 @@ public class LeetCode_300_LongestIncreasingSubsequence {
             for (int i = 1; i < nums.length; i++) {
                 for (int j = 0; j < i; j++) {
                     if (nums[i] > nums[j]) {
+                        //我们就可以推出 base case：dp[i] 初始值为 1，因为以 nums[i] 结尾的最长递增子序列起码要包含它自己
                         dp[i] = Math.max(dp[i], dp[j] + 1);
                     }
-
-
                 }
                 longest = Math.max(longest, dp[i]);
             }

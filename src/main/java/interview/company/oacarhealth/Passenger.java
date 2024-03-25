@@ -1,4 +1,4 @@
-package interview.oacarhealth;
+package interview.company.oacarhealth;
 
 public class Passenger implements User{
     String name;

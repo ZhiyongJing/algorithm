@@ -39,7 +39,7 @@
 >
 >   …
 >
->   ![1](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/Back_Tracking.assets/1.jpeg)
+>   ![1](1.jpeg)
 >
 > - 剪枝特点。
 >

@@ -38,7 +38,7 @@
 
 > - 当我们递归地实现 DFS 时，似乎不需要使用任何栈。但实际上，我们使用的是由系统提供的隐式栈，也称为调用栈（Call Stack）。
 >
-> ![DFS1.jpg](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DFS.assets/1.jpg)
+> ![DFS1.jpg](DFS.assets/1.jpg)
 
 ~~~java
 /* * Return true if there is a path from cur to target. */
@@ -59,7 +59,7 @@ boolean DFS(Node cur, Node target, Set<Node> visited) {
 
 > - 递归解决方案的优点是它更容易实现。 但是，存在一个很大的缺点：如果递归的深度太高，你将遭受堆栈溢出。 在这种情况下，您可能会希望使用 BFS，或使用显式栈实现DFS
 >
-> ![DFS2.png](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DFS.assets/2.jpeg)
+> ![DFS2.png](DFS.assets/2.jpeg)
 
 ~~~java
 /* * Return true if there is a path from cur to target. */

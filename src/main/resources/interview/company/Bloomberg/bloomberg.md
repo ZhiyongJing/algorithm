@@ -60,14 +60,14 @@
 # 7  2023-11-16 BQL组
 > coding 1: 打印最深层次括号里的字符串。 没见过。
 > 
-> ![img.png](img.png) 
+> ![img.png](Bloomberg.assets/img.png) 
 > 
 >我的思路是找到最深层次的括号，然后标记下位置。然后再倒序查找，找到字符串。
 >明显不是他想要的。不过也写了。
 >然后说太麻烦，要求只loop一遍。
 >Coding 2: 三八零
 > 
-> ![img_1.png](img_1.png)
+> ![img_1.png](Bloomberg.assets/img_1.png)
 > 
 > follow up: 三八一。
 我觉得这货绝对有大病。我用的就是经典的map<String, List<Integer>> 结构。他不满意，说这样不行。不能达到O(1). 然后我说我们可以用PriorityQueue.
@@ -77,157 +77,157 @@
 尼码 又不是我要去的。 猎头推的。 关键是description里没写必须要会呀。 只说了有java, python这种经典语言的经验。
 
 # 8
-> ![img_2.png](img_2.png)
+>![img_2.png](Bloomberg.assets/img_2.png)
 
 # 9
-> ![img_3.png](img_3.png)
+> ![img_3.png](Bloomberg.assets/img_3.png)
 
 # 10
-> ![img_4.png](img_4.png)
+> ![img_4.png](Bloomberg.assets/img_4.png)
 
 # 11
-> ![img_5.png](img_5.png)
+> ![img_5.png](Bloomberg.assets/img_5.png)
 
 # 12
-> ![img_6.png](img_6.png)
+> ![img_6.png](Bloomberg.assets/img_6.png)
 
 # 13
-> ![img_7.png](img_7.png)
+> ![img_7.png](Bloomberg.assets/img_7.png)
 > sweep line
 
 # 14
-> ![img_8.png](img_8.png)
+> ![img_8.png](Bloomberg.assets/img_8.png)
 
 # 15
-> ![img_9.png](img_9.png)
+> ![img_9.png](Bloomberg.assets/img_9.png)
 
 # 16
-> ![img_10.png](img_10.png)
-> ![img_11.png](img_11.png)
+> ![img_10.png](Bloomberg.assets/img_10.png)
+> ![img_11.png](Bloomberg.assets/img_11.png)
 
 # 17
-> ![img_12.png](img_12.png)
+> ![img_12.png](Bloomberg.assets/img_12.png)
 
 # 18
-> ![img_13.png](img_13.png)
+> ![img_13.png](Bloomberg.assets/img_13.png)
 
 # 19
-> ![img_14.png](img_14.png)
+> ![img_14.png](Bloomberg.assets/img_14.png)
 
 # 20
-> ![img_15.png](img_15.png)
-> ![img_16.png](img_16.png)
+> ![img_15.png](Bloomberg.assets/img_15.png)
+> ![img_16.png](Bloomberg.assets/img_16.png)
 
 # 21
-> ![img_17.png](img_17.png)
+> ![img_17.png](Bloomberg.assets/img_17.png)
 
 # 22
-> ![img_18.png](img_18.png)
+> ![img_18.png](Bloomberg.assets/img_18.png)
 > 
 > Leetcode 253
 
 # 23
-> ![img_19.png](img_19.png)
-> ![img_20.png](img_20.png)
+> ![img_19.png](Bloomberg.assets/img_19.png)
+> ![img_20.png](Bloomberg.assets/img_20.png)
 
 # 24
-> ![img_21.png](img_21.png)
-> ![img_22.png](img_22.png)
+> ![img_21.png](Bloomberg.assets/img_21.png)
+> ![img_22.png](Bloomberg.assets/img_22.png)
 
 # 25
-> ![img_23.png](img_23.png)
+> ![img_23.png](Bloomberg.assets/img_23.png)
 
 # 26
-> ![img_24.png](img_24.png)
-> ![img_25.png](img_25.png)
+> ![img_24.png](Bloomberg.assets/img_24.png)
+> ![img_25.png](Bloomberg.assets/img_25.png)
 
 # 27
-> ![img_26.png](img_26.png)
+> ![img_26.png](Bloomberg.assets/img_26.png)
 
 # 28
-> ![img_27.png](img_27.png)
+> ![img_27.png](Bloomberg.assets/img_27.png)
 
 # 29
-> ![img_28.png](img_28.png)
+> ![img_28.png](Bloomberg.assets/img_28.png)
 
 # 30
-> ![img_29.png](img_29.png)
+> ![img_29.png](Bloomberg.assets/img_29.png)
 > lc739?
 
 # 31
-> ![img_30.png](img_30.png)
+> ![img_30.png](Bloomberg.assets/img_30.png)
 
 # 32
-> ![img_31.png](img_31.png)
-> ![img_32.png](img_32.png) 
-> ![img_33.png](img_33.png) world break II
+> ![img_31.png](Bloomberg.assets/img_31.png)
+> ![img_32.png](Bloomberg.assets/img_32.png) 
+> ![img_33.png](Bloomberg.assets/img_33.png) world break II
 
 # 33
-> ![img_34.png](img_34.png)
-> ![img_37.png](img_37.png)
-> ![img_36.png](img_36.png)
+> ![img_34.png](Bloomberg.assets/img_34.png)
+> ![img_37.png](Bloomberg.assets/img_37.png)
+> ![img_36.png](Bloomberg.assets/img_36.png)
 
 # 34
-> ![img_38.png](img_38.png)
+> ![img_38.png](Bloomberg.assets/img_38.png)
 
 # 35
-> ![img_39.png](img_39.png)
-> ![img_40.png](img_40.png)
+> ![img_39.png](Bloomberg.assets/img_39.png)
+> ![img_40.png](Bloomberg.assets/img_40.png)
 
 # 36
-> ![img_41.png](img_41.png)
-> ![img_42.png](img_42.png)
+> ![img_41.png](Bloomberg.assets/img_41.png)
+> ![img_42.png](Bloomberg.assets/img_42.png)
 
 # 37
-> ![img_43.png](img_43.png)
+> ![img_43.png](Bloomberg.assets/img_43.png)
 
 # 38
-> ![img_44.png](img_44.png)
+> ![img_44.png](Bloomberg.assets/img_44.png)
 
 # 39
-> ![img_45.png](img_45.png)
-> ![img_46.png](img_46.png)
+> ![img_45.png](Bloomberg.assets/img_45.png)
+> ![img_46.png](Bloomberg.assets/img_46.png)
 
 # 40
-> ![img_47.png](img_47.png)
+> ![img_47.png](Bloomberg.assets/img_47.png)
 
 # 41
-> ![img_48.png](img_48.png)
-> ![img_49.png](img_49.png)
+> ![img_48.png](Bloomberg.assets/img_48.png)
+> ![img_49.png](Bloomberg.assets/img_49.png)
 
 # 42
-> ![img_50.png](img_50.png)
+> ![img_50.png](Bloomberg.assets/img_50.png)
 
 # 43
-> ![img_51.png](img_51.png)
+> ![img_51.png](Bloomberg.assets/img_51.png)
 
 # 44
-> ![img_52.png](img_52.png)
+> ![img_52.png](Bloomberg.assets/img_52.png)
 
 # 45
-> ![img_53.png](img_53.png)
+> ![img_53.png](Bloomberg.assets/img_53.png)
 
 # 46
 > LC 146
 
 # 47
-> ![img_54.png](img_54.png)
+> ![img_54.png](Bloomberg.assets/img_54.png)
 
 # 48
-> ![img_56.png](img_56.png)
-> ![img_57.png](img_57.png)
+> ![img_56.png](Bloomberg.assets/img_56.png)
+> ![img_57.png](Bloomberg.assets/img_57.png)
 
 # 49
-> ![img_58.png](img_58.png)
+> ![img_58.png](Bloomberg.assets/img_58.png)
 
 # 50
-> ![img_59.png](img_59.png)
+> ![img_59.png](Bloomberg.assets/img_59.png)
 
 # 51
-> ![img_60.png](img_60.png)
+> ![img_60.png](Bloomberg.assets/img_60.png)
 
 # 52
-> ![img_61.png](img_61.png)
+> ![img_61.png](Bloomberg.assets/img_61.png)
 
 # 53
-> ![img_62.png](img_62.png)
+> ![img_62.png](Bloomberg.assets/img_62.png)

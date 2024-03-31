@@ -10,7 +10,7 @@
 
 ## 3.1 递归方式实现
 
-> ![quickSelection1](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/Quick_Selection.assets/1.jpeg)
+> ![quickSelection1](Quick_Selection.assets/1.jpeg)
 
 ~~~java
 import java.util.Random;

@@ -39,7 +39,7 @@
 >
 >   …
 >
->   ![1](1.jpeg)
+>   ![1](Back_Tracking.assets/1.jpeg)
 >
 > - 剪枝特点。
 >
@@ -56,11 +56,11 @@
 >   > 就已经能判定这个方案是错误的，但我们仍继续搜索 第二个位置，… ，第 n 个位置。
 >   > 想要优化就需要 剪枝 。
 >
->   ![DFS6.png](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/Back_Tracking.assets/2.png)
+>   ![DFS6.png](Back_Tracking.assets/2.png)
 >
 > - 回溯特点
 >
->   ![DFS4.png](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/Back_Tracking.assets/3.jpeg)
+>   ![DFS4.png](Back_Tracking.assets/3.jpeg)
 >
 > 
 

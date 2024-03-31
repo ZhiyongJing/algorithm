@@ -36,7 +36,7 @@
 >  >
 >   > **治**：从底至顶地将有序的子数组（子问题的解）进行合并，从而得到有序的原数组（原问题的解）。
 >
->   ![1](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/Divide_And_Conquer.assets/1.png)
+>   ![1](Divide_And_Conquer.assets/1.png)
 
 ~~~java
 public class DivideAndConquer {

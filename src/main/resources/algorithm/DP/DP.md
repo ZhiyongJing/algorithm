@@ -76,11 +76,11 @@
 >   >
 >   > 例如： 斐波那契数列
 >   >
->   > ![image-20240107125727855](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/1.png)
+>   > ![image-20240107125727855](DP.assets/1.png)
 >   >
 >   > 例如： 爬楼梯
 >   >
->   > ![image-20240107125952753](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/2.png)
+>   > ![image-20240107125952753](DP.assets/2.png)
 >
 > - 动规四要素
 >
@@ -90,7 +90,7 @@
 >   >
 >   > 例如： 在 Minimum Path Sum中， state: `dp[i][j]`从起点走到 i, j 的最短路径
 >   >
->   > ![image-20240107131303476](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/3.png)
+>   > ![image-20240107131303476](DP.assets/3.png)
 >
 >   2. 推导状态转移方程 **Function**：描述不同规模子问题之间的关系
 >
@@ -108,13 +108,13 @@
 >   >
 >   >   
 >   >
->   > ![image-20240107131925472](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/4.png)
+>   > ![image-20240107131925472](DP.assets/4.png)
 >   
 >   3. 确定初始化 **Initialization** ， **边界条件** 和  **状态转移顺序**
 >   
 >   > 例如在 爬楼梯 问题中， 初始化 `dp[1] = 1, dp[2]=2`
 >   >
->   > ![image-20240107132007819](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/5.png)
+>   > ![image-20240107132007819](DP.assets/5.png)
 >   
 >   4. 答案 **Answer**
 >
@@ -219,7 +219,7 @@ int minPathSumDFSMem(int[][] grid, int[][] mem, int i, int j) {
 
 线性动态规划中单串 `dp[i]` 的问题，状态的推导方向以及推导公式如下
 
-![img](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/6.png)
+![img](DP.assets/6.png)
 
 一般有以下两种问题
 
@@ -332,7 +332,7 @@ for i = 1, ..., n
 
 结合题目条件，这个单串 `dp[i][k]` 的问题，状态的推导方向，以及推导公式如下:
 
-![img](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/7.png)
+![img](DP.assets/7.png)
 
 
 
@@ -378,7 +378,7 @@ for i = 1, ..., n
 
 线性动态规划中双串 dp [i][j] 的问题，状态的推导方向以及推导公式如下：
 
-[![双串状态的推导方向以及推导公式](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/8.png)
+[![双串状态的推导方向以及推导公式](DP.assets/8.png)
 
 如图所示，绿色部分的 `dp [i-1 ~ 0][j-1 ~ 0]` 均已经计算过，但计算橙色的当前状态时，仅用到 `dp [i-1][j]`, `dp [i][j-1]`, `dp [i-1][j-1]`，即比 i, j 小的 O (1) O (1) 个子问题
 
@@ -656,7 +656,7 @@ int rangeRum(int L, int R)
   >
   > `dp[i][j] = f(dp[i + 1][j], dp[i][j - 1], dp[i + 1][j - 1])`
   >
-  > ![img](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/9.png)
+  > ![img](DP.assets/9.png)
   >
   > 代码常见写法
   >
@@ -711,7 +711,7 @@ int rangeRum(int L, int R)
   >
   > `dp[i][j] = g(f(dp[i][k], dp[k + 1][j]))` 其中 k = i .. j-1。
   >
-  > ![img](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/DP.assets/10.png)
+  > ![img](DP.assets/10.png)
   >
   > 代码常见写法，以下代码以 f 为 max 为例
   >

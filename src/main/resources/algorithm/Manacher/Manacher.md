@@ -137,11 +137,11 @@
 >
 > 那么如何编写程序得到 p 数组呢？其实也不难，即**使用“回文串”的性质避免重复计算**。下面这张图展示了这个思想
 >
-> ![image.png](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/Manacher.assets/1.png)
+> ![image.png](Manacher.assets/1.png)
 >
 > 上面这张图画得仔细一点是下面这张图：
 >
-> ![img.png](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/Manacher.assets/2.png)
+> ![img.png](Manacher.assets/2.png)
 >
 > 把上面说的整理一下，当 `p[j]` 的范围很小的时候，有 `p[i] = p[j]`，`p[i]` 的值再大不过超过 `mx - i` ：
 >

@@ -9,7 +9,7 @@
 
 # 3. 算法模版
 
-> ![img](/Users/zhiyongjing/Repo/algorithm/src/main/resources/algorithm/Binary_Search.assets/202305261900059.gif)
+> ![img](Binary_Search.assets/202305261900059.gif)
 >
 > - **基本想法**：在循环中做判断，每一轮通过目标元素与中间元素的大小将搜索区间分为 3 个部分。根据看到的中间元素的数值，想清楚下一次搜索的区间是什么，进而设置 `left` 或者 `right` 的值。
 >

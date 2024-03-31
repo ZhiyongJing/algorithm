@@ -103,7 +103,7 @@
 >
 > 需要注意的是：主线成和子线程互不影响，子线程并不会因为主线程结束就结束
 
-![img](https://img2018.cnblogs.com/blog/1771072/202002/1771072-20200209204908012-1070559737.png)
+![img](Thread.assets/Thread.png)
 
 ### 2. WAIT/SLEEP Difference
 
@@ -411,7 +411,7 @@
 
 > 线程池（英语：thread pool）：一种线程使用模式。线程过多会带来调度开销，进而影响缓存局部性和整体性能。而线程池维护多个线程，等待着监督管理者分配可并发执行的任务。这避免了在处理短时间任务时创建与销毁线程的代价。不要使用Executors 去创建Thread pool 会导致资源耗尽。通过使用ThreadPoolExecutor 方式创建。
 >
-> ![image-20240324215011011](/Users/zhiyongjing/Repo/algorithm/src/main/resources/interview/tech/Thread/Thread.assets/ThreadPool.png) 
+> ![image-20240324215011011]((Bloomberg.assets/imgThread.assets/ThreadPool.png) 
 >
 > **Java** 中的线程池是通过 **Executor** 框架实现的，该框架中用到了 **Executor**，**Executors**，**ExecutorService**，**ThreadPoolExecutor** 这几个类.
 >

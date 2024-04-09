@@ -1,6 +1,6 @@
 ## 1. Kafka
 
-### 1.  what is Kafka
+### 1.  Kafka definition 
 
 > Apache Kafka is an open-source distributed streaming system used for stream processing, real-time data pipelines, and data integration at scale.
 >
@@ -37,7 +37,7 @@
 > }
 > ```
 
-### 3. Partition for producer
+### 3. Kafka Partition for producer
 
 > （1）便于合理使用存储资源，每个Partition在一个Broker上存储，可以把海量的数据按照分区存储在多台Broker上。合理控制分区的任务，可以实现负载均衡的效果。
 >
@@ -47,11 +47,11 @@
 >
 > ![image-20240325155938824](MessageQueue.assets/partition_stratety_for_producer.png)
 
-### 4. How to improve the througput of producer
+### 4. Kafka How to improve the througput of producer
 
 > ![image-20240328223924455](MessageQueue.assets/image-20240328223924455.png)
 
-### 5. How to improve the data reliality of producer
+### 5. Kafka How to improve the data reliality of producer
 
 > 1. **ACK 应答级别**
 >
@@ -137,7 +137,7 @@
 >
 >       粘性分区定义：可以理解为分配的结果带有“粘性的”。即在执行一次新的分配之前，考虑上一次分配的结果，尽量少的调整分配的变动，可以节省大量的开销。在出现同一消费者组内消费者出现问题的时候，会尽量保持原有分配的分区不变化。
 
-### 9. Cousumer offset
+### 9. Kafka Cousumer offset
 
 > 从0.9版本开始，consumer默认将offset保存在Kafka一个内置的topic中，该topic为__consumer_offsets. __consumer_offsets 主题里面采用 key 和 value 的方式存储数据。key 是 group.id+topic+分区号，value 就是当前 offset 的值。每隔一段时间，kafka 内部会对这个 topic 进行compact，也就是每个group.id+topic+分区号就保留最新数据。
 >
@@ -180,7 +180,7 @@
 >
 > 
 
-### 10. how to improve the speed of comsuming data
+### 10. Kafka how to improve the speed of comsuming data
 
 > 1）如果是Kafka消费能力不足，可以考虑增加Topic的分区数，并且同时提升消费组的消费者数量，消费者数= 分区数（缺一不可）
 >

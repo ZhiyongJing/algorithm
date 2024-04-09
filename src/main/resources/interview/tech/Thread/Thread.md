@@ -149,7 +149,7 @@
 >    }
 >    `````
 >
-> 3. Implement Callable interface
+> 3. Implement Callable interface + FutureTask
 >
 >    `````
 >    class Counter implements Callable {
@@ -173,18 +173,12 @@
 >    }
 >    `````
 >
-> 4. Using anonymous inner class
+> 4. Thread pool
 >
 >    ```java
->    new Thread(new Runnable() {
->                @Override
->                public void run() {
->                    //调用卖票方法
->                    for (int i = 0; i < 40; i++) {
->                        ticket.sale();
->                    }
->                }
->            },"BB").start()
+>    Executors.newFiexedThreadPool(3);
+>    //或者
+>    new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit unit, workQueue, threadFactory, handler);
 >    ```
 
 ### 4.  2 Ways to control thread
@@ -453,6 +447,8 @@
 ### 12. CompleteableFuture
 
 > CompletableFuture 实现了 Future, CompletionStage 接口，实现了 Future接口就可以兼容现在有线程池框架，CompletionStage 接口才是异步编程的接口抽象，里面定义多种异步方法，通过这两者集合，从而打造出了强大的CompletableFuture 类.
+>
+> ![image-20240407225625339](Thread.assets/image-20240407225625339.png)
 
 
 

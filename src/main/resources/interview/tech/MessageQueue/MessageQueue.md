@@ -1,28 +1,30 @@
+## 1. Kafka
+
 ### 1.  what is Kafka
 
 > Apache Kafka is an open-source distributed streaming system used for stream processing, real-time data pipelines, and data integration at scale.
 >
-> ![image-20240325152828970](/Users/zhiyongjing/Repo/algorithm/src/main/resources/interview/tech/Kafka/Kafka.assets/kafka-structure.png)
+> ![image-20240325152828970](MessageQueue.assets/kafka-structure.png)
 
 ### 2. Kafka producer
 
 > 在消息发送的过程中，涉及到了两个线程——**main** 线程和 **Sender** 线程。在 main 线程中创建了一个双端队列 **RecordAccumulator**。main 线程将消息发送给 RecordAccumulator，Sender 线程不断从RecordAccumulator 中拉取消息发送到Kafka Broker。
 >
-> ![image-20240325153049215](/Users/zhiyongjing/Repo/algorithm/src/main/resources/interview/tech/Kafka/Kafka.assets/producer.png)
+> ![image-20240325153049215](MessageQueue.assets/producer.png)
 >
 > **异步发送,带回调函数（可不带）：**回调函数会在 producer 收到 ack 时调用，为异步调用，该方法有两个参数，分别是元数据信息（RecordMetadata）和异常信息（Exception） ，如果 Exception 为 null，说明消息发送成功，如果Exception 不为null，说明消息发送失败
 >
 > ```java
 > for (int i = 0; i < 500; i++) {
->     kafkaProducer.send(new ProducerRecord<>("first", "atguigu" + i), new Callback() {
->         @Override
->         public void onCompletion(RecordMetadata metadata, Exception exception) {
->             if (exception == null){
->                 System.out.println("主题： "+metadata.topic() + " 分区： "+ metadata.partition());
->             }
->         }
->     });
->     Thread.sleep(2);
+>  kafkaProducer.send(new ProducerRecord<>("first", "atguigu" + i), new Callback() {
+>      @Override
+>      public void onCompletion(RecordMetadata metadata, Exception exception) {
+>          if (exception == null){
+>              System.out.println("主题： "+metadata.topic() + " 分区： "+ metadata.partition());
+>          }
+>      }
+>  });
+>  Thread.sleep(2);
 > }
 > ```
 >
@@ -31,7 +33,7 @@
 > ```java
 > // 2 发送数据
 > for (int i = 0; i < 5; i++) {
->     kafkaProducer.send(new ProducerRecord<>("first","atguigu"+i)).get();
+>  kafkaProducer.send(new ProducerRecord<>("first","atguigu"+i)).get();
 > }
 > ```
 
@@ -41,13 +43,13 @@
 >
 > （2）提高并行度，生产者可以以分区为单位发送数据；消费者可以以分区为单位进行消费数据。
 >
-> ![image-20240325155825023](/Users/zhiyongjing/Repo/algorithm/src/main/resources/interview/tech/Kafka/Kafka.assets/partition_for_producer.png)
+> ![image-20240325155825023](../Kafka/Kafka.assets/partition_for_producer.png)
 >
-> ![image-20240325155938824](Kafka.assets/partition_stratety_for_producer.png)
+> ![image-20240325155938824](MessageQueue.assets/partition_stratety_for_producer.png)
 
 ### 4. How to improve the througput of producer
 
-> ![image-20240328223924455](Kafka.assets/image-20240328223924455.png)
+> ![image-20240328223924455](MessageQueue.assets/image-20240328223924455.png)
 
 ### 5. How to improve the data reliality of producer
 
@@ -57,7 +59,7 @@
 >
 >    对可靠性要求比较高的场景。
 >
-> ![image-20240328224127090](Kafka.assets/image-20240328224127090.png)
+> ![image-20240328224127090](MessageQueue.assets/image-20240328224127090.png)
 >
 > 2. **数据去重1： 幂等性**
 >
@@ -67,29 +69,29 @@
 >
 >    重复数据的判断标准：具有<PID, Partition, SeqNumber>相同主键的消息提交时，Broker只会持久化一条。其中PID是Kafka每次重启都会分配一个新的；Partition 表示分区号；Sequence Number是单调自增的。所以幂等性只能保证的是在单分区单会话内不重复。开启参数**enable.idempotence** 默认为true，false 关闭。
 >
->    ![image-20240328224633977](Kafka.assets/image-20240328224633977.png)
+>    ![image-20240328224633977](MessageQueue.assets/image-20240328224633977.png)
 >
 > 3. **数据去重2: 开启事物**
 >
->    ![image-20240328224901328](Kafka.assets/image-20240328224901328.png)
+>    ![image-20240328224901328](MessageQueue.assets/image-20240328224901328.png)
 >
 > 4. **保证数据有序**
 >
->    ![image-20240328225126156](Kafka.assets/image-20240328225126156.png)
+>    ![image-20240328225126156](MessageQueue.assets/image-20240328225126156.png)
 
 ### 6. Kafka Broker
 
-> 1. 工作流程![image-20240328225236925](Kafka.assets/image-20240328225236925.png)
+> 1. 工作流程![image-20240328225236925](MessageQueue.assets/image-20240328225236925.png)
 >
 > 2. Follower故障处理细节
->    ![image-20240328225718795](Kafka.assets/image-20240328225718795.png)
+>    ![image-20240328225718795](MessageQueue.assets/image-20240328225718795.png)
 >
 > 3. Leader故障处理细节
->    ![image-20240328225733845](Kafka.assets/image-20240328225733845.png)
+>    ![image-20240328225733845](MessageQueue.assets/image-20240328225733845.png)
 >
 > 4. 文件存储机制
 >
->    ![image-20240328230006845](Kafka.assets/image-20240328230006845.png)
+>    ![image-20240328230006845](MessageQueue.assets/image-20240328230006845.png)
 >
 > 5. 页缓存 + 零拷贝技术
 >
@@ -109,13 +111,13 @@
 >
 >    • 消费者组之间互不影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。
 >
->    ![image-20240328231120828](Kafka.assets/image-20240328231120828.png)
+>    ![image-20240328231120828](MessageQueue.assets/image-20240328231120828.png)
 >
 > 2. 消费者组初始化流程
 >
->    ![image-20240328231741901](Kafka.assets/image-20240328231741901.png)
+>    ![image-20240328231741901](MessageQueue.assets/image-20240328231741901.png)
 >
->    ![image-20240328231803085](Kafka.assets/image-20240328231803085.png)
+>    ![image-20240328231803085](MessageQueue.assets/image-20240328231803085.png)
 
 ### 8. Kafka consumer分区策略以及再平衡
 
@@ -125,11 +127,11 @@
 >
 >    1. **Range** 分区策略
 >
->       ![image-20240331164901221](Kafka.assets/image-20240331164901221.png)
+>       ![image-20240331164901221](MessageQueue.assets/image-20240331164901221.png)
 >
 >    2. **RoundRobin** 分区策略
 >
->       ![image-20240331165337582](Kafka.assets/image-20240331165337582.png)
+>       ![image-20240331165337582](MessageQueue.assets/image-20240331165337582.png)
 >
 >    3. **Sticky**
 >
@@ -174,7 +176,7 @@
 >
 > ​	漏消费：先提交offset 后消费，有可能会造成数据的漏消费。
 >
-> ​	![image-20240331170912260](Kafka.assets/image-20240331170912260.png)
+> ​	![image-20240331170912260](MessageQueue.assets/image-20240331170912260.png)
 >
 > 
 
@@ -216,15 +218,15 @@
 >
 >    > 1）生产者角度
 >    >
->    >  acks 设置为-1 （acks=-1）。
+>    > acks 设置为-1 （acks=-1）。
 >    >
 >    > 幂等性（enable.idempotence = true） + 事务 。
 >    >
 >    > 2）broker 服务端角度
 >    >
->    >  分区副本大于等于 2 （--replication-factor 2）。
+>    > 分区副本大于等于 2 （--replication-factor 2）。
 >    >
->    >  ISR 里应答的最小副本数量大于等于 2 （min.insync.replicas = 2）。
+>    > ISR 里应答的最小副本数量大于等于 2 （min.insync.replicas = 2）。
 >    >
 >    > **3**）消费者
 >    >
@@ -234,20 +236,20 @@
 >
 > 3.  合理设置分区数
 >
->    > （1）创建一个只有1 个分区的topic。
->    >
->    > （2）测试这个topic 的producer 吞吐量和consumer 吞吐量。
->    >
->    > （3）假设他们的值分别是 Tp 和Tc，单位可以是MB/s。
->    >
->    > （4）然后假设总的目标吞吐量是 Tt，那么分区数 = Tt / min（Tp，Tc）。
->    >
->    > 例如：producer 吞吐量 = 20m/s；consumer 吞吐量 = 50m/s，期望吞吐量100m/s；
->    >
->    > 分区数 = 100 / 20 = 5 分区
->    >
->    > 分区数一般设置为：3-10 个
->    >
->    > 分区数不是越多越好，也不是越少越好，需要搭建完集群，进行压测，再灵活调整分区
->    >
->    > 个数
+>     > （1）创建一个只有1 个分区的topic。
+>     >
+>     > （2）测试这个topic 的producer 吞吐量和consumer 吞吐量。
+>     >
+>     > （3）假设他们的值分别是 Tp 和Tc，单位可以是MB/s。
+>     >
+>     > （4）然后假设总的目标吞吐量是 Tt，那么分区数 = Tt / min（Tp，Tc）。
+>     >
+>     > 例如：producer 吞吐量 = 20m/s；consumer 吞吐量 = 50m/s，期望吞吐量100m/s；
+>     >
+>     > 分区数 = 100 / 20 = 5 分区
+>     >
+>     > 分区数一般设置为：3-10 个
+>     >
+>     > 分区数不是越多越好，也不是越少越好，需要搭建完集群，进行压测，再灵活调整分区
+>     >
+>     > 个数

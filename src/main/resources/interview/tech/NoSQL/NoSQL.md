@@ -159,7 +159,7 @@
 
 ### 2.1 Cassandra 介绍
 
-> **特点：**
+> **1. 特点：**
 >
 > - 弹性可扩展性– Cassandra具有高度可扩展性；它允许添加更多硬件，以根据需求容纳更多客户和更多数据。
 > - 始终在线-Cassandra没有单点故障，并且可以连续用于无法承受故障的关键业务应用程序。
@@ -173,19 +173,43 @@
 >   - 通过主键查询
 >   - 需要对数据进行分区存储
 >
-> **适用场景：**
+> **2. 适用场景：**
 >
 > - 存储日志型数据
 > - 类似物联网的海量数据
 > - 对数据进行跟踪
+>
+> **3. 一致性哈希** 
+>
+> 一致性哈希是Cassandra搭建集群的基础，一致性哈希可以降低分布式系统中，数据重新分布的影响。
+>
+> 在Cassandra中，每个表有Primary Key外，还有一个叫做Partition Key，Partition Key列的Value会通过Cassandra一致性算法得出一个哈希值，这个哈希值将决定这行数据该放到哪个节点上。
+>
+> 每个节点拥有一段数字区间，这个区间的含义是：如果某行记录的Partition Key的哈希值落在这个区间范围之内，那么该行记录就该被存储到这个节点上。
+>
+> 如果简单的使用哈希值，可能会引起数据分布不均匀的问题，为了解决这个问题，一致性哈希提出虚拟节点的概念，简单的理解就是：将某个节点根据一个映射算法，映射出若干个虚拟子节点出来，再把这些节点分布在哈希环上面，保存数据时，如果通过一致性哈希计算落到某个虚拟子节点上，这条记录就会被存在这个虚拟子节点的母节点上。
+>
+> Token：在Cassandra，每个节点都对应一个token，相当于hash环中的一个节点地址。在Cassandra的配置文件中有一项配置叫做:**num_tokens**，这个配置项可以控制一个节点映射出来的虚拟节点的个数。
+>
+> Range：在Cassandra中，每一个节点负责处理hash环的一段数据，范围是从上一个节点的Token到本节点Token，这就是Range
+>
+> 在健康的集群中，可以通过自带的工具nodetool查看集群的哈希环具体情况，命令为:**nodetool ring**。
+>
+> 这里我们使用cassandra官方文档中一张图来说明
+>
+> [![img](NoSQL.assets/1593432222.png)](https://github.com/ZhiyongJing/techs/blob/master/大数据技术栈/数据存储/cassandra入门与实战/assets/1593432222.png)
+>
+> ### Gossip内部通信协议
+>
+> 
+>
+> Cassandra使用Gossip的协议维护集群的状态，这是个端对端的通信协议。通过Gossip，每个节点都能知道集群中包含哪些节点，以及这些节点的状态，
+>
+> Gossip进程每秒运行一次，与最多3个其他节点交换信息，这样所有节点可很快了解集群中的其他节点信息。
 
 ### 2.2 Cassandra 术语
 
-> **data目录**:用于存储真正的数据文件，即后面将要讲到的SSTable文件。如果服务器有多个磁盘，可以指定多个目录，每一个目录都在不同的磁盘中。这样Cassandra就可以利用更多的硬盘空间。
->
-> 在data目录下，Cassandra 会将每一个 Keyspace 中的数据存储在不同的文件目录下，并且 Keyspace 文件 目录的名称与 Keyspace 名称相同。
->
-> 假设有两个 Keyspace，分别为 ks1 和 ks2，但在 data目录下，将看到3个不同的目录：ks1，ks2和 system。其中 ks1 和 ks2 用于存储系统定义的两个 Keyspace 的数据，另外一个 system 目录是 Cassandra 系统默认的一个 Keyspace，叫做 system，它用来存储 Cassandra 系统的相关元数据信息以及 HINT 数据信息。A
+> **data目录**:用于存储真正的数据文件，即后面将要讲到的SSTable文件。如果服务器有多个磁盘，可以指定多个目录，每一个目录都在不同的磁盘中。这样Cassandra就可以利用更多的硬盘空间。在data目录下，Cassandra 会将每一个 Keyspace 中的数据存储在不同的文件目录下，并且 Keyspace 文件 目录的名称与 Keyspace 名称相同。假设有两个 Keyspace，分别为 ks1 和 ks2，但在 data目录下，将看到3个不同的目录：ks1，ks2和 system。其中 ks1 和 ks2 用于存储系统定义的两个 Keyspace 的数据，另外一个 system 目录是 Cassandra 系统默认的一个 Keyspace，叫做 system，它用来存储 Cassandra 系统的相关元数据信息以及 HINT 数据信息。
 >
 > **commitlog目录**: 用于存储未写人SSTable中的数据，每次Cassandra系统中有数据写入，都会先将数据记录在该日志文件中，以保证Cassandra在任何情况下宕机都不会丢失数据。如果服务器有足够多的磁盘，可以将本目录设置在一个与data目录和cache目录不同的磁盘中，以提升读写性能。
 >
@@ -219,8 +243,28 @@
 > **主键：**Cassandra可以使用**PRIMARY KEY** 关键字创建主键，主键分为2种
 >
 > - Single column Primary Key，如果 Primary Key 由一列组成，那么称为 Single column Primary Key
->
 > - Composite Primary Key，如果由多列组成，那么这种情况称为 Compound Primary Key 或 Composite Primary Key
+>
+> **Cassandra key(索引)种类：**
+>
+> - **Primary Key** 主键， 是用来获取某一行的数据， 可以是Single column Primary Key， 或者Composite Primary Key
+>
+>   以下情况不要使用pk:
+>
+>   - 这列的值很多的情况下，因为你相当于查询了一个很多条记录，得到一个很小的结果。
+>   - 表中有couter类型的列
+>   - 频繁更新和删除的列
+>   - 在一个很大的分区中去查询一条记录的时候（也就是不指定分区主键的查询）
+>
+> - **Composite/Compound Key** 复合key, Primary Key 由多列组成
+>
+> - **Partition Key** 分区Key, 在组合主键的情况下(上面的例子)，第一部分称作Partition Key（key_one就是partition key），第二部分是CLUSTERING KEY（key_two, Cassandra会对Partition key 做一个hash计算，并自己决定将这一条记录放在哪个节点。
+>
+>   如果 Partition key 由多个字段组成，称之为 Composite Partition key
+>
+>   ![image-20240409161617195](NoSQL.assets/image-20240409161617195.png)
+>
+> - **Clustering Key** 决定同一个分区内相同 Partition Key 数据的排序，默认为升序，可以在建表语句里面手动设置排序的方式
 >
 > **Column：**列是Cassandra的基本数据结构，具有三个值，即键或列名，值和时间戳。下面给出的是列的结构。
 > ![image-20240409001718902](NoSQL.assets/image-20240409001718902.png)
@@ -228,6 +272,102 @@
 > **SuperColumn：**超级列是特殊列，因此，它也是一个键值对。但是超级列存储子列的映射。通常，Column Family存储在磁盘上的单个文件中。因此，为了优化性能，将可能要查询的列保持在同一Column Family中很重要，在此超级列可能会有所帮助。
 >
 > ![image-20240409001812863](NoSQL.assets/image-20240409001812863.png)
+>
+> - **Index:** Cassandra之中的索引的实现相对MySQL的索引来说就要简单粗暴很多了。Cassandra自动新创建了一张表格，同时将原始表格之中的索引字段作为新索引表的Primary Key！并且存储的值为原始数据的Primary Key.
+> - 查询时使用索引Cassandra对查询时使用索引有一定的要求，具体如下：
+>
+> > - **Primary Key 只能用 = 号查询**
+> > - **第二主键 支持= > < >= <=**
+> > - **索引列 只支持 = 号**
+> > - 非索引非主键字段过滤**可以使用ALLOW FILTERING**
+
+### 2.3 Cassandra 语法
+
+> ```cassandra
+> -- 1. 创建keyspace(数据库)
+> Create keyspace [KeyspaceName] with replicaton={'class':[strategy name],'replication_factor': [No of replications on different nodes]};
+> CREATE KEYSPACE school WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+> use school;
+> 
+> -- 2. 修改keyspace
+> ALTER KEYSPACE <identifier> WITH <properties>
+> 
+> -- 3.创建table表 with primary key
+> CREATE TABLE student(
+>    id int PRIMARY KEY,  --key(键)，可以由1个或多个column组合而成。
+>    name text,  
+>    age int,  
+>    gender tinyint,  
+>    address text ,
+>    interest set<text>,
+>    phone list<text>,
+>    education map<text, text>
+> );
+> 
+> -- 4. 创建表with Composite Primary Key
+> create table testTab (
+>   key_part_one int,
+>   key_part_two int,
+>   key_clust_one int,
+>   key_clust_two int,
+>   key_clust_three uuid,
+>   name text,
+> PRIMARY KEY((key_part_one,key_part_two), key_clust_one, key_clust_two, key_clust_three)
+> );
+> 
+> -- 5. 修改表
+> ALTER TABLE student ADD[Drop] email text;
+> 
+> --6. 创建索引
+> CREATE INDEX sname ON student (name);
+> 
+> -- 7. 添加数据， 可以设置ttl, 到时间自动删除
+> INSERT INTO student (id,address,age,gender,name,interest, phone,education) VALUES (1030,'朝阳路30号',20,1,'Cary',{'运动', '游戏'},['020-7777888','139876667556'],{'小学' :'第30小学','中学':'第30中学'}) USING TTL 60;
+> 
+> -- 8. 更新数据
+> UPDATE student set gender = 1 where student_id= 1012; --更新普通数据
+> UPDATE student SET interest = interest + {'游戏'} WHERE student_id = 1012; -- 更新set  数据
+> UPDATE student SET interest = interest - {'电影'} WHERE student_id = 1012; -- 从set删除数据
+> UPDATE student SET phone = ['020-66666666', '13666666666'] WHERE student_id = 1012; --更新list数据
+> UPDATE student SET education=
+> 	{'中学': '城市第五中学', '小学': '城市第五小学'} WHERE student_id = 1012;--更新map数据
+> ```
+
+### 2.4 Cassandra 数据存储
+
+> Cassandra写数据时，首先会将请求写入Commit Log以确保数据不会丢失，然后再写入内存中的Memtable，超过内存容量后再将内存中的数据刷到磁盘的SSTable，并定期异步对SSTable做数据合并(Compaction)以减少数据读取时的查询时间。因为写入操作只涉及到顺序写入和内存操作，因此有非常高的写入性能。而进行读操作时，Cassandra支持像LevelDB一样的实现机制，数据分层存储，将热点数据放在Memtable和相对小的SSTable中，所以能实现较高的读性能
+>
+> Cassandra的数据包括在内存中的和磁盘中的数据，这些数据主要分为三种：
+>
+> > CommitLog：主要记录客户端提交过来的数据以及操作。这种数据被持久化到磁盘中，方便数据没有被持久化到磁盘时可以用来恢复。
+> >
+> > Memtable：用户写的数据在内存中的形式，它的对象结构在后面详细介绍。其实还有另外一种形式是BinaryMemtable 这个格式目前 Cassandra 并没有使用，这里不再介绍了。
+> >
+> > SSTable：数据被持久化到磁盘，又分为 Data、Index 和 Filter 三种数据格式。
+>
+> **CommitLog 数据格式** 
+>
+> Cassandra在写数据之前，需要先记录日志，保证Cassandra在任何情况下宕机都不会丢失数据，这就是CommitLog日志。要写入的数据按照一定格式组成 byte 组数，写到 IO 缓冲区中定时的被刷到磁盘中持久化。**Commitlog是server级别的**。每个Commitlog文件的大小是固定的，称之为一个CommitlogSegment。
+>
+> 当一个Commitlog文件写满以后，会新建一个的文件。当旧的Commitlog文件不再需要时，会自动清除。
+>
+> **Memtable 内存中数据结构** 
+>
+> 数据写入的第二个阶段，MemTable是一种内存结构，当数据量达到块大小时，将批量flush到磁盘上，存储为SSTable。优势在于将随机IO写变成顺序IO写，降低大量的写操作对于存储系统的压力。每一个columnfamily对应一个memtable。也就是每一张表对应一个。用户写的数据在内存中的形式，
+>
+> **SSTable 数据格式** 
+>
+> SSTable是Read Only的，且一般情况下，一个ColumnFamily会对应多个SSTable，当用户检索数据时，Cassandra使用了Bloom Filter，即通过多个hash函数将key映射到一个位图中，来快速判断这个key属于哪个SSTable。
+>
+> 为了减少大量SSTable带来的开销，Cassandra会定期进行compaction，简单的说，compaction就是将同一个ColumnFamily的多个SSTable合并成一个SSTable。
+>
+> 在Cassandra中，compaction主要完成的任务是：
+>
+> 1） 垃圾回收： cassandra并不直接删除数据，因此磁盘空间会消耗得越来越多，compaction 会把标记为删除的数据真正删除；
+>
+> 2） 合并SSTable：compaction 将多个 SSTable 合并为一个（合并的文件包括索引文件，数据文件，bloom filter文件），以提高读操作的效率；
+>
+> 3） 生成 MerkleTree：在合并的过程中会生成关于这个ColumnFamily中数据的 MerkleTree，用于与其他存储节点对比以及修复数据。
 
 ## 3. Redis
 

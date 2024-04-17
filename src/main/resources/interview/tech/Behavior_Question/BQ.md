@@ -41,7 +41,9 @@ Amazon is is a great company, leading the world in online shopping. Personally, 
   >
   > Then, I collaborated closely with cross-functional teams, including Microsoft cloud support team, our salse user , and product owners, to gather requirements and refine the application architecture. After that, I worked with pdm to create a development pland and believe we can archive it in two months.
   >
-  > To make data high availability, I decided to use two server running in same time and use Zookeeper as distrubiton lock to manage them.
+  > When I assign the work the my team mates, based on their expertise, I assign the infrature structure setup to one who is more famaily with it. and Assign the data interaction work to one who is good at the data part. I maily focus on loading data into the cloud by using the API.
+  >
+  > Since it’s sales data, I need make sure the data  make data high availability, I decided to use two server running in same time and use Zookeeper as distrubiton lock to manage them.
   >
   > To figure out how to use  3rd party cloud API to work with our data,  I leveraged various resources such as offical documents, online courses, and developer communities to gain insights and practical knowledge about the API. Additionally, I buid up a poc project,  scheduled daily meeting with the cloud support them to ask the questions that I encountered in my learnning. And also schedule daily meeting with our product owner to show the the process and milesone we archived.
   >
@@ -51,6 +53,60 @@ Amazon is is a great company, leading the world in online shopping. Personally, 
   > Finally, within two months, The real-time data streaming application was successfully deployed, exceeding expectations in terms of performance, scalability, and reliability. The project are able to handle a full load with  millions records  and hudread reocrd of live update per mins. It significantly become a standard for our coming data loading project.
   >
   > This project stands out to me as both the most challenging and rewarding project I've worked on. It exemplifies my ability to deliver results in complex and dynamic environments while demonstrating a commitment to innovation and continuous improvement.
+  >
+  > 
+  >
+  > Follow up:
+  >
+  > **Challenge**: Need to get this new server done in 2 months. I did poc, make sure it works, then scheduled meeting with pdm, manager and prduct owener, create a development to make sure we can make it. Schedule meeting with them per 2 days and give them update.
+  >
+  > **Conflict**: The conflict is we are tryong to build a robust project in one time, but users are still unclear for some additional data, since it’s need to be done in 2 months, so I talked with the product owner and pdm and manager. I made development plan of  phase 1 to for basic needs and phase 2 for additional things if they want.  Finally, I got it done.
+  >
+  > **ambiguity(模糊不清)**: When I was doing the poc, the batch size when we load data into cloud is kind of unclear, cause it’s really data based. So when I was doing the poc, I tried similuate the real data in production, did the test by passing with different argumnents to call the api, make sure we are using the highest capacity without cause any api errors. I did schedule meeting with Miscrosft support team to ask key features of the API, and what is the limitation.
+  >
+  > **Learn**: From technical perspective, I build knowledge to utilze the 3rd part api to load data into our data lake, I can provide my experience to the team mate and do the consulting to other team. Form team lead perspective, I proved my leadership skills, I gain more experience to lead the team to deliver the result in a short time.
+
+### **Tell me about a time you disagreed with your manager**
+
+- This relates to "Dive Deep" (challenging assumptions and respectfully disagreeing to achieve better outcomes) and "Have Backbone; Disagree and Commit" (voicing dissent while still supporting the team's decisions).
+
+  > **Situation:**
+  > When I was working in Vanguard, my pervious company. We were tying to build a data etl pipeline to migrate data from oracl into AWS S3. It’s simily project that we did to migrate MSSQL data into AWS S3,  my manager outlined a development plan based on the information available. and He thought we can finish it within one month. It’s similar project, but we connect with different database, and we were running in AWS EMR.  my experience and insights suggested that we may need two more weeks to do additional POC to figure out the security of connection to Oracle in AWS. 
+  >
+  > **Task:**
+  > As a team lead, I must ensure the project's success and devliever it as we promissed to our client.
+  >
+  > **Action:**
+  > Recognizing the importance of challenging and uncertain POC, I scheduled a meeting with my manager to discuss my concerns. I shared the additional details and insights I had gathered, explaining how they could impact the project's success.
+  >
+  > In the meeting, I proposed adjustments to the development plan based on my experience with similar projects. I emphasized the difference between this new porject and our past projects. I suggest we may need two more weeks for poc and my manager agree on it. After it, I also schedule meeting with our client and manager, to tell them the details and why we need 2 more weeks to deliver the porject. they all agree on it. 
+  >
+  >  After meeting, I imidettly start the POC, schedule meeting with Oracle team to figure out the security connection with oracle database across the EMR. I aslo did 
+  >
+  > **Result:**
+  > Finally, I finished the POC within one week , and I deleivered the project into producion within one week earilier. My manager appreciated my perspective and agreed to consider my suggestions. By speaking up respectfully, I contributed to a stronger development plan that aligned with our project goals. It’s showing the importance of open communication and constructive feedback in achieving success as a team. it’s still a good leran that  I should ask or propose when I have different opinion and be open to talk with the team. 
+
+### **Tell me about a time when you had a conflict with teammate**
+
+- This relates to "Earn Trust" and "Have Backbone; Disagree and Commit." It's about handling conflicts respectfully and constructively.
+
+  > **Situation:** 
+  > During a project, I encountered a conflict with a colleague regarding the approach to be taken for a critical decision.
+  >
+  > **Task:** 
+  > My task was to address the conflict in a respectful and constructive manner, while still maintaining trust and commitment to the project's goals.
+  >
+  > **Action:** 
+  > First, I took a step back to understand the root cause of the conflict and the differing perspectives involved. I approached the situation with empathy, recognizing that everyone's input was valuable and stemmed from their desire to achieve the best outcome for the project.
+  >
+  > Next, I initiated a one-on-one conversation with my colleague to discuss our differing viewpoints openly and honestly. I actively listened to their concerns and viewpoints, seeking common ground and areas of compromise.
+  >
+  > During the discussion, I remained calm and focused on finding a resolution that aligned with the project's objectives. I proposed alternative solutions that addressed both our concerns and emphasized the importance of collaboration and teamwork in achieving our goals.
+  >
+  > **Result:** 
+  > By approaching the conflict with a mindset of earning trust and respectfully disagreeing while remaining committed to the project's success, we were able to find a mutually acceptable solution. Our ability to handle the conflict constructively strengthened our working relationship and fostered a sense of trust and respect between us.
+  >
+  > The experience reinforced the importance of having backbone, respectfully navigating conflicts, and committing to the team's decisions even when we disagree. It ultimately contributed to a more positive and collaborative work environment, where conflicts were viewed as opportunities for growth and learning.
 
 ### **Tell me about a time you failed**
 
@@ -118,23 +174,7 @@ Amazon is is a great company, leading the world in online shopping. Personally, 
   > **Result:**
   > Despite our efforts, we couldn't deliver the feature as expected, which was disappointing for our team and the client. However, we turned this setback into a learning opportunity. As a senior developer, I took ownership of the situation and led the team in identifying areas for improvement. We implemented changes to our processes to enhance efficiency and better handle similar challenges in the future. This experience reinforced the importance of adaptability and continuous improvement in our work.
 
-### **Tell me about a time you disagreed with your manager**
 
-- This relates to "Dive Deep" (challenging assumptions and respectfully disagreeing to achieve better outcomes) and "Have Backbone; Disagree and Commit" (voicing dissent while still supporting the team's decisions).
-
-  > **Situation:**
-  > During a recent project, a similar project to migrate addition data into cloud,  my manager outlined a development plan based on the information available. However, my experience and insights suggested that certain adjustments were needed for better outcomes.
-  >
-  > **Task:**
-  > My task was to ensure the project's success by refining the development plan to incorporate my insights and experience.
-  >
-  > **Action:**
-  > Recognizing the importance of challenging assumptions and voicing dissent respectfully, I scheduled a meeting with my manager to discuss my concerns. I shared the additional details and insights I had gathered, explaining how they could impact the project's success.
-  >
-  > In the meeting, I proposed adjustments to the development plan based on my experience with similar projects. I emphasized how these changes could lead to more efficient resource allocation and mitigate potential risks.
-  >
-  > **Result:**
-  > My manager appreciated my perspective and agreed to consider my suggestions. By speaking up respectfully, I contributed to a stronger development plan that aligned with our project goals. This experience reinforced the value of open communication and constructive feedback in achieving success as a team.
 
 ### **Tell me about a time you went above and beyond**
 
@@ -296,29 +336,7 @@ Amazon is is a great company, leading the world in online shopping. Personally, 
   >
   > The experience taught me valuable lessons about the importance of actively seeking feedback, maintaining a growth mindset, and continuously striving for improvement. It reinforced the principles of "Learn and Be Curious" and "Deliver Results" by showing that negative feedback can be a catalyst for growth and ultimately lead to better outcomes.
 
-### **Tell me about a time when you had a conflict with people you worked with**
 
-- This relates to "Earn Trust" and "Have Backbone; Disagree and Commit." It's about handling conflicts respectfully and constructively.
-
-  > Certainly, here's the response using the STAR (Situation, Task, Action, Result) method:
-  >
-  > **Situation:** 
-  > During a project, I encountered a conflict with a colleague regarding the approach to be taken for a critical decision.
-  >
-  > **Task:** 
-  > My task was to address the conflict in a respectful and constructive manner, while still maintaining trust and commitment to the project's goals.
-  >
-  > **Action:** 
-  > First, I took a step back to understand the root cause of the conflict and the differing perspectives involved. I approached the situation with empathy, recognizing that everyone's input was valuable and stemmed from their desire to achieve the best outcome for the project.
-  >
-  > Next, I initiated a one-on-one conversation with my colleague to discuss our differing viewpoints openly and honestly. I actively listened to their concerns and viewpoints, seeking common ground and areas of compromise.
-  >
-  > During the discussion, I remained calm and focused on finding a resolution that aligned with the project's objectives. I proposed alternative solutions that addressed both our concerns and emphasized the importance of collaboration and teamwork in achieving our goals.
-  >
-  > **Result:** 
-  > By approaching the conflict with a mindset of earning trust and respectfully disagreeing while remaining committed to the project's success, we were able to find a mutually acceptable solution. Our ability to handle the conflict constructively strengthened our working relationship and fostered a sense of trust and respect between us.
-  >
-  > The experience reinforced the importance of having backbone, respectfully navigating conflicts, and committing to the team's decisions even when we disagree. It ultimately contributed to a more positive and collaborative work environment, where conflicts were viewed as opportunities for growth and learning.
 
 ### **Have you ever completed something not assigned to you?**
 

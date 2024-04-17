@@ -64,6 +64,7 @@ public class LeetCode_139_WordBreak{
             return false;
         }
 
+        //Solution1: Top down dp
         // 判断字符串是否可以分割
         public boolean wordBreak(String s, List<String> wordDict) {
             this.s = s;
@@ -72,6 +73,30 @@ public class LeetCode_139_WordBreak{
             Arrays.fill(this.memo, -1);
             return dp(s.length() - 1);
         }
+
+        //Solution2: bottom-up dp
+        public boolean wordBreak2(String s, List<String> wordDict) {
+            boolean[] dp = new boolean[s.length()];
+            for (int i = 0; i < s.length(); i++) {
+                for (String word: wordDict) {
+                    // Handle out of bounds case
+                    if (i < word.length() - 1) {
+                        continue;
+                    }
+
+                    if (i == word.length() - 1 || dp[i - word.length()]) {
+                        if (s.substring(i - word.length() + 1, i + 1).equals(word)) {
+                            dp[i] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return dp[s.length() - 1];
+        }
+
+
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

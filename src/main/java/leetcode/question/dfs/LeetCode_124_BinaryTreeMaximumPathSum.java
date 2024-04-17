@@ -6,8 +6,8 @@ import leetcode.util.TreeNode;
   *@Question:  124. Binary Tree Maximum Path Sum     
   *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]
   *@Frequency: 81.55%      
-  *@Time Complexity: O
-  *@Space Complexity: O
+  *@Time Complexity: O(N)
+  *@Space Complexity: O(N)
  */
 
 public class LeetCode_124_BinaryTreeMaximumPathSum{

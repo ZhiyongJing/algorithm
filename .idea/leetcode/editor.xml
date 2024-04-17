@@ -3,6 +3,270 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_101_SymmetricTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_101_SymmetricTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com101" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_101_SymmetricTree.java" />
+              <option name="titleSlug" value="symmetric-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_1152_AnalyzeUserWebsiteVisitPattern.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_1152_AnalyzeUserWebsiteVisitPattern.md" />
+              <option name="frontendQuestionId" value="leetcode.com1152" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_1152_AnalyzeUserWebsiteVisitPattern.java" />
+              <option name="titleSlug" value="analyze-user-website-visit-pattern" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_122_BestTimeToBuyAndSellStockIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_122_BestTimeToBuyAndSellStockIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com122" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_122_BestTimeToBuyAndSellStockIi.java" />
+              <option name="titleSlug" value="best-time-to-buy-and-sell-stock-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_124_BinaryTreeMaximumPathSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_124_BinaryTreeMaximumPathSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com124" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_124_BinaryTreeMaximumPathSum.java" />
+              <option name="titleSlug" value="binary-tree-maximum-path-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_127_WordLadder.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_127_WordLadder.md" />
+              <option name="frontendQuestionId" value="leetcode.com127" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_127_WordLadder.java" />
+              <option name="titleSlug" value="word-ladder" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_135_Candy.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_135_Candy.md" />
+              <option name="frontendQuestionId" value="leetcode.com135" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_135_Candy.java" />
+              <option name="titleSlug" value="candy" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_136_SingleNumber.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_136_SingleNumber.md" />
+              <option name="frontendQuestionId" value="leetcode.com136" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_136_SingleNumber.java" />
+              <option name="titleSlug" value="single-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_139_WordBreak.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_139_WordBreak.md" />
+              <option name="frontendQuestionId" value="leetcode.com139" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_139_WordBreak.java" />
+              <option name="titleSlug" value="word-break" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_140_WordBreakIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_140_WordBreakIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com140" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_140_WordBreakIi.java" />
+              <option name="titleSlug" value="word-break-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_15_ThreeSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_15_ThreeSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com15" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_15_ThreeSum.java" />
+              <option name="titleSlug" value="3sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_16_ThreeSumClosest.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_16_ThreeSumClosest.md" />
+              <option name="frontendQuestionId" value="leetcode.com16" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_16_ThreeSumClosest.java" />
+              <option name="titleSlug" value="3sum-closest" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_20_ValidParentheses.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_20_ValidParentheses.md" />
+              <option name="frontendQuestionId" value="leetcode.com20" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_20_ValidParentheses.java" />
+              <option name="titleSlug" value="valid-parentheses" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_214_ShortestPalindrome.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_214_ShortestPalindrome.md" />
+              <option name="frontendQuestionId" value="leetcode.com214" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_214_ShortestPalindrome.java" />
+              <option name="titleSlug" value="shortest-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_253_MeetingRoomsIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_253_MeetingRoomsIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com253" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_253_MeetingRoomsIi.java" />
+              <option name="titleSlug" value="meeting-rooms-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph.md" />
+              <option name="frontendQuestionId" value="leetcode.com323" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph.java" />
+              <option name="titleSlug" value="number-of-connected-components-in-an-undirected-graph" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_347_TopKFrequentElements.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_347_TopKFrequentElements.md" />
+              <option name="frontendQuestionId" value="leetcode.com347" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_347_TopKFrequentElements.java" />
+              <option name="titleSlug" value="top-k-frequent-elements" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_415_AddStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_415_AddStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.com415" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_415_AddStrings.java" />
+              <option name="titleSlug" value="add-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_419_BattleshipsInABoard.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_419_BattleshipsInABoard.md" />
+              <option name="frontendQuestionId" value="leetcode.com419" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_419_BattleshipsInABoard.java" />
+              <option name="titleSlug" value="battleships-in-a-board" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_472_ConcatenatedWords.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_472_ConcatenatedWords.md" />
+              <option name="frontendQuestionId" value="leetcode.com472" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_472_ConcatenatedWords.java" />
+              <option name="titleSlug" value="concatenated-words" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_528_RandomPickWithWeight.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_528_RandomPickWithWeight.md" />
+              <option name="frontendQuestionId" value="leetcode.com528" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_528_RandomPickWithWeight.java" />
+              <option name="titleSlug" value="random-pick-with-weight" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_767_ReorganizeString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_767_ReorganizeString.md" />
+              <option name="frontendQuestionId" value="leetcode.com767" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_767_ReorganizeString.java" />
+              <option name="titleSlug" value="reorganize-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_889_ConstructBinaryTreeFromPreorderAndPostorderTraversal.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_889_ConstructBinaryTreeFromPreorderAndPostorderTraversal.md" />
+              <option name="frontendQuestionId" value="leetcode.com889" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_889_ConstructBinaryTreeFromPreorderAndPostorderTraversal.java" />
+              <option name="titleSlug" value="construct-binary-tree-from-preorder-and-postorder-traversal" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_98_ValidateBinarySearchTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_98_ValidateBinarySearchTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com98" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_98_ValidateBinarySearchTree.java" />
+              <option name="titleSlug" value="validate-binary-search-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/leetcode/editor/en/LeetCode_122_BestTimeToBuyAndSellStockIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_122_BestTimeToBuyAndSellStockIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com122" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_122_BestTimeToBuyAndSellStockIi.java" />
+              <option name="titleSlug" value="best-time-to-buy-and-sell-stock-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_102_BinaryTreeLevelOrderTraversal.java">
           <value>
             <LeetcodeEditor>
@@ -50,10 +314,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_127_WordLadder.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_127_WordLadder.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_127_WordLadder.md" />
               <option name="frontendQuestionId" value="leetcode.com127" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_127_WordLadder.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_127_WordLadder.java" />
               <option name="titleSlug" value="word-ladder" />
             </LeetcodeEditor>
           </value>
@@ -193,10 +457,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph.md" />
               <option name="frontendQuestionId" value="leetcode.com323" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph.java" />
               <option name="titleSlug" value="number-of-connected-components-in-an-undirected-graph" />
             </LeetcodeEditor>
           </value>
@@ -314,10 +578,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_98_ValidateBinarySearchTree.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_98_ValidateBinarySearchTree.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_98_ValidateBinarySearchTree.md" />
               <option name="frontendQuestionId" value="leetcode.com98" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_98_ValidateBinarySearchTree.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_98_ValidateBinarySearchTree.java" />
               <option name="titleSlug" value="validate-binary-search-tree" />
             </LeetcodeEditor>
           </value>
@@ -446,10 +710,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_528_RandomPickWithWeight.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_528_RandomPickWithWeight.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_528_RandomPickWithWeight.md" />
               <option name="frontendQuestionId" value="leetcode.com528" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_528_RandomPickWithWeight.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_528_RandomPickWithWeight.java" />
               <option name="titleSlug" value="random-pick-with-weight" />
             </LeetcodeEditor>
           </value>
@@ -501,10 +765,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_101_SymmetricTree.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_101_SymmetricTree.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_101_SymmetricTree.md" />
               <option name="frontendQuestionId" value="leetcode.com101" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_101_SymmetricTree.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_101_SymmetricTree.java" />
               <option name="titleSlug" value="symmetric-tree" />
             </LeetcodeEditor>
           </value>
@@ -644,10 +908,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_139_WordBreak.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_139_WordBreak.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_139_WordBreak.md" />
               <option name="frontendQuestionId" value="leetcode.com139" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_139_WordBreak.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_139_WordBreak.java" />
               <option name="titleSlug" value="word-break" />
             </LeetcodeEditor>
           </value>
@@ -897,10 +1161,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_472_ConcatenatedWords.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_472_ConcatenatedWords.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_472_ConcatenatedWords.md" />
               <option name="frontendQuestionId" value="leetcode.com472" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_472_ConcatenatedWords.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_472_ConcatenatedWords.java" />
               <option name="titleSlug" value="concatenated-words" />
             </LeetcodeEditor>
           </value>
@@ -1150,10 +1414,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_122_BestTimeToBuyAndSellStockIi.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_122_BestTimeToBuyAndSellStockIi.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/leetcode/editor/en/doc/content/LeetCode_122_BestTimeToBuyAndSellStockIi.md" />
               <option name="frontendQuestionId" value="leetcode.com122" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_122_BestTimeToBuyAndSellStockIi.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/leetcode/editor/en/LeetCode_122_BestTimeToBuyAndSellStockIi.java" />
               <option name="titleSlug" value="best-time-to-buy-and-sell-stock-ii" />
             </LeetcodeEditor>
           </value>
@@ -1469,11 +1733,11 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_347_TopKquestionElements.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_347_TopKquestionElements.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_347_TopKFrequentElements.md" />
               <option name="frontendQuestionId" value="leetcode.com347" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_347_TopKquestionElements.java" />
-              <option name="titleSlug" value="top-k-question-elements" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_347_TopKFrequentElements.java" />
+              <option name="titleSlug" value="top-k-frequent-elements" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1502,10 +1766,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_767_ReorganizeString.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_767_ReorganizeString.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_767_ReorganizeString.md" />
               <option name="frontendQuestionId" value="leetcode.com767" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_767_ReorganizeString.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_767_ReorganizeString.java" />
               <option name="titleSlug" value="reorganize-string" />
             </LeetcodeEditor>
           </value>
@@ -2063,10 +2327,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_20_ValidParentheses.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/doc/content/LeetCode_20_ValidParentheses.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_20_ValidParentheses.md" />
               <option name="frontendQuestionId" value="leetcode.com20" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_20_ValidParentheses.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_20_ValidParentheses.java" />
               <option name="titleSlug" value="valid-parentheses" />
             </LeetcodeEditor>
           </value>
@@ -2217,10 +2481,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_124_BinaryTreeMaximumPathSum.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_124_BinaryTreeMaximumPathSum.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_124_BinaryTreeMaximumPathSum.md" />
               <option name="frontendQuestionId" value="leetcode.com124" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_124_BinaryTreeMaximumPathSum.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_124_BinaryTreeMaximumPathSum.java" />
               <option name="titleSlug" value="binary-tree-maximum-path-sum" />
             </LeetcodeEditor>
           </value>
@@ -2239,10 +2503,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_15_ThreeSum.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_15_ThreeSum.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_15_ThreeSum.md" />
               <option name="frontendQuestionId" value="leetcode.com15" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_15_ThreeSum.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_15_ThreeSum.java" />
               <option name="titleSlug" value="3sum" />
             </LeetcodeEditor>
           </value>
@@ -2272,10 +2536,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_16_ThreeSumClosest.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_16_ThreeSumClosest.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_16_ThreeSumClosest.md" />
               <option name="frontendQuestionId" value="leetcode.com16" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_16_ThreeSumClosest.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_16_ThreeSumClosest.java" />
               <option name="titleSlug" value="3sum-closest" />
             </LeetcodeEditor>
           </value>

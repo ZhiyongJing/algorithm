@@ -1,20 +1,24 @@
 ## 1. Introduce
 
-> Hello, I’m Jimmy. I’m a Senior Software Developer with a strong background in designing and developing data streaming, batched data processing systems, and distributed RESTful APIs.  I'm very professinal  in big data, distributed computing, concurrency, and cloud such as AWS technologies.
+> Hello, I’m Jimmy. I’m a Senior Software engineer with a strong background in big data, distributed computing, concurrency, and cloud such as AWS.
 >
-> In my current role at BlackRock, I have developed robust and distributed backend RESTful APIs for Sales CRM data-driven solutions, ensuring high performance, scalability, and reliability. I aslo led team of 3 front end developers to buid up a full web applicationI. Additionally, I have led  data streaming process project  to inegrate the data from local to cloud projects by using Kafka, MessageQueue.Built up data pipelines on Airflow for data migration into Snowflake, and collaborated closely with cross-functional teams to deliver high-quality software solutions.
+> In my current role at BlackRock,  As data squad, I have developed robust and distributed backend RESTful APIs for Sales CRM data-driven solutions, ensuring high performance, scalability, and reliability. I aslo led 3 front end developers to buid up a full web applicationI. Additionally, I have led  data streaming process project  to inegrate the data from local to cloud projects by using Kafka, MessageQueue., I’m using Spark, HDFS, and python to built up data pipelines on Airflow for data migration into Snowflake.
 >
-> Previously I was working about 3 years at Vanguard Group, I leaded, designed and implemented large-scale distributed ETL pipelines in cloud for data migration and collaborated with the machine learning team to develop insightful business reports for guiding investment strategies.
+> Previously I was working about 3 years at Vanguard Group, I led, designed and implemented large-scale distributed data ETL pipelines in AWS cloud for data migration to guide the firm’s investment strategies. We were using Scala, Spark, Python and AWS techs such as CloudFormation, EMR, EC2, Glue ETL and S3.
 >
-> I’m graduated from Strony Brook University, majored in Compute Science.  and I own an AWS Certified Cloud Practitioner. My technical skills include expertise in Spring, Java, Python, Big data techs, and various database management systems, such as MSSQL  and Cassandra.
+> I’m graduated from Strony Brook University, majored in Compute Science.  and I also own an AWS Cloud certification. Totally, I’m  prfessional  in Spring, Java, Python, Kafka, MessageQueue,  Big data techs, and SQL database such as MSSQL  and nosql like Cassandra.
 >
-> I'm excited about the opportunity to discuss how my skills and experiences align with the goals of your team. Thank you!
+> I'm excited about the opportunity and want to discuss how my skills and experiences align with the goals of the team. Thank you!
 
 ## 2. Questions
 
+### Why leave current firm 
+
+I did many import projects  in the current postion to impact the firm’s sales. And I learn a lot from the team and firm. The only question is our entire division is not organized well and our report line is not stable. They are not evaluting the people  and outcome in correcct way. That is what I think.  And I think as a software engineer, I must keep learning, keep growing. I need to find a new oppoptunity to gain my knowledge and skills.
+
 ### Why Amazon
 
-Amazon is is a great company, leading the world in online shopping. Personally, I'm a big fan of Amazon's online shopping. I almot go shopping on line in each week. As a software engineer, every time I’m shopping on the Amazon, I’m aloways thinking how the appliction is running bechine the screen, how the data are processing in the flow. When I’m reading the job descriptoin,  I think I’m the right person matched with job description and aligns with team’s need. I have confidence to do my contribution.  And also, from personal technical perspective,  it will be a greate opportunity for me to learn form the team,  leaarn form the firm and grow up with the firm.
+Amazon is is a great company, leading the world in online shopping. Personally, I'm a big fan of Amazon's online shopping. I almot go shopping on line in each week. As a software engineer, every time I’m shopping on the Amazon, I’m aloways thinking how the appliction is running bechine the screen, how the data are processing in the flow. When I’m reading the job descriptoin,  I think I’m the right person matched with job description and aligns with team’s need. I have confidence to do my contribution.  And also, from personal technical perspective,  it will be a greate opportunity for me to learn form the team,  learn form the firm and grow up with the firm.
 
 ### **Tell me about a project that you are most proud of and the most challenging project you worked on**
 
@@ -22,51 +26,49 @@ Amazon is is a great company, leading the world in online shopping. Personally, 
 
   > **Situation:**
   >
-  > The most challenging project(The project I’m most proud of)  I worked on is in last year when I’m working in current company, the firm is migrating our data from on prem database into Azure Cloud. As data squad to support sales, we need to migrate our portfolio data into Azure dataverse and make it live update. 
+  > The most challenging project(The project I’m most proud of)  I worked on is the one in current company. In last year, the firm was migrating our data from on local database into Azure Cloud. As client data squad to support sales, we need to migrate our portfolio, sales data into Azure dataverse . 
   >
   > **Task:**
-  > Since I have experince to with Kafka, Message queue, Java and Spring boot. I’m also very formilar with the data. So, I took the leadership to design and implement this real time data procesing application. We need to deliever the data in time, otherwise, it will directly impact our firm’s sale and income. At firm level, they did some poc and conirmed it’s working. But for me, at project level, it is the  first time to migrate our data into cloud. To build out the project,  I need to figure out important blocks.
+  > We need to deliever the data within 2 months, otherwise, it will directly impact our firm’s sale and income. Since I have experince to with Kafka, Message queue, Java and Spring boot. I’m also very familiar with the data. So, I took the leadership with 2 junior engineer  for this project.  For me, at project level, it is the  first time to migrate data. There are couple of ambiguites we need to figure out. 
   >
   > 1. the security to call cloud api, 
-  > 2. how to utilize the 3rd party cloud api to pull from cloud and load the data into cloud, 
-  > 3. how to map the data type accross the MSSQL to cloud storage.
-  > 4. How to consume our mesage queue to get real time updated data. 
-  > 5. The load strategy, batch size, retry times when api is not working. 
-  > 6. The availabity, scalability
+  > 2. how to utilize the 3rd party cloud api to load the data
+  > 3. how to convert the data type accross the MSSQL to cloud storage.
+  > 4. The load strategy, batch size, retry times when we call the API. 
   >
   > 
   >
   > **Action:**
-  > To tackle this challenge, I lead two junior application engineer to conduct a comprehensive analysis of the requirements, considering factors such as data volume we are going to store, how many updated record message we are going to get from Message queue.   I listed all the important facors and buit a draft.
+  > To tackle this challenge, I lead two junior application engineer to do deep dive analysis of the requirements, considering factors such as data volume we are going to store, the volume of user operations per seconds.   I listed all the important facors and buit a draft architecture.
   >
-  > Then, I collaborated closely with cross-functional teams, including Microsoft cloud support team, our salse user , and product owners, to gather requirements and refine the application architecture. After that, I worked with pdm to create a development pland and believe we can archive it in two months.
+  > Then, I collaborated with cross-functional teams, including Microsoft cloud support team, our salse user , and product owners, to gather requirements and refine the application architecture. After that, I worked with pdm to create a development pland and believe we can archive it in two months.
   >
   > When I assign the work the my team mates, based on their expertise, I assign the infrature structure setup to one who is more famaily with it. and Assign the data interaction work to one who is good at the data part. I maily focus on loading data into the cloud by using the API.
   >
-  > Since it’s sales data, I need make sure the data  make data high availability, I decided to use two server running in same time and use Zookeeper as distrubiton lock to manage them.
+  > Throughout the project,  I also schedule daily meeting with our product owner to show the the process and milesone we archived.
   >
-  > To figure out how to use  3rd party cloud API to work with our data,  I leveraged various resources such as offical documents, online courses, and developer communities to gain insights and practical knowledge about the API. Additionally, I buid up a poc project,  scheduled daily meeting with the cloud support them to ask the questions that I encountered in my learnning. And also schedule daily meeting with our product owner to show the the process and milesone we archived.
-  >
-  > Throughout the project, I encountered several challenges, including optimizing data processing algorithms to handle high data volumes and em beded with 3rd part API.  However, I approached these challenges with determination and creativity, leveraging my problem-solving skills and technical expertise to find innovative solutions.
+  > I encountered several challenges, including optimizing data processing algorithms to handle high data volumes and em beded with 3rd part API.  However, I approached these challenges with determination and creativity, leveraging my problem-solving skills and technical expertise to find innovative solutions.
   >
   > **Result:**
-  > Finally, within two months, The real-time data streaming application was successfully deployed, exceeding expectations in terms of performance, scalability, and reliability. The project are able to handle a full load with  millions records  and hudread reocrd of live update per mins. It significantly become a standard for our coming data loading project.
-  >
-  > This project stands out to me as both the most challenging and rewarding project I've worked on. It exemplifies my ability to deliver results in complex and dynamic environments while demonstrating a commitment to innovation and continuous improvement.
+  > Finally, within two months, The real-time data streaming application was successfully deployed, . The application are able to handle a full load with  millions records  and hudread reocrd of live update per mins. It significantly become a standard for our coming data loading project.
   >
   > 
   >
   > Follow up:
   >
-  > **Challenge**: Need to get this new server done in 2 months. I did poc, make sure it works, then scheduled meeting with pdm, manager and prduct owener, create a development to make sure we can make it. Schedule meeting with them per 2 days and give them update.
+  > **Challenge**: THe dedeline, Need to get this new server done in 2 months. I have couple of ambiguities need to figure out.  I did poc, make sure it works. And I also scheduled meeting with pdm, manager and prduct owener, deep dive into the details, then create a development plan to make sure we can make it.  In the development process, I also Schedule meeting with them per 2 days and give them update.
   >
-  > **Conflict**: The conflict is we are tryong to build a robust project in one time, but users are still unclear for some additional data, since it’s need to be done in 2 months, so I talked with the product owner and pdm and manager. I made development plan of  phase 1 to for basic needs and phase 2 for additional things if they want.  Finally, I got it done.
+  > **Conflict**: The conflict is we are trying to build the project in short time, but the users need to spend more time for additional data, since it’s need to be done in 2 months, so I talked with the product owner and pdm and manager. I made development plan of  phase 1 to for basic needs and phase 2 for additional things if they want.  Finally, I got it done.
   >
-  > **ambiguity(模糊不清)**: When I was doing the poc, the batch size when we load data into cloud is kind of unclear, cause it’s really data based. So when I was doing the poc, I tried similuate the real data in production, did the test by passing with different argumnents to call the api, make sure we are using the highest capacity without cause any api errors. I did schedule meeting with Miscrosft support team to ask key features of the API, and what is the limitation.
+  > **ambiguity(模糊不清)**: 
   >
-  > **Learn**: From technical perspective, I build knowledge to utilze the 3rd part api to load data into our data lake, I can provide my experience to the team mate and do the consulting to other team. Form team lead perspective, I proved my leadership skills, I gain more experience to lead the team to deliver the result in a short time.
+  > We are using a brand new 3rd party API to load the data, the deatails of the API are ambiguity. To figure out them,  I leveraged various resources such as offical documents and  developer communities to gain insights and knowledge about the API. Additionally, I buid up a research project, did the test by passing with different argumnents to call the api, , I tried similuate the process by using  production data  make sure we are reaching the limitation of the API without any erros.
+  >
+  > And I also scheduled daily meeting with the cloud support them to ask the questions that I encountered in my learnning.
+  >
+  > **Learn**: From technical perspective, I build knowledge to utilze the 3rd part api to load data into cloud, I can provide my experience to the team mate and do the consulting to other team. Form team lead perspective, I proved my leadership skills, I gain more experience to lead the team to deliver the result in a short time.
 
-### **Tell me about a time you disagreed with your manager**
+## **Tell me about a time you disagreed with your manager**
 
 - This relates to "Dive Deep" (challenging assumptions and respectfully disagreeing to achieve better outcomes) and "Have Backbone; Disagree and Commit" (voicing dissent while still supporting the team's decisions).
 
@@ -81,7 +83,7 @@ Amazon is is a great company, leading the world in online shopping. Personally, 
   >
   > In the meeting, I proposed adjustments to the development plan based on my experience with similar projects. I emphasized the difference between this new porject and our past projects. I suggest we may need two more weeks for poc and my manager agree on it. After it, I also schedule meeting with our client and manager, to tell them the details and why we need 2 more weeks to deliver the porject. they all agree on it. 
   >
-  >  After meeting, I imidettly start the POC, schedule meeting with Oracle team to figure out the security connection with oracle database across the EMR. I aslo did 
+  >  After meeting, I imidettly start the POC, schedule meeting with Oracle team to figure out the security connection with oracle database across the EMR. 
   >
   > **Result:**
   > Finally, I finished the POC within one week , and I deleivered the project into producion within one week earilier. My manager appreciated my perspective and agreed to consider my suggestions. By speaking up respectfully, I contributed to a stronger development plan that aligned with our project goals. It’s showing the importance of open communication and constructive feedback in achieving success as a team. it’s still a good leran that  I should ask or propose when I have different opinion and be open to talk with the team. 

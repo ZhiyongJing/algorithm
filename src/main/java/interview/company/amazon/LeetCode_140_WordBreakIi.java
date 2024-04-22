@@ -8,6 +8,11 @@ package interview.company.amazon;
   *@Space Complexity: O()
  */
 
+/**
+ * Step1: find can be separete by space
+ * Step2: use dfs to build up the string
+ */
+
 public class LeetCode_140_WordBreakIi{
     
 //leetcode submit region begin(Prohibit modification and deletion)

@@ -78,6 +78,7 @@ public class LeetCode_127_WordLadder {
                     allComboDict.put(newWord, transformations);
                 }
             });
+            System.out.println(allComboDict);
 
             // BFS使用的队列
             Queue<Pair<String, Integer>> Q = new LinkedList<>();

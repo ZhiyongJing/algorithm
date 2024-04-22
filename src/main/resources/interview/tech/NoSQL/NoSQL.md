@@ -154,6 +154,18 @@
 > > - 多表之间的关联查询不支持（虽然有嵌入文档的方式），join查询还是需要多次操作
 > > - 空间占用较大，这个是MongDB的设计问题，空间预分配机制 + 删除数据后空间不释放，只有用db.repairDatabase()去修复才能释放
 > > - 目前没发现MongoDB有关系型数据库例如MySql的Navicat这种成熟的运维工具
+>
+> 5. **图库Graph Database（代表----Neo4J）**
+>
+>    > These databases are used to store data whose relations are best represented in a graph.
+>    >
+>    > Data is saved in graph structures with nodes (entities), properties (information about the entities) and lines
+>    >
+>    > (connections between the entities). Examples of graph database include Neo4J and InfiniteGraph.
+>    >
+>    > 数据库用于存储最适合用图表示的数据。数据以图结构保存，包括节点（实体）、属性（有关实体的信息）和边（实体之间的连接）
+>
+> 
 
 ## 2. Cassandra
 

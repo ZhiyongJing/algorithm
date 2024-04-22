@@ -9,8 +9,8 @@ import java.util.Deque;
  *@Question:  98. Validate Binary Search Tree
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
  *@Frequency: 62.11%
- *@Time  Complexity: O()
- *@Space Complexity: O()
+ *@Time  Complexity: O(N)
+ *@Space Complexity: O(N)
  */
 
 public class LeetCode_98_ValidateBinarySearchTree{

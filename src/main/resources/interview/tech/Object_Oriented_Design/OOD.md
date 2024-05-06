@@ -181,3 +181,222 @@
 > - **Correctness**
 >
 > > 检查自己的设计，是否满足关键点
+
+### OOD 分类
+
+> - **管理类**
+>
+>   > 特征：
+>   >
+>   > > - Gym 体育馆 管理员
+>   > > - Parking lot 停车场 管理员
+>   > > - Restaurant 餐厅 管理员
+>   > > - Library 图书馆 管理员
+>   > > - Super market 超市 管理员
+>   > > - Hotel •... 宾馆 管理员
+>   > >
+>   > > 题目后面都可以接上三个字： 管理员
+>   >
+>   > 题目后面都可以接上三个字： 管理员（management）， 设计一个模拟/代替管理员日常工作的系统
+>   >
+>   > - **Clarify**
+>   >
+>   >   > 通过和面试官交流，去除题目中歧义，确定答题范围， 使用What， How 语句去明确需求。
+>   >   > 除了题目中问的名词外，还需要从管理的名词来考虑
+>   >
+>   > - **Core Object**
+>   >
+>   >   > 确定题目所涉及的类(**题目中的关键名词即为一个类，考虑类的属性 **)，以及类之间的映射关系
+>   >   >
+>   >   > 以一个Object作为基础，考虑这个管理系统中，Input和Output是什么, 根据场景线性思考，找出所有的Object，以及彼此之间映射关系
+>   >   >
+>   >   > **Core Objects 这步的作用是：**
+>   >   >
+>   >   > - 帮助后续的设计明确你需要哪些类；
+>   >   > - 它能承上启下，来自于clarify的结果，又成为use case的依据；
+>   >   > - 同时还为画类图打下基础
+>   >
+>   > - **Use Case**
+>   >
+>   >   > 确定题目中所需要实现的场景和功能，把你**要实现的功能列出来**；同时也能帮你**理清思路**，实现一个一个Case；最后再**作为检查的标准**。每个use case只需用一句话描述就行了。
+>   >   >
+>   >   > - 利用定义的Core Object, 列举出每个Object对应产生的use case.
+>   >   > - 每个use case只需要先用一句简单的话来描述即可
+>   >   >
+>   >   > - 从管理员角度考虑
+>   >   >
+>   >   > Management类常见Use case:
+>   >   >
+>   >   > - Reservation : X
+>   >   > - Serve: Park vehicle
+>   >   > - Check out: Clear spot + Calculate price
+>   >
+>   > - **Class**
+>   >
+>   >   > OOD面试很重要的部分就是画类图，通过类图的方式，具体填充题目中设 计的类。 它建立在use case基础上，条理清晰，便于交流和修改， 节约面试时间，不容易在coding上挣扎。怎么画类图
+>   >   >
+>   >   > - 遍历你所列出的use cases
+>   >   >
+>   >   > - 对于每一个use case，更加详细的描述这个use case在做什么事情 (例如:take external request -> ElevatorSystem takes an external request, and decide to push this request to an appropriate elevator)
+>   >   > - 针对这个描述，在已有的Core objects里填充进所需要的信息
+>
+> - **预定类**
+>
+>   > 特征：
+>   >
+>   > > - Vending machine
+>   > > - Jukebox
+>   > > - CD Player
+>   > > - Coffee maker
+>   > > - Kindle
+>   >
+>   > - **Clarify**
+>   >
+>   >   > 通过和面试官交流，去除题目中歧义，确定答题范围， 使用What， How 语句去明确需求。
+>   >   > 除了题目中问的名词外，还需要从管理的名词来考虑预定的东西
+>   >
+>   > - **Core Object**
+>   >
+>   >   > 确定题目所涉及的类(**题目中的关键名词即为一个类，考虑类的属性 **)，以及类之间的映射关系
+>   >   >
+>   >   > 以一个Object作为基础，考虑这个管理系统中，Input和Output是什么, 根据场景线性思考，找出所有的Object，以及彼此之间映射关系
+>   >   >
+>   >   > **Core Objects 这步的作用是：**
+>   >   >
+>   >   > - 帮助后续的设计明确你需要哪些类；
+>   >   > - 它能承上启下，来自于clarify的结果，又成为use case的依据；
+>   >   > - 同时还为画类图打下基础
+>   >
+>   > - **Use Case**
+>   >
+>   >   > 确定题目中所需要实现的场景和功能，把你**要实现的功能列出来**；同时也能帮你**理清思路**，实现一个一个Case；最后再**作为检查的标准**。每个use case只需用一句话描述就行了。
+>   >   >
+>   >   > - 利用定义的Core Object, 列举出每个Object对应产生的use case.
+>   >   > - 每个use case只需要先用一句简单的话来描述即可
+>   >   >
+>   >   > - 从管理员角度考虑
+>   >   >
+>   >   > 预约类常见Use case:
+>   >   >
+>   >   > - Search criteria -> Search() -> List<Result> -> Select() -> Receipt
+>   >   > - Result == Timeslot/Room 。。。
+>   >
+>   > - **Class**
+>   >
+>   >   > OOD面试很重要的部分就是画类图，通过类图的方式，具体填充题目中设 计的类。 它建立在use case基础上，条理清晰，便于交流和修改， 节约面试时间，不容易在coding上挣扎。怎么画类图
+>   >   >
+>   >   > - 遍历你所列出的use cases
+>   >   >
+>   >   > - 对于每一个use case，更加详细的描述这个use case在做什么事情 (例如:take external request -> ElevatorSystem takes an external request, and decide to push this request to an appropriate elevator)
+>   >   > - 针对这个描述，在已有的Core objects里填充进所需要的信息
+>
+> - 实物类
+>
+>   > 特征：
+>   >
+>   > > 需要预定的东西 Search criteria -> Search() -> List<Result> -> Select() -> Receipt
+>   >
+>   > - **Clarify**
+>   >
+>   >   > 通过和面试官交流，去除题目中歧义，确定答题范围， 使用What， How 语句去明确需求。
+>   >   > 除了题目中问的名词外，还需要从管理的名词来考虑预定的东西
+>   >
+>   > - **Core Object**
+>   >
+>   >   > 确定题目所涉及的类(**题目中的关键名词即为一个类，考虑类的属性 **)，以及类之间的映射关系
+>   >   >
+>   >   > 以一个Object作为基础，考虑这个管理系统中，Input和Output是什么, 根据场景线性思考，找出所有的Object，以及彼此之间映射关系
+>   >   >
+>   >   > **Core Objects 这步的作用是：**
+>   >   >
+>   >   > - 帮助后续的设计明确你需要哪些类；
+>   >   > - 它能承上启下，来自于clarify的结果，又成为use case的依据；
+>   >   > - 同时还为画类图打下基础
+>   >
+>   > - **Use Case**
+>   >
+>   >   > 确定题目中所需要实现的场景和功能，把你**要实现的功能列出来**；同时也能帮你**理清思路**，实现一个一个Case；最后再**作为检查的标准**。每个use case只需用一句话描述就行了。
+>   >   >
+>   >   > - 利用定义的Core Object, 列举出每个Object对应产生的use case.
+>   >   > - 每个use case只需要先用一句简单的话来描述即可
+>   >   >
+>   >   > - 从管理员角度考虑
+>   >   >
+>   >   > 预约类常见Use case:
+>   >   >
+>   >   > - Search criteria -> Search() -> List<Result> -> Select() -> Receipt
+>   >   > - Result == Timeslot/Room 。。。
+>   >
+>   > - **Class**
+>   >
+>   >   > OOD面试很重要的部分就是画类图，通过类图的方式，具体填充题目中设 计的类。 它建立在use case基础上，条理清晰，便于交流和修改， 节约面试时间，不容易在coding上挣扎。怎么画类图
+>   >   >
+>   >   > - 遍历你所列出的use cases
+>   >   >
+>   >   > - 对于每一个use case，更加详细的描述这个use case在做什么事情 (例如:take external request -> ElevatorSystem takes an external request, and decide to push this request to an appropriate elevator)
+>   >   > - 针对这个描述，在已有的Core objects里填充进所需要的信息
+>
+> - **游戏类**
+>
+>   > 特征：
+>   >
+>   > > - 棋类
+>   > >   - 象棋，国际象棋，围棋，军旗，跳棋，五子棋 ... 
+>   > > - 类棋类
+>   > >   - Tic Tac Toe, 扫雷
+>   > > - 牌类
+>   > >   - Black jack, 德州扑克, 斗地主, 狼人杀
+>   > >
+>   > > 棋牌类的特点:
+>   > >
+>   > > \- 玩家 - 规则 - 胜负 - 积分
+>   > >
+>   > > 针对棋牌类的状态，来做Use cases
+>   >
+>   > - **Clarify**
+>   >
+>   >   > 通过和面试官交流，去除题目中歧义，确定答题范围， 使用What， How 语句去明确需求。
+>   >   > 除了题目中问的名词外，还需要从管理的名词来考虑预定的东西
+>   >   >
+>   >   > - 玩家
+>   >   >   - 是否需要专门的Player类（有积分）
+>   >   >   - Player之间有什么区别
+>   >   > - 规则
+>   >   >   - 怎么玩
+>   >   > - 胜负
+>   >   >   - 确认胜负规则
+>   >   > - 积分
+>   >
+>   > - **Core Object**
+>   >
+>   >   > 确定题目所涉及的类(**题目中的关键名词即为一个类，考虑类的属性 **)，以及类之间的映射关系
+>   >   >
+>   >   > 以一个Object作为基础，考虑这个管理系统中，Input和Output是什么, 根据场景线性思考，找出所有的Object，以及彼此之间映射关系
+>   >   >
+>   >   >  参考棋牌类的专业名词来考虑 获取全新2022版
+>   >   >
+>   >   > - Board
+>   >   >
+>   >   > - Suit
+>   >   > - Hand 
+>   >   > - Move -...
+>   >
+>   > - **Use Case**
+>   >
+>   >   > 确定题目中所需要实现的场景和功能，把你**要实现的功能列出来**；同时也能帮你**理清思路**，实现一个一个Case；最后再**作为检查的标准**。每个use case只需用一句话描述就行了。
+>   >   >
+>   >   > 棋牌类的状态:一局棋牌，分为哪些状态(State)
+>   >   >
+>   >   > - Initialization (摆盘，洗牌...)
+>   >   > - Play (下棋，出牌...)
+>   >   > - Win/Lose check (胜负结算) + Tie (流局)
+>   >
+>   > - **Class**
+>   >
+>   >   > OOD面试很重要的部分就是画类图，通过类图的方式，具体填充题目中设 计的类。 它建立在use case基础上，条理清晰，便于交流和修改， 节约面试时间，不容易在coding上挣扎。怎么画类图
+>   >   >
+>   >   > - 遍历你所列出的use cases
+>   >   >
+>   >   > - 对于每一个use case，更加详细的描述这个use case在做什么事情 (例如:take external request -> ElevatorSystem takes an external request, and decide to push this request to an appropriate elevator)
+>   >   > - 针对这个描述，在已有的Core objects里填充进所需要的信息
+>

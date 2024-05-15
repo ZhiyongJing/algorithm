@@ -809,7 +809,7 @@
     > 1. What is the most passionate of your day to day job?
     > 这个题考得可能是 Learn, Be Curious 或者 Think Big
     > 我用了个 Customer Obsession + Deep Dive 的例子，反响似乎不错。
-    >
+    >pe
     > 2. Make a decision fast without the data
     > 很明显的Bias for Action
     >

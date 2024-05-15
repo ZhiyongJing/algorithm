@@ -92,7 +92,7 @@ public class LeetCode_253_MeetingRoomsIi {
 
 
     public static void main(String[] args) {
-        Solution solution = new LeetCode_253_MeetingRoomsIi().new Solution();
+        Solution solution = new Solution();
         // TO TEST
         // 测试代码
         //solution.

@@ -164,14 +164,14 @@ public class LeetCode_528_RandomPickWithWeight{
 
 
  
- Constraints: 
-
- 
- 1 <= w.length <= 10⁴ 
- 1 <= w[i] <= 10⁵ 
- pickIndex will be called at most 10⁴ times. 
- 
-
- Related Topics Array Math Binary Search Prefix Sum Randomized 👍 1826 👎 786
-
-*/
+// Constraints:
+//
+//
+// 1 <= w.length <= 10⁴
+// 1 <= w[i] <= 10⁵
+// pickIndex will be called at most 10⁴ times.
+//
+//
+// Related Topics Array Math Binary Search Prefix Sum Randomized 👍 1826 👎 786
+//
+//*/

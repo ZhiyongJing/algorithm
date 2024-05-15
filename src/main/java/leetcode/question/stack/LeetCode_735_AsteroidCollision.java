@@ -7,8 +7,8 @@ import java.util.Stack;
   *@Question:  735. Asteroid Collision     
   *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
   *@Frequency: 73.05%      
-  *@Time  Complexity: O()
-  *@Space Complexity: O()
+  *@Time  Complexity: O(N)
+  *@Space Complexity: O(N)
  */
 
 /**

@@ -91,6 +91,7 @@
 >
 > ~~~java
 > import java.util.List;
+> import java.util.ArrayList;
 > 
 > public enum BaseType {
 >     SOFT(1),
@@ -109,17 +110,19 @@
 > }
 > 
 > public enum Topping {
->     MEAT(2),
->     VEGGIE(1);
+>     MEAT(2, 0.8), // Discounted price for meat topping
+>     VEGGIE(1, 0.9); // Discounted price for veggie topping
 > 
 >     private double price;
+>     private double discount; // Discount factor for the topping
 > 
->     private Topping(double price) {
+>     private Topping(double price, double discount) {
 >         this.price = price;
+>         this.discount = discount;
 >     }
 > 
 >     public double getPrice() {
->         return price;
+>         return price * discount; // Apply discount to the original price
 >     }
 > }
 > 
@@ -129,17 +132,20 @@
 > 
 > public class Pizza {
 >     Double price;
->     List<BaseType> bases;
+>     BaseType base;
 >     List<Topping> toppings;
+>     int size; // Size of the pizza (1 for small, 2 for medium, 3 for large)
 > 
 >     public Double getPrice() {
->         double totalPrice = 0.0;
->         for (BaseType base : bases) {
->             totalPrice += base.getPrice();
->         }
+>         double totalPrice = base.getPrice(); // Add base price
+> 
 >         for (Topping topping : toppings) {
->             totalPrice += topping.getPrice();
+>             totalPrice += topping.getPrice(); // Add price of each topping
 >         }
+> 
+>         // Adjust price based on pizza size
+>         totalPrice *= size;
+> 
 >         return totalPrice;
 >     }
 > }
@@ -190,6 +196,7 @@
 >         // Logic to make payment
 >     }
 > }
+> 
 > ~~~
 
 ### 4. Design Parking Lot
@@ -855,6 +862,498 @@
 >             throw new IllegalArgumentException("Cannot purchase gift card using gift card.");
 >         }
 >         payment.processPayment(amount);
+>     }
+> }
+> ```
+
+### 15. Design Battery Display
+
+> There are a wide variety of Alexa devices
+> 1. Alexa devices that only have a speaker (Echo Dot, Echo Flex, https://www.amazon.com/dp/B07FZ8S74R)
+> 2. Alexa devices that only have a screen/display (Alexa enabled Microwave or AC, https://www.amazon.com/dp/B07894S727)
+> 3. Alexa devices that have both, speaker and screen (Echo Show, Echo Spot, https://www.amazon.com/dp/B08KJN3333).
+> 4. Alexa devices that have neither a speaker, nor a screen (Echo Input, Echo link, https://www.amazon.com/dp/B0798DVZCY).
+> 5. Alexa devices that have a speaker, but can be connected to a display (FireTV cube, https://www.amazon.com/dp/B08XMDNVX6).
+>
+> Also,
+> 1. Some Alexa devices that have batteries (Fire Tablets, Echo Tap, Echo Buds, https://www.amazon.com/dp/B085WTYQ4X)
+> 2. Others that do not have batteries (Echo Dot, Echo Show).
+>
+> Design a set of classes that will report the current battery/power status to the user.
+> Depending on the hardware, the response may need to be spoken, or displayed on a screen, or both.
+> Also, depending on whether there is a battery or not, the status message will differ.
+> For example, if the device is a Tablet which has a battery, a speaker, and a display, and currently
+> it happens to be plugged in and recharging (let's say at 75%), then your code should return the following:
+>      {
+>          "say": "Current battery level is 75% and charging",
+>          "display": "Current battery level is 75% and charging"
+>      }
+>
+> Whereas if the device is an Echo Dot, which has a speaker but no battery and no screen,
+> then your code should only return:
+>      {
+>          "say": "Currently plugged into wall power"
+>      }
+>
+> and should NOT attempt to display anything (since there is no screen).
+>
+> ```java
+> // Abstract class representing all Alexa devices
+> abstract class AlexaDevice {
+>     private Battery battery;
+>     private boolean charging;
+>   
+>     public boolean isCharging() {
+>         return charging;
+>     }
+>   
+>   	public void setCharging() {
+>         charging = true;
+>     }
+>   
+> 
+>     public AlexaDevice(Battery battery) {
+>         this.battery = battery;
+>     }
+> 
+>     abstract String getBatteryStatus();
+> 
+>     public Battery getBattery() {
+>         return battery;
+>     }
+> 
+>     public void setBattery(Battery battery) {
+>         this.battery = battery;
+>     }
+> }
+> 
+> // Subclasses for different types of Alexa devices
+> class SpeakerOnlyDevice extends AlexaDevice {
+>     public SpeakerOnlyDevice(Battery battery) {
+>         super(battery);
+>     }
+> 
+>     @Override
+>     String getBatteryStatus() {
+>         return "Currently plugged into wall power";
+>     }
+> }
+> 
+> class ScreenOnlyDevice extends AlexaDevice {
+>     public ScreenOnlyDevice(Battery battery) {
+>         super(battery);
+>     }
+> 
+>     @Override
+>     String getBatteryStatus() {
+>        // return "No battery status available";
+>     }
+> }
+> 
+> class SpeakerAndScreenDevice extends AlexaDevice {
+>     public SpeakerAndScreenDevice(Battery battery) {
+>         super(battery);
+>     }
+> 
+>     @Override
+>     String getBatteryStatus() {
+>         //return "No battery status available";
+>     }
+> }
+> 
+> class NoSpeakerNoScreenDevice extends AlexaDevice {
+>     public NoSpeakerNoScreenDevice(Battery battery) {
+>         super(battery);
+>     }
+> 
+>     @Override
+>     String getBatteryStatus() {
+>         return "No battery status available";
+>     }
+> }
+> 
+> // Class representing the battery status
+> class Battery {
+>     private int level;
+> 
+>     public Battery(int level, boolean charging) {
+>         this.level = level;
+>         this.charging = charging;
+>     }
+> 
+>     public int getLevel() {
+>         return level;
+>     }
+> 
+> }
+> 
+> public class BatteryDisplay {
+>   public show(AlexaDevice alexaDevice){
+>     alexaDevice.display()
+>     
+>   }
+> }
+> 
+> ```
+
+### 16. Design Purchase System
+
+> Build a purchase system: 
+> class Purchase 
+> class Item 
+> class PaymentInstrument
+>
+>  Rules/Constraints: PaymentInstrument must be 'CreditCard' or 'GiftCertificate' There must be at least one item in shopping cart If total cost > 100, paymentInstrument must be 'creditCard' 
+> follow up: How would you validate your changes, do you have to mannually some happy cases in order to test others?
+>
+> ```java
+> import java.util.ArrayList;
+> import java.util.List;
+> 
+> public class ShoppingCart {
+>     private List<Item> items;
+> 
+>     public ShoppingCart() {
+>         this.items = new ArrayList<>();
+>     }
+> 
+>     public void addItem(Item item) {
+>         items.add(item);
+>     }
+> 
+>     public void removeItem(Item item) {
+>         items.remove(item);
+>     }
+> 
+>     public List<Item> getItems() {
+>         return items;
+>     }
+> 
+>     public double getTotalCost() {
+>         double totalCost = 0;
+>         for (Item item : items) {
+>             totalCost += item.getPrice();
+>         }
+>         return totalCost;
+>     }
+> }
+> 
+> public class Purchase {
+>     private ShoppingCart shoppingCart;
+>     private PaymentInstrument paymentInstrument;
+> 
+>     public Purchase(ShoppingCart shoppingCart, PaymentInstrument paymentInstrument) {
+>         if (shoppingCart == null || shoppingCart.getItems().isEmpty()) {
+>             throw new IllegalArgumentException("There must be at least one item in the shopping cart");
+>         }
+>         if (!isValidPaymentInstrument(paymentInstrument)) {
+>             throw new IllegalArgumentException("Invalid payment instrument");
+>         }
+>         this.shoppingCart = shoppingCart;
+>         this.paymentInstrument = paymentInstrument;
+>         if (shoppingCart.getTotalCost() > 100 && paymentInstrument != PaymentInstrument.CREDIT_CARD) {
+>             throw new IllegalArgumentException("Payment instrument must be 'CreditCard' for purchases over $100");
+>         }
+>     }
+> 
+>     private boolean isValidPaymentInstrument(PaymentInstrument paymentInstrument) {
+>         return paymentInstrument == PaymentInstrument.CREDIT_CARD ||
+>                paymentInstrument == PaymentInstrument.GIFT_CERTIFICATE;
+>     }
+> 
+>     public double getTotalCost() {
+>         return shoppingCart.getTotalCost();
+>     }
+> 
+>     public PaymentInstrument getPaymentInstrument() {
+>         return paymentInstrument;
+>     }
+> }
+> 
+> public class Item {
+>     private String name;
+>     private double price;
+> 
+>     public Item(String name, double price) {
+>         this.name = name;
+>         this.price = price;
+>     }
+> 
+>     public String getName() {
+>         return name;
+>     }
+> 
+>     public double getPrice() {
+>         return price;
+>     }
+> }
+> 
+> public interface PaymentInstrument {
+>     void processPayment(double amount);
+> }
+> 
+> public class CreditCardPayment implements PaymentInstrument {
+>     @Override
+>     public void processPayment(double amount) {
+>         // Process credit card payment logic
+>     }
+> }
+> 
+> public class GiftCertificatePayment implements PaymentInstrument {
+>     @Override
+>     public void processPayment(double amount) {
+>         // Process gift certificate payment logic
+>     }
+> }
+> 
+> ```
+
+### 17. Design Amazon Lock
+
+> amazon lock 但是这个lock 是三维的 有长宽高 然后就在在一个pick up location 里面 给出一个package 三维 然后找出这个match 这个package 的 lock 
+>
+> ```java
+> import java.util.ArrayList;
+> import java.util.List;
+> 
+> public class AmazonLock {
+>     private double length;
+>     private double width;
+>     private double height;
+>     private boolean available;
+> 
+>     public AmazonLock(double length, double width, double height) {
+>         this.length = length;
+>         this.width = width;
+>         this.height = height;
+>         this.available = true;
+>     }
+> 
+>     public double getLength() {
+>         return length;
+>     }
+> 
+>     public double getWidth() {
+>         return width;
+>     }
+> 
+>     public double getHeight() {
+>         return height;
+>     }
+> 
+>     public boolean isAvailable() {
+>         return available;
+>     }
+> 
+>     public void setAvailable(boolean available) {
+>         this.available = available;
+>     }
+> }
+> 
+> public class Package {
+>     private double length;
+>     private double width;
+>     private double height;
+> 
+>     public Package(double length, double width, double height) {
+>         this.length = length;
+>         this.width = width;
+>         this.height = height;
+>     }
+> 
+>     public double getLength() {
+>         return length;
+>     }
+> 
+>     public double getWidth() {
+>         return width;
+>     }
+> 
+>     public double getHeight() {
+>         return height;
+>     }
+> }
+> 
+> public class PickupService {
+>     private List<AmazonLock> availableLocks;
+> 
+>     public PickupService() {
+>         this.availableLocks = new ArrayList<>();
+>     }
+> 
+>     public void addLock(AmazonLock lock) {
+>         availableLocks.add(lock);
+>     }
+> 
+>     public AmazonLock findMatchingLock(Package pkg) {
+>         double packageLength = pkg.getLength();
+>         double packageWidth = pkg.getWidth();
+>         double packageHeight = pkg.getHeight();
+>         
+>         for (AmazonLock lock : availableLocks) {
+>             if (lock.isAvailable() && lock.getLength() >= packageLength &&
+>                 lock.getWidth() >= packageWidth && lock.getHeight() >= packageHeight) {
+>                 return lock;
+>             }
+>         }
+>         return null;
+>     }
+> }
+> 
+> ```
+
+### 18. Design Card Game
+
+> 一个OOD，卡牌游戏，模拟一个deck，可以就当成斗地主的那种牌来看，有3种花色，3种图样，3种数字，排列组合，比如说红色方块3，黑色圆圈1，每一种组合只有一张。       N个玩家，每人可以拿3张，只要手上的三张牌符合下面任意一个条件就算赢：               
+>
+> 1.  完全不相同: 红色方块3，黑色圆圈1, 蓝色三角形2
+> 2. 花色，图样，数字有且只有一种是完全一样：红色方块3，红色圆圈1, 红色三角形2，都是红色   
+>
+> 就是实现这个deck，可以洗牌，可以发牌，可以检测一个玩家的手牌能否赢。然后就是一堆发散的问题，比如说有哪些Corner case需要处理，有哪些地方可以scale up等等
+>
+> ```java
+> import java.util.ArrayList;
+> import java.util.HashSet;
+> import java.util.List;
+> import java.util.Random;
+> import java.util.Set;
+> 
+> class Card {
+>     private final String color;
+>     private final String pattern;
+>     private final int number;
+> 
+>     public Card(String color, String pattern, int number) {
+>         this.color = color;
+>         this.pattern = pattern;
+>         this.number = number;
+>     }
+> 
+>     @Override
+>     public String toString() {
+>         return color + " " + pattern + " " + number;
+>     }
+> }
+> 
+> class Deck {
+>     private final List<Card> cards;
+> 
+>     public Deck() {
+>         cards = new ArrayList<>();
+>         String[] colors = {"red", "black", "blue"};
+>         String[] patterns = {"diamond", "circle", "triangle"};
+>         int[] numbers = {1, 2, 3};
+>         for (String color : colors) {
+>             for (String pattern : patterns) {
+>                 for (int number : numbers) {
+>                     cards.add(new Card(color, pattern, number));
+>                 }
+>             }
+>         }
+>     }
+> 
+>     public void shuffle() {
+>         Random random = new Random();
+>         for (int i = cards.size() - 1; i > 0; i--) {
+>             int j = random.nextInt(i + 1);
+>             Card temp = cards.get(i);
+>             cards.set(i, cards.get(j));
+>             cards.set(j, temp);
+>         }
+>     }
+> 
+>     public List<Card> deal(int n) {
+>         List<Card> dealtCards = new ArrayList<>();
+>         for (int i = 0; i < n; i++) {
+>             dealtCards.add(cards.remove(cards.size() - 1));
+>         }
+>         return dealtCards;
+>     }
+> }
+> 
+> class Player {
+>     private final String name;
+>     private List<Card> hand;
+> 
+>     public Player(String name) {
+>         this.name = name;
+>         hand = new ArrayList<>();
+>     }
+> 
+>     public void drawCard(Card card) {
+>         hand.add(card);
+>     }
+> 
+>     public boolean hasWinningHand() {
+>         if (hand.size() != 3) {
+>             return false;
+>         }
+>         Set<String> colors = new HashSet<>();
+>         Set<String> patterns = new HashSet<>();
+>         Set<Integer> numbers = new HashSet<>();
+>         for (Card card : hand) {
+>             colors.add(card.color);
+>             patterns.add(card.pattern);
+>             numbers.add(card.number);
+>         }
+>         return (colors.size() == 3 && patterns.size() == 3 && numbers.size() == 3) ||
+>                (colors.size() == 1 && patterns.size() == 3 && numbers.size() == 3) ||
+>                (colors.size() == 3 && patterns.size() == 1 && numbers.size() == 3) ||
+>                (colors.size() == 3 && patterns.size() == 3 && numbers.size() == 1);
+>     }
+> 
+>     @Override
+>     public String toString() {
+>         return name + "'s hand: " + hand;
+>     }
+> }
+> 
+> class Game {
+>     private final Deck deck;
+>     private final List<Player> players;
+> 
+>     public Game(List<String> playerNames) {
+>         deck = new Deck();
+>         players = new ArrayList<>();
+>         for (String name : playerNames) {
+>             players.add(new Player(name));
+>         }
+>     }
+> 
+>     public void startGame() {
+>         deck.shuffle();
+>         for (Player player : players) {
+>             player.drawCard(deck.deal(3).get(0));
+>         }
+>     }
+> 
+>     public List<Player> checkWinner() {
+>         List<Player> winners = new ArrayList<>();
+>         for (Player player : players) {
+>             if (player.hasWinningHand()) {
+>                 winners.add(player);
+>             }
+>         }
+>         return winners;
+>     }
+> }
+> 
+> public class Main {
+>     public static void main(String[] args) {
+>         List<String> playerNames = List.of("Alice", "Bob");
+>         Game game = new Game(playerNames);
+>         game.startGame();
+>         for (Player player : game.players) {
+>             System.out.println(player);
+>         }
+>         List<Player> winners = game.checkWinner();
+>         if (!winners.isEmpty()) {
+>             for (Player winner : winners) {
+>                 System.out.println(winner.name + " wins with " + winner.hand);
+>             }
+>         } else {
+>             System.out.println("No winners this round.");
+>         }
 >     }
 > }
 > ```

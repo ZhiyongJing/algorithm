@@ -329,6 +329,7 @@
 - This relates with “Invent & Simplify”
 
   > **Situation:**
+  > Perviously, there is a project, that will full  load monthly to pull the data from anther database into our SQL server. It took about 3 hours to finish it. after that, developers will run some query between the two database and comare the result if they are matched. Since it’s across the platform, In that time, I took the t 
   >
   > **Task:**
   >
@@ -401,12 +402,18 @@
 - This related with Dive Deep
 
   > **Situation:**
+  > In blackrock, I was leading two engineer to develop a web application. This web application provide an UI interface to enable peopel set up the meta data of the pipeline, so with our any experinece with coding, people can eaisy create a pipeline running on the airfow. behined the secne. the backend store the meta data info into the sql database. the project has been released into prod env and people are using it. One day, our use told me in a meeting that, when he create a task with description. after he saved, and re open it, the description was cutting off. I immidtaly check the table schema we defined in the database, it has enough space to store the value. i though that might be a misstake. After two weeks, anther person told me the same issue.  
   >
   > **Task:**
   >
+  > Befoe that, we have never heard the complain about it. then I thought there might be a problem in the code or some where 
+  >
   > **Action:**
+  > I then created a ticket for it to figure out. I created a simlar task with a very long description. then hit save and  Istart ed debug it. I checked the code. I saw the entrier descrioptn value are passed without cutting off before sent to the database. The last step is that the backedn call a sql procedure stored in the database to insert the value.  I know we have enough space for the descripotion value. So there might be something wrong with the sql. after that I relazied I should check. when I open the sql procedure. I found when we receive the vlaue passed by backedn, the descripton length we defined  was smaller then the talbe schema one. After I found the issue. I immediatly change the code. and also check all ohters sql procedure to make sure there is no potential issue for this.
   >
   > **Result:**
+  >
+  > Finally, within 2 days, I fix it,  after i changed the code, the user is able to create task description without any cutting off isuee. and I also learned, I should carelully listen to our users and pay attention on it, cause their feedback is the best way to optimize our project.
 
 #### A specific metric you have used to identify a need for a change in your department 
 
@@ -509,6 +516,42 @@
 - **准备**
 
   - 你工作中肯定遇到过一些项目的讨论，有时候就是会有一些conflict的。比如有些时候是优先级的conflict，有些时候是metrics的conflict，有些时候是expectation的conflict，等等。想想你是如何处理这些conflict从而赢得信任的，你是如何resolve别人的concern的
+
+#### A time you significantly contributed to improving morale and productivity on your team 
+
+- This relates with “Earn trust”
+
+  > **Situation:**
+  >
+  > **Task:**
+  >
+  > **Action:**
+  >
+  > **Result:**
+
+#### 3 things you’re working on to improve overall effectiveness 
+
+- This relates with “Earn trust”
+
+  > **Situation:**
+  >
+  > **Task:**
+  >
+  > **Action:**
+  >
+  > **Result:**
+
+#### A time you received tough or critical feedback 
+
+- This relates with “Earn trust”
+
+  > **Situation:**
+  >
+  > **Task:**
+  >
+  > **Action:**
+  >
+  > **Result:**
 
 ### 3.11 Deliver Results – 达成业绩
 

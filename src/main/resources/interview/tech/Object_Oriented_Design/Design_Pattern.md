@@ -20,7 +20,7 @@ public class Driver1 {
 
 此时如果要改为开Land Rover，则需要修改代码，创建Land Rover的实例并执行其drive方法。这也就意味着任何时候需要换一辆车开的时候，都必须修改客户端代码。一种稍微好点的方法是，通过读取配置文件，获取需要开的车，然后创建相应的实例并由父类Car的引用指向它，利用多态执行不同车的drive方法。如下
 
-```
+```java
 public class Driver2 {
   private static final Logger LOG = LoggerFactory.getLogger(Driver2.class);
   public static void main(String[] args) throws ConfigurationException {
@@ -101,8 +101,6 @@ public class Driver3 {
 
 }
 ```
-
-
 
 与Driver2相比，所有的判断逻辑都封装在工厂(CarFactory1)当中，Driver3不再需要关心Car的实例化，实现了对象的创建和使用的隔离。当然，简单工厂模式并不要求一定要读配置文件来决定实例化哪个类，可以把参数作为工厂静态方法的参数传入。
 
@@ -191,8 +189,6 @@ public class CarFactory3 {
 
 }
 ```
-
-
 
 从上面代码中可以看到，该工厂会扫描所有被Vehicle注解的Car（每种Car都在注解中声明了自己的type，可作为该种Car的别名）然后建立起Car别名与具体Car的Class原映射。此时工厂的静态方法即可根据目标别名实例化对应的Car。
 
@@ -319,7 +315,7 @@ public class JDBC {
 
 如简单工厂模式直接使用静态工厂方法创建产品对象不同，在工厂方法，客户端通过实例化具体的工厂类，并调用其创建实例接口创建具体产品类的实例。根据依赖倒置原则，具体工厂类的实例由工厂接口引用（客户端依赖于抽象工厂而非具体工厂），具体产品的实例由产品接口引用（客户端和工厂依赖于抽象产品而非具体产品）。具体调用代码如下
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.dao.IUserDao;
@@ -337,8 +333,6 @@ public class Client {
 
 }
 ```
-
-
 
 ### 2.2.5工厂方法模式示例代码
 
@@ -383,7 +377,7 @@ public class Client {
 
 ### 3.2.1 抽象工厂模式介绍
 
-抽象工厂模式（Factory Method Pattern）中，抽象工厂提供一系列创建多个抽象产品的接口，而具体的工厂负责实现具体的产品实例。抽象工厂模式与工厂方法模式最大的区别在于抽象工厂中每个工厂可以创建多个种类的产品。
+工厂方法模式（Factory Method Pattern）中，抽象工厂提供一系列创建多个抽象产品的接口，而具体的工厂负责实现具体的产品实例。抽象工厂模式与工厂方法模式最大的区别在于抽象工厂中每个工厂可以创建多个种类的产品。
 
 ### 3.2.2抽象工厂模式类图
 
@@ -402,7 +396,7 @@ public class Client {
 
 与工厂方法模式类似，在创建具体产品时，客户端通过实例化具体的工厂类，并调用其创建目标产品的方法创建具体产品类的实例。根据依赖倒置原则，具体工厂类的实例由工厂接口引用，具体产品的实例由产品接口引用。具体调用代码如下
 
-```
+```Java
 package com.jasongj.client;
 
 import com.jasongj.bean.Product;
@@ -515,7 +509,7 @@ public class Client {
 
 观察者接口（或抽象观察者，如本例中的ITalent）需要定义回调接口，如下
 
-```
+```java
 package com.jasongj.observer;
 
 public interface ITalent {
@@ -525,11 +519,9 @@ public interface ITalent {
 }
 ```
 
-
-
 具体观察者（如本例中的JuniorEngineer，SeniorEngineer，Architect）在回调接口中实现其对事件的响应方法，如
 
-```
+```Java
 package com.jasongj.observer;
 
 import org.slf4j.Logger;
@@ -547,11 +539,9 @@ public class Architect implements ITalent {
 }
 ```
 
-
-
 抽象主题类（如本例中的AbstractHR）定义通知观察者接口，并实现增加观察者和删除观察者方法（这两个方法可被子类共用，所以放在抽象类中实现），如
 
-```
+```java
 package com.jasongj.subject;
 
 import java.util.ArrayList;
@@ -576,11 +566,9 @@ public abstract class AbstractHR {
 }
 ```
 
-
-
 具体主题类（如本例中的HeadHunter）只需实现通知观察者接口，在该方法中通知所有注册的具体观察者。代码如下
 
-```
+```java
 package com.jasongj.subject;
 
 public class HeadHunter extends AbstractHR {
@@ -593,11 +581,9 @@ public class HeadHunter extends AbstractHR {
 }
 ```
 
-
-
 当主题类有更新（如本例中猎头有新的招聘岗位）时，调用其通知接口即可将其状态（岗位）通知给所有观察者（求职者）
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.observer.Architect;
@@ -693,7 +679,7 @@ public class Client1 {
 
 抽象组件定义了组件的通知接口，并实现了增删子组件及获取所有子组件的方法。同时重写了`hashCode`和`equales`方法（至于原因，请读者自行思考。如有疑问，请在评论区留言）。
 
-```
+```java
 package com.jasongj.organization;
 
 import java.util.ArrayList;
@@ -743,13 +729,11 @@ public abstract class Organization {
 }
 ```
 
-
-
 ### 5.2.5 简单组件（部门）
 
 简单组件在通知方法中只负责对接收到消息作出响应。
 
-```
+```java
 package com.jasongj.organization;
 
 import org.slf4j.Logger;
@@ -776,7 +760,7 @@ public class Department extends Organization{
 
 复合组件在自身对消息作出响应后，还须通知其下所有子组件
 
-```
+```java
 package com.jasongj.organization;
 
 import java.util.List;
@@ -857,7 +841,7 @@ public class Company extends Organization{
 
 ISubject代码如下
 
-```
+```java
 package com.jasongj.subject;
 
 public interface ISubject {
@@ -867,11 +851,9 @@ public interface ISubject {
 }
 ```
 
-
-
 ConcreteSubject代码如下
 
-```
+```java
 package com.jasongj.subject;
 
 import org.slf4j.Logger;
@@ -890,13 +872,11 @@ public class ConcreteSubject implements ISubject {
 }
 ```
 
-
-
 ### 6.3.2 代理类和使用方式
 
 代理类实现方式如下
 
-```
+```java
 package com.jasongj.proxy;
 
 import org.slf4j.Logger;
@@ -938,13 +918,11 @@ public class ProxySubject implements ISubject {
 }
 ```
 
-
-
 从上述代码中可以看到，被代理对象由代理对象在编译时确定，并且代理对象可能限制对被代理对象的访问。
 
 代理模式使用方式如下
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.proxy.ProxySubject;
@@ -960,15 +938,13 @@ public class StaticProxyClient {
 }
 ```
 
-
-
 从上述代码中可以看到，调用方直接调用代理而不需要直接操作被代理对象甚至都不需要知道被代理对象的存在。同时，代理类可代理的具体被代理类是确定的，如本例中ProxySubject只可代理ConcreteSubject。
 
 ### 6.3.3 装饰类和使用方式
 
 装饰类实现方式如下
 
-```
+```Java
 package com.jasongj.decorator;
 
 import org.slf4j.Logger;
@@ -1001,7 +977,7 @@ public class SubjectPreDecorator implements ISubject {
 
 
 
-```
+```java
 package com.jasongj.decorator;
 
 import org.slf4j.Logger;
@@ -1034,7 +1010,7 @@ public class SubjectPostDecorator implements ISubject {
 
 装饰模式使用方法如下
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.decorator.SubjectPostDecorator;
@@ -1066,38 +1042,14 @@ public class DecoratorClient {
 - 代理类所能代理的类完全由代理类确定，装饰类装饰的对象需要根据实际使用时客户端的组合来确定
 - 被代理对象由代理对象创建，客户端甚至不需要知道被代理类的存在；被装饰对象由客户端创建并传给装饰对象
 
-[**
-技术世界**](http://www.jasongj.com/)
 
-- [ 首页](http://www.jasongj.com/)
--  
-- [ Kafka](http://www.jasongj.com/tags/Kafka/)
--  
-- [ Spark](http://www.jasongj.com/tags/Spark/)
--  
-- [ 大数据](http://www.jasongj.com/tags/big-data/)
--  
-- [ 机器学习](http://www.jasongj.com/tags/machine-learning/)
--  
-- [ SQL](http://www.jasongj.com/tags/SQL/)
--  
-- [ Java](http://www.jasongj.com/tags/Java/)
--  
-- [ 设计模式](http://www.jasongj.com/tags/Design-Pattern/)
-
-## Java设计模式（七） Spring AOP JDK动态代理 vs. Cglib
-
- 发表于 2016-05-02 | 更新于 2017-02-17 | 分类于 [设计模式 ](http://www.jasongj.com/categories/设计模式/)， [Design Pattern ](http://www.jasongj.com/categories/设计模式/Design-Pattern/)| [评论次数 0 ](http://www.jasongj.com/design_pattern/dynamic_proxy_cglib/#comments)| 阅读次数 | 字数 7,815
-
-Spring的AOP有JDK动态代理和cglib两种实现方式。JDK动态代理要求被代理对象实现接口；cglib通过动态继承实现，因此不能代理被final修饰的类；JDK动态代理生成代理对象速度比cglib快；cglib生成的代理对象比JDK动态代理生成的代理对象执行效率高。
-
-> 原创文章，转载请务必将下面这段话置于文章开头处（保留超链接）。
-> 本文转发自[**技术世界**](http://www.jasongj.com/)，[原文链接](http://www.jasongj.com/design_pattern/dynamic_proxy_cglib/)　http://www.jasongj.com/design_pattern/dynamic_proxy_cglib/
 
 # 7. Dynamic Proxy
 ## 7.1 静态代理 VS. 动态代理
 
 静态代理，是指程序运行前就已经存在了代理类的字节码文件，代理类和被代理类的关系在运行前就已经确定。
+
+Spring的AOP有JDK动态代理和cglib两种实现方式。JDK动态代理要求被代理对象实现接口；cglib通过动态继承实现，因此不能代理被final修饰的类；JDK动态代理生成代理对象速度比cglib快；cglib生成的代理对象比JDK动态代理生成的代理对象执行效率高。
 
 上一篇文章《[Java设计模式（六） 代理模式 VS. 装饰模式](http://www.jasongj.com/design_pattern/proxy_decorator/)》所讲的代理为静态代理。如上文所讲，一个静态代理类只代理一个具体类。如果需要对实现了同一接口的不同具体类作代理，静态代理需要为每一个具体类创建相应的代理类。
 
@@ -1113,7 +1065,7 @@ JDK从1.3开始引入动态代理。可通过`java.lang.reflect.Proxy`类的静�
 
 使用JDK动态代理，需要创建一个实现`java.lang.reflect.InvocationHandler`接口的类，并在该类中定义代理行为。
 
-```
+```Java
 package com.jasongj.proxy.jdkproxy;
 
 import java.lang.reflect.InvocationHandler;
@@ -1219,7 +1171,7 @@ byte[] classFile = ProxyGenerator.generateProxyClass("$Proxy18", ConcreteSubject
 
 使用反编译工具可以得到代理类的代码
 
-```
+```java
 import com.jasongj.subject.ISubject;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -1311,7 +1263,7 @@ cglib是一个强大的高性能代码生成库，它的底层是通过使用一
 
 使用cglib实现动态代理，需要在MethodInterceptor实现类中定义代理行为。
 
-```
+```java
 package com.jasongj.proxy.cglibproxy;
 
 import java.lang.reflect.Method;
@@ -1352,7 +1304,7 @@ public class SubjectInterceptor implements MethodInterceptor {
 
 ### 7.3.3 cglib使用方式
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.proxy.cglibproxy.SubjectInterceptor;
@@ -1380,7 +1332,7 @@ public class CgLibProxyClient {
 
 分别使用JDK动态代理创建代理对象1亿次，并分别执行代理对象方法10亿次，代码如下
 
-```
+```java
 package com.jasongj.client;
 
 import java.io.IOException;
@@ -1487,26 +1439,11 @@ cglib execution time : 6309 ms
 - 代理对象创建速度：JDK动态代理创建代理对象速度比cglib快
 - 代理对象执行速度：JDK动态代理代理对象执行速度比cglib快
 
-[**
-技术世界**](http://www.jasongj.com/)
 
-- [ 首页](http://www.jasongj.com/)
--  
-- [ Kafka](http://www.jasongj.com/tags/Kafka/)
--  
-- [ Spark](http://www.jasongj.com/tags/Spark/)
--  
-- [ 大数据](http://www.jasongj.com/tags/big-data/)
--  
-- [ 机器学习](http://www.jasongj.com/tags/machine-learning/)
--  
-- [ SQL](http://www.jasongj.com/tags/SQL/)
--  
-- [ Java](http://www.jasongj.com/tags/Java/)
--  
-- [ 设计模式](http://www.jasongj.com/tags/Design-Pattern/)
 
 # 8. Adapter
+
+适配器模式可将一个类的接口转换成调用方希望的另一个接口。这种需求往往发生在后期维护阶段，因此有观点认为适配器模式只是前期系统接口设计缺乏的一种弥补。从实际工程来看，并不完全这样，有时不同产商的功能类似但接口很难完全一样，而为了系统使用方式的一致性，也会用到适配器模式。
 
 ## 8.1 适配器模式介绍
 
@@ -1532,7 +1469,7 @@ cglib execution time : 6309 ms
 
 目标接口
 
-```
+```java
 package com.jasongj.target;
 
 public interface ITarget {
@@ -1546,7 +1483,7 @@ public interface ITarget {
 
 目标接口实现
 
-```
+```java
 package com.jasongj.target;
 
 import org.slf4j.Logger;
@@ -1569,7 +1506,7 @@ public class ConcreteTarget implements ITarget {
 
 待适配类，其接口名为onRequest，而非目标接口request
 
-```
+```java
 package com.jasongj.adaptee;
 
 import org.slf4j.Logger;
@@ -1592,7 +1529,7 @@ public class Adaptee {
 
 适配器类
 
-```
+```java
 package com.jasongj.target;
 
 import org.slf4j.Logger;
@@ -1619,7 +1556,7 @@ public class Adapter implements ITarget {
 
 从上面代码可看出，适配器类实际上是目标接口的类，因为持有待适配类的实例，所以可以在适配器类的目标接口被调用时，调用待适配对象的接口，而客户端并不需要知道二者接口的不同。通过这种方式，客户端可以使用统一的接口使用不同接口的类。
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.target.Adapter;
@@ -1703,7 +1640,7 @@ public class AdapterClient {
 
 抽象车
 
-```
+```java
 package com.jasongj.brand;
 
 import com.jasongj.transmission.Transmission;
@@ -1725,7 +1662,7 @@ public abstract class AbstractCar {
 
 按品牌分，BMW牌车
 
-```
+```java
 package com.jasongj.brand;
 
 import org.slf4j.Logger;
@@ -1748,7 +1685,7 @@ public class BMWCar extends AbstractCar{
 
 BenZCar
 
-```
+```java
 package com.jasongj.brand;
 
 import org.slf4j.Logger;
@@ -1771,7 +1708,7 @@ public class BenZCar extends AbstractCar{
 
 LandRoverCar
 
-```
+```java
 package com.jasongj.brand;
 
 import org.slf4j.Logger;
@@ -1794,7 +1731,7 @@ public class LandRoverCar extends AbstractCar{
 
 抽象变速器
 
-```
+```java
 package com.jasongj.transmission;
 
 public abstract class Transmission{
@@ -1808,7 +1745,7 @@ public abstract class Transmission{
 
 手动档
 
-```
+```java
 package com.jasongj.transmission;
 
 import org.slf4j.Logger;
@@ -1829,7 +1766,7 @@ public class Manual extends Transmission {
 
 自动档
 
-```
+```java
 package com.jasongj.transmission;
 
 import org.slf4j.Logger;
@@ -1850,7 +1787,7 @@ public class Auto extends Transmission {
 
 有了变速器和品牌两个维度各自的实现后，可以通过聚合，实现不同品牌不同变速器的车，如下
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.brand.AbstractCar;
@@ -1915,7 +1852,7 @@ public class BridgeClient {
 
 ### 10.4.1 线程不安全的懒汉 - 多线程不可用
 
-```
+```java
 package com.jasongj.singleton1;
 
 public class Singleton {
@@ -1939,7 +1876,7 @@ public class Singleton {
 
 ### 10.4.2 同步方法下的懒汉 - 可用，不推荐
 
-```
+```java
 package com.jasongj.singleton2;
 
 public class Singleton {
@@ -1962,7 +1899,7 @@ public class Singleton {
 
 ### 10.4.3 同步代码块下的懒汉 - 不可用
 
-```
+```java
 package com.jasongj.singleton3;
 
 public class Singleton {
@@ -1987,7 +1924,7 @@ public class Singleton {
 
 ### 10.4.4 双重检查（Double Check）下的懒汉 - 推荐
 
-```
+```java
 package com.jasongj.singleton4;
 
 public class Singleton {
@@ -2020,7 +1957,7 @@ public class Singleton {
 
 ### 10.4.5 静态常量 饿汉 - 推荐
 
-```
+```java
 package com.jasongj.singleton6;
 
 public class Singleton {
@@ -2041,7 +1978,7 @@ public class Singleton {
 
 ### 10.4.6 静态代码块 饿汉 可用
 
-```
+```java
 package com.jasongj.singleton7;
 
 public class Singleton {
@@ -2066,7 +2003,7 @@ public class Singleton {
 
 ### 10.4.7 静态内部类 推荐
 
-```
+```java
 package com.jasongj.singleton8;
 
 public class Singleton {
@@ -2089,7 +2026,7 @@ public class Singleton {
 
 ### 10.4.8 枚举 强烈推荐
 
-```
+```java
 package com.jasongj.singleton9;
 
 public enum Singleton {
@@ -2106,7 +2043,8 @@ public enum Singleton {
 }
 ```
 
-- 优点：枚举本身是线程安全的，且能防止通过反射和反序列化创建多实例。
+优点：枚举本身是线程安全的，且能防止通过反射和反序列化创建多实例。
+
 - 缺点：使用的是枚举，而非类。 　　
 
 # 11. Flyweight
@@ -2144,7 +2082,7 @@ public enum Singleton {
 
 享元接口，定义共享接口
 
-```
+```java
 package com.jasongj.flyweight;
 
 public interface FlyWeight {
@@ -2158,7 +2096,7 @@ public interface FlyWeight {
 
 具体享元类，实现享元接口。该类的对象将被复用
 
-```
+```java
 package com.jasongj.flyweight;
 
 import org.slf4j.Logger;
@@ -2186,7 +2124,7 @@ public class ConcreteFlyWeight implements FlyWeight {
 
 享元模式中，最关键的享元工厂。它将维护已创建的享元实例，并通过实例标记（一般用内部状态）去索引对应的实例。当目标对象未创建时，享元工厂负责创建实例并将其加入标记-对象映射。当目标对象已创建时，享元工厂直接返回已有实例，实现对象的复用。
 
-```
+```java
 package com.jasongj.factory;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -2281,7 +2219,7 @@ public class FlyWeightFactory {
 
 策略接口，定义策略执行接口
 
-```
+```java
 package com.jasongj.strategy;
 
 public interface Strategy {
@@ -2295,7 +2233,7 @@ public interface Strategy {
 
 具体策略类，实现策略接口，提供具体算法
 
-```
+```java
 package com.jasongj.strategy;
 
 import org.slf4j.Logger;
@@ -2316,7 +2254,7 @@ public class ConcreteStrategyA implements Strategy {
 
 
 
-```
+```java
 package com.jasongj.strategy;
 
 import org.slf4j.Logger;
@@ -2337,7 +2275,7 @@ public class ConcreteStrategyB implements Strategy {
 
 Context类，持有具体策略类的实例，负责调用具体算法
 
-```
+```java
 package com.jasongj.context;
 
 import com.jasongj.strategy.Strategy;
@@ -2361,7 +2299,7 @@ public class SimpleContext {
 
 客户端可以实例化具体策略类，并传给Context类，通过Context统一调用具体算法
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.context.SimpleContext;
@@ -2389,7 +2327,7 @@ public class SimpleClient {
 
 使用Annotation和简单工厂模式的Context类如下
 
-```
+```java
 package com.jasongj.context;
 
 import java.util.Collections;
@@ -2455,13 +2393,11 @@ public class SimpleFactoryContext {
 }
 ```
 
-
-
 从上面的实现可以看出，虽然并没有单独创建一个简单工厂类，但它已经融入了简单工厂模式的设计思想和实现方法。
 
 客户端调用方式如下
 
-```
+```java
 package com.jasongj.client;
 
 import com.jasongj.context.SimpleFactoryContext;

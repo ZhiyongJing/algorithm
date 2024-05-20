@@ -366,6 +366,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_295_FindMedianFromDataStream.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_295_FindMedianFromDataStream.md" />
+              <option name="frontendQuestionId" value="leetcode.com295" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_295_FindMedianFromDataStream.java" />
+              <option name="titleSlug" value="find-median-from-data-stream" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_314_BinaryTreeVerticalOrderTraversal.java">
           <value>
             <LeetcodeEditor>
@@ -2217,10 +2228,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_295_FindMedianFromDataStream.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_295_FindMedianFromDataStream.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_295_FindMedianFromDataStream.md" />
               <option name="frontendQuestionId" value="leetcode.com295" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_295_FindMedianFromDataStream.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_295_FindMedianFromDataStream.java" />
               <option name="titleSlug" value="find-median-from-data-stream" />
             </LeetcodeEditor>
           </value>

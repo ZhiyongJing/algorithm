@@ -199,7 +199,7 @@
 >
 >   全局缓存同样是使用多台机器构成一个集群，不同的是，每台机器上所存放的缓存数据均相同，全局缓存通常由两种设计方式如下图所示。
 >
->   <img src="系统设计.assets/image-20240421223353289.png" alt="image-20240421223353289" style="zoom:25%;" />
+>   <img src="System_Design经验总结.assets/image-20240421223353289.png" alt="image-20240421223353289" style="zoom:25%;" />
 >
 >   大部分应用会采用第一种方式，这种方式缓存会自动代理对DB的查询操作，省去了业务的额外调用。但并不是所有场景都适合使用第一种方式，如果缓存中的数据都是大文件，当读缓存miss的时候，缓存会自动从数据库中读取该文件，由于数据较大，读取的耗时会很长，这会导致缓存中pending的查询越来越多。这时如果使用第二种方式，由业务查询DB则会大大降低缓存压力。
 >
@@ -223,7 +223,7 @@
 > - **Cache-aside** 
 >
 >   预留缓存模式下，缓存与数据库之间没有直接关系（缓存位于一旁，所以叫 Cache-aside），*由应用程序将需要的数据从数据库中读出并填充到缓存中*, 数据请求优先走缓存，未命中缓存时才查库，并把结果缓存起来，所以缓存是按需的（Lazy loading），只有实际访问过的数据才会被缓存起来
->   <img src="系统设计.assets/image-20240421224312554.png" alt="image-20240421224312554" style="zoom:50%;" />
+>   <img src="System_Design经验总结.assets/image-20240421224312554.png" alt="image-20240421224312554" style="zoom:50%;" />
 >
 >   主要问题在于：
 >
@@ -349,7 +349,7 @@
 >
 > 索引实现的算法是**B+tree**
 >
-> <img src="系统设计.assets/image-20240423121742963.png" alt="image-20240423121742963" style="zoom:33%;" />
+> <img src="System_Design经验总结.assets/image-20240423121742963.png" alt="image-20240423121742963" style="zoom:33%;" />
 >
 > MySQL的索引包括普通索引、唯一性索引、全文索引、单列索引、多列索引和空间索引等。
 >
@@ -452,11 +452,11 @@
 > **Proxy种类** 
 >
 > - **Forward Proxy**
->   <img src="系统设计.assets/image-20240422001443554.png" alt="image-20240422001443554" style="zoom:50%;" />
+>   <img src="System_Design经验总结.assets/image-20240422001443554.png" alt="image-20240422001443554" style="zoom:50%;" />
 >   *正向代理是对外的，面向外部资源*，用来从网络上获取各种数据。 代客户端发出资源请求，并将响应结果返回给对应的客户端。所以，*正向代理更靠近客户端，与客户端的关系更密切*（跟服务器关系一般，不熟）
 >
 > - **Reverse Proxy**
->   <img src="系统设计.assets/image-20240422001513601.png" alt="image-20240422001513601" style="zoom:50%;" />
+>   <img src="System_Design经验总结.assets/image-20240422001513601.png" alt="image-20240422001513601" style="zoom:50%;" />
 >   反向代理负责把流量根据配置规则重定向到内部服务器，外部请求并不知道内网的存在。*反向代理是对内的，面向内部资源*，用作对私有网络上的服务器进行访问控制和保护的前端。
 >
 >   区别在于，*正向代理是其关联的客户端与所有服务器联系的中介，而反向代理则是其关联的服务器与所有客户端联系的中介*，也就是说，*正向代理代表客户端，而反向代理代表服务器*。
@@ -562,7 +562,7 @@
 > **数据库集群结构种类：**
 >
 > - 单主结构（Single leader replication）：读写分离
->   <img src="系统设计.assets/image-20240422010949876.png" alt="image-20240422010949876" style="zoom:50%;" />
+>   <img src="System_Design经验总结.assets/image-20240422010949876.png" alt="image-20240422010949876" style="zoom:50%;" />
 >
 >   这种结构下，写操作（增/删/改）只允许发生在主库，由主库将写操作复制到其它所有从库，从库只支持读操作（查）
 >
@@ -575,7 +575,7 @@
 >
 > - 多主结构（Multi leader replication）
 >
->   <img src="系统设计.assets/image-20240422011351859.png" alt="image-20240422011351859" style="zoom:50%;" />
+>   <img src="System_Design经验总结.assets/image-20240422011351859.png" alt="image-20240422011351859" style="zoom:50%;" />
 >   由于写操作能够同时发生在（异步复制的）多个库，我们必须考虑*如何解决写入冲突*。一般有 3 种思路：
 >
 >   - 避免冲突：比如按内容特征分库存储，互不相干，比如对于国内国外两个主库，如果能够保证所有对国内数据的写操作都能落到国内主库上，所有对国外数据的写操作都能落在国外主库上，就不存在冲突了
@@ -587,7 +587,7 @@
 >   此外，多主结构下的另一个难题是复制 DDL（Data Definition Language），即针对 Schema 的写操作，具体见[DDL replication](https://www.brianstorti.com/replication/#ddl-replication)
 >
 > - 无主结构（Leaderless replication）
->   <img src="系统设计.assets/image-20240422011615287.png" alt="image-20240422011615287" style="zoom:50%;" />
+>   <img src="System_Design经验总结.assets/image-20240422011615287.png" alt="image-20240422011615287" style="zoom:50%;" />
 >
 > - 当然，还有一种不区分主库的结构，所有库都可读可写
 >
@@ -625,7 +625,7 @@
 >    >
 >    > * 复杂查询，适用**读多写少** 
 >    >
->    >   <img src="系统设计.assets/image-20240423125358074.png" alt="image-20240423125358074" style="zoom:50%;" />
+>    >   <img src="System_Design经验总结.assets/image-20240423125358074.png" alt="image-20240423125358074" style="zoom:50%;" />
 >
 > 2. Disadvantages（缺点）
 >
@@ -683,7 +683,7 @@
 >
 >   4. SERIALIZABLE :可串行化，确保事务可以从一个表中读取相同的行。在这个事务持续期间，禁止 其他事务对该表执行插入、更新和删除操作。所有的并发问题都可以避免，但性能十分低下。能避 免脏读、不可重复读和幻读。
 >
->      <img src="系统设计.assets/image-20240423135411506.png" alt="image-20240423135411506" style="zoom:50%;" />
+>      <img src="System_Design经验总结.assets/image-20240423135411506.png" alt="image-20240423135411506" style="zoom:50%;" />
 >
 >   **并发问题的解决方案**
 >
@@ -703,7 +703,7 @@
 >
 > 也就是说，在分布式环境下，（大多数）NoSQL 数据库仅保证最终一致性，可能无法立即读到最新的数据
 >
-> ![image-20240422121224898](系统设计.assets/image-20240422121224898.png)
+> ![image-20240422121224898](System_Design经验总结.assets/image-20240422121224898.png)
 >
 > 
 >
@@ -758,7 +758,7 @@
 >
 > > 列式NoSql是基于列式存储的，那么什么是列式存储呢，列式NoSql和关系型数据库一样都有主键的概念，区别在于关系型数据库是按照行组织的数据：
 > >
-> > ![image-20240408234433390](系统设计.assets/image-20240408234433390.png)
+> > ![image-20240408234433390](System_Design经验总结.assets/image-20240408234433390.png)
 > >
 > > 优点：
 > >
@@ -766,7 +766,7 @@
 > > >
 > > > - 存储上节约空间，Null值不会被存储，一列中有时候会有很多重复数据（尤其是枚举数据，性别、状态等），这类数据可压缩，行式数据库压缩率通常在3:1到5:1之间， 列试一般在8:1 到 30:1左右
 > > >
-> > >   ![image-20240408234726126](系统设计.assets/image-20240408234726126.png)
+> > >   ![image-20240408234726126](System_Design经验总结.assets/image-20240408234726126.png)
 > > >
 > > > - 列数据被组织到一起，一次磁盘IO可以将一列数据一次性读取到内存中
 > > >
@@ -847,7 +847,7 @@
 >
 > - 新加一台机器的时候，在表中选择一个位置插入，匀走相邻两台机器的一部分数据
 >
->   <img src="系统设计.assets/image-20240423000806406.png" alt="image-20240423000806406" style="zoom:100%;" />
+>   <img src="System_Design经验总结.assets/image-20240423000806406.png" alt="image-20240423000806406" style="zoom:100%;" />
 >
 > - **缺陷** 
 >
@@ -879,7 +879,7 @@
 >
 > > 就是按照一系列范式（Normal forms）要求来组织数据模型的过程，目的是减少数据冗余，提高[数据完整性](https://en.wikipedia.org/wiki/Data_integrity#Types_of_integrity_constraints)
 >
-> <img src="系统设计.assets/image-20240423002739092.png" alt="image-20240423002739092" style="zoom:80%;" />
+> <img src="System_Design经验总结.assets/image-20240423002739092.png" alt="image-20240423002739092" style="zoom:80%;" />
 >
 > - 1NF：[第一范式（First normal form）](https://en.wikipedia.org/wiki/First_normal_form)，表的每个属性必须具有原子(单个)值， 要求表中每个字段的值都不可再分， 例如：地址可以拆分成更具体的
 >
@@ -964,7 +964,7 @@
 >
 > **Difference between SSEs and WebSocket**
 >
-> > <img src="系统设计.assets/image-20240423014216466.png" alt="image-20240423014216466" style="zoom:70%;" />
+> > <img src="System_Design经验总结.assets/image-20240423014216466.png" alt="image-20240423014216466" style="zoom:70%;" />
 >
 > **从兼容性角度考虑，轮询>长轮询>长连接SSE>WebSocket；**
 >

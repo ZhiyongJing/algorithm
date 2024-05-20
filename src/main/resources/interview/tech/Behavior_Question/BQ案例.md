@@ -76,28 +76,6 @@
 
 
 
-### **Tell me about a time you disagreed with your manager**
-
-- This relates to "Dive Deep" (challenging assumptions and respectfully disagreeing to achieve better outcomes) and "Have Backbone; Disagree and Commit" (voicing dissent while still supporting the team's decisions).
-
-  > **Situation:**
-  > When I was working in Vanguard, my pervious company. We were tying to build a data etl pipeline to migrate data from oracl into AWS S3. It’s simily project that we did to migrate MSSQL data into AWS S3,  my manager outlined a development plan based on the information available. and He thought we can finish it within one month. It’s similar project, but we connect with different database, and we were running in AWS EMR.  my experience and insights suggested that we may need two more weeks to do additional POC to figure out the security of connection to Oracle in AWS. 
-  >
-  > **Task:**
-  > As a team lead, I must ensure the project's success and devliever it as we promissed to our client.
-  >
-  > **Action:**
-  > Recognizing the importance of challenging and uncertain POC, I scheduled a meeting with my manager to discuss my concerns. I shared the additional details and insights I had gathered, explaining how they could impact the project's success.
-  >
-  > In the meeting, I proposed adjustments to the development plan based on my experience with similar projects. I emphasized the difference between this new porject and our past projects. I suggest we may need two more weeks for poc and my manager agree on it. After it, I also schedule meeting with our client and manager, to tell them the details and why we need 2 more weeks to deliver the porject. they all agree on it. 
-  >
-  >  After meeting, I imidettly start the POC, schedule meeting with Oracle team to figure out the security connection with oracle database across the EMR. 
-  >
-  > **Result:**
-  > Finally, I finished the POC within one week , and I deleivered the project into producion within one week earilier. My manager appreciated my perspective and agreed to consider my suggestions. By speaking up respectfully, I contributed to a stronger development plan that aligned with our project goals. It’s showing the importance of open communication and constructive feedback in achieving success as a team. it’s still a good leran that  I should ask or propose when I have different opinion and be open to talk with the team. 
-
-- > 
-
 
 
 ## 3. Leadership Principle 
@@ -114,6 +92,27 @@
 
 - **准备**
   回顾你的工作，你有没有为客户解决过什么问题？是你主动发现并且解决的？客户的反馈怎么样？你跟客户之间如何交流，交流的结果怎么样？. 
+
+```
+
+Most difficult customer interaction 
+A time where you had to balance the needs of the customer vs. the business 
+```
+
+#### A time you used customer feedback to drive improvement 
+
+Most difficult customer interaction 
+A time where you had to balance the needs of the customer vs. the business 
+
+-This relates with “Customer Obsession”
+
+> **Situation:**
+>
+> **Task:**
+>
+> **Action:**
+>
+> **Result:**
 
 ### 3.2 Are Right, A Lot – 领导者要正确决策
 
@@ -329,13 +328,18 @@
 - This relates with “Invent & Simplify”
 
   > **Situation:**
-  > Perviously, there is a project, that will full  load monthly to pull the data from anther database into our SQL server. It took about 3 hours to finish it. after that, developers will run some query between the two database and comare the result if they are matched. Since it’s across the platform, In that time, I took the t 
+  > Perviously, there is a project,that I sync data into the clould from local database, in project is calling the api of all local and then sent the data into cloud. after a long time , I found process is slower, since i’m the owner of it,  I need to optimize it.
   >
   > **Task:**
+  > I started tracking the step that    when application call the api into the process, I found it’s too slow and take 2 hours in weekend to do a full load. pervious it take haft hour, but data is increasing,  it’s a sequential api call tha by using the pagination. and in each call ,we already hit the limit of each api call. So  I know this way will not wokr, I need to find another way to do it. So I shceduled call with the api owner, after that they told me that they also have the api to call the the id, 
   >
   > **Action:**
   >
+  > After that , i creat the jdbc coneciton to db, then pull all ids ,then use the concurrent hash map and future task to call the api, each call will take 500 recores, but in the same time , we cna call the api 5 times, 
+  >
   > **Result:**
+  >
+  > finally, the wole proces only took 10  mins to get done, and we changed the weeklly load into daily load in the night ,it imprve the load speed and also imporve the data accurate since we can run full load in daily. I also learned thta tto deviver the resulte, I need to communicate wit the team ,and keep thinking to find a better soluionts.
 
 #### A creative idea you had that ended up being difficult to implement 
 
@@ -569,9 +573,52 @@
 
 #### A time you were driving toward a goal and realized more than half way in that it may not be the best goal 
 
+- This relates with “Deliver Results”
+
+> **Situation:**
+> When I’m in blackrock, one time, there is one samll project assign to me. We have a legacy project that running in sql server, we need to convert it int pysthon and pyspark version in hdfs.
+>
+> **Task:**
+> The project is convert the sql procedure into a spark  hive version. these four sql procedure process based on the sales data to generate the sales report.
+>
+> **Action:**
+> After i took the action, I sitting with the legacy owner, talk the details, make sure understand it. Then I thought I can finish it in oen month. after meeting, I start creat the tickets then start working on it. When I ‘m working on it, There ar a lot of join on the sql procedure to generate the data step by step, so I need to make sure on each step, I got the same result like t he sq procedure. I’ mruning everything in tst, somtimes I found the result are different, somre of reasons are the logic are different, and some of reasons is some one changed sale data. after one month, I only got half of them done.
+>
+> **Result:**
+>  I talked with the manager, I admit I can not get it done. I need one guys to works with me. finnaly I got it done in two month. I leanred how to update the goal ,and how to ask for help if I’m in the trouble, and how to resovle the blockers.
+
 #### A goal you set that took a long time to achieve/are still working towards 
 
+- This relates with “Deliver Results”
+
+> **Situation:**
+> we are having a new dirstribute computing platform, the project is using airflow and runign process on hdfs. 
+>
+> **Task:**
+> there are alot of legacy system, in blackrock, like FTP server to load data into hdfs, sql process to generat the report,
+>  spring batch process running with cron jobs,  I need to migrate the prcess to make sure they can run on afirow.
+>
+> **Action:**
+> This is long project, In the beginning , I work with team, bsed on the priority, the project is dviedned into 4 phase, each phase will take half year, in befingning, I took the respornbilit to build the utilitys funcitons to makse sure we can support all the system,  sql, bash, python, .  we have the memting twick in one week, give theu update make usre we are not delay on each process.
+>
+> **Result:**
+> we have done haof of the process. and still working on it. with new airflow platform , it’s eality to manage all computign procsse, and process is runing faster on hdfs with spark,  I also learned how to dilever the reslt if it’s too big, and how to arrange the prioprit byu working with teammate.
+
 #### A time you delivered a project under a tight deadline 
+
+This relates with “Deliver Results”
+
+> **Situation:**
+> Recently, I need to work with another two senior devlopers to sync data from azure clound into our snowlake, this is a poc story that I need to make sure that the soulution is doable and we need to presnet the process in the 3 weeks,
+>
+> **Task:**
+> When I got asisgned, I immeditally scheduled meeting with antoehr two developers, in meeitng, I sugegest , since the process  need to pull data from the azure api, and load the data into the process, I’m good with api, so I took make sure that I ‘m albe to call api to pull the data, deveoper A will clean the data, the developer b will create the metadata in snowflake.’
+>
+> **Action:**
+> I started work on the api, since there is a previous java version api to call the api, I talked with the prduct owner, figure out hte security issue and all the details api. I also provode the fake data to developer A make sure I’m not stopping his works. in daily stand up meitn,g we show the process.
+>
+> **Result:**
+> After two weeks, me an team deliver the data into snowflake, the process can sync the 33 tables data into snowflake, and each tablke contains 100 columns. I aslo learn and impove my cabalility to collabrate with tema mate in short time and how t o continue my work and don’t block other’s works.
 
 
 
@@ -588,6 +635,38 @@
 - 准备
 
   - 想一下自己帮助过的人
+
+#### How you help your team members develop their careers 
+
+- This relates with “Hire and Develop the Best”
+
+> **Situation:** 
+>
+> when I lead. the  web application, I lead two front end developer
+>
+> **Task:**
+>
+> I found one devoper A she is pretty intersed with the backend api.  she like view view the api code,
+>
+> **Action:**
+> I encourage her to keep learing on the api part, and be a full stack web app devloper, I aslo show her some userful ressouce she can use. to learn in the firm, and some useful training resurl in the interal firm. I work with her the set the gola for the career. and teach her when she has quseitons.
+>
+> **Result:**
+> I wokred with her half year, after half yea,r shie is formilar with the api a,dn spring boot framework and also the jdbc connections, and Kafka.  she could even starthe codes by picign some small tickets. I also learn how to encourae people in correct way.
+
+#### A time when you provided feedback to develop & leverage the strengths of someone on your team. 
+
+- This relates with “Hire and Develop the Best”
+
+> **Situation:**
+>
+> **Task:**
+>
+> **Action:**
+>
+> **Result:**
+
+
 
 ### 3.13 Frugality – 节俭
 
@@ -619,6 +698,87 @@
 
   - 当你与同事发生争执或者产生分歧时，你是如何处理的
   - 你是否收到过别人的批评，你是如何回复的
+
+#### A time you decided to go along with the group decision even if you disagreed
+
+- This relates with “Have Backbone; Disagree and Commit”
+
+> **Situation:** I got assgin task to use analyize the log of the sql process and make use whic one is running to long,
+>
+> **Task:**
+> I want to kill the process, but the group want just show the process the notice the user,
+>
+> **Action:**
+> I follow with them
+>
+> **Result:**
+>
+> show my idea. be honest to every, and collabrate with the group.
+
+#### A time when you strongly disagreed with your manager on something you deemed very important the business
+
+- This relates with “Have Backbone; Disagree and Commit”
+
+> **Situation:**
+> when I lead web application, the applicaiton is used to create the task metadata, 
+>
+> **Task:**
+> manager ask me to create. the sql procedure to implement the major process. 
+>
+> **Action:**
+>
+> it will slow down the process, and should focus on the process.
+>
+> **Result:**
+> My manger aggree on me, i lean how to sho wthe comimit and how to instis on my own ieda.
+
+### **Tell me about a time you disagreed with your manager**
+
+- This relates to "Dive Deep" (challenging assumptions and respectfully disagreeing to achieve better outcomes) and "Have Backbone; Disagree and Commit" (voicing dissent while still supporting the team's decisions).
+
+  > **Situation:**
+  > When I was working in Vanguard, my pervious company. We were tying to build a data etl pipeline to migrate data from oracl into AWS S3. It’s simily project that we did to migrate MSSQL data into AWS S3,  my manager outlined a development plan based on the information available. and He thought we can finish it within one month. It’s similar project, but we connect with different database, and we were running in AWS EMR.  my experience and insights suggested that we may need two more weeks to do additional POC to figure out the security of connection to Oracle in AWS. 
+  >
+  > **Task:**
+  > As a team lead, I must ensure the project's success and devliever it as we promissed to our client. case our use will demo on the high level.
+  >
+  > **Action:**
+  > Recognizing the importance of challenging and uncertain POC, I scheduled a meeting with my manager to discuss my concerns. I shared the additional details and insights I had gathered, explaining how they could impact the project's success.
+  >
+  > In the meeting, I proposed adjustments to the development plan based on my experience with similar projects. I emphasized the difference between this new porject and our past projects. I suggest we may need two more weeks for poc and my manager agree on it. After it, I also schedule meeting with our client and manager, to tell them the details and why we need 2 more weeks to deliver the porject. they all agree on it. 
+  >
+  > After meeting, I imidettly start the POC, schedule meeting with Oracle team to figure out the security connection with oracle database across the EMR. 
+  >
+  > **Result:**
+  > Finally, I finished the POC within one week , and I deleivered the project into producion within one week earilier. My manager appreciated my perspective and agreed to consider my suggestions. By speaking up respectfully, I contributed to a stronger development plan that aligned with our project goals. It’s showing the importance of open communication and constructive feedback in achieving success as a team. it’s still a good leran that  I should ask or propose when I have different opinion and be open to talk with the team. 
+
+#### A time when you submitted a good idea to your manager and he/she did not act
+
+- This relates with “Have Backbone; Disagree and Commit”
+
+> **Situation:**
+> FTP server pull 3 rd party data from the local into hdfs. need to check the log to see if something wrong. Hard to track process.
+>
+> **Task:**
+> Then I ghout the process can run on the ariflow wtih file sensor. it’s easy to track and mantainance.  I propose my idea to manager, show the pro and con. but he agree on it, but did make it in the plan.
+>
+> **Action:**
+> I check the code and took a poc to show that it’s doable, demoe it to him.
+>
+> **Result:**
+> I migrat the process into afirlow, easy to track the system, and show the process, and sasy to mataince the code and make high avaialbility. I also learn how to make it happened how to approve it to the manager.
+
+#### A time you took an unpopular stance in a meeting with peers/leaders
+
+- This relates with “Have Backbone; Disagree and Commit”
+
+> **Situation:**
+>
+> **Task:**
+>
+> **Action:**
+>
+> **Result:**
 
 ### 3.15 Strive to be Earth’s Best Employer – 努力成为地球上的最佳雇主
 

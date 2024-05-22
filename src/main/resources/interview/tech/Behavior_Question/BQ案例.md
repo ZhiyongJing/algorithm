@@ -93,16 +93,31 @@
 - **准备**
   回顾你的工作，你有没有为客户解决过什么问题？是你主动发现并且解决的？客户的反馈怎么样？你跟客户之间如何交流，交流的结果怎么样？. 
 
-```
-
-Most difficult customer interaction 
-A time where you had to balance the needs of the customer vs. the business 
-```
-
 #### A time you used customer feedback to drive improvement 
 
-Most difficult customer interaction 
-A time where you had to balance the needs of the customer vs. the business 
+-This relates with “Customer Obsession”
+
+> **Situation:**
+>
+> **Task:**
+>
+> **Action:**
+>
+> **Result:**
+
+#### Most difficult customer interaction 
+
+-This relates with “Customer Obsession”
+
+> **Situation:**
+>
+> **Task:**
+>
+> **Action:**
+>
+> **Result:**
+
+#### A time where you had to balance the needs of the customer vs. the business 
 
 -This relates with “Customer Obsession”
 

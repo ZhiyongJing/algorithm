@@ -87,7 +87,7 @@ public class LeetCode_22_GenerateParentheses {
     //leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args) {
-        leetcode.question.dfs.LeetCode_22_GenerateParentheses.Solution solution = new leetcode.question.dfs.LeetCode_22_GenerateParentheses().new Solution();
+        LeetCode_22_GenerateParentheses.Solution solution = new LeetCode_22_GenerateParentheses().new Solution();
         // TO TEST
         // Example usage:
         int n = 3;

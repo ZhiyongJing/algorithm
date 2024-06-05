@@ -60,25 +60,25 @@ public class LeetCode_987_VerticalOrderTraversalOfABinaryTree {
     }
 
     class Solution {
-        List<interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer>> nodeList = new ArrayList<>();
+        List<LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer>> nodeList = new ArrayList<>();
 
         //Solution 1: BFS
         // BFS 遍历二叉树
         private void BFS(TreeNode root) {
-            Queue<interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<TreeNode, Integer, Integer>> queue = new ArrayDeque();
+            Queue<LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<TreeNode, Integer, Integer>> queue = new ArrayDeque();
             int row = 0, column = 0;
-            queue.offer(new interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(root, row, column));
+            queue.offer(new LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(root, row, column));
 
             while (!queue.isEmpty()) {
-                interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<TreeNode, Integer, Integer> triplet = queue.poll();
+                LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<TreeNode, Integer, Integer> triplet = queue.poll();
                 root = triplet.first;
                 row = triplet.second;
                 column = triplet.third;
 
                 if (root != null) {
-                    this.nodeList.add(new interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(column, row, root.val));
-                    queue.offer(new interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(root.left, row + 1, column - 1));
-                    queue.offer(new interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(root.right, row + 1, column + 1));
+                    this.nodeList.add(new LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(column, row, root.val));
+                    queue.offer(new LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(root.left, row + 1, column - 1));
+                    queue.offer(new LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(root.right, row + 1, column + 1));
                 }
             }
         }
@@ -94,10 +94,10 @@ public class LeetCode_987_VerticalOrderTraversalOfABinaryTree {
             BFS(root);
 
             // 步骤2：将全局列表按照 <列, 行, 值> 进行排序
-            Collections.sort(this.nodeList, new Comparator<interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer>>() {
+            Collections.sort(this.nodeList, new Comparator<LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer>>() {
                 @Override
-                public int compare(interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> t1,
-                                   interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> t2) {
+                public int compare(LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> t1,
+                                   LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> t2) {
                     if (t1.first.equals(t2.first))
                         if (t1.second.equals(t2.second))
                             return t1.third - t2.third;
@@ -112,7 +112,7 @@ public class LeetCode_987_VerticalOrderTraversalOfABinaryTree {
             List<Integer> currColumn = new ArrayList();
             Integer currColumnIndex = this.nodeList.get(0).first;
 
-            for (interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> triplet : this.nodeList) {
+            for (LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> triplet : this.nodeList) {
                 Integer column = triplet.first, value = triplet.third;
                 if (column == currColumnIndex) {
                     currColumn.add(value);
@@ -136,7 +136,7 @@ public class LeetCode_987_VerticalOrderTraversalOfABinaryTree {
         private void DFS(TreeNode node, Integer row, Integer column) {
             if (node == null)
                 return;
-            nodeList.add(new interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(column, row, node.val));
+            nodeList.add(new LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet(column, row, node.val));
             // preorder DFS traversal
             this.DFS(node.left, row + 1, column - 1);
             this.DFS(node.right, row + 1, column + 1);
@@ -152,10 +152,10 @@ public class LeetCode_987_VerticalOrderTraversalOfABinaryTree {
             DFS(root, 0, 0);
 
             // 步骤2：将列表按照 <列, 行, 值> 进行排序
-            Collections.sort(this.nodeList, new Comparator<interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer>>() {
+            Collections.sort(this.nodeList, new Comparator<LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer>>() {
                 @Override
-                public int compare(interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> t1,
-                                   interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> t2) {
+                public int compare(LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> t1,
+                                   LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> t2) {
                     if (t1.first.equals(t2.first))
                         if (t1.second.equals(t2.second))
                             return t1.third - t2.third;
@@ -170,7 +170,7 @@ public class LeetCode_987_VerticalOrderTraversalOfABinaryTree {
             List<Integer> currColumn = new ArrayList();
             Integer currColumnIndex = this.nodeList.get(0).first;
 
-            for (interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> triplet : this.nodeList) {
+            for (LeetCode_987_VerticalOrderTraversalOfABinaryTree.Triplet<Integer, Integer, Integer> triplet : this.nodeList) {
                 Integer column = triplet.first, value = triplet.third;
                 if (column == currColumnIndex) {
                     currColumn.add(value);
@@ -191,7 +191,7 @@ public class LeetCode_987_VerticalOrderTraversalOfABinaryTree {
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree.Solution solution = new interview.company.amazon.LeetCode_987_VerticalOrderTraversalOfABinaryTree().new Solution();
+        LeetCode_987_VerticalOrderTraversalOfABinaryTree.Solution solution = new LeetCode_987_VerticalOrderTraversalOfABinaryTree().new Solution();
         // TO TEST
         // 测试示例代码
         TreeNode root = new TreeNode(3);

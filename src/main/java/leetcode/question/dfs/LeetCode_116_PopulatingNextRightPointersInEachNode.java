@@ -1,6 +1,4 @@
 package leetcode.question.dfs;
-import leetcode.util.Node;
-
 /**
  *@Question:  116. Populating Next Right Pointers in Each Node
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
@@ -38,7 +36,7 @@ import leetcode.util.Node;
 public class LeetCode_116_PopulatingNextRightPointersInEachNode{
 
 //leetcode submit region begin(Prohibit modification and deletion)
-/*
+
 // Definition for a Node.
 class Node {
     public int val;
@@ -59,7 +57,7 @@ class Node {
         next = _next;
     }
 };
-*/
+
 
     class Solution {
         //solution1: BFS

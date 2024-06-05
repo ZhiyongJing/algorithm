@@ -89,7 +89,7 @@ public class LeetCode_23_MergeKSortedLists{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_23_MergeKSortedLists.Solution solution = new interview.company.amazon.LeetCode_23_MergeKSortedLists().new Solution();
+        LeetCode_23_MergeKSortedLists.Solution solution = new LeetCode_23_MergeKSortedLists().new Solution();
         // 测试代码待添加
     }
 }

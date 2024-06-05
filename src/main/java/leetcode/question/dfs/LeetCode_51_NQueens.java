@@ -129,26 +129,26 @@ public class LeetCode_51_NQueens{
         Solution solution = new LeetCode_51_NQueens().new Solution();
 
         // 测试用例1: 4皇后问题
-        int n1 = 4;
-        List<List<String>> solutions1 = solution.solveNQueens(n1);
-        System.out.println("4皇后问题的解法数量: " + solutions1.size());
-        for (List<String> solution : solutions1) {
-            for (String row : solution) {
-                System.out.println(row);
-            }
-            System.out.println();
-        }
+//        int n1 = 4;
+//        List<List<String>> solutions1 = solution.solveNQueens(n1);
+//        System.out.println("4皇后问题的解法数量: " + solutions1.size());
+//        for (List<String> solution : solutions1) {
+//            for (String row : solution) {
+//                System.out.println(row);
+//            }
+//            System.out.println();
+//        }
 
         // 测试用例2: 8皇后问题
-        int n2 = 8;
-        List<List<String>> solutions2 = solution.solveNQueens(n2);
-        System.out.println("8皇后问题的解法数量: " + solutions2.size());
-        for (List<String> solution : solutions2) {
-            for (String row : solution) {
-                System.out.println(row);
-            }
-            System.out.println();
-        }
+//        int n2 = 8;
+//        List<List<String>> solutions2 = solution.solveNQueens(n2);
+//        System.out.println("8皇后问题的解法数量: " + solutions2.size());
+//        for (List<String> solution : solutions2) {
+//            for (String row : solution) {
+//                System.out.println(row);
+//            }
+//            System.out.println();
+//        }
     }
 }
 

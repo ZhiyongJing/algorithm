@@ -67,7 +67,7 @@ public class LeetCode_42_TrappingRainWater{
 
     public static void main(String[] args) {
         // 创建解决方案对象
-        interview.company.amazon.LeetCode_42_TrappingRainWater.Solution solution = new interview.company.amazon.LeetCode_42_TrappingRainWater().new Solution();
+        LeetCode_42_TrappingRainWater.Solution solution = new LeetCode_42_TrappingRainWater().new Solution();
         // 测试用例1
         int[] heights1 = {0,1,0,2,1,0,1,3,2,1,2,1};
         System.out.println(solution.trap(heights1)); // 应返回 6

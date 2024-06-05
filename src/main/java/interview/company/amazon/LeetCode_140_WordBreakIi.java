@@ -1,5 +1,5 @@
 package interview.company.amazon;
-
+import java.util.*;
 /**
   *@Question:  140. Word Break II     
   *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]

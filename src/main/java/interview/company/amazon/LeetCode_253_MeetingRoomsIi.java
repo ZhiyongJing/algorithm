@@ -1,12 +1,15 @@
 package interview.company.amazon;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 /**
   *@Question:  253. Meeting Rooms II     
   *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
   *@Frequency: 84.42%      
   *@Time  Complexity: O(NlogN)
   *@Space Complexity: O(N)
- */static
+ */
 /**
  * 这段代码解决了LeetCode问题253：“Meeting Rooms II”。这个问题要求计算出需要多少个会议室才能安排所有的会议，
  * 即在同一时间不会有会议冲突。

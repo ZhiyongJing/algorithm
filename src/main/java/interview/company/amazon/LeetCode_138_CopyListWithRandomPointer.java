@@ -1,5 +1,6 @@
 package interview.company.amazon;
 
+import java.util.HashMap;
 /**
   *@Question:  138. Copy List with Random Pointer     
   *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]

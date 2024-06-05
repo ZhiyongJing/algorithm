@@ -1,5 +1,6 @@
 package interview.company.amazon;
 
+import leetcode.util.TreeNode;
 /**
   *@Question:  112. Path Sum     
   *@Difculty:  1 [1->Easy, 2->Medium, 3->Hard]

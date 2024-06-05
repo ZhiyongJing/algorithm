@@ -69,7 +69,7 @@ public class LeetCode_1249_MinimumRemoveToMakeValidParentheses {
 
 
     public static void main(String[] args) {
-        leetcode.question.stack.LeetCode_1249_MinimumRemoveToMakeValidParentheses.Solution solution = new leetcode.question.stack.LeetCode_1249_MinimumRemoveToMakeValidParentheses().new Solution();
+            LeetCode_1249_MinimumRemoveToMakeValidParentheses.Solution solution = new leetcode.question.stack.LeetCode_1249_MinimumRemoveToMakeValidParentheses().new Solution();
 
         // 测试用例
         String result = solution.minRemoveToMakeValid("lee(t(c)o)de)");

@@ -1,5 +1,6 @@
 package interview.company.amazon;
 
+import java.util.Arrays;
 /**
  * @Question: 135. Candy
  * @Difculty: 3 [1->Easy, 2->Medium, 3->Hard]
@@ -77,7 +78,7 @@ public class LeetCode_135_Candy {
 
     public static void main(String[] args) {
         // 测试
-        Solution solution = new LeetCode_135_Candy().new Solution();
+        LeetCode_135_Candy.Solution solution = new LeetCode_135_Candy().new Solution();
         int[] ratings = {1, 0, 2};
         System.out.println(solution.candy(ratings)); // 应输出 5
     }

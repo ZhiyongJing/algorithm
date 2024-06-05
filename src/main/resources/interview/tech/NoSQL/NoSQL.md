@@ -270,7 +270,7 @@
 >
 > - **Composite/Compound Key** 复合key, Primary Key 由多列组成
 >
-> - **Partition Key** 分区Key, 在组合主键的情况下(上面的例子)，第一部分称作Partition Key（key_one就是partition key），第二部分是CLUSTERING KEY（key_two, Cassandra会对Partition key 做一个hash计算，并自己决定将这一条记录放在哪个节点。
+> - **Partition Key**， 已成为**row key** 分区Key, 在组合主键的情况下(上面的例子)，第一部分称作Partition Key（key_one就是partition key），第二部分是CLUSTERING KEY（key_two, Cassandra会对Partition key 做一个hash计算，并自己决定将这一条记录放在哪个节点。
 >
 >   如果 Partition key 由多个字段组成，称之为 Composite Partition key
 >
@@ -347,7 +347,7 @@
 
 ### 2.4 Cassandra 数据存储
 
-> Cassandra写数据时，首先会将请求写入Commit Log以确保数据不会丢失，然后再写入内存中的Memtable，超过内存容量后再将内存中的数据刷到磁盘的SSTable，并定期异步对SSTable做数据合并(Compaction)以减少数据读取时的查询时间。因为写入操作只涉及到顺序写入和内存操作，因此有非常高的写入性能。而进行读操作时，Cassandra支持像LevelDB一样的实现机制，数据分层存储，将热点数据放在Memtable和相对小的SSTable中，所以能实现较高的读性能
+> Cassandra写数据时，首先会将请求写入Commit Log以确保数据不会丢失，然后再写入内存中的Memtable，超过内存容量后再将内存中的数据刷到磁盘的SSTable(**SORTED STRING TABLE**)，并定期异步对SSTable做数据合并(Compaction)以减少数据读取时的查询时间。因为写入操作只涉及到顺序写入和内存操作，因此有非常高的写入性能。而进行读操作时，Cassandra支持像LevelDB一样的实现机制，数据分层存储，将热点数据放在Memtable和相对小的SSTable中，所以能实现较高的读性能
 >
 > Cassandra的数据包括在内存中的和磁盘中的数据，这些数据主要分为三种：
 >

@@ -1,5 +1,6 @@
 package interview.company.amazon;
 
+import java.util.HashMap;
 /**
   *@Question:  535. Encode and Decode TinyURL     
   *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]

@@ -1,5 +1,5 @@
 package interview.company.amazon;
-
+import java.util.*;
 /**
   *@Question:  1152. Analyze User Website Visit Pattern     
   *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]

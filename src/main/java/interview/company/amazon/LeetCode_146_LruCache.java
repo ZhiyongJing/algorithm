@@ -1,5 +1,7 @@
 package interview.company.amazon;
 
+import java.util.HashMap;
+import java.util.Map;
 /**
   *@Question:  146. LRU Cache
   *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]

@@ -1,5 +1,8 @@
 package leetcode.question.dfs;
 
+import leetcode.util.TreeNode;
+
+import java.util.*;
 /**
  *@Question:  987. Vertical Order Traversal of a Binary Tree
  *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]
@@ -44,7 +47,7 @@ public class LeetCode_987_VerticalOrderTraversalOfABinaryTree {
 
 //leetcode submit region begin(Prohibit modification and deletion)
 
-    class Triplet<F, S, T> {
+    public class Triplet<F, S, T> {
         public final F first;
         public final S second;
         public final T third;

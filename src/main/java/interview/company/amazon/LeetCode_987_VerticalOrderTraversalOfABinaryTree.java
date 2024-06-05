@@ -1,5 +1,8 @@
 package interview.company.amazon;
 
+import leetcode.util.TreeNode;
+
+import java.util.*;
 /**
   *@Question:  987. Vertical Order Traversal of a Binary Tree     
   *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]

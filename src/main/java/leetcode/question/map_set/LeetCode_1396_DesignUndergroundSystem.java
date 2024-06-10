@@ -10,18 +10,20 @@ import java.util.Map;
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
  *@Frequency: 28.23%
  *@Time  Complexity: O(1)
- *@Space Complexity: O(P + S^2) e SSS is the number of stations on the network,
+ *@Space Complexity: O(P + S^2) S is the number of stations on the network,
  * and P is the number of passengers making a journey concurrently during peak time.
  */
 
 /**
  * ### 解题思路
  *
- * 这个问题要求我们设计一个地铁系统，能够记录乘客的进站和出站时间，并计算特定路线的平均行程时间。我们可以使用两个哈希表来存储相关数据：一个用于记录乘客的进站信息，另一个用于记录每条路线的总行程时间和总次数。具体的解题思路如下：
+ * 这个问题要求我们设计一个地铁系统，能够记录乘客的进站和出站时间，并计算特定路线的平均行程时间。
+ * 我们可以使用两个哈希表来存储相关数据：一个用于记录乘客的进站信息，另一个用于记录每条路线的总行程时间和总次数。具体的解题思路如下：
  *
  * 1. **数据结构设计**：
  *    - `checkInData`：使用 `HashMap` 存储每个乘客的 `check-in` 信息，键是乘客的 ID，值是一个 `Pair` 对象，包含进站站名和进站时间。
- *    - `journeyData`：使用 `HashMap` 存储每条路线的总行程时间和总次数，键是路线的唯一标识（由起点站和终点站组合而成），值是一个 `Pair` 对象，包含总行程时间和行程次数。
+ *    - `journeyData`：使用 `HashMap` 存储每条路线的总行程时间和总次数，
+ *    键是路线的唯一标识（由起点站和终点站组合而成），值是一个 `Pair` 对象，包含总行程时间和行程次数。
  *
  * 2. **方法**：
  *    - `checkIn(int id, String stationName, int t)`：记录乘客的 `check-in` 信息，将其存储到 `checkInData` 中。
@@ -52,8 +54,8 @@ public class LeetCode_1396_DesignUndergroundSystem{
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class UndergroundSystem {
-        // 存储每条路线的总时间和总次数
-        private Map<String, Pair<Double, Double>> journeyData = new HashMap<>();
+        // 存储每条路线的总时间和总次数 路线，总时间，次数
+        private Map<String, Pair<Double, Integer>> journeyData = new HashMap<>();
         // 存储每个乘客的check-in信息
         private Map<Integer, Pair<String, Integer>> checkInData = new HashMap<>();
 
@@ -75,9 +77,9 @@ public class LeetCode_1396_DesignUndergroundSystem{
             // 生成路线的key
             String routeKey = stationsKey(startStation, stationName);
             // 获取当前路线的统计数据
-            Pair<Double, Double> routeStats  = journeyData.getOrDefault(routeKey, new Pair<>(0.0, 0.0));
+            Pair<Double, Integer> routeStats  = journeyData.getOrDefault(routeKey, new Pair<>(0.0, 0));
             Double totalTripTime = routeStats.getKey();
-            Double totalTrips = routeStats.getValue();
+            Integer totalTrips = routeStats.getValue();
 
             // 更新路线的总时间和总次数
             double tripTime = t - checkInTime;
@@ -91,7 +93,7 @@ public class LeetCode_1396_DesignUndergroundSystem{
             // 获取路线的总时间和总次数
             String routeKey = stationsKey(startStation, endStation);
             Double totalTime = journeyData.get(routeKey).getKey();
-            Double totalTrips = journeyData.get(routeKey).getValue();
+            Integer totalTrips = journeyData.get(routeKey).getValue();
             // 计算平均时间
             return totalTime / totalTrips;
         }

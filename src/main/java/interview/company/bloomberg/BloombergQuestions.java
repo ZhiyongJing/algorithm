@@ -5,7 +5,9 @@ package interview.company.bloomberg;
 import leetcode.question.dfs.LeetCode_39_CombinationSum;
 import leetcode.question.dp.LeetCode_322_CoinChange;
 import leetcode.question.dp.LeetCode_518_CoinChangeIi;
+import leetcode.question.dp.LeetCode_656_CoinPath;
 import leetcode.question.linked_list.LeetCode_430_FlattenAMultilevelDoublyLinkedList;
+import leetcode.question.map_set.LeetCode_1396_DesignUndergroundSystem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,8 @@ public class BloombergQuestions {
         questions.add(new LeetCode_322_CoinChange());
         questions.add(new LeetCode_518_CoinChangeIi());
         questions.add(new LeetCode_430_FlattenAMultilevelDoublyLinkedList());
+        questions.add(new LeetCode_1396_DesignUndergroundSystem());
+        questions.add(new LeetCode_656_CoinPath());
 
     }
 }

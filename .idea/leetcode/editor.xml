@@ -2313,6 +2313,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_656_CoinPath.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_656_CoinPath.md" />
+              <option name="frontendQuestionId" value="leetcode.com656" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_656_CoinPath.java" />
+              <option name="titleSlug" value="coin-path" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_674_LongestContinuousIncreasingSubsequence.java">
           <value>
             <LeetcodeEditor>

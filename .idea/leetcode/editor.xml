@@ -1741,6 +1741,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_428_SerializeAndDeserializeNAryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_428_SerializeAndDeserializeNAryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com428" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_428_SerializeAndDeserializeNAryTree.java" />
+              <option name="titleSlug" value="serialize-and-deserialize-n-ary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_450_DeleteNodeInABst.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_450_DeleteNodeInABst.md" />
+              <option name="frontendQuestionId" value="leetcode.com450" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_450_DeleteNodeInABst.java" />
+              <option name="titleSlug" value="delete-node-in-a-bst" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_46_Permutations.java">
           <value>
             <LeetcodeEditor>
@@ -2316,10 +2338,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_656_CoinPath.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_656_CoinPath.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_656_CoinPath.md" />
               <option name="frontendQuestionId" value="leetcode.com656" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_656_CoinPath.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_656_CoinPath.java" />
               <option name="titleSlug" value="coin-path" />
             </LeetcodeEditor>
           </value>
@@ -2797,6 +2819,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1656_DesignAnOrderedStream.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_1656_DesignAnOrderedStream.md" />
+              <option name="frontendQuestionId" value="leetcode.com1656" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1656_DesignAnOrderedStream.java" />
+              <option name="titleSlug" value="design-an-ordered-stream" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1_TwoSum.java">
           <value>
             <LeetcodeEditor>
@@ -2849,6 +2882,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_348_DesignTicTacToe.java" />
               <option name="titleSlug" value="design-tic-tac-toe" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_656_CoinPath.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_656_CoinPath.md" />
+              <option name="frontendQuestionId" value="leetcode.com656" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_656_CoinPath.java" />
+              <option name="titleSlug" value="coin-path" />
             </LeetcodeEditor>
           </value>
         </entry>

@@ -1,4 +1,4 @@
-package interview.company.amazon;
+package leetcode.question.dfs;
 
 import leetcode.util.TreeNode;
 
@@ -101,47 +101,47 @@ public class LeetCode_199_BinaryTreeRightSideView{
 
 
     public static void main(String[] args) {
-        Solution solution = new LeetCode_199_BinaryTreeRightSideView().new Solution();
+        interview.company.amazon.LeetCode_199_BinaryTreeRightSideView.Solution solution = new interview.company.amazon.LeetCode_199_BinaryTreeRightSideView().new Solution();
         // TO TEST
         //solution.
     }
 }
 
 /**
-Given the root of a binary tree, imagine yourself standing on the right side of 
-it, return the values of the nodes you can see ordered from top to bottom. 
+ Given the root of a binary tree, imagine yourself standing on the right side of
+ it, return the values of the nodes you can see ordered from top to bottom.
 
- 
- Example 1: 
- 
- 
-Input: root = [1,2,3,null,5,null,4]
-Output: [1,3,4]
- 
 
- Example 2: 
+ Example 1:
 
- 
-Input: root = [1,null,3]
-Output: [1,3]
- 
 
- Example 3: 
+ Input: root = [1,2,3,null,5,null,4]
+ Output: [1,3,4]
 
- 
-Input: root = []
-Output: []
- 
 
- 
- Constraints: 
+ Example 2:
 
- 
- The number of nodes in the tree is in the range [0, 100]. 
- -100 <= Node.val <= 100 
- 
+
+ Input: root = [1,null,3]
+ Output: [1,3]
+
+
+ Example 3:
+
+
+ Input: root = []
+ Output: []
+
+
+
+ Constraints:
+
+
+ The number of nodes in the tree is in the range [0, 100].
+ -100 <= Node.val <= 100
+
 
  Related Topics Tree Depth-First Search Breadth-First Search Binary Tree 👍 1179
-3 👎 924
+ 3 👎 924
 
-*/
+ */

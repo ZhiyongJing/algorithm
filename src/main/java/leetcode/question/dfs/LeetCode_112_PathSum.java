@@ -1,12 +1,12 @@
-package interview.company.amazon;
+package leetcode.question.dfs;
 
 import leetcode.util.TreeNode;
 /**
-  *@Question:  112. Path Sum     
-  *@Difculty:  1 [1->Easy, 2->Medium, 3->Hard]
-  *@Frequency: 28.52%      
-  *@Time  Complexity: O(N)
-  *@Space Complexity: O(N) if tree is not balanced, O(log(N)) for most case
+ *@Question:  112. Path Sum
+ *@Difculty:  1 [1->Easy, 2->Medium, 3->Hard]
+ *@Frequency: 28.52%
+ *@Time  Complexity: O(N)
+ *@Space Complexity: O(N) if tree is not balanced, O(log(N)) for most case
  */
 
 /**
@@ -94,56 +94,56 @@ public class LeetCode_112_PathSum{
 
 
     public static void main(String[] args) {
-        LeetCode_112_PathSum.Solution solution = new LeetCode_112_PathSum().new Solution();
+        interview.company.amazon.LeetCode_112_PathSum.Solution solution = new interview.company.amazon.LeetCode_112_PathSum().new Solution();
         // 测试代码待添加
     }
 }
 
 /**
-Given the root of a binary tree and an integer targetSum, return true if the 
-tree has a root-to-leaf path such that adding up all the values along the path 
-equals targetSum. 
+ Given the root of a binary tree and an integer targetSum, return true if the
+ tree has a root-to-leaf path such that adding up all the values along the path
+ equals targetSum.
 
- A leaf is a node with no children. 
+ A leaf is a node with no children.
 
- 
- Example 1: 
- 
- 
-Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
-Output: true
-Explanation: The root-to-leaf path with the target sum is shown.
- 
 
- Example 2: 
- 
- 
-Input: root = [1,2,3], targetSum = 5
-Output: false
-Explanation: There two root-to-leaf paths in the tree:
-(1 --> 2): The sum is 3.
-(1 --> 3): The sum is 4.
-There is no root-to-leaf path with sum = 5.
- 
+ Example 1:
 
- Example 3: 
 
- 
-Input: root = [], targetSum = 0
-Output: false
-Explanation: Since the tree is empty, there are no root-to-leaf paths.
- 
+ Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+ Output: true
+ Explanation: The root-to-leaf path with the target sum is shown.
 
- 
- Constraints: 
 
- 
- The number of nodes in the tree is in the range [0, 5000]. 
- -1000 <= Node.val <= 1000 
- -1000 <= targetSum <= 1000 
- 
+ Example 2:
+
+
+ Input: root = [1,2,3], targetSum = 5
+ Output: false
+ Explanation: There two root-to-leaf paths in the tree:
+ (1 --> 2): The sum is 3.
+ (1 --> 3): The sum is 4.
+ There is no root-to-leaf path with sum = 5.
+
+
+ Example 3:
+
+
+ Input: root = [], targetSum = 0
+ Output: false
+ Explanation: Since the tree is empty, there are no root-to-leaf paths.
+
+
+
+ Constraints:
+
+
+ The number of nodes in the tree is in the range [0, 5000].
+ -1000 <= Node.val <= 1000
+ -1000 <= targetSum <= 1000
+
 
  Related Topics Tree Depth-First Search Breadth-First Search Binary Tree 👍 9582
  👎 1090
 
-*/
+ */

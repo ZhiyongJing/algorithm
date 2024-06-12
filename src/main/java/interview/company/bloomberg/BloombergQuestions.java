@@ -7,6 +7,7 @@ import leetcode.question.dfs.LeetCode_394_DecodeString;
 import leetcode.question.dfs.LeetCode_39_CombinationSum;
 import leetcode.question.dfs.LeetCode_428_SerializeAndDeserializeNAryTree;
 import leetcode.question.dfs.LeetCode_450_DeleteNodeInABst;
+import leetcode.question.dfs.LeetCode_78_Subsets;
 import leetcode.question.dfs.LeetCode_797_AllPathsFromSourceToTarget;
 import leetcode.question.dfs.LeetCode_79_WordSearch;
 import leetcode.question.dp.LeetCode_118_PascalsTriangle;
@@ -18,9 +19,12 @@ import leetcode.question.dp.LeetCode_91_DecodeWays;
 import leetcode.question.greedy.LeetCode_1029_TwoCityScheduling;
 import leetcode.question.greedy.LeetCode_134_GasStation;
 import leetcode.question.linked_list.LeetCode_430_FlattenAMultilevelDoublyLinkedList;
+import leetcode.question.map_set.LeetCode_1169_InvalidTransactions;
 import leetcode.question.map_set.LeetCode_1244_DesignALeaderboard;
 import leetcode.question.map_set.LeetCode_1396_DesignUndergroundSystem;
 import leetcode.question.map_set.LeetCode_1656_DesignAnOrderedStream;
+import leetcode.question.map_set.LeetCode_380_InsertDeleteGetrandomO1;
+import leetcode.question.map_set.LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed;
 import leetcode.question.stack.LeetCode_1614_MaximumNestingDepthOfTheParentheses;
 import leetcode.question.string_list.LeetCode_8_StringToIntegerAtoi;
 import leetcode.question.two_pointer.LeetCode_125_ValidPalindrome;
@@ -52,7 +56,13 @@ public class BloombergQuestions {
                 , new LeetCode_118_PascalsTriangle()
                 , new LeetCode_119_PascalsTriangleIi() //算pascal三角形的的第n行第k列的值。就是(n k)
                 , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() //打印最深层次括号里的字符串。 没见过。
-
+                , new LeetCode_380_InsertDeleteGetrandomO1()//follow up 381
+                , new LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed() //我觉得这货绝对有大病。我用的就是经典的map<String, List<Integer>> 结构。他不满意，说这样不行。不能达到O(1). 然后我说我们可以用PriorityQueue.还是不满意。说是要存一个index 然后每次能很精准的找到位置，就达到O(1)
+                , new LeetCode_78_Subsets()//vo
+                , new LeetCode_430_FlattenAMultilevelDoublyLinkedList()//vo
+                , new LeetCode_1169_InvalidTransactions()//输入已经按照时间排序
+                , new LeetCode_1614_MaximumNestingDepthOfTheParentheses()//用bfs, follow up DFS
+                , new LeetCode_394_DecodeString()
 
 
 

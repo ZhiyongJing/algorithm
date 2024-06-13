@@ -80,7 +80,7 @@ public class LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed.RandomizedCollection randomizedCollection = new interview.company.amazon.LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed().new RandomizedCollection();
+        RandomizedCollection randomizedCollection = new LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed().new RandomizedCollection();
         // 测试代码
         // 添加元素
         System.out.println(randomizedCollection.insert(1)); // 返回 true

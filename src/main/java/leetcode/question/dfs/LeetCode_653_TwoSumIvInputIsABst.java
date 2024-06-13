@@ -72,7 +72,7 @@ public class LeetCode_653_TwoSumIvInputIsABst{
 
 
     public static void main(String[] args) {
-        Solution solution = new new Solution();
+        Solution solution = new LeetCode_653_TwoSumIvInputIsABst().new Solution();
         // TO TEST
         //solution.
     }

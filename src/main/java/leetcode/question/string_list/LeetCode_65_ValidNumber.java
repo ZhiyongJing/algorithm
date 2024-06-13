@@ -1,5 +1,4 @@
 package leetcode.question.string_list;
-package interview.company.amazon;
 
 /**
  * @Question:  65. Valid Number
@@ -87,7 +86,7 @@ public class LeetCode_65_ValidNumber{
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_65_ValidNumber().new Solution();
         // 测试
         String[] testCases = {"0", " 0.1 ", "abc", "1 a", "2e10", "-90e3", "1e", "e3", "6e-1", "99e2.5", "53.5e93", "-123", "3.1416", "-1E-16", "0123", "12e", "1a3.14", "1.2.3", "+-5", "12e+5.4"};
         for (String testCase : testCases) {

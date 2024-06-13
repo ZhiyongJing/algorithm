@@ -1458,10 +1458,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1274_NumberOfShipsInARectangle.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_1274_NumberOfShipsInARectangle.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_1274_NumberOfShipsInARectangle.md" />
               <option name="frontendQuestionId" value="leetcode.com1274" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1274_NumberOfShipsInARectangle.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1274_NumberOfShipsInARectangle.java" />
               <option name="titleSlug" value="number-of-ships-in-a-rectangle" />
             </LeetcodeEditor>
           </value>
@@ -2731,6 +2731,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_642_DesignSearchAutocompleteSystem.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_642_DesignSearchAutocompleteSystem.md" />
+              <option name="frontendQuestionId" value="leetcode.com642" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_642_DesignSearchAutocompleteSystem.java" />
+              <option name="titleSlug" value="design-search-autocomplete-system" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_692_TopKquestionWords.java">
           <value>
             <LeetcodeEditor>
@@ -3765,6 +3776,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1274_NumberOfShipsInARectangle.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_1274_NumberOfShipsInARectangle.md" />
+              <option name="frontendQuestionId" value="leetcode.com1274" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1274_NumberOfShipsInARectangle.java" />
+              <option name="titleSlug" value="number-of-ships-in-a-rectangle" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_15_ThreeSum.java">
           <value>
             <LeetcodeEditor>
@@ -3839,6 +3861,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/[1]Two Sum.java" />
               <option name="titleSlug" value="two-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_239_SlidingWindowMaximum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_239_SlidingWindowMaximum.md" />
+              <option name="frontendQuestionId" value="leetcode.com239" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_239_SlidingWindowMaximum.java" />
+              <option name="titleSlug" value="sliding-window-maximum" />
             </LeetcodeEditor>
           </value>
         </entry>

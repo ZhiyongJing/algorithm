@@ -85,7 +85,7 @@ public class LeetCode_787_CheapestFlightsWithinKStops {
     // leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_787_CheapestFlightsWithinKStops().new Solution();
         // 测试
         int n = 3;
         int[][] flights = {{0, 1, 100}, {1, 2, 100}, {0, 2, 500}};

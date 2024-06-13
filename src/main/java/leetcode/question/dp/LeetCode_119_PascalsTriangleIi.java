@@ -1,5 +1,7 @@
 package leetcode.question.dp;
 
+import java.util.ArrayList;
+import java.util.List;
 /**
  *@Question:  119. Pascal's Triangle II
  *@Difculty:  1 [1->Easy, 2->Medium, 3->Hard]
@@ -40,14 +42,14 @@ public class LeetCode_119_PascalsTriangleIi{
          * 时间复杂度：O(rowIndex^2)，空间复杂度：O(rowIndex)
          */
         public List<Integer> getRow(int rowIndex) {
-            List<Integer> curr, prev = new ArrayList<>() {
+            List<Integer> curr, prev = new ArrayList<Integer>() {
                 {
                     add(1);
                 }
             };
 
             for (int i = 1; i <= rowIndex; i++) {
-                curr = new ArrayList<>(i + 1) {
+                curr = new ArrayList<Integer>(i + 1) {
                     {
                         add(1);
                     }
@@ -74,7 +76,7 @@ public class LeetCode_119_PascalsTriangleIi{
          * 时间复杂度：O(rowIndex^2)，空间复杂度：O(rowIndex)
          */
         public List<Integer> getRow2(int rowIndex) {
-            List<Integer> row = new ArrayList<>(rowIndex + 1) {
+            List<Integer> row = new ArrayList<Integer>(rowIndex + 1) {
                 {
                     add(1);
                 }

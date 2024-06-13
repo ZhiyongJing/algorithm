@@ -82,7 +82,7 @@ public class LeetCode_273_IntegerToEnglishWords{
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_273_IntegerToEnglishWords().new Solution();
         // TO TEST
         System.out.println(solution.numberToWords(1234567891)); // 测试输出
     }

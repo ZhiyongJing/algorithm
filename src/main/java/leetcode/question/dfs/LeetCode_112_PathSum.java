@@ -1,6 +1,9 @@
 package leetcode.question.dfs;
 
+import javafx.util.Pair;
 import leetcode.util.TreeNode;
+
+import java.util.LinkedList;
 /**
  *@Question:  112. Path Sum
  *@Difculty:  1 [1->Easy, 2->Medium, 3->Hard]
@@ -94,7 +97,7 @@ public class LeetCode_112_PathSum{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_112_PathSum.Solution solution = new interview.company.amazon.LeetCode_112_PathSum().new Solution();
+        Solution solution = new LeetCode_112_PathSum().new Solution();
         // 测试代码待添加
     }
 }

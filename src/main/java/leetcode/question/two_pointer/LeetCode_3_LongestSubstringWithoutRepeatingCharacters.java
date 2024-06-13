@@ -41,6 +41,7 @@ public class LeetCode_3_LongestSubstringWithoutRepeatingCharacters {
          * @param s 输入字符串
          * @return 最长子串的长度
          */
+        //Solution1
         public int lengthOfLongestSubstring(String s) {
             Map<Character, Integer> chars = new HashMap();
 
@@ -65,6 +66,20 @@ public class LeetCode_3_LongestSubstringWithoutRepeatingCharacters {
                 right++;
             }
             return res;
+        }
+        //Solution2: 基于1 的优化
+        public int lengthOfLongestSubstring2(String s) {
+            int n = s.length(), ans = 0;
+            Map<Character, Integer> map = new HashMap<>(); // current index of character
+            // try to extend the range [i, j]
+            for (int j = 0, i = 0; j < n; j++) {
+                if (map.containsKey(s.charAt(j))) {
+                    i = Math.max(map.get(s.charAt(j)), i);
+                }
+                ans = Math.max(ans, j - i + 1);
+                map.put(s.charAt(j), j + 1);
+            }
+            return ans;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

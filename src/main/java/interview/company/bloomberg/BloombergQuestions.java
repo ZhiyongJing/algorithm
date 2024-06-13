@@ -2,7 +2,13 @@ package interview.company.bloomberg;
 
 // Interview questions
 
+import interview.company.amazon.LeetCode_140_WordBreakIi;
+import leetcode.question.bfs.LeetCode_98_ValidateBinarySearchTree;
+import leetcode.question.binary_search.LeetCode_611_ValidTriangleNumber;
 import leetcode.question.dfs.LeetCode_126_WordLadderIi;
+import leetcode.question.dfs.LeetCode_1274_NumberOfShipsInARectangle;
+import leetcode.question.dfs.LeetCode_139_WordBreak;
+import leetcode.question.dfs.LeetCode_301_RemoveInvalidParentheses;
 import leetcode.question.dfs.LeetCode_394_DecodeString;
 import leetcode.question.dfs.LeetCode_39_CombinationSum;
 import leetcode.question.dfs.LeetCode_428_SerializeAndDeserializeNAryTree;
@@ -10,6 +16,7 @@ import leetcode.question.dfs.LeetCode_450_DeleteNodeInABst;
 import leetcode.question.dfs.LeetCode_78_Subsets;
 import leetcode.question.dfs.LeetCode_797_AllPathsFromSourceToTarget;
 import leetcode.question.dfs.LeetCode_79_WordSearch;
+import leetcode.question.dfs.LeetCode_987_VerticalOrderTraversalOfABinaryTree;
 import leetcode.question.dp.LeetCode_118_PascalsTriangle;
 import leetcode.question.dp.LeetCode_119_PascalsTriangleIi;
 import leetcode.question.dp.LeetCode_322_CoinChange;
@@ -18,16 +25,22 @@ import leetcode.question.dp.LeetCode_656_CoinPath;
 import leetcode.question.dp.LeetCode_91_DecodeWays;
 import leetcode.question.greedy.LeetCode_1029_TwoCityScheduling;
 import leetcode.question.greedy.LeetCode_134_GasStation;
+import leetcode.question.heap.LeetCode_253_MeetingRoomsIi;
+import leetcode.question.heap.LeetCode_642_DesignSearchAutocompleteSystem;
 import leetcode.question.linked_list.LeetCode_430_FlattenAMultilevelDoublyLinkedList;
 import leetcode.question.map_set.LeetCode_1169_InvalidTransactions;
 import leetcode.question.map_set.LeetCode_1244_DesignALeaderboard;
+import leetcode.question.map_set.LeetCode_138_CopyListWithRandomPointer;
 import leetcode.question.map_set.LeetCode_1396_DesignUndergroundSystem;
 import leetcode.question.map_set.LeetCode_1656_DesignAnOrderedStream;
 import leetcode.question.map_set.LeetCode_380_InsertDeleteGetrandomO1;
 import leetcode.question.map_set.LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed;
 import leetcode.question.stack.LeetCode_1614_MaximumNestingDepthOfTheParentheses;
+import leetcode.question.stack.LeetCode_20_ValidParentheses;
 import leetcode.question.string_list.LeetCode_8_StringToIntegerAtoi;
 import leetcode.question.two_pointer.LeetCode_125_ValidPalindrome;
+import leetcode.question.two_pointer.LeetCode_239_SlidingWindowMaximum;
+import leetcode.question.two_pointer.LeetCode_3_LongestSubstringWithoutRepeatingCharacters;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,9 +48,9 @@ public class BloombergQuestions {
     public static void main(String[] args) {
         List<Object> questions = Arrays.asList(
                 new LeetCode_39_CombinationSum()//优化memorization
-                , new LeetCode_322_CoinChange()//返回最小硬币数量的所有组合，无限硬币
+                , new LeetCode_322_CoinChange()//返回最小硬币数量的所有组合，无限硬币, follow up 如果硬币种类非常多
                 , new LeetCode_518_CoinChangeIi()//返回所有硬币数量组合
-                , new LeetCode_430_FlattenAMultilevelDoublyLinkedList()//问时间复杂度
+                , new LeetCode_430_FlattenAMultilevelDoublyLinkedList()//问时间复杂度, follow up similar question, 保持递增排序
                 , new LeetCode_1396_DesignUndergroundSystem()//做完问了一些拓展的问题 比如如果有人只刷进站不刷出站怎么办 反着怎么办
                 , new LeetCode_656_CoinPath()//结合656
                 , new LeetCode_8_StringToIntegerAtoi()//12月初：店面 刷题网芭
@@ -63,6 +76,19 @@ public class BloombergQuestions {
                 , new LeetCode_1169_InvalidTransactions()//输入已经按照时间排序
                 , new LeetCode_1614_MaximumNestingDepthOfTheParentheses()//用bfs, follow up DFS
                 , new LeetCode_394_DecodeString()
+                , new LeetCode_642_DesignSearchAutocompleteSystem()
+                , new LeetCode_138_CopyListWithRandomPointer()
+                , new LeetCode_987_VerticalOrderTraversalOfABinaryTree()
+                , new LeetCode_239_SlidingWindowMaximum()
+                , new LeetCode_20_ValidParentheses()
+                , new LeetCode_253_MeetingRoomsIi()
+                , new LeetCode_1274_NumberOfShipsInARectangle()
+                , new LeetCode_3_LongestSubstringWithoutRepeatingCharacters()
+                , new LeetCode_139_WordBreak()
+                , new LeetCode_140_WordBreakIi()//return all comb
+                , new LeetCode_98_ValidateBinarySearchTree()
+                , new LeetCode_301_RemoveInvalidParentheses()
+                , new LeetCode_611_ValidTriangleNumber()
 
 
 

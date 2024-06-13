@@ -51,7 +51,7 @@ public class LeetCode_200_NumberOfIslands{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_200_NumberOfIslands.Solution solution = new interview.company.amazon.LeetCode_200_NumberOfIslands().new Solution();
+        LeetCode_200_NumberOfIslands.Solution solution = new LeetCode_200_NumberOfIslands().new Solution();
         // TO TEST
         //solution.
     }

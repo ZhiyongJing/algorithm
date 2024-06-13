@@ -101,7 +101,7 @@ public class LeetCode_199_BinaryTreeRightSideView{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_199_BinaryTreeRightSideView.Solution solution = new interview.company.amazon.LeetCode_199_BinaryTreeRightSideView().new Solution();
+        Solution solution = new LeetCode_199_BinaryTreeRightSideView().new Solution();
         // TO TEST
         //solution.
     }

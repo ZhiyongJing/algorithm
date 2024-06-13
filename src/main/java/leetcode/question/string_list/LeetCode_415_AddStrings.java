@@ -78,7 +78,7 @@ public class LeetCode_415_AddStrings{
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_415_AddStrings().new Solution();
         // TO TEST
         //solution.
     }

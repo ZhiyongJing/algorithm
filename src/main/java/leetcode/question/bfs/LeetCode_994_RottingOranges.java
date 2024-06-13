@@ -107,7 +107,7 @@ public class LeetCode_994_RottingOranges{
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution(); // 创建 Solution 对象
+        Solution solution = new LeetCode_994_RottingOranges().new Solution(); // 创建 Solution 对象
         // 测试用例1
         int[][] grid1 = {{2,1,1},{1,1,0},{0,1,1}}; // 定义第一个网格
         System.out.println(solution.orangesRotting(grid1)); // 打印输出结果

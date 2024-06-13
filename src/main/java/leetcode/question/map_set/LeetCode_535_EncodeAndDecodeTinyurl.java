@@ -47,7 +47,7 @@ public class LeetCode_535_EncodeAndDecodeTinyurl{
 
 
     public static void main(String[] args) {
-        Solution solution = new interview.company.amazon.LeetCode_535_EncodeAndDecodeTinyurl().new Solution();
+        Codec solution = new LeetCode_535_EncodeAndDecodeTinyurl().new Codec();
         // TO TEST
         //solution.
     }

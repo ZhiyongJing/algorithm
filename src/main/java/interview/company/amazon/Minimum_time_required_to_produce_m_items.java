@@ -24,7 +24,7 @@ public class Minimum_time_required_to_produce_m_items {
 
         // Return the number of items can
 // be produced in temp sec.
-        static int findItems(int []arr, int n,
+         int findItems(int []arr, int n,
                              int temp)
         {
             int ans = 0;
@@ -35,7 +35,7 @@ public class Minimum_time_required_to_produce_m_items {
 
         // Binary search to find minimum time
 // required to produce M items.
-        static int bs(int []arr, int n,
+         int bs(int []arr, int n,
                       int m, int high)
 
         {
@@ -67,7 +67,7 @@ public class Minimum_time_required_to_produce_m_items {
 
         // Return the minimum time required to
 // produce m items with given machine.
-        static int minTime(int []arr, int n,
+         int minTime(int []arr, int n,
                            int m)
         {
             int maxval = Integer.MIN_VALUE;
@@ -80,7 +80,7 @@ public class Minimum_time_required_to_produce_m_items {
         }
 
         // Driven Program
-        static public void main (String[] args)
+         public void main (String[] args)
         {
             int []arr = {1, 2, 3};
             int n = arr.length;

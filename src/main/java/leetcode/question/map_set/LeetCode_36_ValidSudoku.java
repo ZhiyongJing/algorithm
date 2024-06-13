@@ -87,7 +87,7 @@ public class LeetCode_36_ValidSudoku{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_36_ValidSudoku.Solution solution = new interview.company.amazon.LeetCode_36_ValidSudoku().new Solution();
+        LeetCode_36_ValidSudoku.Solution solution = new LeetCode_36_ValidSudoku().new Solution();
         // 测试代码
         // 假设给定一个数独 board
         char[][] board = {

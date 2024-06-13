@@ -25,7 +25,7 @@ public class LeetCode_12_IntegerToRoman{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_12_IntegerToRoman.Solution solution = new interview.company.amazon.LeetCode_12_IntegerToRoman().new Solution();
+        Solution solution = new LeetCode_12_IntegerToRoman().new Solution();
         // TO TEST
         //solution.
     }

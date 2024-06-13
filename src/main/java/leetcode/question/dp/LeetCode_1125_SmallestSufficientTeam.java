@@ -164,7 +164,7 @@ public class LeetCode_1125_SmallestSufficientTeam{
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_1125_SmallestSufficientTeam().new Solution();
         // 测试用例
         String[] req_skills = {"java", "python", "javascript"};
         List<List<String>> people = new ArrayList<>();

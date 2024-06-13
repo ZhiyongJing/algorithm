@@ -95,7 +95,7 @@ public class LeetCode_253_MeetingRoomsIi {
 
 
     public static void main(String[] args) {
-        olution solution = new Solution();
+        Solution solution = new LeetCode_253_MeetingRoomsIi().new Solution();
         // TO TEST
         // 测试代码
         //solution.

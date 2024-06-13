@@ -1,5 +1,7 @@
 package leetcode.question.map_set;
 
+import java.util.HashMap;
+import java.util.Map;
 /**
  *@Question:  709. To Lower Case
  *@Difculty:  1 [1->Easy, 2->Medium, 3->Hard]
@@ -13,7 +15,7 @@ public class LeetCode_709_ToLowerCase{
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String toLowerCase(String s) {
-            Map<Character, Character> h = new HashMap();
+            Map<Character, Character> h = new HashMap<>();
             String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             String lower = "abcdefghijklmnopqrstuvwxyz";
             for (int i = 0; i < 26; ++i) {
@@ -22,7 +24,7 @@ public class LeetCode_709_ToLowerCase{
 
             StringBuilder sb = new StringBuilder();
             for (char x : s.toCharArray()) {
-                sb.append(h.containsKey(x) ? h.get(x) : x);
+                sb.append((char)(h.containsKey(x) ? h.get(x) : x));
             }
             return sb.toString();
         }
@@ -31,7 +33,7 @@ public class LeetCode_709_ToLowerCase{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_709_ToLowerCase.Solution solution = new interview.company.amazon.LeetCode_709_ToLowerCase().new Solution();
+        Solution solution = new LeetCode_709_ToLowerCase().new Solution();
         // TO TEST
         //solution.
     }

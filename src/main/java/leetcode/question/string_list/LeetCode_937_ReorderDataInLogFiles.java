@@ -76,7 +76,7 @@ public class LeetCode_937_ReorderDataInLogFiles{
 
 
     public static void main(String[] args) {
-        Solution solution = new new Solution();
+        Solution solution = new LeetCode_937_ReorderDataInLogFiles().new Solution();
         // 测试代码
         String[] logs = {
                 "dig1 8 1 5 1",

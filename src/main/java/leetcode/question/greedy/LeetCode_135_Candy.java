@@ -78,7 +78,7 @@ public class LeetCode_135_Candy {
 
     public static void main(String[] args) {
         // 测试
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_135_Candy().new Solution();
         int[] ratings = {1, 0, 2};
         System.out.println(solution.candy(ratings)); // 应输出 5
     }

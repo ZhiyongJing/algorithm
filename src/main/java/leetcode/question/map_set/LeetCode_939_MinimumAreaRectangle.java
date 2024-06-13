@@ -83,7 +83,7 @@ public class LeetCode_939_MinimumAreaRectangle{
 
 
     public static void main(String[] args) {
-        interview.company.amazon.LeetCode_939_MinimumAreaRectangle.Solution solution = new interview.company.amazon.LeetCode_939_MinimumAreaRectangle().new Solution();
+        LeetCode_939_MinimumAreaRectangle.Solution solution = new LeetCode_939_MinimumAreaRectangle().new Solution();
         // 测试
         int[][] points1 = {{1, 1}, {1, 3}, {3, 1}, {3, 3}, {2, 2}};
         System.out.println(solution.minAreaRect(points1)); // 应返回 4

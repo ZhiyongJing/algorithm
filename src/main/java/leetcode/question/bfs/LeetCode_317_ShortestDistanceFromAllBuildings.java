@@ -1,6 +1,7 @@
 package leetcode.question.bfs;
-package interview.company.amazon;
 
+import java.util.LinkedList;
+import java.util.Queue;
 /**
  *@Question:  317. Shortest Distance from All Buildings
  *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]
@@ -133,7 +134,7 @@ public class LeetCode_317_ShortestDistanceFromAllBuildings{
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_317_ShortestDistanceFromAllBuildings().new Solution();
         // 测试代码
         int[][] grid = {{1,0,2,0,1},{0,0,0,0,0},{0,0,1,0,0}};
         System.out.println(solution.shortestDistance(grid)); // 应该输出 7

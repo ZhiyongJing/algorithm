@@ -1,5 +1,4 @@
 package leetcode.question.string_list;
-package interview.company.amazon;
 
 /**
  *@Question:  50. Pow(x, n)
@@ -71,7 +70,7 @@ public class LeetCode_50_PowxN{
 
     // 测试函数
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_50_PowxN().new Solution();
 
         // 测试用例
         double x1 = 2.0;

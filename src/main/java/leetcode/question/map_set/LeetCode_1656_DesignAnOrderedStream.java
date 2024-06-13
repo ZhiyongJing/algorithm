@@ -1,5 +1,7 @@
 package leetcode.question.map_set;
 
+import java.util.ArrayList;
+import java.util.List;
 /**
   *@Question:  1656. Design an Ordered Stream     
   *@Difculty:  1 [1->Easy, 2->Medium, 3->Hard]
@@ -42,7 +44,7 @@ class OrderedStream {
 
     
     public static void main(String[] args) {
-        Solution solution = new LeetCode_1656_DesignAnOrderedStream().new Solution();
+        OrderedStream solution = new LeetCode_1656_DesignAnOrderedStream().new OrderedStream(5);
         // TO TEST
         //solution.
     }

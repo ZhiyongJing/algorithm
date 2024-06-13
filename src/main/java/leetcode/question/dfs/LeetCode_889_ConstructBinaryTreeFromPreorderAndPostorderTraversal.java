@@ -43,7 +43,7 @@ public class LeetCode_889_ConstructBinaryTreeFromPreorderAndPostorderTraversal{
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new LeetCode_889_ConstructBinaryTreeFromPreorderAndPostorderTraversal().new Solution();
         // TO TEST
         //solution.
     }

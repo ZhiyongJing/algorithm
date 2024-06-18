@@ -12,12 +12,16 @@ import java.util.Queue;
  *@Question:  987. Vertical Order Traversal of a Binary Tree
  *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]
  *@Frequency: 66.03%
- *@Time  Complexity: O()
- *@Space Complexity: O()
+ *@Time  Complexity: O(N* logN)
+ *@Space Complexity: O(N)
  */
 
 /**
- *  * Yes I agree it looks similar but there's actually some differences worthing noticing between two problems. For #314, BFS is better than DFS since BFS doesn't care about rows (and the time and space usage has a significant difference in submission) But for this problem #987, BFS and DFS is pretty the same since we have to deal with rows based on the sorting requirements when nodes are in same column and row. And typically DFS code is easier to write so I would prefer DFS over BFS for this problem.
+ *  * Yes I agree it looks similar but there's actually some differences worthing noticing between two problems.
+ *  For #314, BFS is better than DFS since BFS doesn't care about rows (and the time and space usage has a significant difference
+ *  in submission)
+ *  But for this problem #987, BFS and DFS is pretty the same since we have to deal with rows based on the sorting requirements
+ *  when nodes are in same column and row. And typically DFS code is easier to write so I would prefer DFS over BFS for this problem.
  * 这段代码实现了二叉树的垂序遍历，其中包含了两种不同的解法：BFS（广度优先搜索）和DFS（深度优先搜索）。
  *
  * ### 解题思路：

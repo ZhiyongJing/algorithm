@@ -3,7 +3,10 @@ package interview.company.bloomberg;
 // Interview questions
 
 import interview.company.amazon.LeetCode_140_WordBreakIi;
+import leetcode.question.bfs.LeetCode_1091_ShortestPathInBinaryMatrix;
+import leetcode.question.bfs.LeetCode_127_WordLadder;
 import leetcode.question.bfs.LeetCode_98_ValidateBinarySearchTree;
+import leetcode.question.binary_search.LeetCode_33_SearchInRotatedSortedArray;
 import leetcode.question.binary_search.LeetCode_611_ValidTriangleNumber;
 import leetcode.question.dfs.LeetCode_126_WordLadderIi;
 import leetcode.question.dfs.LeetCode_1274_NumberOfShipsInARectangle;
@@ -11,6 +14,7 @@ import leetcode.question.dfs.LeetCode_139_WordBreak;
 import leetcode.question.dfs.LeetCode_301_RemoveInvalidParentheses;
 import leetcode.question.dfs.LeetCode_394_DecodeString;
 import leetcode.question.dfs.LeetCode_39_CombinationSum;
+import leetcode.question.dfs.LeetCode_40_CombinationSumIi;
 import leetcode.question.dfs.LeetCode_428_SerializeAndDeserializeNAryTree;
 import leetcode.question.dfs.LeetCode_450_DeleteNodeInABst;
 import leetcode.question.dfs.LeetCode_78_Subsets;
@@ -47,7 +51,8 @@ import java.util.List;
 public class BloombergQuestions {
     public static void main(String[] args) {
         List<Object> questions = Arrays.asList(
-                new LeetCode_39_CombinationSum()//优化memorization
+                new LeetCode_39_CombinationSum()//candidate 可以无限使用， 优化memorization
+                , new LeetCode_40_CombinationSumIi()//candidate 可以使用最多一次
                 , new LeetCode_322_CoinChange()//返回最小硬币数量的所有组合，无限硬币, follow up 如果硬币种类非常多
                 , new LeetCode_518_CoinChangeIi()//返回所有硬币数量组合
                 , new LeetCode_430_FlattenAMultilevelDoublyLinkedList()//问时间复杂度, follow up similar question, 保持递增排序
@@ -65,7 +70,8 @@ public class BloombergQuestions {
                 , new LeetCode_394_DecodeString()
                 , new LeetCode_79_WordSearch()
                 , new LeetCode_134_GasStation()
-                , new LeetCode_126_WordLadderIi()
+                , new LeetCode_126_WordLadderIi()//返回所有最短的路径
+                , new LeetCode_127_WordLadder()//返回最短路径长度
                 , new LeetCode_118_PascalsTriangle()
                 , new LeetCode_119_PascalsTriangleIi() //算pascal三角形的的第n行第k列的值。就是(n k)
                 , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() //打印最深层次括号里的字符串。 没见过。
@@ -89,6 +95,8 @@ public class BloombergQuestions {
                 , new LeetCode_98_ValidateBinarySearchTree()
                 , new LeetCode_301_RemoveInvalidParentheses()
                 , new LeetCode_611_ValidTriangleNumber()
+                , new LeetCode_1091_ShortestPathInBinaryMatrix()// 变形题为 在 沙漠 给限定 汽油， 能否从一个地方到另一个地方
+                , new LeetCode_33_SearchInRotatedSortedArray()
 
 
 

@@ -1400,6 +1400,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_114_FlattenBinaryTreeToLinkedList.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_114_FlattenBinaryTreeToLinkedList.md" />
+              <option name="frontendQuestionId" value="leetcode.com114" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_114_FlattenBinaryTreeToLinkedList.java" />
+              <option name="titleSlug" value="flatten-binary-tree-to-linked-list" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_116_PopulatingNextRightPointersInEachNode.java">
           <value>
             <LeetcodeEditor>
@@ -2225,6 +2236,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_115_DistinctSubsequences.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_115_DistinctSubsequences.md" />
+              <option name="frontendQuestionId" value="leetcode.com115" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_115_DistinctSubsequences.java" />
+              <option name="titleSlug" value="distinct-subsequences" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_118_PascalsTriangle.java">
           <value>
             <LeetcodeEditor>
@@ -2313,6 +2335,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_174_DungeonGame.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_174_DungeonGame.md" />
+              <option name="frontendQuestionId" value="leetcode.com174" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_174_DungeonGame.java" />
+              <option name="titleSlug" value="dungeon-game" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_175_CombineTwoTables.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_175_CombineTwoTables.md" />
+              <option name="frontendQuestionId" value="leetcode.com175" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_175_CombineTwoTables.java" />
+              <option name="titleSlug" value="combine-two-tables" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_198_HouseRobber.java">
           <value>
             <LeetcodeEditor>
@@ -2376,6 +2420,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_300_LongestIncreasingSubsequence.java" />
               <option name="titleSlug" value="longest-increasing-subsequence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_312_BurstBalloons.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_312_BurstBalloons.md" />
+              <option name="frontendQuestionId" value="leetcode.com312" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_312_BurstBalloons.java" />
+              <option name="titleSlug" value="burst-balloons" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -2500,6 +2555,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_639_DecodeWaysIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_639_DecodeWaysIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com639" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_639_DecodeWaysIi.java" />
+              <option name="titleSlug" value="decode-ways-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_64_MinimumPathSum.java">
           <value>
             <LeetcodeEditor>
@@ -2541,6 +2607,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_70_ClimbingStairs.java" />
               <option name="titleSlug" value="climbing-stairs" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_712_MinimumAsciiDeleteSumForTwoStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_712_MinimumAsciiDeleteSumForTwoStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.com712" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_712_MinimumAsciiDeleteSumForTwoStrings.java" />
+              <option name="titleSlug" value="minimum-ascii-delete-sum-for-two-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_718_MaximumLengthOfRepeatedSubarray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_718_MaximumLengthOfRepeatedSubarray.md" />
+              <option name="frontendQuestionId" value="leetcode.com718" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_718_MaximumLengthOfRepeatedSubarray.java" />
+              <option name="titleSlug" value="maximum-length-of-repeated-subarray" />
             </LeetcodeEditor>
           </value>
         </entry>

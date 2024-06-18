@@ -1,7 +1,6 @@
 package leetcode.question.dfs;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -53,7 +52,7 @@ public class LeetCode_39_CombinationSum {
          */
         protected void backtrack(
                 int remain,
-                LinkedList<Integer> comb,
+                List<Integer> comb,
                 int start, int[] candidates,
                 List<List<Integer>> results) {
 
@@ -72,7 +71,7 @@ public class LeetCode_39_CombinationSum {
                 // 递归尝试下一步
                 this.backtrack(remain - candidates[i], comb, i, candidates, results);
                 // 回溯，移除组合中的最后一个数字
-                comb.removeLast();
+                comb.remove(comb.size() - 1);
             }
         }
 
@@ -85,7 +84,7 @@ public class LeetCode_39_CombinationSum {
          */
         public List<List<Integer>> combinationSum(int[] candidates, int target) {
             List<List<Integer>> results = new ArrayList<>();
-            LinkedList<Integer> comb = new LinkedList<>();
+            List<Integer> comb = new ArrayList<>();
 
             this.backtrack(target, comb, 0, candidates, results);
             return results;

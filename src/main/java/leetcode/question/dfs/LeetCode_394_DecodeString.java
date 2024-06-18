@@ -1,10 +1,13 @@
 package leetcode.question.dfs;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 /**
   *@Question:  394. Decode String     
   *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
   *@Frequency: 79.05%      
-  *@Time  Complexity: O(maxK*n)
+  *@Time  Complexity: O(N * maxK) where maxK is the maximum value of k and n is the length of a given string s
   *@Space Complexity: O(n)
  */
 
@@ -12,6 +15,7 @@ public class LeetCode_394_DecodeString{
     
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    //solution1: recursion
     int index = 0;
     String decodeString(String s) {
         StringBuilder result = new StringBuilder();
@@ -35,6 +39,46 @@ class Solution {
 
                     result.append(decodedString);
             }
+        }
+        return new String(result);
+    }
+
+    //Solution2: Stack
+    public String decodeString2(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ']') {
+                List<Character> decodedString = new ArrayList<>();
+                // get the encoded string
+                while (stack.peek() != '[') {
+                    decodedString.add(stack.pop());
+                }
+                // pop [ from the stack
+                stack.pop();
+                int base = 1;
+                int k = 0;
+                // get the number k
+                while (!stack.isEmpty() && Character.isDigit(stack.peek())) {
+                    k = k + (stack.pop() - '0') * base;
+                    base *= 10;
+                }
+                // decode k[decodedString], by pushing decodedString k times into stack
+                while (k != 0) {
+                    for (int j = decodedString.size() - 1; j >= 0; j--) {
+                        stack.push(decodedString.get(j));
+                    }
+                    k--;
+                }
+            }
+            // push the current character to stack
+            else {
+                stack.push(s.charAt(i));
+            }
+        }
+        // get the result from stack
+        char[] result = new char[stack.size()];
+        for (int i = result.length - 1; i >= 0; i--) {
+            result[i] = stack.pop();
         }
         return new String(result);
     }

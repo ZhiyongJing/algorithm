@@ -10,6 +10,12 @@ import java.util.List;
   *@Space Complexity: O()
  */
 
+/**
+ * 情况一：当新插入的元素没有插入到prt所指向的位置时，插入元素后，方法会返回空集合。
+ * 情况二：当新插入的元素插入到prt所指向的位置时，插入元素后，则将该元素作为结果返回。但此时还没有结束，prt执行加1操作指向下一个位置，
+ *          如果这个位置上已经有元素了，那么继续作为结果返回且prt再次加1，直到prt指向的位置是空的，结束方法逻辑。
+ */
+
 public class LeetCode_1656_DesignAnOrderedStream{
     
 //leetcode submit region begin(Prohibit modification and deletion)

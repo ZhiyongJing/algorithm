@@ -67,7 +67,7 @@ public class LeetCode_450_DeleteNodeInABst {
      */
     class Solution {
         /*
-        找到后继节点：一步向右，然后一直向左
+        找到后继节点：一步向右，然后一直向左， subtree 最小比target大的值
         */
         public int successor(TreeNode root) {
             root = root.right; // 先一步向右
@@ -76,7 +76,7 @@ public class LeetCode_450_DeleteNodeInABst {
         }
 
         /*
-        找到前驱节点：一步向左，然后一直向右
+        找到前驱节点：一步向左，然后一直向右， subtree 最大的比target小的值
         */
         public int predecessor(TreeNode root) {
             root = root.left; // 先一步向左

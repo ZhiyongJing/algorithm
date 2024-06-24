@@ -11,4 +11,4 @@
  * Leetcode 503 Next Greater Element II
  * Leetcode 239 Sliding Window Maximum （唯一的单调队列题）
  */
-package leetcode.question.monotone_stack_queue;
+package leetcode.question.monotonic_stack_queue;

@@ -175,7 +175,6 @@ public class LeetCode_44_WildcardMatching{
 }
 
 
-这段代码使用了两种不同的动态规划方法解决通配符匹配问题，并提供了测试用例来验证功能。
 /**
 Given an input string (s) and a pattern (p), implement wildcard pattern 
 matching with support for '?' and '*' where: 

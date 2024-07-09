@@ -117,7 +117,7 @@ public class LeetCode_218_TheSkylineProblem{
 
 
     public static void main(String[] args) {
-        leetcode.question.queue.LeetCode_218_TheSkylineProblem.Solution solution = new leetcode.question.queue.LeetCode_218_TheSkylineProblem().new Solution();
+        LeetCode_218_TheSkylineProblem.Solution solution = new LeetCode_218_TheSkylineProblem().new Solution();
         // 测试样例
         int[][] buildings1 = {
                 {2, 9, 10},

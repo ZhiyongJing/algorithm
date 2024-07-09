@@ -93,10 +93,10 @@ public class LeetCode_496_NextGreaterElementI{
         System.out.println("测试样例 1 的结果: " + Arrays.toString(result1)); // 应该输出 [-1, 3, -1]
 
         // 测试样例 2
-        int[] nums1 = {2, 4};
-        int[] nums2 = {1, 2, 3, 4};
-        int[] result2 = solution.nextGreaterElement(nums1, nums2);
-        System.out.println("测试样例 2 的结果: " + Arrays.toString(result2)); // 应该输出 [3, -1]
+//        int[] nums1 = {2, 4};
+//        int[] nums2 = {1, 2, 3, 4};
+//        int[] result2 = solution.nextGreaterElement(nums1, nums2);
+//        System.out.println("测试样例 2 的结果: " + Arrays.toString(result2)); // 应该输出 [3, -1]
     }
 }
 

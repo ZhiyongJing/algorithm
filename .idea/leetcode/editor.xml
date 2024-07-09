@@ -3603,10 +3603,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/queue/LeetCode_218_TheSkylineProblem.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/doc/content/LeetCode_218_TheSkylineProblem.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/doc/content/LeetCode_218_TheSkylineProblem.md" />
               <option name="frontendQuestionId" value="leetcode.com218" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/LeetCode_218_TheSkylineProblem.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_218_TheSkylineProblem.java" />
               <option name="titleSlug" value="the-skyline-problem" />
             </LeetcodeEditor>
           </value>
@@ -3996,13 +3996,46 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_1094_CarPooling.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/doc/content/LeetCode_1094_CarPooling.md" />
+              <option name="frontendQuestionId" value="leetcode.com1094" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_1094_CarPooling.java" />
+              <option name="titleSlug" value="car-pooling" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_218_TheSkylineProblem.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/doc/content/LeetCode_218_TheSkylineProblem.md" />
+              <option name="frontendQuestionId" value="leetcode.com218" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_218_TheSkylineProblem.java" />
+              <option name="titleSlug" value="the-skyline-problem" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_759_EmployeeFreeTime.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/doc/content/LeetCode_759_EmployeeFreeTime.md" />
+              <option name="frontendQuestionId" value="leetcode.com759" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_759_EmployeeFreeTime.java" />
+              <option name="titleSlug" value="employee-free-time" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/tree_map/LeetCode_218_TheSkylineProblem.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/doc/content/LeetCode_218_TheSkylineProblem.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/doc/content/LeetCode_218_TheSkylineProblem.md" />
               <option name="frontendQuestionId" value="leetcode.com218" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/LeetCode_218_TheSkylineProblem.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_218_TheSkylineProblem.java" />
               <option name="titleSlug" value="the-skyline-problem" />
             </LeetcodeEditor>
           </value>

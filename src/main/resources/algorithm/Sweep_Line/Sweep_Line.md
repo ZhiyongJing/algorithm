@@ -11,7 +11,7 @@
 >   > 2. 扫描图形，找到各个坐标
 >   >
 >   >    >
->   >    > ​    >   >    > <img src="Sweep_Line.assets/eTuDjP.gif" alt="img" style="zoom:50%;" />
+>   >    > ​     <img src="Sweep_Line.assets/eTuDjP.gif" alt="img" style="zoom:50%;" />
 >   >
 >   > 3. 使用线段树进行优化
 >   >

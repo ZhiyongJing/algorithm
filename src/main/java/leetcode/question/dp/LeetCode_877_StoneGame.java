@@ -1,56 +1,94 @@
 package leetcode.question.dp;
 
 /**
-  *@Question:  877. Stone Game     
-  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
-  *@Frequency: 24.86%      
-  *@Time  Complexity: O(N^2)
-  *@Space Complexity: O(N^2)
+ *@Question:  877. Stone Game
+ *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
+ *@Frequency: 24.86%
+ *@Time  Complexity: O(N^2)
+ *@Space Complexity: O(N^2)
  */
 
 /**
- * 这道题是经典的动态规划问题，主要思路是使用动态规划来解决。在动态规划的过程中，我们需要定义一个二维数组 `dp`，其中 `dp[i][j]` 表示当前游戏状态 `[i, ..., j]` 的价值。具体的动态规划过程如下：
+ * ### 解题思路
  *
- * 1. 首先，我们遍历石堆数组 `piles`，对于每一堆石头，我们考虑它是先手还是后手拿取，这样就可以确定游戏的价值。
- * 2. 接着，我们使用动态规划的方式来填充 `dp` 数组。对于游戏状态 `[i, ..., j]`，我们分别计算先手和后手的价值，然后根据当前玩家的身份确定应该取最大值还是最小值。
- * 3. 最后，判断游戏的最终价值 `dp[1][N]` 是否大于0，如果大于0，则表示先手能够赢得游戏，返回 `true`，否则返回 `false`。
+ * 题目要求判断在两个玩家轮流从石堆中取石头的游戏中，先手玩家是否能够赢得游戏。我们可以使用动态规划（DP）来解决这个问题。具体思路如下：
  *
- * 时间复杂度：在计算 `dp` 数组的过程中，我们需要填充一个二维数组，所以时间复杂度为 O(N^2)，其中 N 是石堆的数量。
+ * #### 1. 状态表示
  *
- * 空间复杂度：我们使用了一个二维数组 `dp` 来存储游戏状态的价值，因此空间复杂度也是 O(N^2)。
+ * - 定义一个二维数组 `dp`，其中 `dp[i][j]` 表示当前游戏状态 `[piles[i], ..., piles[j]]` 的价值。
+ * - `dp[i][j]` 表示在当前状态下，先手玩家相对于后手玩家能够获得的最大分数差值。如果 `dp[i][j]` > 0，说明先手玩家能够赢得游戏。
+ *
+ * #### 2. 初始化
+ *
+ * - 初始化二维数组 `dp`，大小为 `(N+2) x (N+2)`，其中 `N` 是石堆的数量。
+ * - `dp[i][j]` 的初始值为 0，因为在没有石头的情况下，先手玩家和后手玩家的分数差值为 0。
+ *
+ * #### 3. 状态转移
+ *
+ * - 我们需要遍历所有可能的子问题大小 `size`，然后遍历每个子问题的起始位置 `i` 和结束位置 `j`，计算 `dp[i][j]` 的值。
+ * - 对于游戏状态 `[i, ..., j]`，我们分别计算先手和后手的价值，然后根据当前玩家的身份确定应该取最大值还是最小值。
+ *   - `parity = (j + i + N) % 2` 用来判断当前玩家是先手还是后手。
+ *   - 如果是先手：`dp[i][j] = max(piles[i] + dp[i+1][j], piles[j] + dp[i][j-1])`。
+ *   - 如果是后手：`dp[i][j] = min(-piles[i] + dp[i+1][j], -piles[j] + dp[i][j-1])`。
+ *
+ * #### 4. 最终结果
+ *
+ * - 返回 `dp[1][N] > 0`，判断先手玩家相对于后手玩家的最大分数差值是否大于 0。如果大于 0，则表示先手玩家能够赢得游戏，返回 `true`，否则返回 `false`。
+ *
+ * ### 时间和空间复杂度分析
+ *
+ * - **时间复杂度**：
+ *   - `O(N^2)`，因为我们需要填充一个二维数组 `dp`，其中 `N` 是石堆的数量。对于每个 `size`，我们遍历所有可能的起始位置 `i` 和结束位置 `j`，计算 `dp[i][j]` 的值。
+ *   - 内部的状态转移操作是常数时间的，所以整体时间复杂度为 `O(N^2)`。
+ *
+ * - **空间复杂度**：
+ *   - `O(N^2)`，我们使用了一个二维数组 `dp` 来存储游戏状态的价值。因此，空间复杂度为 `O(N^2)`。
+ *
+ * ### 总结
+ *
+ * 通过使用动态规划，我们可以高效地计算出在石头游戏中，先手玩家是否能够赢得游戏。这个方法利用状态表示和状态转移来逐步构建解决方案，最终得到先手玩家相对于后手玩家的最大分数差值。虽然时间和空间复杂度较高，但对于长度适中的石堆数量，仍然是可行的。
  */
 
 public class LeetCode_877_StoneGame{
-    
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean stoneGame(int[] piles) {
-        int N = piles.length;
 
-        // dp[i+1][j+1] = the value of the game [piles[i], ..., piles[j]].
-        int[][] dp = new int[N+2][N+2];
-        for (int size = 1; size <= N; ++size)
-            for (int i = 0; i + size <= N; ++i) {
-                int j = i + size - 1;
-                int parity = (j + i + N) % 2;  // j - i - N; but +x = -x (mod 2)
-                if (parity == 1)
-                    dp[i+1][j+1] = Math.max(piles[i] + dp[i+2][j+1], piles[j] + dp[i+1][j]);
-                else
-                    dp[i+1][j+1] = Math.min(-piles[i] + dp[i+2][j+1], -piles[j] + dp[i+1][j]);
-            }
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean stoneGame(int[] piles) {
+            int N = piles.length; // 获取石堆的数量
 
-        return dp[1][N] > 0;
+            // dp[i+1][j+1] = 当前游戏状态 [piles[i], ..., piles[j]] 的价值。
+            int[][] dp = new int[N+2][N+2]; // 定义并初始化 dp 数组
+            for (int size = 1; size <= N; ++size) // 遍历所有可能的子问题大小
+                for (int i = 0; i + size <= N; ++i) { // 遍历所有子问题的起始位置
+                    int j = i + size - 1; // 计算子问题的结束位置
+                    int parity = (j + i + N) % 2;  // 计算当前玩家是先手还是后手
+                    if (parity == 1) // 如果是先手
+                        dp[i+1][j+1] = Math.max(piles[i] + dp[i+2][j+1], piles[j] + dp[i+1][j]);
+                    else // 如果是后手
+                        dp[i+1][j+1] = Math.min(-piles[i] + dp[i+2][j+1], -piles[j] + dp[i+1][j]);
+                }
+
+            return dp[1][N] > 0; // 返回最终结果，判断先手是否能赢
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
-    
     public static void main(String[] args) {
         Solution solution = new LeetCode_877_StoneGame().new Solution();
-        // TO TEST
-        //solution.
+        // 测试样例1
+        int[] piles1 = {5, 3, 4, 5};
+        System.out.println(solution.stoneGame(piles1)); // 输出：true
+
+        // 测试样例2
+        int[] piles2 = {3, 7, 2, 3};
+        System.out.println(solution.stoneGame(piles2)); // 输出：true
+
+        // 测试样例3
+        int[] piles3 = {1, 2, 3, 4, 5, 6};
+        System.out.println(solution.stoneGame(piles3)); // 输出：true
     }
 }
+
 /**
 Alice and Bob play a game with piles of stones. There are an even number of 
 piles arranged in a row, and each pile has a positive integer number of stones 

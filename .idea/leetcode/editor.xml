@@ -2368,6 +2368,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1334_FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_1334_FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance.md" />
+              <option name="frontendQuestionId" value="leetcode.com1334" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1334_FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance.java" />
+              <option name="titleSlug" value="find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1363_LargestMultipleOfThree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_1363_LargestMultipleOfThree.md" />
+              <option name="frontendQuestionId" value="leetcode.com1363" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1363_LargestMultipleOfThree.java" />
+              <option name="titleSlug" value="largest-multiple-of-three" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_140_WordBreakIi.java">
           <value>
             <LeetcodeEditor>
@@ -2478,6 +2500,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_2998_MinimumNumberOfOperationsToMakeXAndYEqual.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_2998_MinimumNumberOfOperationsToMakeXAndYEqual.md" />
+              <option name="frontendQuestionId" value="leetcode.com2998" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_2998_MinimumNumberOfOperationsToMakeXAndYEqual.java" />
+              <option name="titleSlug" value="minimum-number-of-operations-to-make-x-and-y-equal" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_300_LongestIncreasingSubsequence.java">
           <value>
             <LeetcodeEditor>
@@ -2486,6 +2519,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_300_LongestIncreasingSubsequence.java" />
               <option name="titleSlug" value="longest-increasing-subsequence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_3040_MaximumNumberOfOperationsWithTheSameScoreIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_3040_MaximumNumberOfOperationsWithTheSameScoreIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com3040" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_3040_MaximumNumberOfOperationsWithTheSameScoreIi.java" />
+              <option name="titleSlug" value="maximum-number-of-operations-with-the-same-score-ii" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -2607,6 +2651,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_45_JumpGameIi.java" />
               <option name="titleSlug" value="jump-game-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_465_OptimalAccountBalancing.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_465_OptimalAccountBalancing.md" />
+              <option name="frontendQuestionId" value="leetcode.com465" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_465_OptimalAccountBalancing.java" />
+              <option name="titleSlug" value="optimal-account-balancing" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -2838,6 +2893,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_926_FlipStringToMonotoneIncreasing.java" />
               <option name="titleSlug" value="flip-string-to-monotone-increasing" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_935_KnightDialer.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_935_KnightDialer.md" />
+              <option name="frontendQuestionId" value="leetcode.com935" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_935_KnightDialer.java" />
+              <option name="titleSlug" value="knight-dialer" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_968_BinaryTreeCameras.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_968_BinaryTreeCameras.md" />
+              <option name="frontendQuestionId" value="leetcode.com968" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_968_BinaryTreeCameras.java" />
+              <option name="titleSlug" value="binary-tree-cameras" />
             </LeetcodeEditor>
           </value>
         </entry>

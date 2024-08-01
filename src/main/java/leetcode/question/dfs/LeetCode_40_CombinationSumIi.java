@@ -2,7 +2,6 @@ package leetcode.question.dfs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -38,7 +37,8 @@ import java.util.List;
  * ### 时间和空间复杂度分析
  *
  * #### 时间复杂度
- * - **最坏情况下**：回溯算法会遍历所有可能的组合。设 `n` 为数组 `candidates` 的长度，组合的总数为 `O(2^n)`。但由于我们进行了剪枝操作（如提前终止和跳过重复元素），实际复杂度会小于 `O(2^n)`。
+ * - **最坏情况下**：回溯算法会遍历所有可能的组合。设 `n` 为数组 `candidates` 的长度，组合的总数为 `O(2^n)`。
+ * 但由于我们进行了剪枝操作（如提前终止和跳过重复元素），实际复杂度会小于 `O(2^n)`。
  * - **排序**：`Arrays.sort(candidates)` 的时间复杂度为 `O(n log n)`。
  *
  * 综合考虑，时间复杂度为 `O(2^n * n)`。
@@ -57,7 +57,7 @@ public class LeetCode_40_CombinationSumIi{
     class Solution {
         public List<List<Integer>> combinationSum2(int[] candidates, int target) {
             List<List<Integer>> results = new ArrayList<>(); // 初始化结果列表
-            LinkedList<Integer> comb = new LinkedList<>(); // 初始化当前组合列表
+            List<Integer> comb = new ArrayList<>(); // 初始化当前组合列表
 
             Arrays.sort(candidates); // 将候选数组排序
 
@@ -67,7 +67,7 @@ public class LeetCode_40_CombinationSumIi{
 
         private void backtrack(
                 int[] candidates, // 候选数组
-                LinkedList<Integer> comb, // 当前组合
+                List<Integer> comb, // 当前组合
                 Integer remain, // 剩余目标值
                 Integer curr, // 当前索引
                 List<List<Integer>> results // 结果列表

@@ -83,9 +83,9 @@ public class LeetCode_40_CombinationSumIi{
                 Integer pick = candidates[nextCurr]; // 当前选择的元素
                 if (remain - pick < 0) break; // 如果当前选择的元素超过剩余值，停止循环
 
-                comb.addLast(pick); // 将当前选择的元素加入当前组合
+                comb.add(pick); // 将当前选择的元素加入当前组合
                 backtrack(candidates, comb, remain - pick, nextCurr + 1, results); // 递归调用回溯算法
-                comb.removeLast(); // 从当前组合中移除最后一个元素，准备下一个选择
+                comb.remove(comb.size() - 1); // 从当前组合中移除最后一个元素，准备下一个选择
             }
         }
     }

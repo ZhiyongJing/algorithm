@@ -57,6 +57,7 @@
    >
    > 代码面，用的是 Codility，题目就是给一个字符串，让筛选出所有特殊字符。
    > 交流比写代码重要：
+   >
    > 1. 问清楚边界条件
    > 2. 问清楚“特殊字符”包含什么
    > 3. 问清楚输入和输出
@@ -72,6 +73,12 @@
 3. 2024(4-6月) 码农类General 本科 全职@microsoft - 猎头 - 技术电面  | 😃 Positive 😐 AveragePass | 在职跳槽
 
    > Design a random number generator that should output the result of two 2 dice (2-12), with equal ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌probability.
+   >
+   > 1. 给两个BST，问如何合并成一个BST
+   >
+   > 2. 系统设计，如何设计一个live直播系统，基本就是类似一个大型的streaming platform
+   > 3. 写一个HashMap类，不要求generic
+   > 4. Merge Two LinkedList
 
 4. 2024(4-6月) 码农类General 硕士 全职@microsoft - 猎头 - 技术电面  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
@@ -250,11 +257,11 @@
 
     > 130min 3题，都是过去半年内地里的面筋题。
     > 1. notification message truncate to first K characters:
-    >   split by space然后考虑几个题目里列出来的corner case就能过，O(n)
+    >     split by space然后考虑几个题目里列出来的corner case就能过，O(n)
     > 2. cover n holes in a row with 2 boards
-    >   holes的位置排序，然后对每个(holes[i], holes[i+1])的gap，考虑两块板子分别cover掉gap左右两边的长度就能得到全局最优，O(nlogn) + O(n)
+    >     holes的位置排序，然后对每个(holes[i], holes[i+1])的gap，考虑两块板子分别cover掉gap左右两边的长度就能得到全局最优，O(nlogn) + O(n)
     > 3. total waiting time for clients who ordered n items
-    >   PriorityQueue+TreeSet，pq用来排序items保证用时从小到大来处理，对每个item i的用时T(i) = sum_{j <= i} min(nums[i], nums[j]) + sum_{j > i} min(nums[i] - 1, nums[j])，本质就是算面积。TreeSet用来找出当前位‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌置前后分别有多少items已经被处理了，算面积时可以减掉。O(nlogn)。也可以用线段树来做，但是代码太长了，不如TreeSet整题十几行就能写完。
+    >     PriorityQueue+TreeSet，pq用来排序items保证用时从小到大来处理，对每个item i的用时T(i) = sum_{j <= i} min(nums[i], nums[j]) + sum_{j > i} min(nums[i] - 1, nums[j])，本质就是算面积。TreeSet用来找出当前位‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌置前后分别有多少items已经被处理了，算面积时可以减掉。O(nlogn)。也可以用线段树来做，但是代码太长了，不如TreeSet整题十几行就能写完。
     >
     > 题：叁伞/洱妖尧/散吴臼，稍有变形，大差不差
     > 设计：Todo list
@@ -277,14 +284,14 @@
     > 面试官一直在challenge我一些无关紧要的细节，比如follow up 3，我答可以像cache一样直接evict old data，于是面试官就开始考我那些eviction算法分别都有什么，都适用于什么场景，怎么实现。虽然是可以展示我的知识广度，但整个题目和system design面试的意义有点背道而驰了，更像一个大型八股现场，让我感觉体验不是很好。
     >
     > 2. OOD，设计一个宠物店，顾客可以预约宠物服务，店员有各自的availability
-    >   面试官是个中国人，但这一轮其实体验挺不好的。需求很简单，面试官一直要求先过一遍主要use case的flow，但是我列好了主要的entity以及主要的接口以后面试官又不满意。我问面试官哪里不满意，是不是想要A/B/C...，面试官说是，但是我开始写了又打断我，重复了一遍题目。如此循环往复。
-    >   能感觉到面试官水平有限，想要引导我但是又表达不清楚自己想要什么，所以只能一遍又一遍重复题目。最后我列了几个class和接口就草草结束了。
+    >     面试官是个中国人，但这一轮其实体验挺不好的。需求很简单，面试官一直要求先过一遍主要use case的flow，但是我列好了主要的entity以及主要的接口以后面试官又不满意。我问面试官哪里不满意，是不是想要A/B/C...，面试官说是，但是我开始写了又打断我，重复了一遍题目。如此循环往复。
+    >     能感觉到面试官水平有限，想要引导我但是又表达不清楚自己想要什么，所以只能一遍又一遍重复题目。最后我列了几个class和接口就草草结束了。
     >
     > 3. LC依依凌柳，不要求最优解，但要求engineering + corner case well handled + exception well thrown + test driven
-    >   面试官是烙印mgr，但是水平还挺好的。我写的代码最后有点小bug但无伤大雅。
+    >     面试官是烙印mgr，但是水平还挺好的。我写的代码最后有点小bug但无伤大雅。
     >
     > 4. LC应该没有现成题号，直接让我toplogical sort a graph given a start node，输入输出类型自定义，要求过编译并且自己写test case。follow up是输出group by level of the node。
-    >   面试本身没啥难度但是面‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌试官是个白人mgr，水品很差而且态度不好，并且在我解释细节的时候一直打断我，说"你说的这些我都知道，不必当我是傻瓜一样告诉我"，我心想面试不就是告诉你我知道多少吗，你这么打断我你很不professional而且显得你很呆。
+    >     面试本身没啥难度但是面‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌试官是个白人mgr，水品很差而且态度不好，并且在我解释细节的时候一直打断我，说"你说的这些我都知道，不必当我是傻瓜一样告诉我"，我心想面试不就是告诉你我知道多少吗，你这么打断我你很不professional而且显得你很呆。
 
 17. 
 

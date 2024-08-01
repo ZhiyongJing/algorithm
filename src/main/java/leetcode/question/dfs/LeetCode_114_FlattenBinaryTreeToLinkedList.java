@@ -1,4 +1,5 @@
 package leetcode.question.dfs;
+import leetcode.util.TreeNode;
 /**
  *@Question:  114. Flatten Binary Tree to Linked List
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
@@ -99,13 +100,13 @@ public class LeetCode_114_FlattenBinaryTreeToLinkedList{
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
-    // 定义二叉树节点类
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
+//    // 定义二叉树节点类
+//    public static class TreeNode {
+//        int val;
+//        TreeNode left;
+//        TreeNode right;
+//        TreeNode(int x) { val = x; }
+//    }
 
     public static void main(String[] args) {
         Solution solution = new LeetCode_114_FlattenBinaryTreeToLinkedList().new Solution();

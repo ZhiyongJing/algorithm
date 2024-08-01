@@ -99,7 +99,7 @@ public class LeetCode_935_KnightDialer {
         }
 
         // Solution1: 自顶向下的解法
-        public int knightDialer(int n) {
+        public int knightDialer1(int n) {
             this.n = n; // 保存步数
             memo = new int[n + 1][10]; // 初始化记忆化数组
             int ans = 0;
@@ -151,7 +151,7 @@ public class LeetCode_935_KnightDialer {
         }
 
         // Solution3: Solution2 空间优化
-        public int knightDialer(int n) {
+        public int knightDialer3(int n) {
             int[][] jumps = {
                     {4, 6},
                     {6, 8},

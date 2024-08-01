@@ -84,5 +84,3 @@ return quickselect(pivot_index + 1, right, k_smallest);
 
 > - 时间复杂度：O(N)， worst case O(N^2)
 > - 空间复杂度：O(1)
-
-![img.png](../Data_Structure/Data_Structure.assets/img.png)

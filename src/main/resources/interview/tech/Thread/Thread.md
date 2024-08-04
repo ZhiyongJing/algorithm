@@ -310,7 +310,7 @@
 >
 >• CountDownLatch 主要有两个方法，当一个或多个线程调用 await 方法时，这些线程会阻塞,其它线程调用 countDown 方法会将计数器减 1(调用 countDown 方法的线程不会阻塞), 当计数器的值变为 0 时，因 await 方法阻塞的线程会被唤醒，继续执行
 >
->`````
+>`````java
 >//6个同学陆续离开教室之后，班长锁门
 >    public static void main(String[] args) throws InterruptedException {
 >        CountDownLatch countDownLatch = new CountDownLatch(6);  //创建CountDownLatch对象，设置初始值

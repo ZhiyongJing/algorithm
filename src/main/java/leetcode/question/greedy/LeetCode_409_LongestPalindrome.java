@@ -1,4 +1,4 @@
-package leetcode.question.two_pointer;
+package leetcode.question.greedy;
 
 /**
  *@Question:  409. Longest Palindrome

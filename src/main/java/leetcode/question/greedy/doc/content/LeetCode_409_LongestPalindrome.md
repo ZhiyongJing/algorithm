@@ -1,6 +1,6 @@
-<p>Given a string <code>s</code> which consists of lowercase or uppercase letters, return <em>the length of the <strong>longest palindrome</strong></em>&nbsp;that can be built with those letters.</p>
+<p>Given a string <code>s</code> which consists of lowercase or uppercase letters, return the length of the <strong>longest <span data-keyword="palindrome-string">palindrome</span></strong>&nbsp;that can be built with those letters.</p>
 
-<p>Letters are <strong>case sensitive</strong>, for example,&nbsp;<code>"Aa"</code> is not considered a palindrome here.</p>
+<p>Letters are <strong>case sensitive</strong>, for example, <code>"Aa"</code> is not considered a palindrome.</p>
 
 <p>&nbsp;</p> 
 <p><strong class="example">Example 1:</strong></p>
@@ -27,4 +27,4 @@
  <li><code>s</code> consists of lowercase <strong>and/or</strong> uppercase English&nbsp;letters only.</li> 
 </ul>
 
-<div><div>Related Topics</div><div><li>Hash Table</li><li>String</li><li>Greedy</li></div></div><br><div><li>👍 5168</li><li>👎 342</li></div>
+<div><div>Related Topics</div><div><li>Hash Table</li><li>String</li><li>Greedy</li></div></div><br><div><li>👍 5909</li><li>👎 409</li></div>

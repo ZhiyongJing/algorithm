@@ -1,5 +1,7 @@
 package leetcode.question.linked_list;
 
+import leetcode.util.ListNode;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -92,13 +94,7 @@ public class LeetCode_1836_RemoveDuplicatesFromAnUnsortedLinkedList{
 }
 
 // 辅助类 ListNode
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-}
+
 
 /**
 Given the head of a linked list, find all the values that appear more than once 

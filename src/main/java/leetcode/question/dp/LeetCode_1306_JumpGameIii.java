@@ -44,6 +44,7 @@ public class LeetCode_1306_JumpGameIii {
          * @param start 起始位置
          * @return 是否能够到达指定位置
          */
+        //top-down dfs
         public boolean canReach(int[] arr, int start) {
             // 检查起始位置是否有效
             if (start >= 0 && start < arr.length && arr[start] >= 0) {

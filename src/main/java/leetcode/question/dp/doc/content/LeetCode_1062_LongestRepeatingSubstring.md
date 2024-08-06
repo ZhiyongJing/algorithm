@@ -33,4 +33,4 @@
  <li><code>s</code> consists of lowercase English letters.</li> 
 </ul>
 
-<div><div>Related Topics</div><div><li>String</li><li>Binary Search</li><li>Dynamic Programming</li><li>Rolling Hash</li><li>Suffix Array</li><li>Hash Function</li></div></div><br><div><li>👍 642</li><li>👎 55</li></div>
+<div><div>Related Topics</div><div><li>String</li><li>Binary Search</li><li>Dynamic Programming</li><li>Rolling Hash</li><li>Suffix Array</li><li>Hash Function</li></div></div><br><div><li>👍 696</li><li>👎 73</li></div>

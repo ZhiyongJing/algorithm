@@ -46,7 +46,7 @@ public class LeetCode_5_LongestPalindromicSubstring {
          * @return 最长回文子串
          */
         public String longestPalindrome(String s) {
-            // 使用 Manacher's Algorithm，构造新字符串，插入特殊字符 '#'
+            //step1: 使用 Manacher's Algorithm，构造新字符串，插入特殊字符 '#'
             StringBuilder sPrime = new StringBuilder("#");
             for (char c: s.toCharArray()) {
                 sPrime.append(c).append("#");

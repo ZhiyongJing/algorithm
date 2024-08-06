@@ -369,10 +369,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1062_LongestRepeatingSubstring.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_1062_LongestRepeatingSubstring.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_1062_LongestRepeatingSubstring.md" />
               <option name="frontendQuestionId" value="leetcode.com1062" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1062_LongestRepeatingSubstring.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1062_LongestRepeatingSubstring.java" />
               <option name="titleSlug" value="longest-repeating-substring" />
             </LeetcodeEditor>
           </value>
@@ -396,6 +396,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1300_SumOfMutatedArrayClosestToTarget.java" />
               <option name="titleSlug" value="sum-of-mutated-array-closest-to-target" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_153_FindMinimumInRotatedSortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_153_FindMinimumInRotatedSortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com153" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_153_FindMinimumInRotatedSortedArray.java" />
+              <option name="titleSlug" value="find-minimum-in-rotated-sorted-array" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -806,6 +817,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1466_ReorderRoutesToMakeAllPathsLeadToTheCityZero.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_1466_ReorderRoutesToMakeAllPathsLeadToTheCityZero.md" />
+              <option name="frontendQuestionId" value="leetcode.com1466" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1466_ReorderRoutesToMakeAllPathsLeadToTheCityZero.java" />
+              <option name="titleSlug" value="reorder-routes-to-make-all-paths-lead-to-the-city-zero" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1485_CloneBinaryTreeWithRandomPointer.java">
           <value>
             <LeetcodeEditor>
@@ -916,6 +938,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_2246_LongestPathWithDifferentAdjacentCharacters.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_2246_LongestPathWithDifferentAdjacentCharacters.md" />
+              <option name="frontendQuestionId" value="leetcode.com2246" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_2246_LongestPathWithDifferentAdjacentCharacters.java" />
+              <option name="titleSlug" value="longest-path-with-different-adjacent-characters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_226_InvertBinaryTree.java">
           <value>
             <LeetcodeEditor>
@@ -946,6 +979,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_235_LowestCommonAncestorOfABinarySearchTree.java" />
               <option name="titleSlug" value="lowest-common-ancestor-of-a-binary-search-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_236_LowestCommonAncestorOfABinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_236_LowestCommonAncestorOfABinaryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com236" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_236_LowestCommonAncestorOfABinaryTree.java" />
+              <option name="titleSlug" value="lowest-common-ancestor-of-a-binary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1232,6 +1276,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_543_DiameterOfBinaryTree.java" />
               <option name="titleSlug" value="diameter-of-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_54_SpiralMatrix.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_54_SpiralMatrix.md" />
+              <option name="frontendQuestionId" value="leetcode.com54" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_54_SpiralMatrix.java" />
+              <option name="titleSlug" value="spiral-matrix" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1529,6 +1584,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1048_LongestStringChain.java" />
               <option name="titleSlug" value="longest-string-chain" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1062_LongestRepeatingSubstring.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_1062_LongestRepeatingSubstring.md" />
+              <option name="frontendQuestionId" value="leetcode.com1062" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1062_LongestRepeatingSubstring.java" />
+              <option name="titleSlug" value="longest-repeating-substring" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -2305,10 +2371,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_23_MergeKSortedLists.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_23_MergeKSortedLists.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_23_MergeKSortedLists.md" />
               <option name="frontendQuestionId" value="leetcode.com23" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_23_MergeKSortedLists.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_23_MergeKSortedLists.java" />
               <option name="titleSlug" value="merge-k-sorted-lists" />
             </LeetcodeEditor>
           </value>
@@ -2349,10 +2415,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_295_FindMedianFromDataStream.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_295_FindMedianFromDataStream.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_295_FindMedianFromDataStream.md" />
               <option name="frontendQuestionId" value="leetcode.com295" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_295_FindMedianFromDataStream.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_295_FindMedianFromDataStream.java" />
               <option name="titleSlug" value="find-median-from-data-stream" />
             </LeetcodeEditor>
           </value>
@@ -2415,10 +2481,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_88_MergeSortedArray.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_88_MergeSortedArray.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_88_MergeSortedArray.md" />
               <option name="frontendQuestionId" value="leetcode.com88" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_88_MergeSortedArray.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_88_MergeSortedArray.java" />
               <option name="titleSlug" value="merge-sorted-array" />
             </LeetcodeEditor>
           </value>
@@ -2530,17 +2596,6 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/LeetCode_206_ReverseLinkedList.java" />
               <option name="titleSlug" value="reverse-linked-list" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/LeetCode_20_ValidParentheses.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/doc/content/LeetCode_20_ValidParentheses.md" />
-              <option name="frontendQuestionId" value="leetcode.com20" />
-              <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_20_ValidParentheses.java" />
-              <option name="titleSlug" value="valid-parentheses" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -2690,10 +2745,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_128_LongestConsecutiveSequence.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_128_LongestConsecutiveSequence.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_128_LongestConsecutiveSequence.md" />
               <option name="frontendQuestionId" value="leetcode.com128" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_128_LongestConsecutiveSequence.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_128_LongestConsecutiveSequence.java" />
               <option name="titleSlug" value="longest-consecutive-sequence" />
             </LeetcodeEditor>
           </value>
@@ -2739,6 +2794,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1396_DesignUndergroundSystem.java" />
               <option name="titleSlug" value="design-underground-system" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_13_RomanToInteger.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_13_RomanToInteger.md" />
+              <option name="frontendQuestionId" value="leetcode.com13" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_13_RomanToInteger.java" />
+              <option name="titleSlug" value="roman-to-integer" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3174,10 +3240,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/queue/LeetCode_54_SpiralMatrix.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/doc/content/LeetCode_54_SpiralMatrix.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_54_SpiralMatrix.md" />
               <option name="frontendQuestionId" value="leetcode.com54" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/LeetCode_54_SpiralMatrix.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_54_SpiralMatrix.java" />
               <option name="titleSlug" value="spiral-matrix" />
             </LeetcodeEditor>
           </value>
@@ -3361,10 +3427,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_20_ValidParentheses.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_20_ValidParentheses.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/doc/content/LeetCode_20_ValidParentheses.md" />
               <option name="frontendQuestionId" value="leetcode.com20" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_20_ValidParentheses.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_20_ValidParentheses.java" />
               <option name="titleSlug" value="valid-parentheses" />
             </LeetcodeEditor>
           </value>
@@ -3446,6 +3512,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_168_ExcelSheetColumnTitle.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_168_ExcelSheetColumnTitle.md" />
+              <option name="frontendQuestionId" value="leetcode.com168" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_168_ExcelSheetColumnTitle.java" />
+              <option name="titleSlug" value="excel-sheet-column-title" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_172_FactorialTrailingZeroes.java">
           <value>
             <LeetcodeEditor>
@@ -3454,6 +3531,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_172_FactorialTrailingZeroes.java" />
               <option name="titleSlug" value="factorial-trailing-zeroes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_204_CountPrimes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_204_CountPrimes.md" />
+              <option name="frontendQuestionId" value="leetcode.com204" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_204_CountPrimes.java" />
+              <option name="titleSlug" value="count-primes" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3564,6 +3652,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_65_ValidNumber.java" />
               <option name="titleSlug" value="valid-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_7_ReverseInteger.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_7_ReverseInteger.md" />
+              <option name="frontendQuestionId" value="leetcode.com7" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_7_ReverseInteger.java" />
+              <option name="titleSlug" value="reverse-integer" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3842,6 +3941,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_151_ReverseWordsInAString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_151_ReverseWordsInAString.md" />
+              <option name="frontendQuestionId" value="leetcode.com151" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_151_ReverseWordsInAString.java" />
+              <option name="titleSlug" value="reverse-words-in-a-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_15_ThreeSum.java">
           <value>
             <LeetcodeEditor>
@@ -3894,6 +4004,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_186_ReverseWordsInAStringIi.java" />
               <option name="titleSlug" value="reverse-words-in-a-string-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_189_RotateArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_189_RotateArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com189" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_189_RotateArray.java" />
+              <option name="titleSlug" value="rotate-array" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3960,6 +4081,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_283_MoveZeroes.java" />
               <option name="titleSlug" value="move-zeroes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_31_NextPermutation.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_31_NextPermutation.md" />
+              <option name="frontendQuestionId" value="leetcode.com31" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_31_NextPermutation.java" />
+              <option name="titleSlug" value="next-permutation" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4103,6 +4235,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_76_MinimumWindowSubstring.java" />
               <option name="titleSlug" value="minimum-window-substring" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_88_MergeSortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_88_MergeSortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com88" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_88_MergeSortedArray.java" />
+              <option name="titleSlug" value="merge-sorted-array" />
             </LeetcodeEditor>
           </value>
         </entry>

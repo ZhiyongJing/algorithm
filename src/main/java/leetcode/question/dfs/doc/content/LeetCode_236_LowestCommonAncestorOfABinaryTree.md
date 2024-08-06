@@ -37,4 +37,4 @@
  <li><code>p</code> and <code>q</code> will exist in the tree.</li> 
 </ul>
 
-<div><div>Related Topics</div><div><li>Tree</li><li>Depth-First Search</li><li>Binary Tree</li></div></div><br><div><li>👍 15596</li><li>👎 373</li></div>
+<div><div>Related Topics</div><div><li>Tree</li><li>Depth-First Search</li><li>Binary Tree</li></div></div><br><div><li>👍 16611</li><li>👎 416</li></div>

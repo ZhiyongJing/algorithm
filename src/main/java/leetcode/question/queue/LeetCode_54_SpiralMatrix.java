@@ -51,10 +51,8 @@ public class LeetCode_54_SpiralMatrix {
             List<Integer> result = new ArrayList<>();
             int rows = matrix.length;
             int columns = matrix[0].length;
-            int up = 0;
-            int left = 0;
-            int right = columns - 1;
-            int down = rows - 1;
+            int up = 0, left = 0;
+            int right = columns - 1, down = rows - 1;
 
             while (result.size() < rows * columns) {
                 // 从左到右遍历

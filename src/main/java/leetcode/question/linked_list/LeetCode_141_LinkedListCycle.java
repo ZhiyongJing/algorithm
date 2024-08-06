@@ -6,8 +6,8 @@ import leetcode.util.ListNode;
   *@Question:  141. Linked List Cycle     
   *@Difculty:  1 [1->Easy, 2->Medium, 3->Hard]
   *@Frequency: 56.95%      
-  *@Time  Complexity: O()
-  *@Space Complexity: O()
+  *@Time  Complexity: O(N)
+  *@Space Complexity: O(1)
  */
 
 public class LeetCode_141_LinkedListCycle{

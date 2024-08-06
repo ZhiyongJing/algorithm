@@ -43,7 +43,8 @@ public class LeetCode_477_TotalHammingDistance{
     class Solution {
         public int totalHammingDistance(int[] nums) {
             // 计数第 i 位的 1 的数量
-            int[] cnt = new int[31]; // 初始化一个数组来存储每个位上1的数量，数组大小为31，因为int类型有32位，这里使用31是因为负数的补码表示需要考虑符号位
+            int[] cnt = new int[31]; // 初始化一个数组来存储每个位上1的数量，数组大小为31，
+            // 因为int类型有32位，这里使用31是因为负数的补码表示需要考虑符号位
             for (int num : nums) {
                 for (int i = 0; i < 31; i++) {
                     cnt[i] += (num >> i) & 1; // 计算每个数字在每个位上的1的数量

@@ -47,4 +47,4 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 <p>&nbsp;</p> 
 <p><strong>Follow up: </strong>Can you come up with an algorithm that runs in <code>O(m + n)</code> time?</p>
 
-<div><div>Related Topics</div><div><li>Array</li><li>Two Pointers</li><li>Sorting</li></div></div><br><div><li>👍 13660</li><li>👎 1626</li></div>
+<div><div>Related Topics</div><div><li>Array</li><li>Two Pointers</li><li>Sorting</li></div></div><br><div><li>👍 15076</li><li>👎 1969</li></div>

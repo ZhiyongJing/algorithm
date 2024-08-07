@@ -365,6 +365,8 @@
 ### 5. Design Elevator
 
 > ![image-20240503151457375](OOD案例.assets/image-20240503151457375.png)
+>
+> 
 
 ### 6. Design Restaurant with Reservation
 
@@ -1357,3 +1359,394 @@
 >     }
 > }
 > ```
+
+### 19. Design on-call system
+
+> ood on‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌call system。员工有primary有secondary有最后一级，问怎么assign ticket和transfer ticket
+>
+> 设计一个On-Call系统时，需要考虑以下几个关键功能和组件：
+>
+> 1. **员工角色和优先级**：
+>    - 每个员工可以是`Primary`（主责任人）或`Secondary`（次责任人）。
+>    - 当主责任人不可用或未响应时，票据应自动转移给次责任人。
+>
+> 2. **票据（Ticket）管理**：
+>    - 创建票据并分配给员工。
+>    - 票据的状态管理（例如：打开、进行中、已解决、关闭）。
+>    - 票据的转移功能。
+>
+> 3. **员工管理**：
+>    - 员工信息的维护。
+>    - 设置员工的值班状态（On-Call/Off-Call）。
+>
+> 4. **通知和提醒**：
+>    - 主责任人未响应时的提醒和转移通知。
+>
+> 以下是一个基本的类设计方案：
+>
+> 类和接口
+>
+> > 1. **Ticket**:
+> >    - 属性: `id`, `title`, `description`, `status`, `assignedEmployee`
+> >    - 方法: `assignTo(Employee employee)`, `transferTo(Employee employee)`
+> >
+> > 2. **Employee**:
+> >    - 属性: `id`, `name`, `role`（Primary/Secondary）, `onCallStatus`
+> >    - 方法: `setOnCallStatus(boolean status)`, `isOnCall()`
+> >
+> > 3. **TicketManager**:
+> >    - 属性: `List<Ticket> tickets`, `List<Employee> employees`
+> >    - 方法: `createTicket(String title, String description)`, `assignTicket(int ticketId, int employeeId)`, `transferTicket(int ticketId, int newEmployeeId)`, `getTicket(int ticketId)`
+> >
+> > 4. **NotificationService**:
+> >    - 方法: `notify(Employee employee, String message)`
+>
+> 这个设计中，`TicketManager` 管理票据的创建、分配和转移，`NotificationService` 负责通知员工。通过这个设计，可以灵活地实现不同的功能，例如票据的自动转移、员工的值班状态管理等。
+>
+> ```java
+> enum Role {
+>     PRIMARY, SECONDARY
+> }
+> 
+> enum TicketStatus {
+>     OPEN, IN_PROGRESS, RESOLVED, CLOSED
+> }
+> 
+> class Employee {
+>     private int id;
+>     private String name;
+>     private Role role;
+>     private boolean onCallStatus;
+> 
+>     public Employee(int id, String name, Role role) {
+>         this.id = id;
+>         this.name = name;
+>         this.role = role;
+>         this.onCallStatus = false;
+>     }
+> 
+>     public int getId() {
+>         return id;
+>     }
+> 
+>     public String getName() {
+>         return name;
+>     }
+> 
+>     public Role getRole() {
+>         return role;
+>     }
+> 
+>     public void setOnCallStatus(boolean status) {
+>         this.onCallStatus = status;
+>     }
+> 
+>     public boolean isOnCall() {
+>         return onCallStatus;
+>     }
+> }
+> 
+> class Ticket {
+>     private int id;
+>     private String title;
+>     private String description;
+>     private TicketStatus status;
+>     private Employee assignedEmployee;
+> 
+>     public Ticket(int id, String title, String description) {
+>         this.id = id;
+>         this.title = title;
+>         this.description = description;
+>         this.status = TicketStatus.OPEN;
+>     }
+> 
+>     public void assignTo(Employee employee) {
+>         this.assignedEmployee = employee;
+>     }
+> 
+>     public void transferTo(Employee newEmployee) {
+>         this.assignedEmployee = newEmployee;
+>     }
+> 
+>     public Employee getAssignedEmployee() {
+>         return assignedEmployee;
+>     }
+> 
+>     public TicketStatus getStatus() {
+>         return status;
+>     }
+> 
+>     public void setStatus(TicketStatus status) {
+>         this.status = status;
+>     }
+> }
+> 
+> class TicketManager {
+>     private List<Ticket> tickets = new ArrayList<>();
+>     private List<Employee> employees = new ArrayList<>();
+> 
+>     public Ticket createTicket(String title, String description) {
+>         int id = tickets.size() + 1;
+>         Ticket ticket = new Ticket(id, title, description);
+>         tickets.add(ticket);
+>         return ticket;
+>     }
+> 
+>     public void addEmployee(Employee employee) {
+>         employees.add(employee);
+>     }
+> 
+>     public void assignTicket(int ticketId, int employeeId) {
+>         Ticket ticket = getTicket(ticketId);
+>         Employee employee = getEmployee(employeeId);
+>         if (ticket != null && employee != null) {
+>             ticket.assignTo(employee);
+>         }
+>     }
+> 
+>     public void transferTicket(int ticketId, int newEmployeeId) {
+>         Ticket ticket = getTicket(ticketId);
+>         Employee newEmployee = getEmployee(newEmployeeId);
+>         if (ticket != null && newEmployee != null) {
+>             ticket.transferTo(newEmployee);
+>         }
+>     }
+> 
+>     public Ticket getTicket(int ticketId) {
+>         for (Ticket ticket : tickets) {
+>             if (ticket.getId() == ticketId) {
+>                 return ticket;
+>             }
+>         }
+>         return null;
+>     }
+> 
+>     private Employee getEmployee(int employeeId) {
+>         for (Employee employee : employees) {
+>             if (employee.getId() == employeeId) {
+>                 return employee;
+>             }
+>         }
+>         return null;
+>     }
+> }
+> 
+> class NotificationService {
+>     public void notify(Employee employee, String message) {
+>         // Send notification to the employee
+>         System.out.println("Notification to " + employee.getName() + ": " + message);
+>     }
+> }
+> 
+> public class OnCallSystem {
+>     public static void main(String[] args) {
+>         TicketManager ticketManager = new TicketManager();
+> 
+>         // 创建员工
+>         Employee alice = new Employee(1, "Alice", Role.PRIMARY);
+>         Employee bob = new Employee(2, "Bob", Role.SECONDARY);
+> 
+>         // 添加员工到系统
+>         ticketManager.addEmployee(alice);
+>         ticketManager.addEmployee(bob);
+> 
+>         // 创建并分配票据
+>         Ticket ticket1 = ticketManager.createTicket("Server Down", "The server is down.");
+>         ticketManager.assignTicket(ticket1.getId(), alice.getId());
+> 
+>         // 转移票据
+>         ticketManager.transferTicket(ticket1.getId(), bob.getId());
+> 
+>         // 通知系统（示例）
+>         NotificationService notificationService = new NotificationService();
+>         notificationService.notify(alice, "You have been assigned a new ticket.");
+>     }
+> }
+> ```
+>
+
+### 20. Design pet store
+
+> 设计一个宠物店系统，其中顾客可以预约宠物服务，并且店员有各自的可用时间，涉及到面向对象设计（OOD）时，通常会使用面向对象的原则和设计模式来实现。以下是一个简单的设计示例，包含接口、类和Java代码。
+>
+> ### 1. 设计考虑
+>
+> **面向对象设计（OOD）的原则**:
+> 1. **单一职责原则 (SRP)**: 每个类应该只有一个职责。
+> 2. **开放-封闭原则 (OCP)**: 软件实体应该对扩展开放，对修改封闭。
+> 3. **里氏替换原则 (LSP)**: 子类对象应该能够替换掉父类对象。
+> 4. **接口隔离原则 (ISP)**: 不应该强迫客户依赖于他们不使用的方法。
+> 5. **依赖倒置原则 (DIP)**: 高层模块不应该依赖于低层模块，二者都应该依赖于抽象。
+>
+> **设计模式**:
+> - **策略模式**: 处理不同类型的服务预约。
+> - **工厂模式**: 创建不同类型的宠物服务。
+> - **观察者模式**: 处理店员的可用时间变化。
+>
+> ### 2. 类和接口设计
+>
+> - **接口**:
+>   - `Service`：定义宠物服务。
+>   - `Availability`：定义店员的可用时间。
+>   - `Scheduler`：处理预约。
+>
+> - **类**:
+>   - `PetService`：实现`Service`接口。
+>   - `Employee`：实现`Availability`接口。
+>   - `Appointment`：表示一个预约。
+>   - `PetStore`：管理宠物服务和店员，处理预约。
+>
+> ### 3. Java代码示例
+>
+> ```java
+> import java.util.ArrayList;
+> import java.util.List;
+> 
+> // 服务接口
+> interface Service {
+>     String getServiceName();
+>     double getPrice();
+> }
+> 
+> // 店员可用时间接口
+> interface Availability {
+>     boolean isAvailable(String timeSlot);
+> }
+> 
+> // 预约接口
+> interface Scheduler {
+>     boolean bookAppointment(Employee employee, Service service, String timeSlot);
+> }
+> 
+> // 实现具体的服务
+> class PetGrooming implements Service {
+>     private final String serviceName;
+>     private final double price;
+> 
+>     public PetGrooming(String serviceName, double price) {
+>         this.serviceName = serviceName;
+>         this.price = price;
+>     }
+> 
+>     @Override
+>     public String getServiceName() {
+>         return serviceName;
+>     }
+> 
+>     @Override
+>     public double getPrice() {
+>         return price;
+>     }
+> }
+> 
+> // 实现具体的店员
+> class Employee implements Availability {
+>     private final String name;
+>     private final List<String> availableTimeSlots;
+> 
+>     public Employee(String name, List<String> availableTimeSlots) {
+>         this.name = name;
+>         this.availableTimeSlots = availableTimeSlots;
+>     }
+> 
+>     @Override
+>     public boolean isAvailable(String timeSlot) {
+>         return availableTimeSlots.contains(timeSlot);
+>     }
+> 
+>     public String getName() {
+>         return name;
+>     }
+> }
+> 
+> // 预约类
+> class Appointment {
+>     private final Employee employee;
+>     private final Service service;
+>     private final String timeSlot;
+> 
+>     public Appointment(Employee employee, Service service, String timeSlot) {
+>         this.employee = employee;
+>         this.service = service;
+>         this.timeSlot = timeSlot;
+>     }
+> 
+>     @Override
+>     public String toString() {
+>         return "Appointment with " + employee.getName() + " for " + service.getServiceName() +
+>                " at " + timeSlot + " costing $" + service.getPrice();
+>     }
+> }
+> 
+> // 宠物店类
+> class PetStore implements Scheduler {
+>     private final List<Employee> employees = new ArrayList<>();
+>     private final List<Service> services = new ArrayList<>();
+>     private final List<Appointment> appointments = new ArrayList<>();
+> 
+>     public void addEmployee(Employee employee) {
+>         employees.add(employee);
+>     }
+> 
+>     public void addService(Service service) {
+>         services.add(service);
+>     }
+> 
+>     @Override
+>     public boolean bookAppointment(Employee employee, Service service, String timeSlot) {
+>         if (employee.isAvailable(timeSlot)) {
+>             Appointment appointment = new Appointment(employee, service, timeSlot);
+>             appointments.add(appointment);
+>             return true;
+>         }
+>         return false;
+>     }
+> 
+>     public List<Appointment> getAppointments() {
+>         return appointments;
+>     }
+> }
+> 
+> // 测试示例
+> public class Main {
+>     public static void main(String[] args) {
+>         PetStore petStore = new PetStore();
+> 
+>         // 创建服务
+>         Service grooming = new PetGrooming("Dog Grooming", 50.0);
+>         petStore.addService(grooming);
+> 
+>         // 创建店员
+>         List<String> timeSlots = new ArrayList<>();
+>         timeSlots.add("10:00 AM");
+>         timeSlots.add("2:00 PM");
+>         Employee john = new Employee("John", timeSlots);
+>         petStore.addEmployee(john);
+> 
+>         // 预约服务
+>         boolean booked = petStore.bookAppointment(john, grooming, "10:00 AM");
+>         if (booked) {
+>             System.out.println("Appointment booked successfully!");
+>         } else {
+>             System.out.println("Failed to book appointment.");
+>         }
+> 
+>         // 打印预约
+>         for (Appointment appointment : petStore.getAppointments()) {
+>             System.out.println(appointment);
+>         }
+>     }
+> }
+> ```
+>
+> ### 4. 解释
+>
+> - **`Service`** 接口定义了宠物服务的基本属性。
+> - **`Availability`** 接口定义了店员的可用时间。
+> - **`Scheduler`** 接口用于处理预约逻辑。
+> - **`PetGrooming`** 类实现了具体的服务。
+> - **`Employee`** 类实现了具体的店员以及其可用时间。
+> - **`Appointment`** 类表示一个预约实例。
+> - **`PetStore`** 类管理店员和服务，并处理预约。
+>
+> 这个设计示例展示了如何使用面向对象原则和设计模式来构建一个简单的宠物店预约系统。你可以根据实际需求进一步扩展和优化。

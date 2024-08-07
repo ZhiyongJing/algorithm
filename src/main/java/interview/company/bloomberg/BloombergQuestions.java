@@ -51,52 +51,53 @@ import java.util.List;
 public class BloombergQuestions {
     public static void main(String[] args) {
         List<Object> questions = Arrays.asList(
-                new LeetCode_39_CombinationSum()//candidate 可以无限使用， 优化memorization
-                , new LeetCode_40_CombinationSumIi()//candidate 可以使用最多一次
-                , new LeetCode_322_CoinChange()//返回最小硬币数量的所有组合，无限硬币, follow up 如果硬币种类非常多
-                , new LeetCode_518_CoinChangeIi()//返回所有硬币数量组合
-                , new LeetCode_430_FlattenAMultilevelDoublyLinkedList()//问时间复杂度, follow up similar question, 保持递增排序
-                , new LeetCode_1396_DesignUndergroundSystem()//做完问了一些拓展的问题 比如如果有人只刷进站不刷出站怎么办 反着怎么办
-                , new LeetCode_656_CoinPath()//结合656
-                , new LeetCode_8_StringToIntegerAtoi()//12月初：店面 刷题网芭
-                , new LeetCode_91_DecodeWays()//
-                , new LeetCode_1656_DesignAnOrderedStream()
-                , new LeetCode_450_DeleteNodeInABst()
-                , new LeetCode_428_SerializeAndDeserializeNAryTree()//花时间
-                , new LeetCode_1029_TwoCityScheduling()
-                , new LeetCode_1244_DesignALeaderboard()//input是股票的名字和交易数量，设计一个方程来储存这个input，会不停地被call到；然后设计另一个方程输出所有股票的名字和总交易数量，按交易量从大到小排序这题我用一个priority queu做的，但是不是最优解，估计没有过
-                , new LeetCode_797_AllPathsFromSourceToTarget()
-                , new LeetCode_125_ValidPalindrome()
-                , new LeetCode_394_DecodeString()
-                , new LeetCode_79_WordSearch()
-                , new LeetCode_134_GasStation()
-                , new LeetCode_126_WordLadderIi()//返回所有最短的路径
-                , new LeetCode_127_WordLadder()//返回最短路径长度
-                , new LeetCode_118_PascalsTriangle()
-                , new LeetCode_119_PascalsTriangleIi() //算pascal三角形的的第n行第k列的值。就是(n k)
-                , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() //打印最深层次括号里的字符串。 没见过。
-                , new LeetCode_380_InsertDeleteGetrandomO1()//follow up 381
-                , new LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed() //我觉得这货绝对有大病。我用的就是经典的map<String, List<Integer>> 结构。他不满意，说这样不行。不能达到O(1). 然后我说我们可以用PriorityQueue.还是不满意。说是要存一个index 然后每次能很精准的找到位置，就达到O(1)
-                , new LeetCode_78_Subsets()//vo
-                , new LeetCode_430_FlattenAMultilevelDoublyLinkedList()//vo
-                , new LeetCode_1169_InvalidTransactions()//输入已经按照时间排序
-                , new LeetCode_1614_MaximumNestingDepthOfTheParentheses()//用bfs, follow up DFS
-                , new LeetCode_394_DecodeString()
-                , new LeetCode_642_DesignSearchAutocompleteSystem()
-                , new LeetCode_138_CopyListWithRandomPointer()
-                , new LeetCode_987_VerticalOrderTraversalOfABinaryTree()
-                , new LeetCode_239_SlidingWindowMaximum()
-                , new LeetCode_20_ValidParentheses()
-                , new LeetCode_253_MeetingRoomsIi()
-                , new LeetCode_1274_NumberOfShipsInARectangle()
-                , new LeetCode_3_LongestSubstringWithoutRepeatingCharacters()
-                , new LeetCode_139_WordBreak()
-                , new LeetCode_140_WordBreakIi()//return all comb
-                , new LeetCode_98_ValidateBinarySearchTree()
-                , new LeetCode_301_RemoveInvalidParentheses()
-                , new LeetCode_611_ValidTriangleNumber()
-                , new LeetCode_1091_ShortestPathInBinaryMatrix()// 变形题为 在 沙漠 给限定 汽油， 能否从一个地方到另一个地方
-                , new LeetCode_33_SearchInRotatedSortedArray()
+            new LeetCode_39_CombinationSum() // Candidate can be used unlimited times, optimize memorization. // 候选元素可以无限使用，优化记忆化
+            , new LeetCode_40_CombinationSumIi() // Candidate can be used at most once. // 候选元素最多使用一次
+            , new LeetCode_322_CoinChange() // Return the minimum number of coins needed for change, with unlimited coins. Follow-up if there are many coin types. // 返回所需的最小硬币数量，使用无限硬币。跟进如果硬币种类非常多
+            , new LeetCode_518_CoinChangeIi() // Return all possible combinations of coins to make the amount. // 返回所有可能的硬币组合以达到目标金额
+            , new LeetCode_430_FlattenAMultilevelDoublyLinkedList() // Flatten a multilevel doubly linked list. Time complexity question, follow-up with similar problem maintaining sorted order. // 展平多级双向链表。时间复杂度问题，跟进类似问题保持递增排序
+            , new LeetCode_1396_DesignUndergroundSystem() // Design an underground system with check-ins and check-outs, handling edge cases like checking in without checking out. // 设计一个地下系统，包括进站和出站，处理如仅进站未出站等边界情况
+            , new LeetCode_656_CoinPath() // Find the minimum cost path using coins, similar to LeetCode_322. // 找到使用硬币的最小成本路径，类似于 LeetCode_322
+            , new LeetCode_8_StringToIntegerAtoi() // Convert a string to an integer with edge cases. // 将字符串转换为整数，处理边界情况
+            , new LeetCode_91_DecodeWays() // Decode a string with encoding rules. // 解码字符串，按编码规则解码
+            , new LeetCode_1656_DesignAnOrderedStream() // Design an ordered stream data structure. // 设计一个有序流数据结构
+            , new LeetCode_450_DeleteNodeInABst() // Delete a node in a Binary Search Tree. // 在二叉搜索树中删除节点
+            , new LeetCode_428_SerializeAndDeserializeNAryTree() // Serialize and deserialize an N-ary tree. // 序列化和反序列化 N 叉树
+            , new LeetCode_1029_TwoCityScheduling() // Schedule people to two cities to minimize the total cost. // 将人安排到两个城市中，以最小化总成本
+            , new LeetCode_1244_DesignALeaderboard() // Design a leaderboard for stock transactions, sort by transaction volume. // 设计一个股票交易的排行榜，按交易量排序
+            , new LeetCode_797_AllPathsFromSourceToTarget() // Find all paths from source to target in a graph. // 查找图中从源节点到目标节点的所有路径
+            , new LeetCode_125_ValidPalindrome() // Determine if a string is a valid palindrome, ignoring non-alphanumeric characters. // 判断字符串是否为有效回文，忽略非字母数字字符
+            , new LeetCode_394_DecodeString() // Decode a string with encoded patterns (e.g., "3[a2[c]]"). // 解码带有编码模式的字符串（例如，"3[a2[c]]"）
+            , new LeetCode_79_WordSearch() // Search for a word in a 2D board. // 在二维板中搜索单词
+            , new LeetCode_134_GasStation() // Find the starting gas station to complete the circuit. // 找到可以完成环路的起始加油站
+            , new LeetCode_126_WordLadderIi() // Return all shortest transformation sequences from start to end. // 返回从起始到结束的所有最短转换序列
+            , new LeetCode_127_WordLadder() // Find the length of the shortest transformation sequence. // 查找最短转换序列的长度
+            , new LeetCode_118_PascalsTriangle() // Generate Pascal's triangle up to the specified number of rows. // 生成指定行数的帕斯卡三角形
+            , new LeetCode_119_PascalsTriangleIi() // Return the k-th row of Pascal's triangle. // 返回帕斯卡三角形的第 k 行
+            , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() // Find the maximum depth of nested parentheses. // 找到嵌套括号的最大深度
+            , new LeetCode_380_InsertDeleteGetrandomO1() // Design a data structure that supports insert, delete, and get random element in constant time. // 设计一个支持插入、删除和随机获取元素的数据结构
+            , new LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed() // Design a data structure that allows duplicates and supports insert, delete, and get random element in constant time. // 设计一个允许重复的支持插入、删除和随机获取元素的数据结构
+            , new LeetCode_78_Subsets() // Generate all possible subsets of a set. // 生成一个集合的所有可能子集
+            , new LeetCode_430_FlattenAMultilevelDoublyLinkedList() // Flatten a multilevel doubly linked list. // 展平多级双向链表
+            , new LeetCode_1169_InvalidTransactions() // Find invalid transactions based on a list of transactions sorted by time. // 根据按时间排序的交易列表找出无效交易
+            , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() // Find the maximum depth of nested parentheses using BFS, follow-up with DFS. // 使用 BFS 查找嵌套括号的最大深度，后续使用 DFS
+            , new LeetCode_394_DecodeString() // Decode a string with encoded patterns (e.g., "3[a2[c]]"). // 解码带有编码模式的字符串（例如，"3[a2[c]]"）
+            , new LeetCode_642_DesignSearchAutocompleteSystem() // Design an autocomplete system that suggests completions based on input. // 设计一个自动完成系统，根据输入建议补全
+            , new LeetCode_138_CopyListWithRandomPointer() // Copy a linked list with random pointers. // 复制带有随机指针的链表
+            , new LeetCode_987_VerticalOrderTraversalOfABinaryTree() // Traverse a binary tree in vertical order. // 以垂直顺序遍历二叉树
+            , new LeetCode_239_SlidingWindowMaximum() // Find the maximum value in a sliding window of size k. // 在大小为 k 的滑动窗口中找出最大值
+            , new LeetCode_20_ValidParentheses() // Determine if a string of parentheses is valid. // 判断括号字符串是否有效
+            , new LeetCode_253_MeetingRoomsIi() // Find the minimum number of meeting rooms required. // 查找所需的最小会议室数量
+            , new LeetCode_1274_NumberOfShipsInARectangle() // Count the number of ships in a rectangular grid using binary search. // 使用二分查找计算矩形网格中的船只数量
+            , new LeetCode_3_LongestSubstringWithoutRepeatingCharacters() // Find the length of the longest substring without repeating characters. // 查找最长无重复字符的子串长度
+            , new LeetCode_139_WordBreak() // Determine if a string can be segmented into words from a dictionary. // 判断字符串是否可以被分割为字典中的单词
+            , new LeetCode_140_WordBreakIi() // Return all possible sentences that can be formed by segmenting the string into words from a dictionary. // 返回所有可以将字符串分割为字典中单词的句子
+            , new LeetCode_98_ValidateBinarySearchTree() // Validate if a binary tree is a valid binary search tree. // 验证二叉树是否是有效的二叉搜索树
+            , new LeetCode_301_RemoveInvalidParentheses() // Remove invalid parentheses to make a valid string. // 移除无效括号以生成有效字符串
+            , new LeetCode_611_ValidTriangleNumber() // Count the number of valid triangles that can be formed from an array of side lengths. // 计算可以由边长数组形成的有效三角形的数量
+            , new LeetCode_1091_ShortestPathInBinaryMatrix() // Find the shortest path in a binary matrix. Follow-up with constraints like limited fuel in a desert. // 查找二进制矩阵中的最短路径。跟进如沙漠中有限燃料等约束
+            , new LeetCode_33_SearchInRotatedSortedArray() // Search for a target value in a rotated sorted array. // 在旋转排序数组中查找目标值
+
 
 
 

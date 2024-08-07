@@ -25,9 +25,11 @@ import leetcode.question.dfs.LeetCode_21_MergeTwoSortedLists;
 import leetcode.question.dfs.LeetCode_2246_LongestPathWithDifferentAdjacentCharacters;
 import leetcode.question.dfs.LeetCode_235_LowestCommonAncestorOfABinarySearchTree;
 import leetcode.question.dfs.LeetCode_236_LowestCommonAncestorOfABinaryTree;
+import leetcode.question.dfs.LeetCode_365_WaterAndJugProblem;
 import leetcode.question.dfs.LeetCode_37_SudokuSolver;
 import leetcode.question.dfs.LeetCode_39_CombinationSum;
 import leetcode.question.dfs.LeetCode_40_CombinationSumIi;
+import leetcode.question.dfs.LeetCode_419_BattleshipsInABoard;
 import leetcode.question.dfs.LeetCode_450_DeleteNodeInABst;
 import leetcode.question.dfs.LeetCode_695_MaxAreaOfIsland;
 import leetcode.question.dfs.LeetCode_79_WordSearch;
@@ -35,12 +37,14 @@ import leetcode.question.dfs.LeetCode_94_BinaryTreeInorderTraversal;
 import leetcode.question.dp.LeetCode_121_BestTimeToBuyAndSellStock;
 import leetcode.question.dp.LeetCode_122_BestTimeToBuyAndSellStockIi;
 import leetcode.question.dp.LeetCode_1306_JumpGameIii;
+import leetcode.question.dp.LeetCode_1983_WidestPairOfIndicesWithEqualRangeSum;
 import leetcode.question.dp.LeetCode_213_HouseRobberIi;
 import leetcode.question.dp.LeetCode_465_OptimalAccountBalancing;
 import leetcode.question.dp.LeetCode_55_JumpGame;
 import leetcode.question.dp.LeetCode_62_UniquePaths;
 import leetcode.question.dp.LeetCode_96_UniqueBinarySearchTrees;
 import leetcode.question.greedy.LeetCode_409_LongestPalindrome;
+import leetcode.question.greedy.LeetCode_452_MinimumNumberOfArrowsToBurstBalloons;
 import leetcode.question.heap.LeetCode_23_MergeKSortedLists;
 import leetcode.question.heap.LeetCode_253_MeetingRoomsIi;
 import leetcode.question.heap.LeetCode_295_FindMedianFromDataStream;
@@ -86,6 +90,7 @@ import leetcode.question.trie.LeetCode_211_DesignAddAndSearchWordsDataStructure;
 import leetcode.question.two_pointer.LeetCode_151_ReverseWordsInAString;
 import leetcode.question.two_pointer.LeetCode_186_ReverseWordsInAStringIi;
 import leetcode.question.two_pointer.LeetCode_189_RotateArray;
+import leetcode.question.two_pointer.LeetCode_259_ThreeSumSmaller;
 import leetcode.question.two_pointer.LeetCode_26_RemoveDuplicatesFromSortedArray;
 import leetcode.question.two_pointer.LeetCode_277_FindTheCelebrity;
 import leetcode.question.two_pointer.LeetCode_31_NextPermutation;
@@ -199,7 +204,13 @@ public class MicrosoftQuestions {
             new LeetCode_215_KthLargestElementInAnArray(), // Find the k-th largest element in an array. // 查找数组中的第 k 大元素
             new LeetCode_235_LowestCommonAncestorOfABinarySearchTree(), // Find the lowest common ancestor in a BST. // 查找二叉搜索树中的最低公共祖先
             new LeetCode_236_LowestCommonAncestorOfABinaryTree(), // Find the lowest common ancestor in a binary tree. // 查找二叉树中的最低公共祖先
-            new LeetCode_445_AddTwoNumbersIi() // Add two numbers represented by linked lists with different lengths. // 将长度不同的两个链表表示的数字相加
+            new LeetCode_445_AddTwoNumbersIi(), // Add two numbers represented by linked lists with different lengths. // 将长度不同的两个链表表示的数字相加
+            new LeetCode_259_ThreeSumSmaller(), // 259. 3Sum Smaller：找到三个数的和小于给定目标值的三元组个数。Find the number of triplets with a sum smaller than the given target.
+            new LeetCode_365_WaterAndJugProblem(), // 365. Water and Jug Problem：判断是否可以用两个壶达到指定的水量。Determine if you can measure the exact target amount of water using two jugs with given capacities.
+            new LeetCode_419_BattleshipsInABoard(), // 419. Battleships in a Board：计算棋盘中战舰的数量，每艘战舰由多个连续的‘X’组成。Count the number of battleships on the board where each battleship is represented by contiguous 'X's.
+            new LeetCode_452_MinimumNumberOfArrowsToBurstBalloons(), // 452. Minimum Number of Arrows to Burst Balloons：计算最少的箭数量来射穿所有气球。Find the minimum number of arrows required to burst all balloons, each represented as an interval on a 2D plane.
+            new LeetCode_1983_WidestPairOfIndicesWithEqualRangeSum() // 1983. Widest Pair of Indices With Equal Range Sum：找到具有相同范围和的最宽索引对。Find the widest pair of indices with equal range sums between two arrays.
+
 
 
 

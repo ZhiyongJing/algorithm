@@ -1081,6 +1081,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_365_WaterAndJugProblem.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_365_WaterAndJugProblem.md" />
+              <option name="frontendQuestionId" value="leetcode.com365" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_365_WaterAndJugProblem.java" />
+              <option name="titleSlug" value="water-and-jug-problem" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_377_CombinationSumIv.java">
           <value>
             <LeetcodeEditor>
@@ -1177,6 +1188,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_40_CombinationSumIi.java" />
               <option name="titleSlug" value="combination-sum-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_419_BattleshipsInABoard.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_419_BattleshipsInABoard.md" />
+              <option name="frontendQuestionId" value="leetcode.com419" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_419_BattleshipsInABoard.java" />
+              <option name="titleSlug" value="battleships-in-a-board" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1796,6 +1818,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1983_WidestPairOfIndicesWithEqualRangeSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_1983_WidestPairOfIndicesWithEqualRangeSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com1983" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1983_WidestPairOfIndicesWithEqualRangeSum.java" />
+              <option name="titleSlug" value="widest-pair-of-indices-with-equal-range-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_198_HouseRobber.java">
           <value>
             <LeetcodeEditor>
@@ -2343,6 +2376,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_409_LongestPalindrome.java" />
               <option name="titleSlug" value="longest-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_452_MinimumNumberOfArrowsToBurstBalloons.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/doc/content/LeetCode_452_MinimumNumberOfArrowsToBurstBalloons.md" />
+              <option name="frontendQuestionId" value="leetcode.com452" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_452_MinimumNumberOfArrowsToBurstBalloons.java" />
+              <option name="titleSlug" value="minimum-number-of-arrows-to-burst-balloons" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4059,6 +4103,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_239_SlidingWindowMaximum.java" />
               <option name="titleSlug" value="sliding-window-maximum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_259_ThreeSumSmaller.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_259_ThreeSumSmaller.md" />
+              <option name="frontendQuestionId" value="leetcode.com259" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_259_ThreeSumSmaller.java" />
+              <option name="titleSlug" value="3sum-smaller" />
             </LeetcodeEditor>
           </value>
         </entry>

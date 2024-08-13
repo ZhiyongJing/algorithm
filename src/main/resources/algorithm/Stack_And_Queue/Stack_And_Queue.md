@@ -44,38 +44,13 @@
 
 <p align="center"> 表 <id> &nbsp; 栈的操作效率 </p>
 
-| 方法     | 描述                   | 时间复杂度 |
-| -------- | ---------------------- | ---------- |
-| `push()` | 元素入栈（添加至栈顶） | $O(1)$     |
-| `pop()`  | 栈顶元素出栈           | $O(1)$     |
-| `peek()` | 访问栈顶元素           | $O(1)$     |
+| 方法        | 描述                   | 时间复杂度 |
+| ----------- | ---------------------- | ---------- |
+| `push(E e)` | 元素入栈（添加至栈顶） | $O(1)$     |
+| `pop()`     | 栈顶元素出栈           | $O(1)$     |
+| `peek()`    | 访问栈顶元素           | $O(1)$     |
 
 通常情况下，我们可以直接使用编程语言内置的栈类。然而，某些语言可能没有专门提供栈类，这时我们可以将该语言的“数组”或“链表”当作栈来使用，并在程序逻辑上忽略与栈无关的操作。
-
-```python
-# 初始化栈
-# Python 没有内置的栈类，可以把 list 当作栈来使用
-stack: list[int] = []
-
-# 元素入栈
-stack.append(1)
-stack.append(3)
-stack.append(2)
-stack.append(5)
-stack.append(4)
-
-# 访问栈顶元素
-peek: int = stack[-1]
-
-# 元素出栈
-pop: int = stack.pop()
-
-# 获取栈的长度
-size: int = len(stack)
-
-# 判断是否为空
-is_empty: bool = len(stack) == 0
-```
 
 ```java
 /* 初始化栈 */
@@ -518,6 +493,7 @@ class ArrayQueue {
 
 ```java
 /* 初始化双向队列 */
+//Deque<Integer> deque = new ArrayDeque<>();
 Deque<Integer> deque = new LinkedList<>();
 
 /* 元素入队 */

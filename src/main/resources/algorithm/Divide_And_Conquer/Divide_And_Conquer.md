@@ -73,6 +73,6 @@ public class DivideAndConquer {
 
 # 4. 算法复杂度
 
-> - 时间复杂度: O(logN), 剪枝情况下， O(N)
+> - 时间复杂度: O(NlogN)
 > - 空间复杂度: O(1)
 

@@ -1,9 +1,13 @@
 package leetcode.question.dfs;
 
-import javafx.util.Pair;
 import leetcode.util.TreeNode;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *@Question:  236. Lowest Common Ancestor of a Binary Tree
@@ -62,85 +66,47 @@ public class LeetCode_236_LowestCommonAncestorOfABinaryTree {
         }
 
         // 迭代法解法
-        // 三个静态标志用于跟踪后序遍历的状态
-
-        // 左右子树都待遍历
-        private static int BOTH_PENDING = 2;
-
-        // 左子树已遍历完成
-        private static int LEFT_DONE = 1;
-
-        // 左右子树都已遍历完成
-        private static int BOTH_DONE = 0;
-
         public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
-            Stack<Pair<TreeNode, Integer>> stack = new Stack<Pair<TreeNode, Integer>>();
 
-            // 初始化栈，将根节点和 BOTH_PENDING 状态入栈
-            stack.push(new Pair<TreeNode, Integer>(root, Solution.BOTH_PENDING));
+            // Stack for tree traversal
+            Deque<TreeNode> stack = new ArrayDeque<>();
 
-            // 标记是否找到其中一个节点
-            boolean one_node_found = false;
+            // HashMap for parent pointers
+            Map<TreeNode, TreeNode> parent = new HashMap<>();
 
-            // 用于跟踪 LCA
-            TreeNode LCA = null;
+            parent.put(root, null);
+            stack.push(root);
 
-            // 当前子节点
-            TreeNode child_node = null;
+            // Iterate until we find both the nodes p and q
+            while (!parent.containsKey(p) || !parent.containsKey(q)) {
 
-            // 使用栈进行后序遍历
-            while (!stack.isEmpty()) {
+                TreeNode node = stack.pop();
 
-                Pair<TreeNode, Integer> top = stack.peek();
-                TreeNode parent_node = top.getKey();
-                int parent_state = top.getValue();
-
-                // 如果节点状态不是 BOTH_DONE，说明该节点不能被弹出
-                if (parent_state != Solution.BOTH_DONE) {
-
-                    // 如果左右子树都待遍历
-                    if (parent_state == Solution.BOTH_PENDING) {
-
-                        // 如果当前节点是 p 或 q
-                        if (parent_node == p || parent_node == q) {
-
-                            // 如果已经找到一个节点，说明我们找到了两个节点，返回当前的 LCA
-                            if (one_node_found) {
-                                return LCA;
-                            } else {
-                                // 否则，设置 one_node_found 为 true，标记已找到一个节点
-                                one_node_found = true;
-
-                                // 保存当前栈顶节点作为 LCA
-                                LCA = stack.peek().getKey();
-                            }
-                        }
-
-                        // 如果左右子树都待遍历，首先遍历左子树
-                        child_node = parent_node.left;
-                    } else {
-                        // 遍历右子树
-                        child_node = parent_node.right;
-                    }
-
-                    // 更新栈顶节点状态，因为我们已经遍历了一个子节点
-                    stack.pop();
-                    stack.push(new Pair<TreeNode, Integer>(parent_node, parent_state - 1));
-
-                    // 将子节点入栈
-                    if (child_node != null) {
-                        stack.push(new Pair<TreeNode, Integer>(child_node, Solution.BOTH_PENDING));
-                    }
-                } else {
-                    // 如果节点状态为 BOTH_DONE，说明可以将该节点弹出
-                    // 更新 LCA 为下一个栈顶节点
-                    if (LCA == stack.pop().getKey() && one_node_found) {
-                        LCA = stack.peek().getKey();
-                    }
+                // While traversing the tree, keep saving the parent pointers.
+                if (node.left != null) {
+                    parent.put(node.left, node);
+                    stack.push(node.left);
+                }
+                if (node.right != null) {
+                    parent.put(node.right, node);
+                    stack.push(node.right);
                 }
             }
 
-            return null;
+            // Ancestors set() for node p.
+            Set<TreeNode> ancestors = new HashSet<>();
+
+            // Process all ancestors for node p using parent pointers.
+            while (p != null) {
+                ancestors.add(p);
+                p = parent.get(p);
+            }
+
+            // The first ancestor of q which appears in
+            // p's ancestor set() is their lowest common ancestor.
+            while (!ancestors.contains(q))
+                q = parent.get(q);
+            return q;
         }
 
     }

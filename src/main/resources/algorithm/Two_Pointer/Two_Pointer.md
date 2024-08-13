@@ -11,7 +11,9 @@
 
 > - 回文串问题（背向双指针）
 > - Two sum 问题（相向双指针，数据可能需要排序）
-> - 子串问题（同向双指针）， LinkedList loop问题
+> - 子串substring问题（同向双指针）
+> - 子数组subarray问题 （同向双指针）
+> - LinkedList loop问题
 
 # 3. 算法模版
 
@@ -19,52 +21,99 @@
 
 ### 3.1.1 同向双指针，即滑动窗口
 
-> 子串问题
-
-~~~java
-public String slidingWindow(String s, String t) {
-      // 起始的时候，都位于 0，同方向移动
-      int left = 0;
-      int right = 0;
-      while (right < sLen) {
-          if ( 在右移的过程中检测是否满足条件 ) {
-              // 对状态做修改，好让程序在后面检测到满足条件
-          }
-          // 右边界右移 1 格
-          right++;
-          while ( 满足条件 ) {
-              // 走到这里是满足条件的，左边界逐渐逐渐左移，可以取最小值
-              if ( 在左移的过程中检测是否不满足条件 ) {
-                  // 对状态做修改，好让程序在后面检测到不满足条件
-              }
-              // 左边界左移 1 格
-              left++;
-          }
-          // 走到这里是不满足条件的，右边界逐渐右移，可以取最大值
-      }
-      return 需要的结果变量;
-  }
-~~~
+> ```java
+>//算法模版
+> public String slidingWindow(String s, String t) {
+>    // 起始的时候，都位于 0，同方向移动
+>    int left = 0;
+>       int right = 0;
+>       while (right < sLen) {
+>           if ( 在右移的过程中检测是否满足条件 ) {
+>               // 对状态做修改，好让程序在后面检测到满足条件
+>           }
+>           // 右边界右移 1 格
+>           right++;
+>           while ( 满足条件 ) {
+>               // 走到这里是满足条件的，左边界逐渐逐渐左移，可以取最小值
+>               if ( 在左移的过程中检测是否不满足条件 ) {
+>                   // 对状态做修改，好让程序在后面检测到不满足条件
+>               }
+>               // 左边界左移 1 格
+>               left++;
+>           }
+>           // 走到这里是不满足条件的，右边界逐渐右移，可以取最大值
+>       }
+>       return 需要的结果变量;
+>    }
+>    
+>   //算法应用，longest substring without dup characters
+>  public int lengthOfLongestSubstring(String s) {
+>      Map<Character, Integer> chars = new HashMap();
+>    
+>         int left = 0;
+>      int right = 0;
+>    
+>         int res = 0;
+>      while (right < s.length()) {
+>             char r = s.charAt(right);
+>             chars.put(r, chars.getOrDefault(r, 0) + 1);
+>    
+>             while (chars.get(r) > 1) {
+>              char l = s.charAt(left);
+>                 chars.put(l, chars.get(l) - 1);
+>                 left++;
+>             }
+>    
+>             res = Math.max(res, right - left + 1);
+> 
+>             right++;
+>      }
+>         return res;
+>     }
+>    ```
+>    
 
 ### 3.1.2 相向双指针
 
 > * 适用于连续数组和字符串，也就是说当你遇到题目给定连续数组和字符床时，应该第一时间想到用对撞指针解题。
 > * 求范围， 求和问题
-
-~~~java
-public void find (int[] list) {
-  var left = 0;
-  var right = list.length - 1;
-
-  //遍历数组
-  while (left <= right) {
-    left++;
-    // 一些条件判断 和处理
-    ... ...
-    right--;
-  }
-}
-~~~
+>
+> ```java
+> //算法模版
+> public void find (int[] list) {
+>   var left = 0;
+>   var right = list.length - 1;
+> 
+>   //遍历数组
+>   while (left < right) {
+>     left++;
+>     // 一些条件判断 和处理
+>     ... ...
+>     right--;
+>   }
+> }
+> 
+> //算法应用，Two Sum II - Input Array Is Sorted
+> public int[] twoSum(int[] numbers, int target) {
+>         int low = 0;
+>         int high = numbers.length - 1;
+>         while (low < high) {
+>             int sum = numbers[low] + numbers[high];
+> 
+>             if (sum == target) {
+>                 return new int[] { low + 1, high + 1 };
+>             } else if (sum < target) {
+>                 ++low;
+>             } else {
+>                 --high;
+>             }
+>         }
+>         // In case there is no solution, return {-1, -1}.
+>         return new int[] { -1, -1 };
+>     }
+> 
+> ```
+>
 
 ### 3.1.3 背向双指针， 即马拉车算法(Manacher)
 

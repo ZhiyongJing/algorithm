@@ -1,7 +1,8 @@
 package leetcode.question.linked_list;
 
-import java.util.Stack;
+import leetcode.util.ListNode;
 
+import java.util.Stack;
 /**
  *@Question:  445. Add Two Numbers II
  *@Difficulty: 2 [1->Easy, 2->Medium, 3->Hard]

@@ -38,16 +38,13 @@
 >   > 11. 排列问题（95%）
 >   >     - 问题模型：求出所有满足条件的“排列”
 >   >     - 判断条件：组合中的元素是顺序“相关”的
->
+>   >
 > - 不要用 `DFS` 的场景
 >
 >   > 1. 连通块问题（一定要用 `BFS`，否则 `StackOverflow`）
->   >
 >   > 2. 拓扑排序（一定要用 `BFS`，否则 `StackOverflow`）
->   >
 >   > 3. 一切 `BFS` 可以解决的问题
->
->   
+>   >
 
 # 3. 算法模版
 
@@ -57,20 +54,43 @@
 >
 > ![DFS1.jpg](DFS.assets/1.jpg)
 
-~~~java
-/* * Return true if there is a path from cur to target. */
-boolean DFS(Node cur, Node target, Set<Node> visited) {
-   
-    return true if cur is target;
-    for (next : each neighbor of cur) {
-        if (next is not in visited) {
-            add next to visted;
-            return true if DFS(next, target, visited) == true;
+```java
+// find all path from root to node that sum equal to target. 
+    public void dfs(
+      TreeNode node, int remainingSum, List<Integer> pathNodes, List<List<Integer>> pathsList) {
+        if (node == null) {
+            return;
         }
+
+        // Add the current node to the path's list
+        pathNodes.add(node.val);
+
+        if (remainingSum == node.val && node.left == null && node.right == null) {
+            pathsList.add(new ArrayList<>(pathNodes));
+        } else {
+            // Else, we will recurse on the left and the right children
+            recurseTree(node.left, remainingSum - node.val, pathNodes, pathsList);
+            //recurseTree(node.middle, remainingSum - node.val, pathNodes, pathsList);
+            recurseTree(node.right, remainingSum - node.val, pathNodes, pathsList);
+        }
+      
+        pathNodes.remove(pathNodes.size() - 1);
     }
-    return false;
-}
-~~~
+
+// return true if a tree contains a target
+public boolean DFS(TreeNode root, int target) {
+        if (root == null) {
+            return false; // Base case: if the node is null, return false.
+        }
+
+        if (root.value == target) {
+            return true; // If the current node's value matches the target, return true.
+        }
+
+        // Recursively search in the left, middle, and right subtrees.
+        return DFS(root.left, target) || DFS(root.middle, target) || DFS(root.right, target);
+    }
+```
 
 ## 3.2 非递归方式实现
 
@@ -78,28 +98,43 @@ boolean DFS(Node cur, Node target, Set<Node> visited) {
 >
 > ![DFS2.png](DFS.assets/2.jpeg)
 
-~~~java
-/* * Return true if there is a path from cur to target. */
-boolean BFS(int root, int target) {
-    Set<Node> visited;
-    Stack<Node> s;
-    add root to s;
-    while (s is not empty) {
-        Node cur = the top element in s;
-        return true if cur is target;
-        for (Node next : the neighbors of cur) {
-            if (next is not in visited) {
-                add next to s;
-                add next to visited;
-            }
+```java
+// Level travel
+public List<List<TreeNode>> levelOrder(TreeNode root) {
+        List<List<TreeNode>> levels = new ArrayList<>(); // To store the nodes by level
+        if (root == null) {
+            return levels; // If the tree is empty, return an empty list.
         }
-        remove cur from s;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size(); // Number of nodes at the current level
+            List<TreeNode> currentLevel = new ArrayList<>();
+
+            for (int i = 0; i < levelSize; i++) {
+                TreeNode current = queue.poll();
+                currentLevel.add(current);
+
+                // Add the left, middle, and right children to the queue if they exist
+                if (current.left != null) {
+                    queue.add(current.left);
+                }
+                if (current.middle != null) {
+                    queue.add(current.middle);
+                }
+                if (current.right != null) {
+                    queue.add(current.right);
+                }
+            }
+
+            levels.add(currentLevel); // Add the current level to the list of levels
+        }
+
+        return levels;
     }
-    return false;
-}
-~~~
-
-
+```
 
 # 4. 算法复杂度
 
@@ -108,4 +143,3 @@ boolean BFS(int root, int target) {
 >   - 排列问题 ：O(n!∗n)
 >   - 组合问题 ：O(2n∗n)
 > - 空间复杂度: O(N)
-

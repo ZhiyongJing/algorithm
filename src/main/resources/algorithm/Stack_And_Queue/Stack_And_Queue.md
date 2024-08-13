@@ -36,7 +36,7 @@
 
 如下图所示，我们把堆叠元素的顶部称为“栈顶”，底部称为“栈底”。将把元素添加到栈顶的操作叫作“入栈”，删除栈顶元素的操作叫作“出栈”。
 
-![栈的先入后出规则](Stack_And_Stack_And_Queue.assets/stack_operations.png)
+![栈的先入后出规则](Stack_And_Queue.assets/stack_operations.png)
 
 ## 1.1 栈的常用操作
 
@@ -112,7 +112,7 @@ boolean isEmpty = stack.isEmpty();
 使用链表实现栈时，我们可以将链表的头节点视为栈顶，尾节点视为栈底。
 
 如下图所示，对于入栈操作，我们只需将元素插入链表头部，这种节点插入方法被称为“头插法”。而对于出栈操作，只需将头节点从链表中删除即可。
-    ![基于链表实现栈的入栈出栈操作](Stack_And_Stack_And_Queue.assets/linkedlist_stack.gif)
+    ![基于链表实现栈的入栈出栈操作](Stack_And_Queue.assets/linkedlist_stack.gif)
 
 
 
@@ -177,7 +177,7 @@ class LinkedListStack {
 ### 1.2.2 基于数组的实现
 
 使用数组实现栈时，我们可以将数组的尾部作为栈顶。如下图所示，入栈与出栈操作分别对应在数组尾部添加元素与删除元素，时间复杂度都为 $O(1)$ 。
-    ![基于数组实现栈的入栈出栈操作](Stack_And_Stack_And_Queue.assets/array_stack.gif)
+    ![基于数组实现栈的入栈出栈操作](Stack_And_Queue.assets/array_stack.gif)
 
 由于入栈的元素可能会源源不断地增加，因此我们可以使用动态数组，这样就无须自行处理数组扩容问题。以下为示例代码：
 
@@ -273,66 +273,42 @@ class ArrayStack {
 
 <p align="center"> 表 <id> &nbsp; 队列操作效率 </p>
 
-| 方法名   | 描述                         | 时间复杂度 |
-| -------- | ---------------------------- | ---------- |
-| `push()` | 元素入队，即将元素添加至队尾 | $O(1)$     |
-| `pop()`  | 队首元素出队                 | $O(1)$     |
-| `peek()` | 访问队首元素                 | $O(1)$     |
+|      | 方法名                 | 描述                                                         | 时间复杂度 |
+| :--- | :--------------------- | :----------------------------------------------------------- | ---------- |
+| 添加 | `add(E e)`             | 将元素添加至队尾。如果队列已满，会抛出 `IllegalStateException` 异常 | $O(1)$     |
+|      | `offer(E e)`**(常用)** | 将元素添加至队尾。如果队列已满，会返回 `false`，不会抛出异常。 | $O(1)$     |
+|      | `put(E e)`             | 将元素添加至队尾。如果队列已满，会阻塞，直到有空间可用。**用于阻塞队列** | $O(1)$     |
+| 删除 | `remove()`             | 移除并返回队列头部的元素。如果队列为空，此方法会抛出 `NoSuchElementException` 异常。 | $O(1)$     |
+|      | `poll()`**(常用)**     | 移除并返回队列头部的元素。如果队列为空，此方法返回 `null`，而不是抛出异常。 | $O(1)$     |
+|      | `remove(E e)`          | 移除队列中第一个出现的指定元素，返回 `true` 如果移除成功，`false` 如果元素不存在。 | $O(N)$     |
+| 顶部 | `peek()`               | 返回队列头部的元素，但不会从队列中移除它。如果队列为空，此方法返回 `null`，而不会抛出异常。 | $O(1)$     |
+| 遍历 | `.iterator()`          | 遍历元素。`while (iterator.hasNext()) {…}`                   | $O(N)$     |
 
 我们可以直接使用编程语言中现成的队列类：
 
-=== "Python"
-
-```python
-from collections import deque
-
-# 初始化队列
-# 在 Python 中，我们一般将双向队列类 deque 当作队列使用
-# 虽然 queue.Queue() 是纯正的队列类，但不太好用，因此不推荐
-que: deque[int] = deque()
-
-# 元素入队
-que.append(1)
-que.append(3)
-que.append(2)
-que.append(5)
-que.append(4)
-
-# 访问队首元素
-front: int = que[0]
-
-# 元素出队
-pop: int = que.popleft()
-
-# 获取队列的长度
-size: int = len(que)
-
-# 判断队列是否为空
-is_empty: bool = len(que) == 0
-```
-
 ```java
-/* 初始化队列 */
+// Create a Qeue using LinkedList;
 Queue<Integer> queue = new LinkedList<>();
 
 /* 元素入队 */
-queue.offer(1);
+queue.offer(1);//队首
 queue.offer(3);
 queue.offer(2);
 queue.offer(5);
-queue.offer(4);
+queue.offer(4);//队尾
 
 /* 访问队首元素 */
-int peek = queue.peek();
+int peek = queue.peek();// peek == 1
 
 /* 元素出队 */
-int pop = queue.poll();
+int pop = queue.poll(); // pop ==1
 
 /* 获取队列的长度 */
 int size = queue.size();
 
 /* 判断队列是否为空 */
 boolean isEmpty = queue.isEmpty();
+
 ```
 
 ## 2.1 队列实现
@@ -522,44 +498,22 @@ class ArrayQueue {
 
 <p align="center"> 表 <id> &nbsp; 双向队列操作效率 </p>
 
-| 方法名         | 描述             | 时间复杂度 |
-| -------------- | ---------------- | ---------- |
-| `push_first()` | 将元素添加至队首 | $O(1)$     |
-| `push_last()`  | 将元素添加至队尾 | $O(1)$     |
-| `pop_first()`  | 删除队首元素     | $O(1)$     |
-| `pop_last()`   | 删除队尾元素     | $O(1)$     |
-| `peek_first()` | 访问队首元素     | $O(1)$     |
-| `peek_last()`  | 访问队尾元素     | $O(1)$     |
+| 方法名 |                             | 描述                                                         | 时间复杂度 |
+| ------ | --------------------------- | ------------------------------------------------------------ | ---------- |
+| 添加   | `addFirst(E e)`             | 将元素添加到队列头部，队列满时可能抛出 `IllegalStateException` 异常 | $O(1)$     |
+|        | **`offerFirst(E e)`(常用)** | 尝试将元素添加到队列头部，队列满时返回 `false`。             | $O(1)$     |
+|        | `addLast(E e)`              | 将元素添加到队列尾部，队列满时可能抛出 `IllegalStateException` 异常。 | $O(1)$     |
+|        | **`offerLast(E e)`(常用)**  | 尝试将元素添加到队列尾部，队列满时返回 `false`。             | $O(1)$     |
+|        | `push(E e)`                 | 将元素压入队列头部，等同于 `addFirst(E e)`。                 | $O(1)$     |
+| 删除   | `removeFirst()`             | 移除并返回头部元素，如果队列为空抛出 `NoSuchElementException` 异常。 | $O(1)$     |
+|        | **`pollFirst()`(常用)**     | 移除并返回头部元素，如果队列为空返回 `null`。                | $O(1)$     |
+|        | `removeLast()`              | 移除并返回尾部元素，如果队列为空抛出 `NoSuchElementException` 异常。 | $O(1)$     |
+|        | **`pollLast()`(常用)**      | 移除并返回尾部元素，如果队列为空返回 `null`。                | $O(1)$     |
+|        | `remove(E e)`               | 移除队列中第一个出现的指定元素，返回 `true` 如果移除成功，`false` 如果元素不存在。 | $O(1)$     |
+| 顶点   | `peekFirst()`               | 查看双端队列的头部元素，不移除它。如果队列为空，返回 `null`。 |            |
+|        | `peekLast()`                | 查看双端队列的尾部元素，不移除它。如果队列为空，返回 `null`。 |            |
 
 同样地，我们可以直接使用编程语言中已实现的双向队列类：
-
-```python
-from collections import deque
-
-# 初始化双向队列
-deq: deque[int] = deque()
-
-# 元素入队
-deq.append(2)      # 添加至队尾
-deq.append(5)
-deq.append(4)
-deq.appendleft(3)  # 添加至队首
-deq.appendleft(1)
-
-# 访问元素
-front: int = deq[0]  # 队首元素
-rear: int = deq[-1]  # 队尾元素
-
-# 元素出队
-pop_front: int = deq.popleft()  # 队首元素出队
-pop_rear: int = deq.pop()       # 队尾元素出队
-
-# 获取双向队列的长度
-size: int = len(deq)
-
-# 判断双向队列是否为空
-is_empty: bool = len(deq) == 0
-```
 
 ```java
 /* 初始化双向队列 */

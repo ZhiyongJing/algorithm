@@ -24,12 +24,14 @@
 
 ## 1.1 哈希表常用操作
 
-哈希表的常见操作包括：初始化、查询操作、添加键值对和删除键值对等，示例代码如下：
+哈希表的常见操作包括：初始化、查询操作、添加键值对和删除键值对等，
 
-=== "Python"
+哈希表有三种常用的遍历方式：遍历键值对、遍历键和遍历值。示例代码如下：
+
+示例代码如下：
 
 ```python
-
+# Python
 # 初始化哈希表
 hmap: dict = {}
 
@@ -49,10 +51,23 @@ name: str = hmap[15937]
 # 在哈希表中删除键值对 (key, value)
 hmap.pop(10583)
 
+
+# 遍历哈希表
+# 遍历键值对 key->value
+for key, value in hmap.items():
+    print(key, "->", value)
+# 单独遍历键 key
+for key in hmap.keys():
+    print(key)
+# 单独遍历值 value
+for value in hmap.values():
+    print(value)
+
+
 ```
 
 ```java
-
+// Java
 /* 初始化哈希表 */
 Map<Integer, String> map = new HashMap<>();
 
@@ -71,26 +86,7 @@ String name = map.get(15937);
 /* 删除操作 */
 // 在哈希表中删除键值对 (key, value)
 map.remove(10583);
-```
 
-哈希表有三种常用的遍历方式：遍历键值对、遍历键和遍历值。示例代码如下：
-
-```python
-
-# 遍历哈希表
-# 遍历键值对 key->value
-for key, value in hmap.items():
-    print(key, "->", value)
-# 单独遍历键 key
-for key in hmap.keys():
-    print(key)
-# 单独遍历值 value
-for value in hmap.values():
-    print(value)
-
-```
-
-~~~java
 /* 遍历哈希表 */
 // 遍历键值对 key->value
 for (Map.Entry <Integer, String> kv: map.entrySet()) {
@@ -105,7 +101,6 @@ for (String val: map.values()) {
     System.out.println(val);
 }
 ```
-~~~
 
 ## 1.2 哈希表简单实现
 
@@ -130,8 +125,96 @@ index = hash(key) % capacity
 
 以下代码实现了一个简单哈希表。其中，我们将 `key` 和 `value` 封装成一个类 `Pair` ，以表示键值对。
 
-```src
-[file]{array_hash_map}-[class]{array_hash_map}-[func]{}
+```java
+/* 键值对 */
+class Pair {
+    public int key;
+    public String val;
+
+    public Pair(int key, String val) {
+        this.key = key;
+        this.val = val;
+    }
+}
+
+/* 基于数组实现的哈希表 */
+class ArrayHashMap {
+    private List<Pair> buckets;
+
+    public ArrayHashMap() {
+        // 初始化数组，包含 100 个桶
+        buckets = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            buckets.add(null);
+        }
+    }
+
+    /* 哈希函数 */
+    private int hashFunc(int key) {
+        int index = key % 100;
+        return index;
+    }
+
+    /* 查询操作 */
+    public String get(int key) {
+        int index = hashFunc(key);
+        Pair pair = buckets.get(index);
+        if (pair == null)
+            return null;
+        return pair.val;
+    }
+
+    /* 添加操作 */
+    public void put(int key, String val) {
+        Pair pair = new Pair(key, val);
+        int index = hashFunc(key);
+        buckets.set(index, pair);
+    }
+
+    /* 删除操作 */
+    public void remove(int key) {
+        int index = hashFunc(key);
+        // 置为 null ，代表删除
+        buckets.set(index, null);
+    }
+
+    /* 获取所有键值对 */
+    public List<Pair> pairSet() {
+        List<Pair> pairSet = new ArrayList<>();
+        for (Pair pair : buckets) {
+            if (pair != null)
+                pairSet.add(pair);
+        }
+        return pairSet;
+    }
+
+    /* 获取所有键 */
+    public List<Integer> keySet() {
+        List<Integer> keySet = new ArrayList<>();
+        for (Pair pair : buckets) {
+            if (pair != null)
+                keySet.add(pair.key);
+        }
+        return keySet;
+    }
+
+    /* 获取所有值 */
+    public List<String> valueSet() {
+        List<String> valueSet = new ArrayList<>();
+        for (Pair pair : buckets) {
+            if (pair != null)
+                valueSet.add(pair.val);
+        }
+        return valueSet;
+    }
+
+    /* 打印哈希表 */
+    public void print() {
+        for (Pair kv : pairSet()) {
+            System.out.println(kv.key + " -> " + kv.val);
+        }
+    }
+}
 ```
 
 ## 1.3 哈希冲突与扩容
@@ -194,8 +277,116 @@ index = hash(key) % capacity
 - 使用列表（动态数组）代替链表，从而简化代码。在这种设定下，哈希表（数组）包含多个桶，每个桶都是一个列表。
 - 以下实现包含哈希表扩容方法。当负载因子超过 $\frac{2}{3}$ 时，我们将哈希表扩容至原先的 $2$ 倍。
 
-```src
-[file]{hash_map_chaining}-[class]{hash_map_chaining}-[func]{}
+```java
+/* 链式地址哈希表 */
+class HashMapChaining {
+    int size; // 键值对数量
+    int capacity; // 哈希表容量
+    double loadThres; // 触发扩容的负载因子阈值
+    int extendRatio; // 扩容倍数
+    List<List<Pair>> buckets; // 桶数组
+
+    /* 构造方法 */
+    public HashMapChaining() {
+        size = 0;
+        capacity = 4;
+        loadThres = 2.0 / 3.0;
+        extendRatio = 2;
+        buckets = new ArrayList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            buckets.add(new ArrayList<>());
+        }
+    }
+
+    /* 哈希函数 */
+    int hashFunc(int key) {
+        return key % capacity;
+    }
+
+    /* 负载因子 */
+    double loadFactor() {
+        return (double) size / capacity;
+    }
+
+    /* 查询操作 */
+    String get(int key) {
+        int index = hashFunc(key);
+        List<Pair> bucket = buckets.get(index);
+        // 遍历桶，若找到 key ，则返回对应 val
+        for (Pair pair : bucket) {
+            if (pair.key == key) {
+                return pair.val;
+            }
+        }
+        // 若未找到 key ，则返回 null
+        return null;
+    }
+
+    /* 添加操作 */
+    void put(int key, String val) {
+        // 当负载因子超过阈值时，执行扩容
+        if (loadFactor() > loadThres) {
+            extend();
+        }
+        int index = hashFunc(key);
+        List<Pair> bucket = buckets.get(index);
+        // 遍历桶，若遇到指定 key ，则更新对应 val 并返回
+        for (Pair pair : bucket) {
+            if (pair.key == key) {
+                pair.val = val;
+                return;
+            }
+        }
+        // 若无该 key ，则将键值对添加至尾部
+        Pair pair = new Pair(key, val);
+        bucket.add(pair);
+        size++;
+    }
+
+    /* 删除操作 */
+    void remove(int key) {
+        int index = hashFunc(key);
+        List<Pair> bucket = buckets.get(index);
+        // 遍历桶，从中删除键值对
+        for (Pair pair : bucket) {
+            if (pair.key == key) {
+                bucket.remove(pair);
+                size--;
+                break;
+            }
+        }
+    }
+
+    /* 扩容哈希表 */
+    void extend() {
+        // 暂存原哈希表
+        List<List<Pair>> bucketsTmp = buckets;
+        // 初始化扩容后的新哈希表
+        capacity *= extendRatio;
+        buckets = new ArrayList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            buckets.add(new ArrayList<>());
+        }
+        size = 0;
+        // 将键值对从原哈希表搬运至新哈希表
+        for (List<Pair> bucket : bucketsTmp) {
+            for (Pair pair : bucket) {
+                put(pair.key, pair.val);
+            }
+        }
+    }
+
+    /* 打印哈希表 */
+    void print() {
+        for (List<Pair> bucket : buckets) {
+            List<String> res = new ArrayList<>();
+            for (Pair pair : bucket) {
+                res.add(pair.key + " -> " + pair.val);
+            }
+            System.out.println(res);
+        }
+    }
+}
 ```
 
 值得注意的是，当链表很长时，查询效率 $O(n)$ 很差。**此时可以将链表转换为“AVL 树”或“红黑树”**，从而将查询操作的时间复杂度优化至 $O(\log n)$ 。
@@ -231,8 +422,129 @@ index = hash(key) % capacity
 
 以下代码实现了一个包含懒删除的开放寻址（线性探测）哈希表。为了更加充分地使用哈希表的空间，我们将哈希表看作一个“环形数组”，当越过数组尾部时，回到头部继续遍历。
 
-```src
-[file]{hash_map_open_addressing}-[class]{hash_map_open_addressing}-[func]{}
+```java
+/* 开放寻址哈希表 */
+class HashMapOpenAddressing {
+    private int size; // 键值对数量
+    private int capacity = 4; // 哈希表容量
+    private final double loadThres = 2.0 / 3.0; // 触发扩容的负载因子阈值
+    private final int extendRatio = 2; // 扩容倍数
+    private Pair[] buckets; // 桶数组
+    private final Pair TOMBSTONE = new Pair(-1, "-1"); // 删除标记
+
+    /* 构造方法 */
+    public HashMapOpenAddressing() {
+        size = 0;
+        buckets = new Pair[capacity];
+    }
+
+    /* 哈希函数 */
+    private int hashFunc(int key) {
+        return key % capacity;
+    }
+
+    /* 负载因子 */
+    private double loadFactor() {
+        return (double) size / capacity;
+    }
+
+    /* 搜索 key 对应的桶索引 */
+    private int findBucket(int key) {
+        int index = hashFunc(key);
+        int firstTombstone = -1;
+        // 线性探测，当遇到空桶时跳出
+        while (buckets[index] != null) {
+            // 若遇到 key ，返回对应的桶索引
+            if (buckets[index].key == key) {
+                // 若之前遇到了删除标记，则将键值对移动至该索引处
+                if (firstTombstone != -1) {
+                    buckets[firstTombstone] = buckets[index];
+                    buckets[index] = TOMBSTONE;
+                    return firstTombstone; // 返回移动后的桶索引
+                }
+                return index; // 返回桶索引
+            }
+            // 记录遇到的首个删除标记
+            if (firstTombstone == -1 && buckets[index] == TOMBSTONE) {
+                firstTombstone = index;
+            }
+            // 计算桶索引，越过尾部则返回头部
+            index = (index + 1) % capacity;
+        }
+        // 若 key 不存在，则返回添加点的索引
+        return firstTombstone == -1 ? index : firstTombstone;
+    }
+
+    /* 查询操作 */
+    public String get(int key) {
+        // 搜索 key 对应的桶索引
+        int index = findBucket(key);
+        // 若找到键值对，则返回对应 val
+        if (buckets[index] != null && buckets[index] != TOMBSTONE) {
+            return buckets[index].val;
+        }
+        // 若键值对不存在，则返回 null
+        return null;
+    }
+
+    /* 添加操作 */
+    public void put(int key, String val) {
+        // 当负载因子超过阈值时，执行扩容
+        if (loadFactor() > loadThres) {
+            extend();
+        }
+        // 搜索 key 对应的桶索引
+        int index = findBucket(key);
+        // 若找到键值对，则覆盖 val 并返回
+        if (buckets[index] != null && buckets[index] != TOMBSTONE) {
+            buckets[index].val = val;
+            return;
+        }
+        // 若键值对不存在，则添加该键值对
+        buckets[index] = new Pair(key, val);
+        size++;
+    }
+
+    /* 删除操作 */
+    public void remove(int key) {
+        // 搜索 key 对应的桶索引
+        int index = findBucket(key);
+        // 若找到键值对，则用删除标记覆盖它
+        if (buckets[index] != null && buckets[index] != TOMBSTONE) {
+            buckets[index] = TOMBSTONE;
+            size--;
+        }
+    }
+
+    /* 扩容哈希表 */
+    private void extend() {
+        // 暂存原哈希表
+        Pair[] bucketsTmp = buckets;
+        // 初始化扩容后的新哈希表
+        capacity *= extendRatio;
+        buckets = new Pair[capacity];
+        size = 0;
+        // 将键值对从原哈希表搬运至新哈希表
+        for (Pair pair : bucketsTmp) {
+            if (pair != null && pair != TOMBSTONE) {
+                put(pair.key, pair.val);
+            }
+        }
+    }
+
+    /* 打印哈希表 */
+    public void print() {
+        for (Pair pair : buckets) {
+            if (pair == null) {
+                System.out.println("null");
+            } else if (pair == TOMBSTONE) {
+                System.out.println("TOMBSTONE");
+            } else {
+                System.out.println(pair.key + " -> " + pair.val);
+            }
+        }
+    }
+}
 ```
 
 ### 2.2.2 平方探测
@@ -320,8 +632,46 @@ index = hash(key) % capacity
 - **异或哈希**：将输入数据的每个元素通过异或操作累积到一个哈希值中。
 - **旋转哈希**：将每个字符的 ASCII 码累积到一个哈希值中，每次累积之前都会对哈希值进行旋转操作。
 
-```src
-[file]{simple_hash}-[class]{}-[func]{rot_hash}
+```java
+/* 加法哈希 */
+int addHash(String key) {
+    long hash = 0;
+    final int MODULUS = 1000000007;
+    for (char c : key.toCharArray()) {
+        hash = (hash + (int) c) % MODULUS;
+    }
+    return (int) hash;
+}
+
+/* 乘法哈希 */
+int mulHash(String key) {
+    long hash = 0;
+    final int MODULUS = 1000000007;
+    for (char c : key.toCharArray()) {
+        hash = (31 * hash + (int) c) % MODULUS;
+    }
+    return (int) hash;
+}
+
+/* 异或哈希 */
+int xorHash(String key) {
+    int hash = 0;
+    final int MODULUS = 1000000007;
+    for (char c : key.toCharArray()) {
+        hash ^= (int) c;
+    }
+    return hash & MODULUS;
+}
+
+/* 旋转哈希 */
+int rotHash(String key) {
+    long hash = 0;
+    final int MODULUS = 1000000007;
+    for (char c : key.toCharArray()) {
+        hash = ((hash << 4) ^ (hash >> 28) ^ (int) c) % MODULUS;
+    }
+    return (int) hash;
+}
 ```
 
 观察发现，每种哈希算法的最后一步都是对大质数 $1000000007$ 取模，以确保哈希值在合适的范围内。值得思考的是，为什么要强调对质数取模，或者说对合数取模的弊端是什么？这是一个有趣的问题。

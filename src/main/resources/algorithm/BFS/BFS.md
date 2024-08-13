@@ -53,24 +53,41 @@
 > ![DFS2.png](BFS.assets/2.jpeg)
 >
 > ```java
-> /* * Return true if there is a path from cur to target. */
-> boolean BFS(int root, int target) {
->     Set<Node> visited = new HashSet<>();
->     Stack<Node> s;
->     add root to s;
->     while (s is not empty) {
->         Node cur = the top element in s;
->         return true if cur is target;
->         for (Node next : the neighbors of cur) {
->             if (next is not in visited) {
->                 add next to s;
->                 add next to visited;
->             }
+> // Level Order
+> public List<List<TreeNode>> levelOrder(TreeNode root) {
+>         List<List<TreeNode>> levels = new ArrayList<>(); // To store the nodes by level
+>         if (root == null) {
+>             return levels; // If the tree is empty, return an empty list.
 >         }
->         remove cur from s;
+> 
+>         Queue<TreeNode> queue = new LinkedList<>();
+>         queue.add(root);
+> 
+>         while (!queue.isEmpty()) {
+>             int levelSize = queue.size(); // Number of nodes at the current level
+>             List<TreeNode> currentLevel = new ArrayList<>();
+> 
+>             for (int i = 0; i < levelSize; i++) {
+>                 TreeNode current = queue.poll();
+>                 currentLevel.add(current);
+> 
+>                 // Add the left, middle, and right children to the queue if they exist
+>                 if (current.left != null) {
+>                     queue.add(current.left);
+>                 }
+>                 if (current.middle != null) {
+>                     queue.add(current.middle);
+>                 }
+>                 if (current.right != null) {
+>                     queue.add(current.right);
+>                 }
+>             }
+> 
+>             levels.add(currentLevel); // Add the current level to the list of levels
+>         }
+> 
+>         return levels;
 >     }
->     return false;
-> }
 > 
 > // Tree travel
 > public bfs(Node startNode) {
@@ -105,6 +122,7 @@
 >     return distance.keySet();
 >     // 如果需要返回离终点的最短距离
 >     return distance.get(endNode);
+> }
 > 
 > ```
 

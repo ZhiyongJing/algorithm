@@ -475,9 +475,9 @@ class ArrayQueue {
 
 | 方法名 |                             | 描述                                                         | 时间复杂度 |
 | ------ | --------------------------- | ------------------------------------------------------------ | ---------- |
-| 添加   | `addFirst(E e)`             | 将元素添加到队列头部，队列满时可能抛出 `IllegalStateException` 异常 | $O(1)$     |
+| 添加   | `addFirst(E e)`             | 将元素添加到队列头部，无返回，队列满时可能抛出 `IllegalStateException` 异常 | $O(1)$     |
 |        | **`offerFirst(E e)`(常用)** | 尝试将元素添加到队列头部，队列满时返回 `false`。             | $O(1)$     |
-|        | `addLast(E e)`              | 将元素添加到队列尾部，队列满时可能抛出 `IllegalStateException` 异常。 | $O(1)$     |
+|        | `addLast(E e)`              | 将元素添加到队列尾部，无返回，队列满时可能抛出 `IllegalStateException` 异常。 | $O(1)$     |
 |        | **`offerLast(E e)`(常用)**  | 尝试将元素添加到队列尾部，队列满时返回 `false`。             | $O(1)$     |
 |        | `push(E e)`                 | 将元素压入队列头部，等同于 `addFirst(E e)`。                 | $O(1)$     |
 | 删除   | `removeFirst()`             | 移除并返回头部元素，如果队列为空抛出 `NoSuchElementException` 异常。 | $O(1)$     |

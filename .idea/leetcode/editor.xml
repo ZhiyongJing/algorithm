@@ -333,6 +333,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_864_ShortestPathToGetAllKeys.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_864_ShortestPathToGetAllKeys.md" />
+              <option name="frontendQuestionId" value="leetcode.com864" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_864_ShortestPathToGetAllKeys.java" />
+              <option name="titleSlug" value="shortest-path-to-get-all-keys" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_98_ValidateBinarySearchTree.java">
           <value>
             <LeetcodeEditor>
@@ -836,6 +847,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1485_CloneBinaryTreeWithRandomPointer.java" />
               <option name="titleSlug" value="clone-binary-tree-with-random-pointer" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_161_OneEditDistance.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_161_OneEditDistance.md" />
+              <option name="frontendQuestionId" value="leetcode.com161" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_161_OneEditDistance.java" />
+              <option name="titleSlug" value="one-edit-distance" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3707,6 +3729,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_65_ValidNumber.java" />
               <option name="titleSlug" value="valid-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_68_TextJustification.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_68_TextJustification.md" />
+              <option name="frontendQuestionId" value="leetcode.com68" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_68_TextJustification.java" />
+              <option name="titleSlug" value="text-justification" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_755_PourWater.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_755_PourWater.md" />
+              <option name="frontendQuestionId" value="leetcode.com755" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_755_PourWater.java" />
+              <option name="titleSlug" value="pour-water" />
             </LeetcodeEditor>
           </value>
         </entry>

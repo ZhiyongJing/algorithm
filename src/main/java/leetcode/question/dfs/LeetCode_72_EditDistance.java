@@ -38,44 +38,61 @@ public class LeetCode_72_EditDistance{
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        // 定义一个二维数组 `memo` 用来缓存中间计算结果，避免重复计算
         Integer memo[][];
 
+        // 入口方法，计算两个字符串之间的最小编辑距离
         public int minDistance(String word1, String word2) {
+            // 初始化 `memo` 数组，大小为 (word1.length() + 1) * (word2.length() + 1)
             memo = new Integer[word1.length() + 1][word2.length() + 1];
+            // 调用递归函数计算最小编辑距离
             return minDistanceRecur(word1, word2, word1.length(), word2.length());
         }
 
+        // 递归函数，用于计算 `word1` 的前 `word1Index` 个字符转换为 `word2` 的前 `word2Index` 个字符所需的最小操作次数
         int minDistanceRecur(String word1, String word2, int word1Index, int word2Index) {
+            // 如果 `word1` 的前 `word1Index` 个字符为空，则返回将空字符串转换为 `word2` 的长度所需的插入次数
             if (word1Index == 0) {
                 return word2Index;
             }
+            // 如果 `word2` 的前 `word2Index` 个字符为空，则返回将 `word1` 转换为空字符串所需的删除次数
             if (word2Index == 0) {
                 return word1Index;
             }
+            // 如果当前子问题已经被计算过，则直接从 `memo` 中返回结果
             if (memo[word1Index][word2Index] != null) {
                 return memo[word1Index][word2Index];
             }
             int minEditDistance = 0;
+            // 如果当前字符相同，不需要进行操作，递归处理剩余的部分
             if (word1.charAt(word1Index - 1) == word2.charAt(word2Index - 1)) {
                 minEditDistance = minDistanceRecur(word1, word2, word1Index - 1, word2Index - 1);
             }
+            // 如果当前字符不相同，分别计算插入、删除、替换三种操作的最小次数
             else {
+                // 插入操作：相当于在 `word1` 末尾插入一个字符，使其与 `word2` 的当前字符匹配，然后递归处理剩余部分
                 int insertOperation = minDistanceRecur(word1, word2, word1Index, word2Index - 1);
+                // 删除操作：相当于删除 `word1` 的当前字符，然后递归处理剩余部分
                 int deleteOperation = minDistanceRecur(word1, word2, word1Index - 1, word2Index);
+                // 替换操作：将 `word1` 的当前字符替换为 `word2` 的当前字符，然后递归处理剩余部分
                 int replaceOperation = minDistanceRecur(word1, word2, word1Index - 1, word2Index - 1);
+                // 取三者中的最小值，并加上 1 次操作
                 minEditDistance = Math.min(insertOperation, Math.min(deleteOperation, replaceOperation)) + 1;
             }
+            // 将当前子问题的结果存入 `memo`，以备后续使用
             memo[word1Index][word2Index] = minEditDistance;
+            // 返回最小编辑距离
             return minEditDistance;
         }
     }
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 
     public static void main(String[] args) {
         Solution solution = new LeetCode_72_EditDistance().new Solution();
-        // 测试用例
+        // 测试用例1：将 "horse" 转换为 "ros"，最少需要3步操作
         System.out.println(solution.minDistance("horse", "ros"));  // Output: 3
+        // 测试用例2：将 "intention" 转换为 "execution"，最少需要5步操作
         System.out.println(solution.minDistance("intention", "execution"));  // Output: 5
     }
 }

@@ -11,15 +11,16 @@ import leetcode.question.dfs.LeetCode_72_EditDistance;
 import leetcode.question.dp.LeetCode_1125_SmallestSufficientTeam;
 import leetcode.question.sort.LeetCode_179_LargestNumber;
 import leetcode.question.string_list.LeetCode_755_PourWater;
+import leetcode.question.two_pointer.LeetCode_251_Flatten2dVector;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class AirbnbQuestion {
     List<Object> questions = Arrays.asList(
+            new LeetCode_39_CombinationSum(),
             new LeetCode_74_SearchA2dMatrix(),
             new LeetCode_240_SearchA2dMatrixIi(),
-            new LeetCode_39_CombinationSum(),
             new LeetCode_72_EditDistance(),
             new LeetCode_161_OneEditDistance(),
             new LeetCode_787_CheapestFlightsWithinKStops(),
@@ -29,6 +30,7 @@ public class AirbnbQuestion {
             new LeetCode_1125_SmallestSufficientTeam(),
             new LeetCode_755_PourWater(),
             new LeetCode_179_LargestNumber(),
+            new LeetCode_251_Flatten2dVector(),
             new LeetCode_341_FlattenNestedListIterator()
 
     );

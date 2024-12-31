@@ -6,4 +6,7 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xdiags:verbose" />
+  </component>
 </project>

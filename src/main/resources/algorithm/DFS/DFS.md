@@ -53,93 +53,95 @@
 > - 当我们递归地实现 DFS 时，似乎不需要使用任何栈。但实际上，我们使用的是由系统提供的隐式栈，也称为调用栈（Call Stack）。
 >
 > ![DFS1.jpg](DFS.assets/1.jpg)
-
-```java
-// find all path from root to node that sum equal to target. 
-    public void dfs(
-      TreeNode node, int remainingSum, List<Integer> pathNodes, List<List<Integer>> pathsList) {
-        if (node == null) {
-            return;
-        }
-
-        // Add the current node to the path's list
-        pathNodes.add(node.val);
-
-        if (remainingSum == node.val && node.left == null && node.right == null) {
-            pathsList.add(new ArrayList<>(pathNodes));
-        } else {
-            // Else, we will recurse on the left and the right children
-            recurseTree(node.left, remainingSum - node.val, pathNodes, pathsList);
-            //recurseTree(node.middle, remainingSum - node.val, pathNodes, pathsList);
-            recurseTree(node.right, remainingSum - node.val, pathNodes, pathsList);
-        }
-      
-        pathNodes.remove(pathNodes.size() - 1);
-    }
-
-// return true if a tree contains a target
-public boolean DFS(TreeNode root, int target) {
-        if (root == null) {
-            return false; // Base case: if the node is null, return false.
-        }
-
-        if (root.value == target) {
-            return true; // If the current node's value matches the target, return true.
-        }
-
-        // Recursively search in the left, middle, and right subtrees.
-        return DFS(root.left, target) || DFS(root.middle, target) || DFS(root.right, target);
-    }
-```
+>
+> ```java
+> // find all path from root to node that sum equal to target. 
+> public void dfs(
+>         TreeNode node, int remainingSum, List<Integer> pathNodes, List<List<Integer>> pathsList) {
+>     if (node == null) {
+>         return;
+>     }
+> 
+>     // Add the current node to the path's list
+>     pathNodes.add(node.val);
+> 
+>     if (remainingSum == node.val && node.left == null && node.right == null) {
+>         pathsList.add(new ArrayList<>(pathNodes));
+>     } else {
+>         // Else, we will recurse on the left and the right children
+>         dfs(node.left, remainingSum - node.val, pathNodes, pathsList);
+>         //recurseTree(node.middle, remainingSum - node.val, pathNodes, pathsList);
+>         dfs(node.right, remainingSum - node.val, pathNodes, pathsList);
+>     }
+> 
+>     pathNodes.remove(pathNodes.size() - 1);
+> }
+> 
+> // return true if a tree contains a target
+> public boolean DFS(TreeNode root, int target) {
+>     if (root == null) {
+>         return false; // Base case: if the node is null, return false.
+>     }
+> 
+>     if (root.value == target) {
+>         return true; // If the current node's value matches the target, return true.
+>     }
+> 
+>     // Recursively search in the left, middle, and right subtrees.
+>     return DFS(root.left, target) || DFS(root.middle, target) || DFS(root.right, target);
+> }
+> ```
 
 ## 3.2 非递归方式实现
 
 > - 递归解决方案的优点是它更容易实现。 但是，存在一个很大的缺点：如果递归的深度太高，你将遭受堆栈溢出。 在这种情况下，您可能会希望使用 BFS，或使用显式栈实现DFS
 >
 > ![DFS2.png](DFS.assets/2.jpeg)
-
-```java
-// Level travel
-public List<List<TreeNode>> levelOrder(TreeNode root) {
-        List<List<TreeNode>> levels = new ArrayList<>(); // To store the nodes by level
-        if (root == null) {
-            return levels; // If the tree is empty, return an empty list.
-        }
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-
-        while (!queue.isEmpty()) {
-            int levelSize = queue.size(); // Number of nodes at the current level
-            List<TreeNode> currentLevel = new ArrayList<>();
-
-            for (int i = 0; i < levelSize; i++) {
-                TreeNode current = queue.poll();
-                currentLevel.add(current);
-
-                // Add the left, middle, and right children to the queue if they exist
-                if (current.left != null) {
-                    queue.add(current.left);
-                }
-                if (current.middle != null) {
-                    queue.add(current.middle);
-                }
-                if (current.right != null) {
-                    queue.add(current.right);
-                }
-            }
-
-            levels.add(currentLevel); // Add the current level to the list of levels
-        }
-
-        return levels;
-    }
-```
+>
+> ```java
+> // 按层遍历
+> public List<List<TreeNode>> levelOrder(TreeNode root) {
+>     List<List<TreeNode>> levels = new ArrayList<>(); // 用于存储按层级分类的节点列表
+>     if (root == null) {
+>         return levels; // 如果树为空，则返回空列表
+>     }
+> 
+>     Queue<TreeNode> queue = new LinkedList<>(); // 定义队列来进行广度优先搜索
+>     queue.add(root); // 将根节点加入队列
+> 
+>     while (!queue.isEmpty()) {
+>         int levelSize = queue.size(); // 当前层级节点的数量
+>         List<TreeNode> currentLevel = new ArrayList<>(); // 用于存储当前层级的所有节点
+> 
+>         // 遍历当前层级的所有节点
+>         for (int i = 0; i < levelSize; i++) {
+>             TreeNode current = queue.poll(); // 从队列中取出一个节点
+>             currentLevel.add(current); // 将该节点添加到当前层列表中
+> 
+>             // 如果左子节点存在，将其加入队列
+>             if (current.left != null) {
+>                 queue.add(current.left);
+>             }
+>             // 如果中子节点存在，将其加入队列
+>             if (current.middle != null) {
+>                 queue.add(current.middle);
+>             }
+>             // 如果右子节点存在，将其加入队列
+>             if (current.right != null) {
+>                 queue.add(current.right);
+>             }
+>         }
+> 
+>         levels.add(currentLevel); // 将当前层列表添加到结果列表中
+>     }
+> 
+>     return levels; // 返回按层级分类的节点列表
+> }
+> 
+> ```
 
 # 4. 算法复杂度
 
-> - 时间复杂度：O(方案个数∗构造每个方案的时间)
+> - 时间复杂度：**O(方案个数∗构造每个方案的时间)** 
 >   - 树的遍历 ：O(n)
->   - 排列问题 ：O(n!∗n)
->   - 组合问题 ：O(2n∗n)
 > - 空间复杂度: O(N)

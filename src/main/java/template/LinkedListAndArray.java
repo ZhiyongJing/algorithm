@@ -1,74 +1,67 @@
 package template;
+import leetcode.util.ListNode;
 
-class Node {
-    int val;
-    Node next;
-    Node(int val) {
-        this.val = val;
-        next = null;
-    }
-}
 
 public class LinkedListAndArray {
 
-    public static Node reverseLinkedList(Node head) {
-        Node prev = null;
-        Node current = head;
+    public static ListNode reverseLinkedList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
         while(current != null){
-            Node temp = current.next;
+            ListNode temp = current.next;
             current.next = prev;
             prev = current;
             current = temp;
         }
         return prev;
     }
-    public static Node reverseLinkedListInKgroup(Node head, int k){
-        Node dummy = new Node(-1);
+    public static ListNode reverseLinkedListInKgroup(ListNode head, int k){
+        ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        Node prev = dummy;
+        ListNode prev = dummy;
         while(prev != null){
             prev = reverseLinkedListInKgroupHelp(prev, k);
 
         }
         return dummy.next;
     }
-    public  static Node reverseLinkedListInKgroupHelp(Node prev, int k){
+    public  static ListNode reverseLinkedListInKgroupHelp(ListNode prev, int k){
         if (k <= 0 || prev == null) {
             return null;
         }
-        Node nodek = prev;
-        Node node1 = prev.next;
+        ListNode ListNodek = prev;
+        ListNode ListNode1 = prev.next;
         for(int i = 0; i< k; i++){
-             if (nodek == null){
+             if (ListNodek == null){
                  return null;
              }
-             nodek = nodek.next;
+             ListNodek = ListNodek.next;
         }
-        if (nodek == null){
+        if (ListNodek == null){
             return null;
         }
-        Node nodekNext = nodek.next;
-        Node preCur = prev;
-        Node cur = prev.next;
+        ListNode ListNodekNext = ListNodek.next;
+        ListNode preCur = prev;
+        ListNode cur = prev.next;
         for (int i = 0; i < k; i++){
-            Node temp = cur.next;
+            ListNode temp = cur.next;
             cur.next = preCur;
             preCur = cur;
             cur = temp;
         }
-        node1.next = nodekNext;
-        prev.next = nodek;
-        return node1;
+        ListNode1.next = ListNodekNext;
+        prev.next = ListNodek;
+        return ListNode1;
     }
 
-    public static Node partitionLinkedList(Node head, int k){
+    public static ListNode partitionLinkedList(ListNode head, int k){
         if (head == null){
             return null;
         }
-        Node leftDummy = new Node(0);
-        Node rightDummy = new Node(0);
+        ListNode leftDummy = new ListNode(0);
+        ListNode rightDummy = new ListNode(0);
 
-        Node left = leftDummy, right = rightDummy;
+        ListNode left = leftDummy, right = rightDummy;
         while (head != null){
             if (head.val <= k){
                 left.next = head;
@@ -85,9 +78,9 @@ public class LinkedListAndArray {
         return leftDummy.next;
     }
 
-    public static Node mergeTwoSortedLinkedList(Node l1, Node l2){
-        Node dummy = new Node(-1);
-        Node tail = dummy;
+    public static ListNode mergeTwoSortedLinkedList(ListNode l1, ListNode l2){
+        ListNode dummy = new ListNode(-1);
+        ListNode tail = dummy;
         while(l1 != null && l2 != null){
             if (l1.val < l2.val){
                 tail.next = l1;
@@ -106,18 +99,18 @@ public class LinkedListAndArray {
 
         return dummy.next;
     }
-    public static Node sortLinkedList (Node head){
+    public static ListNode sortLinkedList (ListNode head){
         if (head == null || head.next == null){
             return head;
         }
-        Node middle = findMiddleNode(head);
-        Node right = sortLinkedList(middle.next);
+        ListNode middle = findMiddleListNode(head);
+        ListNode right = sortLinkedList(middle.next);
         middle.next = null;
-        Node left = sortLinkedList(head);
+        ListNode left = sortLinkedList(head);
         return mergeTwoSortedLinkedList(left, right);
     }
-    private static Node findMiddleNode(Node head){
-        Node slow = head, fast = head.next;
+    private static ListNode findMiddleListNode(ListNode head){
+        ListNode slow = head, fast = head.next;
         while (fast != null && fast.next != null){
             fast = fast.next.next;
             slow = slow.next;
@@ -127,11 +120,11 @@ public class LinkedListAndArray {
     }
 
 
-    public static Node LinkedListCycleStartNode(Node head){
+    public static ListNode LinkedListCycleStartListNode(ListNode head){
         if (head == null || head.next == null){
             return null;
         }
-        Node fast,slow;
+        ListNode fast,slow;
         fast = head.next;
         slow = head;
         while (fast != slow) {
@@ -152,10 +145,10 @@ public class LinkedListAndArray {
     public static void main(String[] args) {
         int[] nums1 = {1, 200, 100};
         int[] nums2 = {6, 7, 8};
-        Node head1 = new Node(0);
-        Node temp = head1;
+        ListNode head1 = new ListNode(0);
+        ListNode temp = head1;
         for(int i : nums1){
-            temp.next = new Node(i);
+            temp.next = new ListNode(i);
             temp = temp.next;
         }
         temp = head1;
@@ -163,10 +156,10 @@ public class LinkedListAndArray {
 //            System.out.println(temp.val);
 //            temp = temp.next;
 //        }
-        Node head2 = new Node(5);
+        ListNode head2 = new ListNode(5);
         temp = head2;
         for(int i : nums2){
-            temp.next = new Node(i);
+            temp.next = new ListNode(i);
             temp = temp.next;
         }
         temp = head2;
@@ -176,7 +169,7 @@ public class LinkedListAndArray {
 //        }
 //////////////////////////////////////////////////////////////////
 //        check method
-//        temp = findMiddleNode(head1);
+//        temp = findMiddleListNode(head1);
 //        temp = mergeTwoSortedLinkedList(head1, head2);
         temp = sortLinkedList(head1);
 

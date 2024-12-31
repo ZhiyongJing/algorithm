@@ -98,6 +98,7 @@ public class DivideAndConquer {
          *  4   5
          */
 
+
         // Traversal version
         preOrderTraversal(root, result);
         System.out.println(result.toString());

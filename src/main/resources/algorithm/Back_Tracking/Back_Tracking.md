@@ -30,14 +30,14 @@
 >   > 确定第一个位置为 1 ( 1 , _ , _ )
 >   > 再去确定第二个位置，假设为 2 ( 1 , 2 , _ )
 >   > 再去确定第三个位置，只能为 3 ( 1 , 2 , 3 )
-> >
+>   >
 >   > 不能再拓展，回溯，确定第二个位置为 3 ( 1 , 3 , _ )
 >   > 再去确定第三个位置，只能为 2 ( 1 , 3 , 2 )，
-> >
+>   >
 >   > 不能再拓展，回溯到第二个位置
 >   > 仍不能再拓展，回溯到第一个位置，确定为 2 ( 2 , _ , _ )
->
->   …
+>   >
+>   > . . . 
 >
 >   ![1](Back_Tracking.assets/1.jpeg)
 >
@@ -62,44 +62,83 @@
 >
 >   ![DFS4.png](Back_Tracking.assets/3.jpeg)
 >
+> ```java
+> // permutation 排列
+> public void permutation(
+>   List<List<Integer>> result, List<Integer> subset, int[] nums) {
+>     // 1. 判断是否满足结束条件,如果满足，将当前路径添加到结果集中
+>     if(nums.length == subset.size()){
+>         results.add(new ArrayList<Integer>(subset));
+>         return;
+>     }
 > 
-
-~~~java
-public class Backtracking {
-    public void backtrack(List<List<Integer>> result, List<Integer> path, int[] nums, int start) {
-        // 1. 判断是否满足结束条件
-        // 如果满足，将当前路径添加到结果集中
-        if (满足结束条件) {
-            result.add(new ArrayList<>(path));
-            return;
-        }
-
-        // 2. 尝试每一种可能的选择
-        for (int i = start; i < nums.length; i++) {
-            // 做选择：将当前元素加入路径
-            path.add(nums[i]);
-
-            // 递归进入下一层，注意更新 start 参数
-            backtrack(result, path, nums, i + 1);
-
-            // 撤销选择：回溯到上一层，恢复状态
-            path.remove(path.size() - 1);
-        }
-    }
-
-    public List<List<Integer>> backtrackingTemplate(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> path = new ArrayList<>();
-        backtrack(result, path, nums, 0);
-        return result;
-    }
-}
-~~~
+>     // 2. 尝试每一种可能的选择
+>     for (int i = 0; i < nums.length; i++) {
+>         if(!subset.contains(nums[i])){
+>           // 做选择：将当前元素加入路径
+>           path.add(nums[i]);
+>           // 递归进入下一层
+>           permutation(result, subset, nums);
+>           // 撤销选择：回溯到上一层，恢复状态
+>           path.remove(path.size() - 1);
+>     }
+> }
+> 
+> // combination 组合
+> public void combination(List<List<Integer>> result, List<Integer> comb, int[] nums, int sum, 
+>                          int	target, int start) {
+>     // 1. 判断是否满足结束条件
+>     // 如果满足，将当前路径添加到结果集中
+>     if (sum == target) {
+>         result.add(new ArrayList<>(comb));
+>         return;
+>     }
+> 
+>     // 2. 尝试每一种可能的选择
+>     for (int i = start; i < nums.length; i++) {
+>         if(sum + nums[i] > target){
+>           break;
+>         }
+>         // 做选择：将当前元素加入路径
+>         comb.add(nums[i]);
+> 
+>         // 递归进入下一层，注意更新 start 参数
+>         combination(result, comb, nums, sum + nums[i], target,  i + 1);
+> 
+>         // 撤销选择：回溯到上一层，恢复状态
+>         path.remove(path.size() - 1);
+>     }
+> }
+> ```
 
 
 
 # 4. 算法复杂度
 
-> - 时间复杂度：O(N)
-> - 空间复杂度: O(1)
+> - 时间复杂度：O(方案个数∗构造每个方案的时间)
+>
+>   - 树的遍历 ：O(n)
+>
+>   - 排列（permutation）问题
+>
+>     > 时间复杂度是 O(N * N!)，主要来源于两部分：
+>     >
+>     > 1. 生成 n! 个排列（树的叶节点数量）。
+>     > 2. 每次生成排列需要 O(n)的操作, 从顶到底部。
+>
+>   - 组合（combination）问题
+>   
+>     > 1. **生成所有组合（子集）** 
+>     >
+>     >    > 时间复杂度是 O(N * 2^N)
+>     >    >
+>     >    > 空间复杂度: O(N)
+>     >
+>     > - 如果只生成固定大小的组合
+>     >
+>     >   > 时间复杂度为 O ( N! / (K! * (N  -  K)!) )
+>     >   >
+>     >   > 空间复杂度 O(K) The extra space we use here is for `curr` and the recursion call stack, which is limited to *k*.
+>   
+> - 空间复杂度: O(N)
 

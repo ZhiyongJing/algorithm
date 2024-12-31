@@ -7,7 +7,7 @@ import java.util.List;
  *@Question:  39. 组合总和
  *@Difculty:  2 [1->简单, 2->中等, 3->困难]
  *@Frequency: 65.5%
- *@Time  Complexity: O(N(T/M+1))，其中N是候选者的数量，T是目标值，M是候选者中的最小值
+ *@Time  Complexity: O(N^(T/M+1))，其中N是候选者的数量，T是目标值，M是候选者中的最小值
  *@Space Complexity: O(T/M)
  */
 

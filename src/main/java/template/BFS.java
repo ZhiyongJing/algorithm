@@ -1,4 +1,13 @@
-package template; /**
+package template;
+
+import leetcode.util.TreeNode;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+/**
  * 什么时候用BFS
  * 1. 图的遍历 Travel in Graph
  * 1.1 层级遍历 Level Order Traversal
@@ -9,77 +18,78 @@ package template; /**
  * 2.2 图中每条边长度都是1， 且没有方向
  */
 
-import java.util.*;
-
 public class BFS {
-    // word ladder
-    public static int ladderlength(String start, String end, Set<String> dict) {
-        if (dict == null) {
-            return 0;
+
+    public List<List<Integer>> BFS(TreeNode node){
+        List<List<Integer>> result = new ArrayList<>();
+        if(node == null){
+            return result;
         }
-        if (start.equals(end)) {
-            return 1;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(node);
+
+        while(!queue.isEmpty()){
+            TreeNode currentNode = queue.poll();
+            result.add(new ArrayList<>());
+            result.get(0).add(currentNode.val);
+            if(currentNode.left != null){
+                queue.add(currentNode.left);
+            }
+            if(currentNode.right != null){
+                queue.add(currentNode.right);
+            }
         }
-        dict.add(end);
+        return result;
+    }
 
-        Set<String> hash = new HashSet<>();
-        Queue<String> queue = new LinkedList<>();
-        queue.offer(start);
-        hash.add(start);
+    public List<List<Integer>> BFSByLevel(TreeNode node){
+        List<List<Integer>> result = new ArrayList<>();
+        if(node == null){
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(node);
+        while(!queue.isEmpty()){
 
-        int length = 1;
-        while (!queue.isEmpty()) {
-            length++;
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                String word = queue.poll();
-                for (String nextWord : getNextWords(word, dict)) {
-                    if (hash.contains(nextWord)) {
-                        continue;
-                    }
-                    if (nextWord.equals(end)) {
-                        return length;
-                    }
-                    hash.add(nextWord);
-                    queue.offer(nextWord);
+            int level = queue.size();
+            result.add(new ArrayList<>());
+            for(int i = 0; i < level; i++){
+                TreeNode currentNode = queue.poll();
+                result.get(result.size() - 1).add(currentNode.val);
 
+                if(currentNode.left != null){
+                    queue.add(currentNode.left);
+                }
+                if(currentNode.right != null){
+                    queue.add(currentNode.right);
                 }
             }
         }
-        return 0;
-    }
-
-    private static String replace(String s, int index, char c) {
-        char[] chars = s.toCharArray();
-        chars[index] = c;
-        return new String(chars);
-    }
-
-    private static ArrayList<String> getNextWords(String word, Set<String> dict) {
-        ArrayList<String> nextWords = new ArrayList<>(); //O(L)
-        for (int i = 0; i < word.length(); i++) { //O(25)
-            for (char c = 'a'; c <= 'z'; c++) {
-                if (c == word.charAt(i)) {
-                    continue;
-                }
-                String nextWord = replace(word, i, c); //O(L)
-                if (dict.contains(nextWord)) { //O(L)
-                    nextWords.add(nextWord);
-                }
-            }
-        }
-        return nextWords;
+        return result;
     }
 
     public static void main(String[] args) {
-        String start = "hit";
-        String end = "hot";
-        Set<String> dict = new HashSet<String>();
+        // 创建一个更深的BST示例
+        TreeNode root = new TreeNode(0).sampleTree();
 
-        // Adding all elements to List
-        dict.addAll(Arrays.asList(new String[]{"hot", "dot", "dog", "lat", "log"}));
-        System.out.println(getNextWords("hot", dict).toString());
-        System.out.println(ladderlength(start, end, dict));
+        BFS bfs = new BFS();
+        // 进行BST的测试
+        System.out.println(bfs.BFS(root));
+        System.out.println(bfs.BFSByLevel(root));
+
     }
-
 }
+
+/**
+ *         15
+ *        /  \
+ *       8    20
+ *      / \   / \
+ *     5  12 18  25
+ *    / \  /
+ *   3   7 10
+ *        \
+ *        14
+ */
+
+

@@ -18,99 +18,152 @@
 > ![image-20240613154851638](Trie.assets/image-20240613154851638.png)
 >
 > ```java
-> // Trie 节点的定义
-> class Node {
->    boolean isWord = false;
->  	 double frequency;
->    List<Node> children = Arrays.asList(new Node[26]);
-> };
+> public class Trie {
 > 
-> class Trie {
->   Node Root, curr;
-> 	Trie() {
->    	Root = new Node();
-> 	}
-> // 初始化堆，按照出现频率从小到大排列
->    Queue<Node> resultBuffer = new PriorityQueue<>(
->            (n1, n2) -> count.get(n2.frequency) - count.get(n1.frequency));
+>     private Node root; // 根节点
 > 
-> // 运行一个深度优先搜索（DFS）在 Trie 上，从给定前缀开始，并将所有单词添加到 resultBuffer 中，限制结果大小为 10
-> void dfsWithPrefix(Node curr, String word) {
->    if (resultBuffer.size() == 10)
->        return;
->    if (curr.isWord)
->        resultBuffer.add(word);
+>     // 定义前缀树的节点
+>     private class Node {
+>         private Node[] dict; // 使用数组存储子节点，每个节点代表一个字母
+>         private boolean isWord; // 标记当前节点是否为单词的结尾
 > 
->    // 在所有可能的路径上运行 DFS。
->    for (char c = 'a'; c <= 'z'; c++)
->        if (curr.children.get(c - 'a') != null)
->            dfsWithPrefix(curr.children.get(c - 'a'), word + c);
-> }
-> 
-> 
-> // 在 Trie 中插入字符串
-> // 思路：按照word的字符，从根节点开始，一直向下走：如果遇到null，就new出新节点；如果节点已经存在，cur顺着往下走就可以
-> void insert(String s) {
->    curr = Root;	// 将 curr 指针指向 Trie 的根节点。
->    for (char c : s.toCharArray()) {
->        if (curr.children.get(c - 'a') == null)
->            curr.children.set(c - 'a', new Node());
->        curr = curr.children.get(c - 'a');
->    }
->    curr.isWord = true;   // 将该节点标记为一个完成的单词。
-> }
->       //【判断一个单词word是否完整存在于字典树中】
->     // 思路：cur从根节点开始，按照word的字符一直尝试向下走：
->     // 如果走到了null，说明这个word不是前缀树的任何一条路径，返回false;
->     // 如果按照word顺利的走完，就要判断此时cur是否为单词尾端：如果是，返回true；如果不是，说明word仅仅是一个前缀，并不完整，返回false
->     public boolean search(String word) {
->         cur = root;
-> 
->         for (int i = 0; i < word.length(); i++) {
->             int c = word.charAt(i) - 'a';
->             if (cur.children[c] == null) {
->                 return false;
->             }
->             cur = cur.children[c];
+>         // 构造函数，初始化子节点数组和单词标记
+>         public Node() {
+>             dict = new Node[26]; // 数组长度为26，对应字母 a-z
+>             this.isWord = false;
 >         }
->         return cur.isWord;
 >     }
 > 
->   
+>     /**
+>      * 初始化 Trie（前缀树）。
+>      */
+>     public Trie() {
+>         root = new Node(); // 初始化根节点
+>     }
 > 
-> // 获取以指定前缀开头的单词
-> List<String> getWordsStartingWith(String prefix) {
->    curr = Root;
->    resultBuffer = new ArrayList<String>();
->    // 将 curr 移动到其 Trie 表示中前缀的末尾。
->    for (char c : prefix.toCharArray()) {
->        if (curr.children.get(c - 'a') == null)
->            return resultBuffer;
->        curr = curr.children.get(c - 'a');
->    }
->    dfsWithPrefix(curr, prefix);
->    return resultBuffer;
+>     /**
+>      * 插入一个单词到 Trie 中。
+>      */
+>     public void insert(String word) {
+>         int len = word.length(); // 单词长度
+>         Node curNode = root; // 从根节点开始
+>         for (int i = 0; i < len; i++) {
+>             char curChar = word.charAt(i); // 当前字符
+>             Node next = curNode.dict[curChar - 'a']; // 根据字符找到对应子节点
+>             if (next == null) {
+>                 // 如果当前字符对应的子节点不存在，则创建新的节点
+>                 curNode.dict[curChar - 'a'] = new Node();
+>             }
+>             curNode = curNode.dict[curChar - 'a']; // 进入下一个节点
+>         }
+>         if (!curNode.isWord) {
+>             // 如果当前节点之前不是单词结尾，标记为单词结尾
+>             curNode.isWord = true;
+>         }
+>     }
+> 
+>     /**
+>      * 判断单词是否存在于 Trie 中。
+>      */
+>     public boolean search(String word) {
+>         int len = word.length(); // 单词长度
+>         Node curNode = root; // 从根节点开始
+> 
+>         for (int i = 0; i < len; i++) {
+>             char curC = word.charAt(i); // 当前字符
+>             Node next = curNode.dict[curC - 'a']; // 根据字符找到对应子节点
+>             if (next == null) {
+>                 // 如果子节点不存在，返回 false
+>                 return false;
+>             } else {
+>                 curNode = next; // 进入下一个节点
+>             }
+>         }
+>         return curNode.isWord; // 判断当前节点是否为单词结尾
+>     }
+> 
+>     /**
+>      * 判断是否存在以指定前缀开头的单词。
+>      */
+>     public boolean startsWith(String prefix) {
+>         int len = prefix.length(); // 前缀长度
+>         Node curNode = root; // 从根节点开始
+>         for (int i = 0; i < len; i++) {
+>             char curC = prefix.charAt(i); // 当前字符
+>             Node next = curNode.dict[curC - 'a']; // 根据字符找到对应子节点
+>             if (next == null) {
+>                 // 如果子节点不存在，返回 false
+>                 return false;
+>             } else {
+>                 curNode = next; // 进入下一个节点
+>             }
+>         }
+>         return true; // 如果遍历完整个前缀，返回 true
+>     }
+> 
+>     /**
+>      * 判断是否存在匹配正则表达式 `.` 的单词。
+>      * '.' 表示可以匹配任何一个字符。
+>      */
+>     public boolean regExSearch(String word) {
+>         return match(word, root, 0); // 调用递归函数进行匹配
+>     }
+> 
+>     private boolean match(String word, Node node, int start) {
+>         if (start == word.length()) {
+>             return node.isWord; // 如果到达单词末尾，检查是否为单词结尾
+>         }
+>         char alpha = word.charAt(start);
+>         if (alpha == '.') {
+>             // 如果当前字符为 '.'，遍历所有可能的子节点
+>             for (int i = 0; i < 26; i++) {
+>                 if (node.dict[i] != null && match(word, node.dict[i], start + 1)) {
+>                     return true;
+>                 }
+>             }
+>             return false; // 如果所有子节点都不匹配，返回 false
+>         } else {
+>             // 普通字符处理
+>             if (node.dict[alpha - 'a'] == null) {
+>                 return false; // 如果子节点不存在，返回 false
+>             }
+>             return match(word, node.dict[alpha - 'a'], start + 1); // 递归匹配下一个字符
+>         }
+>     }
+> 
+>     public static void main(String[] args) {
+>         Trie trie = new Trie(); // 创建 Trie 对象
+>         trie.insert("helloworld"); // 插入单词 "helloworld"
+>         trie.insert("bad");        // 插入单词 "bad"
+>         trie.insert("dag");        // 插入单词 "dag"
+>         trie.insert("mad");        // 插入单词 "mad"
+> 
+>         // 测试是否存在以 "hello" 开头的单词
+>         boolean startsWith = trie.startsWith("hello");
+>         System.out.println(startsWith); // 输出 true
+> 
+>         // 测试是否存在单词 "helloworld"
+>         boolean search1 = trie.search("helloworld");
+>         System.out.println(search1); // 输出 true
+> 
+>         // 测试是否存在单词 "hello"
+>         boolean search2 = trie.search("hello");
+>         System.out.println(search2); // 输出 false
+> 
+>         // 测试正则表达式匹配
+>         boolean search3 = trie.regExSearch(".ad");
+>         System.out.println(search3); // 输出 true (匹配 "bad", "mad")
+> 
+>         boolean search4 = trie.regExSearch("b..");
+>         System.out.println(search4); // 输出 true (匹配 "bad")
+> 
+>         boolean search5 = trie.regExSearch(".elloworl.");
+>         System.out.println(search5); // 输出 true (匹配 "helloworld")
+>     }
 > }
-> };
 > 
-> List<List<String>> suggestedProducts(String[] products, String searchWord) {
->    Trie trie = new Trie();
->    List<List<String>> result = new ArrayList<>();
->    // 将所有单词添加到 Trie 中。
->    for (String w : products)
->        trie.insert(w);
->    String prefix = new String();
->    for (char c : searchWord.toCharArray()) {
->        prefix += c;
->        result.add(trie.getWordsStartingWith(prefix));
->    }
->    return result;
-> }}
 > ```
 >
-> 
-
-
 
 # 4. 时间复杂度
 

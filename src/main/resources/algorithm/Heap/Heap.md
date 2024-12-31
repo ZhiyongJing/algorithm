@@ -26,8 +26,8 @@
 >   >
 >   > | 方法名                 | 描述                                                         | 时间复杂度  |
 >   > | :--------------------- | :----------------------------------------------------------- | ----------- |
->   > | `add(E e)`             | 成功添加，返回 `true`。如果元素为 `null`，则抛出 `NullPointerException`。 | $O(\log n)$ |
->   > | **`offer(E e)`(常用)** | 成功添加，返回 `true`。如果元素为 `null`，则抛出`NullPointerException`。 | $O(\log n)$ |
+>   > | `add(E e)`             | 成功添加，返回 `true`。若元素为 `null`，则抛出 `NullPointerException` | $O(\log n)$ |
+>   > | **`offer(E e)`(常用)** | 成功添加，返回 `true`。若元素为 `null`，则抛出`NullPointerException` | $O(\log n)$ |
 >   > | **`poll()`(常用)**     | 堆顶元素出堆。 *Queue*接口方法                               | $O(\log n)$ |
 >   > | `remove()`             | 堆顶元素出堆。*Queue*接口方法                                | $O(1)$      |
 >   > | `remove(E e)`          | 移除某个元素。*Collection*接口的方法                         |             |

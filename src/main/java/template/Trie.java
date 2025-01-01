@@ -8,11 +8,13 @@ public class Trie {
     private class Node {
         private Node[] dict; // 使用数组存储子节点，每个节点代表一个字母
         private boolean isWord; // 标记当前节点是否为单词的结尾
+        private int value; // 可选项，可以用作单词出现的frequency，或者对应值
 
         // 构造函数，初始化子节点数组和单词标记
         public Node() {
             dict = new Node[26]; // 数组长度为26，对应字母 a-z
             this.isWord = false;
+            this.value = 0; // 可选项，可以用作单词出现的frequency，或者对应值
         }
     }
 
@@ -26,7 +28,9 @@ public class Trie {
     /**
      * 插入一个单词到 Trie 中。
      */
-    public void insert(String word) {
+    public void insert(String word
+                       //,int value
+    ) {
         int len = word.length(); // 单词长度
         Node curNode = root; // 从根节点开始
         for (int i = 0; i < len; i++) {
@@ -42,6 +46,7 @@ public class Trie {
             // 如果当前节点之前不是单词结尾，标记为单词结尾
             curNode.isWord = true;
         }
+        //curNode.value = value;
     }
 
     /**

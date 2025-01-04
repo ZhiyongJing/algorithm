@@ -40,8 +40,7 @@
 >    >
 > 4. **显示表结构**
 >
->    > - 使用DESCRIBE 或 DESC 命令，表示表结构。
->    >   `DESCRIBE employees;` 或者 `DESC employees;`
+>    > - 使用DESCRIBE 或 DESC 命令，表示表结构。`DESCRIBE employees;` 或者 `DESC employees;`
 >    >
 > 5. **运算符**
 >
@@ -93,9 +92,9 @@
 >    >   >
 >    > - LIMIT
 >    >
->    >> - MySQL 8.0中可以使用“LIMIT 3 OFFSET 4”，意思是获取从第5条记录开始后面的3条记录，和“LIMIT 4,3;”返回的结果相同。
->    >> - 分页显式公式 **:(当前页数**-1**)*****每页条数，每页条数**
->    >>
+>    >   > - MySQL 8.0中可以使用“LIMIT 3 OFFSET 4”，意思是获取从第5条记录开始后面的3条记录，和“LIMIT 4,3;”返回的结果相同。
+>    >   > - 分页显式公式 **:(当前页数**-1**)*****每页条数，每页条数**
+>    >   >
 >    >
 
 ## 3. 函数
@@ -204,11 +203,12 @@
 >
 >    > - 使用条件
 >    >
->    >   - 行已经被分组。
->    >   - 使用了聚合函数。
->    >   - 满足HAVING 子句中条件的分组将被显示。
->    >   - HAVING 不能单独使用，必须要跟 GROUP BY 一起使用。
->    >   - **非法使用聚合函数 : 不能在** WHERE **子句中使用聚合函数**
+>    >   > - 行已经被分组。
+>    >   > - 使用了聚合函数。
+>    >   > - 满足HAVING 子句中条件的分组将被显示。
+>    >   > - HAVING 不能单独使用，必须要跟 GROUP BY 一起使用。
+>    >   > - **非法使用聚合函数 : 不能在** WHERE **子句中使用聚合函数**
+>    >   >
 >    >
 >    > ```sql
 >    > SELECT   department_id, MAX(salary)
@@ -257,9 +257,8 @@
 >    > - **将子查询放在比较条件的右侧**
 >    > - **单行操作符对应单行子查询，多行操作符对应多行子查询**
 >    >
->    
->2. **子查询的分类**: 我们按内查询的结果返回一条还是多条记录，将子查询分为 单行子查询 、 多行子查询 。
-> 
+> 2. **子查询的分类**: 我们按内查询的结果返回一条还是多条记录，将子查询分为 单行子查询 、 多行子查询 。
+>
 >    > 1. **单行子查询**
 >    >
 >    >    > 可以使用比较运算符 =, >, <, >=, <=, !=
@@ -275,71 +274,67 @@
 >    >    >    >
 >    >    > 2. Case 中子查询
 >    >    >
->    >    >   > ```sql
->    >    >   > -- 显式员工的employee_id,last_name和location。其中，若员工department_id与location_id为1800 的department_id相同，则location为’Canada’，其余则为’USA’。
->    >    >   > SELECT employee_id, last_name,
->    >    >   > (CASE department_id
->    >    >   > WHEN
->    >    >   > (SELECT department_id FROM departments
->    >    >   > WHERE location_id = 1800)
->    >    >   > THEN 'Canada' ELSE 'USA' END) location
->    >    >>   > FROM   employees;
->    >    >   > ```
->    >    >>
->    > 2. **多行子查询**
->    > 
->    >    > 1. **多行比较操作符**
+>    >    >    > ```sql
+>    >    >    > -- 显式员工的employee_id,last_name和location。其中，若员工department_id与location_id为1800 的department_id相同，则location为’Canada’，其余则为’USA’。
+>    >    >    > SELECT employee_id, last_name,
+>    >    >    > (CASE department_id
+>    >    >    > WHEN
+>    >    >    > (SELECT department_id FROM departments
+>    >    >    > WHERE location_id = 1800)
+>    >    >    > THEN 'Canada' ELSE 'USA' END) location
+>    >    >    > FROM   employees;
+>    >    >    >
+>    >    >    > ```
+>    >    >    >
 >    >    >
->    >   >    > - IN 等于列表中的 **任意一个**
+>    > 2. **多行子查询**
+>    >
+>    >    > 1. **多行比较操作符**
+>    >    >    > - IN 等于列表中的 **任意一个**
 >    >    >    > - ANY 需要和单行比较操作符一起使用，和子查询返回的 **某一个** 值比较
 >    >    >    > - ALL 需要和单行比较操作符一起使用，和子查询返回的 **所有** 值比较
->    >   >    >
->    >   >    > ```sql
->    >>>   >    > -- 查询平均工资最低的部门id
->    >   >    > SELECT department_id
->    >>>   >    > FROM employees
->    >   >    > GROUP BY department_id 
->    >>>   >    > HAVING AVG(salary) <= ALL (
->    >   >    >              SELECT AVG(salary) avg_sal
->    >   >    >              FROM employees
->    >   >    >              GROUP BY department_id
->    >   >    > )
->    >   >    > ```
->    >   >
+>    >    >    >
+>    >    >    > ```sql
+>    >    >    > -- 查询平均工资最低的部门id
+>    >    >    > SELECT department_id
+>    >    >    >  FROM employees
+>    >    >    > GROUP BY department_id 
+>    >    >    > HAVING AVG(salary) <= ALL (
+>    >    >    >              SELECT AVG(salary) avg_sal
+>    >    >    >              FROM employees
+>    >    >    >              GROUP BY department_id
+>    >    >    > )
+>    >    >    > ```
+>    >    >    >
+>    >    >
 >    >
->    
-> 3. **子查询的分类: **我们按内查询是否被执行多次，将子查询划分为 相关(或关联)子查询 和 不相关(或非关联)子查询 。
-> 
+> 3. **子查询的分类**: 我们按内查询是否被执行多次，将子查询划分为 相关(或关联)子查询 和 不相关(或非关联)子查询 。
+>
 >    > 1. **相关子查询**
 >    >
 >    >    > 如果子查询的执行依赖于外部查询，通常情况下都是因为子查询中的表用到了外部的表，并进行了条件关联，**因此每执行一次外部查询，子查询都要重新计算一次，这样的子查询就称之为 关联子查询** 。
 >    >    >
->   >    > ```sql
+>    >    > ```sql
 >    >    > -- 若employees表中employee_id与job_history表中employee_id相同的数目不小于2，输出这些相同 id的员工的employee_id,last_name和其job_id
 >    >    > SELECT e.employee_id, last_name,e.job_id
->   >    > FROM   employees e
->   >    > WHERE  2 <= (SELECT COUNT(*)
->>>   >    >           FROM   job_history
->   >    >           WHERE  employee_id = e.employee_id);
->   >    > ```
->   >
->   > 2. **关联子查询**
->   >
->   >    > 关联子查询通常也会和 EXISTS操作符一起来使用，用来检查在子查询中是否存在满足条件的行。
->   >    >
->   >    > ```sql
->>>   >    > -- 查询公司管理者的employee_id，last_name，job_id，department_id信息
->   >    > SELECT employee_id, last_name, job_id, department_id
->>>   >    > FROM   employees e1
->   >    > WHERE  EXISTS ( SELECT *
->   >    >               FROM   employees e2
->   >    >               WHERE  e2.manager_id =
->   >    >                      e1.employee_id);
->   >    > ```
->   >    >
->   >    > 题目中可以使用子查询，也可以使用自连接。一般情况建议你使用自连接，因为在许多 DBMS 的处理过 程中，对于自连接的处理速度要比子查询快得多。
->   >
->
+>    >    > FROM   employees e
+>    >    > WHERE  2 <= (SELECT COUNT(*)
+>    >    > FROM   job_history
+>    >    >           WHERE  employee_id = e.employee_id);
+>    >    > ```
+>    >    >
+>    > 2. **关联子查询**
+>    >
+>    >    > 关联子查询通常也会和 EXISTS操作符一起来使用，用来检查在子查询中是否存在满足条件的行。题目中可以使用子查询，也可以使用自连接。一般情况建议你使用自连接，因为在许多 DBMS 的处理过 程中，对于自连接的处理速度要比子查询快得多。
+>    >    >
+>    >    > ```sql
+>    >    > -- 查询公司管理者的employee_id，last_name，job_id，department_id信息 
+>    >    > SELECT employee_id, last_name, job_id, department_id FROM employees e1 
+>    >    > WHERE EXISTS ( SELECT * FROM employees e2 WHERE e2.manager_id = e1.employee_id);
+>    >    >
+>    >    > ```
+>    >    >
+>    >
 
 ## 4. 流程控制
 
@@ -505,3 +500,4 @@
 >   > END //
 >   > DELIMITER ;
 >   > ```
+>   >

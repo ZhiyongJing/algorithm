@@ -366,6 +366,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1011_CapacityToShipPackagesWithinDDays.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_1011_CapacityToShipPackagesWithinDDays.md" />
+              <option name="frontendQuestionId" value="leetcode.com1011" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1011_CapacityToShipPackagesWithinDDays.java" />
+              <option name="titleSlug" value="capacity-to-ship-packages-within-d-days" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1060_MissingElementInSortedArray.java">
           <value>
             <LeetcodeEditor>
@@ -396,6 +407,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1095_FindInMountainArray.java" />
               <option name="titleSlug" value="find-in-mountain-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1283_FindTheSmallestDivisorGivenAThreshold.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_1283_FindTheSmallestDivisorGivenAThreshold.md" />
+              <option name="frontendQuestionId" value="leetcode.com1283" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1283_FindTheSmallestDivisorGivenAThreshold.java" />
+              <option name="titleSlug" value="find-the-smallest-divisor-given-a-threshold" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -432,6 +454,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1760_MinimumLimitOfBallsInABag.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_1760_MinimumLimitOfBallsInABag.md" />
+              <option name="frontendQuestionId" value="leetcode.com1760" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1760_MinimumLimitOfBallsInABag.java" />
+              <option name="titleSlug" value="minimum-limit-of-balls-in-a-bag" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1891_CuttingRibbons.java">
           <value>
             <LeetcodeEditor>
@@ -440,6 +473,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1891_CuttingRibbons.java" />
               <option name="titleSlug" value="cutting-ribbons" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_2064_MinimizedMaximumOfProductsDistributedToAnyStore.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_2064_MinimizedMaximumOfProductsDistributedToAnyStore.md" />
+              <option name="frontendQuestionId" value="leetcode.com2064" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_2064_MinimizedMaximumOfProductsDistributedToAnyStore.java" />
+              <option name="titleSlug" value="minimized-maximum-of-products-distributed-to-any-store" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -462,6 +506,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_2560_HouseRobberIv.java" />
               <option name="titleSlug" value="house-robber-iv" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_268_MissingNumber.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_268_MissingNumber.md" />
+              <option name="frontendQuestionId" value="leetcode.com268" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_268_MissingNumber.java" />
+              <option name="titleSlug" value="missing-number" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -509,6 +564,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_367_ValidPerfectSquare.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_367_ValidPerfectSquare.md" />
+              <option name="frontendQuestionId" value="leetcode.com367" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_367_ValidPerfectSquare.java" />
+              <option name="titleSlug" value="valid-perfect-square" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_410_SplitArrayLargestSum.java">
           <value>
             <LeetcodeEditor>
@@ -517,6 +583,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_410_SplitArrayLargestSum.java" />
               <option name="titleSlug" value="split-array-largest-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_441_ArrangingCoins.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_441_ArrangingCoins.md" />
+              <option name="frontendQuestionId" value="leetcode.com441" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_441_ArrangingCoins.java" />
+              <option name="titleSlug" value="arranging-coins" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -564,6 +641,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_658_FindKClosestElements.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_658_FindKClosestElements.md" />
+              <option name="frontendQuestionId" value="leetcode.com658" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_658_FindKClosestElements.java" />
+              <option name="titleSlug" value="find-k-closest-elements" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_69_Sqrtx.java">
           <value>
             <LeetcodeEditor>
@@ -594,6 +682,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_81_SearchInRotatedSortedArrayIi.java" />
               <option name="titleSlug" value="search-in-rotated-sorted-array-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_852_PeakIndexInAMountainArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_852_PeakIndexInAMountainArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com852" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_852_PeakIndexInAMountainArray.java" />
+              <option name="titleSlug" value="peak-index-in-a-mountain-array" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4235,6 +4334,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_340_LongestSubstringWithAtMostKDistinctCharacters.java" />
               <option name="titleSlug" value="longest-substring-with-at-most-k-distinct-characters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_392_IsSubsequence.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_392_IsSubsequence.md" />
+              <option name="frontendQuestionId" value="leetcode.com392" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_392_IsSubsequence.java" />
+              <option name="titleSlug" value="is-subsequence" />
             </LeetcodeEditor>
           </value>
         </entry>

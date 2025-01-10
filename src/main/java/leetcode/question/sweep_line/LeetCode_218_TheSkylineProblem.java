@@ -1,11 +1,6 @@
 package leetcode.question.sweep_line;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 /**
  *@Question:  218. The Skyline Problem
@@ -68,8 +63,10 @@ public class LeetCode_218_TheSkylineProblem{
                 edges.add(Arrays.asList(buildings[i][0], i)); // 添加建筑物左边界
                 edges.add(Arrays.asList(buildings[i][1], i)); // 添加建筑物右边界
             }
+            System.out.println("initinal edges is:" + edges);
             // 对边界进行排序，按横坐标升序排列
             Collections.sort(edges, (a, b) -> a.get(0) - b.get(0));
+            System.out.println("sorted edges is:" + edges);
 
             // 初始化优先队列，用于存储正在处理的建筑物，按高度降序排列
             Queue<List<Integer>> live = new PriorityQueue<>((a, b) -> b.get(0) - a.get(0));

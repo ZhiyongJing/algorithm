@@ -432,6 +432,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1508_RangeSumOfSortedSubarraySums.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_1508_RangeSumOfSortedSubarraySums.md" />
+              <option name="frontendQuestionId" value="leetcode.com1508" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1508_RangeSumOfSortedSubarraySums.java" />
+              <option name="titleSlug" value="range-sum-of-sorted-subarray-sums" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_153_FindMinimumInRotatedSortedArray.java">
           <value>
             <LeetcodeEditor>
@@ -4128,6 +4139,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1508_RangeSumOfSortedSubarraySums.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_1508_RangeSumOfSortedSubarraySums.md" />
+              <option name="frontendQuestionId" value="leetcode.com1508" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_1508_RangeSumOfSortedSubarraySums.java" />
+              <option name="titleSlug" value="range-sum-of-sorted-subarray-sums" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_151_ReverseWordsInAString.java">
           <value>
             <LeetcodeEditor>
@@ -4136,6 +4158,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_151_ReverseWordsInAString.java" />
               <option name="titleSlug" value="reverse-words-in-a-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1570_DotProductOfTwoSparseVectors.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_1570_DotProductOfTwoSparseVectors.md" />
+              <option name="frontendQuestionId" value="leetcode.com1570" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1570_DotProductOfTwoSparseVectors.java" />
+              <option name="titleSlug" value="dot-product-of-two-sparse-vectors" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1574_ShortestSubarrayToBeRemovedToMakeArraySorted.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_1574_ShortestSubarrayToBeRemovedToMakeArraySorted.md" />
+              <option name="frontendQuestionId" value="leetcode.com1574" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1574_ShortestSubarrayToBeRemovedToMakeArraySorted.java" />
+              <option name="titleSlug" value="shortest-subarray-to-be-removed-to-make-array-sorted" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4180,6 +4224,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_16_ThreeSumClosest.java" />
               <option name="titleSlug" value="3sum-closest" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1768_MergeStringsAlternately.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_1768_MergeStringsAlternately.md" />
+              <option name="frontendQuestionId" value="leetcode.com1768" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1768_MergeStringsAlternately.java" />
+              <option name="titleSlug" value="merge-strings-alternately" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4260,6 +4315,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_2563_CountTheNumberOfFairPairs.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_2563_CountTheNumberOfFairPairs.md" />
+              <option name="frontendQuestionId" value="leetcode.com2563" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_2563_CountTheNumberOfFairPairs.java" />
+              <option name="titleSlug" value="count-the-number-of-fair-pairs" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_259_ThreeSumSmaller.java">
           <value>
             <LeetcodeEditor>
@@ -4334,6 +4400,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_340_LongestSubstringWithAtMostKDistinctCharacters.java" />
               <option name="titleSlug" value="longest-substring-with-at-most-k-distinct-characters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_345_ReverseVowelsOfAString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_345_ReverseVowelsOfAString.md" />
+              <option name="frontendQuestionId" value="leetcode.com345" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_345_ReverseVowelsOfAString.java" />
+              <option name="titleSlug" value="reverse-vowels-of-a-string" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4436,6 +4513,39 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_541_ReverseStringIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_541_ReverseStringIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com541" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_541_ReverseStringIi.java" />
+              <option name="titleSlug" value="reverse-string-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_556_NextGreaterElementIii.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_556_NextGreaterElementIii.md" />
+              <option name="frontendQuestionId" value="leetcode.com556" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_556_NextGreaterElementIii.java" />
+              <option name="titleSlug" value="next-greater-element-iii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_567_PermutationInString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_567_PermutationInString.md" />
+              <option name="frontendQuestionId" value="leetcode.com567" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_567_PermutationInString.java" />
+              <option name="titleSlug" value="permutation-in-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_5_LongestPalindromicSubstring.java">
           <value>
             <LeetcodeEditor>
@@ -4447,6 +4557,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_61_RotateList.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_61_RotateList.md" />
+              <option name="frontendQuestionId" value="leetcode.com61" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_61_RotateList.java" />
+              <option name="titleSlug" value="rotate-list" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_647_PalindromicSubstrings.java">
           <value>
             <LeetcodeEditor>
@@ -4455,6 +4576,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_647_PalindromicSubstrings.java" />
               <option name="titleSlug" value="palindromic-substrings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_719_FindKThSmallestPairDistance.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_719_FindKThSmallestPairDistance.md" />
+              <option name="frontendQuestionId" value="leetcode.com719" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_719_FindKThSmallestPairDistance.java" />
+              <option name="titleSlug" value="find-k-th-smallest-pair-distance" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_723_CandyCrush.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_723_CandyCrush.md" />
+              <option name="frontendQuestionId" value="leetcode.com723" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_723_CandyCrush.java" />
+              <option name="titleSlug" value="candy-crush" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4477,6 +4620,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_88_MergeSortedArray.java" />
               <option name="titleSlug" value="merge-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_962_MaximumWidthRamp.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_962_MaximumWidthRamp.md" />
+              <option name="frontendQuestionId" value="leetcode.com962" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_962_MaximumWidthRamp.java" />
+              <option name="titleSlug" value="maximum-width-ramp" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_977_SquaresOfASortedArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_977_SquaresOfASortedArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com977" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_977_SquaresOfASortedArray.java" />
+              <option name="titleSlug" value="squares-of-a-sorted-array" />
             </LeetcodeEditor>
           </value>
         </entry>

@@ -89,11 +89,11 @@ public class LeetCode_103_BinaryTreeZigzagLevelOrderTraversal {
 
     public static void main(String[] args) {
         Solution solution = new LeetCode_103_BinaryTreeZigzagLevelOrderTraversal().new Solution();
-        // 测试
-        // 创建示例二叉树
-        // TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        // List<List<Integer>> result = solution.zigzagLevelOrder(root);
-        // System.out.println(result);
+//         测试
+//         创建示例二叉树
+         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+         List<List<Integer>> result = solution.zigzagLevelOrder(root);
+         System.out.println(result);
     }
 }
 /**

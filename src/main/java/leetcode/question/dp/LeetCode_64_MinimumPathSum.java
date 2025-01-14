@@ -43,7 +43,7 @@ class Solution {
     }
     //Solution2: Bottom-Up
     //dp[i,j] = min(dp[i-1, j] , dp[i][j-1]) + grid[i][j]
-    public int minPathSum2(int[][] grid) {
+    public int minPathSum(int[][] grid) {
         if(grid == null){
             return 0;
         }
@@ -61,10 +61,37 @@ class Solution {
                 dp[i][j] = Math.min(dp[i-1][j], dp[i][j-1]) + grid[i][j];
             }
         }
+        //print path
+        // 第二步：回溯路径，从右下角回到左上角
+        StringBuilder path = new StringBuilder();
+        int row = m - 1;
+        int col = n - 1;
+
+        // 从右下角开始回溯路径
+        path.append("(").append(row).append(", ").append(col).append(")");
+        while (row > 0 || col > 0) {
+            if (row == 0) {
+                col--; // 如果在第一行，只能向左移动
+            } else if (col == 0) {
+                row--; // 如果在第一列，只能向上移动
+            } else if (dp[row - 1][col] < dp[row][col - 1]) {
+                row--; // 如果上方的单元格更小，就向上移动
+            } else {
+                col--; // 否则向左移动
+            }
+            path.insert(0, "(" + row + ", " + col + ") -> ");
+        }
+
+        // 打印路径并返回最小路径和
+        System.out.println("Path: " + path);
+
         return dp[m-1][n-1];
     }
-            //Solution3:
-    public int minPathSum(int[][] grid) {
+
+
+
+    //Solution3:
+    public int minPathSum3(int[][] grid) {
         if(grid == null) return 0;
         int m = grid.length, n = grid[0].length;
         int[]dp = new int[n];
@@ -84,11 +111,17 @@ class Solution {
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
-    
+
     public static void main(String[] args) {
         Solution solution = new LeetCode_64_MinimumPathSum().new Solution();
-        // TO TEST
-        //solution.
+        int[][] grid = {
+                {1, 3, 1},
+                {1, 5, 1},
+                {4, 2, 1}
+        };
+
+        int minSum = solution.minPathSum(grid);
+        System.out.println("Minimum Path Sum: " + minSum);
     }
 }
 /**

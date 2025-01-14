@@ -37,20 +37,25 @@ public class LeetCode_463_IslandPerimeter{
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        // 主函数：计算岛屿的周长
         public int islandPerimeter(int[][] grid) {
-            int rows = grid.length;
-            int cols = grid[0].length;
+            int rows = grid.length; // 获取行数
+            int cols = grid[0].length; // 获取列数
 
-            int result = 0;
+            int result = 0; // 用于存储最终结果，即岛屿的周长
+            // 遍历每一个格子
             for (int r = 0; r < rows; r++) {
                 for (int c = 0; c < cols; c++) {
+                    // 如果当前格子是陆地 (值为1)
                     if (grid[r][c] == 1) {
-                        result += 4;
+                        result += 4; // 初步设定每个陆地格子的周长为4
 
+                        // 检查上方是否是陆地，如果是，减少2（上方和当前格子的共同边界）
                         if (r > 0 && grid[r-1][c] == 1) {
                             result -= 2;
                         }
 
+                        // 检查左侧是否是陆地，如果是，减少2（左侧和当前格子的共同边界）
                         if (c > 0 && grid[r][c-1] == 1) {
                             result -= 2;
                         }
@@ -58,7 +63,7 @@ public class LeetCode_463_IslandPerimeter{
                 }
             }
 
-            return result;
+            return result; // 返回计算出的岛屿周长
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
@@ -66,58 +71,68 @@ public class LeetCode_463_IslandPerimeter{
 
     public static void main(String[] args) {
         Solution solution = new LeetCode_463_IslandPerimeter().new Solution();
-        // TO TEST
-        //solution.
+
+        // 测试样例 1：简单的1x1岛屿
+        int[][] grid1 = {{1}};
+        System.out.println(solution.islandPerimeter(grid1));  // 输出：4
+
+        // 测试样例 2：2x2岛屿，形成一个正方形
+        int[][] grid2 = {{1, 1}, {1, 1}};
+        System.out.println(solution.islandPerimeter(grid2));  // 输出：8
+
+        // 测试样例 3：具有多个连接的岛屿
+        int[][] grid3 = {{1, 0, 1}, {1, 1, 0}, {0, 1, 1}};
+        System.out.println(solution.islandPerimeter(grid3));  // 输出：12
     }
 }
 /**
-You are given row x col grid representing a map where grid[i][j] = 1 represents 
-land and grid[i][j] = 0 represents water. 
+ You are given row x col grid representing a map where grid[i][j] = 1 represents
+ land and grid[i][j] = 0 represents water.
 
  Grid cells are connected horizontally/vertically (not diagonally). The grid is 
-completely surrounded by water, and there is exactly one island (i.e., one or 
-more connected land cells). 
+ completely surrounded by water, and there is exactly one island (i.e., one or
+ more connected land cells).
 
  The island doesn't have "lakes", meaning the water inside isn't connected to 
-the water around the island. One cell is a square with side length 1. The grid is 
-rectangular, width and height don't exceed 100. Determine the perimeter of the 
-island. 
+ the water around the island. One cell is a square with side length 1. The grid is
+ rectangular, width and height don't exceed 100. Determine the perimeter of the
+ island.
 
- 
+
  Example 1: 
- 
- 
-Input: grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
-Output: 16
-Explanation: The perimeter is the 16 yellow stripes in the image above.
- 
+
+
+ Input: grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
+ Output: 16
+ Explanation: The perimeter is the 16 yellow stripes in the image above.
+
 
  Example 2: 
 
- 
-Input: grid = [[1]]
-Output: 4
- 
+
+ Input: grid = [[1]]
+ Output: 4
+
 
  Example 3: 
 
- 
-Input: grid = [[1,0]]
-Output: 4
- 
 
- 
+ Input: grid = [[1,0]]
+ Output: 4
+
+
+
  Constraints: 
 
- 
+
  row == grid.length 
  col == grid[i].length 
  1 <= row, col <= 100 
  grid[i][j] is 0 or 1. 
  There is exactly one island in grid. 
- 
+
 
  Related Topics Array Depth-First Search Breadth-First Search Matrix 👍 6939 👎 
-400
+ 400
 
-*/
+ */

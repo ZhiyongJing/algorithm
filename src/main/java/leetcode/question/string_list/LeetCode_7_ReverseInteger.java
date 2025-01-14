@@ -65,6 +65,7 @@ public class LeetCode_7_ReverseInteger{
                                 (rev == Integer.MIN_VALUE / 10 && pop < -8)
                 ) return 0; // 溢出，返回 0
                 rev = rev * 10 + pop; // 更新反转后的整数
+                System.out.println("current rev is:" + rev);
             }
             return rev; // 返回反转后的整数
         }

@@ -1,10 +1,6 @@
-package interview.company.amazon;
+package leetcode.question.dp;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 /**
  *@Question:  140. Word Break II
  *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]

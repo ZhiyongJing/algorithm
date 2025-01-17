@@ -4,6 +4,7 @@ import leetcode.question.bfs.*;
 import leetcode.question.binary_search.LeetCode_528_RandomPickWithWeight;
 import leetcode.question.dfs.*;
 import leetcode.question.dp.LeetCode_1125_SmallestSufficientTeam;
+import leetcode.question.dp.LeetCode_140_WordBreakIi;
 import leetcode.question.dp.LeetCode_518_CoinChangeIi;
 import leetcode.question.greedy.LeetCode_135_Candy;
 import leetcode.question.greedy.LeetCode_409_LongestPalindrome;
@@ -38,7 +39,7 @@ public class AmazonQuestions {
             , new LeetCode_135_Candy()
 //            , new LeetCode_136_SingleNumber()
             , new LeetCode_138_CopyListWithRandomPointer()
-            , new interview.company.amazon.LeetCode_140_WordBreakIi()
+            , new LeetCode_140_WordBreakIi()
             , new LeetCode_146_LruCache()
             , new LeetCode_199_BinaryTreeRightSideView()
             , new LeetCode_200_NumberOfIslands()

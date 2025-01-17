@@ -1,6 +1,1514 @@
 1. 请帮我理解一道新的文字代码，并且在每行代码上面添加详细的中文注释， 并添加测试代码，并保留已有注释
 
-2. 把解题思路详细讲解出来，并说明时间和空间复杂度
+2. 2025(1-3月) 码农类General 硕士 全职@Amazon - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 应届毕业生
+
+   > Timeline：
+   > 2024.11.17 OA
+   > 2024.12.26 VO confirmation
+   > 2024.1.9 VO 两轮
+   > 2024.1.14 VO 一轮
+   >
+   >
+   > 这次面试真是一波三折，本来是1.9三轮全部面试掉的，结果一轮的面试官忙其他事情，忘记掉了。干等了一个小时。
+   >
+   >
+   > 2024.1.9
+   >
+   > 第二轮：
+   > 纯BQ，先是双方自我介绍，然后就问了一系列的BQ问题+follow up，具体问了多少个BQ问题我记不清楚了，我准备了7个故事全部讲遍了，还是不够，有一个BQ问题我临时编了一个故事。估计有7-8个BQ问题吧。
+   >
+   >
+   > 第三轮：
+   > BQ+coding，BQ问了大概3-4个问题，每个BQ都有follow-up，挖的不是很深，都挺容易答上来的。coding是岛屿问题，力扣:尔玲玲，变式，需要找出每个岛屿的size大小。
+   >
+   >
+   > 2024.1.14
+   > 第一轮:
+   > 2道coding，力扣：呜呜，jump game。follow up，求最短到达目的地的路径。由于前面话讲太多了，最后没有把followup题的代码写完，也有代码一些细节没调整。其实最后还有十分钟的，面试官说时间不够了，让我不用写了。还问我了一些问题，还被问到hashmap的底层数据结构是什么hhh，最后就是10分钟反问环节。
+   >
+   >
+   > 准备好久的ood这次没考到，bq的话故事8个算是保底吧，答题规范用STAR的模式，紧扣LP
+   >
+   > 
+   >
+   > 
+   >
+   > 码字不易，求加米~
+
+3. 2025(1-3月) 码农类General 硕士 全职@Amazon - 内推 - 在线笔试  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+   > 第一题找最低生命值。每轮收到攻击，可以选择一轮使用armor
+   > 第二题单调栈，907的变种。暴力解过不了时间限制😭
+   >
+   > OA包括代码题和bq问题，一共好像切换了三轮题
+   >
+   > 希望大佬们能给萌新多加点米可以看题谢谢。
+   > 另外有大佬知道香蕉厂oa没有全部ac有机会进面吗？感激不尽
+   >
+   > 两道题只有一道AC应该可以
+   > 第一题看上去是DP
+   > 不知道能不能用backtrack做出来
+
+4. 2023(1-3月) 码农类General 本科 全职@Amazon - 网上海投 - 视频面试  | 😃 Positive 😐 AveragePass | 在职跳槽
+
+   > AWS EC2 的组 做VM的 主用C++/Rust
+   > 1LP tight deadline + 4 follow ups
+   > 5*knowledge base question on C++/OS/threads/kernal/VM
+   >
+   > 
+   >
+   > Coding 全程C++:
+   > 给了一个指针相关的代码纠错
+   > valid parentheses
+   >
+   >
+   > hm 中年白人, 感觉不错, 听起来没有很toxic, 有oncall,RTO 5 days Cambridge office.
+   > 现在uk ng 是oa + phone interview + 3*vo
+   >
+   > 求米
+
+5. 2024(10-12月) 码农类General 硕士 全职@amazon - 内推 - 技术电面  | 😐 Neutral 🙂 EasyFail | 应届毕业生
+
+   > 题目是：给一组已经排好序的数组，找出这组数字中出现频率最高的数，并判断这个数出现的频率是否大于数字size的1/2。 follow up是用binary search 做。
+
+6. 2025(1-3月) 码农类General 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AverageFail | 应届毕业生
+
+   > 分享一下1月份做的Amazon的OA两道题，给大家参考一下。 求点米！谢谢大家了
+   > ![img](Amazon面试题目总结.assets/31914b81f7kv1jcnpi7nm.jpg)
+   >
+   > ![img](Amazon面试题目总结.assets/3192715u8vdofpyae06ec.jpg)
+
+7. 2025(1-3月) 码农类General 硕士 实习@Amazon - 网上海投 - 技术电面  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+   > 10月海投，11月底收到oa，12月初做了oa，1月头收到面试邀请，1月中面试
+   > 面试的是一个印度姐姐，问了两个bq，忘记了具体题目，但是挖的很深，一直在challenge，都答不上来了。。。
+   > coding是离口删摇是、呃呃呃
+   > 闪耀时还要我一个个把data structure的变化写出来，呃呃呃没时间了在guiding下说了下思路，可能也没说对。。。。
+   >
+   > 感觉不简单啊，还老被challenge
+   >
+   >
+   > 不知道yama的面试要答到什么样子才能给过
+   >
+   > 新人求米求米
+
+8. 2025(7-9月) MachineLearningEng 博士 实习@Amazon - 内推 - Onsite  | 😃 Positive 🙂 EasyFail | 应届毕业生
+
+   > 感觉目前地里关于2025年AWS AS实习生OA的资料还比较少，因此来分享一下自己的经验，同时新人求大米支持~
+   > 我是1月7日同时收到了欧洲组和美国组的HR联系邮件，并在当天收到了OA的链接。OA共有两道题，时长70分钟，题目难度不高，具体如下：
+   >
+   >
+   > 第一题：
+   >
+   > 给定一个只包含小写英文字母的字符串，返回第一个唯一字符的索引，使用1-based索引。
+   > 例如：s = "statistics" 唯一字符是  a 和 c，其中 a 最先出现，按照1-based索引，它位于第3个位置。
+   >
+   >
+   > 第二题：
+   > 给定一组时间区间 [start, end]，合并并返回所有重叠的区间，结果需按照起始时间升序排序。
+   > 例如：intervals = [[7, 7], [2, 3], [6, 11], [1, 2]] 答案为：[[1, 3], [6, 11]]
+   >
+   >
+   > 此外，有一个比较特殊的情况：可能因为我的base在欧洲，美国组的HR在我完成OA的第二天告知，为了“更好地尊重EU团队的面试体验”，他们决定暂时暂停我在美国组的进程。
+   > 在这种情况下，我想请教大家：如果我希望争取更多机会，是否可以和美国组的HR沟通，表达希望同时进行后续面试的意愿？这样会不会对面试流程有影响？
+   >
+   > 如果也有25 AS intern面试的，大家可以一起准备~
+
+9. 2025(1-3月) 码农类General 硕士 全职@Amazon - 猎头 - 在线笔试  | 🙁 Negative 😣 HardFail | 在职跳槽
+
+   > 刚开始刷题， 在职跳槽， 今天做了亚麻SDE2 OA. 感觉很难。 第一个只过了9/15，其他的TLE。  第二个败了。。还需要加倍努力啊。
+   > 本地里第一个贴，希望把题分享给大家， 也希望大家给点米。。。谢谢。
+   > 第一题
+   > ![img](Amazon面试题目总结.assets/41646hal5uxs0pp0slpjg.png)
+   >
+   > ![img](Amazon面试题目总结.assets/41843r7dr6dwp1n8lw16v.png)
+   >
+   > ![img](Amazon面试题目总结.assets/41928hosfkwwtac5dxo1d.png)
+   >
+   > ![img](Amazon面试题目总结.assets/4200xaua8kzvnh7lkiob.png)
+   >
+   > ![img](Amazon面试题目总结.assets/42030fbopq501gnwl08oq.png)
+   >
+   > ![img](Amazon面试题目总结.assets/41749g3xoxmx4f1rdqg1z.png)
+
+10. 2025(1-3月) 码农类General 本科 全职@amazon - Other - Onsite  | 😃 Positive 😐 AverageOther | 其他
+
+    > 1. behavior questions
+    >
+    > candidate可以网上搜一下亚麻的leadership principles(LP)。对于ng entry level 来说 着重了解几个而不是全部LP：ownership、bias for action、dive deep、deliver results、earn trust等。面试官通过问一些问题 然后评价你的答案有没有和它们价值观一样。
+    >
+    > 比如面试官会问：你有没有做过工作职责之外的事情。这就是想看看candidate有没有ownership LP，想看看candidate会不会主动去take ownership做职责或者assigned之外的事 还是说事不关己 就不管了。会的话就是满意答案 和亚麻三观一致。不会的话就不是很满意答案 和它们三观不一致。
+    >
+    > 2. technical questions
+    >
+    > 准备：多刷crack the coding interview那本书 或者 leetcode网站
+    >
+    > 算法课用来解一道题的那个过程能用于interview时解题：
+    > 1 ask clarification questions
+    > 2 start with a simple example to find a pattern
+    > 3 start coding (除了把题解出来 也要注意code quality）code is easy to follow and read；如果适用，也可以用helper functions to do sub-task for you。这样你可以先implement大致algorithm再来implement helper function 处理小细节
+    > Bonus: If you could explain why chosen algorithms is better than others (比如一句话解释这题为什么用DFS而不BFS）
+    > 4 run through your code with an example again to make sure if works as expected, and fix any bugs if needed.
+    > 5 provide time complexity or/and space complexity
+    >
+    > 祝你好运🤞
+
+11. 2024(10-12月) 码农类General 硕士 全职@Amazon - 网上海投 - 视频面试  | 😃 Positive 😐 AveragePass | 在职跳槽
+
+    > 11.5 完成OA
+    > 11.22 VO1
+    > BQ: out of responsibility; tight deadline
+    > Code：给一个array代表三种停车位(small, medium, large)的数量和一系列的请求[[arrival, small], [arrival, large], [arrival, medium], [depart, large]]，输出ticket num (1,2,3,…)如果有位置，或者reject如果没有位置
+    > 11.22 VO2
+    > BQ: innovative way; simplify problem; calculated risk
+    >
+    > Code: 给一个2d maze，找到从start到end的路径，并输出moves(U, D, L, R)
+    > 11.27 VO3
+    > 纯BQ：Tell me a time when you
+    > 1. asked peers for help or learned something new to help you finish your task.
+    > 2. used some metrics to guide your work.
+    > 3. received feedback from your manager and learned from the feedback.
+    > 4. had different opinions with colleagues.
+    > 5. had disagreements with manager/team (things were not going your way)
+    >   12.5 正式Offer
+    >   1.6 入职
+
+12. 2025(10-12月) 码农类General 硕士 实习@Amazon - 网上海投 - 在线笔试  | 😃 Positive 🤓 EasiestOther | 应届毕业生
+
+    > 最近刚做完，很简单的两个coding题目
+    > 第一个是给出两个数组，分别取出一个元素，将其差的绝对值相加，找到最小的和。使用贪心完成。
+    >
+    > 第二个是两个人比赛，从数组A中拿到目前最大的数，最后求两个人的取得数的和的差。
+    >
+    >
+    > LP的题目就是地里的题目。
+    >
+    > 总体而言体验很好，很快速就完成了。
+    > 求米！
+
+13. 2024(10-12月) 码农类General 硕士 全职@Amazon - 猎头 - Onsite  | 😐 Neutral 😐 AverageOther | 在职跳槽
+
+    > 拆成两天面，昨天面了两轮 sd+ood
+    >
+    > sd：给amazon user展示一个他们点击过的item list
+    > ood：unix file system, search files by criteria
+
+14. 2024(10-12月) 码农类General 博士 全职@Amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+
+    > 我自己OA(10/2024)做到的两道题，和之前论坛里面的题我总结了一下。
+    >
+    > Generate Lexicographically Smallest String
+    >
+    > 
+    >
+    > Developers at Amazon are working on a test generation utility for one of their new products.
+    >
+    >
+    > Currently, the utility generates only speical strings. A string is special of there are no matching adajecnt characters. Given a string of length n,
+    > generate a special string of length n that is lexicographically greater than s. If multiple such special strings are possible, then return the lexicographically smallest string among them.
+    >
+    >
+    > Notes:
+    > 1. Special String: A string is special if there are no two adjacent characters that are the same.
+    > 2. Lexicographical Order: This is a generalization of the way words are alphabetically ordered in dictionaries. For example, "abc" is lexicographically smallest than "abd" because "c" comes before "d" in the alphabet.
+    >
+    >
+    > A string a is lexicographically smaller than a string b if and only if one of the following holds:
+    > 1. a is a prefix of, but a is not equal to b. For example, "abc" is smaller than "abcd"
+    > 2. in the first position where a and b differ, the character in a comes before the character in b in the alphabet. For example, "abc" is smaller than "abd" because 'c'  comes before "d"
+    >
+    >
+    > Important Considerations:
+    > 1. If the character is "z", it is the last character in the alphabet and cannot be increased further. The string should not wrap around to "a" after "z"
+    > 2. The output string must not have any adjacent characters that are the same.
+    >
+    >
+    > Example 1:
+    > Input s = "abccde" Sample Output "abcdab"
+    > Explanation: some of the special strings that are lexicographically greater than s are "abcdde", "abcdab", "abcdbc"
+    >
+    >
+    > Example 2:
+    > Input s = "zzab" Sample Output -1
+    > Explanation: There is no specially string of length 4 that is lexicographically greater than s.
+    >
+    >
+    > #################################################################################
+    >
+    > Array Sorting with Q Moves
+    >
+    > 
+    >
+    > For an unordered array，from 1 to n, each number apperas exactly once. Check if it is possible to sort it in q moves. (moves means swap)
+    >
+    >
+    > #################################################################################
+    >
+    > Get Min Error
+    >
+    > 
+    >
+    > The inputs are a string, integer x and integer y.
+    >
+    >
+    > string is made up of 0, 1 and !, each ! can be either 0 or 1
+    >
+    >
+    > Every subsequence of 01 in the string can produce error x
+    >
+    >
+    > Every subsequence of 10 in the string can produce error y
+    >
+    >
+    > 0<=len(string)<=50000, 0<=x<=50000, 0<=y<=50000
+    >
+    >
+    > Return the minimum error count modulo 10^9.
+    >
+    >
+    > #################################################################################
+    >
+    > Linked-List Segment Structure
+    >
+    > 
+    >
+    > AWS has several processors for executing processes scheduled on its server.
+    >
+    >
+    > In order to maintain logical independence, a process is divided into segments. Each segment has two chracteristics:
+    > the segment size (1 <= segment size <= 10^9), and a pointer to the next segment so that the sequential order of execution
+    > is maintained within a process. Hence, this structure can be visualized as a linked list.
+    >
+    >
+    > Given the segment structure of a process as a linked list, find the longest sub-list which has the segement sizes in non-increasing
+    > order. A sub-list of length 1 is always a valid sub-list. If there are multiple sublist of maximum length, return the sub-list
+    > which occurs earliest.
+    >
+    >
+    > Note:
+    > 1. A sub-list is obtained by removiung some nodes from the head and some nodes from the tail of the linked list.
+    > 2. Solve the problem in constant extra space.
+    >
+    >
+    > Example:
+    > There are n=5 sgements with their segments sizes [2,5,4,4,5].
+    > The longest non-increasing sublist has 3 nodes: 5->4->4
+    > A reference to the head of the 3 nodes singly-linked list is returned.
+    >
+    >
+    > Function Description
+    > Complete the function locateLongestList
+    >
+    >
+    > Prameters:
+    > SinglyLinkedListNode* head
+    >
+    >
+    > Returns
+    > SinglyLinkedListNode*: refer to the segment
+    >
+    >
+    > #################################################################################
+    >
+    > Amazon Music is working on harmonizing their music playlist.
+    >
+    > 
+    >
+    > In their playlist system, each song is represented by a binary string music, where '0' and '1' denote two different types of music, say TypeA and TypeB. An "alternating music string" is one where no two adjacent songs are of the same type. For example, "1", "0", "10", "01", "101" are alternating music strings.
+    >
+    >
+    > As a developer at Amazon, the task is to determine the longest alternating substring that can be created from the music string by performing at most k operations.
+    >
+    >
+    > Note:
+    > 1. A binary string is a sequence of "0" and "1" characters.
+    > 2. A string A is a substring of a string B if A can be obtained from B by deleting several (possibly, zero or all) characters from the beginning and several (possibly, zero or all) chracters from the end.
+    >
+    >
+    > Example
+    > music = "1001"
+    > k = 1
+    >
+    >
+    > By flipping the third chracter, the string becomes music = "1011". The longest alternating music string in this modified string is "101", which spans from the 0th index to the 2nd index and has a length of 3. With only oen operation, it is not possible to obtain a longer alternating binary subtring. Thus, the answer is 3.
+    >
+    >
+    > Function Description
+    > Complete the function getMaximumAlternatingMusic.
+    >
+    >
+    > getMaximumAlternatingMusic has the following parameters:
+    > 1. string music: a string of characters 0 and 1.
+    > 2. int k: the number of operations allowed.
+    >
+    > ![img](Amazon面试题目总结.assets/035591rlrxwq3pojyewhp.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/03613etltuxldkcehn4qy.jpg)
+    >
+    > 
+    >
+    > 如果大家觉得有用，烦请大家给个大米吧！（不会消耗自己原有大米的）！谢谢
+
+15. 2025(1-3月) 码农类General 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardOther | 应届毕业生
+
+    > 楼主投的有点晚，已经开岗5天了才投递，想着试试运气 (之前被拒绝麻了)，没想到第3天收到oa，7天内做完。
+    >
+    > - 70分钟Coding
+    >   1. 很离谱，题目一大串，其实就是考 双链表，纯纯数据结构问题，没有算法，一遍过；
+    >   2. https://www.fastprep.io/problems/amazon-maximize-parentheses-efficiency-score (原题，可以使用变型的KMP，或者字典树)第一次有hidden case，结果就是忘记考虑为空，多了个if在代码前边就全过了。没有卡时间；
+    >
+    >   总体而言，70分钟两道题，只要不是业务题时间算挺充裕的，祝大家好运，
+    >
+    > - 4个小时 (就是一个假的邮箱和聊天界面，选择你认为合适的回复或者给相应的行为评分) 非常够时间，真的非常够，我为了模拟真实工作情况，一边看峰哥亡命天涯 一边选都够时间
+    >
+    >
+    > - 后面两个都是不计时间的，选择符合自己想法的就好，感觉没有标准答案 (GPT o1, 4o给我的答案每次都有不一样，所以拉倒)
+    >
+    > 补充内容 (2025-01-09 07:14 +08:00):
+    >
+    > 如果大家觉得有用，烦请大家给个大米吧！（不会消耗自己原有大米的）！谢谢
+
+16. 2025(1-3月) 码农类General 硕士 实习@amazon - 网上海投 - 在线笔试  | 😐 Neutral 🙂 EasyOther | 应届毕业生
+
+    > 求加米
+    > 两道easy
+    >
+    > 1. Get maximum category max count
+    > 2. Get outliers value
+    >
+    > ![img](Amazon面试题目总结.assets/164838nerzujekhnrkjxjp.png)
+    >
+    > ![img](Amazon面试题目总结.assets/164842xomluosqjhdiojxd.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/1648456mz4lg78acbul3fr.jpg)
+    >
+    > 
+    >
+    > 顺便分享一下根据🍠和地里的信息刷过的fastprep上的题：
+    >
+    > Amazon get max throughput
+    > Calculate max quality score
+    > Check similar passwords
+    > Find longest regret
+    > Find max value
+    >
+    > Find minimum dist
+    > Find minimum ln efficiency
+    > Find obfuscate message
+    > Find password strength
+    > Get data dependence sum
+    > Get final locations
+    > Get max charge
+    > Get max sum arr
+    > Get min removals
+    > Get outlier value
+    > Get pairs count
+    > Get relative ratings
+    > Get score difference
+    > Get stable periods count
+    > Get success value
+    > Maximize efficiency score
+    > Maximize total memory points
+    > Max total amount
+    > Max transfer rate
+    > Min days to deliver parcels
+    > Similar text substring count
+
+17. 2023(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardPass | 应届毕业生
+
+    > 第一题比较简单，给一个链表，需要从链表的两端开始向中间移动，求两端和的最大值。
+    > Amazon sellers sometimes provide a link to documentation about a product they are offering.
+    > Documentation is usually large, so it is broken into an even number of volumes for download.
+    > Each volume:
+    > • is stored in a node instance as a
+    > SinglyLinkedListNode
+    >
+    > • has a page count stored in data
+    > • has a pointer to the next volume stored in next
+    > A.customer will read the first and last volumes each day, removing the volumes from the list after reading them.
+    > Given a reference to the head of a singly-linked list, calculate the maximum number of pages read on any day.
+    > 第二题比较难，没做出来。
+    > an Amazon security analysis task, two passwords have been generated, but they may differ in length. One password is generated by a customer, and the other by an internal system.
+    > The customer wants to determine how many secured variations of the passwords exist modulo
+    > 109 + 7.
+    > A secured variation of the passwords is defined as a subsequence of customer's password which is lexicographically greater than system generated password.
+    > Formally:
+    > • Person A has a password s (the customer's password).
+    > • Person B has a password t (the system-generated password).
+    > The task is to count how many subsequences of password s are lexicographically greater than password t. Since the answer can be large, return the result modulo (%) 109 + 7. More specifically, if result represents the required number of subsequences, then return the remainder when result is divided by 109+7.
+    > 但最后也给了phone interview
+
+18. 2025(1-3月) 码农类General 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😃 Positive 😐 AverageOther | 应届毕业生
+
+    > Timeline：
+    > 1/3 OA邮件
+    > 1/8 OA完成
+    >
+    >
+    > 第一题：
+    > https://www.fastprep.io/problems/amazon-find-max-value
+    > 第二题：
+    > https://www.fastprep.io/problems/amazon-get-relative-ratings
+    >
+    > 我都heap解了。看了一下好像还没有跟我一样的，发上来分享一下。求米~~~
+
+19. 2024(10-12月) 码农类General 本科 实习@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 🙂 EasyOther | 其他
+
+    > tl:
+    > 12.25收到OA
+    > 1.7完成
+    > coding部分不难（如图
+    > work style还是比较confusing的，很多选项都不敢选最extreme的
+    >
+    > ![img](Amazon面试题目总结.assets/61193rbfmogcxyyohhos.jpeg)
+    >
+    > ![img](Amazon面试题目总结.assets/61026jvamcyzyrwsl0vwb.jpeg)
+    >
+    > -When forced to make a quick decision, which of the following is your likely approach?
+    > Choose the safe and proven option.
+    > Choose the option with the best likelihood of long-term success.
+    > Consult my team (or peers) and agree on the best option.
+    > Delay the decision until I can gather more information.
+    >
+    >
+    > -How do you typically make important decisions?
+    > I focus on meeting established goals.
+    > I go with my gut instinct; it's typically correct.
+    > I think about the best long-term outcomes of each option.
+    > I balance efficiency and the value of potential outcomes.
+    >
+    >
+    > -Compared to my teammates or classmates, I am very good at…
+    > Jumping into the middle of an ongoing project.
+    > Creating a thorough project plan.
+    > Dividing up project work with teammates or classmates.
+    > Working through changes in project scope or direction.
+    >
+    >
+    > -Which of the following best describes how you make decisions?
+    > I want to know all my options before making a decision.
+    > I trust my intuition and experience.
+    > I focus on the most important outcomes.
+    > I quickly identify the most promising option, and then refine it.
+    >
+    >
+    > -Which of the following activities would you most enjoy?
+    > Planning an event that involves your favorite hobby.
+    > Persuading others to join a cause you believe in.
+    > Visiting a new city every week.
+    > Traveling with no plan.
+    >
+    >
+    > -Compared to my teammates or classmates, I am very good at…
+    > Delivering high-quality work quickly.
+    > Helping others make complex decisions.
+    > Staying focused on the end goal.
+    > Explaining why I made certain choices in my work.
+    >
+    >
+    > -Of the following, which aspect is most important in a job?
+    > Having full control over when I perform my work activities.
+    > Having uninterrupted time for focused work.
+    > Having an output metric so I can compare myself with my coworkers.
+    > Having a technical resource to help me when I am stuck.
+    >
+    >
+    > -Which of the following would your teammates or classmates describe as your biggest strength?
+    > Being reliable and thorough in your work.
+    > Simplifying complex problems.
+    > Communicating promptly and clearly.
+    > Earning and keeping others' trust.
+    >
+    >
+    > -Which of the following bothers you more?
+    > Not knowing why a decision was made.
+    > Not getting to participate in decision-making.
+    > Decisions that only solve part of the problem.
+    > Decisions that are communicated poorly.
+    >
+    >
+    > -My favorite part of any project is…
+    > Defining the problem.
+    > Tracking progress.
+    > Learning new things.
+    > Finishing the task.
+    >
+    >
+    > -When working on a complicated problem, my approach is to…
+    > Clarify the problem before trying to solve it.
+    > Take action quickly to solve the problem.
+    > Ask teammates or classmates for help in case others have encountered the problem before.
+    > Find a way to work around the problem, if possible.
+    >
+    >
+    > -Which of the following abilities would your most recent manager or teacher describe as your biggest strength?
+    > Solving problems quickly and effectively despite limited resources.
+    > Challenging others to consider alternative views in approaching work.
+    > Leading others in executing complex technical tasks.
+    > Thinking about the long-term implications.
+    >
+    >
+    > -You have just joined a new team and have been asked to advise on the planned development of a new software product. You want to build perspective before making a recommendation to your new team. Which of the following areas would you MOST want to learn about?
+    > The overall cost to develop the new product (Bottom Line).
+    > The intended benefit of the new product (Impact).
+    > The technical details of the new product (Specifications).
+    > The alternatives considered while scoping the new product (History)
+    >
+    >
+    > -Which of the following tasks do you find the most interesting?
+    > Learning new languages
+    > Building new things
+    > Solving recurring problems
+    > Presenting to audiences
+    >
+    > -Which of the following characteristics would your former managers or teachers likely use to describe you?
+    > Supportive
+    > Outgoing
+    > Creative
+    > Thorough
+    >
+    > ![img](Amazon面试题目总结.assets/62122d84cuikvpp5741kj.png)
+    >
+    > ![img](Amazon面试题目总结.assets/62154abjvv0t5i2c7thpb.png)
+    >
+    > I take initiative more than most people, but less than some.
+    > I wait for clear instruction before trying something new.
+    >
+    > 
+    >
+    > Sometimes the smallest details will catch my attention.
+    > I'm as much of a self-starter as anyone else.
+    >
+    > 
+    >
+    > I usually double-check my work
+    > I sometimes accept guidance from others
+    >
+    > 
+    >
+    > I am as much of a self-starter as anyone else.  
+    > I catch more mistakes than most.
+    >
+    > 
+    >
+    > I occasionally like to try new approaches
+    > I enjoy learning new things from time to time 
+    >
+    > 
+    >
+    > When my work is complete, I look for more work.
+    > I’m the first to notice when things change.
+    >
+    > 
+    >
+    > People tell me I am dependable
+    > the key to completing tasks is to having a detailed plan
+    >
+    > 
+    >
+    > People ask me to review their work for accuracy
+    > I’ll take initiative on well-defined projects 
+    >
+    > ![img](Amazon面试题目总结.assets/68434kaagnma16jam7nz.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/6437kgkwa8dk7ls504s9.jpg)
+
+20. 2025(1-3月) DataEng 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😃 Positive 😐 AveragePass | 在职跳槽
+
+    > 收到oa是12.23号，拖延症犯了1.4才做了，1.6周一就收到了下一步HR和tech round的邀请
+    >
+    >
+    > oa分为两个part，第一part是sql选择题，有单选有多选，考察基本概念，考了很多这个sql query能不能跑过的问题，基本就是group by, having, like, join, CTE这些，建议多准备一下基础的东西。
+    >
+    >
+    > 最后3-4道是写query, 前面几道都是join, group by, sum, avg, count这些，不是很难。最后一道考了window function，逻辑不是很难但是我花了不少时间，最后run出来的结果我感觉是对的但是Hackerrank没通过测试，很郁闷就直接回去检查一下交了。
+    >
+    >
+    > 第二part是work simulation, 随便答一答就好了，有点像性格测试。
+    >
+    > 差不多两个小时，推荐大家快速做然后检查留够时间，顺便求加米，米不够看不了别的面经帖子哭哭，感恩！
+
+21. 2025(1-3月) 码农类General 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AveragePass | 在职跳槽
+
+    > 新年刚过的时候做的OA。
+    >
+    >
+    > 第一题我之前没见过，是一个happy coin collection的题目。就是说有N个硬币，如果head都在tail前面，那它就是happy collection。如果全T或者全H也是happy collection。比如"HHHHTT"和“TTTTTT”就都是个happy collection。题目是给你一个只含H和T的string，问minimum flip to make it a happy collection。比如给定“HHHHTH”，那就return 1。
+    > 我是从前到后和从后到前遍历两边string，从前到后算T变H要变多少次，从后到前算H变T要变多少次，flips[i] = flipH[i] + flipT[i] 最后返回min(flips) 就好了
+    >
+    >
+    > 第二题是那个maximum charge，地里有人分享过的。
+    > 🔗 leetcode.com
+    >
+    > 求加大米呀~~~
+
+22. 2024(10-12月) 码农类General 本科 全职@Amazon - 网上海投 - 技术电面  | 😃 Positive 🙂 EasyPass | 在职跳槽
+
+    > 总共两道题，限时70mim
+    >
+    > first question is simple string question( leetcode simple level )
+    > the second is the backend question , Json handling, simple GET api
+
+
+23. 2025(4-6月) 码农类General 硕士 实习@Amazon - 网上海投 - 在线笔试  | 😃 Positive 🙂 EasyOther | 应届毕业生
+
+    > 两道easy 求加米~
+    > 第一题， getViewValue, 🔗 www.1point3acres.com 第一题
+    > 第二题，getScoreDifference, https://www.fastprep.io/problems/amz-get-score-difference
+    > 求加大米！！
+
+24. 2025(7-9月) 码农类General 本科 实习@amazon - 网上海投 - 在线笔试  | 😃 Positive 🙂 EasyOther | 应届毕业生
+
+    > 第一题没在地里刷到过。第二题是floor(n/k)=x，在地里看到过很多次了。求加米！
+    > ![img](Amazon面试题目总结.assets/105558pp5g7qhlmul9xrtf.jpg)
+
+25. 2025(10-12月) 码农类General 本科 实习@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardPass | 应届毕业生
+
+    > 总共两道题，限时70min，题干真的比较绕。第二题应该比较新，之前没见过。求加米
+    > ![img](Amazon面试题目总结.assets/17392761u4uojjxtji9qyi.png)
+    >
+    > ![img](Amazon面试题目总结.assets/173957ztmp7x5fimmbn9qa.png)
+    >
+    > ![img](Amazon面试题目总结.assets/174138hu36lcachyqlb2kh.png)
+    >
+    > ![img](Amazon面试题目总结.assets/174147qu5nuw3p7ckdzmdl.png)
+
+26. 2024(10-12月) 码农类General 本科 实习@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AverageOther | 其他
+
+    > 上来70min两道coding
+    >
+    > ![img](Amazon面试题目总结.assets/31947yu8eowug6y4a9trn.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/32015lmml3boxzdxvrze9.jpg)
+
+27. 2025(10-12月) 码农类General 硕士 实习@Amazon - 内推 - 视频面试  | 😃 Positive 😐 AveragePass | 其他
+
+    > Timeline:
+    > 10.17 内推投递
+    > 11.21 收到OA
+    > 11.22 完成OA
+    > 12.04 收到VO邀请
+    > 12.13 完成VO
+    > 12.23 发邮件催
+    > 12.27 Offer
+    >
+    >
+    > OA部分：两道Coding + Working Style
+    > Coding部分限时，Working Style不限时
+    >
+    >
+    > Coding 1:
+    > 要求编写一个函数，接收三个等长的大写英文字符串x、y和z，需要构造一个特殊的正则表达式（只包含大写字母和方括号，方括号内是不重复的大写字母集合），使得这个正则表达式能够匹配字符串x和y，但不能匹配字符串z，并且在所有满足条件的正则表达式中，要返回最长且字典序最小的那个，如果不存在这样的正则表达式则返回"-1"。
+    >
+    > input: x= "AB", y="BD", z= "CD",
+    > output: Regex "[ABDEFGHIJKLMNOPQRSTUVWXYZ] [ABCDEFGHIJKLMNOPQRSTUVWXYZ]" which matches with strings "AB" and "BD", but not with string "CD".
+    >
+    >
+    > Coding 2:
+    > 要找出在一个时间序列数据分析中的依赖关系：对于第n天的数据，如果能找到一个正整数k使得n除以k向下取整等于x，那么就说第n天的数据依赖于第x天的数据；题目要求找出所有满足这个条件的x（x的范围是0到n），并将这些x值求和得到最终答案。
+    > input: n = 5.
+    > output: 8
+    >
+    >
+    > Working Style部分跟着Amazon Leadership Principle选总没错~
+    >
+    >
+    > VO部分：自我介绍 + 一道Coding + 两道BQ，先coding再bq
+    > 面试官是一个带西班牙口音的老哥，工作年数挺长。态度很和善，但是不算特别主动。不过因为我本来就很紧张所以基本没看他脸，基本全程盯着摄像头面完的……
+    >
+    >
+    > coding是给了一个token列表，需要验证括号是否匹配，
+    > 比如：
+    > ['begin','(','qwe',')','abc','cda','[','124',']','end','{','qwerty','}']
+    > 复制代码
+    > 需要验证begin/end, [], {}, () 这些配对符号是否正确匹配。
+    > 用栈解决
+    >
+    >
+    > Follow-up是要求把token列表转换成语法树
+    > 比如：
+    > Node(Node(Node('qwe'), 'abc', 'cda', Node('134')), Node('qwerty'))
+    > 复制代码
+    > 核心思路是定义Node类表示树节点，使用栈来追踪嵌套关系，遇到闭括号时创建新的节点
+    > 两个部分都有写代码并dry run，我是模拟输入和输出一步步写在了coding pad上
+    >
+    >
+    > BQ是limited info和tight deadline，第一个有follow-up，问了一些项目细节，第二个因为时间关系没有问，直接就结束了
+    >
+    > 现在依然没有什么实感，投了300多份简历，每天打开邮箱就是收拒信。
+    > 收到了十个左右的白嫖OA，亚麻是唯一给我发VO的公司……感激涕零了
+    > 受到了地里许多帮助，也祝地里的大家早日上岸！！
+
+28. 2025(10-12月) 码农类General 硕士 实习@amazon - 网上海投 - 在线笔试  | 😃 Positive 😐 AverageOther | 其他
+
+    > 1. 70min coding 都是地里最近的题，这里用之前的图
+    > Q1: get pair counts
+    > Q2: outlier
+    >
+    > 2.work style 2部分不限时
+    > 有的题有点抽象，反正尽量贴16条leadership
+    >
+    > 最后求加米
+    >
+    > 补充内容 (2024-12-27 19:48 +08:00):
+    > 图好像没了补一下
+    >
+    > ![img](Amazon面试题目总结.assets/61713nhatxwaqndsncwvj.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/61717dec2n7l8genoba7x.jpg)
+
+29. 2024(10-12月) 码农类General 硕士 全职@Amazon - 内推 - Onsite  | 😐 Neutral 😐 AverageWaitList | 在职跳槽
+
+    > LRU 居然还有一个旁观者，一直不讲话
+    > 自己出的题，好像是用深度优先搜索做就行了
+    > 系统设计，圣诞节热卖系统如何设计
+    > 代码，interleaving strings，追问了在线情况还能用同样的代码吗？
+    > 纯行为问题
+
+30. 2024(10-12月) 码农类General 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AverageOther | 在职跳槽
+
+    > 亚麻OA：
+    > 第一题： singlelinkedlist，customer每天会读第一个和最后一个的data， 之后会remove掉第一个和最后一个，要求return那天读的最大值。 比如：3 -> 4-> 5 -> 6, 第一天读： 3 和6， 第二天读 4和5. 最大是9.  要求space complexity， O(1)
+    >
+    > 
+    >
+    > 第二题： 创建数组，input 有 arr，state和m次数。数组是： [1， 2，3，4， 5], state是01010. 0 是block，1是 available，每次取available任意数，放到return数组里面， 然后state里面的0， 如果前面是1的话，可以变成1，这样重复m次，求可以得到的最大数组。
+    >
+    > 抱歉，忘记拍照了
+
+31. 2024(10-12月) 码农类General 硕士 全职@Amazon - 猎头 - Onsite  | 😐 Neutral 🙂 EasyFail | 在职跳槽
+
+    > 第一轮 coding OOD 狗狗playground, 根据狗狗大小，判断相应的playground还有没有位置
+    > 第二轮 SD，short url
+    > 第三轮 coding，bfs判断相关商品之间几度相关
+    > 第四轮 coding，OOD一个csv，实现update，delete那个csv
+
+32. 2024(10-12月) 码农类General 硕士 全职@Amazon - 猎头 - 技术电面  | 😃 Positive 🙂 EasyPass | 在职跳槽
+
+    > 前半个小时讲讲自己的经历，最自豪的项目，如果不能按照预期deliver怎么办，有什么有意思的项目，如何推进的。后面就是做题，很简单，给定linked list， return 倒数第n个，follow up是怎么判断linked list里有环，利特口 意思意。
+
+33. 2025(4-6月) 码农类General 本科 全职@amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+    > 收到邮件7天内做完，然后一共有四个部分
+    >
+    > part1 就是70min coding 如图
+    >
+    > part2 是work simulation，我觉得还蛮难选择的，尽量往lp上靠，反正大多数就是给你一段对话给你一些邮件让你rate 每个举措的effectiveness，然后还有会给你两个feature选择让你consider哪个更好，一开始有一道找bug会给你看log跟request body，主要就是看着error message然后找body里每个error的相同点就行，有四个小时的limit，（做每道题都想一想16lp，555
+    >
+    >
+    > part3 是 7分钟的 sde workstyle unlimited时间
+    >
+    > part4 是 general workstyle 也是unlimited
+    >
+    > 楼主昨天做完第二天查status就是no longer under consideration 55555555好伤心，coding ac了但不知道是不是因为有些work simulation凭感觉选了啊啊啊啊求大米！
+    >
+    > ![img](Amazon面试题目总结.assets/214512uabbvhp8krohwjjo.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/21459cqjdxazk22jzpbfp.jpg)
+
+34. 2024(10-12月) 码农类General 硕士 实习@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardOther | 应届毕业生
+
+    > ![img](Amazon面试题目总结.assets/195427kjcieim5j4bmekqa.png)
+    >
+    > ![img](Amazon面试题目总结.assets/195341g0coso9pc8v006ti.png)
+
+35. 2023(10-12月) 码农类General 硕士 实习@amazon - 网上海投 - 在线笔试  | 😃 Positive 😐 AverageOther | 应届毕业生
+
+    > 两道coding，需要在70分钟内做完，题目如下。之后是常规bq选择题，有work style和work simulation。做之前看一下亚麻的leadership principle。
+    >
+    > 最后求一波大米！ 加大米不会花费你的大米哦
+    >
+    > ![img](Amazon面试题目总结.assets/164652ozdahndydtuvmfba.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/164657bzddsqxallgcfnw8.jpg)
+
+36. 2024(10-12月) 工程类 本科 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AveragePass | 在职跳槽
+
+    > 求点米~~ 很多帖子都看不到..
+    >
+    >
+    > 第一題
+    > Amazon Delivery Centers dispatch parcels every day. There are n delivery centers, each having parcels[il parcels to be delivered.
+    > On each day, an equal number of parcels are to be dispatched from each delivery center that has at least one parcel remaining.
+    > Find the minimum number of days needed to deliver all the parcels.
+    >
+    >
+    > Example
+    > parcels = [2, 3, 4, 3, 3]
+    >
+    >
+    > All parcels can be delivered in a minimum of 3 days.
+    >
+    >
+    > Function Description
+    > Complete the function minDaysToDeliverParcels in the editor below.
+    > minDays ToDeliverParcels has the following parameters: int parcels[n]: the number of parcels at each center
+    >
+    >
+    > Returns
+    > parcels
+    > int: the minimum number of days needed to deliver all the
+    >
+    >
+    > Constraints
+    >
+    > • 1 ≤n≤ 10^6
+    > • 0 ≤ parcels[i] ≤ 10^9
+    >
+    >
+    > Sample Input For Custom Testing
+    > STDIN
+    > parcels[] size, n = 6
+    > parcels = [3, 3, 3, 3, 3, 3]
+    > Sample Output
+    > 1
+    > Explanation
+    > Each delivery center can dispatch its 3 parcels on the first day.
+    >
+    > 
+    >
+    >
+    > 第二題
+    > At Amazon, the team at the fulfillment center is responsible for the packaging process. There is an array, item_weights, of n items to pack. The team needs to create a new array, new_arr, by removing exactly n/3 items from item_weights without changing the order of those remaining.
+    > The sum_arr of array new_arris defined as the sum of the weights or elements in the first half of the array minus the sum of the weights in the second half of the array.
+    > Given n items and an array item_weights, find the maximum sum_arr possible.
+    > Example
+    > Given, n = 3, item_weights = [3, 2, 1]
+    > array item_weights                Removing element               array new arr       sum_arr(new_arr)
+    > [3, 2, 1]                                    index 2 (1-based)                [3,1]                      3-1 = 2
+    > [3, 2, 1]                                    index 1 (1-based)                [2,1]                      2 - 1 = 1
+    > [3, 2, 1]                                    index 3 (1-based)                [3,2]                      3 - 2 = 1
+    >
+    > 
+    >
+    >
+    > sum_arr = 2, which is the maximum score possible for array new_arr.
+    > Function Description
+    > Complete the function getMaxSumarr in the editor below.
+    > getMaxSumarr has the following parameters: int item_weights[n]: item weights
+    > Returns
+    > int: the maximum possible sum_arr
+    > Constraints
+    > • 3 ≤ N≤10^5
+    > • -10^4 ≤ item_ weights[i] ≤ 10^4
+    > • n is divisible by 3
+    >
+    >
+    > Sample Input For Custom Testing
+    > STDIN
+    > FUNCTION
+    > n = 6
+    > item_weights [] = [1, 3, 4, 7, 5, 2]
+    >
+    >
+    > Sample Output
+    > 4
+    >
+    > Explanation
+    > Given n = 6, item_weights=[1, 3, 4, 7, 5, 2], remove the elements 1, 3 to leave
+    > new_arr=[4, 7, 5, 2], hence the sum will be (4+7)-(5+2) = 4.
+
+37. 2024(10-12月) 码农类General 硕士 实习@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardOther | 应届毕业生
+
+    > Get Data Dependence Sum
+    > Find Longest Regex
+
+38. 2025(1-3月) 码农类General 硕士 实习@amazon - 网上海投 - 在线笔试  | 😃 Positive 🤓 EasiestOther | 应届毕业生
+
+    > 遇到一模一样两道题算是easy to medium 加上写comment 大概10分钟搞定。
+    > 🔗 www.1point3acres.com
+    >
+    > work style部分参考LP16条军规，尽量前后一致。
+    >
+    > 等待VO next step 许愿🙏 求加米
+
+39. 2024(10-12月) 码农类General 本科 实习@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+    > 两题都是地里出现的！建议大家一定要看最近的帖子来准备
+    > 第一题是 这个帖子的图
+    > 🔗 www.1point3acres.com
+    > 第二题是这个帖子的第一题
+    > 🔗 www.1point3acres.com
+    > 后面是software engineer work simulation，这个可能是看个人选择，但是尽量贴着16条lp选：ownership，think big！
+
+40. 2023(10-12月) 码农类General 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AveragePass | 在职跳槽
+
+    > 题目在fastprep上有有原题，大家可以在准备oa的时候去看看!
+    >
+    >
+    > 以下内容需要积分高于 150 您已经可以浏览
+    >
+    > 第一题：https://www.fastprep.io/problems/amazon-get-min-removal
+    > 第二题：https://www.fastprep.io/problems/amazon-get-max-skill-sum
+
+41. 2024(10-12月) 码农类General 本科 全职@Amazon - Other - 在线笔试  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+    > ![img](Amazon面试题目总结.assets/16310g0wn2yei41rcrfia.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/16319v1emlbajtqkey09f.jpg)
+
+42. 2024(10-12月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😣 HardFail | 在职跳槽
+
+    > 没有JD的SDE，1年yoe的那个岗
+    >
+    > OA10.27
+    > 1
+    > 将传输盒按一定规则进行排序。每个盒子由一个唯一标识符和一组版本信息组成，版本信息可以是字母或数字。要求是将旧版本的盒子（包含字母的版本信息）先进行排序，再保持新版本盒子的原始顺序。
+    > 处理字符串 然后sort
+    >
+    > 2
+    > 给出航线最大航行距离distance以及两个列表，元素为[id, local_distance]一个列表代表去程另一个代表回程，找到所有总距离不超过distance的ID对
+    > 排序 双指针
+    >
+    > 店面11.16 加拿大小姐姐
+    > BQ忘了
+    > 代码一道滑动窗口
+    >
+    > VO12.3-12.5一天一轮 一共三轮
+    > 第一轮L5SDE
+    > 先BQ还是忘了
+    > problem solving题
+    > 多个时间重合的积分活动，输出每一天能获得的积分。难度相当于medium，前缀和。最后写到这
+    > follow up到输出区间，相当于耳伊拔，天际线问题。用扫描线，当时没想出来
+    >
+    > 第二轮L6SDE
+    > 数据结构题
+    > 两个超大的list，里面是ID。只能按行读出。判断第二个表里的ID有没有在第一个里面出现过
+    > 谈了Bloom Filter，假阳性不行。但是直接用哈希表存说是可以
+    > 还聊了很多其他的东西 树之类的，没时间问BQ，反馈主要是这里浪费太多时间
+    >
+    > 第三轮SDM
+    > 先BQ
+    > OOD 设计购物车，说只有30分钟不用考虑设计模式 没有负面反馈，说代码可扩展性可读性都可以
+    >
+    > 面试官都人挺好的 三个ABC
+    > 这前面OA店面都挺简单，Onsite准备的时候飘了，被狠狠的挂，出题是一点不手软
+    >
+    > 求米 回血
+    > timeline
+    > 10.16投递
+    > 10.27OA
+    > 11.18店面
+    > 11.20通知过
+    > 11.23左右VO约好
+    > 12.5面完VO
+    > 12.12约30分钟电话
+    > 12.16电话挂
+
+43. 2025(7-9月) 码农类General 硕士 实习@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 🙂 EasyOther | 应届毕业生
+
+    > 上個禮拜剛做完
+    > 兩道題分享給大家
+    > 祝大家offer多多
+    > 求大米++
+    >
+    > 感謝各位
+    >
+    > ![img](Amazon面试题目总结.assets/64553ud5ebvlatup0sse9.png)
+    >
+    > ![img](Amazon面试题目总结.assets/64951nmngvwxkbatxwsxf.png)
+    >
+    > ![img](Amazon面试题目总结.assets/64739ueofsmsmgby9wdob.png)
+
+44. 2024(10-12月) 码农类General 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 🙂 EasyOther | 在职跳槽
+
+    > https://www.fastprep.io/problems/amazon-get-max-sum-arr
+    >
+    > https://www.fastprep.io/problems/amazon-find-password-strength
+    >
+    > 就这两道题，求加米
+
+45. 2024(10-12月) 码农类General 硕士 全职@Amazon - 猎头 - 在线笔试  | 🙁 Negative 🙂 EasyOther | 在职跳槽
+
+    > 佛系，本着一颗爱过不过的心，一杯whisky放旁边写。
+    > 第一题 耳三武器 秒，
+    > 第二题，nlogn 下来后半部分testcase 不过， 扔给chat，chat胡写。qnmd 提前交卷，继续打Dark Soul
+    >
+    > ![img](Amazon面试题目总结.assets/0308tab5aft2aa2pa4g6.jpg)
+
+46. 2024(10-12月) 码农类General 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardPass | 在职跳槽
+
+    > 发两道之前做过的OA，看看能不能换点积分准备面试：
+    > 给一个字符串，看能不能拆分成两回文串，可以最多去掉一个字母
+    >
+    > 这道自己手搓了个循环拆分两个字符串，然后用回文串的那个算法判断一下，没超时，但是有case没过
+    > 还有就是01组成的字符串，然后再给两个数值代表每一种错误的值，求最小error
+    >
+    > 第二道是dp做出来的，之前看过地里还是哪的思路，我自己没准备太多dp题，没见过估计就挂了
+    >
+    > 
+    >
+    > 估计大家都能找到原贴，我之后找到再贴上
+    >
+    > 补充内容 (2024-12-16 11:29 +08:00):
+    >
+    > https://www.fastprep.io/problems/amazon-get-min-errors
+
+47. 2025(10-12月) 码农类General 硕士 实习@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AverageOther | 其他
+
+    > ![img](Amazon面试题目总结.assets/015308anioskold0nazcw.jpeg)
+    >
+    > ![img](Amazon面试题目总结.assets/0160cswdkkkeylkrvxrr.jpeg)
+    >
+    > ![img](Amazon面试题目总结.assets/01613syumvoowjyohhcjw.jpeg)
+    >
+    > ![img](Amazon面试题目总结.assets/01626ey0ex5jbprlr14ti.jpeg)
+    >
+    > ![img](Amazon面试题目总结.assets/01648veeaao0k3ndka6qc.jpeg)
+    >
+    > ![img](Amazon面试题目总结.assets/0170ybjgk97i1wvbzkzj.jpeg)
+
+48. 2024(4-6月) 码农类General 本科 全职@amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardFail | 其他
+
+    > ![img](Amazon面试题目总结.assets/20270z0ikhdh43lsi3ktz.jpg)
+
+49. 2024(10-12月) 码农类General 硕士 实习@amazon - 内推 - 在线笔试  | 😐 Neutral 😐 AveragePass | 应届毕业生
+
+    > ![img](Amazon面试题目总结.assets/223742tv1hnbojb03qjjgc.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/223744ndcagjfgpyjxnifk.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/22374894ig6dchhqs5hs2r.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/2237525bhz4tv9mxwqhrom.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/223757wwmvakkhuwb6xrkf.jpg)
+
+50. 2025(7-9月) 码农类General 本科 实习@amazon - 内推 - 在线笔试  | 😃 Positive 😐 AverageOther | 应届毕业生
+
+    > 2 OA coding question
+    >
+    > Code Question 1
+    > Amazon stores its data on different servers at different locations. From time to time, due to several factors, Amazon needs to move its data from one location to another. This challenge involves keeping track of the locations of Amazon's data and reporting them at the end of the year.
+    >
+    > At the start of the year, Amazon's data was located at n different locations. Over the course of the year, Amazon's data was moved from one server to another m times. Precisely, in the iᵗʰ operation, the data was moved from movedFrom[i] to movedTo[i].
+    > Find the locations of the data after all m moving operations. Return the locations in ascending order.
+    >
+    > Note:
+    >
+    > It is guaranteed that for any movement of data:
+    > There is data at movedFrom[i].
+    > There is no data at movedTo[i].
+    > Example
+    > locations = [1, 7, 6, 8]
+    > movedFrom = [1, 7, 2]
+    > movedTo = [2, 9, 5]
+    >
+    > Explanation
+    > Data begins at locations listed in locations. Over the course of the year, the data was moved three times. Data was first moved from movedFrom[0] to movedTo[0], from 1 to 2. Next, data was moved from 7 to 9, and finally, from location 2 to 5.
+    >
+    > In the end, the locations where data is present are [5, 6, 8, 9] in ascending order.
+    >
+    > Function Description
+    > Complete the function getFinalLocations in the editor below.
+    >
+    > The function is expected to return an INTEGER_ARRAY.
+    > The function accepts the following parameters:
+    >
+    > INTEGER_ARRAY locations
+    > INTEGER_ARRAY movedFrom
+    > INTEGER_ARRAY movedTo
+    >
+    >
+    > Code Question 2
+    > You are in the Amazon's Cloud Infrastructure Team, and you are working on a project to optimize how data flows through its network of storage servers.
+    >
+    > You are given with n storage servers, and the throughput capacity of each server is given in an integer array named throughput.
+    >
+    > There are pipelineCount data pipelines that need to be connected to two storage servers, one as the primary connection and the other as the backup. Each data pipeline must choose a unique pair of servers for its connections.
+    >
+    > The transferRate for each data pipeline is defined as the sum of the throughput of its primary and backup servers.
+    >
+    > Given an integer array throughput and an integer pipelineCount, find the maximum total transferRate that can be obtained by optimally choosing unique pairs of connections for each data pipeline.
+    >
+    > Note:
+    >
+    > A pair of servers (x, y) is said to be unique if no other pipeline has selected the same pair. However, the pairs (y, x) and (x, y) are treated as different connections.
+    > It is also possible to select the same server for primary and backup connections, which means that (x, x) is a valid pair for the connection.
+    > Example
+    > throughput = [4, 2, 5]
+    > pipelineCount = 4
+    >
+    > The data pipelines can select their connection among the following 9 possible server pairs:
+    > [1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3]
+    > (Assuming 1-based indexing of throughput array).
+    >
+    > However, each data pipeline must select a unique pair of servers.
+    >
+    > To achieve the maximum total transferRate, the data pipelines can optimally choose the pairs
+    > [3, 3], [1, 3], [3, 1], [1, 1]
+    > to obtain the maximum sum of
+    > transferRate = (5 + 5) + (5 + 4) + (4 + 5) + (4 + 4) = 36.
+    >
+    > Function Description
+    > Complete the function maxTransferRate in the editor below.
+    >
+    > maxTransferRate has the following parameters:
+    >
+    > int throughput[n]: array of throughput provided by each server instance.
+    > int pipelineCount: the number of data pipelines that need to be connected.
+    > Returns
+    >
+    > long: the maximum total transfer rate.
+
+51. 2024(10-12月) 码农类General 硕士 全职@amazon - 猎头 - 在线笔试  | 😐 Neutral 😐 AveragePass | 在职跳槽
+
+    > ![img](Amazon面试题目总结.assets/62217dyq38iwyzm19glu0.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/62228jlihhbz6odwoivjm.jpg)
+
+52. 2024(10-12月) 码农类General 硕士 全职@Amazon - Other - Onsite  | 😐 Neutral 😐 AverageWaitList | 其他
+
+    > 9月收到recruiter在linkedin reach out。Amazon Store组，店面问了一个tight deadline和蠡口饿已已。第二天通知过了
+    > 11月初4轮vo，每轮两个LP，具体记不清了，但就是低级别常考的那8个
+    > 第一轮hm面system design，设计一个Kindle的pre-order到发售日期可以解锁的功能
+    > 第二轮蠡口散拔凌，follow up优化空间
+    >
+    > 第三轮算是OOD吧，不是原题，但是很straightforward，给两个接口分别是传入id返回好友列表，传入id返回最近购买的东西，写一个function找到你的好友买了 但是你没买的东西做推荐 很容易写
+    > 最后一轮br，追问一个LP问了半小时，估计就是这块不太满意，后面题目是额领领。
+    >
+    >
+    > 过了一周通知挂了，但是上周打来电话，说可以去找sde1的team match，也不知道能不能找到，感觉现在没有external的sde1了，都是new grad或者内部转组 ：（
+    >
+    > 发面经求好运啊。顺便求大佬捞一下 XD
+
+53. 2024(10-12月) 码农类General 硕士 全职@Amazon - 网上海投 - 其他  | 😐 Neutral 🙂 EasyFail | 应届毕业生
+
+    > 可能是最长的一个timeline
+    >
+    >
+    > 5/16 海投
+    > 9/27 收到oa
+    >
+    > 10/7 完成oa
+    > 11/5  vo survey
+    > 11/12  第二次vo survey
+    > 11/14  vo confirmed
+    > 12/4   3轮vo（面筋在这：🔗 www.1point3acres.com）
+    > 12/11 收到update挂了
+    >
+    > 有无大佬知道美亚面挂了，冷冻期是不是跟日亚共享的？前两天刚收到日亚的oa，不知道还要不要做了
+
+54. 2024(10-12月) 码农类General 硕士 全职@Amazon - 猎头 - 在线笔试  | 😃 Positive 😐 AveragePass | 在职跳槽
+
+    > 最近做了个麻家oa，都是地里有的经典题
+    > 以下内容需要积分高于 180 您已经可以浏览
+    >
+    > work simulation参考这个： https://docs.google.com/document/d/1Go-fruf1vMP0f8N2cy_pw_ZGvjL-wkFb4IAw51bien0/edit?tab=t.0
+    > 第一题是经典括号，🔗 leetcode.com
+    > 第二题是 special string： a special string s , which no two adjacent characters are same, generate smallest lexicographical string which is larger than s.🔗 leetcode.com
+    > 地里往前翻翻基本都可以找到题目原始的截图
+    >
+    > 
+    >
+    > 有的面经还不够米看，发面经顺便求点米看别的面经。
+
+55. 2024(7-9月) 码农类General 硕士 全职@Amazon - 网上海投 - Onsite  | 😐 Neutral 😣 HardFail | 在职跳槽
+
+    > 楼主2年经验面的L5，面试全程天竺人+天竺人shadow。每轮开始两道BQ，最后留25分钟左右做题。面试后一周recruiter通知挂，没有反馈，冷冻期一年。
+    >
+    > 蠡蔻 矢佴
+    > 蠡蔻 窈澌鲮，这里吐槽一下，这是体验最差的一轮，面试官年轻印，全程面无表情，也不怎么想互动。最后五分钟要求用trie。那自然是做不出来的。
+    > 设计一个file finder。这一轮是problem solving，实际上就是OOD了。
+    > 设计hotel booking
+
+56. 2024(1-3月) 码农类General 本科 全职@Amazon - 内推 - 在线笔试  | 🙁 Negative 😐 AverageFail | 应届毕业生
+
+    > Timeline
+    >
+    > 感恩节后收到的oa，标题跟大家都一样，fungible。上周五晚上做完。昨天（周日）晚上九点半收到update。
+    > 我抽到的题自己有bug，我改了main函数，我怀疑是因为这个原因。因为周日发的邮件应该是机器自动回复的？
+    > 求大家帮我看下这种情况有没有机会argue，会不会有人理。
+    >
+    > OA
+    >
+    > 第一题自己有bug，题里面constraints写了不会是空字符串 (>=1)，结果有一半的test main函数 python 遇到 EOF的bug, 我改了main函数让其可以接收空字符串，bug没了但test还是没过。
+    > 于是我在自己的函数里加了比较两个字符串长度是否相等，就过了。但constraints里明明写了这两个字符串长度是相等的而且大于1。
+    >
+    > bug是main函数中接收input时候遇到的，所以理论上不改main函数不可能解决这个bug。
+    > 期间我还换了java重新写了一遍，同样遇到空字符串的bug。具体题目就先不透露了，本身不难。
+    >
+    > 
+    >
+    >
+    > 第二题是这道题
+    > 🔗 www.1point3acres.com
+    >
+    > 后面work stimulant，场景是新的，没见过。之前有准备，自认为应该不会答得反人类到被拒的程度。
+
+57. 2024(10-12月) 码农类General 硕士 全职@Amazon - 网上海投 - Onsite  | 🙁 Negative 😐 AverageOther | 在职跳槽
+
+    > OA做完几天之后HR phone screening, 主要问了基本经历和身份问题，没有问BQ和技术问题，并约了一个月后的VO。
+    >
+    >
+    > 总共4轮，全是烙印，每轮两个BQ加coding/sd
+    >
+    >
+    > 蠡口 叁，直接秒了
+    > System design，考如何在类似amazon的网购网站上，create一个产品 这样其他用户都可以看到。感觉是比较基础的sd题，无压力。给出high level design之后，具体deep dive了: data store的选择和trade off, QPS/data-access pattern + read heavy是否需要cache, ，sharding key的选择和trade off，产品图片是用presign-url由client直接到blob store还是先到server再由server传到blob store, 如何保证exactly-once delivery(用户如果前端点了好多下要保证只有一个产品创建出来)，
+    > problem solving, 烙印面试官(应该是bar raiser)上来粘了好长一道题目，非常弯弯绕，光看题目和clarify就花了十几分钟，最后代码也没完全写完，这轮面完感觉就g了，体验非常的不好
+    > 题目放在后面, 麻烦大家帮我看看这题到底是我太菜所以30min内做不完，还是烙印朋友把bar抬太高了, 这个面试官在本国工作了十几年，最近才调来美国当manager.
+    > 类似 Merge K sorted list的题，直接秒了
+    >
+    > 
+    >
+    > 以下内容需要积分高于 188 您已经可以浏览
+    >
+    > 给了两张表格
+    > Ad log: <timestamp> <ad-id> <customer-id> <product-id>
+    > Purchase log: <timestamp> <customer-id> <product-id>
+    >
+    >
+    > 需要返回: <ad-id> <total-ad-watches> <total-purchases>
+    >
+    > total-ad-watches其实容易，就是把Ad log根据ad-id数一下frequency
+    > total-purchase则需要根据purchase log的timestamp，去ad log里找这个时刻之前该用户是否看过某个product的广告
+    > 此外，通过和面试官clarify得知，一个product-id可能对应多个ad-id
+
+58. 2024(10-12月) MachineLearningEng 硕士 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardOther | 在职跳槽
+
+    > 雨林的题目很长，基本都要反复看才能看懂，条件很多，解释一大堆。很考验临场理解能力。而我一看到一长段还各种判断条件就慌了。
+    > 第一题是类似刘巴林外面再套一层partition的逻辑，还算可以。
+    >
+    > 第二题是给一个字符船，求同样长度下字典序更大的最小字符串，且相邻的字符都不同。（是不是听着就很绕）
+    > 字符串只包含字母，a最小，z最大。如果没有符合条件的字符串，返回-1
+    > 简单举例：给你“abbcd"应该返回"abcab"。
+    > 其实后来仔细想想也可以把逻辑理顺，临场有时间压力的情况下越写越着急，越着急越乱。还是要仔细省题想清楚逻辑了再写，不然写着写着就忘了一开始的思路。
+
+59. 2024(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardOther | 在职跳槽
+
+    > 第一题
+    >
+    > 🔗 www.1point3acres.com
+    >
+    > 第二题
+    >
+    >
+    > 没有什么思路。
+    >
+    > 本来的想法是用两个priorityqueue，分别代表左边和右边，但是增加和删除边界元素不知道怎么处理。
+    >
+    > 想问问大家有没有好办法
+    >
+    > ![img](Amazon面试题目总结.assets/018380vhyk2m3klzc8vst.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/01829mnxrqqoemwzym3eh.jpg)
+
+60. 2025(7-9月) 码农类General 硕士 实习@Amazon - 网上海投 - 其他  | 😃 Positive 😐 AverageOther | 其他
+
+    > 1.Fungible SDEI Intern Invitation Email 2024.11.28 收到OA邮件，限时15天内完成
+    > 2.组成部分：四部分，开始前需要 student card or 政府官方文件 拍照，限时20s
+    >       a.70mins 2 道Coding Challenge, 可以参考fastprep.io, 一般第一题简单，第二题难，增加区分度
+    >       b. Your Software Engineering Work Style, 不限时，可以7-8分钟内完成
+    >       c. Work Style, 不现时，可以7-8分钟内完成
+    > 开始前准备的材料：
+    > https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=448373&highlight=work%2Bsimulation
+    >
+    > 🔗 www.1point3acres.com
+    > 🔗 www.1point3acres.com
+    >
+    > 🔗 www.1point3acres.com
+    > 🔗 www.1point3acres.com
+    > https://wdxtub.com/interview/14520850399861.html
+    > 🔗 www.1point3acres.com
+    > 🔗 www.1point3acres.com
+    > 🔗 www.1point3acres.com
+    > https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=445121&highlight=amazon%2Boa
+    > 以上都没用到
+    >
+    > ![img](Amazon面试题目总结.assets/11930ahnoovhrjaaissbk.jpeg)
+    >
+    > ![img](Amazon面试题目总结.assets/11950in3bicgennpqb7er.jpeg)
+    >
+    > ![img](Amazon面试题目总结.assets/11105innw6tjh1emov6sr.jpeg)
+    >
+    > 第二题：https://www.fastprep.io/problems/amazon-get-outlier-value
+    > 有些难度，两题AC
+    > Your Software Engineering Work Style，类似下面这种，没显示多少道题
+
+61. 2024(10-12月) 码农类General 本科 全职@Amazon - 内推 - 技术电面  | 😃 Positive 🙂 EasyOther | 在职跳槽
+
+    > 刚面的 烙印大哥
+    > 面了三个问题 第一个coding 第二个design 第三个bq
+    >
+    > 
+    >
+    >
+    > 以下内容需要积分高于 50 您已经可以浏览
+    >
+    > 第一题给你这么个格式 基本就是adj list 但是注意child nodes是用的id
+    > [ 
+    >     { “id” : 5, “name” : “root”, “children” : [7, 90]}, 
+    >     { “id” : 7, “name” : “node1”, “children” : [...]}, 
+    >     { “id” : 90, “name” : “node2”, “children” : […]}, 
+    > ] 
+    > 1. The ids are unique 
+    > 2. This is a tree. Guaranteed to have no cycles. 
+    > 3. number of children entries are arbitrary, i.e. this is only a depiction of a generic tree.
+    > 然后转化成这个nested的格式
+    > { “id” : 5, “name” : “root”, “children” : [
+    >     { “id” : 7, “name” : “node1”, “children” : [...]}
+    >    ,{ “id” : 90, “name” : “node2”, “children” : […]}
+    > ]}
+    > 这题是说假设第一个一定是root 用queue解决了
+    > followup 问你如果不知道root是哪个怎么找 我说indegrees然后degree0的那个
+    >
+    > 
+    >
+    >
+    > design问的是 有frontend 和lb 还有backend web servers。 frontend很reliable然后数量少 backend很多然后很不stable 问你咋办
+    >
+    >
+    > 我说加个configuration server来monitor一下backend health之类的 只需要口头讨论 不需要写码画图
+    >
+    > bq问的dive deep 让我说一个自己dive deep的example
+
+62. 2024(10-12月) 码农类General 硕士 全职@Amazon - 网上海投 - 技术电面  | 😐 Neutral 😐 AverageFail | 应届毕业生
+
+    > 第一轮白男，bq问得非常细节，题是离口霰祀魃
+    > 第二轮纯bq三个问题，大概就是遇到困难怎么解决之类的，面试官说会很快，确实四十分钟就聊完了
+    >
+    > 第三轮印度姐，纯tech, 离口糝嗣绮变体，有follow up, 第二题祁鬏，全部问了tc和sc
+    >
+    > 隔天晚上拒了，应该是第一轮没给出最优解，以及第三轮tc sc可能有不对的。有点奇怪的是感觉五个bq问的都大差不差非常相似。后两轮面试官都10+经验，完全不笑，感觉压力还挺大的。。。
+
+63. 2024(10-12月) 码农类General 硕士 全职@Amazon - 猎头 - 技术电面  | 😃 Positive 😐 AveragePass | 在职跳槽
+
+    > ![img](Amazon面试题目总结.assets/122545w611du386dsb6d5b.jpg)
+    >
+    > ![img](Amazon面试题目总结.assets/122549k2ujd9ypayfj2r2y.jpg)
+    >
+    > 不曉得為什麼我一直覺得只是 HR 聊 resume 就沒特別準備
+    > 面試官一開始就跟我說等下要 coding 才發現事情沒有我想得這麼簡單…
+    >
+    > 這幾年斷斷續續的刷了一些題，沒想到運氣這麼好，考了個原題:
+    >
+    > 207 follow up 210
+    >
+    > 
+    >
+    >
+    > BQ:
+    > 忘記原文是啥，但類似於: went way beyond the scope of the project and delivered.
+    > disagreement with supervisor
+    >
+    > 
+    >
+    > 隔一週後HR發信要約5個60分鐘的 VO，發個帖積點運氣…
+
+64. 2024(10-12月) 码农类General 本科 全职@Amazon - 网上海投 - 技术电面  | 😐 Neutral 😐 AverageOther | 在职跳槽
+
+    > BQ
+    > 1. what u do when there is a tight deadline? name an example.
+    > what action do u take to handle the issue? name an example.
+    > 忘了。。。
+    >
+    > 
+    >
+    > Coding
+    > 没见过，一个路口给一些用户数据包括时间和gps。问在某个时间线里有多少人通过这个路口。
+    > 我问如果有如图“点1”和“点2”的两个点我咋知道这个user有没有通过路口”口“。他说that's the challenge。。。
+    >
+    > ----点1----------------- -口--------
+    > |                     |                 |           |
+    > |                     |                 |           |
+    > |                     |                 |           |
+    > ------------------------------点2---
+    >
+    >
+    > Follow up by me:
+    > 1. How many hours of work per week avg?  normally 30-40 (highly doubt), on-call 50+.....
+    > 2. How heavy of on calls? One day per month (highly doubt).
+    > hybrid/remote possible? no
+    >
+    > 看他兴趣缺缺，我就没兴趣问了。。。
+    >
+    > 一首凉凉送给自己，哈哈哈哈。btw这个是我一年以前投的，估计给我捞起来了。
+
+65. 2024(10-12月) 码农类General 本科 全职@Amazon - 网上海投 - 在线笔试  | 😐 Neutral 😣 HardOther | 应届毕业生
+
+    > 这段时间亚麻OA还持续在出新题 前几天遇到一个很难的新题 做了很久还是有2/3的test case超时
+    > 看看地里有没有大佬有思路的
+    >
+    > Coding
+    > 第一题
+    > Problem Statement
+    > Imagine you're a seller on Amazon, specializing in eco-friendly products. Each of your items is rated by customers based on its quality and environmental impact.
+    >
+    > The overall qualityScore of your products is determined by the maxium possible sum of consecutive ratings.
+    >
+    > To improve the qualityScore of yourproducts and attract more customers, you are given with an interger impactFactor and the following two strategies:
+    > Amplify Ratings: Select a contiguous segment of ratings and amplify them by multiplying each rating in that range by impactFactor.
+    > Adjust Ratings: Select a contiguous segment of ratings and adjust them by dividing each rating in that range by impactFactor
+    >
+    > Your task is to determine the maximum possible qualityScore for your eco-friendly products after applying exactly one of these strategies.
+    >
+    > Note: When applying the second strategy i.e., Adjust Ratings; For dividing positive ratings,
+    > use the floor value of the division result and for dividing negative ratings, use the ceiling value of the division result,
+    >
+    > Example: Given ratings = [4, -5, 5, -7, 1], and impactFactor = 2.
+    > If we choose to apply the second strategy with segment [2, 5](Assuming 1-based indexing) then, modified ratings: [4, ceil(-5 / 2), floor(S / 2), ceil(-7 / 2), floor(1 / 2)] = [4, -2, 2, -3, 0].
+    > Note that the ceil(-7/ 2) = -3 and floor(5 / 2) = 2,
+    >
+    > Given an array of ratings of size n and an integer impactFactor, determine the maximum possible qualityScore i.e., maximum possible sum of consecutive ratings by optimally selecting exactly one of the strategies to modify the ratings.
+    >
+    > Example
+    > Input:
+    > n = 5
+    > ratings = [5, -3, -3, 2, 4]
+    > impactFactor = 3
+    > Let's try both the strategies with different contiguous ranges to get the maximum qualityScore:
+    > Strategy	Segment(1-based indexing)	Modified Ratings	qualityScore
+    > 1	[1, 1]	[5*2, -3, -3, 2, 4] = [10,-3,-3, 2, 4]	10
+    > 2	[2, 3]	[5, ceil(-3/2), ceil(-3/2), 2, 4] = [5,-1,-1, 2, 4]	9
+    > 1	[4, 5]	[5, -3, -3, 2*2, 4*2] = [5,-3,-3, 4, 8]	12
+    > If we perform the first strategy on the subsegment [4, 5] (1-based indexing), we get the ratings = [5, -3, -3, 4, 8] with a qualityScore of 12, which is the maximum qualityScore.
+    > Hence, the answer is 12.
+    >
+    > Function Description
+    > Complete the function calculateMaxQualityScore in the editor below
+    > calculateMaxQualityScore has the following parameters:
+    > int impactFactor: the value used in the strategies to amplify or adjust ratings.
+    > int ratings[n]; an array representing the ratings of eco-friendly products
+    >
+    > Returns
+    > long: the maximum possible qualityScore of your eco-friendly products after applying
+    > exactity one of the strategies.
+    >
+    > Constraints
+    > 1 <= n <= 2* 10^5
+    > 1 <= impactfactor <= 10^4
+    > -10^5 < ratings[ij <= 10^5
+    >
+    > 这道题很迷 题目给的example里面数字就有错  example input显示 impactFactor = 3
+    > 但是到了example 表格里impactFactor = 2 来计算的
+    > 做了很久还是有2/3的test case超时 看看地里有没有大佬有思路的
+    >
+    > 第二题是原题 https://www.fastprep.io/problems/amazon-find-smallest-appealing
+    >
+    > Work Simulation：
+    > 地里的原题 🔗 www.1point3acres.com
+    >
+    > Work Style：
+    > 跟地里的题目不太一样 是有两个选项 在两个选项中选择更像自己的性格的 选的很纠结 很多时候觉得两个选项都对
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. 把解题思路详细讲解出来，并说明时间和空间复杂度
 
    > 电面上来先寒暄自我介绍，这里花了一两分钟，然后是bq，
    > 面试官是一个白人，
@@ -13,13 +1521,13 @@
    > 谈谈你最引以为傲的项目或成就，优秀的项目团队中发挥的角色和贡献
    > 这个算是我在面试中遇到的最heavy的bq了，口水都说干了
 
-3. SDEII L5
+2. SDEII L5
 
    > Phone:
    > BQ: unan‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ticipated obstacle, tight deadline
    > 骑六妻
 
-4. 亚麻sde intern vo面经3.38 求米
+3. 亚麻sde intern vo面经3.38 求米
 
    > BQ：
    > tell me about a time when you failed what you promised, 对应earn trust，move fast
@@ -27,11 +1535,11 @@
    > Is there other things you want to highlight
    > follow up: what was your responsiblity/task in that project
 
-5. 电面
+4. 电面
 
    > 开始BQ，聊最近遇到很多obstacle的项目，然后利口 乌尔吧加个马甲
 
-6. 亚麻 SDE2 OA+VO 面经
+5. 亚麻 SDE2 OA+VO 面经
 
    > 1.        Most Challenging Project, about a challenge you faced. What was your role and outcome?
    > 2.        Tell me about a time you had a conflict with a team member.
@@ -41,14 +1549,14 @@
    > 6.        Tell me about a time you met a tight deadline.
    > 7.        Tell me about a time when you invented something
 
-7. Amazon 电面
+6. Amazon 电面
 
    > 先BQ，后coding。
    >
    > BQ：介绍一个你initiate的项目或者想法，结果啥样。
    > BQ：介绍你的最有创意的项目解决方案
 
-8. Amazon SDE III 电面
+7. Amazon SDE III 电面
 
    > 从most proud project开始，问了challege，conflict，ambiguity，learn
    >
@@ -58,33 +1566,33 @@
    > 每个方法举了几个适用的例子
    > 最后五分钟反问
 
-9. 电面
+8. 电面
 
    >  BQ: unantic‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ipated obstacle, tight deadline
    > 骑六妻
 
-10. 2024(4-6月) 码农类General 本科 全职@amazon - 猎头 - 技术电面 Onsite  | 😐 Neutral 😣 HardFail | 其他
+9. 2024(4-6月) 码农类General 本科 全职@amazon - 猎头 - 技术电面 Onsite  | 😐 Neutral 😣 HardFail | 其他
 
-    > SDE2
-    > phone
-    > https://www.geeksforgeeks.org/minimum-halls-required-for-class-scheduling/
-    >
-    > VO: 每一轮都是25分钟的BQ + 40分钟的做题 + 5分钟问面试官问题
-    > 第一轮：力扣 尔溜酒
-    > 第二轮：OOD - Design a file system that allows search for files with file size, and file ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌extension.
-    > Followup是设计成一个library应该怎么做
-    > 第三轮：力扣 舞衣巴
-    > 第四轮：系统设计 design amazon lockers （db schema, api design, caching...）
-    >
-    > 第三轮的coding是一个director面我的，问完BQ后全程不说话看我表演，其他的面试官都很interactive。
-    >
-    > 收到了feedback是system design不好，我是最疑惑的，因为面试官全程热情并肯定我的做法，面完这一轮还有十分钟，面试官说他的所有问题都问完了让我问他问题，没想到还挂在这轮上。笑面虎啊。我哭了。
+   > SDE2
+   > phone
+   > https://www.geeksforgeeks.org/minimum-halls-required-for-class-scheduling/
+   >
+   > VO: 每一轮都是25分钟的BQ + 40分钟的做题 + 5分钟问面试官问题
+   > 第一轮：力扣 尔溜酒
+   > 第二轮：OOD - Design a file system that allows search for files with file size, and file ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌extension.
+   > Followup是设计成一个library应该怎么做
+   > 第三轮：力扣 舞衣巴
+   > 第四轮：系统设计 design amazon lockers （db schema, api design, caching...）
+   >
+   > 第三轮的coding是一个director面我的，问完BQ后全程不说话看我表演，其他的面试官都很interactive。
+   >
+   > 收到了feedback是system design不好，我是最疑惑的，因为面试官全程热情并肯定我的做法，面完这一轮还有十分钟，面试官说他的所有问题都问完了让我问他问题，没想到还挂在这轮上。笑面虎啊。我哭了。
 
-11. 2024(4-6月) 码农类General 硕士 全职@amazon - 猎头 - 技术电面  | 😃 Positive 😐 AveragePass | 在职跳槽
+10. 2024(4-6月) 码农类General 硕士 全职@amazon - 猎头 - 技术电面  | 😃 Positive 😐 AveragePass | 在职跳槽
 
     > 亚麻电面，白人小哥，半小时bq,剩下时间做题，最后让我问了几个问题。LC 已耳丝久
 
-12. 2024(1-3月) MachineLearningEng 博士 全职@amazon - 内推 - Onsite  | 😃 Positive 😐 AverageOther | 应届毕业生
+11. 2024(1-3月) MachineLearningEng 博士 全职@amazon - 内推 - Onsite  | 😃 Positive 😐 AverageOther | 应届毕业生
 
     > BQ问了Dive deep，take a risk，这次还好，只有15分钟BQ，两个问题结束
     >
@@ -94,14 +1602,14 @@
     >
     > Round 5: 问project，随便聊research。BQ，怎么convince someone，怎么帮助teammate in trouble
 
-13. 2024(4-6月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 🙁 Negative 😐 AverageFail | 在职跳槽
+12. 2024(4-6月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 🙁 Negative 😐 AverageFail | 在职跳槽
 
     > 1. 烂橘子 994
     > 2. OOD 验证类, 验证他给的东西 题忘了
     > 3. SD 推荐系统
     > 4. 4. 最长连续整数
 
-14. 2024(4-6月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 其他
+13. 2024(4-6月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 其他
 
     >  SDE2，两轮有shadow。基本都是二十分钟BQ，然后二十分钟题。
     >
@@ -135,7 +1643,7 @@
     > 4.写一个购物推荐系统，就是给一对购物列表，然后来新顾客买一样东西，你要推荐最相关的。
     > Question: Make a recommendation to customer using the criteria “product pur‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌chased most frequently together”. For example: Given a history of all customer’s orders: - a b c d - b c d - b e - f g - …
 
-15. 2024(1-3月) 码农类General 硕士 全职@amazon - Other - Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
+14. 2024(1-3月) 码农类General 硕士 全职@amazon - Other - Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
 
     > SDE2
     >
@@ -148,13 +1656,13 @@
     >    如果大家没有特定想去的组的话还是面general感觉会好一些。
     > 6. 这是sagemaker组
 
-16. 2024(1-3月) 码农类General 硕士 全职@amazon - 猎头 - 技术电面 在线笔试  | 😃 Positive 😐 AveragePass | 在职跳槽
+15. 2024(1-3月) 码农类General 硕士 全职@amazon - 猎头 - 技术电面 在线笔试  | 😃 Positive 😐 AveragePass | 在职跳槽
 
     > 店面：建议好好准备BQ，被问了15分钟左右吧
     > coding问的是task schedul‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌e，类似couse schedule
     > BQ问的是 Do you have any experience of learning complex system ? 有没有做过什么设计得到客户的积极反馈？还有一题想不起来了。
 
-17. SED3
+16. SED3
 
     > 提供一个dp
     > 前30分钟深挖一个项目，
@@ -164,7 +1672,7 @@
     > 1. 只打印某个时间范围内的log
     > 2. log文件很大怎么办，(拆成多个小文件再binary search)
 
-18. 2023(1-3月) 码农类General 本科 全职@amazon - Other - Onsite  | 😐 Neutral 🙂 EasyFail | 在职跳槽
+17. 2023(1-3月) 码农类General 本科 全职@amazon - Other - Onsite  | 😐 Neutral 🙂 EasyFail | 在职跳槽
 
     > 亚麻onsite 面经 failed
     > feedback是 SD不够好，coding也要补，LP是mixed的结果。
@@ -175,7 +1683,7 @@
     > 第三轮：忘记了 不难
     > 第四轮：OOD 设计，alexa d‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌evice 有的有屏幕有的没有，怎么让它显示（报出）battery的level 等等。。。还有几个别的case
 
-19. 2023(10-12月) MachineLearningEng 博士 全职@amazon - Other - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
+18. 2023(10-12月) MachineLearningEng 博士 全职@amazon - Other - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
 
     > - As l6
     > - coding轮：蠡口洱栢
@@ -185,7 +1693,7 @@
     > - ML breadth：问了如何e2e上线一个模型，问了bias variance‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ trade off，问了决策树，问了bagging和boosting。
     > 两天后HR通知过了。考虑到remote的原因还是婉拒了。
 
-20. 2023(4-6月) 码农类General 硕士 全职@amazon - 内推 - Onsite  | 😃 Positive 😐 AverageOther | 在职跳槽
+19. 2023(4-6月) 码农类General 硕士 全职@amazon - 内推 - Onsite  | 😃 Positive 😐 AverageOther | 在职跳槽
 
     > SDE2
     >
@@ -203,7 +1711,7 @@
     >
     > 全整 bq 没有卡壳，但是不知道有没有达到点子上，而且有用到重复例子的情况  😂   感觉现在 bar 挺高的，可能 coding 有一轮没过 就没戏了吧，还挺遗憾的， 没写完的那道 coding 我之前也是做过的。没办法了 move on 吧
 
-21. 2024(1-3月) MachineLearningEng 博士 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 应届毕业生
+20. 2024(1-3月) MachineLearningEng 博士 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 应届毕业生
 
     > [面试经验] 亚麻AS vo
     >
@@ -225,7 +1733,7 @@
     >
     > 今天收到电话 feedback positive  准备谈包裹
 
-22. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面 Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+21. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面 Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > 分享一下最近面试🍌厂的面经。
     >
@@ -247,7 +1755,7 @@
     >
     > https://www.1point3acres.com/bbs/thread-1058854-2-1.html
 
-23. 2024(1-3月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+22. 2024(1-3月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > [面试经验] 亚麻 SDE II VO挂经
     >
@@ -281,7 +1789,7 @@
     >
     > 整体感觉面的挺顺的，没想到两个coding给了negative feedback。
 
-24. 2024(1-3月) 码农类General 硕士 全职@amazon - Other - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+23. 2024(1-3月) 码农类General 硕士 全职@amazon - Other - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > 亚麻真是面的最累的
     > vo
@@ -295,7 +1803,7 @@
     > 第四轮system design，考的desig‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌n uber, 主要考数据怎么存，考鱿鱼树，g了，没看uber
     > BQ忘了
 
-25. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+24. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > [面试经验] 热带雨林虚拟表演 挂经
     >
@@ -312,7 +1820,7 @@
     >
     > 求米求米，谢谢大家
 
-26. 2023(1-3月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😃 Positive 🙂 EasyFail | 在职跳槽
+25. 2023(1-3月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😃 Positive 🙂 EasyFail | 在职跳槽
 
     > [面试经验] 新鲜亚麻 2 大概率挂经  
     >
@@ -321,13 +1829,13 @@
     > 第三轮是 bar raiser，问了一个很简单的反转words。follow up 类似于 腰司令，但是不需要所有可能性只需要返回一个。我是按着腰司令写的，但是面试官不让我写完说这个是brute force，然后就没有然后了，直接到了反向qa。 感觉这轮应该是 strong no hire 哎
     > 第四轮 设计披萨
 
-27. 2024(1-3月) MachineLearningEng 博士 全职@amazon - 网上海投 - 技术电面  | 😃 Positive 😣 HardOther | 应届毕业生
+26. 2024(1-3月) MachineLearningEng 博士 全职@amazon - 网上海投 - 技术电面  | 😃 Positive 😣 HardOther | 应届毕业生
 
     > Mar 29 1hour 店面， GenAI相关
     >
     > 力扣 耳吾伞
 
-28. 2024(1-3月) 码农类General 本科 全职@amazon - 网上海投 - 技术电面 Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+27. 2024(1-3月) 码农类General 本科 全职@amazon - 网上海投 - 技术电面 Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > [面试经验] 亚麻SDE II 挂经分享
     >
@@ -349,7 +1857,7 @@
     >
     >    他们的code是跑不了的，就是个text editor，所以主要是靠嘴巴讲你的解法怎么工作。每轮侧重点都不一样的，八股文一定要准备很多很多，以防像我一样遇到第一轮40min八股文轰炸。。。。真的是嘴皮子都磨破了
 
-29. 2024(1-3月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
+28. 2024(1-3月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
 
     > 时间表如下：
     > 2月底被reach out SDE II的岗位
@@ -380,7 +1888,7 @@
     >
     >    接着再让你找所有满足node.keyX > valY AND node.keyZ = valA 的node。如果时间允许的话，以此类推接下来更多的follow up。
 
-30. 2024(1-3月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 😐 Neutral 🙂 EasyFail | 在职跳槽
+29. 2024(1-3月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 😐 Neutral 🙂 EasyFail | 在职跳槽
 
     > 新鲜亚麻Onsite，总体来说coding比较简单，都是20分钟内秒杀，最后BQ挂得莫名其妙。求加米看题
     >
@@ -411,7 +1919,7 @@
     >
     > 最后的feedback给了我模模糊糊的几个potential reasons让我去猜，都是BQ方面的，我排除了一下，唯一可能的是觉得我的故事不够有diversity。我就纳闷了，我确定我回答的每一个问题都给的是不同项目不同的故事，但可能由于是因为在同一家公司，客户都是同一群人。要是真的因为这事给我挂了，我也只能说再也不见了吧。。。亚麻的LP 文化我算是领教了
 
-31. 2023(1-3月) 码农类General 本科 全职@amazon - 猎头 - Onsite  | 😐 Neutral 🙂 EasyPass | 在职跳槽
+30. 2023(1-3月) 码农类General 本科 全职@amazon - 猎头 - Onsite  | 😐 Neutral 🙂 EasyPass | 在职跳槽
 
     > 月初的vo： 每一轮都是30+ min leadership + coding + 5min questions
     > 几乎所有的LP 都被问到了
@@ -424,7 +1932,7 @@
     >
     > 都是比较愉快的面试， 至少interviewer 全程都有在面试 （吐槽一下doordash 的vo）
 
-32. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+31. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > 4轮，每轮半个小时bq
     >
@@ -438,7 +1946,7 @@
     >
     > 6个天竺人，连shadow都是，其实体验可以，感觉交流什么的都挺好，也没有为难我，但是总感觉自己陪跑的炮灰，果然。。。
 
-33. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面 Onsite 视频面试  | 😐 Neutral 😐 AverageFail | 在职跳槽
+32. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面 Onsite 视频面试  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > - On Site 一共4轮
     >   -  log files, each contains multiple lines of logs, each line of log contains timestamp, print together into one stream, 这个里面log files是一直在更新的, 类似我们在tail -f好多file, 我以为是拿着static的file在总结
@@ -466,7 +1974,7 @@
     >
     > 求米求米!
 
-34. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
+33. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
 
     > 两轮coding：刷题网常规tree题 衣伊儿（要求写出bfs+dfs两种解法） + 非刷题网easy题
     > 一轮ood：披萨店有三种变量决定🍕的价格，写一个class定义这三个变量，并且通过不同输入来计算🍕价格
@@ -483,7 +1991,7 @@
     > 面试官一开始并没有讲清楚input, output是什么format，回答完BQ之后就剩下不到半小时做题，clarify input, output又花了不少时间。面试官想要input之一是类似刷题网那题一样的prerequisites的关系（dst->src）。正常的解法如刷题网一样也是建立一个跟prerequisites关系反过来的graph来表示（src -> dst），从而用indegree + bfs做出来的topological sorting是O(V+ E)。
     > 但是面试官说他不想要建立graph (src -> dst)去做，面试中不知道他想要怎么做，事后觉得他其实想要直接在(dst -> src)里面的dependecies input里面做bfs, 类似这里面讨论的solution一样 🔗 leetcode.com 但这样明显搜索效率很低，变成一个O(VE)的解法。
 
-35. 2024(1-3月) 工程类 本科 全职@amazon - 网上海投 - 技术电面  | 😃 Positive 😐 AverageOther | 在职跳槽
+34. 2024(1-3月) 工程类 本科 全职@amazon - 网上海投 - 技术电面  | 😃 Positive 😐 AverageOther | 在职跳槽
 
     > BQ
     > 1.        Most Challenging Project, about a challenge you faced. What was your role and outcome?
@@ -500,7 +2008,7 @@
     > 1. BST Max sum path
     > 2. Divide-and-Conquer
 
-36. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面 Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
+35. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面 Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
 
     >
     > L6两天后通知了 Virtual Onsite，总共 5 轮
@@ -512,7 +2020,7 @@
     >
     > 4天后收到 No longer under consideration，大概率挂在 BQ 上。除了四五轮，前三轮也有 20 分钟左右的 BQ。故事不够用了，临时想到的又没有组织好语言。
 
-37. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+36. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > 后直接onsite 具体如下：
     > 1. 西裔，谈笑风生半小时，讲一个结果超出预期的小故事，剩下的不记得了。coding：不是原题，有点像物流，返回区间个数，但只有被完全覆盖的区间才不算，部分覆盖结果还是要+1。举例： （1，10） （2，5）（3，11）返回2，因为只有（2，5）被完全覆盖了，大概是这样 我一开始理解错了。第一题是56的变形
@@ -523,7 +2031,7 @@
     > 两工作日收到拒信，意料之中。
     > 最后求大米看面经！！
 
-38. 2023(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😣 HardOther | 在职跳槽
+37. 2023(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😣 HardOther | 在职跳槽
 
     > DE2 OA后第二天收到邮件约的VO
     > 一共四轮vo，可以选分成多天或者一天back2back。每轮一半technical一半考leadership principle。
@@ -535,7 +2043,7 @@
     >
     > 商品库存听起来像 amazon locker
 
-39. 2023(1-3月) 码农类General 硕士 全职@amazon - 内推 - Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
+38. 2023(1-3月) 码农类General 硕士 全职@amazon - 内推 - Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
 
     > VO，一共5 轮。
     >
@@ -551,7 +2059,7 @@
     >
     > 最后挂了的原因，我自己觉得最大的可能是 OOD那轮没答好。如果不是，那就是我的某些故事他们不喜欢，不符合亚麻的风格。当然也可能有了背景更符合的Candidate，或者HC出现了变化都有可能，但是这些就不是我能控制的了。
 
-40. 2024(10-12月) 码农类General 本科 全职@amazon - 猎头 - HR筛选  | 😃 Positive 😣 HardFail | 在职跳槽
+39. 2024(10-12月) 码农类General 本科 全职@amazon - 猎头 - HR筛选  | 😃 Positive 😣 HardFail | 在职跳槽
 
     > 这里详细分享最近的面试经历，希望大家可以多多加米支持。
     > 去年年底面试了亚麻的电面，90分钟两道题。第一道题比较简单，忘了具体题目，不过是考察二叉搜索的。第二道题是亚麻高频题目，难度其实还挺大，就是利口 贰柒拔懿，找不包含违禁单词的最长子字符串。最优解可以用滑动串口或者Trie。
@@ -571,7 +2079,7 @@
     >
     >    中介说面试的级别是L5或者L6，要根据面试结果确定级别。中介说两个级别的区别是行为面试时，看过往经历影响力有多大。L6要求做的事情不仅只影响到本组，还很可能影响到其他不同的组。所以如果朋友经验也够了，在面试时可以侧重讲自己的工作如何涉及到很多不同的组，影响很大。我觉得适当夸大点是完全可以的。
 
-41. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+40. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > 1. 跳游戏 依 and 二
     >
@@ -600,7 +2108,7 @@
     > 烦请路过加一点点米谢谢!
     > 祝大家新的一年龙运当头，面试顺利
 
-42. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面  | 😃 Positive 😣 HardOther | 在职跳槽
+41. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面  | 😃 Positive 😣 HardOther | 在职跳槽
 
     > 全程大概一小时，先自我介绍5分钟，然后问了一个bq是做过最复杂的项目，怎么处理的（五分钟）
     > 题目是刷题网幺洱气，先构建adjacency list，然后用bfs找到最短路径。觉得不是最优解，想怎么优化但没想出来，大概30分钟左右。面试后结束再看已经是最优解了
@@ -614,7 +2122,7 @@
     > 一工作日后说面试通过了，但‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌位置被内部filled了。HR打了电话说再找几个职位给他，如果有合适的会安排VO，唉
     > 好像亚麻最近放出来的职位不是很多，一有很快被填满。这次面试已经是换过一次岗位的组了
 
-43. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面 Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+42. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面 Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     >电面面的我在trade desk电面面的那个一摸一样的题，n-way cache，只不过trade desk那个题是给的一个半成品代码让你改，亚麻这个是让你自己从头开始实现, 你去搜搜地里trade desk的面经，大致是让你实现一个interface, cache evict way是要可以变化的
     >
@@ -634,7 +2142,7 @@
     >
     >当然也有可能是behavi‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌or，每一轮一般面30-40分钟behavior，最后剩20-30分钟做coding或者system design，可见亚麻对behavior的重视，也可能是behavior挂了
 
-44. 2024(1-3月) 码农类General 硕士 实习@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AveragePass | 其他
+43. 2024(1-3月) 码农类General 硕士 实习@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AveragePass | 其他
 
     > tl:
     > 八月份投递
@@ -649,7 +2157,7 @@
     > bq被问了tight deadline和most challenging
     > ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌code考的是lc 49
 
-45. 2023(1-3月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 其他
+44. 2023(1-3月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 其他
 
     > 每轮1小时，一半的时间都是BQ，【很重要】recuiter会发一个LP的准备excel，里面有例题。真的要每个问题都准备3个故事，因为可能会问到重复的！感觉bQ答得好后面会放水？
     >
@@ -660,7 +2168,7 @@
     >
     > 感觉很简单，可能自己没有准备好，不够自信吧。求大米～
 
-46. 2024(1-3月) 码农类General 本科 全职@amazon - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+45. 2024(1-3月) 码农类General 本科 全职@amazon - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > [面试经验] 亚麻SDE2 VO挂经 4轮详细总结求加米
     >
@@ -710,7 +2218,7 @@
     >
     >     - 考点：Trie
 
-47. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 视频面试  | 😐 Neutral 😐 AverageOther | 在职跳槽
+46. 2024(1-3月) 码农类General 硕士 全职@amazon - 网上海投 - 视频面试  | 😐 Neutral 😐 AverageOther | 在职跳槽
 
     > 亚麻SDE2 L5最终轮Loop Interview，刚面完，还不知道结果。分享面经，求米看帖，还在准备其他面试，米太少lol
     >
@@ -735,7 +2243,7 @@
     >
     > 系统设计大概是在一个商业合作系统中，每天和每月获得其中一方的劳动报酬数据。用户量限定在一个范围内，不是百万级，所以之前准备的一些scale也没用上。面试官比较喜欢聊数据流，API通信之类的。
 
-48. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageOther | 在职跳槽
+47. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageOther | 在职跳槽
 
     > 2023年12月最后一波亚麻onsite，从上午到下午4个半小时，推荐大家约两天，一天有些累，而且中间只有30min休息时间，不好吃午饭
     >
@@ -764,7 +2272,7 @@
     > ---
     > 新人求米， 谢谢 🙇
 
-49. 2023(10-12月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 😃 Positive 😣 HardFail | 在职跳槽
+48. 2023(10-12月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 😃 Positive 😣 HardFail | 在职跳槽
 
     > 上个月信心满满的面了热带雨林SDE L6，做了很多笔记。原来打算拿到Offer后来传授面经。结果挂了，理由是Coding还不够强。
     >
@@ -865,7 +2373,7 @@
     >
     > 最后挂了，对我打击还挺大。总结经验，来日再战！
 
-50. 2023(10-12月) 码农类General 博士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+49. 2023(10-12月) 码农类General 博士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > 11 月面的AWS L5 SDE virtual onsite 四连面
     >
@@ -879,7 +2387,7 @@
     >
     > 亚麻四个面试一起，BQ准备花了比较多的时间，system design花时间少了（‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌job description 说是做别的的，HR只是跟我说job description 是错的，一直到二面的时候我才知道这个岗位是做storage的）。
 
-51. 2023(10-12月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
+50. 2023(10-12月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
 
     > 第一轮, 国人小哥哥
     >
@@ -949,7 +2457,7 @@
     >
     > L5 的崗位~
 
-52. 2023(10-12月) 码农类General 本科 全职@amazon - 内推 - 其他  | 😐 Neutral 😐 AverageOther | 其他
+51. 2023(10-12月) 码农类General 本科 全职@amazon - 内推 - 其他  | 😐 Neutral 😐 AverageOther | 其他
 
     > 1 LRU Cache
     > 2 图遍历题，在一个社交网络里，要找从一个人到另一个人的路径
@@ -958,7 +2466,7 @@
     >
     > 加米加米，谢谢！
 
-53. 2023(10-12月) 码农类General 本科 全职@amazon - 网上海投 - 技术电面 Onsite  | 😃 Positive 😣 HardPass | 在职跳槽
+52. 2023(10-12月) 码农类General 本科 全职@amazon - 网上海投 - 技术电面 Onsite  | 😃 Positive 😣 HardPass | 在职跳槽
 
     > Amazon温哥华L6
     > 店面: 人挺好，半小时BQ，问了3个问题，只记得一个most challenge project, 蠡口 粑粑久
@@ -972,7 +2480,7 @@
     >
     > 过了两天通知SDE3不够，但是SDE2可以，约了hiring manager call，请问这个是代表过了么，call要准备什么么，另外加拿大亚麻SDE2 TC range是多少呀，谢谢大家
 
-54. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+53. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > AWS组
     >
@@ -993,7 +2501,7 @@
     >
     >   求米~~
 
-55. 2023(10-12月) 工程类 本科 全职@amazon - 猎头 - Onsite  | 😃 Positive 😐 AverageOther | 在职跳槽
+54. 2023(10-12月) 工程类 本科 全职@amazon - 猎头 - Onsite  | 😃 Positive 😐 AverageOther | 在职跳槽
 
     > Senior software engineer role.
     >
@@ -1005,7 +2513,7 @@
     >
     > Design‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ a system that will sync browser bookmarks across devices.
 
-56. 2023(7-9月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
+55. 2023(7-9月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
 
     > 分享一个之前的亚麻挂经，5yoe面L6，一共5轮，每轮都有BQ
     >
@@ -1029,7 +2537,7 @@
     > 基本上就是一个LRU，用sorted map来维护时间和‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌数据，写evict方法
     > 后来follow up讨论了一下concurrency的问题，加锁
 
-57. 2023(10-12月) 码农类General 硕士 全职@amazon - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+56. 2023(10-12月) 码农类General 硕士 全职@amazon - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > 第一轮，一个美国小哥，人很好，在问每一道BQ的时候会先告诉我他在考哪条LP，30min BQ，然后刷题网遥遥无二
     >
@@ -1040,7 +2548,7 @@
     >
     > 发出来给下面的面试攒人品，祝愿我们都能找到心仪的好工作。
 
-58. 2023(10-12月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 🙁 Negative 😐 AverageOther | 在职跳槽
+57. 2023(10-12月) 码农类General 硕士 全职@amazon - 猎头 - Onsite  | 🙁 Negative 😐 AverageOther | 在职跳槽
 
     > 1.  BQ + system design --- system design 时间太短了 随便说了点。
     >      设计一个返现系统  类似每次成交一单 有10 % 返回给 content creator
@@ -1063,7 +2571,7 @@
     > 最后挂了。 反馈是我的competence 不够。  最后一轮代码 没问题 ， 逻辑也没问题  就是有点编译问题。  其他两轮 OOD  时间短 来不及不急写完每个class 每个function 实现。  尤其是那个API design 这个。  每一轮除了最后一轮BQ 时间30分差不多。 后来基本上没啥时间  
     > 可能现在行情不好 要求变高了 bar 变高了 。 OOD 这个不知道是不是要画出类图 还是直接写class  我不知道amazon 这个要求。 OOD 应该分析清楚每个类 然后在coding 可能会好一点。
 
-59. 2023(10-12月) 码农类General 硕士 全职@amazon - 内推 - Onsite  | 😃 Positive 🙂 EasyPass | 在职跳槽
+58. 2023(10-12月) 码农类General 硕士 全职@amazon - 内推 - Onsite  | 😃 Positive 🙂 EasyPass | 在职跳槽
 
     > 刚面没多久，收到消息过了，面的L5，一共四轮，每一轮都是behavior + coding/SD的形式
     > behavior的问题记不清了这里就放一下coding/SD的问题
@@ -1077,7 +2585,7 @@
     >   求加米
     >   看到亚麻今天说要裁员很头秃，问问大家还‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌有啥公司能让我安安稳稳拿个perm，还没有140真的难
 
-60. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 在职跳槽
+59. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 在职跳槽
 
     > 亚麻IAM  L5 VO
     > 一共4轮， 4个面试官人都很好，整个对话过程也很respecful
@@ -1110,7 +2618,7 @@
     > 答可以用Heap，面试官说ok。Okay XD。
     > 然而还是被再问了个BQ。‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌
 
-61. 2023(10-12月) 码农类General 本科 全职@amazon - 网上海投 - Onsite 视频面试  | 😐 Neutral 😐 AverageWaitList | 在职跳槽
+60. 2023(10-12月) 码农类General 本科 全职@amazon - 网上海投 - Onsite 视频面试  | 😐 Neutral 😐 AverageWaitList | 在职跳槽
 
     > 上周五面的亚麻VO，9点到下午两点，中午休息一小时Round one:
     > Coding:
@@ -1163,7 +2671,7 @@
     >
     > BQ真的问的非常详细，基本上每个BQ都有3个follow up，有两轮都快搞得我做题时间不够了，基本上BQ都要问35分钟左右，ood还需要自己写test case,还问了我有没有可以Improvement的地方。系统设计问的蛮详细，database sharding, sql, nosql都有考
 
-62. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AverageOther | 在职跳槽
+61. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - 在线笔试  | 😐 Neutral 😐 AverageOther | 在职跳槽
 
     > 两道题加ood 场景分析 加工作style 分析， 地理基本都有。
     >
@@ -1175,7 +2683,7 @@
     >
     > good luck
 
-63. 2023(10-12月) 码农类General 本科 全职@amazon - 猎头 - Onsite  | 🙁 Negative 😐 AverageOther | 在职跳槽
+62. 2023(10-12月) 码农类General 本科 全职@amazon - 猎头 - Onsite  | 🙁 Negative 😐 AverageOther | 在职跳槽
 
     > 亚麻感觉最近很混乱，估计有很多cost cutting的政策, 所以external hire比较难，也很少有hc。我面SDE 2, L5。
     > 我本人能力也一般。所以这个帖子仅供参考，有什么不妥的请见谅
@@ -1206,7 +2714,7 @@
     >
     > 总体而言所有的面试官会在各方面challenge 你，那一个challenge过头了的 让人很下头。影响体验。
 
-64. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 🙁 Negative 😐 AverageFail | 在职跳槽
+63. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - Onsite  | 🙁 Negative 😐 AverageFail | 在职跳槽
 
     > 第一轮SD: 老斑鸠HM迟到了10分钟. 我电话recruiter, recruiter pin了他之后才来的. 我问他要不要reschedule, 他说不用.
     > 一副能今天挂我就不要等到明天的样子.
@@ -1223,7 +2731,7 @@
     > 最后他看我没时间了‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌, 题目化简了一点, 然而就是因为这个给我挂了.
     > juhttps://link.1point3acres.com/?url=https%3A%2F%2Fleetcode.com%2Fdiscuss%2Finterview-question%2F923707%2Famazon-phone-mario-and-princess
 
-65. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - HR筛选  | 😃 Positive 😐 AverageOther | 在职跳槽
+64. 2023(10-12月) 码农类General 硕士 全职@amazon - 网上海投 - HR筛选  | 😃 Positive 😐 AverageOther | 在职跳槽
 
     > 亚马逊面经
     > OA:
@@ -1254,7 +2762,7 @@
     >
     > 如果可以的话希望可以给一点大米, 谢谢.
 
-66. 2023(7-9月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
+65. 2023(7-9月) 码农类General 本科 全职@amazon - 网上海投 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
 
     > 第一题🔗 leetcode.com https://link.1point3acres.com/?url=https%3A%2F%2Fleetcode.com%2Fdiscuss%2Finterview-question%2F369272%2FAmazon-or-Onsite-or-Linux-Find-Command
     > 第二题
@@ -1301,9 +2809,9 @@
     >
     > 准备接offer，想问大家有亚麻在湾区的群可以拉我一下吗，我可以私信，谢谢！
 
-67. https://www.1point3acres.com/bbs/thread-1016786-1-1.html
+66. https://www.1point3acres.com/bbs/thread-1016786-1-1.html
 
-68. 2023(7-9月) 码农类General 本科 全职@amazon - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+67. 2023(7-9月) 码农类General 本科 全职@amazon - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
 
     > 在温哥華，面L5，7月底过了OA和recruiter phone screen，给了近一个月准备onsite
     >
@@ -1333,14 +2841,14 @@
     >
     > 从OA到onsite前后约两个月，准备了许多，未通过的确有些遗憾，希望接下来会有更多机会，共勉。
 
-69. 2023(7-9月) 码农类General 硕士 全职@amazon - 网上海投 - 视频面试  | 😐 Neutral 😣 HardFail | 其他
+68. 2023(7-9月) 码农类General 硕士 全职@amazon - 网上海投 - 视频面试  | 😐 Neutral 😣 HardFail | 其他
 
     > 1. OOD: design a log interface including date, time, msg, level
     > 2. coding test: find the minimum distance from Manhattan
     > 3. system design: design software for vending machines sold Amazon Kindles
     > 4. coding test: merge streams into a single stream and get the minimum value.
 
-70. 2023(7-9月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面  | 😐 Neutral 😣 HardFail | 在职跳槽
+69. 2023(7-9月) 码农类General 硕士 全职@amazon - 网上海投 - 技术电面  | 😐 Neutral 😣 HardFail | 在职跳槽
 
     > 去年九月过的电面，然后freeze。今年recuiter又来联系，换了个组从头开始面。
     >
@@ -1365,7 +2873,7 @@
     >
     >   心碎，现在电面也有system design了吗？recuiter完全没提，也完全没准备过。。。。欸。给点米修复下心情吧。
 
-71. 2023(4-6月) 码农类General 本科 全职@amazon - 内推 - 技术电面 Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
+70. 2023(4-6月) 码农类General 本科 全职@amazon - 内推 - 技术电面 Onsite  | 🙁 Negative 😣 HardFail | 在职跳槽
 
     > 总结：so stressful，VO真的反人类，连着面四场，每场只有十分钟休息。一开始还是想着我要好好表现，到后来就摆烂了。
     > BQ都在问关于ownership, customer obsession，right a lot, have backbone, deliver result, high standard。准备了60%的例子都没有用到，就几个故事来来回回说。

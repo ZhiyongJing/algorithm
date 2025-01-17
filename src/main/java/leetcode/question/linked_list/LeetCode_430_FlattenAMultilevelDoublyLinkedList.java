@@ -34,7 +34,7 @@ package leetcode.question.linked_list;
  * **核心思想：深度优先搜索 (DFS) + 双向链表操作**
  * - 使用递归方法对链表进行深度优先搜索，将每个节点按照 DFS 的顺序连接起来。
  * - 每当遇到一个 `child` 指针时，递归处理子链表，并将子链表的节点插入到当前链表中。
- * - 使用一个伪头节点（`pseudoHead`）简化边界条件处理，最后将伪头节点与实际头节点分离。
+ * - 使用一个伪头节点（`dummy`）简化边界条件处理，最后将伪头节点与实际头节点分离。
  *
  * **主要操作步骤：**
  * 1. **递归函数 flattenDFS(prev, curr)**
@@ -48,8 +48,8 @@ package leetcode.question.linked_list;
  *
  * ------------------------------
  * **步骤1：创建伪头节点**
- * - 使用一个伪头节点 `pseudoHead`，简化链表的边界操作。
- * - 将 `pseudoHead.next` 指向原链表的头节点。
+ * - 使用一个伪头节点 `dummy`，简化链表的边界操作。
+ * - 将 `dummy.next` 指向原链表的头节点。
  *
  * **步骤2：递归扁平化链表**
  * - 从头节点开始，递归处理每个节点。
@@ -130,14 +130,14 @@ class Node {
             // 如果头结点为空，直接返回
             if (head == null) return head;
             // 创建一个伪头节点，确保 `prev` 指针从不为空
-            Node pseudoHead = new Node(0, null, head, null);
+            Node dummy = new Node(0, null, head, null);
 
             // 递归地扁平化链表
-            flattenDFS(pseudoHead, head);
+            flattenDFS(dummy, head);
 
             // 将伪头节点与实际的头节点分离
-            pseudoHead.next.prev = null;
-            return pseudoHead.next;
+            dummy.next.prev = null;
+            return dummy.next;
         }
 
         /* 返回扁平化链表的尾部节点 */

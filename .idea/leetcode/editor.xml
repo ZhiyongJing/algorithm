@@ -25,6 +25,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_518_CoinChangeIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_518_CoinChangeIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com518" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_518_CoinChangeIi.java" />
+              <option name="titleSlug" value="coin-change-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_102_BinaryTreeLevelOrderTraversal.java">
           <value>
             <LeetcodeEditor>
@@ -2382,10 +2393,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_518_CoinChangeIi.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_518_CoinChangeIi.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_518_CoinChangeIi.md" />
               <option name="frontendQuestionId" value="leetcode.com518" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_518_CoinChangeIi.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_518_CoinChangeIi.java" />
               <option name="titleSlug" value="coin-change-ii" />
             </LeetcodeEditor>
           </value>

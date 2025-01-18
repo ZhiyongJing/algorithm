@@ -3534,6 +3534,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_325_MaximumSizeSubarraySumEqualsK.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/doc/content/LeetCode_325_MaximumSizeSubarraySumEqualsK.md" />
+              <option name="frontendQuestionId" value="leetcode.com325" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_325_MaximumSizeSubarraySumEqualsK.java" />
+              <option name="titleSlug" value="maximum-size-subarray-sum-equals-k" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_327_CountOfRangeSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/doc/content/LeetCode_327_CountOfRangeSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com327" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_327_CountOfRangeSum.java" />
+              <option name="titleSlug" value="count-of-range-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_523_ContinuousSubarraySum.java">
           <value>
             <LeetcodeEditor>
@@ -3545,6 +3567,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_525_ContiguousArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/doc/content/LeetCode_525_ContiguousArray.md" />
+              <option name="frontendQuestionId" value="leetcode.com525" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_525_ContiguousArray.java" />
+              <option name="titleSlug" value="contiguous-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_53_MaximumSubarray.java">
           <value>
             <LeetcodeEditor>
@@ -3553,6 +3586,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_53_MaximumSubarray.java" />
               <option name="titleSlug" value="maximum-subarray" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_560_SubarraySumEqualsK.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/doc/content/LeetCode_560_SubarraySumEqualsK.md" />
+              <option name="frontendQuestionId" value="leetcode.com560" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_560_SubarraySumEqualsK.java" />
+              <option name="titleSlug" value="subarray-sum-equals-k" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4615,10 +4659,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_325_MaximumSizeSubarraySumEqualsK.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_325_MaximumSizeSubarraySumEqualsK.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/doc/content/LeetCode_325_MaximumSizeSubarraySumEqualsK.md" />
               <option name="frontendQuestionId" value="leetcode.com325" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_325_MaximumSizeSubarraySumEqualsK.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_325_MaximumSizeSubarraySumEqualsK.java" />
               <option name="titleSlug" value="maximum-size-subarray-sum-equals-k" />
             </LeetcodeEditor>
           </value>

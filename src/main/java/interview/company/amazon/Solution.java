@@ -56,61 +56,40 @@ package interview.company.amazon;
  *   - 额外的堆存储 O(k)
  */
 
-import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class Solution {
-    public int getMaxSumArr(int[] item_weights) {
-        int n = item_weights.length;
-        int k = n / 3;  // 要移除的元素数量
+    public static int reduceGifts(int[] prices, int k, int threshold) {
+        int n = prices.length;
+        int removals = 0; // Track the minimum removals
 
-        // 1) 计算 leftSums：前 i 个元素里，选 k 个最大元素的和
-        long[] leftSums = new long[n + 1];
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // 小顶堆
-        long currentSum = 0;
+        // Use sliding window to track k-elements sum
+        int windowSum = 0;
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a); // MaxHeap to remove max elements
 
         for (int i = 0; i < n; i++) {
-            minHeap.offer(item_weights[i]);
-            currentSum += item_weights[i];
+            windowSum += prices[i]; // Add current element to sum
+            maxHeap.offer(prices[i]); // Add to heap
 
-            if (minHeap.size() > k) {
-                currentSum -= minHeap.poll();  // 移除最小元素
-            }
-            leftSums[i + 1] = (minHeap.size() == k) ? currentSum : Long.MIN_VALUE;
-        }
+            // Once we have k elements, check if they exceed threshold
+            if (i >= k - 1) {
+                if (windowSum > threshold) {
+                    removals++; // Increase removal count
+                    windowSum -= maxHeap.poll(); // Remove max element from sum
+                }
 
-        // 2) 计算 rightSums：后 i 个元素里，选 k 个最小元素的和
-        long[] rightSums = new long[n + 1];
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder()); // 大顶堆
-        currentSum = 0;
-
-        for (int i = n - 1; i >= 0; i--) {
-            maxHeap.offer(item_weights[i]);
-            currentSum += item_weights[i];
-
-            if (maxHeap.size() > k) {
-                currentSum -= maxHeap.poll();  // 移除最大元素
-            }
-            rightSums[i] = (maxHeap.size() == k) ? currentSum : Long.MAX_VALUE;
-        }
-
-        // 3) 遍历 k ≤ i ≤ 2k，求最大 (leftSums[i] - rightSums[i])
-        long answer = Long.MIN_VALUE;
-        for (int i = k; i <= 2 * k; i++) {
-            if (leftSums[i] != Long.MIN_VALUE && rightSums[i] != Long.MAX_VALUE) {
-                answer = Math.max(answer, leftSums[i] - rightSums[i]);
+                // Slide the window: Remove leftmost element
+                windowSum -= prices[i - k + 1];
+                maxHeap.remove(prices[i - k + 1]); // Remove from heap
             }
         }
-
-        return (int) answer;
+        return removals;
     }
 
     public static void main(String[] args) {
-        Solution sol = new Solution();
-        int[] test1 = {1, 3, 4, 7, 5, 2};
-        System.out.println("最大 sum_arr: " + sol.getMaxSumArr(test1)); // 预期输出: 4
-
-        int[] test2 = {3, 2, 1};
-        System.out.println("最大 sum_arr: " + sol.getMaxSumArr(test2)); // 2
+        int[] prices = {3, 2, 1, 4, 6, 5};
+        int k = 3;
+        int threshold = 14;
+        System.out.println(reduceGifts(prices, k, threshold)); // Expected output: 1
     }
 }

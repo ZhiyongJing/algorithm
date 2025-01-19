@@ -87,19 +87,24 @@ public class LeetCode_102_BinaryTreeLevelOrderTraversal {
 
             int level = 0;
             queue.add(node);
-            while(!queue.isEmpty()){
+//            while(!queue.isEmpty()){
+//
+//                levels.add(new ArrayList<>());
+//
+//                int level_length = queue.size();
+//                for(int i = 0; i < level_length; i++){
+//                    TreeNode currentNode = queue.remove();
+//                    levels.get(level).add(currentNode.val);
+//                    if (currentNode.left != null) queue.add(currentNode.left);
+//                    if (currentNode.right != null) queue.add(currentNode.right);
+//
+//                }
+//                level++;
+//
+//            }
+            while(queue.size() != 0){
+                TreeNode currentNode = queue.poll();
 
-                levels.add(new ArrayList<>());
-
-                int level_length = queue.size();
-                for(int i = 0; i < level_length; i++){
-                    TreeNode currentNode = queue.remove();
-                    levels.get(level).add(currentNode.val);
-                    if (currentNode.left != null) queue.add(currentNode.left);
-                    if (currentNode.right != null) queue.add(currentNode.right);
-
-                }
-                level++;
 
             }
 

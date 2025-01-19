@@ -1,4 +1,4 @@
-#### 1. Amazon financial optimization tool manage coins
+#### 1. getFinalValue
 
 ![img](AmazonOA.assets/31914b81f7kv1jcnpi7nm-7076995.jpg)
 
@@ -705,7 +705,7 @@ getMaximumAlternatingMusic has the following parameters:
 
 ![img](AmazonOA.assets/035591rlrxwq3pojyewhp-7080956.jpg)
 
-#### 16. Amazon database does not suppport large number
+#### 16. getMinErrors(done)
 
 ![img](AmazonOA.assets/03613etltuxldkcehn4qy-7080956.jpg)
 
@@ -1636,7 +1636,159 @@ public class AmazonOa {
 第一题我之前没见过，是一个happy coin collection的题目。就是说有N个硬币，如果head都在tail前面，那它就是happy collection。如果全T或者全H也是happy collection。比如"HHHHTT"和“TTTTTT”就都是个happy collection。题目是给你一个只含H和T的string，问minimum flip to make it a happy collection。比如给定“HHHHTH”，那就return 1。
 我是从前到后和从后到前遍历两边string，从前到后算T变H要变多少次，从后到前算H变T要变多少次，flips[i] = flipH[i] + flipT[i] 最后返回min(flips) 就好了
 
-#### 27 maximumCharge
+```java
+package leetcode.question.dp;
+/**
+ *@Question:  926. Flip String to Monotone Increasing
+ *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
+ *@Frequency: 19.62%
+ *@Time  Complexity: O(N)
+ *@Space Complexity: O(1)
+ */
+
+/**
+ * 题目描述：
+ * ----------------------
+ * 给定一个仅包含字符 '0' 和 '1' 的二进制字符串 `s`，要求通过最少的翻转次数，使得 `s` 变为 **单调递增的字符串**。
+ * - **单调递增字符串** 指的是 **任意位置的 '1' 都不能出现在 '0' 之前**，即字符串形态必须是 `000...111`。
+ * - **允许的操作**：翻转任意一个字符，即 '0' -> '1' 或 '1' -> '0'。
+ * - 目标是求 **最小翻转次数**。
+ *
+ * 示例：
+ * 1. **输入**: `s = "00110"`
+ *    - 可能的翻转方式：
+ *      - 翻转 `s[2]`（索引从 0 开始）得到 `"00010"`（翻转次数 = 1）
+ *      - 翻转 `s[3]` 也可以达到相同效果
+ *    - **输出**: `1`
+ *
+ * 2. **输入**: `s = "010110"`
+ *    - 可能的翻转方式：
+ *      - 翻转 `s[1]` 和 `s[3]`，变成 `"000111"`（翻转次数 = 2）
+ *    - **输出**: `2`
+ *
+ * 3. **输入**: `s = "00011000"`
+ *    - 可能的翻转方式：
+ *      - 翻转 `s[4]` 和 `s[5]`，变成 `"00000000"`（翻转次数 = 2）
+ *    - **输出**: `2`
+ *
+ * ----------------------
+ *
+ * 解题思路：
+ * ----------------------
+ * **方法 1：双指针（前缀+后缀统计）**
+ * 1. **计算所有 `0` 的数量**：假设最优策略是将所有 `0` 翻转为 `1`，初始化 `m = 所有 '0' 的个数`。
+ * 2. **遍历字符串**：
+ *    - 遇到 `'0'`：减少 `m`，表示少翻转一个 `0`（因为它本身就应该是 `0`）。
+ *    - 遇到 `'1'`：增加 `m`，表示必须翻转这个 `1` 以保持单调递增。
+ * 3. **最终 `m` 的最小值就是最优解**。
+ *
+ * **方法 2：动态规划**
+ * 1. 维护 `ans`（最小翻转次数）和 `num`（前面 `1` 的个数）。
+ * 2. 遍历字符串：
+ *    - 如果 `s[i] == '0'`，说明有两种选择：
+ *      - 直接翻转 `0` -> `1`，保持前面 `1` 的数量不变。
+ *      - 让 `1` 继续保持单调递增，并翻转前面的 `1` 使其变为 `0`。
+ *    - 取两种情况的最小值更新 `ans`。
+ * 3. 如果 `s[i] == '1'`，则直接增加 `num` 计数（意味着 `1` 需要维持单调性）。
+ *
+ * **示例分析**
+ * 输入：`s = "00110"`
+ * - `ans = 0, num = 0`
+ * - 遍历 `s`：
+ *   - `s[0] = '0'` -> `ans = min(num=0, ans+1=1) = 0`
+ *   - `s[1] = '0'` -> `ans = min(num=0, ans+1=1) = 0`
+ *   - `s[2] = '1'` -> `num = 1`
+ *   - `s[3] = '1'` -> `num = 2`
+ *   - `s[4] = '0'` -> `ans = min(num=2, ans+1=1) = 1`
+ * - **输出**: `1`
+ *
+ * ----------------------
+ *
+ * 时间和空间复杂度：
+ * ----------------------
+ * **方法 1：双指针**
+ * - **时间复杂度：O(N)** （两次遍历计算 `m` 和 `ans`）
+ * - **空间复杂度：O(1)** （只使用额外的整数变量）
+ *
+ * **方法 2：动态规划**
+ * - **时间复杂度：O(N)** （单次遍历字符串）
+ * - **空间复杂度：O(1)** （只存储 `ans` 和 `num`）
+ *
+ */
+
+
+public class LeetCode_926_FlipStringToMonotoneIncreasing{
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        // Solution1: Two Pointer（双指针）
+        // 该方法通过遍历字符串两次来计算最小的翻转次数，使字符串变成单调递增的形式
+        public int minFlipsMonoIncr(String s) {
+            int m = 0; // 记录字符串中 '0' 的总个数
+            for (int i = 0; i < s.length(); ++i) {
+                if (s.charAt(i) == '0') {
+                    ++m; // 统计 '0' 的总个数
+                }
+            }
+            int ans = m; // 初始化最小翻转次数为所有 '0' 的个数（假设全部翻转为 '1'）
+            for (int i = 0; i < s.length(); ++i) {
+                if (s.charAt(i) == '0') {
+                    ans = Math.min(ans, --m); // 遇到 '0'，减少 m，并更新最小翻转次数
+                } else {
+                    ++m; // 遇到 '1'，增加 m（表示翻转 '1' 为 '0' 的需求）
+                }
+            }
+            return ans;
+        }
+
+        // Solution2: Dynamic Programming（动态规划）
+        // 该方法使用动态规划来计算最小翻转次数，使字符串变成单调递增的形式
+        public int minFlipsMonoIncr2(String s) {
+            int ans = 0; // 记录最小翻转次数
+            int num = 0; // 记录当前位置之前 '1' 的个数（不翻转的 '1' 的计数）
+            for (int i = 0; i < s.length(); ++i) {
+                if (s.charAt(i) == '0') {
+                    // 如果当前字符是 '0'，有两种选择：
+                    // 1. 继续维持当前翻转次数 ans
+                    // 2. 翻转当前 '0'，因此 ans + 1
+                    ans = Math.min(num, ans + 1);
+                } else {
+                    // 当前字符是 '1'，我们不需要翻转，但 '1' 的个数需要增加
+                    ++num;
+                }
+            }
+            return ans;
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
+
+
+    public static void main(String[] args) {
+        Solution solution = new LeetCode_926_FlipStringToMonotoneIncreasing().new Solution();
+
+        // 测试样例
+        String s1 = "00110";
+        System.out.println("Input: " + s1);
+        System.out.println("Two Pointer Solution Output: " + solution.minFlipsMonoIncr(s1)); // 预期输出: 1
+        System.out.println("DP Solution Output: " + solution.minFlipsMonoIncr2(s1)); // 预期输出: 1
+
+        String s2 = "010110";
+        System.out.println("Input: " + s2);
+        System.out.println("Two Pointer Solution Output: " + solution.minFlipsMonoIncr(s2)); // 预期输出: 2
+        System.out.println("DP Solution Output: " + solution.minFlipsMonoIncr2(s2)); // 预期输出: 2
+
+        String s3 = "00011000";
+        System.out.println("Input: " + s3);
+        System.out.println("Two Pointer Solution Output: " + solution.minFlipsMonoIncr(s3)); // 预期输出: 2
+        System.out.println("DP Solution Output: " + solution.minFlipsMonoIncr2(s3)); // 预期输出: 2
+    }
+}
+
+```
+
+
+
+#### 27 maximumCharge(done)
 
 Select a system and remove it, causing the neighboring systems to automatically merge and combine their charge values.
 If the removed system has neighboring systems with charges x and y directly to its left and right, they will combine to form a new system with charge x + y. No combination will take place if the system is the leftmost or rightmost in the array.
@@ -2485,40 +2637,52 @@ Amazon Delivery Centers dispatch parcels every day. There are n delivery centers
 On each day, an equal number of parcels are to be dispatched from each delivery center that has at least one parcel remaining.
 Find the minimum number of days needed to deliver all the parcels.
 
->
-> Example
-> parcels = [2, 3, 4, 3, 3]
->
->
-> All parcels can be delivered in a minimum of 3 days.
->
->
-> Function Description
-> Complete the function minDaysToDeliverParcels in the editor below.
-> minDays ToDeliverParcels has the following parameters: int parcels[n]: the number of parcels at each center
->
->
-> Returns
-> parcels
-> int: the minimum number of days needed to deliver all the
->
->
-> Constraints
->
-> • 1 ≤n≤ 10^6
-> • 0 ≤ parcels[i] ≤ 10^9
->
->
-> Sample Input For Custom Testing
-> STDIN
-> parcels[] size, n = 6
-> parcels = [3, 3, 3, 3, 3, 3]
-> Sample Output
-> 1
-> Explanation
-> Each delivery center can dispatch its 3 parcels on the first day.
->
-> 
+Example
+parcels = [2, 3, 4, 3, 3]
+
+
+All parcels can be delivered in a minimum of 3 days.
+
+
+Function Description
+Complete the function minDaysToDeliverParcels in the editor below.
+minDays ToDeliverParcels has the following parameters: int parcels[n]: the number of parcels at each center
+
+
+Returns
+parcels
+int: the minimum number of days needed to deliver all the
+
+
+Constraints
+
+• 1 ≤n≤ 10^6
+• 0 ≤ parcels[i] ≤ 10^9
+
+Sample Input For Custom Testing
+STDIN
+parcels[] size, n = 6
+parcels = [3, 3, 3, 3, 3, 3]
+Sample Output
+1
+Explanation
+Each delivery center can dispatch its 3 parcels on the first day.
+
+```java
+class Solution {
+        public int minimumOperations(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int a: nums)
+            if (a > 0)
+                set.add(a);
+        return set.size();
+    }
+}
+```
+
+
+
+
 
 #### 47. 
 
@@ -2707,11 +2871,42 @@ Find Longest Regex
 🔗 www.1point3acres.com
 后面是software engineer work simulation，这个可能是看个人选择，但是尽量贴着16条lp选：ownership，think big！
 
-#### 53
+#### 53. getMinRemoval(done)
 
 第一题：https://www.fastprep.io/problems/amazon-get-min-removal
 
-#### 54 getMaxSkillSum
+```java
+public int getminRemoval(int[] catalogue, int k) {
+  int min = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        Comparator<Integer> comparator = new Comparator<>(){
+            @Override
+            public int compare(Integer i1, Integer i2){
+                return map.get(i1) - map.get(i2);
+            }
+        };
+        PriorityQueue<Integer> pq = new PriorityQueue<>(comparator);
+
+        for(int cat: catalogue){
+            map.put(cat, map.getOrDefault(cat, 0)+1);
+        }
+
+        for(int key: map.keySet()){
+            pq.add(key);
+        }
+
+        while (pq.size() != k) {
+            int polled = pq.poll();
+            min += map.get(polled);
+        }
+
+        return min;
+}
+```
+
+
+
+#### 54 getMaxSkillSum(done)
 
 第二题：https://www.fastprep.io/problems/amazon-get-max-skill-sum
 
@@ -2907,11 +3102,114 @@ public class Solution {
 >
 > ![img](AmazonOA.assets/0170ybjgk97i1wvbzkzj-7080956.jpeg)
 
-#### 69
+#### 69. reduceGift
 
 
 
-> ![img](AmazonOA.assets/20270z0ikhdh43lsi3ktz-7080956.jpg)
+![img](AmazonOA.assets/20270z0ikhdh43lsi3ktz-7080956.jpg)
+
+```java
+/**
+ * 题目描述：
+ * 亚马逊团队正在进行新年促销活动。他们有一个价格列表 `prices[]`，
+ * 需要确保任意 `k` 个连续商品的总价格不超过 `threshold`。
+ * 他们可以移除一些商品，以最小化移除的数量，使得所有 `k` 个连续商品的总和符合要求。
+ *
+ * 任务：
+ * 计算最少需要移除多少个商品，以满足所有 `k` 个连续商品的价格总和不超过 `threshold`。
+ *
+ * 示例：
+ * 输入：
+ * prices = [3, 2, 1, 4, 6, 5]
+ * k = 3
+ * threshold = 14
+ *
+ * 计算：
+ * - 计算所有 `k=3` 的连续子数组的和：
+ *   [3, 2, 1] -> 6
+ *   [2, 1, 4] -> 7
+ *   [1, 4, 6] -> 11
+ *   [4, 6, 5] -> 15 (超出 threshold)
+ * - 需要移除 `6` 以满足要求。
+ *
+ * 输出：
+ * 1 （需要移除 1 个元素）
+ */
+
+/**
+ * 解题思路：
+ * 1. **滑动窗口 + 最大堆**
+ *    - 维护一个大小为 `k` 的滑动窗口，并计算当前窗口的和 `windowSum`。
+ *    - 采用 **最大堆 (MaxHeap)** 记录窗口中的最大元素，以便在超出 `threshold` 时快速移除最大元素。
+ *    
+ * 2. **遍历 `prices[]`**
+ *    - 计算 `k` 长度的窗口的总和 `windowSum`。
+ *    - 如果 `windowSum > threshold`：
+ *      - **移除最大值**（通过 `PriorityQueue` 最大堆）。
+ *      - 计数 `removals++`。
+ *    - 向右滑动窗口，移除左侧元素。
+ *    
+ * 3. **示例解释**
+ *    - `prices = [3, 2, 1, 4, 6, 5]`，`k = 3`，`threshold = 14`
+ *    - 计算 `k=3` 的窗口和：
+ *      - `[3, 2, 1]` -> 6 ✅
+ *      - `[2, 1, 4]` -> 7 ✅
+ *      - `[1, 4, 6]` -> 11 ✅
+ *      - `[4, 6, 5]` -> 15 ❌ (超过 `14`，需移除 `6`)
+ *      - 只需移除 `6`，最终返回 `1`
+ */
+
+/**
+ * 时间 & 空间复杂度分析：
+ * - **时间复杂度：O(n log k)**
+ *   - 计算 `k` 个窗口和需要 `O(n)`
+ *   - 使用 **最大堆** 进行移除操作 `O(log k)`
+ *   - 总复杂度 `O(n log k)`
+ *
+ * - **空间复杂度：O(k)**
+ *   - 需要一个 **最大堆** 维护 `k` 个元素
+ */
+import java.util.PriorityQueue;
+
+public class AmazonReduceGifts {
+    public static int reduceGifts(int[] prices, int k, int threshold) {
+        int n = prices.length;
+        int removals = 0; // Track the minimum removals
+
+        // Use sliding window to track k-elements sum
+        int windowSum = 0;
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a); // MaxHeap to remove max elements
+
+        for (int i = 0; i < n; i++) {
+            windowSum += prices[i]; // Add current element to sum
+            maxHeap.offer(prices[i]); // Add to heap
+
+            // Once we have k elements, check if they exceed threshold
+            if (i >= k - 1) {
+                if (windowSum > threshold) {
+                    removals++; // Increase removal count
+                    windowSum -= maxHeap.poll(); // Remove max element from sum
+                }
+
+                // Slide the window: Remove leftmost element
+                windowSum -= prices[i - k + 1];
+                maxHeap.remove(prices[i - k + 1]); // Remove from heap
+            }
+        }
+        return removals;
+    }
+
+    public static void main(String[] args) {
+        int[] prices = {3, 2, 1, 4, 6, 5};
+        int k = 3;
+        int threshold = 14;
+        System.out.println(reduceGifts(prices, k, threshold)); // Expected output: 1
+    }
+}
+
+```
+
+
 
 #### 70 
 

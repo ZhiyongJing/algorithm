@@ -8,90 +8,143 @@ package leetcode.question.dp;
  */
 
 /**
- * 问题描述：
+ * 题目描述：
+ * ----------------------
+ * 给定一个仅包含字符 '0' 和 '1' 的二进制字符串 `s`，要求通过最少的翻转次数，使得 `s` 变为 **单调递增的字符串**。
+ * - **单调递增字符串** 指的是 **任意位置的 '1' 都不能出现在 '0' 之前**，即字符串形态必须是 `000...111`。
+ * - **允许的操作**：翻转任意一个字符，即 '0' -> '1' 或 '1' -> '0'。
+ * - 目标是求 **最小翻转次数**。
  *
- * 给定一个由字符 '0' 和 '1' 组成的字符串 `s`，我们可以将任何 '0' 翻转为 '1' 或者将 '1' 翻转为 '0'。
+ * 示例：
+ * 1. **输入**: `s = "00110"`
+ *    - 可能的翻转方式：
+ *      - 翻转 `s[2]`（索引从 0 开始）得到 `"00010"`（翻转次数 = 1）
+ *      - 翻转 `s[3]` 也可以达到相同效果
+ *    - **输出**: `1`
  *
- * 要求返回使 `s` 变成一个单调递增字符串所需的最小翻转次数。
+ * 2. **输入**: `s = "010110"`
+ *    - 可能的翻转方式：
+ *      - 翻转 `s[1]` 和 `s[3]`，变成 `"000111"`（翻转次数 = 2）
+ *    - **输出**: `2`
+ *
+ * 3. **输入**: `s = "00011000"`
+ *    - 可能的翻转方式：
+ *      - 翻转 `s[4]` 和 `s[5]`，变成 `"00000000"`（翻转次数 = 2）
+ *    - **输出**: `2`
+ *
+ * ----------------------
  *
  * 解题思路：
+ * ----------------------
+ * **方法 1：双指针（前缀+后缀统计）**
+ * 1. **计算所有 `0` 的数量**：假设最优策略是将所有 `0` 翻转为 `1`，初始化 `m = 所有 '0' 的个数`。
+ * 2. **遍历字符串**：
+ *    - 遇到 `'0'`：减少 `m`，表示少翻转一个 `0`（因为它本身就应该是 `0`）。
+ *    - 遇到 `'1'`：增加 `m`，表示必须翻转这个 `1` 以保持单调递增。
+ * 3. **最终 `m` 的最小值就是最优解**。
  *
- * 1. **双指针解法**：
- *    - 首先，遍历字符串 `s` 统计字符 '0' 的个数，记为 `m`。这代表如果我们把所有的 '0' 都转换为 '1'，需要的最小翻转次数。
- *    - 使用 `ans` 记录当前的最小翻转次数，初始化为 `m`。
- *    - 遍历字符串 `s`，如果遇到 '0'，则将 `m` 减一，表示当前位置的 '0' 已经被翻转为 '1'，更新 `ans` 为当前 `ans` 和 `m` 的较小值。
- *    - 如果遇到 '1'，则将 `m` 加一，表示当前位置的 '1' 不需要翻转。
- *    - 最终返回 `ans` 即为最小翻转次数。
+ * **方法 2：动态规划**
+ * 1. 维护 `ans`（最小翻转次数）和 `num`（前面 `1` 的个数）。
+ * 2. 遍历字符串：
+ *    - 如果 `s[i] == '0'`，说明有两种选择：
+ *      - 直接翻转 `0` -> `1`，保持前面 `1` 的数量不变。
+ *      - 让 `1` 继续保持单调递增，并翻转前面的 `1` 使其变为 `0`。
+ *    - 取两种情况的最小值更新 `ans`。
+ * 3. 如果 `s[i] == '1'`，则直接增加 `num` 计数（意味着 `1` 需要维持单调性）。
  *
- * 2. **动态规划解法**：
- *    - 使用两个变量 `ans` 和 `num`，其中 `ans` 记录最小翻转次数，`num` 记录当前位置之前 '1' 的个数。
- *    - 遍历字符串 `s`，如果当前位置是 '0'，则考虑将其翻转为 '1'，需要的翻转次数是 `ans + 1`（即前一个位置的最优解加一）。
- *    - 如果当前位置是 '1'，则 `num` 增加。
- *    - 每次更新 `ans` 为当前 `ans` 和 `num` 的较小值。
- *    - 最终返回 `ans` 即为最小翻转次数。
+ * **示例分析**
+ * 输入：`s = "00110"`
+ * - `ans = 0, num = 0`
+ * - 遍历 `s`：
+ *   - `s[0] = '0'` -> `ans = min(num=0, ans+1=1) = 0`
+ *   - `s[1] = '0'` -> `ans = min(num=0, ans+1=1) = 0`
+ *   - `s[2] = '1'` -> `num = 1`
+ *   - `s[3] = '1'` -> `num = 2`
+ *   - `s[4] = '0'` -> `ans = min(num=2, ans+1=1) = 1`
+ * - **输出**: `1`
  *
- * 时间复杂度分析：
+ * ----------------------
  *
- * - **双指针解法**：时间复杂度为 O(N)，其中 N 是字符串 `s` 的长度。需要两次遍历字符串 `s`，每次遍历的时间复杂度为 O(N)。
- * - **动态规划解法**：时间复杂度同样为 O(N)，因为只需要一次遍历字符串 `s`。
+ * 时间和空间复杂度：
+ * ----------------------
+ * **方法 1：双指针**
+ * - **时间复杂度：O(N)** （两次遍历计算 `m` 和 `ans`）
+ * - **空间复杂度：O(1)** （只使用额外的整数变量）
  *
- * 空间复杂度分析：
+ * **方法 2：动态规划**
+ * - **时间复杂度：O(N)** （单次遍历字符串）
+ * - **空间复杂度：O(1)** （只存储 `ans` 和 `num`）
  *
- * - **双指针解法**：空间复杂度为 O(1)，只需要常数级别的额外空间存储变量 `m` 和 `ans`。
- * - **动态规划解法**：空间复杂度为 O(1)，同样只需要常数级别的额外空间存储变量 `ans` 和 `num`。
- *
- * 综上所述，两种解法都能在线性时间内解决问题，并且使用了常数级别的额外空间，是比较高效的解决方案。
  */
+
 
 public class LeetCode_926_FlipStringToMonotoneIncreasing{
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        // Solution1: two pointer
-        // 使用双指针的解决方案
+        // Solution1: Two Pointer（双指针）
+        // 该方法通过遍历字符串两次来计算最小的翻转次数，使字符串变成单调递增的形式
         public int minFlipsMonoIncr(String s) {
-            int m = 0; // 记录字符串中 '0' 的个数
+            int m = 0; // 记录字符串中 '0' 的总个数
             for (int i = 0; i < s.length(); ++i) {
                 if (s.charAt(i) == '0') {
-                    ++m;
+                    ++m; // 统计 '0' 的总个数
                 }
             }
-            int ans = m; // 初始化最小翻转次数为 '0' 的个数
+            int ans = m; // 初始化最小翻转次数为所有 '0' 的个数（假设全部翻转为 '1'）
             for (int i = 0; i < s.length(); ++i) {
                 if (s.charAt(i) == '0') {
-                    ans = Math.min(ans, --m); // 遇到 '0'，将 m 减少，更新最小翻转次数
+                    ans = Math.min(ans, --m); // 遇到 '0'，减少 m，并更新最小翻转次数
                 } else {
-                    ++m; // 遇到 '1'，m 增加，表示不需要翻转
+                    ++m; // 遇到 '1'，增加 m（表示翻转 '1' 为 '0' 的需求）
                 }
             }
             return ans;
         }
 
-        //Solution2: DP
-        // 使用动态规划的解决方案
+        // Solution2: Dynamic Programming（动态规划）
+        // 该方法使用动态规划来计算最小翻转次数，使字符串变成单调递增的形式
         public int minFlipsMonoIncr2(String s) {
-            int ans = 0, num = 0; // ans 记录最小翻转次数，num 记录当前位置之前 '1' 的个数
+            int ans = 0; // 记录最小翻转次数
+            int num = 0; // 记录当前位置之前 '1' 的个数（不翻转的 '1' 的计数）
             for (int i = 0; i < s.length(); ++i) {
                 if (s.charAt(i) == '0') {
-                    ans = Math.min(num, ans + 1); // 如果当前位置是 '0'，考虑前一个位置是最优的情况
+                    // 如果当前字符是 '0'，有两种选择：
+                    // 1. 继续维持当前翻转次数 ans
+                    // 2. 翻转当前 '0'，因此 ans + 1
+                    ans = Math.min(num, ans + 1);
                 } else {
-                    ++num; // 如果当前位置是 '1'，则 '1' 的个数增加
+                    // 当前字符是 '1'，我们不需要翻转，但 '1' 的个数需要增加
+                    ++num;
                 }
             }
             return ans;
         }
     }
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 
     public static void main(String[] args) {
         Solution solution = new LeetCode_926_FlipStringToMonotoneIncreasing().new Solution();
-        // TO TEST
-        String s = "00110";
-        System.out.println(solution.minFlipsMonoIncr(s)); // Expected output: 1
-        System.out.println(solution.minFlipsMonoIncr2(s)); // Expected output: 1
+
+        // 测试样例
+        String s1 = "00110";
+        System.out.println("Input: " + s1);
+        System.out.println("Two Pointer Solution Output: " + solution.minFlipsMonoIncr(s1)); // 预期输出: 1
+        System.out.println("DP Solution Output: " + solution.minFlipsMonoIncr2(s1)); // 预期输出: 1
+
+        String s2 = "010110";
+        System.out.println("Input: " + s2);
+        System.out.println("Two Pointer Solution Output: " + solution.minFlipsMonoIncr(s2)); // 预期输出: 2
+        System.out.println("DP Solution Output: " + solution.minFlipsMonoIncr2(s2)); // 预期输出: 2
+
+        String s3 = "00011000";
+        System.out.println("Input: " + s3);
+        System.out.println("Two Pointer Solution Output: " + solution.minFlipsMonoIncr(s3)); // 预期输出: 2
+        System.out.println("DP Solution Output: " + solution.minFlipsMonoIncr2(s3)); // 预期输出: 2
     }
 }
+
 
 /**
 A binary string is monotone increasing if it consists of some number of 0's (

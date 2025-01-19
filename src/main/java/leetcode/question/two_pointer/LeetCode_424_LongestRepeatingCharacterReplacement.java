@@ -9,28 +9,65 @@ package leetcode.question.two_pointer;
  */
 
 /**
- * **解题思路：**
+ * 题目描述：
+ * 给定一个仅包含大写英文字母的字符串 `s`，以及一个整数 `k`，
+ * 你可以选择字符串中的任意 `k` 个字符，将其替换为任何其他大写英文字母。
  *
- * 这个问题要求找到一个字符串中，通过最多替换 k 次字符，可以得到的相同字母的最长子串长度。
+ * 你的任务是：**找到最长的子串，使得该子串中的所有字符都相同**。
  *
- * 我们可以使用滑动窗口的方法来解决这个问题：
+ * 返回这个最长子串的长度。
  *
- * 1. 用两个指针 `start` 和 `end` 来表示滑动窗口，`start` 表示窗口的左边界，`end` 表示窗口的右边界。
- * 2. 用一个数组 `frequencyMap` 来记录窗口中每个字符的频率。
- * 3. 用 `maxFrequency` 记录窗口中出现次数最多的字符的频率。
- * 4. 每次向右移动 `end` 指针，更新 `frequencyMap` 和 `maxFrequency`。
- * 5. 如果窗口中字符数减去最大频率大于 `k`，说明当前窗口无法通过替换 k 次字符得到相同字母的子串，需要收缩左指针 `start`。
- * 6. 每次移动 `start` 指针时，更新对应字符的频率，直到窗口重新满足条件。
- * 7. 在每一步中，记录当前窗口的长度，最终得到最长的子串长度。
+ * 示例：
+ * 输入: s = "ABAB", k = 2
+ * 输出: 4
+ * 解释: 通过替换两个 'A' 为 'B'（或反之），整个字符串变为 "BBBB"，长度为 4。
  *
- * **时间复杂度：**
- *
- * - 每个字符最多被访问两次，一次通过右指针向右移动，一次通过左指针向右移动。因此，时间复杂度是 O(N)，其中 N 是字符串的长度。
- *
- * **空间复杂度：**
- *
- * - 使用了数组 `frequencyMap` 来记录字符频率，数组的大小是固定的，是 26。因此，空间复杂度是 O(1)。
+ * 输入: s = "AABABBA", k = 1
+ * 输出: 4
+ * 解释: 通过替换一个 'B' 为 'A'，最长的相同字符子串为 "AABA" 或 "ABAA"，长度为 4。
  */
+
+/**
+ * 解题思路：
+ * 该问题可以使用**滑动窗口（双指针）**方法来高效求解，避免暴力解法的 O(N²) 时间复杂度。
+ * 滑动窗口的核心思想是：
+ * 1. 维护两个指针 `start` 和 `end`，它们分别表示窗口的左右边界，初始化都指向字符串起始位置。
+ * 2. 维护一个数组 `frequencyMap`（大小为 26），用于存储窗口内各个字符的出现频率。
+ * 3. `end` 指针向右移动，扩展窗口，使窗口内的元素和逐渐增大，并更新窗口内出现**最多的字符次数 `maxFrequency`**。
+ * 4. 当窗口大小 `end - start + 1` **减去** `maxFrequency` **大于 k** 时，说明窗口已经无法通过 `k` 次替换变成一个纯字符的子串，
+ *    需要**移动 `start` 指针**来缩小窗口，使其重新满足条件。
+ * 5. 每次窗口满足条件时，更新最长子串的长度 `longestSubstringLength`。
+ * 6. 遍历完整个字符串后，返回最长的有效窗口长度。
+ *
+ * **示例步骤解析：**
+ * 示例输入：s = "AABABBA", k = 1
+ *
+ * 初始化：start = 0, end = 0, maxFrequency = 0, longestSubstringLength = 0
+ *
+ * - **Step 1**: end = 0，窗口 ["A"]，字符频率 {A:1}，maxFrequency = 1
+ * - **Step 2**: end = 1，窗口 ["AA"]，字符频率 {A:2}，maxFrequency = 2
+ * - **Step 3**: end = 2，窗口 ["AAB"]，字符频率 {A:2, B:1}，maxFrequency = 2
+ * - **Step 4**: end = 3，窗口 ["AABA"]，字符频率 {A:3, B:1}，maxFrequency = 3
+ * - **Step 5**: end = 4，窗口 ["AABAB"]，字符频率 {A:3, B:2}，maxFrequency = 3
+ * - **Step 6**: end = 5，窗口 ["AABABB"]，字符频率 {A:3, B:3}，maxFrequency = 3
+ *     - 由于 `窗口长度 (6) - maxFrequency (3) = 3 > k (1)`，窗口无效，start 右移
+ *     - 窗口变成 ["ABABB"]，字符频率 {A:2, B:3}，maxFrequency = 3
+ * - **Step 7**: end = 6，窗口 ["ABABBA"]，字符频率 {A:2, B:4}，maxFrequency = 4
+ *     - 由于 `窗口长度 (5) - maxFrequency (4) = 1 <= k (1)`，窗口有效，更新 longestSubstringLength = 4。
+ *
+ * 最终返回 `longestSubstringLength = 4`。
+ */
+
+/**
+ * 时间和空间复杂度分析：
+ * - **时间复杂度：O(N)**
+ *   - `end` 指针遍历整个字符串，每个字符最多被访问两次（一次进窗口，一次出窗口），所以时间复杂度为 `O(N)`。
+ *   - 这种方法比暴力解法的 `O(N²)` **大大优化**。
+ *
+ * - **空间复杂度：O(1)**
+ *   - 仅使用了一个固定大小的数组 `frequencyMap[26]` 来存储字符频率，因此额外空间为常数级 `O(1)`。
+ */
+
 
 public class LeetCode_424_LongestRepeatingCharacterReplacement {
 
@@ -43,59 +80,68 @@ public class LeetCode_424_LongestRepeatingCharacterReplacement {
          * @return 最长子串的长度
          */
         public int characterReplacement(String s, int k) {
+            // 定义滑动窗口的起始位置
             int start = 0;
+            // 记录窗口内每个字符的出现频率，数组大小为 26（对应英文字母 A-Z）
             int[] frequencyMap = new int[26];
+            // 记录窗口内出现频率最高的字符次数
             int maxFrequency = 0;
+            // 记录满足条件的最长子串长度
             int longestSubstringLength = 0;
 
+            // 遍历字符串，使用 `end` 指针扩展窗口
             for (int end = 0; end < s.length(); end += 1) {
-                // 计算当前字符的相对偏移
+                // 计算当前字符在 `A-Z` 中的相对偏移
                 int currentChar = s.charAt(end) - 'A';
 
+                // 更新当前字符在窗口内的出现次数
                 frequencyMap[currentChar] += 1;
 
-                // 更新最大频率
+                // 更新窗口内的最大字符频率（即窗口内出现最多的某个字符的次数）
                 maxFrequency = Math.max(maxFrequency, frequencyMap[currentChar]);
 
-                // 如果当前窗口无效，移动 start 指针向右
+                // 判断当前窗口是否有效，即窗口长度 - 窗口内最多字符的次数 <= k
                 Boolean isValid = (end + 1 - start - maxFrequency <= k);
                 if (!isValid) {
-                    // 计算移出窗口的字符的相对偏移
+                    // 计算即将移出窗口的字符的相对偏移
                     int outgoingChar = s.charAt(start) - 'A';
 
-                    // 减少该字符的频率
+                    // 减少该字符的频率（因为 `start` 指针要向右移动）
                     frequencyMap[outgoingChar] -= 1;
 
-                    // 向右移动 start 指针
+                    // 向右移动 `start` 指针，缩小窗口
                     start += 1;
                 }
 
-                // 窗口此时有效，记录窗口长度
+                // 计算当前有效窗口的长度
                 longestSubstringLength = end + 1 - start;
             }
 
+            // 返回最长子串的长度
             return longestSubstringLength;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)
 
-
     public static void main(String[] args) {
+        // 创建 Solution 实例
         LeetCode_424_LongestRepeatingCharacterReplacement.Solution solution =
                 new LeetCode_424_LongestRepeatingCharacterReplacement().new Solution();
 
-        // 测试代码
+        // 测试样例 1
         String input1 = "ABAB";
         int k1 = 2;
         int result1 = solution.characterReplacement(input1, k1);
         System.out.println("Example 1: " + result1);  // 预期输出: 4
 
+        // 测试样例 2
         String input2 = "AABABBA";
         int k2 = 1;
         int result2 = solution.characterReplacement(input2, k2);
         System.out.println("Example 2: " + result2);  // 预期输出: 4
     }
 }
+
 
 /**
 You are given a string s and an integer k. You can choose any character of the 

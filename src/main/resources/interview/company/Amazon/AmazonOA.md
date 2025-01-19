@@ -1,4 +1,4 @@
-#### 1. getFinalValue
+#### 1. getFinalValue(done)
 
 ![img](AmazonOA.assets/31914b81f7kv1jcnpi7nm-7076995.jpg)
 
@@ -163,7 +163,7 @@ public class AmazonCoinOptimization {
 给定一个只包含小写英文字母的字符串，返回第一个唯一字符的索引，使用1-based索引。
 例如：s = "statistics" 唯一字符是  a 和 c，其中 a 最先出现，按照1-based索引，它位于第3个位置
 
-#### 6. findOverlappingTime
+#### 6. findOverlappingTime(done)
 给定一组时间区间 [start, end]，合并并返回所有重叠的区间，结果需按照起始时间升序排序。
 例如：intervals = [[7, 7], [2, 3], [6, 11], [1, 2]] 答案为：[[1, 3], [6, 11]]
 
@@ -256,7 +256,7 @@ public class AmazonOa {
 
 
 
-#### 7. getMaximumEvents
+#### 7. getMaximumEvents(done)
 
 ![img](AmazonOA.assets/41928hosfkwwtac5dxo1d-7080956.png)
 
@@ -411,7 +411,7 @@ public class AmazonOa {
 
 第二个是两个人比赛，从数组A中拿到目前最大的数，最后求两个人的取得数的和的差。
 
-#### 10. Generate Lexicographically Smallest String
+#### 10. Generate Lexicographically Smallest String(done)
 
 Developers at Amazon are working on a test generation utility for one of their new products.
 
@@ -436,7 +436,6 @@ Important Considerations:
 
 1. If the character is "z", it is the last character in the alphabet and cannot be increased further. The string should not wrap around to "a" after "z"
 2. The output string must not have any adjacent characters that are the same.
-
 
 Example 1:
 Input s = "abccde" Sample Output "abcdab"
@@ -837,7 +836,7 @@ public class AmazonOa {
 
 很离谱，题目一大串，其实就是考 双链表，纯纯数据结构问题，没有算法，一遍过；
 
-#### 18. maximizeEfficiencyScore
+#### 18. maximizeEfficiencyScore(done)
 
 At Amazon, a user owns a unique tool called the "Parentheses Perfection Kit." This kit contains different types of parentheses, each with a specific efficiency rating. The goal is to create a balanced sequence of parentheses by adding zero or more parentheses from the kit to maximize the sequence's total EfficiencyScore. The EfficiencyScore of a sequence is the sum of the efficiency ratings of the parentheses used from the kit.
 
@@ -1059,7 +1058,7 @@ public class AmazonOa {
 
 
 
-#### 19. GetMaximumCategoryMaxCount
+#### 19. getMaximumCategoryMaxCount(done)
 
 ![img](AmazonOA.assets/164838nerzujekhnrkjxjp-7080956.png)
 
@@ -1193,7 +1192,7 @@ public class AmazonOa {
 
 
 
-#### 20. getOutlierValue 
+#### 20. getOutlierValue(done)
 
 ![img](AmazonOA.assets/164842xomluosqjhdiojxd-7080956.jpg)
 
@@ -1371,7 +1370,7 @@ Formally:
 The task is to count how many subsequences of password s are lexicographically greater than password t. Since the answer can be large, return the result modulo (%) 109 + 7. More specifically, if result represents the required number of subsequences, then return the remainder when result is divided by 109+7.
 但最后也给了phone interview
 
-#### 23. find max value
+#### 23. findMaxValue(done)
 https://www.fastprep.io/problems/amazon-find-max-value
 
 ```java
@@ -1496,7 +1495,7 @@ public class AmazonOa {
 
 
 
-#### 24. amazon get relative ratings
+#### 24. getRelativeRatings(done)
 
 https://www.fastprep.io/problems/amazon-get-relative-ratings
 
@@ -1631,7 +1630,7 @@ public class AmazonOa {
 
 ![img](AmazonOA.assets/6437kgkwa8dk7ls504s9-7080956.jpg)
 
-#### 26 happy coin collection
+#### 26 happyCoinCollection(done)
 
 第一题我之前没见过，是一个happy coin collection的题目。就是说有N个硬币，如果head都在tail前面，那它就是happy collection。如果全T或者全H也是happy collection。比如"HHHHTT"和“TTTTTT”就都是个happy collection。题目是给你一个只含H和T的string，问minimum flip to make it a happy collection。比如给定“HHHHTH”，那就return 1。
 我是从前到后和从后到前遍历两边string，从前到后算T变H要变多少次，从后到前算H变T要变多少次，flips[i] = flipH[i] + flipT[i] 最后返回min(flips) 就好了
@@ -1930,7 +1929,7 @@ public class AmazonOa {
 
  www.1point3acres.com 第一题
 
-#### 29. getScoreDifference,
+#### 29. getScoreDifference(done)
 
  https://www.fastprep.io/problems/amz-get-score-difference
 
@@ -2105,7 +2104,7 @@ public class AmazonOa {
 
 
 
-#### 32. getStablePeriodCount
+#### 32. getStablePeriodCount(done)
 
 ![img](AmazonOA.assets/174138hu36lcachyqlb2kh-7080956.png)
 
@@ -2221,7 +2220,7 @@ public class AmazonOa {
 
 
 
-#### 33. getViewValue
+#### 33. getViewValue(done)
 
 ![img](AmazonOA.assets/31947yu8eowug6y4a9trn-7080956.jpg)
 
@@ -2318,7 +2317,7 @@ public class Solution {
 
 
 
-#### 34. getDataDependenceSum 
+#### 34. getDataDependenceSum(done)
 
 ![img](AmazonOA.assets/32015lmml3boxzdxvrze9-7080956.jpg)
 
@@ -2377,7 +2376,7 @@ public class Solution {
 
 
 
-#### 37 get pair counts
+#### 37 getPairCounts(done)
 
 ![img](AmazonOA.assets/61717dec2n7l8genoba7x-7080956.jpg)
 
@@ -2498,7 +2497,7 @@ public class Solution {
 
 > ![img](AmazonOA.assets/21459cqjdxazk22jzpbfp-7080956.jpg)
 
-#### 43 using advanced simulation tools 
+#### 43 getMaxCharge(done)
 
 ![img](AmazonOA.assets/195427kjcieim5j4bmekqa-7080956.png)
 
@@ -2628,11 +2627,97 @@ public class Solution {
 
 ![img](AmazonOA.assets/164652ozdahndydtuvmfba-7080956.jpg)
 
+```java
+/**
+ * 题目描述：
+ * 在 Amazon 的数据中心网络优化任务中，每个数据中心必须连接到服务器。
+ * 数据中心的位置由数组 center 表示，服务器的位置由数组 destination 表示。
+ * 连接的延迟是数据中心和服务器位置的绝对距离 |x - y|。
+ * 目标是找到最小的总延迟，使得所有数据中心都能连接到服务器。
+ * 
+ * 示例：
+ * 输入：
+ * center = [1, 2, 2]
+ * destination = [5, 2, 4]
+ * 输出：
+ * 最小总延迟 = 6
+ * 解释：
+ * 1 号数据中心连接到 2 号服务器，延迟 = |1 - 2| = 1
+ * 2 号数据中心连接到 4 号服务器，延迟 = |2 - 4| = 2
+ * 3 号数据中心连接到 5 号服务器，延迟 = |2 - 5| = 3
+ * 总延迟 = 1 + 2 + 3 = 6。
+ * 
+ * -------------------------------------
+ * 详细解题思路：
+ * 1. 由于延迟是基于数据中心和服务器的绝对距离，因此我们可以通过 **贪心策略** 来解决问题。
+ * 2. 首先，将 center 和 destination **排序**，这样可以保证最优匹配的可能性。
+ * 3. 然后，使用 **双指针**（一个遍历 center，一个遍历 destination）来匹配最近的数据中心和服务器。
+ * 4. 计算匹配后所有数据中心和服务器之间的绝对距离，并累加得到最小延迟。
+ * 
+ * 示例解析：
+ * 输入：center = [1, 2, 2], destination = [5, 2, 4]
+ * 1. 排序后：
+ *    center = [1, 2, 2]
+ *    destination = [2, 4, 5]
+ * 2. 计算匹配的最小延迟：
+ *    - center[0] 连接到 destination[0]，延迟 = |1 - 2| = 1
+ *    - center[1] 连接到 destination[1]，延迟 = |2 - 4| = 2
+ *    - center[2] 连接到 destination[2]，延迟 = |2 - 5| = 3
+ *    - 总延迟 = 1 + 2 + 3 = 6
+ * 
+ * -------------------------------------
+ * 时间和空间复杂度分析：
+ * 1. **排序** center 和 destination 数组的时间复杂度为 O(n log n)。
+ * 2. **匹配过程** 仅需要 O(n) 的线性扫描。
+ * 3. 总时间复杂度为 **O(n log n)**。
+ * 4. 空间复杂度：
+ *    - 仅使用了少量额外变量，因此额外空间复杂度为 **O(1)**（如果不考虑输入存储）。
+ */
+import java.util.Arrays;
+
+public class AmazonNetworkOptimization {
+
+    public static long getMinDistance(int[] center, int[] destination) {
+        // 先对数据中心和服务器位置进行排序
+        Arrays.sort(center); // O(n log n)
+        Arrays.sort(destination); // O(n log n)
+
+        long minLag = 0; // 记录最小总延迟
+        for (int i = 0; i < center.length; i++) { 
+            // 计算每个数据中心到匹配服务器的最小延迟
+            minLag += Math.abs(center[i] - destination[i]); // O(n)
+        }
+
+        return minLag; // 返回最小总延迟
+    }
+
+    public static void main(String[] args) {
+        // 测试案例 1
+        int[] center1 = {1, 2, 2};
+        int[] destination1 = {5, 2, 4};
+        System.out.println("Minimum Lag: " + getMinDistance(center1, destination1)); // 预期输出: 6
+
+        // 测试案例 2
+        int[] center2 = {3, 6, 2, 8};
+        int[] destination2 = {5, 1, 7, 9};
+        System.out.println("Minimum Lag: " + getMinDistance(center2, destination2)); // 预期输出: 8
+
+        // 测试案例 3
+        int[] center3 = {10, 20, 30};
+        int[] destination3 = {25, 15, 35};
+        System.out.println("Minimum Lag: " + getMinDistance(center3, destination3)); // 预期输出: 15
+    }
+}
+
+```
+
+
+
 #### 45 
 
 ![img](AmazonOA.assets/164657bzddsqxallgcfnw8-7080956.jpg)
 
-#### 46. 
+#### 46. minimumOperations(done)
 Amazon Delivery Centers dispatch parcels every day. There are n delivery centers, each having parcels[il parcels to be delivered.
 On each day, an equal number of parcels are to be dispatched from each delivery center that has at least one parcel remaining.
 Find the minimum number of days needed to deliver all the parcels.

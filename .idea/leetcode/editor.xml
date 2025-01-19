@@ -2687,6 +2687,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_1584_MinCostToConnectAllPoints.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/doc/content/LeetCode_1584_MinCostToConnectAllPoints.md" />
+              <option name="frontendQuestionId" value="leetcode.com1584" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_1584_MinCostToConnectAllPoints.java" />
+              <option name="titleSlug" value="min-cost-to-connect-all-points" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_409_LongestPalindrome.java">
           <value>
             <LeetcodeEditor>

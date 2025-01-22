@@ -9675,6 +9675,345 @@
 
      https://www.1point3acres.com/bbs/forum.php?mod=forumdisplay&fid=145&sortid=311&searchoption[3047][value]=bloomberg&searchoption[3047][type]=&sortid=311&filter=sortid&orderby=dateline&page=41
 
+475. 2017(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - 技术电面  | Pass | 在职跳槽
+
+     > 面试官烙印，本人就是data license组里的。问了巨多问题，其中算法就三道剩下的全是Python问题，因为这个组用C++和python而这两个里面我只会用python。。。
+     >
+     > 算法1：
+     > 给两个巨大的file， 各100TB。file里面都存的股票交易数据，每行的数据format是“stock1, A, 32.21”. 给一台只有1mb ram的电脑，让找出没有同时存在在两个file里的数据。
+     > e.g.
+     > fileA:
+     > “stock1, A, 32.21”
+     > “stock3, B, 22.21”
+     > “stock4, A, 42.21”
+     >
+     > fileB:
+     > “stock1, A, 32.21”
+     >
+     > “stock2, T, 62.21”
+     > “stock5, B, 52.21”
+     >
+     >
+     > 输出result [“stock3, B, 22.21”, “stock2, T, 62.21”, “stock5, B, 52.21”]
+     >
+     > 我只想到用external sort把两个file都sort了然后每个file每次读500kb进内存然后双指针遍历，小印听着不是很满意。。。
+     >
+     > 算法2：
+     > two sum变形，求a - b = target. a = k - b + hashset. 每个数检查n和n - k在不在set里面。
+     >
+     > 算法3：
+     > 二叉树层便利，从左到右输出每层。queue搞定
+     >
+     > Python问题：
+     > 1. 如何call另一个package里的global variable
+     > 2. 如何用method string name调用一个class里的函数， 比如class A has method foo(), give you string "foo", how to call A.foo()
+     > 还有几个小问题不记得了，都是和python有关的
+     >
+     > 全程小印各种push，经常打断我说话或说我的算法不对，我就一直告诉他你等我说完。。。python没用这么深所以好‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌多没答上来，算法第一题感觉也砸了，本来以为肯定被挂(hei)了， 结果今天收到hr邮件说team决定在电面一次。。。。愉快的答应了准备第二次受虐。。
+     >
+     > kzksy 发表于 2017-6-27 19:58
+     > 第一题应该可以参考下面的解释，因为要求是1MB ram, 但可以先把file partition according to stock type， ...
+     >
+     > 我去这个说得好详细，可以当参考答案了
+
+476. 2017(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - 技术电面  | Other | 在职跳槽
+
+     > 刚挂的电话，面试官看名字像烙印，不过一点口音都没有而且特别friendly，估计是ABI啥的。整个过程很欢乐，各种joking各种傻笑，感觉面试官年龄也不大，算是电面里感觉最舒服的一次了哈哈。
+     > 所有问题都是算法，都是leetcode里面的变种：
+     >
+     > 1. 给一个single string和一个string的list，找到list里所有是single string的anagram的string。由于function会被用不一样的single string（string list一样）重复call很多次， 要求尽可能快
+     >
+     > 我用的dict存储string list， key是每个词的char和出现次数顺序后的string(identifier)， value是所有生成的string和key相同的词的list。
+     > e.g. string list = ['cat', 'meat', 'aabbc', 'eamt']
+     > 生成：
+     > {
+     >     'a1c1t1': ['cat'],
+     >     'a1e1m1t1': ['meat', 'eamt'],
+     >     'a2b2c1': ['aabbc']
+     > }
+     >
+     > 生成identifier的方法是初始化一个长度256的数组(assume all ASCII chars)，遍历词里的每个char, 在数组中对应的ascii int val的index位置加1， 然后从头到尾遍历数组建立string
+     > 这样每次收到一个single string， 生成single string对应的identifier，然后看dict有没有对应的key，有的话return对应的list。时间第一次init是O(list_lens*word_len), 后面每次查询是O(256) == O(1). 空间O(n)
+     >
+     > 2. 给一个股票价格的data stream, 每次给一个股票名称和一个时间区间让返回所有该股票在区间内的价格
+     >
+     > e.g.
+     > 09:39:12 APPLE 500.32
+     > 09:52:00 APPLE 499.31
+     > 09:52:01 BLMG 341.67
+     > 09:59:11 APPLE 502.46
+     > 10:03:11 BLMG 366.29
+     >
+     > 给BLMG和time range 09:30:00 - 10:30:00, 返回[ '09:52:01 BLMG 341.67',  10:03:11 BLMG 366.29]
+     >
+     > 我的方法用dict存储股票信息，key是股票名称value是list of stock info. stream是按时间顺序进入的所以每次进一个新的就append到dict对应的该股票的list的后面就好，不用sort
+     >
+     > 查询的方法是在股票对应的list‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌里二分查询起始时间和终止时间，找到头和尾后return list[start: end + 1]. O(log(n))
+     >
+     > follow up: 返回时间区间内的最大收益（一次交易）:
+     > 利特扣的依尔依
+     >
+     > 求大米求onsite！！！！
+
+477. 2017(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Other | 在职跳槽
+
+     > 8/14周一面的，面完就飞回来了，都没机会常常正宗的new york pizza今天趁着还没忘赶紧把题放出来哈哈~
+     >
+     > 上午面的data license组，两轮technical两轮behavior。下午structured product组，三轮technical，没见到manager。
+     >
+     > data license组：
+     > 地点在Grand Central Terminal旁边那个park ave的office，找了半天不知道入口在哪
+     >
+     > 1. 漂亮英国口音小印女+白大叔
+     > (1) 给你一个input list和一个function same_category(a, b)（不知道function里面的东西，只知道他能比较两个东西返回true or false），写一个function输入一个list和一个function variable输出input list里得东西按类别分好后的list of lists
+     >
+     > eg：
+     > input：['item_a', 'item_b', 'item_c', 'item_d', 'item_e'], function same_category(a, b)
+     > 用list里面的元素callsame_category的话same_category('item_a', 'item_b'), same_category('item_b', 'item_e'), same_category('item_b', 'item_e'), same_category('item_c', 'item_d')返回ture
+     > 用别的call都返回false
+     > output: [['item_a', 'item_b', 'item_e'], ['item_c', 'item_d']]
+     >
+     > 我写的暴力，循环input list里每个元素，用每个元素和result list的每个sub list里的一个元素比较，如果true就放入那个list，false的话或result没有sub list的话就用这个元素建个新的sub list放入result list。两人感觉比较满意
+     >
+     > (2). 给一个list的string，格式是这样：
+     > "S Kevin"
+     > "Apple"
+     > "Banana"
+     > "S John"
+     > "Orange"
+     > "Banana"
+     > "Apple"
+     > "E John"
+     > "Peach"
+     > "E Kevin"
+     > S代表start，E代表end，后start的人的fruit也属于前面start的人。输入保证start和end都存在并且顺序合理。让输出每个人的fruit并且没有重复。用上面的输入的话输出：
+     > "Kevin"： ["Apple"， "Banana"， "Orange"， "Peach"]
+     > "John": ["Orange", "Banana",  "Apple"]
+     >
+     > 做法hash table key存名字, value用hashset存这个人的fruits。从头便利input list，遇到start插入新人，遇到fruit插入每个人的hashset，遇到end把这个人剔除hashtable存到result里。
+     >
+     >
+     > 2. Friendly天竺男两枚
+     > (1). 给一个list的trade info, 格式是(名字，交易时间(900=09:00, 1310=13:10)，交易价格，交易数量):
+     > ("GOOGLE", "900", "130.1", "120")
+     > ("GOOGLE", "901", "130.1", "100")
+     > ("APPLE", "901", "798.4", "400")
+     > ("GOOGLE", "902", "130.1", "90")
+     > ("GOOGLE", "904", "130.1", "150")
+     > ("GOOGLE", "1310", "130.1", "300")
+     >
+     > 让求从一天的开盘到收盘(开盘收盘时间给定)的5分钟window内的某个股票的最大交易数量，比如上个输入的输出就是：
+     > ("GOOGLE", "900", "130.1", "120"), ("GOOGLE", "901", "130.1", "100"), ("GOOGLE", "902", "130.1", "90"), ("GOOGLE", "904", "130.1", "150") = 120 + 100 + 90 + 150 = 460
+     >
+     > 做法sliding window用queue维护5分钟区间内的该股票的trade info，每循环到新的trade加入queue然后从后面剔除交易时间大于五分钟的，meantime更新result sum。
+     >
+     > (2). 利特口的三奇岭
+     >
+     > 3. manager问了一堆behavior，让我介绍现在做什么，why bb, biggest challenge。他介绍team做什么的。
+     > 4. 终极boss，manager的manager。瞎聊，问我有什么问题，我问的team structure， tech stack和现在team在解决的challenge是什么，套近乎说我最近也在做相似的工作。
+     >
+     > 然后两个team里的人带我出去吃ramen，没有给传说中的bb盒饭。。。然后就奔去Lexington Ave那个office了
+     >
+     >
+     > structured product组：
+     > 1. geek男两枚
+     > (1)给一个无重复字符串数组，找出其中互相交叉的所有字符串
+     > 比如"abc", "def", "daebfc"就符合条件。必须每个字母互相交叉
+     >
+     > 开始想复杂了感觉得用dp啥的，后来两人提示可以把input转换成hashset做，我就把input弄个hashset然后便利每个string，用奇数index和偶数index的字母建两个string看是不是在hashset里，有的话存入result
+     > 想test case时发现有可能存入重复的字符串，比如hashset里有一个"aaaa"和一个"aa"的话会存入"aaaa", "aa"和"aa", 可是里面只有一个"aa". 两人说他们也没想到这个case，可以忽略。。。
+     >
+     > 2. 傲慢白男+白大叔+shadow法国实习生
+     > 就是面经经常出现的那道设计还款系统的题。可以按顺序还，也可以按比例还，也可以组合着还，比如有三个类别A, B, C
+     > 比如‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌需要还A 100， B 50， C 50
+     > 还100按顺序还的话A剩0，B剩50， C剩50
+     > 按比例还的话A剩50， B剩25， C剩25
+     > 也可以定义A按顺序还，B和C按比例还
+     >
+     > 我用的linkedlist存按顺序还的group，每个linkedlist的node里用array存按比例还的贷款的名称，value存剩余要还的钱和比例(比如上面的例子里A是1/2, B 1/4, C 1/4)
+     > 每次还钱时从linkedlist的head开始能还多少还多少，每个node里把钱按比例还。走到没钱了为止。
+     >
+     > 3. 混血女+白geek男
+     > (1). 给一个list的string，顺序是排好了的，让找出每个字母的大小关系, 不是原ascii的顺序。比如：
+     > 1. "ky"
+     > 2. "kt"
+     > 3. "ktz"
+     > 4. "kta"
+     > 5. "kz"
+     > 6. "ya"
+     > 由1和2可知t>y, 2,3没什么结论，3,4 推出 a>z, 4,5 推出z>t, 5,6 推出y>k
+     > 我就一层循环两个两个比，每两个找第一个不一样的字符找到大小关存到result里
+     > 上面的例子最后的结果就是["t>y", "a>z", "z>t", "y>k"]
+     >
+     > (2). follow up 如何把上面的关系总结成一个关系，就是从["t>y", "a>z", "z>t", "y>k"]总结出a>z>t>y>k
+     >
+     > 开始想的用graph做，每个字母记录指向这个字母的arrow数量和只想别的字母的arrow数量，指入的越多越小，指出的越多越打，custom comparator排序。后来想想上面的关系不一定完整，这样得出的结果不正确
+     > 后来混血美女提示想简单点，还是想不出来，geek男说你就先找到head，然后把每个node的每个neighbor走一遍，经过了所有字母的路径的path就是结果。瞬间无语。。。
+     >
+     > 然后就被开心的送走了，没见到manager。。。
+     >
+     >
+     > 整体感觉就是面试官很friendly，office很有逼格，帅哥美女超多。第一次去纽约就喜欢上这个城市了，真心希望可以过去工作两年。求offer求大米！
+     >
+     > 
+     >
+     > 补充内容 (2017-8-16 08:44):
+     > 收到offer！
+
+478. 2017(10-12月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Fail | 在职跳槽
+
+     > 刚刚电面了Bloomberg，朋友是做猎头的，本来没想面，全当帮朋友一把~
+     >
+     > 是个印度面试官，口音不重，脾气态度非常好！反而是我表现的比较着急，不耐烦，一个小时的面试面了75分钟~面经都是地里出现过的。
+     >
+     > 第一题，不用写代码，讲思路，求时间消耗。只有1MB的内存，有两个input files, file A和file B,每个都有100TB这么大，找出两个文件中不同的行，写在一个result文件中
+     > 第二题，Input是一个Integer array和一个常数K， 找出所有 a - b = K的(a, b) pair, 时间消耗尽可能少，空间无所谓
+     > 第三题，Tree level order traverse, 问了时间和空间消耗
+     >
+     > 第二题第三题没什么问题，第一题和面试官讨论了半天，我表现的特别不耐烦，但面试官说话真挺温柔的，现在想想都觉得不太好意思……八成是跪了，之前也没有仔细准备，就大眼扫了一下面经~
+     >
+     > PS: 朋友做猎头的，常期提供各种金融公司，对冲基金，银行的码农职位，只招experienced的，一般招就是C++/Java/Big Data，工资奇高(我面这个职位，一年200‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌K的base + 50K的奖金 + negotiable equity，还有50K的sign on和relocation)！大部分在NY, NJ，也有少量在CA。有兴趣的同学可以咨询一下，Email:wdlinm@gmail.com。
+     >
+     > 上周面了Bloomberg电面，感觉面的一般，结果还是给过了~猎头告诉我，因为我不是纽约本地的candidate，如果想让他们给我报销行程的话，得再电面一轮，要么就让我自费直接去onsite，如果最后拿到offer，猎头给我报销行程(这猎头还真是不做有风险的买卖)，我说那我还是再来一轮电面吧~就安排在了今天。
+     >
+     > 一个印度面试官（上一轮也是印度面试官），感觉说话睡意朦胧的~HR的邮件里说面试一小时，但是就四十五分钟，问了三道简单题。
+     >
+     > 1. 利扣，巴十巴
+     > 2. 利扣，腰腰巴
+     > 3. 给定一个字符串，最多能删去一个字符，看看这个是不是Cool String (所谓的Cool String就是字符串里所有的字符，出现的次数一样多)
+     >
+     > 希望对近期面BB‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌的同学有帮助，也希望大家都早日拿到大Offer，感恩节快乐！
+     >
+     > 猎头公司帮我投了Bloomberg Data License组的一个做大数据的职位，之前有两轮技术电面，还有一轮HR的behavoir电面，约了今天来Onsite。之前也没有签任何NDA协议，把面经给大家分享下，希望有帮助~
+     >
+     > Onsite是在中央车站旁边那个Office，下午一点开始。
+     >
+     > 第一轮，双阿三。
+     > 上来简单自我介绍了下，然后一个在BB工作了12年的面试官开Hackranker，打出了题
+     >
+     > ID | Company | Type | Date
+     >
+     > 1 | IBM | A | 20171201
+     > 1 | IBM | A | 20171202
+     > 1 | IBM | A | 20171202
+     > 1 | GOOGLE | A | 20171201
+     >
+     >
+     > Unique Output:
+     > ID | Type | Count
+     > 1 | A | 2 (因为在20171202这天，1 | A这个有两个records，所以不算了就)
+     >
+     > 如果再加两条纪录
+     > 1 | IBM | A | 20171202
+     > 1 | GOOGLE | A | 20171201
+     > Multiple Output:
+     > 1 | A | 3 (在20171202这天，1 | IBM | A有三条纪录，所以重复了两次，20171201这天，1 | GOOGLE | A 有两条纪录，所以只重复了一次，那1 | A总共重复的次数就是2 + 1 = 3)
+     >
+     > 这道题一点都不难，用HashMap解决就行，但是要和面试官多交流，弄清题意~
+     >
+     > 第二题是一串Input integer stream， 找出前K个最小的数，Min Heap解决就行~
+     >
+     > 第二轮依然是双阿三阵容
+     >
+     > 第一题是会议室2的原题，说了思路后没写代码，来了道follow up，假设每个房间都有一个房间号，那最后找出每个会议要用到哪个房间，大概output就是 ([Start_time, End_time], Room #)。这道题弄完也没写代码，聊了下时间开销，然后第二个‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌阿三就不问我问题了！明明还有将近半个小时的时间！我心里一想麻烦了要~就问了他们十五分钟左右的问题。
+     >
+     > 两轮之后就被请出去了，感觉是因为第二轮那个印度人就是Data License组的，他不是特别喜欢我，所以直接连问题都没问~
+     >
+     > PS: 朋友是猎头，她老板已经给BB做了三十年的猎头了，和BB说话特别有份量，朋友这儿还有特别多的Fin Tech公司的opening，像各大银行啊，two sigma, BB这种fintech和一些金融机构的机会，他们可以negotiate到特别高的工资，一般都是在纽约大概25W起~所以有兴趣的可以发简历给她，new grads的现在没有什么机会，招的还都是experience的，她的邮箱是echo@pencom.com
+
+479. 2018(1-3月) 码农类General 硕士 全职@bloomberg - 猎头 - 技术电面  | Pass | 在职跳槽
+
+     > 今天面了onsite, 是data license 组
+     > Hacker rank链接，没有寒暄，直接做题，
+     > 给一个Interval 数组，代表一些running process的开始和结束时间戳。
+     > 比如[[1,5],[2,5],[3,6]]返回所有没有任何job running的interval.
+     >
+     > 我是用的把时间点按起始时间排序，扫描线找count 为0 的区间并记录。
+     > follow up, 如果是返回最少的区间呢？我就先扫一遍找最小的，然后返回所有match这个最小的区间。
+     > 程序出了些bug,修了下大致过了自己给的test case. (重叠的区间需要merge)。
+     >
+     > 第二题，新人入职培训，公司组选人，每一个新人都有一个自己心中想去的组的排名，每一个公司组都有一个自己心中想选的新人的排名，让设计一个函数，返回最好的Match
+     > 在一路提示下，给出基本思路，‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌最后感觉也不是很清楚，但面试官表示这个难度较大，所以没有深究。最后问题搞定。当天收到过了的消息，希望可以帮助大家。
+     >
+     > 第二题应该是 bipartite matching。算法里 network的知识
+     >
+     > 是的，后来看了一篇网上的论文讲这个
+
+480. 2018(1-3月) 码农类General 硕士 全职@bloomberg - 猎头 - 技术电面  | Other | 在职跳槽
+
+     > 今天免了彭博第一轮，面试官人超好，介绍贼详细
+     > 主要聊一聊简历，他看到我说有自学算法，就问了一下都学了啥。
+     > 我觉得bloomberg的面试风格有点和其它的不一样，更注重你是不是对你说了你会的东西了如指掌，看你是不是半桶水，而不是测你知识的广度。
+     >
+     > 我随便举了几个数据结构和算法，下一题马上就接上了让我比较，链表，哈希，数组，树的区别特点，适用场景，感觉答出了点，但不是很有条理，建议可以规范一个回答该类问题的模板
+     > 比如比较key function的实现时复杂度，优缺点，应用场景。还细问了数据库中b tree是不是binary tree, 我答错了，但是面试官还给予了解释。并且问到，如果所有的值都哈希collision，应该怎么优化
+     > 这里他想听的东西是，可以resize rehash, 我没有太懂题意，所以就含含糊糊给了个答案。然后就做题了
+     >
+     > 简单题，在一个二维平面，0可以走，1不能走，从左上走到右下‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌一共有多少种走法，可以深搜（但要记忆化，不然复杂度太高），宽搜，我用的坐标型动态规划，因为代码写起来比较简单，一遍ac。
+     >
+     > 攒一下人品看能否拿到onsite. 希望可以帮到大家
+
+481. 2018(4-6月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Other | 在职跳槽
+
+     > 今天面了bb家两个组的两个职位。 分享攒人品
+     >
+     > 1.1. 两个engineer, two sum 变种，找到两个最先（index最小）的相加起来等于k的一对数，follow up what if 是m个相加起来等于K的数？
+     >
+     > 1.2. 两个超级senior的engineer, 第一个问题出奇的简单，问如果从一个matrix的一点出发，如果计算所有neighbor的和，然后follow up是如果加一个Input是找距离该点为k的行和列的和
+     >        然后后面是这样，给一个stock data stream, input 是stock名字和交易量， 设计一个系统实时返回top k 交易量，各种情况分析，实现原理，复杂度分析 (基本原理和在线词频统计返回是一样的）
+     >
+     >
+     > 1.3. 就在我觉得一切已经结束的时候，又款款的走进两位工程师，然后开始word stream, 不需要实时，返回alphbetical order和词频统计。 用到hashmap，然后比较各种sort, 如果Input是linked list咋做？ hashmap怎么实现的，各种计算机基础知识，一道看似简单的题大约聊了30分钟，写码大概只用了5分钟。刚要松一口气， 设计电梯类，要求处理request和电梯停动的算法。
+     >
+     > 1.4. 老板出现然后带我去吃了个Lunch （非常好吃的希腊餐馆，推荐大家，在大厦对面）顺便了解我找工作的动机，想要发展的方向。上午终于结束
+     >
+     > 2.1 下午依旧做题，stream words classification, 给一个api告诉你两个Object是否是同一类的，如果处理去重和不去重两种情况。然后后面一题，给time slots of meeting room booking [[1130,1200], [1130, 1230], [1230,1400]]问最少需要多少个meeting room, leetcode 原题，number of airplain in the sky. 排序扫描线。
+     >
+     > 2.2 继续，买卖股票一次交易最大收益，然后follow up unlimited number of trade 最大收益，有点懵，最后讨论想法思路，给了很多提示。然后系统设计，不说具体，但基本意思是，如何处理数据传输前获取服务器状态用时过长的问题。
+     > 感觉碰到的人都非常好，感觉在一起做project. 非常好的experience. 希望可以帮助大家，也帮我攒一下人品。
+
+482. 2017(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - 技术电面 在线笔试  | Other | 在职跳槽
+
+     > 刚挂的电话。面试官国人大哥，人很好一直给我提示，可是本人太水第二道还是没做出来
+     >
+     > 1. 在一个先上升后下降的数组里找target， 要求 speed < O(n)
+     > e.g. 在数组 [1,2,3,4,5,19,18,17,16,15] 中找16，
+     > 做法是先O(log(n)) 找到peak， 然后if peak == target, return peak index; else if target < peak, 在peak的左边binary search; else 在peak的右边binary search。总时间O(log(n))
+     >
+     > 2. 找出所有6位整数中有多少前三位的和等于后三位的和。有leading zero的不算。
+     > e.g. 012012 不算， 102012算， 123213也算
+     >
+     > 简单做法是暴力循环所有100000 - 999999检查每个数的前三位和后三位的和是否相等，Time = 6*900000
+     > 高级做法是前三位的和只有可能在1-27之间(100-999), 所以建两个长度27的数组（first3digits[27], last3digits[27]），index + 1表示sum, value表示可能的组合数。第一个数组存储前三位每个sum的可能组合数，第二个数组存后三位的。
+     > 循环100-999在两个数组存前三位和后三位所有包含相同digits的组合数。
+     > e.g. 100的话后三位可能有100, 010, 001, 所以first3digits[0] += 1，  last3digits[0] += 3。
+     > 123的话后三位有可能是123，132，213，231，312，321， 所以first3digits[5] += 1，  last3digits[5] += 6
+     > result = first3digits[0]*last3digits[0] + first3digits[1]*last3digits[1] + ..... + fir‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌st3digits[26]*last3digits[26]
+     >
+     >
+     > 估计是挂了，move on...
+     >
+     > 
+     >
+     > 补充内容 (2017-8-4 09:41):
+     > 不好意思刚复习第二题时发现做法是错的，因为如果每次都把前三位的所有组合算进后三位的组合数里的话会出现重复。比如123的话如果把六个组合都加到后三位里，循环到321的时候又会放一遍。字数不够了解决办法放回复
+
+483. 2018(1-3月) 码农类General 硕士 全职@bloomberg - 猎头 - 技术电面  | Pass | 在职跳槽
+
+     > 面了bb家的SE电。
+     > Hacker rank链接，没有寒暄，直接做题，
+     > 给一个Interval 数组，代表一些running process的开始和结束时间戳。
+     > 比如[[1,5],[2,5],[3,6]]返回所有没有任何job running的interval.
+     >
+     > 我是用的把时间点按起始时间排序，扫描线找count 为0 的区间并记录。
+     > follow up, 如果是返回最少的区间呢？我就先扫一遍找最小的，然后返回所有match这个最小的区间。
+     > 程序出了些bug,修了下大致过了自己给的test case. (重叠的区间需要merge)。
+     >
+     > 第二题，新人入职培训，公司组选人，每一个新人都有一个自己心中想去的组的排名，每一个公司组都有一个自己心中想选的新人的排名，让设计一个函数，返回最好的Match
+     > 在一路提示下，给出基本思路，最后感觉也不是很清楚，但面试‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌官表示这个难度较大，所以没有深究。最后问题搞定。当天收到过了的消息，希望可以帮助大家。
+
+
+
 
 
 

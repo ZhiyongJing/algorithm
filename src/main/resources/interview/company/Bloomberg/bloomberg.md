@@ -6565,6 +6565,3124 @@
      >
      > https://www.1point3acres.com/bbs/forum.php?mod=forumdisplay&fid=145&sortid=311&searchoption[3047][value]=bloomberg&searchoption[3047][type]=&sortid=311&filter=sortid&orderby=dateline&page=15
 
+334. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+
+     > 先给一下timeline：
+     > 2.24店面第二天收到邮件通知约下一轮
+     > 3.10 VO两轮， 当场通知等一个小时有HR面
+     > HR面结束之前说约最后一面HR， 面试半个小时之后收到邮件confirm终面时间
+     > 3.21 EM面
+     > 第二天下午收到拒信
+     >
+     >
+     > 然后说一下一言难尽的面试体验
+     > 前四轮面试体验很不错 ， 面试官都很和蔼而且没有刻意为难， 卡住的时候也会给一些hint
+     > * 店面：proj challenge+2题 第一题我记不得了，第二题类似word search + follow up如果给的字典size如何处理， 应该用trie
+     > * VO1: proj challenge + why bb + currency change(类似于leetcode一道算除法的题目， 其实就是建立图+bfs/dfs) followup是如何检测是否有环
+     > * VO2: 1题merge K sorted array, 输入就是array所以不像listnode有next指针， 但是做法一样也是用heap做的。 第二题很简单就是看是否有不匹配的括号， 只不过输入可以用户自定义， 比如 a和b也可以当作一对括号。 就把用户需求提前存成map然后就可以
+     > * HR： 闲聊+bb的一些文化+为什么要跳槽（楼主去年毕业， 但是投的也是ng岗位）当场约了下一场的时间
+     >
+     > * EM：超级坑的一面，面试之前看大家的面经都是问bq或者项目所以一直准备了很多项目细节， 但是实际情况是：
+     > manager迟到五分钟 然后都没有介绍他自己/我的流程， 拿着我打印出来的简历就画圈圈然后问我现在公司的情况and在master学校学的语言是什么， 我说是cpp， 然后就开始在chat聊天框里打问题， 一个空class，class A{} 没有main函数问我可不可以compile， 我当时说不可以。 他说实际上可以， 问我compile的时候会自动生成的4个default函数
+     > 。我当时就傻了。。。学校第一学期学过之后只有一点点印象， 我简历上一个cpp的项目都没有写。。。。但是在他的提示之下磕磕绊绊的说出来了， 有一个的term我实在是记不得了就说是override了括号（其实是copy constructer）。
+     > 接下来是模拟情景debug，一个python程序负责将一个folder里的文件上传到另一个server， 突然一天发现有bug了不传了，如何debug，
+     > 我：去log文件里确定是接受端还是传输端的问题。
+     > 他：假设是传输段且log文件里没有任何error level的logline，
+     > 我；。。。
+     > 他提示：从出bug的前一个文件入手
+     > 我：那就继续找相同大小/类型的文件测试是否是文件本身引发的问题
+     > 他：发现这个问题是由第三方package引发的，无法debug locally
+     > 我： 去第三方的官方论坛下是否有troubleshooting。。。（其实就是google一下我还能怎么办。。）实在不行自己实现if逻辑不太复杂
+     > 他： 第三方库无法解决bug且发现这个问题只是偶尔出现
+     > 我： 自己实现机制如果卡住不传输就重启服务/通知用户手动重启
+     > 他：如何实现给一些细节
+     > 我：可以设定timeout， 同时看logfile是否有新的line出现，没有的话restart这个app
+     > 他：所以你想用另一个app去监测这个app
+     > 我：稀里糊涂的嗯了， 其实一开始想说在一个app里应该也行
+     > 他：面露不是很满意的表情
+     >
+     > 整体这一面体验感极差， 从第一开始就没有感觉到面试‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌官的尊重， 不问名字， 不自我介绍，语气里有一点点傲慢的问我现在的公司有点耳熟是干什么的， 以及说了研究生学校第一开始教的cpp之后就开始考我cpp。。。我简历上都没有写cpp项目，当时真的感觉完蛋了lol
+     > 后面的语气表情也是让人不舒服，感觉很不尊重人，面完感觉这一面要凉， 整体一个小时多一点。 不知道是不是我有几个月的工作经验， 看地理的小伙伴很少有EM之后挂掉了的。。。而且我也和manager说了我的是NG的岗位，但还是。。
+     > 我try my best了所以也没有什么遗憾的， 发了邮件给hr反映了最后一面的情况，收到了模版回复说没有权限知道feedback
+     > 整体而言，感觉bb还是一个文化比较好的公司，前四轮的面试官有各个级别的都让我觉得是很理想的同事， 这个manager实在是。。。一言难尽（美国白人男）
+     > 楼主move on了， 打算在现在的公司抽签之后看看情况决定下一步，希望大家多多加米！！！ 不会费大家的米的！
+
+335. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 校园招聘会 - Onsite  | 😃 Positive 🙂 EasyFail | 应届毕业生
+
+     > 这是第一回合两轮，每轮1小时中间休息15分钟。所以我当作VO处理了。
+     >
+     >
+     > 题都做出来了，并且十分注意和面试官交流。未必是space最优但time应该是最优。bq是很简单的challenging project介绍和why bb，按照准备的内容回答了。一周后标准挂信。
+     >
+     > 话说回‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌来面试体验还是非常好的。面试官似乎没有背景偏好，并没有对着简历针对性发问
+
+336. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😃 Positive 😐 AveragePass | 应届毕业生
+
+     > 2轮coding 1轮hr面 1轮em，
+     >
+     >
+     > 以下内容需要积分高于 188 您已经可以浏览
+     >
+     > 第一轮  2个面试官 一个三姐为主 一个abc小哥哥  小哥哥做shadow全程是不说话不开摄像的
+     > bq：聊了一个项目 会follow up细节，类似数据库什么样的为什么用这个
+     > 第一题 利叩 物流
+     > 第二题 你的系统挂了 给你一堆挂了的process ID和他们的孩子  “process id :  list of children id ” ， 要求找到最早挂的那一个node。
+     > 我给的解法是最早的一定是parent，不会是任何child node的孩子， 把所有的id存list， 把child list出现过的node存一个hashset，找到id不出现在hashset。 时间复杂度O(n).
+     > 面试官好像一开始不理解什么意思， 我们跑了个例子， 她认同了正确性，但是要求优化让我利用树的性质， 我和她商量的结果是比O(n) 好的只能log(n)。 我说在average case 可能有更好的但是也需要O(n)的时间去加parent。 她说可以，你就假设有做好的。
+     >
+     > 第二轮  1个面试官  白人大叔
+     > bq聊聊项目， 聊的比较开心， follow up的很自然
+     > 做了一道题 利叩 就伞舞
+     > 我和他讨论了一下backtracing的做法，然后用dp做的，我做的比较磕磕巴巴，小bug挺多的，提醒了以后就改过来了。
+     >
+     > 第三轮 hiring manager 白人小哥哥
+     > 第二轮结束的时候被告知还要和 hiring manager聊聊
+     > 纯bq轮，很nice 很热情。 问了我找工作时做看中什么（why bq），自己喜欢问问题吗，你的同时怎么（collaboration），是什么给你生活的动力是什么（value)
+     > 15分钟答完这些以后，hr说他觉得我ok不需要再问了，让我反向bq。我就问了3个问题。
+     >
+     > 第四轮 em 白人大哥哥
+     > 一部分bq，类似why cs，你的方向之类的问题。比较细的聊了一个项目就结束了。 很talkative 聊的比较开心。很辛运没有被问system design 。可能太也看的出来我比较菜。
+     >
+     > 
+     >
+     > em之后第二天，hr 约电话。电话里给了口头offer， ng标准包， 挂了电话就给了正式offer。
+     > 手上的面试还有amazon， ebay， rip‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌pling， c3ai大概率应该会从了bloomberg
+     >
+     > 很幸运能够顺利上岸，这几个月来真的太焦虑了，感谢地里大家给的支持，大家一定都会有光明的前程！
+
+337. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 在职跳槽
+
+     > 3.10 进行了两轮vo
+     > round 1：第一题是lru cache，第二题是tree level traversal，每层换一下方向（奇数层左至右，偶数层右至左）
+     > round 2：word change，从一个word开始，每次只能改一个字母并且新词要是valid的英文单词，找到变成目标word的最短path，可以假设有helper function判断每个word是否valid，essentially a bfs problem 126 and 127
+     >
+     > 3.11收到了recruiter邮件约一个半小时的‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌recruiter面+em面
+     > 求加米！！！
+     > 同时想问下recruiter面是不是就是地里所说的hr面，以及求em面tips！
+
+338. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 视频面试  | 😃 Positive 😐 AverageOther | 应届毕业生
+
+     > 今天VO两轮，每轮1小时，中间休息15 分钟。
+     > 第一轮两道题：
+     >
+     > 1. 贰扒叁
+     > 2. 在一个grid里面，有老鼠，有墙，有芝士，判断老鼠是否能找到芝士。用bfs
+     >
+     > 第二轮一道题：
+     > 1. 壹叁玖溜
+     >
+     > 然后面试官让我等下午等‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌hr面试，结果被鸽子了，还在等约hr和hm面。
+     >
+     > 无大米，求大米！
+
+339. 2022(4-6月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😃 Positive 😐 AveragePass | 应届毕业生
+
+     > 一个月之前面的，总共三轮。
+     > 第一轮，亚裔小姐姐（看名字像越南那一带的），开始聊简历，问了一些细节，然后问了why Bloomberg。
+     > 题目是 妻舅期 和 药酒就
+     >
+     > 第二轮也是亚裔小姐姐，可能是新加坡/马来 华人，也是同样流程，问了why Bloomberg，
+     > 然后问了一道 亮武伞 和 一道 OOD，OOD是设计电梯
+     >
+     > 第三轮是白人小哥。
+     > 问了两道BQ，还是有why BB这个。问了一道 anagram相关的，忘记哪一题了。还有一道括‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌号的，题目太多也不记得哪一道了。反正都不难。
+
+340. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😐 Neutral 😐 AverageOther | 在职跳槽
+
+     > 又面了bloomberg 另一个组。。妈呀，这次直接4轮四小时。前两轮每轮两个面试官，第一轮面试了database 设计，详细的分析了需求里面需要的table， column。再根据现有的设计，提出更多的需求，怎么改table。考察的很细致，不过平时sql用的多了，也还好。
+     > 第二轮前半段问了些前端的问题，为什么现有的项目需要从angularJS 升级到angular 5，两个版本区别是啥之类的，这一轮也还好，毕竟平时也用的到。第二轮后半段问了设计贪吃蛇。。这就抓瞎了，只能一点点的想逻辑怎么实现，回答的一般。
+     > 第三轮详细的聊了聊做过的项目，涉及到的技术，设计开发中经常碰得到问题，感觉还行
+     >
+     > 第四轮跟整个org的大老板聊了聊，也是涉及过去的项目经验啥的，以及prefer的组，技术
+     >
+     > 最后跟recruiter打了十分钟电话，他介绍了公司的福利，发了个pdf给我就结束了，说下周出结果。
+     >
+     > 面了两个组，都是非‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌典型面试，除了电面做了算法题，所有的onsite都没有做题，大部分就是聊天，项目提问，少部分设计。感觉俩面试跟地里的其他面试都不一样，一次所有的面试都排好了，也没有先两轮再安排HM啥的。
+
+341. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😃 Positive 😐 AverageOther | 在职跳槽
+
+     > 第一次碰到vo三轮都是聊天。。。唯一的一轮，稍微设计了dabase table，剩下的两轮都是交流过去的经历。感觉他们对简历挖的比较深，喜欢问你从过去的经验里学到了什么，成长了什么。技术栈上问了比较多的底层问题，可能跟他们偏向c++有关。。一直做网站的，根本不会哇。还问了一些deploy host iis 一系列的问题，我的经验就是call devops team。。。总体上来说他家还是蛮有意思的，可以检验你过去的经验是不是单纯写代码还是有自己的思考。 提供一些建议，如果你也面试这家公司，尽量多熟悉底层的逻辑，不用懂，起码知道有这么个东西就行。 今天问道了 IIS 从request 到invoke method 的过程。。流程确实不难，但是之前没留意过，确实很难说到点子上。
+
+342. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - 视频面试  | 😐 Neutral 😐 AverageFail | 应届毕业生
+
+     > 12月海投，一月底电面，二月初vo+hr，二月下em。面试体验不错，recruiter真拉胯。求米
+     >
+     > 电面：bq20多分钟，一道题，题目大概是一些股票的pair，比如Apple: 100 shares, Amazon: 50 shares，最后计算每个公司的总和，返回topk，同样数目的按字母排序，PQ重写comparator解决，属于topK变种
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > vo1：国人小哥，bq+1题，前中序生成二叉树，太久没做，卡了半天，自己写出来了
+     > vo2：bq+1题，记不太清了，比较像matrix找值，follow up好像复杂一点，不难。
+     >
+     > 全部都是1题，虽然写出来了但感觉要凉，没想到还有hr面
+     > hr：正常bq，why bb，why cs，职业规划，prefer什么工作环境
+     >
+     > em：和地里之前的一道题一样。有几个地点，SF, CO, NJ，几个函数，getTime，CO的时间是标准时间，比如现在要把NJ的时间与CO的时间对齐。如何计算latency？-》getNJTime，getCOTime，getNJTime，那么两次NJtime之间的差值就是从NJ到CO一个来回的时间，除2算latency。然后统计很多时间差，比如10 9 10 11 9 50 10，如何判断50不正常？（这里卡住了，一直在交流，但是面试官不是很满意）我说了为什么要用median而不是average。最后问很多data怎么求median，用MaxHeap + M‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌inHeap，面试官看起来很满意。
+     >
+     > em面一点bq都没问。上来反向bq10分钟，然后50分钟讨论题。感觉前几轮如果题做少了，最后一轮大概率做题。
+     > 感觉答得都还行，但是挂掉了，move on了
+
+343. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😐 Neutral 😐 AverageOther | 在职跳槽
+
+     > 刚刚结束的VO
+     > 第一轮  题目大概的意思是是你有两个api  trade(stockname, qty) 相同的stockname 可能会call 多次 然后 一个topk（k）返回top k 交易的股票 其中k 小于100
+     >
+     > 我是yong hashmap 加 pq 做的 感觉面试官不是很满意说我没有用到小于100的条件， 不知道大家有什么好的办法。
+     >
+     >
+     > 第二题
+     > 有点像 蠡口 1656 复杂  题目大意说的是一个udp package 要考虑package一直过来你怎么处理 我当时是用circular buffer 做的。 但是花了太多时间和面试官讨论要求了， 没来得及写完 应该是挂了
+     >
+     > 还有大家面试Bloomberg的时候要注意一点bloomberg 有两个面试官 好像被没有什么shadow的两个面试官都有可能问问题， 我面第一轮的时候 当时我和其中一个面试官开始讨论的时候 第二个面试官并没有说话， 等到题目‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌写完快结束面试的时候第二个面试官说你被没有用到我说的小于100条件。。。。。。你怎么不找出声，所以面试时候要把两个面试官都聊爽了
+     >
+     > 股票题是李寇依尔思思。今天遇到，没做出来，后悔，没来看面经。
+
+344. 2021(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+
+     > 去年转码开始不久面的，没想到会面OOD完全没准备就挂了。。
+     > 第一轮，老美，鹅溜久，之前刷过这题，很快就写出来了。又问了一个记不清了，不过不难
+     > 第二轮，设计停车场，没准备过OOD，完全不知道怎么答，这轮跪了。。建议要面BB还是要好好准备下经典的几道OOD题
+     >
+     > 第三轮， HM面的，中间隔了有点久，估计是已经交流过前两轮feedback了，HM随便‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌问了几个behavioral questions 就结束了
+     >
+     > 最后求点大米，新人啥都看不了T-T 祝大家都找工顺利!!
+
+345. 2022(1-3月) 码农类General 博士 全职@bloomberg - 网上海投 - 视频面试  | 😃 Positive 😐 AverageFail | 在职跳槽
+
+     > 老帮菜一直做quant developer，不知道哪来的勇气投senior SWE. 没有刷几道题，硬着头皮上
+     >
+     > 店面：pow(x, n), random delete. follow up each element has a weight, and we should respect the weights when randomly delete‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌.
+     > 国人小哥放水过了。
+     >
+     > VO1: 散酒思，伊尔思思
+     > VO2：设计C++ shared_ptr class
+     >
+     > 楼主能解释一下第二轮 vo 是啥吗？设计C++ shared_ptr class， 谢谢！已加米！
+     >
+     > 是的实现一个shared_ptr class
+     >
+     > 楼主请问面试的是哪个组呢 感谢
+     > Fixed income trading system
+
+346. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
+
+     > 昨天面了Bloomberg 的senior sde VO。今天HR就打电话说有offer了，但是包裹beat不了手里的其他offer，应该不会去了。
+     >
+     > 电面刷题网：散药四
+     >
+     > VO HR 开始说只schedule 了两轮，后面面完2轮，告诉我还有下面的manager 聊天。最后才知道他们家是两轮过了才有后面的BQ， 如果有后面的，基本就是Offer了。
+     >
+     > VO 第一轮给了两题，第一题刷题网：儿伞 。第二题：伞领把
+     > 第二轮design，但是没有要求System design那么详细，就是设计一个股票价格显示系统，不要求支持股票交易。 主要聊了数据库设计和怎么partition replication。
+     > 第三轮和第四轮都是和ma‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌nager 聊天，常规BQ。 准备了亚麻的LP 后，这些都不是问题。
+     >
+     > 最后求各位赏点大米！！之前看面经用了不少大米，谢谢各位！！
+     >
+     > 请问楼主面的是哪个组
+     >
+     > equity 组 zszs
+
+347. 2022(1-3月) 码农类General 本科 全职@bloomberg - 网上海投 - Onsite 视频面试  | 😃 Positive 😐 AverageOther | 其他
+
+     > 新鲜VO 两轮
+     > 第一轮 散伊斯 (换了种问法一时间没反应过来)、 易散久溜
+     >
+     > 第二轮 伊斯灵 、 易而思思（这道题是变种，加了三个checkpoints， 变成任何时间点无论多少人经过哪个checkpoints都能够return领先的K个人）
+     > 然后是‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌半小时HR
+     > EM 还没有约上，求好运求加米
+     >
+     > snail8844 发表于 2022-2-16 21:26
+     > 谢谢LZ。 易而思思的变种没太明白，能详细介绍下么？
+     >
+     > 就是有三个checkpoints 0,1,2
+     > 实现两个function 具体名字忘记了，意思差不多
+     >
+     > record(racerId, checkpointId) - racer打卡checkpoint
+     > topScore() - 返回前K个领先的racer
+     >
+     > 比如record(1, 0)， record(1, 1)
+     > 然后record(2, 0)， record(2, 1)
+     > 这个时候领先的是racer 1， racer 2在racer 1后面，因为打卡checkpoint 1的顺序在 racer1之后
+     >
+     > 所以最后返回topScore的时候要把打卡顺序也考虑进去
+
+348. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | 😃 Positive 😐 AverageFail | 在职跳槽
+
+     > 开花堡 BQL组，感觉是非常成功产品，组里扩张也很快，不知道最近有没有其他人面他们组
+     >
+     > 店面1： Java基础，primitive type，和object有啥区别。然后莉蔻 耀缌旒。 很基础。面试官很nice的提醒我之后的面试有很多多线程，要我提前准备，本人转专业，正好趁这个机会去搞了点网课学学。
+     >
+     > 店面2:  多线程基础，具体的忘了（甚至有没有问我都忘了lol）。因为出的题目让我印象太深了，是一道实际的问题，BQL就是query language，假设两个query是
+     > 1. A * (B + C)
+     > 2. D + B + C
+     >    他问你怎么快速存储和找到，这两个query里面的共同部分，也就是 (B + C)。 他提醒我用Tree，于是我就说类似于这样：
+     >          root
+     >
+     > A*             *(B+C)
+     >                +B     +C
+     > TreeNode {
+     >     List<TreeNode> children;
+     >     Type // 加减乘除
+     >     Value，
+     > } （别问我为啥看起来不对劲，我到现在也没搞懂，有懂的大神来讲讲）
+     > 然后找到共同部分，有点类似于离口 旒乌佴。 刚去看了眼，这道题底下公司标签里面就有Bloomberg。。。所以应该算是这道的变种。我没写完，因为讨论数据结构太久了，不过面试官也让我过了，而且又提醒我之后会有很多多线程
+     >
+     > VO 3轮每轮都是两个人：
+     > 1. Java基础，继承，多态，interface和abstract区别。然后多线程编程，写一个thread safe的producer - comsumer model, 而且可以处理不同priority的task。
+     > 2. 两道题，第一个利口 霰坝绫，给了点提示才做出来。第二题又是多线程，问了点基础知识，让写了个thread safe的Queue，等于弱化版的第一轮的问题。。。
+     > 4. 系统设计。设计一个search system, 每天处理来自不同data source的新闻，保存到metadata storage里面，然后有一个search service处理前端的search请求，要考虑related words，比如Space X发射火箭的新闻，通篇没提马斯克，但是用户搜索马斯克，也得返回。问的太杂了，哪儿都得插一脚，让你详细解释一下。我觉得没有5-8年以上工作经验，很难答好。
+     >
+     >
+     > 这个组感觉是真的硬核，和他们聊天也能感觉。我看其他的面经全是LC题目，这个组各种乱七八糟的都考。我觉得我再练两年才能通过他们面试，所以挂了也不亏。可能还是太菜了吧，毕竟转专业遇到硬核组。有没有懂的大神说说看我理解的对‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌不对。
+     >
+     > 打字不易，求加米，我看其他帖子都有管理员来加，我两号分享了好多面经和包裹，管理员没给我加过米。。。再不加下次不分享了。
+
+349. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | 😃 Positive 🙂 EasyPass | 在职跳槽
+
+     > 开花堡应该是昂塞面经
+     >
+     > 去年11月电面，面完就通知过了，后来holiday season忘记了那封邮件，过去了整整两个多月。一月份想起来之后联系了recuriter安排了电面
+     >
+     > 吐槽一下coordinator，给我发了个面试的开始时间，没告诉面多久，没告诉面几轮
+     >
+     >
+     > 以下内容需要积分高于 188 您已经可以浏览
+     >
+     > 店面一共三轮，两轮coding，一轮hr
+     >
+     > technical round， intro ~5min, coding 40min, QA ~15min
+     >
+     > 第一轮：俩白人大哥双打
+     > 第一题：reorder array(没刷过这道题，知道的大佬给个题号谢谢) [0，9，1，-2，3，0，1] 变成 [0，0，9，1，-2，3，1] ，保持顺序不变，把0挪到array前面就好
+     > 第二题：(又没刷过这道题，知道的大佬给个题号谢谢)，ABC三个人玩游戏，每轮玩k次（假如k=4)，r1:ABCA（A淘汰）,r2:BCBC（C淘汰）； B为最终赢家，实现一下这个小游戏，不能用数学方法
+     >
+     >
+     > 第二轮：毛子大哥
+     > 第一题：利口尔舞伞
+     > 第二题：(又又没刷过这道题，知道的大佬给个题号谢谢)，实现一个sequencer：每次的input是（index，msg），假如当前已处理index = 3 （1，2，3已经被处理），那么现在等index = 4来；如果input的index>4，那么找个地方存；等index=4出现时，处理接下来所有连续的index（假如5，6，8已存，那么在index=4出现时处理456，下一个需要处理的index=7）。
+     >
+     >
+     > HR轮：常规BQ，Why 开花堡，为什么跳槽，介绍一个类似于bootcamp的东西。‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌
+     > 面完之后HR说晚些时候会约最后一轮（所以很疑惑这是不是昂塞，有没有懂的小伙伴解答一下）：senior Eng 面 System Design
+     >
+     > 应该算是过了吧
+     >
+     > 题号应该是 幺刘舞刘 和 幺霸洱散
+     >
+     > 第一轮第一题应该是迩霸散
+
+350. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😃 Positive 😣 HardPass | 应届毕业生
+
+     > 开花包两轮vo，第一轮VO一题 鲕杳迩变种， 第二轮 半小时扯淡半小时做题，很简单的heap
+     >
+     > 以下内容需要积分高于 100 您已经可以浏览
+     >
+     > 第一轮变种是这样的： input 一个string，例如  "pplaezznzzoope", 一个valid word list [apple, zoo, pen]
+     >
+     > 1. 问这里面的 字符组合一共有几个 unique valid单词： 最初解 hashmap, 大概是这样：{word: char counter}
+     >
+     > 2. followup，如果 有几百万个词库，input又很短，怎么op‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌timize：用 trie来存字典，然后再dfs求解
+     >
+     > 这题出了input形式不一样，问的内容和 词搜索II 一毛一样
+     >
+     > 
+     >
+     > 求米，只需100积分看隐藏
+
+351. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 应届毕业生
+
+     > 趁着自己还没忘记，分享一下吧
+     >
+     > 海投之后约了12月初店面，是一个中东小哥的样子：先简单BQ，两道题，舅舅撕和散药撕的变型（不要求按顺序print所有node，只要求返回每个相同纵坐标的node的sum），然后针对代码问了几个问题，用BFS还是DFS啊之类的，反向BQ结束。
+     >
+     > 之后一天左右收到VO，当时就只能约1月中旬了：
+     > 1轮：两个面试官，先BQ，问challenge，然后一人一题，第一题是考拉兹猜想实现，非常简单，但是我一开始想复杂了，还以为是要我自己推导猜想，浪费了3min左右……然后针对代码各种改动，如何加速过程（memorization）如何换着花样输出，如何写test case；第二题尔物散，我上来用PQ他直接没让我写完，就开始问可不可以不用PQ，我说按照start和end时间分别sort，遇到start就count++，end就--，看最大count，但是他非常在意不肯分开sort，而是想要变成{{1, start}, {3, end}, {4, start}, {5, start}.....}这样非常难看的二维list，反向BQ
+     >
+     >
+     > 2轮：也是两个面试官，不过其中一个韩国小哥除了开场BQ基本没怎么说话，只有一道略微偏设计的题，一开始类似散巴斯，让设计如何random扑克牌，然后开始问如何把这个代码扩展到任意的卡牌游戏，相当于考Java继承，implement。最后反向BQ
+     >
+     > 第二轮结束的时候，说让我等30min之后的HR call，结果10min收到HR邮件说"Thats it for today"，其实基本也就明白了。隔周收到拒信。题倒是不难，也全都写出来了，‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌如果说有什么遗憾的话，就是遇到不那么常规的VO有点不够冷静，导致一开始理解错了。看了看地里的帖子还是自己的实力和运气都差一点点吧。也可能面试官看我其实是毕业半年的在职，没有用常规的题库题考。move on继续努力吧
+     >
+     >
+     > 补充内容 (2022-02-02 00:48 +8:00):
+     > 是"考拉兹”猜想不是考“拉兹”猜想hhh确实容易误会
+     >
+     > 补充内容 (2022-02-02 05:28 +8:00):
+     > 面的是普通NG SDE
+
+352. 2022(10-12月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😃 Positive 🙂 EasyPass | 应届毕业生
+
+     > 店面：
+     > 第一题没见过，是一个比较简单的binary search+design题目
+     > 第二题刷题网 艺玲儿玖
+     >
+     > 昂塞：
+     > 第一轮两题：刷题网 散琪把， 而把琪
+     > 第二轮两题：第一题简单bfs 第二题类似刷题网 merge intervals
+     >
+     >
+     > 当天hr轮， 常规bq：why cs why bloomberg 在选job时最看重什么 简单介绍简历上两段实习经历
+     > 还有一些常规hr问题 expected tc，是不是要sponsor visa等
+     >
+     > 过了一周EM面，
+     > 是一个在BB 19年的大叔
+     > 介绍简历项目然后问了好多好多好多BQ （一个小时面试有50分钟都在问BQ，感觉这一场的BQ比整个找工季其他厂加起来都多）
+     > 但是全程大叔相当友好 很多BQ没有准备过 怎么想就怎么说还是过了
+     >
+     > 一周之后约hr call verbal offer
+     > 当天晚上official offer
+     >
+     > 总体来说面试题都不难 都是刷题网easy-medium 面试官都超级超级nice 面试体验很棒
+     > 但感觉是BQ比其他家都多很多，而且基本每‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌轮都会简单问简历，还是要准备一下
+     > 新人第一次发面经 求加米求加米！！
+     >
+     > 电面第一题就是设计一个门禁系统 每次有人刷卡进入或者出去需要更新整个楼里的人数 同时需要用一个功能就是给定一个任意时间点返回这个时间点楼里有多少人（所以需要记录所有log然后binary search）
+     >
+     > 昂塞第一题就是简单的tree level order traversal，没别的...
+
+353. 2022(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面  | 😃 Positive 😐 AverageWaitList | 应届毕业生
+
+     > 全程60min, 總共用3個面試官, 1個engineer, 1個team lead, 1個shadow
+     >
+     > 上來先自我介紹5~10min, 然後問了一個之前做過最難的project, 之後進coding
+     >
+     > 題目近似寺陸靈, 給定addTrade(String company_name, int volume),  找到top K company name of company
+     >
+     >
+     > addTrade可以隨時調用, 所以top k element也是動態的
+     > 解法給出用一個hashmap紀錄company name : trade
+     > 然後用一個treemap紀錄trade volume：set of company name with the volume
+     > 這樣可以在KlogN時間找出, 這是我能夠想出來的最佳解
+     >
+     > 之後又問說如何設計unit test, 如果程式跑‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌太久會出什麼問題（OOM, integer overflow)
+     >
+     > 整體來講不難，面試官也挺友好的
+
+354. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+     > 电面:
+     > 有两个有序数组，一个有n个数例如[2,4,6,7,8]，另一个为范围区间例如[2,5,10]，输出一个bucket，其中每个元素为范围内数的个数。上面例子输出[2,3]，其中有两个数（2、4）在范围[2, 5]内，有三个数（6、7、8）在范围[5, 10]内。
+     >
+     > VO1:
+     > 运气不太好，碰到两个三哥考了之前没见过的题，而且特别抠代码细节，上来15min bq，之后做题花了40min，一道题就结束了。
+     > 现有两种运算方式: 乘二或除三。输入一个target数，输出从1开始如何运用两种运算得到target。如target=10，则可以1*2*2*2*2/3*2 = 10，输出****/*
+     > 做的磕磕绊绊的，应该用bfs+减枝做。
+     >
+     >
+     > VO2:
+     > 浏览器LRU
+     >
+     > HR:
+     > Introduction
+     > Challenging experience
+     > What factors do you consider about when choosing a position
+     > How do you kno‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌w about bb
+     > 介绍bb training program
+     >
+     > 希望能到下一步EM面，求各位路过的给点大米T T
+
+355. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😃 Positive 🙂 EasyWaitList | 应届毕业生
+
+     > 刚面了bb的VO，总共两轮，运气比较好，碰到两轮都是特别友善的国人大哥。
+     >
+     > 第一轮：第一道366把tree的node按从leave到root的level顺序print成一个nestlist，例如leave的level是0，放在第一个list里。之前没刷到过原题，不知道题号。刚开始卡壳，面试官很耐心引导最后解出来了。第二道meeting room II。
+     >
+     >
+     > 第二轮：第一道散酒斯，写完让我不用test case来approve我写的正确性。第二道num of islands。可能前两道写太快，又出了一道题，伊尔医，follow up说可以buy sell两次但不能同时hold两个stock，问maximum profit，最后实在没答出来，面试官说没关系说是bonus question，希望是真的没关系 :(
+     >
+     > 两轮感觉都还好，我看地里过经timeline大部分都是面完两轮vo马上hr call约下‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌面，但我并没有，等了一天半都毫无消息，不知道是不是凉了:(
+
+356. 2021(10-12月) 码农类General 本科 全职@bloomberg - 网上海投 - 视频面试  | 🙁 Negative 😣 HardFail | 应届毕业生
+
+     > 前面俩轮都是coding 题目，都是经典不说了system design的是设计一个google doc 但是用户不在线也可以编辑。
+     >
+     > 系统设计，完全不听algorithm
+
+357. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | 😐 Neutral 😐 AverageOther | 在职跳槽
+
+     > 今天一早面的两轮
+     > HM 度假去了所以之后才面hm
+     >
+     > 第一轮 SD: 活动 booking system
+     > 讨论db table, CRUD 流程
+     > 有点像design calendar
+     >
+     > 
+     >
+     > 第二轮
+     > 先写 preorder 走访
+     > recursive, iterative
+     > 在写删除 node from binar‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌y search tree
+     > 不用真的跑 code
+     > 但是希望列出所有edge case
+     >
+     > 要准备 why bloomberg
+
+358. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😃 Positive 😐 AverageFail | 在职跳槽
+
+     > 第一轮是给一堆莎士比亚的文章，文本文件形式，给定一个单词找出它在各文章中出现的总次数以及出现的行号列表。
+     > 第二轮系统设计是让设计一个用户上载视频，用AI模型转换成文字的系统，
+     >
+     > 自我感觉应付的还可以，但最后悲剧，估计是第三轮跟manager聊天时没有表现好。
+     >
+     > offer还是零蛋，只能继续努力刷题， 希望路过的‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌朋友不吝赞助点大米， 多谢！
+
+359. 2022(1-3月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+     > 一轮店面 问了简历实习的细节 + 莉蔻 摇摇其
+     > 两轮vo面经指路
+     > 🔗 www.1point3acres.com
+     >
+     > hr面是简单的bq，why bloomberg, internship, how's the interview process
+     >
+     > em 面是一位在bb工作了26年的大叔，前20分钟问了一下internship和 why swe（lz是转专业）以及第一门学习的语言是什么，然后对比了一下python， java， c 和c++的区别，
+     > 接下来的20分钟大叔做了一个演讲，主要讲了bb terminal，他们如何实现高速和质量，以及他认为成功人具备的品质是什么。最后说了一句hr会在一周之内reach out。
+     > em面感觉在回答pyt‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌hon，java，c和c++区别的时候 答的不好，完全没准备，基础不够扎实。发帖攒人品，希望有offer！
+
+360. 2022(10-12月) 码农类General 本科 全职@bloomberg - 网上海投 - HR筛选 技术电面 Onsite 在线笔试 视频面试  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+     > 面完了EM面，给地里写写面经。就不设置积分了，希望大家都能看到，好好准备，一切顺利。
+     >
+     >
+     > Phone Interview:
+     > 利口 五苓散
+     > follow up: what if we want the next greatest number, not the next greater number?
+     >
+     > 面试官很和善很温柔，我有一个关于简历的问题没有答很好，但面试官笑一笑就过去了。
+     >
+     > VO1：
+     > (1) all the strings in the deepest level
+     >
+     > e.g. (1(2{{3}})){{{{4}}}} return ["3", "4"]
+     >
+     > (2) sort all the pairs by the x value (1, 1.0) (2, 1.7) (9, 1.4) (3, 2.6)
+     > 我用的comparator, Time O(NlogN), Space: O(1)
+     > follow up: what if the x value is within [1,100], can you do it within less time?
+     >
+     > 我说bucket sort, Time O(N), Space: O(N)
+     > follow up: O(N) time and less space?
+     > 我：swapping + sort in place. Time: O(N), Space: O(1)
+     >
+     >
+     > VO2:
+     > 地里经典马拉松题。我一开始没复习过，面试的时候磕磕绊绊做出来的，来不及做第二题。面试官表情很严肃，一直反问我，我每次clarify的时候问他does it sound right? 他反问我what do you think? Does it sound right to you. 心态很崩溃lol，一度以为自己要挂在这轮。但他还是给了我挺多hint，每次我clarify东西的时候他都给我sample output，其实是挺nice的人。
+     >
+     >
+     > HR:
+     > (1) why Bloomberg
+     > (2) tell me about the project that you are most proud of
+     > (3) work experience
+     > (4) three considerations when you are choosing a company
+     > (5) do you have any relatives work at bbg? Any offer ddl?
+     > (6) introduce training program
+     > (7) me asking questions
+     > 这一轮感觉面得挺好的，因为很喜欢bloomberg，所以做了很多research，面试的时候说了很多自己对公司的理解，结合自己的经历解释了为什么我觉得自己是a‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ good fit for this position. 感受得到hr挺喜欢我。
+     >
+     >
+     > EM:
+     > 问了我很多，很多，很多，很多很细的问题，简历挖得很细很细，差点答不出来，中间一度怀疑这到底是不是自己写的project。有的人说他们面的manager聊着聊着就开始介绍terminal了，但我的manager很不talkative，一直是我在说话，我不说话就冷场了，导致我越说越紧张，越紧张说得越多，且说话越来越没逻辑...
+     >
+     >
+     > 总体来说面试体验非常好，除了每一轮中间都间隔很久，稍微有点儿煎熬，但面试官都非常nice，很真诚很注重我的体验，very grateful for this. 真的很喜欢bloomberg，用心准备了很久很久，现在在等结果，hopefully是offer。
+     >
+     > 大家有什么问题欢迎留言，我有时间一定回复。
+
+361. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite 视频面试  | 😃 Positive 😐 AveragePass | 应届毕业生
+
+     > 大家好呀，我又来分享面筋了。
+     > 首先是timeline
+     > 10.19 电面
+     >
+     > 12.3 三轮on-site，前两轮：利口酒吧，利口耳舞伞，利口伞，（有一轮只有一个算法题，做完问了楼主基础知识，没什么参考价值，感觉是根据你经历来的）
+     > 12.7 约em面
+     > 12.9 em面，讲上一段的实习项目，几个简单的问题，为啥来，找工作看重啥
+     > 12.15 offer，有普林斯顿的Office可以选，看着还挺漂亮的
+     > 秋招终于结束了，感谢地里面大家的面经分享，在我准备的时候帮了我很多。建议准备他家的‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌朋友多刷刷利口上的公司题目，真的会考到。然后他家对系统设计和基础知识也会考察
+
+362. 2021(10-12月) 码农类General 硕士 实习@bloomberg - 网上海投 - Onsite  | 😃 Positive 😐 AverageFail | 其他
+
+     > 非常无语的面试，一轮phone call，两轮vo。三次面试都coding都写出来了，还过了test case， bug free。结果最后直接被挂了。感觉可能是面得太晚没hc了。
+     >
+     > Timeline:
+     > 10.05 海投。
+     > 10.13 店面邀请 （因为当时店面时间只能选到11月了，于是预约了11月的）。
+     > 11.11 店面 （开始时问了20多分钟的简历，后面做了一题 lc 司而 trappling rain water）， 外国小哥。
+     >
+     > 然后就被ghost了一个月。
+     > 12.06 vo邀请。
+     > 12.09 vo1 开始问了10多分钟简历。coding 是设计一个抽奖系统， 参考 lc 散吧灵； follow up是一个用户可能有多个参加记录（相当于不再是随机了，而是每个用户带权重），参考 lc 五而把， 外国小哥。
+     > 12.13 vo2 开始时问了大概10分钟简历，coding：第一题 meeting room 2 (而五散)， 第二题 lc 散酒四，国人大哥。
+     > 12.14 邮件拒信。
+     >
+     > 还是很可惜，感觉自己已经面得很好了，coding都做出来了，也准备了很久bb的面经和‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌刷了很多bb的题库。可能真的没有缘分吧。
+     >
+     > 求加米。。。
+
+363. 2022(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😃 Positive 🙂 EasyOther | 应届毕业生
+
+     > 开花堡新鲜4轮面筋啦～总体来说从店面到technical virtual onsite到最后的hr + em体验都非常好。开花堡真心像传说中的一样，面试过程丝滑，面试官友好。
+     > 以下内容需要积分高于 100 您已经可以浏览
+     >
+     > 1. 利口 耳领玲 - 岛屿数量
+     > 2. 利口 易伞酒柳 - 地铁设计题
+     > 3. 利口 耳易而 - 搜索词汇
+     > 4. 利口 伞酒斯 - 解码字符串
+     >
+     > 
+     >
+     > techical onsite每一轮两题，做的比较顺利。沟通也不错。面试官也都非常友好。
+     >
+     > 当天收到下两轮邀请。
+     >
+     > HR面比较短大概半小时，大概的问题就是为什么喜欢开花堡？大概的开始时间？hr人很好，详细介绍了training program
+     > Engineering Manager也非常nice，一开始就说我们今天不问technical questions。就是casual chat一‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌下。给我演示了酷炫的bbg terminal。没有问什么实质的问题。
+     > 希望地里找工的小伙伴们都顺顺利利！
+     >
+     > 请问楼主，最后一轮senior manager面试，发了hackerrank链接吗？
+     > 没有hackerrank链接的。
+
+364. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😃 Positive 😐 AverageOther | 应届毕业生
+
+     > NG虚拟表演：
+     > 第一轮 一进来是三哥， 心哇凉哇凉，在浓厚的口音中努力辨识QWQ，浏览器历史包装的药斯溜 和 迩散令
+     >
+     > 第二轮 一个华裔和一个中国小哥哥，太感谢中国小哥了，感觉全程一直在给我找补呜呜呜呜呜呜呜呜。用抽签包装的伞‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌坝绫
+     > 过了一个小时之后是HR，常见BQ。
+     >
+     > 请问可以详细说一下"浏览器历史包装的药斯溜"吗?
+     >
+     > 具体是实现什么功能呀?
+     > 就是跟lru一样的，要实现一个print history的功能。比如 访问了abcb 需要print bca
+
+365. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+     > 两轮背靠背
+     > 第一轮两个外国小哥，10分钟bq 一道壹零贰玖， 一道 一维的期尔伞，一道concurrency的转换问题（没写code 只讲思路）
+     >
+     > 第二轮一个外国小哥，10分钟bq，一道跑马拉松题，地里没看到原题， 一开始用了一个一个思路，后来用了另一个思路写了reduce space complexity
+     >
+     > 运气不好全是外国小哥&‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌#128557;  顺便问一下大家一轮vo只问一题正常吗。。
+     >
+     > https://www.1point3acres.com/bbs/thread-225621-1-1.html
+
+366. 2021(10-12月) 码农类General 博士 全职@bloomberg - 内推 - 视频面试  | 😃 Positive 🙂 EasyPass | 应届毕业生
+
+     > 9.24 申请10.12 电面邮件 约的 11.1
+     >         电面：LC 尔拜  Follow: 形状已知
+     > 11.2 通知电面通过，约11.17 onsite
+     > 11.17 onsite 两轮，当天通知加面hr
+     >         vo1: 尔屋散 + 腰灵屋
+     >         vo2: 散要嘶 + 腰散酒刘
+     >
+     >         HR：介绍公司，问其他offer
+     > 11.17 约manager call, 约的11.22
+     > 11.22 Manager call: 介绍公司团队，简单bq，聊聊简历
+     > 11.29 约HR call通知结果， 约的12.1
+     > 12.1 HR 给了口头offer
+     >
+     > ps. 收到口头offer后如果‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌想去SF办公室的，需要单独约跟SF的lead聊天，但不影响offer。
+
+367. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 猎头 - 技术电面  | 🙁 Negative 😐 AverageFail | 在职跳槽
+
+     > 我投的是2022 Software Engineer，有一般厂的1.5yoe。先上面经吧，都是高频正常题。
+     > VO1: 白人大叔+中东小哥吧：中东小哥考了利口药酒酒，加一些复杂度的follow up。白人大叔考的设计地铁，基本没follow up
+     > VO2: 国人小哥：挺好的国人小哥，考的舞溜，一直讨论着做，然后follow up大概是期舞酒
+     >
+     >
+     > 隔了一天然后早上收到挂了，hr call的机会都没有。
+     > 整体题目都不难，基本都是先讨论思路，再写代码，最后一起分析加做一点follow up。都做出来了，也没有bug被指出来。我能想到的挂点是中东小哥那题我用的Level Order Tr‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌aversal + Queue做的，可能他想我用dfs做。或者说地铁设计题讨论少了？确实挺迷的，不是很理解，难道hc没啦。。
+     >
+     > PS：感觉地里像我这么迷，被挂的确实也不止我一个，哎，move on。。
+
+368. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面  | 🙁 Negative 😐 AverageOther | 在职跳槽
+
+     > 刚面完我来吐槽，大家帮我看看，到底是我学艺不精，还是他想挂我。
+     >
+     > 一个牢因面试官，上来迟到五分钟，然后离口柳灸洱。
+     >
+     > 我就给了PQ的solution， N logk 秒了，然后他就追问我能不能再优化，那我想着再优化就是N了啊，我就问他frequency是不是unique的？如果是就可以用bucket sort优化到N，他说不是，可以有相同的freq， 然后我就说那就不行。他就一直追着问我你确定不行了吗？？？
+     > (我刚看了眼我一个月前刚写过这道题，我当时是用bucket + pq, 但是这种worst case应该不会比N * logK好吧？可能average确实好点？妈的撸多了，一个月前‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌写的代码都记不得了)
+     >
+     > 我刚去搜了利口的discussion，还真有人用N做出来了？用了Trie？
+     >
+     > 看来是我学艺不精？他如果挂我，是开花堡确实这么难，还是说他就想黑我？
+
+369. 2022(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - 视频面试  | 😐 Neutral 😐 AverageFail | 应届毕业生
+
+     > Phone interview:
+     > 开自我介绍，问了most challenging project。然后问了地铁design 那道题。follow up都是优化方面的。
+     > VO：
+     > 第一轮：第一题 散要司， 第二题一个string有括号然后输出depth最大的string，比如a(b(((cd)ef)((g))),return cd,g.
+     > 第二轮： 第一题 lc 耳散雾 然后说不能用heap的方法来解答。其实就是把start time 和end time一起sort，然后遇到start time +1，end time-1。
+     > 第二题是 药零洱酒‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ 因为开始卡了没时间follow up了。
+     > 虽然都是tag里的高频题，但是自己回答的坎坎坷坷的。
+
+370. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 校园招聘会 - 技术电面  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+     > 贡献一个面经。
+     >
+     > 店面是刷题网伞霸气，问完以后很多follow up，比如如何处理含有emoj或者汉字这样的string，能不能不用哈希表用ordered set来做。面试官人很好，体验不错。
+     >
+     >
+     > 今天面的VO1，是一个包装成browser hostroy的LRU Cache。我用单链表做的，但是面试官好像不是很熟悉用单链表的做法，一直在问我代码细节，搞得有点慌。follow up是写一个方法，要求可以改动cache ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌capacity。只做了这一个题就到反向提问了。我看地里都是直接当场约的vo2，我到最后面试官说让我等hr邮件，估计是挂了。
+     >
+     > 求大家加下米谢谢！
+
+371. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 内推 - 技术电面  | 😃 Positive 🙂 EasyPass | 应届毕业生
+
+     > 09/26 投申请
+     > 10/15 店面
+     > 和蔼三哥哥，题目是地铁幺三九刘和follow up
+     > 然后经过漫长等待（还以为被刷掉了）是两轮背靠背virtual 技术面
+     > 11/4 第一轮
+     > 不太和蔼三哥哥，题目散酒思和另外一题记不得了，总之也不是很难
+     > 11/5 第二轮
+     > 超级和蔼华人姐姐，题目药酒和generate number （🔗 leetcode.com ... ing-prepration-list）这两题我是没准备到的，感觉面的一般，虽然做出来也花了一定时间，但是小姐姐很细心提示我。
+     > 然后 11/17 最终轮，HR和EM
+     > HR小姐姐问题很基础聊得也不错，EM华人大哥挺厉害的，简历问的很细包括里面的技术（我没答好QAQ）然后还问了个逻辑问题（又没答好QAQ太紧张了）万幸大哥还是让我过了
+     > ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌
+     > 11/24 电话收到口头offer
+     > 这次面试看了好多前辈的经验，真的谢谢大家。希望我的经历也能帮助到大家
+     >
+     > https://leetcode.com/discuss/interview-question/964672/bloomberg-software-engineering-prepration-list
+
+372. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 😐 Neutral 😐 AverageFail | 应届毕业生
+
+     > 一面，烙印。问我的简历大概十分钟围绕进程。 写了一题接雨水的改变题，开始用的stack跟他work through了一个example。大概花了二十分钟。。。他才让我写， 写完以后follow up，我改成了双指针。
+     >
+     > 二面，白女。candy rush和找到（d（c（an)))里面最深的string。
+     >
+     > 都写出来了，今早收到拒信。不知道哪里出了问题，都是work through 了 exam‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ple面试官同意了才写的。心态有点崩
+     >
+     > 开花煲可以说是最想去的公司。。。。
+     >
+     > 求加米
+
+373. 2021(10-12月) 码农类General 硕士 实习@bloomberg - 校园招聘会 - 技术电面  | 😃 Positive 😐 AverageOther | 应届毕业生
+
+     > 除了自我介绍后，简单让我在做过的项目中挑一个比较有挑战的，介绍一下具体的难点和解决方案。
+     >
+     > Underground System
+     >
+     > 第二题考了OOD，design elevator system，虽然是经典题，但是完全没准备。讨论了一段时间class design，最后让我简单‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌的写一下调度电梯的方法。
+     >
+     > 等update
+
+374. 2022(4-6月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😃 Positive 🙂 EasyFail | 应届毕业生
+
+     > 分享一个 迟到的 开花堡 2022 NG 挂经 流程都走完了挂我真是没想到的...难过了一周, 希望是自己overqualified 或者no headcount了 loool
+     >
+     > 尽管没有拿到offer,开花堡的面试体验来说还是非常舒服的,流程很快遇到的面试官人都很好
+     >
+     > Timeline:
+     >
+     > 10.4 收到好心地里好心人内推, 完成申请
+     >
+     > 10.9 收到邀请填写1st interview date
+     >
+     > 10.11 Recruiter reachout
+     >
+     > 10.19 1st VO/phone interview
+     > 第一轮店面参见 🔗 www.1point3acres.com 当天下一轮
+     >
+     > 10.25 2nd VO 一个白人小哥,中途切麦还出去跟别人说了两句话,人挺不错
+     > 第一题 利口 撕伞凌 double LL 改成single LL
+     > 第二题 利口 高频 亿伞酒陆 不过所有的class这些都自己写,我还假装演了一会讲我觉得该有哪些api hhhhh
+     >
+     > 10.25 Recruiter约下一轮HR + HM面试
+     >
+     > 11.2 HR+HM 面
+     >
+     > HR面30分钟, 一个很nice的黑人小姐姐,常规BQ + 对NG SDE training的介绍, 我在BQ里主要讲了soft skills 还有对fintech 以及diversity的一些关注
+     >
+     > HM面45分钟, 工作25年的华裔大叔?人非常的有趣, 一上来就讲他不会问任何tech相关的东西, 主动聊了很多很多比如他觉得如何define seccuss at Bloomberg然后让我问question, 就问了我一两个work experience的东西, 当时我头脑一热可能就问了一些不是跟公司本身文化有关的东西(leaders‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌hip, how to make good judgements for projects as a leader, etc.) 不知道会不会有这个原因. 但是当时觉得聊得挺好,应该能拿到offer
+     >
+     > 11.5 Recruiter email 告知被拒,冷冻期6个月, follow up on feedback: “Unfortunately under our policy we are unable to share interview feedback” 非常郁闷...
+     >
+     > 技术面试人品都挺好没有遇到难题.虽然没有过,但是希望能给大家一个参考,祝愿大家能早日找到工作!求加米感谢🙏
+
+375. 2021(10-12月) 码农类General 硕士 实习@bloomberg - 网上海投 - 校园招聘会  | 😃 Positive 😐 AveragePass | 应届毕业生
+
+     > 来提供一下暑期sde 实习过经timeline：
+     >
+     > 10.6 海投Bloomberg
+     >
+     > 10.13 约Phone interview
+     > 10.22 Phone interview一题medium：给一个n * n的矩阵，一个starting point，矩阵里有wall 之类的，return 是否能到达给定的end point。 Followup： 在矩阵里加上一些门和钥匙，拿到钥匙才能打开门，这题怎么解
+     >
+     > 11.1 hr reachout 约VO1
+     > 11.8 VO1 一个小时上来十分钟问我简历why bb， 然后一题类似system design computer network收发message之类的 问了至少6-7个follow up 当场约下一轮
+     > 11.10 VO2 一个小时上来十分钟同样的问我简历里的一个经历和why bb， 然后lc 430 和 lc 42。hr当天约最后一轮hm + hr
+     > 11.15 HM + HR HM一个小时先问了我一些C++基础， 写一个destructor之类的，然后virtual 和 override怎么用。然后详细问了一下简历，问了一些javascript最基本的用法以及一些常规bq。 HR问了我一些BQ给我讲了一下实习待遇之类的，15分钟结束‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌。
+     > 11.16 HR 约phone call
+     > 11.17 口头offer
+     >
+     > 求大米！！！和intern offer群
+
+376. 2021(10-12月) 码农类General 硕士 实习@bloomberg - 网上海投 - 技术电面 视频面试  | 😃 Positive 😐 AveragePass | 其他
+
+     > 电面
+     > 直接打电话来的，简单聊了15分钟（projects+Why Bloomberg）
+     >
+     > 题目是约瑟夫环，看到题的时候惊呆了，然后完全忘掉了数学解法😂。最后用循环列表解的，写完后讨论了下时空复杂度。次周收到next round通知。
+     >
+     >
+     > VO
+     > 依旧是简单介绍了10分钟（projects+Why bloomberg），然后开始coding。
+     >
+     > 1. Browser History，但其实要求的是LRU。
+     > 2. Candy Crush 1维，定式思维写了2维的解法，写完后follow up问有没有O(N)的解法，想了下其实就是remove k adjacent duplicates，时间原因就嘴跑了一下，没有再让写了。
+     >
+     > 求米看面经呀🙏
+     >
+     > 补充内容 (2021-11-17 06:05 ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌+8:00):
+     > 11.16 收到update约下一次VO
+
+377. 2022(7-9月) 码农类General 硕士 实习@bloomberg - 校园招聘会 - 技术电面 Onsite  | 😐 Neutral 😐 AverageFail | 其他
+
+     > 岗位是2022 暑期 sde intern
+     >
+     > 他家是有target school的，并且投递链接在官网搜不到，是私发的。
+     >
+     > 时间线：
+     > 9.21投递
+     > 10.1 电面
+     > 10.18 VO1，当场约VO2
+     >
+     > 10.20 VO2
+     > 10.22 拒
+     >
+     > 他家面试轮次相当多，VO2后如果通过还有个hr hm chat，这一轮也是会挂人的，总体来说他家比较看运气。
+     >
+     > 以下是面筋：
+     >
+     > 电面：伞霸气，我用了2次for循环，follow up是如何第二个for的优化时间复杂度。
+     >
+     > VO1: 疤疤，疤 （没错是两道题）
+     >
+     > VO2: 舞柳，撕伞聆
+     >
+     > 挂点：vo2前5-10分钟bq没答好，并且做撕伞零时有bug（忘记将child设为null）被面试官指出来后改正，被指出‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌来前面试官问我这是不是你最终的代码，当时没意识到可能是他发现了bug就回答是，结果bug就被指出。
+     >
+     > 请问lz vo2 bq 考了啥
+     >
+     > 介绍简历；最挑战项目；如何和mentor相处，工作中遇到难题该怎么办，可能是这点答的不完美
+
+378. 2022(10-12月) 码农类General 硕士 全职@bloomberg - 校园招聘会 - 视频面试  | 😐 Neutral 🙂 EasyPass | 应届毕业生
+
+     > 上来先自我介绍。然后why Bloomberg。what's ur most challenging project。
+     >
+     > 第一题我不知道具体的题号。
+     > 给两个array 一个array a 一个array b
+     > 让你return一个长度为array b的array，让你return有多少个array a里的数比array b小。returned的每一个element对应array b里面的每一个element。
+     >
+     > 比如 a= [5,3,6,2,1], b=[10,6], return [5,4]
+     >
+     > 我先说了一个bruteforce的思路，然后想了个更优化的思路。
+     > 先sort array a再 做binary search，最后时间复杂度是mnlogn。
+     > 因为我binary search写的不是很顺，walkthrough code的时候case老是搞反，所以没来得及问followup。面试官直接下一题了。
+     >
+     > 第二题是bb高频。（感谢面试官orz）药伞久留。设计地铁算进出站平均时间。嗯，不过面试官给的题目比较模糊，我在写的时候发现其实有很多assumption要自己make，最好提前跟面试官clarify。
+     > 然后分析每一个function的时间空间复杂度。
+     > followup 1是假设每天有3million多个人进出，请问我的算法多久会overflow。这个我也没具体算，就直接说2*32 是intmax，假设每个人花30unit，最后是往data structure里面加2*32/（3million*30）次会overflow。
+     > followup 2要如何解决overflow。我的答案是可以把u‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌nit从seconds 换到hours或者days。面试官说我这个sol也可以。她expect是把integer存成list，每次加减做一下carry之类的处理。
+     >
+     > 最后这个面试官不是很talkative。大部分时候没有respond。我每次写着写着都担心她是不是觉得我写错了，所以沉默了。为了打破尴尬，我经常强行沟通orz 害怕面试官有啥feedback我却没get到。
+     > 最后一天之内hr约好了final round和hr面。效率贼高！听说如果前面technical round答得好是没有senior manager面的，那可能我这一轮在第一题上答得一般吧。
+     >
+     > 发面经攒人品，欢迎大家给加米～～
+     >
+     > 给你update一下我当时记的笔记。
+     > 一共有三个要求。
+     > 1.给name return对应的phone number
+     > 2.给phone number return name
+     > 3.sort name by alphabet order and return all information related to name
+     >
+     > followup应该是大量数据如何处理？好像有问如何o(1)得到信息。
+
+379. 2021(10-12月) MachineLearningEng 博士 全职@bloomberg - 内推 - 技术电面 Onsite 视频面试  | 😃 Positive 😣 HardPass | 应届毕业生
+
+     > 先说一下Timeline:
+     > 10/06 -- 内推+网申
+     > 10/15 -- recruiter电话聊天
+     > 10/20 -- 电面
+     > 10/25 -- 电面
+     > 11/04 -- VO
+     > 11/8 -- recruiter口头通知pass
+     > 11/9 -- 约team matching
+     >
+     > VO一共4轮，每轮2个面试官，耗时1h。整个VO持续4.5hs。
+     >
+     > 第1轮：
+     > Introduction, 从简历里扣research interest的一个方向问细节。然后开始ML design。假设你有一些house的信息（地理位置，price等），需要设计一个ML model，给定一个house，预测对应的price。
+     > Follow up:  1) 怎么设计feature，预处理，high dimensional怎么办，怎么处理地址信息，怎么获得更多feature，怎么更好利用feature，还有什么实际情况需要考虑;  2) 用什么Model，lz举了linear regression和GBDT，于是针对两个model的细节都问了不少。比如convexity, gradient descent, regularization和GBDT的概念和参数等;  3) 怎么train，怎么evaluate。
+     >
+     >
+     > 第2轮：
+     > Introduction，问实习project details，扣了下feature和model细节，why use A instead of B，model的最终performance如何。完了开始代码
+     > 以下内容需要积分高于 180 您已经可以浏览
+     >
+     > 面试官1问了下popular clustering model有哪些，都有什么联系和差别，然后implement Kmeans from scratch。可以用numpy。边实现边回答细节问题，比如怎么initialize centers和怎么choose k。码完后让自己写一个test case测试一下运行结果。
+     > 面试官2紧接着来了个经典的利口药尔灵舅，把题目的fixed k换成 k>=3。码完跑test case测试运行结果
+     >
+     > 
+     >
+     > 前2轮结束后休息了30分钟，接着开始3-4轮。
+     > 第3轮：
+     > Introduction，问了与DNN相关的project，然后让解释什么是NN，常见的NN strcuture有哪些，能否并行，怎么参数怎么更新等等，接下来又是一道ML design
+     > 以下内容需要积分高于 180 您已经可以浏览
+     >
+     > bloomberg有很多document谈论某个公司的信息，设计ML model分类article的sentiment。Follow up: feature提取feature，RNN是什么，怎么定义，GRU和LSTM有什么区别，NN structure细节，结果怎么evaluate，label 不balanced怎么处理等等。
+     >
+     > 
+     >
+     > 第4轮，HM面：
+     > 以下内容需要积分高于 180 您已经可以浏览
+     >
+     > 2个HM轮流介绍自己team的工作，然后让lz发问。lz针对hm的介绍问了两个具体问题，HM于是开始滔滔不绝，互问互答吹了30分钟。其后HM开始BQ。1) why BB, how does ur background fit BB。 2) what do you think about going from academia t‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌o industry。完了之后其中一个HM开溜了，另一个HM问我还有没有关于BB的其他问题。lz随口问了一下WLB和Internal mobility。完了后相互感谢商业互吹结束。
+     >
+     > 
+     >
+     > VO完了第2天（周五）发邮件给recruiter要feedback，recuriter说最早要周一才能给。于是约了周一phone catch up。周一通知pass。稍微说了一下lz整个过程的表现。特别需要mention的是面试时lz的coding part有些小bug以及需要面试官给hint，但过程中他们很看重collaborative problem solving skills。所以不要一味coding，该打嘴炮商业互吹时一定不要沉默不语。
+     >
+     > 码字不易，如果觉得有所帮忙请不吝赐米（毕竟赐米并不消耗自己的大米 T T）。虽然大家都说今年行情好转，但感觉BB家的bar还是较高的。希望大家都能拿到心仪的offer！
+
+380. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 内推 - 技术电面 Onsite  | 🙁 Negative 😐 AverageFail | 应届毕业生
+
+     > 后面有几家面试，发个面经攒攒人品
+     > 电面：list找第一个重复的char，很简单
+     >
+     > VO1: 1维对对碰 + 利口翼酒鸠
+     >
+     > VO2：地铁题 + 利口汽酒
+     >
+     > HR：聊了聊BQ
+     >
+     > Manager：这轮真是一言难尽... HR发的要求是讨论简历和过去经验，manager上来让设计一个书店的e-commerce系统，问了API和DB schema，又问如何proactively handle security risk, abuse和DDOS...
+     >
+     > 隔天通知挂了，虽然有保底offe‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌r还是有点意难平。。。 顺便求米看看面经
+
+381. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+
+     > 提供一个开花堡的dp。
+     > 10-12，投简历（通过内推)
+     > 10-13, 收到邮件预约hr
+     > 10-18，跟hr聊，预约电面
+     > 10-20，电面，蠡口斯散玲
+     >
+     > 10-21，通知过，预约vo
+     > 11-2，vo，蠡口伊伊遛旧和已而偲偲变形，设计instagram
+     > ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌
+     > 11-3， 通知没过
+     >
+     > 总体感觉不难
+     >
+     > 楼主设计instagram大概怎么答得呢？已加密谢谢！
+     >
+     > 谢谢大米！他们主要问的是data schema，所以要说说怎么设计database，还有各个table之间怎么interact。因为是relational database,所以sql就可以
+
+382. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 校园招聘会 - Onsite 视频面试  | 😐 Neutral 😐 AverageFail | 应届毕业生
+
+     > 上周面完BB，这周刚收到拒信，有点意外。
+     > 第一轮：
+     > 第一题：LinkedList简单题，应该没原题，快慢指针很简单
+     > 第二题：tree level traverse，followup：不是binary，n叉树怎么改代码
+     >
+     >
+     > 第二轮：
+     > 第一题：岛屿 利口 贰佰
+     > 第二题：decode string 利口 就一，followup：recursion怎么写
+     >
+     >
+     > 题目都是全过，应该没啥问题。
+     > 周五面完第二周一通知安排最后HR+EM，然后拖到周五给我安排下周
+     >
+     > 首先EM面：面试官迟到十分钟，让我介绍自己，中途打断我强调这是non-tech面试，前面两轮已经表现很好了，让我多说一点non-tech的东西比如爱好啥的，我就说我喜欢运动啥的他也说喜欢，之后问了一点点项目，我介绍完他表示非常challenging，interesting.最后问我什么时候毕业，说他期待到时候见到我。30分钟结束
+     > 过了半小时HR面：就很常规的问题，最后问我希望那个office sf还是nyc，反复说他们training system 很好 就结束了‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌。
+
+383. 2021(10-12月) 码农类General 本科 全职@bloomberg - 校园招聘会 - Onsite  | 😃 Positive 😐 AverageFail | 应届毕业生
+
+     > BB校招昂赛 一共两轮
+     > 第一轮 面试官有三个人，两个是shadow的 考的collatz 要有多种方法求解 要把recursive和iterative的解都写出来才行
+     >              我一开始index搞错了 但是在提示下改了过来；
+     >               zoom里面一个人问完另外一个人来问了一道 黎寇 似散林 讲了一下思路 大致写完了 但是不知道有没有bug free
+     > 第二轮 一个面试官 人特别好 在BB待了很久了 就考了 里寇 药伞就刘 然后问了各个操作都是什么时间复杂度 有没有其他可能的解法这样子
+     > 结束以后有一个HR 半个小时聊聊公司什么的
+     >
+     >
+     > 然后第二天收到邮件加面 约了上周礼拜五下午和hiring ma‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌nager聊天
+     > 结果就挂在这个HM轮了
+     > HM问的问题围绕 一个pipeline传data突然出问题了我会做什么 很细致地考察debug和解决问题的能力
+     > 准备得还是不够到位
+     >
+     > 再接再厉！
+     > 求大米求大米求大米
+
+384. 2021(4-6月) 码农类General 本科 实习@bloomberg - 校园招聘会 - Onsite  | 😃 Positive 😐 AverageOther | 应届毕业生
+
+     > career fair约了coffee chat。然后直接约了点面
+     > 点面45分钟，两题。第一题valid bst，第二题valid paren。都直接秒的
+     >
+     > 然后过了两周两轮vo。连在一起的，背靠背，中间15分钟休息。
+     >
+     > 第一轮：两个面试官，上来常规bq，why BB, etc。然后两道题：第一题经典meeting rooms，第二题assign next pointer, given any binary tree.我用的带q的bfs。好像还有更直接的解法。。
+     >
+     > 第二轮：bq完。第一题经典1d candy‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ crush。第二题困扰我好久。。汇率换算的，最后做出来了，graph题。
+     >
+     > 两轮结束半小时就发了终面邀请。。。。
+     >
+     > 真心求大米 感谢！！！以及请问如何准备hm面啊，感觉很多人挂的莫名其妙..
+     >
+     > zzffzz_1234 发表于 2021-10-27 21:05
+     > assign next pointer 那题，有更详细的描述吗？谢谢！
+     >
+     > 听起来是lc 117
+
+385. 2021(10-12月) 码农类General 硕士 实习@bloomberg - 网上海投 - HR筛选 技术电面  | 🙁 Negative 😐 AverageOther | 应届毕业生
+
+     > Timeline:
+     > 9.17 海投
+     > 9.30 VO邀请
+     > 10.13 VO1
+     > 10.14 VO2
+     >
+     > 10.22 HR/HM
+     >
+     > VO1: 15min BQ + 1道简单题 + 1道 Flatten Linked List
+     > VO2: 15min BQ + 1道用了链表的设计题 + 1道用了哈希表的设计题
+     > HR: 问了20分钟的简单 BQ，为啥想来 BB 这些
+     > HM: 一个烙印 Manager，首先迟到了7分钟，上来说自己在 BB 工作了15年，简历不问具体的 Technical 问题，只问你 Impact 多大，最后问了一道口头的设计题：在 Uber 里面如何匹配 Driver 和 Passenger，我说用两个 Queue 存 Driver 和 Passenger 呗，他说不行，然后我说用 HashMap key 是 Time Slot，value 是 Driver 和 Passenger 的 array，他问我 What is an array ? 我震惊了，BB 的 Technical Leader 连 Array 都不知道是啥？最后一句我们没时间了 Good Luck 就结‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌束了
+     >
+     > 前两轮的 Interviewer 感觉很专业，HR 也不错，就是 HM 面太煎熬了，从此烙印 Manager 一生黑
+
+386. 2021(10-12月) 码农类General 博士 全职@bloomberg - 内推 - Onsite  | 🙁 Negative 😐 AverageOther | 在职跳槽
+
+     > 第一轮俩印度先生和女士，直接让我设计个log系统说了半天才知道是让我弄个singleton出来并考虑多线程，我没复习这个半天也没弄出来
+     > 第二题是LRU的马甲题，女士全程板着脸冷漠
+     > 第二轮
+     > 第一题是类似于随机删除访问
+     > 第二题是热门股票然后根据热度调整顺序
+     >
+     > 第三轮是俩经理--其中一个印度人又揪着设计模式不停的问给我郁闷坏了。。还教育我怎么弄factory。。也是板着脸感觉我欠着他啥。。还老暗示别看算法都回答都不错我们更看重设计blah blah。。其他的bq都是随便问问。。感觉他们还是希望找有相关业务经验的。。我是转行所以虽然题目刷到位了估计他们也不咋认
+     >
+     > 最后一轮说有人结果‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌半天没人show up。。
+     > 总体感觉偏负面，我准备move on了不期待有啥结果。。感谢地里的兄弟帮着内推。。
+
+387. 2021(7-9月) 码农类General 本科 全职@bloomberg - 内推 - Onsite  | 😐 Neutral 😐 AverageFail | 在职跳槽
+
+     > 上周面了onsite，
+     > 第一轮国人加白人小哥number of islands + 叁酒肆
+     > 第二轮老俄加老印要求我实现 in memory mysql 基本功能 最后要跑
+     >
+     > 第三轮team lead聊简历
+     >
+     > 总结：题不难，但楼主点背吧（见第二轮经历），面后发邮件和hr complain 第二轮，直接被鸽到现在。发出来希望对大家有帮助，顺便求好心人赏点米^_^
+     >
+     > 第二轮面后就不想去了。老俄主导的面试口音重经常要老印边上翻译一听就懂，全程黑脸经常打断我思考（我和他说了让我想想人家跟没听到似的）‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌，双方agree的需求到后面推翻却质问我，不懂java让我各种解释用法……最后问问题环节直接闭麦做别的事去了。
+     >
+     > 匿名用户 发表于 2021-09-20 13:47:42
+     > in memory sql ? 没懂啥意思？
+     > 类似sqlite，实现基本的dml和ddl
+
+388. 2021(1-3月) 码农类General 本科 全职@bloomberg - 网上海投 - Onsite  | 😐 Neutral 🙂 EasyFail | 在职跳槽
+
+     > 面的是SF的组.
+     >
+     > 首先是一个两个小时的pair programming.
+     > 要设计一个cli.
+     > 给一堆莎士比亚的文件, 保存在本地，然后搜索某个单词频率 的行数
+     >
+     > 
+     >
+     > 然后45分钟的system design
+     > 设计一个coding interview 网站的 ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌terminal.
+     >
+     > 没有下一轮了，应该是挂了，求求小哥哥小姐姐评分加个米
+     >
+     > 求点大米吧.
+     > 神龙成就达成2/7
+
+389. 2021(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | 😐 Neutral 😐 AverageOther | 应届毕业生
+
+     > 刚刚面完开花堡虚拟表演 发个面经攒人品吧
+     >
+     > 一共三轮，两轮coding和一轮HR聊天
+     >
+     > 以下内容需要积分高于 100 您已经可以浏览
+     >
+     > coding第一轮：
+     > 1. 给一个integer，求这个数是否是palindrome
+     > 2. 给一个字典里面包含另一种语言的alphabet顺序，其中有的alphabet可能是两个characters，比如 [r, d, dd, c, z, zh, e...]，然后给一些words让按照这个alphabet的顺序来排序。可以调用standard library的sort，所以只需要写出comparator就可以了。follow up是如果给的词有很多重复的有没有什么办法优化，没答上来，求解 > <
+     >
+     > coding第二轮：
+     > 1. 利口舞寺耳
+     > 2. 给一个2D array，每个entry是1或者0，1代表一个pixel。求这些pixel组成的图形有多少条边。
+     > example:
+     > [[1, 1, 1]] => 4 因为三个pixel连在一起变成一个长方形
+     > [[1, 0], [1, 1]] => 6 因为组成了一个L形
+     > 胡说八道了半天，没做出来。而且somehow和这个面试官交流很不顺畅，他的每一句话都让我觉得很ambiguous，然后clarify也很费劲。整个过程就很难受
+     > 求个思路谢谢 QvQ
+     >
+     > 最后一轮根HR聊，问实习遇到了什么technical & non-technical challenges，为什么想来他们公司，对未来公司的期望，感兴趣的技术方向
+     >
+     >
+     > 然后约了最后一轮HM面。感觉今天VO面的并不好，应该已经挂了。不过已经有更好的offer，本来也只是练手
+     >
+     > 如果有人会做那个follow up和最后一题的话求交流思路～
+     >
+     > 
+     >
+     >
+     > 补充内容 (2021-09-20 21:57 +8:00):
+     > 收到offer啦 来补个timeline：
+     >
+     > 8.10 recruiter reach out
+     > 8.20 Phone Interview
+     > 9.8 VO
+     > 9.16 Hiring Man‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ager Interview
+     > 9.17 Offer
+     >
+     > HM这一轮水水的，约了一个小时的时间，对面只随便问了两三个很浅的简历问题就说没啥要问的了，这时才过去15分钟。。。之后就开始尬聊，还问我what would it take for you to accept the offer...
+     >
+     > 总之整体流程是很顺滑的，每一轮面完后都第二天就收到update。
+
+390. 2021(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - 视频面试  | 😐 Neutral 😣 HardFail | 在职跳槽
+
+     > 两轮coding一轮hm
+     >
+     > coding 第一轮 15分钟bq + meeting room那个题
+     > coding 第二轮 15分钟过简历 + 一个面试官自己出的题
+     >
+     >
+     > 给一个 equiv(a, b) function, 已经一个input List<Object>
+     > 让你根据 equiv这个function 把input list 分组，  return true 的‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌同一组，return false 不同组。
+     >
+     > hm就是问了些bq 问题
+     >
+     > 隔天通知挂了
+
+391. 2021(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | 😐 Neutral 😐 AverageOther | 在职跳槽
+
+     > 两轮tech + 1轮hm
+     > 第一轮两道题 刷题网 酒吧  司肆舞
+     > 第二轮是半轮聊简历 半轮做题 那个马拉松的题
+     >
+     >
+     > hm 轮就是聊简历 + 我问问题。
+     >
+     > 求大米
+
+392. 2021(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | 😃 Positive 😐 AveragePass | 在职跳槽
+
+     > 店面: 斯尔， 寺灵漆，第二题没做过，当时没做出来但是面试官还是给过了
+     > vo1: 给一个字符串按出现频率排序，相同频率按alphabetical排；寺叁零，不过是single linked
+     > vo2: 找众数；幺叁酒溜 设计地铁系统
+     >
+     > hr面：b‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌q 三十分钟左右
+     > senior面：挖一挖项目以及bq
+     >
+     > 求加米
+
+393. 2021(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | 🙁 Negative 😐 AverageFail | 应届毕业生
+
+     > 第一轮：
+     > 第一题：
+     > add two number
+     > 第二题：
+     >
+     > 给你一个matrix 除了0就是 s 还有x，给matrix和s的坐标作为input 让你找x
+     > 第二轮：
+     > system design， 让你设置一个类似健康码的系统， 问了db schema还有 bottleneck,还有优化 cache kafka aws之类的问题
+     >
+     > 总结体验： 第一轮面试官特别不友好 疯狂打断 不给你写题目的时间，真的是一分钟都没有停过，第二轮面试官迟到30min，是个国人大哥，还挺友善，就是的确没准备过system design，我也不知道ng岗位为什么考这个，可能人已经招满了，体验不是很好 ，很不被尊重的感觉有点
+     >
+     > 补充内容 (2021-08-20 23:18‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ +08:00):
+     > 求各位大大加米
+
+394. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - 视频面试  | 😐 Neutral 😐 AverageFail | 应届毕业生
+
+     > Bloomberg VO 4道题 全是面经题 利口都有
+     > 第一轮： add two number， binary tree vertical traversal
+     >
+     > 第二轮：meeting room 2， und‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌erground system design
+
+395. 2021(7-9月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Other | 在职跳槽
+
+     > 两轮
+     >
+     > 1.  445 Add Two Numbers II
+     > 2.  236  Lowest Common Ancestor of a Binary Tree
+
+396. 2021(7-9月) 码农类General 本科 全职@bloomberg - 内推 - Onsite  | WaitList | 在职跳槽
+
+     > 第一轮 中国小哥哥 简单题和印度大哥 伊散巴，大哥挺友善的，说实话太久没做linked list题做的不太好我的错
+     >
+     > 第二轮 白人大哥和印度小哥自己出的题 一个表面是停车场的题 没在刷题网见过，open ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ended问题，感觉答的还不错。
+     > 完了之后并没有接着是hr面 就可能第一轮没做好吧
+
+397. 2021(7-9月) MachineLearningEng 博士 全职@bloomberg - 猎头 - 技术电面 Onsite 视频面试  | Fail | 在职跳槽
+
+     > 猎头主动找的, 面的是Senior Software Engineer (in AI/Machine learning)总共有两轮电面+4轮 virtual onsite
+     > 1. 电面1：
+     > 一个看起来很拽的年轻面试官，面了一个ML system design的问题，具体是怎么设计Named Entity Recognition system. 如果做过相关问题应该不难
+     > 因为楼主之前没怎么准备过，所以感觉答的不好，另外面试官有点盛气凌人，所以以为要挂了
+     > 结果还是过了，所以面试的感觉有时候不太准。。
+     >
+     > 2.电面2:
+     > 一个很和气的senior，design一个基于文本的fraud detection ML system. 因为是简单的supervised learning system, 所以答得还可以，可以看出来面试官也很高兴
+     >
+     > 3.Virtual onsite:
+     > 总共5轮，其中三轮是technical的，从早面到晚，因为是virtual onsite，所以连午饭时间都基本没有:(，因为还要自己赶快找点吃的。。。
+     > 1. 简单的coding+design NER; 这次楼主准备好了感觉答的还不错
+     > 2. ML design：search ranking
+     > 3. 吃饭+HR聊天
+     > 4. coding/design: 给定一个stream，要求写一个method，返回top k frequent elements, 有点类似leetcode 347, 不过因为要对stream经常调用这个method，所以需要设计一个比较好update的，时间complexity也比较好的；
+     > 这一轮楼主先打答了brute force的方法，然后讲了一个用heap的方法，method complexity 是 NlogK的；但是面试官不满意，一定要求想出kLogN的，在面试官提示下，最后写了一个dictionary+heap， 然后heap是从底层开始实现，需要有heap udpate （bubble up)的方法，花费了好大功夫。。。
+     > 不知道这题是不是曾经出现过在哪里？虽然最后写出来了，但感觉面这个题好像是烙印面试官在坑楼主一样的。。如果大家有什么想法或者知道leetcode题号可以跟大家说一下
+     > 5. director聊天，一个很年轻的director，一直在讲bloomberg onboarding process怎么好，对new g‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌rad怎么友善，话说我面的senior为什么要给我讲这个。。
+     >
+     > 除了第4轮没什么思路，其他感觉都还可以。过了两周发邮件说悲剧了，然后还说可以打电话继续聊天。。。都被拒了还有什么可聊的？于是就问hr聊天的话是否可以给feedback，然后就再也没回音了。。。
+     >
+     > 听说Bloomberg给的不多但挺轻松稳定的，面完了楼主还在瞎纠结如果给了offer要不要去的问题，结果直接帮我选择了:) 不知道和楼主new grad面的时候据过这一家的offer有没有关系。。
+     >
+     > 希望对大家有帮助，求大家加米呀～～～～～～～～
+
+398. 2021(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Pass | 在职跳槽
+
+     > 两个team都是一样的流程。每个team, 有两轮编程一小时的面试，一轮半小时manager 闲聊。
+     > 每轮编程面试有2个主面人+ 1个shadow， 由三部分组成，简要的自我介绍，编程1-2道题，会有一些followup, 最后可以问他问题。
+     >
+     > 考到的编程题都是leetcode easy to medium 题的变体
+     >
+     > 用到的leetcode解法是（都是变体题）
+     > 1. LRU cache
+     > 2. Insert Delete GetRandom O(1)
+     >
+     > 3.数一个sorted array中某个元素出现的次数（两次二叉树）
+     >
+     > 还有一道没有原题的。
+     >
+     > 4. UDP protocol sequencer
+     > Support handling packets of data and print all received data to standard output in order.
+     > Each packet of data has an incremental sequence number associ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ated with it indicating the order of the data as it was sent out by the source.
+     >
+     > follow up 问的比较广，有涉及系统设计的，edge cases，访问很多的时候如何优化等等。
+
+399. 2021(1-3月) MachineLearningEng 博士 全职@bloomberg - 网上海投 - 技术电面 Onsite 其他  | Pass | 应届毕业生
+
+     > 回报地里报一个bloomberg ai 的面经
+     > 总共两轮技术电面 五轮onsite（包含三轮技术）
+     >
+     > 每轮技术面都是1-2道lc 和 ml/dl concepts 和 case study
+     >
+     > 遇到的题目有利口 1396 1029 146 380 （时间有点久了就记得这么多了）
+     > 还有implement 一些简单的ml算法
+     > concept部分很简单 ex. l1l2 的区别 ， gradient boosting 和 random forest区别； pca的原理； 描述‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌svm
+     > case 部分 问了multi label classification （news topic）； sequential data ；
+     >
+     > 麻烦加点米 谢谢
+
+400. 2021(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Fail | 应届毕业生
+
+     > 楼主转专业ng, 分享一个六月初bb的一个onsite挂经，也是我第一个onsite， 楼主当时感觉做的还是不错的， 每轮两题，也解锁了hr轮， 两天后给我挂了。。。特来给地里的各位分享
+     > 第一轮： 国人大哥
+     > 第一道 valid parentheses, 第二道 利口 亿尔死救  我记得当时一开始其实clarify了是不是要输出所有解，结果把自己绕到dfs上面去了（以为是利口 伞泠艺）结果写dfs的时候被国人大哥提醒，这才知道只用输出一个解，这个过程耽误了不少时间，做完这道，国人大哥跟我说没有时间做下一道了，当时心里一惊，应该是可能的挂点了吧
+     >
+     > 第二轮： 白人小哥 + 国人大哥
+     >
+     > 第一道 国人大哥来了道股票 topK （套壳 亿尔斯丝）   第二道白人小哥： 利口 斯丝雾  我一开始说可以reverse，他说可以，但是不够优化。。。通过交流才知道他想要的是recursion解，给他写了recursion， 也没啥问题
+     >
+     > 第三轮： HR
+     > 我个人感觉聊的还挺开心的， 都是地里面经常规题，只有一道没准备过，可能也是挂点之一： 问我为啥想来金融行业。。。。这个真没准备，瞎扯了
+     >
+     > 两天后收到拒信。。。本来以为面的还可以的，结果挂了，看来还有不少要提高的，拜托各位加点米！ 感谢！ ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌   好在刚刚收到过了🐶家hc的消息，让我没那么难过了。。。。
+     >
+     > 附件不知道咋贴了个图片（毫无关系）。。。。删不了了 ，大家请忽略
+
+401. 2021(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | Fail | 应届毕业生
+
+     > 第一次写帖子。。如果感觉对您有帮助，求加米 !!!
+     >
+     >
+     > 4/27/2021 电面：
+     > Why Bloomberg? Changllenge Project?
+     > (1) 刷题网：壹山久留
+     > (2) 刷题网：四散铃
+     >
+     > 6/8/2021 VO:
+     > Round 1:
+     >     Changllenege Project and Details?
+     >
+     >     (1) 刷题网： 易二巴
+     >     (2) 刷题网：伊尔思思
+     >
+     >
+     > Round 2:
+     >     Favorite Programming Language? Why?
+     >     (1) 刷题网： 酒吧
+     >     (2) 刷题网：贰佰
+     >
+     > HR round:
+     >         self-introduction.
+     >         Why Bloomberg?
+     >         W‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌hen have different ideas with manager?
+     >         need sponsor ?
+     >         salary expectation?
+     >
+     > no HM Round.
+     > 三天后拒信。
+     >
+     > 所有题都是最优解，感觉讲的挺明白的，面试官也都很满意，然后就挂了 XD。。
+
+402. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 视频面试  | Other | 应届毕业生
+
+     > 4月中店面，汇率转换问题 399
+     > 5月底vo，
+     > 一轮
+     > lc迩肆贰，lc物流
+     > 二轮
+     > two sum变形， 好像是subsets， 记不大清了
+     > 然后当天一直让我等hr，但是没有hr有空，所以reschedule下周
+     > hr就是bq
+     > 然后hm，主要聊简历，bq，t‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌eam之类的吧，然后说下周给消息，说他们不喜欢一直拖着。。。上周五面的，不知道这周会不会有消息。。。
+     >
+     > 求大米！！！！
+
+403. 2021(4-6月) DataEng 硕士 全职@bloomberg - 网上海投 - HR筛选 技术电面 视频面试  | Other | 在职跳槽
+
+     > 地里彭博的面经大多数是SWE，贡献一个DE的面经攒攒人品
+     > 第一轮 HR why bloomberg, why de
+     > 第二轮 Team Lead 30min BQ
+     > 第三轮 Hackerrank live code1小时 做了3道python，1道SQL
+     >            1.蠡口思依而
+     >            2.蠡口而思而
+     >
+     >            3.1D candy crush
+     > 第四轮  Team Lead 1小时 + Case Presentation 1小时
+     >            presentation给的data是NY parking facility，要求设计ETL并且考虑未来onboard其他州的data
+     >
+     > 第五轮  如果过了下一轮应该是和team manager聊30分钟
+     >
+     > 整个面试没有onsite，一轮接着一轮有点耗时间，希望能有个好结果，求加米！
+     >
+     > 
+     >
+     > 补充内容 (2021-06-19 11:02 +8:00)‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌:
+     > 补充一下，第五轮是和HM还有一个business team的manager 聊1小时，全程BQ。面完已经一周多了没消息，估计是凉了。。
+
+404. 2021(4-6月) 码农类General 博士 全职@bloomberg - 猎头 - 技术电面 Onsite  | Other | 在职跳槽
+
+     > 面的senior software engineer，NYC office。今天新鲜出炉的VO，希望能帮到大家。
+     >
+     > 第一轮，西裔大叔+白人小哥
+     > 第一题套了个candy crush的壳儿整的花里胡哨的，开始以为是妻儿散，仔细一看其实是幺二零九。
+     > 第二题不知道题号，题目挺长，加上小哥说话结巴，搞了半天才明白。大概意思就是跑马拉松，每隔一段有个sensor，有人跑过就发出一个信号包括这个人的ID和sensor的ID，怎么样处理这些信号，能快速知道跑者的排名。
+     >
+     > 第二轮，白人大叔+天竺大妈
+     >
+     > 就一道设计题，设计一个logging and analytics system，要求log所有客户的trading activities，然后可以query各种analytics，怎么scale，怎么保证系统可靠，怎么保证系统secure。
+     >
+     > 第三轮，白人经理，开花堡呆了15年
+     > 都是常规behavioral questions，除了一道感觉是坑的题，如果你决定加入开花堡，然后干了2-3年，什么原因会让你后悔当初的决定想离职？卧槽太吓人了，还没进去就谈离职，我赶紧胡说一通，这么好的公司你干了15年都好好的，I cannot think of a reason wh‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌y I would want to leave。大家会怎么回答这题？
+     >
+     > HR轮没时间了，我的availability今天只够三轮。看下周什么情况吧。题都不难，经验就是不要着急一上来就写code，多讨论各种需求各种trade off，给人营造一种考虑问题很周全的假象。
+     >
+     > 补充一个店面的题，白人大叔
+     > Top K traded stocks by volume，given a stream of order flow
+
+405. 2021(4-6月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Pass | 在职跳槽
+
+     > 第一组两个人: deep copy nodes, 比如1 有child [2,3], 2 有child [1,4], 3 有child[2,3]; 注意有可能有cycle, 第二个题: 蠡口 散领思
+     >
+     > 第二组两个人: 第一题：given tickers, 设计一个stock volume update system. 随时可以return top k个traded stock. 第二题 蠡口 而 要iterative + recursive 解
+     >
+     > 第三组两个manager: 主要之前的resume 深挖，问了做的project 用了什么desgin 模式，什么数据库，为什么要这么用, 还问了设计问题比如何时用microservice 什么是用monolithic。
+     >
+     > 第四个 head of engineering: 全是background 问题，why bb? 你最自豪的project是什么? Tell me a chanllenge you encounte‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌r before? How you lead a project? How you contribute to a team?
+     >
+     > 过一天，HR update 说过了
+     >
+     > 不好意思刚看见，面的是sell side trading platform
+
+406. 2021(4-6月) 码农类General 本科 全职@bloomberg - 网上海投 - Onsite  | Fail | 应届毕业生
+
+     > 一轮merge k sorted arr, vertical order traversal
+     > 二轮
+     > 烙印上来直接给了一个挺难的design，搞自行车出租非常open ended，需要每一个自行车站能够打印出来top 5 frequency的其他station的average cost，从头开始设‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌计，边说边加要求
+     >
+     > 再来了一个经典oasis，用bfs过 - 应该挂在自行车了
+     >
+     > 有HR，但没HM，第二天拒信
+
+407. 2021(4-6月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Fail | 在职跳槽
+
+     > 报个DPVO共五轮
+     > 第一关组上manager+一人shadow 刷题网似六
+     > 第二关 实现一个job log parser. 给你一大组字串, 每一组代表资讯有此工作的id, 下一个工作的id, 执行所需的时间. 要先验证给你的字串是不是符合格式 最后回传"开始工作id, 最后工作id, 此趟工作数量, 总花费时间, 平均花费时间"
+     >
+     > 第三关 刷题网么散八
+     > 第四关 跟HR聊天
+     > 第五关 ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌跟部门VP聊天 估计是挂在这轮了 问了非常多问什么想去金融业的问题
+     >
+     > 求大米
+
+408. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | Other | 在职跳槽
+
+     > 分享一个极其神奇的开花堡时间线（general 码农，1-3年经验）：
+     > 网上海投：2020年12月，投完就忘了，没想到今年1月底收到电面
+     > 电面时间：2月3日
+     >                题目一：刷题网思而，秒之
+     >                题目二：没找到原题但是类似candy crash
+     >                都答上了并且时间空间都说对了，本来等一个onsite的， 结果等了两三周都没人联系我，还发邮件问过HR也没回复，觉得可能没了就move on了（虽然我也不知道怎么挂的）
+     >
+     > ———非常神奇的是在3月22日，他家HR突然给我发了封邮件，问我是否还interested，然后我回复说yes，立刻给我打了个电话过来，然后！HR说在这两个月当中一直在尝试给我打电话但是我从来没接过？exo me? 你这是在逗我吗
+     > 有HR打一两个月没人接的？？？找不到我不会发邮件吗？注意这已经是电面过去接近两个月了（2/3-3/22），被他家HR的业务水平深深折服……然后约onsite的过程中也是一言不合就一个电话打过来，也不像别家的HR会先问你啥时候方便接电话啊，book你的calendar啊等等，反正就是非常随意……
+     >
+     >
+     > onsite: 3/29 两轮
+     >             第一轮： 第一题刷题网散四舅，秒之；第二题不是原题, 描述起来有点麻烦但有点像两个人玩五子棋，然后让你判定下一个走的人哪些position会赢，输出会让那个player赢的所有position，都做出来了
+     >             第二轮： 两个都不是原题， 第一题给一个apple tree 以及两个apple, 问你哪个apple离root更近，反正就是一个level order traversal 略微复杂的变种；第二题有点像edit distance的变种，两个都做出来了复杂度都说对了
+     >             然后第二个面试官告诉我半个小时之后head of recruiter要和我聊天，让我半小时后之后再近聊天室
+     >             大概意思就是面完当场就知道通过了，并且head of recruiter来问了我一系列身份啊时间线等问题之后，当天就开始约第三轮（不知道为啥onsite那天效率又这么高）， 然后说尽快安排第三轮，争取下周给你结果你ok不，我说okok
+     >
+     > onsite: 4/1 第三轮
+     >             见大佬，聊了一些BQ问题，大佬说你算法已经通过了，今天不问coding了，基本就是一小时闲聊；感觉聊得挺好的，当时就觉得嗯差不多下周一就该给消息吧毕竟前面说了有其他公司的时间线压着的
+     >
+     > ……
+     > ……
+     > ……
+     > 然后今天4/1‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌5了一直没任何消息，给HR发了两次邮件都没回，电话也打不通……我觉得是他家HR又开始了之前那种消极怠工模式，好歹已经终面了，就算是拒信也要说一声吧，就没消息了联系不算了……本次BBG的recruiting process真是刷新了我的三观……
+     >
+     > 补充内容 (2021-04-24 05:08 +8:00):
+     > 4/23 update 发offer了，然后一直解释说没消息是因为我的yoe比他们那个program要求的多一些，但是又很想招我所以一直在讨论如何安置我比较合适。。醉了。。。
+
+409. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Fail | 应届毕业生
+
+     > Timeline:
+     > 10/26 海投
+     > 01/28 电面
+     > 03/23 Onsite
+     > 03/31 拒信
+     >
+     >
+     > 以下内容需要积分高于 100 您已经可以浏览
+     >
+     > 电面题目：酒吧期
+     > 因为是高频题，面前刚做过，很快就秒了，面试官feedback不错，意思不需要再followup了。
+     > VO一轮：stock ticker + 幺幺其
+     > VO二轮：地铁题
+     >
+     > 
+     >
+     > 两轮VO都是烙印，而且没人shadow，刚开始感觉就有点凉。第一轮第一题很快就给秒了，问了下时间复杂度，确认没问题之后做第二题，面试官给的例子是幺幺六的情况，是perfect binary tree。我和他确认过是perfect binary tree之后就讲了想法，他确认没问题之后我就写了出来，用recursion解，口头跑了他给的例子没问题。然后他突然说我的解法有问题，给了一个不是perfect binary tree的例子。我就有点无语，和他说你刚刚明明说的是满二叉树啊，他说是他疏忽了。于是我就说打算用BFS来解，他不同意，要我在原先的解法上改。我改完之后他点头确认没问题，再谈笑风生了一波。
+     >
+     > 第二轮是个三姐，出了地铁题，很快就秒了。然后就开始follow-up corner case，以及如果旅客量很大的情况下该如何解决，如果进站出站间隔时间很久如何解决，进站和出站无法匹配上如何解决，多线程情况下该如何处理，如何加锁，加锁之后对性能的影响等等贼多问题。感觉都答上了，她也没啥不同见解，基本都是赞同，但是全程就冷漠脸。最后面完和我说今天到此结束，我就知道这估计是凉了。
+     >
+     > 我感觉自己基本都是秒解题目，时间复杂度啥的也是秒答，沟通交流应该都没问题，不存在get不到面试官的点以及没让面试官搞懂自己想法的情况。唯一挂点可能就是第一轮那道题，但是明明是面试官自己搞错了，我还和他确认过题目条件。而且还剩下15分钟的情况下我打算重写，他都不同意，只让我在原来的解法上加condition。第一轮三哥谈笑风生，第二轮三姐就摆poker fa‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ce，而且感觉这俩人水平都一般。两轮面试全程都是秒解题加上清楚解释自己想法，这样挂了是真的难受。最后竟然一周后才给拒信，真是极差的面试体验
+     >
+     > 坊间传闻，BB的VO如果有四轮，给offer的面就蛮大的, 只有两轮是这俩烙印就直接把LZ拒了，没让LZ见HR和manager。
+
+410. 2021(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Other | 应届毕业生
+
+     > 9/22 海投
+     > 1/22 电面
+     > 3/16 2轮vo+hr
+     > 3/23 hm
+     >
+     > 2轮vo感觉都不错问题都做出来了 follow up也打出来了
+     >
+     > hm遇到一个12年的亚裔哥哥，面完了告诉我 他会write feed back然后一周内回收到联系
+     > 这个是不是凉了啊
+     >
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > 1轮vo 讲将项目
+     > 1题 有两个array 找到是否存在相加是target的
+     > 2题 class sch9/22 海投
+     > 1/22 电面
+     > 3/16 2轮vo+hr
+     > 3/23 hm
+     >
+     > 2轮vo感觉都不错问题都做出来了 follow up也打出来了
+     > hm遇到一个12年的亚裔哥哥，结束了告诉我 他会write feed back然后一周内回收到联系
+     > hm轮的时候感觉有些project的design choice说了不是很好
+     > 这个是不是凉了啊
+     >
+     > [hide=150]
+     > 1轮vo 讲将项目
+     > 1题 有两个array 找到是否存在相加是target的
+     > 2题 class schedule
+     >
+     > 2轮 why bb
+     > 1题 topK
+     > 2题 停车场，要求park和retrieve车
+     >
+     > ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌HR
+     > why bb，challenging part，想要找什么样的公司，没有讨论薪资
+     >
+     > HM
+     > why bb， 深挖项目，challenging part，遇到disagreement怎么办，
+     > 问的很细
+
+411. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | Other | 在职跳槽
+
+     > 开花堡新鲜面经，从电面到VO，遇到了几个中国人，感觉中国人都是非常好的，在这也感谢一下他们在面试里那么热情和友好。
+     > 第一轮
+     >
+     >
+     > 以下内容需要积分高于 120 您已经可以浏览
+     >
+     > 刷题网雾零
+     > 刷题网意伞舅留
+     >
+     > 
+     >
+     > 第二轮
+     >
+     >
+     > 以下内容需要积分高于 121 您已经可以浏览
+     >
+     > 系统设计：马拉松经典题目（谷歌一下就有）
+     > 刷题网器舅
+     >
+     > 
+     >
+     > 第三轮
+     >
+     >
+     > 以下内容需要积分高于 122 您已经可以浏览
+     >
+     > 因为我有过工作经验，所以这一轮两个Team Lead问了很多我过去工作经验相关的问题，剩下了一点时间做题。
+     >
+     > 刷题网三就思
+     > 刷题网一丝扒
+     >
+     > 一丝吧不是开花堡高频题，但是我坦白了我做过三舅思，所以面试官感觉临‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌时自己想的一丝扒这题
+     >
+     > 
+     >
+     > 第四轮
+     >
+     > 以下内容需要积分高于 133 您已经可以浏览
+     >
+     > Hiring Manager，聊得都是BQ
+     >
+     > 
+     >
+     > 求大米呀，鞠躬！
+
+412. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Fail | 在职跳槽
+
+     > 最近一个月都在准备开花苞的面经，最后虽然挂了，但是主要挂在了BQ上面。对于这次的经历希望其他朋友可以有所借鉴，参考。之前发了个很长的亚麻帖子设置了100的权限，但是都没人给加米（只得到两个米），这次我就设的高一点了，因为现在米真的太少了，如果大家可以给点米，我可以再发个降积分的。
+     > 先列个大致流程，然后我仔细一项一项的聊：
+     >
+     > 1.递简历
+     > 2.电面
+     >
+     > 3.VO
+     > 4.得到最后回复
+     >
+     > 以下内容需要积分高于 200 您已经可以浏览
+     >
+     > 首先关于第一步，递简历：
+     > 之前递简历没有得到什么反映，后来发现地里有人帮忙内推，就根据他的要求投了工作申请和reference。这之后很快HR的recruiter就联系了，并且聊了一下，并给了三个岗位的申请。这三个岗位有一个被reject其他两个进入了电面轮。HR说了，开花苞里面的面试组和组是分开的，不会互相影响，所以接下来电面和VO都是两个组。
+     >
+     > 电面：
+     > 开花苞感觉总体的题库还是不大，下面具体说说两个电面：
+     > 第一个：
+     > 一个印度小哥，先自我介绍5分钟，之后copypaste题目。题目是蠡口三舅思，是高频题。先是讲了思路大概5分钟，过了遍example。之后花了大概15分钟写了出来，写了几个testcase，全都过了。还有大概20多分钟，就聊了会天，问了问他做的什么，有什么有难度的东西。
+     > 第二个：
+     > 一个国人老哥，先自我介绍5分钟，之后copypaste题目。题目是蠡口意思吧无，高频题。先讲思路5分钟，过了遍example，之后用了大概15分钟写了出来，也是要求写testcase，但是因为是树所以testcase也要用个BFS来写出来。过了好几个testcase的example，最后还有大概20分钟。也是聊了聊他们组里做的什么，在这一轮，大哥无意中透露了，他们现在candidate pool非常非常大，所以除非你特别强，否则一般很难过之后的VO。
+     >
+     > 注意：电面和VO要求不同，电面是需要compile和过testcase的，testcase需要自己implement，另外就是电面的人都不是招你组的人，所以他们对你之后的面试组没太多了解。
+     >
+     > 两个电面之后第二个工作日被告知都过了，第二天就约了VO时间，这个VO的时间因为我说我还有其他面试，所以recruiter和我说一周到一个月的准备时间都可以，最后就订了三个礼拜之后。
+     > 另附一些整理的别人的电面总结，我觉得很有用：
+     > https://www.notion.so/ba5d265999 ... 2bb9ea045d9a8b092de
+     > https://1o24bbs.com/t/topic/2690/4
+     > 另外蠡口的tag题很有帮助
+     >
+     > 开花苞的VO在之前被告知，可能两轮也可能四轮，看具体情况。前两轮是技术论，第三轮是Hiring manager，就是你将来的领导。如果这一关也过了，就是最后一个大boss了（我没见到）。
+     >
+     >
+     > VO：
+     > *VO的算法题都是copy paste，所以之后这一步我就不说了。
+     > *头两轮面试是连续的，就是第一轮完了立刻第二轮，所以最好面试之前别喝太多咖啡和水。
+     > *VO大多数情况是不要求compile，除非你遇到奇葩面试官（我遇到了）
+     >
+     > 第一个组：
+     > 技术轮1：
+     > 两个国人小哥，先是5~10分钟的自我介绍，接下来做题。第一题是扑克牌题，写一个class表示扑克牌，给一个数K，把所有可能的combination写出来。就是个简单的backtrack，大概用了15分钟写了出来，当时没有立刻写memo，最后给了memo加进去剪枝。 之后还有30分钟左右吧，第二个小哥出了个题，蠡口没找到题号，不是开花苞tag里的。两个string，找到最大公有的连续substring，这个用两个loop解了，很简单，用了10分钟吧。 之后就是10~15分钟聊他们的项目。
+     >
+     > 技术轮2：
+     > 一个印度老头，一个国女。 先是印度老头问，题目是那道找个data structure，存ID，之后放入object。之后有个function可以把一个id的function取出来一个array。但是，这个里面不许用任何Map，List。 只能用array，如果想用hashmap或者list需要自己implement出来。这个问题算是比较恶心吧，需要考虑各种情况还有hash function。关键最后还要compile testcase。他之前还和我说让我加exception，我最后compile时候还要一个个删了，因为不记得是哪个library里面的了，这里好了很多时间debug（记得当时hiring recruiter和我说VO不用complie，不知道这老头为啥这么奇葩，而且面试过程一直干别的，像睡着了一样，问follow up和clarify好多时候也要问一两次，而且还要那个国人女的帮忙问他几次，感觉当时那个国女都有点看不下去了）。最后剩下15分钟弄完了，换国人女的面，问我关于transaction的问题，在一个trade transaction的life cycle里面的每一步，以及可能出现的问题。包括consistensy， exact once， notification等等，当时都说了一下，以及一些trade off，最后就没时间了。
+     >
+     > HM：
+     > 当时过了第二轮因为老头占用很多时间以为挂了呢，没想到给约了HM，结果我晚了8分钟。 HM是一个白人，比较揪简历和以前的project，并且一直需要聊一些提升performance的project，但是又不能是big data。当时说了很多spark计算的优化，但是感觉他并不是很认同，因为bb主要用c++，而且他们所有工具都是自己写的，他们更希望你不用3rd party library来解决一些问题。最后果不其然挂了。
+     >
+     > 第二个组：
+     > 技术轮1：
+     > 一个国人大哥和一个印度小哥，先是5~10分钟自我介绍，接下来做题。经典地铁题，蠡口易散酒留。花了10分钟讨论了各种trade off，以及spec，说了如果是真实情况的数据库大概怎么写，以及要考虑的各种情况（比如逃票，假票，网络延迟等等），最后要求是写一个in-memory的。大概用了20分钟左右都写了出来。之后留了15分钟问他们问题。
+     >
+     > 技术轮2：
+     > 一个国人大哥，和一个东欧妹子， 先是20分钟自我介绍，妹子深挖了之前做的一个项目花了点时间。第一题是蠡口就霸气，先解释了一下方法，然后用了15分钟写完了，然后国人大哥问我要各种clarify和corner case，run example，又用了大概5~10分钟吧，最后算是通过了。最后剩给白人妹子只有15分钟了，里面还有10分钟他们要留给我问问题，所以其实第二题之后5分钟，妹子就说我说方法，run几个example就可以了。这一题不在tag里，大家可以自己找找。大概意思是有KV pair， （1，A），（2，B）， （5，C）， （4，D）， （3, E）。有一个function是add，每次add，如果现在的数-1有的话，就print，否则等之后fill up就把所有可以完成的print出来。当时很快就给了思路，用hashmap + counter来解，过了三个example，然后妹子给过了。最后留了7，8分钟问问题。
+     >
+     > HM轮：
+     > 印度主管，同样是挖简历，问之前项目，同样是问有巨大performance impact的project， 并深入问了很多detail。‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌因为之前第一个公司做的东西有点偏，所以都没被问，只问了第二个工作，唯一能说的就是一个hadoop的batch processing ETL，但是他感觉不是很impact。最后同样给挂了。
+     >
+     > 最后都面完第二天email通知全都没过。
+     >
+     > 
+     >
+     > 最后总结：开花苞的面试tech round都不是很难，而且很多题库原题，题库也不大，100个左右吧。我觉得如果你是在职跳槽，关键是要找点好项目在HM那一轮能让他们感觉到impact。即使你没有，你也要编一点，否则过不了这一轮的面试。我觉得如果最后HM是考我点system design我应该是没问题，但是开花苞是深挖你简历的，所以关键是你自己以前项目一定要准备好。还有个关键点是，在说你project时候，因为开花苞都是C++以及自己编的技术栈，所以你最好别是那种用业界standard的答案吗，最好是有在algorithm level对一些项目有big impact的项目。
+
+413. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Other | 在职跳槽
+
+     > 总共问了2到coding题，也不知道是不是leetcode的原题
+     >
+     > 1. 写两种方法，一个是加入道路，一个是打印所有道路，比如说 你有三个道路 A->B, C->A, C->B 问你A->C的路 那就是什么都没有; 如果你有路比如 A->B，A->C, B->C, 问从A->C, 那就是A->B->C和A->C
+     > 2. 另一道算法是 给你‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌一组字母, 让你打印所有的组合； 比如说 {A} 那就是 A 如果是 {A, B, C} -> A,B,C, AC,BC,ABC
+     >
+     > 剩下的都是behavior和简历里的问题了
+
+414. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - 视频面试  | Fail | 在职跳槽
+
+     > 年前被hr偶然捞起来给了店面，店面很简单，老题目，两list的加法，本人不熟悉利口题号。
+     > 本来申请的纽约城的职位，后来通过recruiter转到普林斯顿，但面试流程保留，直接vo。
+     > vo一轮：印度小哥，地铁题，没有去做过这个面筋，所以题目理解上花了比较久的时间，最后也是做出来了（至少面试官说cover了他能想到的所有case），用了三个哈希图
+     >
+     > 二轮：印度妹+白人男， 题目很简单，一颗string 的多叉树，给每个节点的子节点按字符序排序。 做完后，白人男一直在follow up 都不用我写的那种，围绕着树如果很大，计算如果很算时间，应该怎么做之类的，因为我提出了thread， 后来扯了很久的process和thread的区别。最后出了个LCA 的题目，同样只需讲解，无需代码，因为时间问题，我就直接秒了，拿白板画图。
+     >
+     > 第一次OA，个人感觉交流也还顺畅，题目也都做出来了。结果2天就收到拒信。惨啊。。。。求问这被拒是因为第一轮题目理解上出现了‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌问题，还是第二轮的follow up 没答好？
+
+415. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Other | 应届毕业生
+
+     > Timeline: 去年12月23号phone interview，圣诞后一周收到VO邀请，VO约到2月18号。早上11点面的，还没有收到hr通知，感觉要凉。
+     > 第一轮 两个印度小哥  BQ 1. Walk through resume 2. Talk about a project with follow up question on project detail
+     >   第一题
+     >            利口吾榴：只要求return merge完以后的array大小，要求O(1) space. 这题回答地还比较顺
+     >   第二题
+     >
+     >            给一个2D的array表示一个沙漠，沙漠里有car，oasis，其他的都是沙地。car只有有限的gas，每走一步就要少一个gas, 给你car的坐标，问你能不能在gas用完以前找到oasis。
+     >            这题答地不是很好，最后在提醒下用dfs解了。 然后follow up，如果沙漠里还有rock和gas station怎么办。rock走不过去，gas station用int表示，走到了可以加gas。最后时间不够了就简单讲了一下思路。
+     >
+     > 第二轮 再来一个印度小哥 BQ 1. Walk through a project 2. Why BB
+     >   第一题 给一个string set, generate all sub set of the string. inptut: {'a', 'b', 'c'} output: {'a', 'b', 'c', 'ab', 'ac', 'bc', 'abc'}
+     >   第二题 利口药伞酒榴 地铁站问题‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌：1. 用什么data structure来做 回答了hashmap + pair 2. 如果有很多人只进站不出站怎么办，map会不会太大，占memory？(一开始没明白他什么意思，只好配合表演）
+     >                                                     回答可以做一个cron job每天检查进站的hashmap，如果有人24小时之内没有出站的就从map里面remove
+     >
+     > 面之前看了地里感觉bloomberg要求还是挺高，面试小哥全程比较严肃，也看不出是否满意。面完move on，继续投吧！
+
+416. 2021(1-3月) 码农类General 本科 全职@bloomberg - 网上海投 - 技术电面 Onsite  | Other | 应届毕业生
+
+     > 1/4 店面2/4 三轮现场
+     > 2/9 manager
+     >
+     > 以下内容需要积分高于 200 您已经可以浏览
+     >
+     > 店面：给一个整数，要求数连续的相同数字的个数并加在数字前。比如input = 1234, output = 11121314; input = 1111, output = 41
+     > 要求不能转换成string，必须对数字进行操作
+     >
+     > vo：
+     > 第一轮
+     > 1. 刷题网散
+     > 2. 刷题网而，只不过input变成两个string："9999" + "1" = "10000"
+     >
+     > 第二轮
+     > 1. 刷题网而要令变种，记得如何处理dag就行
+     > 2. 给一串（id，mesg）stream，要求按id顺序print出mesg, 如果id=3比id=2先到，那么就需要等，等到接收到id=2的那一条，再2，3...的顺序print mesg
+     >
+     > 第三轮hr
+     > 问问why company和一些常规bq
+     >
+     > 第四轮manager
+     > 一位烙印面试官。
+     > 这个真的不得不吐槽一下，下午面试先是面试官迟到了5分钟，然后开始后跟我说让我再等5分钟让他泡咖啡吃点东西。
+     > 于是面试在约定时间10分钟后才开始。
+     > 面试官一上来问我两个问题：“你为啥不回之前实习的公司全职？”，“如果你在这边干了一年后你在🐶的朋友邀请你去那，你去不去？”
+     > 因为这是我第一次在面试中被问到这些问题，愣了一下整理了思路刚要开始说的时候。面试官突然说，我有个电话你等一下。然后我又等了差不多2分种。
+     > 之后就谈了谈project，问了一道ood（与map和trie有关），然后反向bq。
+     > 目‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌前还没有结果，但这次给我的面试体验不是特别好（感觉面试官不是很重视）。如果挂了的话应该是被黑了。
+     > 2/12有个ddl，不知道应不应该去催一下。
+
+417. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Pass | 应届毕业生
+
+     > 上个月的VO 今天给了口头offer 感恩 回馈地里
+     > 时间线：
+     > 11/17 内推
+     > 12/9 邮件约店面时间
+     >
+     > 12/14 店面
+     > 12/18 邮件通知店面过 但由于假期 需要一月初约Onsite
+     >
+     > 1/7 约Onsite 用另外的offer约到1/22
+     > 1/22 前两轮技术面 面完coordinator进来说今天找不到hr了 约到了下周一
+     > 1/25 HR + Hiring Manager面 面完hr说本周内出结果（并没有）
+     >
+     > 2/2 发邮件催结果 recruiter约电话时间
+     >
+     > 2/3 口头offer
+     > 下面是面经
+     > 以下内容需要积分高于 200 您已经可以浏览
+     >
+     > 第一轮 和善的白人小哥  BQ 1.talk about a project 2. hardest part of the project 3.Why BB
+     >
+     >   第一题是 蠡口椅久久 需要定制一下从左看还是从右看
+     >   第二题是 彩票design 类似伞拔陵 不过要确定放入彩票吃的id要唯一 用dict+list很容易
+     > 第二轮 和善的天竺小哥 BQ 1. Walk through a project 2. Why BB
+     >   第一题是 地铁design follow-up：1. 如果纽约市长要在运行的时候改地铁站名字怎么办（用一个dictionary做mapping）2. 如何找到K个乘坐最多次地铁的乘客（用dictionary+heap）
+     >   第二题是 蠡口漆久漆 分析时间复杂度出了点问题 用bfs来做的复杂度是O(N!)
+     >
+     > 题目都要分析时间和空间复杂度 同时建议code style要好 这样子面试官容易懂而且挑不出毛病
+     >
+     > 当天约不上hr 约到了下周一
+     > 第三轮HR： 普通BQ Why BB，top 3 you looking for in next company, etc
+     > 第四轮 Senior Engineer：友善白人大哥 上来进行了一道非常有意思的算法题
+     > 1. 题干为 将一string里的某字符改为另一字符，比如string为abcdeag, 把a改为Z，变成ZbcdeZg。乍一看非常简单，用for loop就可以解决，面试官要求写得越快越好，不用解释思路
+     > 2. 楼主用的python，在python里string为不可变对象，那么一开始我声明了rst=""，然后在for loop里一个一个匹配rst = rst + char。面试官说这样其实并不是O(N)的，有什么问题。
+     >         因为string不可变，每次rst=rst+char其实是释放了原来的rst的内存，再重新分配一块内存来存这个新的string，所以很耗时
+     > 3. 那么不用string来存，用一个空list，rst=[], rst.append(char), return "".join(rst)。面试官说这样也不是O(N)，为什么。
+     >         这就牵扯到python的内存自动分配，其实空list并不是没有大小，而是预先分配了一块内存，如果存的数据即将超出这块内存，那么python会开辟一块新的更大的内存，将原来的list+新数据加入这块内存同时释放老内存。这样也很耗时
+     > 4. 那么不用空list，rst = ["" for _ in string] 总共的时间复杂度为3N （一开始分配内存消耗N，遍历string为N，最后join为N，面试官需要具体的几N而不是O（N））
+     > 以上部分为楼主回答出来了的部分，面试官继续往下问但是同时表明了接下来的问题是bonus point
+     > 5. 能不能优化一下代码，可以少一个if分支，如果是 rst = [char for char in string], 这样只用一个if而不用if else
+     > 6. C++的话 时间耗费是多少？1N而不是3N，因为C++的string可变，可以直接in place
+     > 7. 为什么C++的strin‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌g可变而python不可变？open ended，是语言特性，python的dictionary/set只能存immutable的类型
+     >
+     > 到此技术结束，让楼主问他问题，同时面试官的原话是"Let me sell you this job"
+     >
+     >
+     > 通过我在reddit和blind的帖子上来看，VO前两轮决定了能不能到后两轮，但同时前两轮的质量决定了你senior面的形式，前两轮的面试官可以建议manager继续深挖技术or“sell the job”，如果最后一面的面试官非常友好并且很吹水，那估计你前两轮的技术面得比较好。但如果最后一轮是system design，必须要做得很好。
+     >
+     > 去年亚麻实习return失败，一直面到现在，这段时间不知道在屏幕前崩溃了多少次，终于结束了。
+
+418. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 猎头 - HR筛选  | Pass | 在职跳槽
+
+     > 最近很多公司都在请SRE
+     >
+     >
+     > HR:
+     > 看看我是不是活的
+     >
+     > 电面:
+     > 2sums leetcode 1
+     > 我也没想到是这题
+     > 秒过
+     >
+     > follow up 是例出所有符合的 pairs
+     > 第二天收到 onsite
+     >
+     > Onsite:
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > 1. Debugging:
+     >   系统会从纽约交易所拿资料分配到各个 CDN 上
+     >   这时东京的客户说资料出现了60秒的 delay
+     >   要怎样找出问题所在
+     >   有难度
+     >   首先要说出怎样找问题
+     >   是网路问题 资源问题 还是外部系统问题
+     >   一步一步排查
+     >   锁定在 CDN 上
+     >   发现 CDN 忙不过来
+     >   之后就是要怎样 scaling
+     >   要怎样 load balancing
+     >   scaling 后发现 lacking
+     >   如果要 patching 要怎样做 release
+     >   这一面要命
+     >   时间不多
+     >   要查的状况一堆
+     >
+     > 2. coding:
+     >   leetcode 8
+     >   string to integer
+     >   一半是 BQ 一半是 coding
+     >   这题就只是例外很多
+     >   不难的
+     >   简单地过了
+     >
+     > 3. system design
+     >   https://tianpan.co/notes/162-designing-smart-notif‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ication-of-stock-price-changes
+     >
+     > 4. BQ
+     >   就一般的 BQ
+     >
+     > 5. HR
+     >   又是 BQ
+     >   一个星期后收到消息说没问题
+
+419. 2020(10-12月) 码农类General 本科 全职@bloomberg - 网上海投 - 其他  | Fail | 应届毕业生
+
+     > Timelines:
+     > 10/14 海投，11/30 Phone, 1/28 VO 两轮，2/1邮件挂(无hr/hm面)。BB这时间线也太长，每次约都至少一个月后。。
+     >
+     > 面试过程总体友好，不过VO挂了有点迷，想了下估计是 bq没答好 and/or 反应还不够快 and/or 交流不够清晰？在国内凌晨面的有点累哈哈
+     >
+     >
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > Phone interview:
+     > 项目bq
+     > 地里常见的stock buy N+sell N+topK, 我说了pq + hashmap 两种方法和各自的trade off (pq modify O(n), top k O(klog(n)), hm modify O(1), topk O(n)). 感觉还没优化到极限，但是interviewer让过了。
+     > 蠡口斯把, anticlockwise。我先说了inplace的方法 (transpose + reverse)，interviewer说不用这么复杂，然后写了个non-inplace using index transform.
+     >
+     > VO 第一轮:
+     > 项目bq + Why Bloomberg(这个答得自己都觉得尬哈哈)
+     > 蠡口呜呜斯，蠡口溜溜儿。两个应该基本都是标答做出来的吧，第二题最后优化的时候卡了一下。
+     >
+     > VO 第二轮:
+     > 项目bq
+     > 蠡口柳依依，先说了binary search的方法，然后优化到O(n)做出来了，中间交流思路浪费了一点时间。‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌
+     > 设计data structure, stock buy 1 + sell 1 + top 1 stock with max shares (注意这里是top 1)，然后这三个op都得是O(1)。这里一开始稍微卡了一下，后来想起来可以用蠡口巴久武的思路建一个frequency map，然后将stock上下移动。虽然做出来了，但是这里最后交流solution的时候出现了一点分歧，interviewer没有一下get我的意思浪费了些时间。
+     >
+     > 
+     >
+     > 祝大家offer多多！
+
+420. 2021(4-6月) 码农类General 本科 全职@bloomberg - 内推 - 技术电面 视频面试  | Fail | 应届毕业生
+
+     > 上周面完最后一轮HM，今天发email催decision，发完两分钟后收到拒信（太有效率了【狗头.jpg 】\\
+     > Timeline： 9月投，11月初捞起第一轮phone，1.14 两轮VO+HR面， 1.25 最后一轮HM   
+     >
+     > 面经如下：
+     > 以下内容需要积分高于 166 您已经可以浏览
+     >
+     > phone非常简单，但是想不起来了，感觉基本所有面经里的人都过了
+     > VO1：
+     > why company
+     > 经典地铁题，用hashmap加pair快速写出，一开始写了个typo，忘了把start stationName加上，在提示下加上了
+     > 姨凛耳酒 快速讲了思路，把可能出现的情况都cover了，讲清楚了原理，时间有点紧就没让我写了
+     > VO2：
+     > 第一题不难，是面经里出现过的，但是具体想不起来了
+     > 第二题是stock的topK问题，用minHeap解的，解释了一会儿为什么minHeap比maxHeap好
+     > 然后面试官问了个OOD问题，如果要把整个topK问题封装成一个class，提供get(int k)接口，要怎么设计
+     > 这里答的不好，最后讨论结果是用maxHeap直接放所有stock，这样get(k)就比较容易操作了，我？？？（迷惑
+     > HR：就是一问一答，基本工作需求
+     > HM：
+     > 问了如何设计FTP文件传输系统。如果出现了sever down，要如何debug。讲出详细过程和沟通讨论
+     > 如果发‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌现了bug的问题，要如何修正。以及假设这个bug修不好，有什么方法能让程序继续24/7运作
+     > 感觉答的还行，因为HM一开始很严肃，到后面就谈笑风生，还以为他很满意
+     >
+     > 
+     >
+     > 也不知道是那一轮没表现好，move on了   
+     > 不过看之前的面经，很多人答的很好都被拒了，我等屁民被拒也是正常哈哈哈哈   
+     > 可能Bloomberg就是想要100% perfect的答案吧   
+
+421. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Fail | 应届毕业生
+
+     > 面试官1:
+     > 项目 bq
+     > 1. 利口 斯散令， 用recursion做了， oral 跑了test cases，ok了之后面试官没让我继续优化，本来想着要是还得优化我就说morris 遍历了
+     > 2. 利口 斯尔尔， 遍历 word matrix的方法， 问还能怎么优化， 答可以用trie来检测单词是否valid
+     >
+     > 面试官2:
+     > 1. 不确定 lc 有没一摸一样的，一个 字符串 remove 所有 frequency 大于 1 的字符， follow up: output 要 是 sorted的。 一开始我直接字符串拼接成答案，被问python 字符串拼接的时间复杂度和怎么体现在内存分配上，我意识到他希望我不要一直做字符串拼接很消耗内存，就说可以用fixed size的数组来存output最后拼起来。
+     >
+     > 2. Design Selling stock API:
+     > 主要的要求是要返回一天内卖出股票 topK 的公司和对应卖出的share
+     > (1) def sold(company, share)
+     > (2) def topKSold(K)
+     >
+     > 我提了两种方案
+     > 一种是 hashmap来存， sold 的复杂度就是O(1), topKSold 复杂度就是O(nlogK)
+     > 面试官希望优化topKSold
+     > 我提出用 TreeMap 来存， sold shares (key) -> a list of companies (value), 但sold 就要变成log(n) 复杂度了
+     > 接着问第二种方案 sold log(n)的时间 能不能继续优化。重点来了我可能就是挂在这里，最后在他的提示下，我说出‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌了可以存一个 company -> sold shares (TreeMap里树的节点！！)
+     > 这样在你sold 一个 company的share 的时候， 可以直接从 treemap 公司所在的那个节点开始进行移动节点的位置，而不一定要从 treemap的根开始遍历所以就能节省时间。
+     >
+     > 还是太年轻， move on了
+
+422. 2021(1-3月) MachineLearningEng 硕士 全职@bloomberg - 猎头 - Onsite  | Other | 在职跳槽
+
+     > 上周recruiter 联系，转天安排店面。
+     >
+     > 店面：两个天竺友人。现实聊了半小时简历+经验。然后问了一道tree的题。不在lc上。他们自己想的。但是dfs，recursion基本可以解决。
+     >
+     > 当天就通知VO。先面3轮，顺利的话再安排senior leader。
+     >
+     > VO 前一天才prep call。也不告诉我面试官名字。
+     > VO当天coordinator 跟我说了名字，发现全是友人。原来这是个5人组，4个烙印。
+     >
+     > 1. 两个人。第一个问了bipartite graph。但是input比较模糊。lz clarify了一阵子。写完之后，看了半天。总说不懂，手动run了4-5个test case。还是说confused。期间，第二个友人插过嘴，态度差。做了35分钟，开始第二题。类似word index count。第二个面试官态度很差，总是打断我说话，不想看code。这题主要问如何distribute，如何实现mapreduce
+     >
+     > 2. 店面的两个烙印。第一题 OO design online prediction service。第二题 system design bbg tv scale up。讨论了cdn，api。没仔细问partition，replication。
+     >
+     > 3. 一个白人小哥。冷脸。主要简历+system design process large logs。还是mapreduce。没任何引导，也不知道他想deep dive 啥。
+     >
+     > 面试体验非常差。面试官都是一副我很nb，你答不出来，我打断你，完全不是conversation。几个友人，查了下linkedin，两个senior态度还好，‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌算正常。剩下三个态度差的都是junior。lz只想说这行业很小，八成有一天我们角色会互换。总之可能运气差，碰上了雷组。反正下次跳槽，不会优先考虑金融公司了
+     >
+     > 求大米！
+     >
+     > Batistuta 发表于 2021-01-29 13:13:51
+     > 谢谢lz，想问一下，word index count 是哪个题呀
+     > Input: Line by line text (a book)
+     > Outut: {word, List[page no.], document frequency}
+
+423. 2021(1-3月) 码农类General 本科 全职@bloomberg - 网上海投 - 技术电面  | WaitList | 应届毕业生
+
+     > 分享一个刚刚结束半小时的bb new graduate 两轮VO地里的面经帮助都很大
+     >
+     > 顺便求RP，希望能够收到下一轮
+     >
+     > P.S. 之前看面经说一般第二轮technical以后会直接约hrmanager，但是面试官只跟我说“we will pass our feedback to hr”，不知道是不是凉的预兆，自我感觉答得都挺好的(毕竟其中一个面试官说了satisfied)，不知道有没有有经验的同学可以帮忙回答一下，希望会有好消息！
+     >
+     >
+     > 9月海投
+     > 11月被recruiter捞起来约12月电面, 后改到1月
+     >
+     > 以下内容需要积分高于 188 您已经可以浏览
+     >
+     > Phone Interview:
+     > Self intro
+     > Why bloomberg
+     >
+     > Q1: Collatz conjecture
+     > Given a number n, return number of steps it takes to bring n down to 1 using the following operations:
+     > if n is even, n = n / 2;
+     > if n is odd, n = 3n + 1
+     > example: n = 5
+     > 5 → 16 → 8 → 4 → 2 → 1
+     > return 5
+     > it is guaranteed that there will not be any cycles in the sequence
+     >
+     >
+     > Q2: optimize previous question
+     > if at first we call collatz(5), we return 5 and we know the time complexity is O(n). optimize the solution such that if we call collatz(16), we return 4 and time complexity needs to be O(1).
+     > In other words, if it is the first time we have seen the input, the time complexity can be O(n). If we have seen the number before, the time complexity must be O(1).
+     > _________________________________________________________________________
+     > Onsite
+     > Will not have to run code, but still, code using proper syntax
+     >
+     > Round 1:
+     >
+     > Self-intro
+     > Asked a question regarding one of my projects
+     > Why Bloomberg
+     >
+     > Q1: Merge k sorted linked lists
+     > LC 23
+     >
+     > Q2: Given a list of coordinates (x, y), return the top k coordinates closest to the origin (0, 0)
+     > distance is calculated using sqrt(x^2 + y^2) but not really important, can ask to assume that input is an array of Coordinate class which stores original coordinates and the distance from the origin
+     >
+     > Round 2:
+     >
+     > Self-intro
+     > Asked a question regarding one of my projects
+     >
+     > Q1: reconstruct binary tree using preorder and inorder
+     > LC1‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌05
+     >
+     > Q2: Evaluate division
+     > 有一层马甲 做过原题一下就能看出来
+     > LC399
+     >
+     > 
+     >
+     > 
+     >
+     > 
+     >
+     > 补充内容 (2021-1-30 03:38):
+     > onsite 两轮一周后收到hr、hm轮，之后两天收到verbal offer
+
+424. 2021(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | Fail | 在职跳槽
+
+     > 新人求米，分享一下面筋
+     > 因为是在职跳槽，同时可以面两个team
+     > phone interview 运气还行，都不算太出乎意料，会问tc跟sp，并且会follow up了一些逻辑问题
+     > 第一个team 面了两题
+     > 1. one dimention candy crush
+     > follow up: in place
+     > 2. valid Anagram
+     > 第二个team也面了两题
+     > 1. decodeString
+     > follow up: 超过十位数的数字怎么处理
+     >
+     > 2. PriorityQueue print out pairs in number order
+     >
+     > 感觉都面的不错，但是Onsite 是只面一个team
+     > Onsite就比较玄幻，感觉跟大部分同学的面筋都不太一样
+     > 第一轮两个人面，问了两题bq关于project
+     > 然后两题，一题是stock price, 要求求top k stock
+     > 第二题是dead processes， 给了<parent, child>格式的数据，要求反推最早一个CRUSH Down 的那个parent process. 类似这样的，不在高频题里面
+     > 第二轮也是两个人面，原本说好的是考system design，但是实际上完全没有考到。。。就很玄幻，还是在考data struct‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ure。。。
+     > 只是问了用什么数据结构来储存特定类型的数据，并且需要用代码实现。。
+     > 楼主之前准备了好几天的系统设计知识完全没有用到。。。
+     > 第三轮就是manager，问了一些bq，差不多半小时结束。。
+     >
+     > 总得来说，楼主运气差，onsite完全没有按牌理出牌，不知道是不是跟team有关系。。。准备的都没用上，于是就挂了。。
+     > 最后，新人求米~~~~~~~~~~看帖的米都不够
+     >
+     > 谢谢大家~
+
+425. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - HR筛选 技术电面 Onsite  | Fail | 在职跳槽
+
+     > 发个上个月的 电面 和 VO楼主一共面了 两个组， 大部分都是面经题， 但也有很多非常规面试的部分， 但最后都挂了：
+     > 第一个组：
+     > 电面
+     > 利特扣： 三期四 和 二吾儿
+     > VO 前 和 Hr 聊了一下 说了 如何准备 VO.
+     > VO：
+     > 1 利特扣 六耳 和 SQL 和 Front end（楼主不是前端engineer, 但是之前做过 full stack, 现在是纯 后端， 非常讨厌前端， 期间 有一个 小题， 必须有 JavaScript 。。。。。。）
+     > 2. 一二零九， 和 design， spotify 歌曲推荐 list system
+     > 3. hiring manager 聊
+     >
+     > 第二个组
+     >
+     > 电面：
+     > 一道没刷过的题， 但应该力扣 里 有，只怪楼主 刷题太少：
+     > 例子// 10 = 1 * 2 * 2 * 2 * 2 / 3 * 2
+     >
+     > 给一个 target number ， 1 可以 乘以二 或除以三， 求 从 1 到 target 至少 需要到 多少 step， 在 提示下 做了出来。就一道题
+     >
+     > VO：
+     > 第一轮  meeting room， 还有一道 忘了
+     > 第二轮 如何  migrate service。
+     > 第三轮 hiring manager 聊
+     >
+     > 面试 一半面经吧， 运气也签了一些， 当然还是实力不急， 还有两轮 面试官强制 必须用 JavaScript 和 C++, 楼主 从没用过 C++, 简历上也没有， 最后实在不行， 面试官说， 那你把我给的 代码， 翻译成 Java 在 用C++ 答吧， 我最后也没翻译出来， 就在他的 C++ 基础上， 写了 Java.  感觉他们家还是很注重 team match 的。
+     >
+     > 求给些大米， 楼主被亚麻逼得走投无路， 很多面经 也看不了， 哎， 本来也不打算跳槽的， 还‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌是提醒各位在亚麻的国人，或将来要来亚麻的朋友， 题还是要平时刷起， 要不想楼主这样， 就有点麻烦了
+
+426. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Pass | 在职跳槽
+
+     > 楼主一共面了两个组，一个在SF，一个在纽约。Bloomberg的面试前会有个prep call，大概说一下会面几轮，每轮考什么，除了前面两轮technical之外后面的面试时dynamic的，根据面试情况决定。面试的时候每一轮结束时，面试官都会告诉我后面还有没有，预计2-3小时的面试实际面了将近5个小时。
+     >
+     >
+     > SF组：
+     > 1. OOD：设计一个售票系统，如果买的人比票的数量多，需要把多余的人queue起来，前面如果有人withdraw，把票顺位给下一位。大概说了什么数据结构，有几个method。没什么算法，代码干净清楚就行。
+     > 2. coding：用一个list<String>表示一本书中一页有哪些单词，然后给你一本书（几页page），写一个查询某个字母范围的所有单词数量，比如给a-c, 就返回a,b,c开头的单词分别有多少。followup：如果查询某个页码范围之间怎么做，Data太多怎么处理。
+     >
+     > 3. hiring manager BQ+系统设计：设计一个租赁自行车的系统
+     > 4. head of SF engineering: BQ
+     > 5. recruiter followup
+     >
+     > 
+     >
+     > NY组：
+     > 1. Coding:word search2, 给了trie 的解法。
+     > 2. OOD: 写一个file reader, load by chunk, 用户提供offset和length, 返回相应的file内容
+     > 3. hring manager BQ+system design: 设计job scheduler
+     > 4. VP 聊天+BQ
+     > 5. recruiter followup
+     >
+     > 面了两个组下来，总体感觉面试题目比较简单，不需要compile或者现场跑test，面试的时候沟通也很顺畅，面试官比较注重你的分析思路，总体面试体验很好。感觉公司文化好像也不错，WLB很好，大家都很chill。
+     >
+     > 第一个组面完隔天收到邮件说feedback positive，等第二个组面完一起给update。
+     > 第二个组面完第二天收到邮件说feedback positive, 但是只能选一个组move forward，所以又约了和每个组聊具体项目。
+     >
+     > HR现在给的是senior software engineer, TC 250k 左右，感觉不太多。HR说不口头答应不给official offer，所以现在还在聊数字。。。
+     >
+     > 问问大家Bloomberg怎么样啊？
+     > 楼主现在手里还有Twitter Cortext组SDE2（大概280k ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌TC), Google L3（等team match，网上看最多也就250K左右， recruiter说如果有compete offer可以match到L3最高值）。楼主身边的朋友都说4年经验应该至少要300K，其中一个朋友10月份换去FB拿了360K。所以将近4年经验，我到底应该expect多少呢……？我本来觉得280K远远超出预期，现在被身边朋友一顿教做人，感觉offer都不太好啊……
+
+427. 2021(10-12月) 码农类General 本科 全职@bloomberg - 网上海投 - Onsite  | Pass | 应届毕业生
+
+     > 回馈地里分享一下花开宝过经9/16 海投
+     > 10/21 电面
+     > 11/11 第一轮昂赛
+     > 11/19 第二轮昂赛
+     > 12/7 约上HR HM
+     > 12/14口头offer
+     >
+     >
+     > 电面第一轮：10分钟过简历，讲一个最喜欢的项目，深究细节 做题环节，梨寇 骑酒，只有一题，要求分析时间空间再做题，分析空间复杂度的时候犯了错 follow up怎么不用额外的boolean array，然后才让写码，写码很顺利，德芙一样丝滑，一遍过，嘴跑代码，然后面试官写了几个test case 一周以后收到vo
+     >
+     > 
+     >
+     > 第一轮VO:  只约上一轮，一小时，只有一个面试官，一道题，介绍项目，蠡口797，秒了，聊得挺好，一周后约了第二轮VO
+     >
+     >
+     > 第二轮VO: 一小时，还是只有一个面试官，第一题验证二叉树，秒了，第二题 是第一题的衍生，蠡口散散散，看到题的时候脑子不转了，给出了从root 到leaf 每一个node进行一次bst验证的暴力解，写出以后面试官要求优化，想出从底往上的解，写的时候脑子卡克了，修改了半个小时左右，没有优化成功。
+     >
+     >
+     > 本来以后挂了就想着move on了，两个礼拜以后收到hr邮件约最终轮，我觉得原因是因为我第二轮vo的时候虽然没写出最优解，但是嘴一直在说话，没有闷头写代码，可能communication加分了？
+     >
+     >
+     > Senior Hiring Manager轮：面试官十分钟自我介绍，然后让我讲一个最喜欢的项目，然后讨论如何优化，例如在一个microservice组成的项目中，如何判断哪个microservice是bottleneck，讨论一下如何优化数据库的读写，我回答的是Primary and replica，讨论一下怎么样evacuate cache，已经在什么情况下需要更多serivce instance，最后十分钟反向BQ
+     >
+     > ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌
+     >
+     > HR轮：自我介绍，讲一讲每一个实习项目，why bloomberg，优点，同事怎么评价你
+     >
+     >
+     > 一周后收到口头offer
+     >
+     > Take away：面试bloomberg的时候嘴不要停，要一直说话，和面试官交流完以后写码的时候也要边说边写，好像可以作为communication skill加分，题做不出也不要不说话，最好脑子里想到什么就说出来什么。感觉BBG很注重why bloomberg和culture fit的问题，做好这两点的功课也是加分项
+
+428. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Pass | 应届毕业生
+
+     > 09/02 海投
+     >
+     > 10/21 店面
+     > 栗叩 1095 & 栗叩 117(BFS解法过了，没要求空间O(1)解法)，当晚收到next step，但当时手头没有其他offer ddl，HR给排到了两个月后vo
+     >
+     > 12/2 VO
+     > 第一轮 白男 & 国男：上来简单介绍proj (可以选最近做的、没写到简历的proj介绍)；题目：1）一维消糖果，2）栗叩380 (解法一样，题目加了个场景)
+     > 第二轮 白女 & 印男：同上来简单介绍proj，题目：栗叩 140，当时直接写的dp top-down的写法，(因为之前做过，记得高票的top down)，但是白女说如果词典很大这样很慢，能不能优化，于是把top-down改进成取target word的sub word判断是否在字典里，然后白女继续问能不能写bottom-up，解释了idea之后尝试想写出来但时间不够了，就开始反向BQ (印男过程中感觉反而比白女nice，白女一直poker face)
+     >
+     > 两轮tech vo都没有bq，很奇怪，导致第二面面完感觉很慌因为套路不一样
+     >
+     > 12/2 HR
+     > 第二轮vo结束半个小时四十分钟左右hr来电话问当天能否面HR，然后再过四十分钟左右面的hr，时长约三十分钟，基本都是常见bq，问下期望薪资，然后HR介绍新员工bootcamp和team match流程，最后反向BQ；结束前问了下availability，准备约最后一轮，我说都行，希望能快点，HR回答说当天约不上manager了，回去等邮件（大约第二天 12/3来邮件，约12/4下午面manager）
+     >
+     > 12/4 manager
+     > 没有coding，自选有趣的proj介绍、问了实习，技‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌术层面大致介绍，问了下我自己对proj提升空间的想法，再加上一些BQ（实习收获了什么等），大约不到二十分钟就开始反向BQ，聊了下career growth，engineer qualities之类的，大约十分钟，结束。
+     >
+     > 12/10
+     > 中午hr电话，给verbal offer；下午下班时间前收到正式邮件。
+     >
+     > 目前是手头offer中最好的，已经接了，包裹是ng标准包。
+
+429. 2020(10-12月) 码农类General 本科 全职@bloomberg - 内推 - Onsite  | Fail | 在职跳槽
+
+     > 发一个前段时间的跪经攒攒人品 给大家提供dp。 一轮 面的地铁题，不过要求用c++因为我简历里写了c++。 傻眼，磕磕碰碰写出来了但明显对面不满意
+     > 二轮一道设计题 input是一个stream里面有 股票名字和股票价格，然后还给price的ranges，设计一个函数来随时输出report， 输出ranges中的股票按照顺序大小，只包括最新价格
+     > 例子：
+     > Input: goog 10, apple 15, fb 25, goog 21, appl 26, apple 17
+     >
+     > price ranges:
+     > 1-5:
+     >
+     > 6-10: goog
+     > 11-15:  apple
+     > 15-20: apple
+     > 21-25: fb, goog
+     > 26-30: apple
+     >
+     > output: google, fb, apple
+     >
+     > 第三轮 HM的BQ
+     >
+     > 面完第一轮就大概直到惨跪了。。求大米，求保佑剩下几个o‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌nsite顺利，圣诞前能蹭个offer！
+
+430. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | Other | 应届毕业生
+
+     > 今天刚面完VO前三轮，最后一轮HR说今天安排不上seniorl了，给安排了第二天下午。
+     >
+     > 第一轮tech
+     > 只来了一个烙印小哥，互相自我介绍，问了一个project的产品逻辑，，没有涉及到技术
+     > 第一题1D消消乐，用stack解决。一开始我把每个字符都押进了stack，在面试官提醒下优化连续相同字符只用一个stack坑位。写完后口头跑了个例子。
+     > 第二题课程表，解释了什么是topological sort，为什么visited需要三种状态。写完后一样口头跑了个例子结束。
+     >
+     > 第二轮tech
+     > 一个亚裔小哥一个白人小哥，他们没有自我介绍，直接让我介绍，问了一个project的挑战
+     > 第三题找重复数字，我先说了原地哈希，被要求再想一个不改变原数组的，说了用哈希set，又被要求再想一个不改变原数组也不用额外空间的。楼主傻傻想了一会儿，被提示后发现是两层遍历的暴力解。。。
+     >
+     > 然后问了三种方法的时间空间复杂度，重点问了哈希set的时间复杂度，提到哈希碰撞后问了常见解决方法，说了链表和BST，小哥问我python怎么搞的，并不知道。
+     > 他告诉我用红黑树，然后让我分析了红黑树和链表复杂度和防攻击上优劣。这部分问的挺细的，虽然不知道python用红黑树但感觉面试小哥也没太多期待，基本满意。
+     > 最后让我敲了第一种原地哈希的代码。口头跑了个例子结束。
+     > 第四题经典地铁题，从需求->数据结构->逻辑->特殊情况仔细分析给了经典方案。写的也很顺利。
+     > 最后面试官想了重复刷入和只刷入不刷出的特殊情况作为followup，但之前分析的时候都已经考虑到了，就直接结束了。
+     >
+     > 第三轮HR
+     > 主要就是聊天，问了为什么BB，为什么读研，讲了个project，问怎么和队友合作的，然后找工作的三个priority是什么，还有不记得了。氛围比较轻松愉快。
+     > 最后结束的时候说下周会和我约最后一轮senior，形式是bq和tech相结合，更偏向bq，不会要写代码。我随口提了下能不能早点。。他说他会帮我争取。
+     > 然后结束后五分钟负‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌责我的HR就和我约了第二天下午的最后一轮。好评
+     >
+     > 有问题留言，都会尽量答复。码字不易，求米求人品
+     >
+     > 
+     >
+     > 补充内容 (2020-11-25 04:07):
+     > 刚面完senior，十分钟介绍她，十分钟介绍我，二十分钟讲项目，十分钟给我demo了一下BB terminal。希望能offer🙏
+     >
+     > 补充内容 (2020-11-27 15:31):
+     > verbal offer
+     >
+     > 补充内容 (2020-11-27 16:45):
+     > offer letter
+
+431. 2020(10-12月) 码农类General 本科 全职@bloomberg - 猎头 - Onsite  | Fail | 在职跳槽
+
+     > 在linkedin找的recruiter，一开始让我投senior。先phone screen，然后onsitel两轮coding，每轮两个面试官。
+     >
+     > 第一轮 变种的利口 伊思琪儿，
+     > 以下内容需要积分高于 50 您已经可以浏览
+     >
+     > 要求print访问过的网站，从新到旧，如果重复看过的网站就不要print。一开始用hash map存访问记录，写完后面试官follow up说如果一直访问同一个网页million time的话怎么办，后来改用hash map 加double linkelist，面试官很满意
+     > 第二轮 recruiter说问system design，结果问了二十几分钟bq后还是没问system design，问了 利口 易散就留。
+     >
+     > 第二轮完了让我等hiring manager和hr，结果recruiter进来说manager临时有事。过两天跟我说algo和data structure very strong, system design不好。问我要不要加面，一轮hiring manager 会问我system design, 一轮‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌和hr，但是不是senior level的。加面时候hiring manager又没问system design也只问了我project的问题和其他bq，然后让我问问题，hr也是只是回答我的问题。过两天发了个general的email 说挂了，因为algo coding什么的不好。差评。
+
+432. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | Fail | 在职跳槽
+
+     > 最近公司要裁员，平时也没啥活儿，一直在准备面试。刚刚面了蓬勃社，onsite两轮游。平时看了很多地里的面经，很有帮助，回馈一下。
+     > 电面两道题：
+     > 1.地铁题：🔗 leetcode.com
+     > 2. LRU简化版：🔗 leetcode.com 
+     > 还问了些基础知识，比如 How does garbage collection work in Java
+     >
+     > 电面面的不错，然后约了onsite，因为自己本身偏frontend，投的职位是full stack，所以prep call的时候特意问了下会不会考前端，recruiter说可能在前两轮中问几个问题，于是就专心看系统设计和算法了，心想前端应该不是问题，然后就悲剧了。
+     >
+     > Onsite两轮：
+     > 1.
+     >
+     > 先互相介绍，问了现在做的项目，一些技术的细节问题。
+     > 然后面试官问了4道JavaScript的题，主要考察的是隐式声明，hoisting，for里面一个setTimeout输出什么怎么改之类的，很基础但又有点tricky的题。到这儿开始有点慌，这一类的东西好久没用到了，答的磕磕绊绊。
+     > 然后是coding，高频题给一个string，比如"(ab)(a{b[c]})"，輸出最内层括号里的strings。因为我平时用Java刷题，之前也跟recruiter说了面试时候prefer用Java，所以就问面试官能不能用Java写，被无情拒绝，给的理由是他们组平时工作不用Java... 更慌了，因为最近已经很少写前端了，都在用Java刷题，确实有点生疏，最后磕磕绊绊写出来了，但是有bug，时间不够了没有来得及改，思路反正是说明白了。
+     > 2.
+     > 面完第一轮就知道没戏了，第二轮反而轻松了不少。还是先聊下背景和简历，面试官问了些系统设计相关的小问题。
+     > 算法题是高频题print all paths from airport A to airport B, 两个function需要写：
+     > addRoute(airportA, airportB);
+     > printPaths(startAirport, endAirport);
+     > 先讲了思路，然后用dfs写的，有个bug检查了几遍改对了。followup是如果数据量很大如何优化，答用一个memory map来记录每个aiport到endAirport的paths，两个面试官都挺满意
+     > 然后聊了聊他们的team，最后快到时间了一个面试官还和我开玩笑说we have talked enough with‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ you today... 苦笑了两下，结束了面试。
+     >
+     > 感觉是非典型的彭博社面经，还是想发出来，希望能对准备面彭博社的小伙伴有帮助吧。
+
+433. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - HR筛选  | Other | 应届毕业生
+
+     > 之前收到hr 约 hr 面 和 hm 面，但是时间是 11/12， 时间有点晚了，应该不去了。
+     >
+     > 电面是
+     > 1. 典型 bfs
+     > 2. candy crush
+     >
+     > VO1 是 meeting room 变种，求所需要的多少个meeting room  第二题是 validate BST
+     >
+     >
+     > VO 2 是 two city scheduling 和 LRU变种 流浪起历史
+     >
+     >
+     > B家面试体验很好，面试官都很nice。  有被问到的 BQ 问题 类似与 why bloomberg， 每轮都要求你介绍简历上的一个 proj。
+     >
+     >
+     > 附上 自己爬的 leetcode Bloomberg 近六个月的高频题。
+     >
+     > 求大米。。。。感谢！！！！！！！
+
+434. 2020(7-9月) 码农类General 硕士 全职@bloomberg - Other - Onsite  | Fail | 其他
+
+     > 9月下旬 两个组 vo c++
+     >
+     > 组一
+     > 1. 国人 + 美国 李可 起霸 和 叁个树 的合 不可以 排序
+     > 2. 印度 + 华裔 李可 气就气 就这一个题 简单一个 followup 怎么template dfs
+     >
+     > 3. 法国 + 美国 两个 manager 一个问了 关于 多个source metrics 有limit 如何设计 感觉半天 不知道说的啥
+     >     还有一个 lock free race condition的问题(single producer single consumer circular queue 的head 和tail)    也是感觉 没解释好 因为对方问的 不会发生 但他还是 纠结反复 问了好几遍
+     >
+     > 组二
+     > 1. 美国 + 俄罗斯 李可 药妖捌扒 最开始 没给最优解 优化 然后destructor 要怎么处理
+     > 2. 印度 + 印度 李可 尔伞
+     >     还一个 不知道啥题 很多教授 教授可以开课 课有很多作业 学生可以选课 作业有分数 实现教授的view 看学生分数 学生的view 可以看课程的分数
+     >     问题 讨论问了‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌一些database ？？？ 最后给 5分钟写
+     >
+     > 总结 bq 准备不好 系统设计 也不好
+
+435. 2021(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite 视频面试  | Pass | 应届毕业生
+
+     > 1.电面：自我介绍5分钟 + leetcode 951，最后5分钟给了个followup没怎么听懂还是给过了。
+     > 2.第一轮oncampus：10分钟问简历细节，30分钟写code，code题是leetcode上的Alien Dictionary和minimum path sum；面完当场给第二天的第二轮oncampus
+     >
+     >    第二轮oncampus: 和上述第一轮流程一样，code题是leetcode上的course schedule II和买卖股票I和II；面完说会收到next steps
+     > 过了2‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌天收到hr面和manager面，因为接了别家就取消面试啦。祝大家今年offer多多！求米求米~~~~！
+
+436. 2020(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Fail | 应届毕业生
+
+     > 上周面的彭博这周通知挂了。
+     > timeline：9.14 店面 10.6 VO 昨天我去催结果然后挂了
+     > 店面：
+     > 一道巨简单的我忘了+decode string
+     > VO：
+     > 一轮：不是很严格的小姐姐，一道zigzag binary tree printing， 一道LRU cache
+     > 二轮：很严格的校友印度人，和他讲话就是自然感觉紧张。问的题目是。一颗n-ary tree, 找到所有最深叶子节点的最深的共有祖先。（可以先找全所有最深叶子节点，然后去找共有祖先节点，返回这里面最深的那一个）。
+     >
+     > 过程很艰难。我是没有一下子就想出好的解法的，所以我一开始给了一个十分naive的方法： print 出所有最深叶子节点的自root开始的路径，然后找到这些路径的最大共有部分。
+     > 然后一边构思一个递归的解法一边跟他解释。由于我脑子里模糊的有个大致想法但是不明确，跟他解释的时候他总是一脸疑惑问why。
+     > 最后我还是搞出来了，然后挂了，我最后给的方案是： 先找到所有最深叶子节点得到一个set命名为targetSet，写一个helper func, 对一个节点返回这个节点子树下有多少个节点在targetSet里面。然后，对于一个节点来说
+     > 如果他的children包含了完整的targetSet，那么它就是一个共有祖先，又由于这个function是递归的，所以完成顺序是自底向上，我们只要全局来看找到第一个共有祖先，就是最深共有祖先。
+     >
+     > 他们家不要求code要compile，更加注重交流，就像地里另一位同学讲的，要像德芙一样丝滑才行。我自己反思来看，我其实是做过类似的题但好像并非完全一致，这道lc mid级别的题我觉得我还是正常发挥。面试中段花了大量
+     > 精力跟这个印度人解释一个我不成熟的思路，这一方面暴露了我weak；另一方面转移了‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌我一部分思考最终解法的精力。这让我想起了很久之前挂掉的亚麻面，也是最终题目做出来死了，而我面过的面试里面几乎全是不需要思考
+     > 解法经典的我知道的题。 总结的经验教训就是，还是要当好一个做题家的本分，题海战术。对于这类重视交流的公司，题目拿出来，几乎很难容许你想一下，脑回路分两半一边要把他哄开心一边要想解法是很高的要求，这一类
+     > 面试更像是一种读过剧本的现场演出，为了更好的效果你甚至可以编排情绪和话术，而不是真正的让你现场思考。
+     >
+     > 希望对大家的面试准备有所启发。
+
+437. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Other | 其他
+
+     > VO 三轮
+     > 第一轮：
+     > 第一题：给一组数据，输出和最大的前几个，题目有点绕，应该是用treemap 做。应该是跪在这里了
+     > 第二题： 利口地铁检票那道题
+     >
+     > 第二轮
+     >
+     > 第一题：输出最深括号里的字符，好像是利口的题，不难
+     > 第二题：设计一个文件接受处理系统，问了一些基础知识，像进程和线程区别，内存不够怎么办
+     >
+     > 本来以为到此结束了，可是告诉我还有第三轮
+     >
+     > 第三轮：
+     > 设计一个ETL pipeline. 随便说‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌的，主要考察如何设计可扩展的系统。
+     >
+     > 面完几天了，还没有消息，估计是挂了。大家加油。
+
+438. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite 视频面试  | Other | 其他
+
+     > VO表演两轮tech 一轮manager。HR在tech之后会出来通知你有没有下一轮。下面是面经：
+     > 第一轮： 1. 给了一张地铁表，给几个计算票价的规则。设计一个票价计算器。系统跟国内地铁有点像。出站收费，根据坐的距离决定收费。2. 数据流的数据包里有id和data，无序到达系统。要求根据id从小到大顺序处理。
+     > 第二轮： 1. 带权重多叉树，计算从顶到底部的一条path最大权重之和。2. 蠡口珥捌劉
+     >
+     > 第三轮：经理说，你当我是小白，给我介绍一下你以前工作里的一个系统。 有一些general system design follow up。用户一下子多很多怎么办。分布式系统不同服务‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌器登录问题。。
+     >
+     > 总的来说，bb会要求面试的人先把面试官讲明白了才能写code。楼主奉行的面试结构是先讲思路，得到认可后写pseudo。讲一遍为什么这么写。最后再写实际代码
+
+439. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Fail | 在职跳槽
+
+     > 十分钟前刚完事 bb onsite，想试试水，但是不知道为什么跪了。
+     >
+     > 1. 里扣的 散酒死
+     > follow up：类似于小岛题，
+     >
+     > 第一题秒了，第二题有个小bug，面试官指出来，过了。
+     >
+     > 2. manager join进来了，先项目介绍，问的挺细的。然后设计一个gps service。
+     >
+     > 完事通知我今天面试结束了。
+     >
+     > 没有第三轮，所以应该是跪了。我觉得花开包面试真的好迷。不知道他们跪不跪取决于什么。我店面两个组，觉得答得不错的跪了，答得一塌糊涂的过了。
+     >
+     > Oniste我觉得答得还可以啊，完事连个第三轮都没有。简直醉了。
+     >
+     > 不过即使过了也不会去，纽约太远了，面‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌试体验还行，就是感觉他们的bar有点魔幻。
+
+440. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Pass | 在职跳槽
+
+     > 借女票账号发帖，帮女票攒大米！
+     >
+     > 开花堡面试比较简单，没有两轮游。BQ也和team member聊得很开心。面完就觉得稳了！
+     >
+     > R1:
+     > LRU 变体
+     >
+     > R2:
+     > 设计题：TinyURL
+     > R3:
+     > BQ
+     > R4:
+     > BQ
+     > R5:
+     > BQ
+     >
+     > 周三面完，周五早上就收到了口头‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌offer。
+
+441. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Other | 在职跳槽
+
+     > Bloomberg的三轮VO，是不是大概率挂了，连经理都没见到
+     >
+     > 以下内容需要积分高于 200 您已经可以浏览
+     >
+     > 第一轮：两个白人小哥  LRU
+     >
+     > 第二轮：国人小哥+白人  白人中途退出 不知道是不是不好的信号
+     > 蠡口 物流
+     > 蠡口 叄就撕
+     >
+     > 第三轮：两个白人小哥 中途一个人退出 另一个不好的信号
+     > 设计一个ticket分发系统，感觉没啥好说的。ticket一道就要分出去。就说维持个最小堆，永远把ticket给目前任务最少的那个人
+     >
+     > 
+     >
+     > 希望能有好消息
+
+442. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 内推 - 视频面试  | Pass | 应届毕业生
+
+     > 两轮店面，体验不错。题目
+     > 以下内容需要积分高于 188 您已经可以浏览
+     >
+     > Candy Crush 1D(follow up: minimum adjacent swaps to be crushable + 2D case) + Best Time to Buy Stock IV (follow up: bottom up) + Populating Next Right Pointer(follow up: constant memory) + Shortest Palindrome (follow up: O(N) solution)。
+     >
+     > Follow up都是口述就好，不用写出来。第二轮面完十分钟以后HR过来说过了，问了一些bq和有没有别的公司的interview/offer之类的，还介绍了他们公司新人的training camp + shadow + reverse career fair什么的，说是转组很方便blahblah。然‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌后要了时间约接下来的senior manager面，特意发了亚麻社招电面的后三天给recruiter。大家一起加油！
+
+443. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Fail | 在职跳槽
+
+     > recruiter推了两个组，选了分两天面试奇葩的是HR轮。第一天先面了三轮，然后说HR轮到第二组面的时候一起面,第一天就三轮结束了。
+     > 第二组面完前两轮，30min的break之后，又拖了5-10min，一个HR连进conference,说，不好意思，我忘了我这时候还有一个别的meeting，我会等下周一，最晚下周二和他们debrief之后给你答复，然后说你今天的面试都结束了,就撤了。我当时？？觉得当天确实面的有点磕绊但也答完了，可能是两轮游。但这个HR操作也是有点骚哈
+     >
+     > 第一个组
+     >
+     > 1.
+     > 1.1刷题网 姚思林
+     > 1.2 top K stock
+     >
+     > 2.
+     >
+     > 
+     >
+     > 2.1 刷题网 幺儿四舅
+     > 2.2 Write a program to collate all emails belonging to a person. 会有人重名，但是email 是unique的。每个人也可能有多个邮箱
+     >
+     > 3.
+     > 3.1  电梯的 OOD
+     > 3.2 word stream, 按freq排序
+     >
+     >
+     > 第二个组
+     >
+     > 1.1 求sqrt解
+     > 1.2 刷题网司思‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌武
+     >
+     > 2.1 本质上是刷题网伞巴林
+     >
+     > 第二周收到消息，两个组都挂了。recruiter follow-up的时候我问 第二个组面两轮是不是不太好，他说那个组就是面的少一轮。留给大家参考信不信recruiter说的。
+
+444. 2020(7-9月) 工程类 硕士 全职@bloomberg - 猎头 - HR筛选 技术电面 Onsite  | Fail | 其他
+
+     > 今天和大家分享一个BB的面经，一共面了3轮不包括recruitor
+     >
+     > 7月份开始找工作，打开LinkedIn的profile， BB的recruiter找到了我，问了一下我的兴趣，要了我的简历
+     > 过了几天，打电话过来告诉我，有3个team对我感兴趣，但是只能选两个team。最后选了一个新闻组和法律组
+     > 选完后，需要在BB的网上申请，然后预约第一轮的tech
+     >
+     > 第一轮
+     > 一个白人，不是我要面的组的人，寒暄了一下工作经历，然后开始做题，是现实生活中的一个题，大概意思如下
+     > 写一个根据jason的parser，里面的节点有2中，一种是operator，比如&，Or，其他的是操作数，把最后的表达式写出来
+     > 输入一个json格式的字符串，输出最后的表达式，coding language 是python
+     > 最初想法是用递归，然后我又说可以用iterative的办法，最后还是用的递归，其实这个数据结构就一个一个二叉树，用先序遍历
+     >
+     > 第二轮
+     > 是一个印度大哥，面试的题是关于怎么能参加最多的meeting，leetcode上面有类似的题，我讲了我的思路，然后实现了算法。然后问我有没有优化方法，
+     > 我给他讲了思路，问他要实现吗，他说不用了
+     > 最后问了很多关于spark的问题
+     >
+     >
+     > 第三轮onsite
+     > 过了第二轮，coordinator发来onsite邀请，让我回复3个6个小时以内的time slot， 我很惊讶，为什么要6个小时，coordinator 说最长6个小时，如果中间某个环节没有通过，很可能很早就结束了
+     >
+     >
+     > virtual onsite 一共4轮
+     > 第一轮是design， 和这个组的leader再聊，是个白人，面试的时候还在哄小孩，小孩子一直再哭
+     > design的问题就是他们组现在的设计，包括怎么设计data pipeline， 怎么存储，为什么要这样设计一类的，这一轮感觉可以
+     > 第二轮是一个华人小姐姐和一个印度小哥，是一维的fruit crunch，给你一个字符串，如果有3个以后连续的，需要去掉，直到没有可除去的字符串返回
+     > 这个题答的很烂，原来遇到过，但是没有仔细调优，聊的不好，估计要挂了
+     > 第三轮是一个白人和一个印度人，白人是这个组的，问了数据的问题，window function 一类的东西
+     > 然后设计一个同步一个数据表到数据仓库的方案，开始举例的时候用的mysql， 我说可以用主从复制，他们说想直接到数据仓库，然后我告诉他们可以用binlog来记录
+     > 然后他们又说源数据不一定非要是mysql， 最后假定有一个API可以返回某段时间的所有record， 我说这个就很简单了，直接写出了sql
+     > 最后白人小哥一直再说你的这个方案会不会有问题，我一直没有get到他说的case是什么，讨论了好长时间，他最后给了例子，我才恍然大悟。
+     > 他说的意思指如果API返回错误的数据怎么处理，这儿需要用‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌lasttimestamp来比较哪些数据是最新的，如果数据在warehouse的timestamp比API的晚的话就不更新
+     > 印度小哥问了如果某个scheduler 在执行任务的时候挂了怎么办？最后他把这个问题转了zk上。zk可以解决高可用的问题，但是还是无法解决某个task失败的问题。
+     > 我问他如果任务在执行中失败用zk是无法解决的，必须用回调，需要保存转态，只有主程序得到了task执行成功的回调才认为成功，否则就是失败，知道成功，他同意
+     > 最后还聊到了幂指，问我知道幂指吗？我说知道啊，就是指某个function不管执行多少次结果都是一样的，问我幂指运算有什么好处一类的
+     > 第四轮是和HR聊
+     > 没有什么behavior的问题，问问和这个team聊的怎么样啊
+     > 期望薪资是多少啊
+     > 手上有没有其他的offer啊 等等
+     > 最后告诉我，如果他们决定继续，明天就会有一个verbal的offer，如果接受了verbal offer才会有正式的offer
+     >
+     > 我估计是挂到了onsite的第二轮，因为聊的确实不怎么样，我没有说太清楚，他们也没有get到我说什么
+     >
+     > 希望这个帖子对大家有帮助
+
+445. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite 视频面试  | Pass | 在职跳槽
+
+     > 发一下彭博社的过经，攒一下人品 ^ ^
+     >
+     >
+     > 第一轮：是个经典题，就是Team and Candidate Matching。跟面试官讨论，前提假设Team 和 Candidate 人数一样。然后设计一个算法尽可能做好Team Match。这个题我觉得解法蛮多的，开放性的问题。
+     >
+     > 第二轮：经典的TopK题目变种。就是每分钟要call一个method，可以读取当前的温度，并返回过去24小时的Min/Max temperature。解法也比较简单。
+     >
+     > 第三轮：项目的deep dive，还有根据面试官组里的项目出了一些general的system design问题。
+     >
+     > 第四、五轮‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌：都是项目的deep dive 和 Behavior，开开心心的讲就好了。
+     >
+     > 求大米！
+     >
+     > 被通知给过了，但是包裹有点不尽如人意，看看能不能compete上去吧。
+     >
+     > 最后祝大家都好运！
+
+446. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Other | 在职跳槽
+
+     > 第一轮： 国女+没有口音的三哥。 上来先问背景之后出题。
+     > 第一题：给不同银行做汇率交换的记录，求一个汇率在不同银行做交换的平均值。 给了Sample:
+     > bank1, EURRMB, 1.11
+     > bank1, EURRMB, 1.12
+     > bank2,  EURRMB, 1.14
+     > bank2, , UDSRMB, 7.3
+     > 同一种外汇交易在一个银行只用保存最近一次的数值，所以在sample data里getcurrency EURRMB的结果应该是 (1.12 + 1.14) / 2 = 1.13
+     >
+     > 第二题： 刷题网司三玲
+     > 我之前的做法是在第一次循环过程中把所有child的node不等于null时的next的node放到stack里，然后再把stack里的node数据依次取出来连上去（这里只用next的指针），这种做法可以跑过刷题网里所有的test case。但是三哥写了一个例子这种方法不work。
+     > 1 - 2 - 3 - 5 - 7
+     >            |     |
+     >           4    6
+     > 问我怎么解决，我想了一阵想不到很好的解决方法。后来三哥说可以把stack的pop的过程加到第一个loop里，一边加node一边pop， 循环条件里加一个!stack.isEmpty()。 感觉要挂就是挂在这儿了，因为我觉得其他地方我答得简直完美。
+     >
+     > 第二轮： 国女+略微有口音的三哥。
+     >
+     >
+     > 第一题：
+     > 给很多飞机的航线：比如A -> B, B -> C, C -> D, D -> B
+     > 实现两个API：
+     > 1.addRoute(String src, String dst)
+     > 2. findRoutes(String src, String dst)
+     > 第二个API返回的是所有从src到dst的路径。我用visited + backtracking秒了。后来问了下时间和空间复杂度。
+     >
+     > 第二题：
+     > 经典地铁题，原题解法就不说了，地里也有很多资源。 主要讲下follow up。 国女问了哪些edge case可以导致error， 我说了两种，一是check out的时候id在map中不存在， 二是check out的时候id对应的时间t大于之前之前check in时的时间。国女表示满意，又问了运行过程中可能出现哪些情况导致地铁出问题。我说可能有些check in了但是把地铁卡弄丢了没有checkout， id在memory中积压了很多最后导致memory不够。 解决方法是定期检查已经存储的数据，如果start time间隔很久的就可以直接remove。 三哥也问了一个follow up，因为我在check out的map里存的是route， 如果之后需要该站点名怎么办。 我说在route里可以用station id，然后单独建一个station name到station id的map，三哥表示满意。
+     > 这轮面试结束之后国女跟我说10分钟后等HR通知，然后三哥说一周内等HR消息， 然后国女问三哥昨天不是说10分钟内等消息吗？ 三哥说那是今天。感觉是上轮的三哥通知挂我了……
+
+447. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Fail | 在职跳槽
+
+     > 刚收到 hr 的拒信，直接上来写挂经，攒人品，求加米
+     >
+     > timeline：
+     > 6 月初海投 2020 software engineer
+     > 6月低第一轮，阿三哥，题目 two sum，本来以为这轮就挂了，约了1小时的面试，总共用了20分钟，我俩就说拜拜了。
+     >
+     > 7月21，第二轮，vitual onsite
+     > 第一轮，白人小哥：先bq，聊简历
+     >                              第一题 利口，幺幺七，秒杀，
+     >
+     >                              第二题 利口 幺儿零九，注意题目是 凡是大于k的，都crush掉，而不是相连的 k个才crush，例子 aabbcccbbd，k=3，结果为aad，而不是像利口一样的 aabd
+     > 第二轮，亚裔女，阿三哥，先bq，聊简历
+     >              第一题：阿三哥，设计一个类，实现方法，给一个数据库，数据库里有很多的records，records 存人的出生年和死亡年，让实现一个方法，返回某年活着的人的个数。
+     >                           开始的时候没有明白意思，阿三哥一直说数据库很大，不能存在heap里，我说这是考 computer architecture，L1 cache这些东西吗？他说不是。他说可以每天在某个固定时间先preprocess数据。
+     >                           后来明白之后用两个treemap，就存某年出生和死亡的人的个数，再从头到尾遍历，相加相减就找到到某年为止活着的人的个数了。
+     >              第二题：亚裔女，看名字不知道是韩国还是中国还是东南亚的。
+     >                           给一个字符串，比如 (a(b(cd(ef))h) 让返回在最内层括号‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌内的 string，一次遍历，秒之。
+     >
+     > 说说感受：
+     > bloomberg投了有三年了，第一次拿到面试，整体的几轮面试，感觉都不难，不知道他们的考察重点是什么。最后 virtual onsite，感觉面的也不错，没有什么疏漏，没有什么大问题。第二天就收到了拒信。
+     >
+     > 最近感觉真的是找工作超级困难，我年初 audible应该挂在 bq上了，这次bloomberg 感觉也是挂的莫名其秒，果然是出了名的两轮游公司。朋友也是相同的经历，好几家了，面试感觉一点问题都没有，但是最后就是给挂掉。
+     >
+     > 互相安慰，互相鼓励，大家一起勉励前行吧。
+     >
+     > 求加米安慰，感谢
+
+448. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Other | 在职跳槽
+
+     > 5月中內推，BB家 senior position require 2 YOE+ , 樓主只有一年有些尷尬, 請朋友推了他們組上的senior and New Grad 2020 position
+     > senior position 在第二個 phone interview 掛了, 記得題目不是很難但忘了
+     >
+     > new grad position 只有一個 phone interview -> onsite
+     >
+     > Phone Interview:
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > BQ 之後只有一題, word search
+     >
+     > 
+     >
+     > Onsite:
+     >
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > 運氣好幾乎都是原題
+     > First Round:
+     > 白人senior主面，印度小姊姊 shadow, 各出一題, 刷題網 四傘臨 and 餓無散
+     > Second Round:
+     > 華人senior主面 (待了9年) , 白人junior shadow
+     > 1. 設計一個system, 2 functions, input fuction(obj_id) stores an unique object id, lastK function return last k objects, both requires O(1)
+     > 2. 刷題網 散一死
+     >
+     > 
+     >
+     > Third Round: HR screen. 黑人大姐提問BQ, what are 3 most import things in your jobs? what's your 3 strengths 都還蠻常規的，之後大姐套用我的原因，鼓吹BB多好benefit超棒，加入你一定會喜歡
+     > Four Round: Engineer Manager (在BB待了15年)：一些BQ, most pround project, 一些high level syste‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌m design, 基本上聊天居多
+     >
+     > 題外話, BB 家的人幾乎都會提到WLB很好, 養老好像不錯？
+     >
+     > 求米
+     >
+     >
+     > 补充内容 (2020-7-18 00:32):
+     > System Design 那題, memory 是有限的
+     >
+     > 补充内容 (2020-7-22 04:35):
+     > 剛剛用Tesla offer 催來了拒信，看來四輪不能保證offer，但仍然不知道掛點是什麼
+
+449. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Fail | 在职跳槽
+
+     > 第一。design 一个 mortgage的还款object。要求是：每个人可以选择不同的还款方式。         比如：你同时有两笔mortgage a（每个月要还1000） 和 b（每个月要还3000）。你每个月收入c = 2000，此时有两种还款方式，一种是你先还完a（2000-1000 = 1000），再还b（1000 - 3000 = -2000）；一种是你可以按比例还（a 还 500，b 还 1500）。
+     >          目标：写出这个object，每次输入收入c，a，b，和还款模式，要得出 a， b各应还多少，之后还剩多少钱。
+     >          我给他design完了，还加了design pattern，但是面试官皱了眉头，说你这个may work，但我也不会强迫你用我的想法。感觉面试官希望我的答案跟他的想法要一样，心已经凉了一半。
+     >
+     > 第二。外星人字典（儿遛舅）。把想法分享给面试官，思路很清楚，还给他举了例子，他很赞同，但是后来面试官估计自己没有把问题想明白，一直在自己在线找corner case，不停打断我。然后，我不停地给他说他这个case各会有什么样的结果。（感觉是我在给他面试，一点点排除他的疑问）最后，code写完80%，他给我来一句，时‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌间到了，这一题一般没有人能写完。这轮面试的感觉很差。
+     >
+     > 第三。manger过 resume，问了经典的why bb 和其他很多问题。但前面两轮面得让我心凉凉的，导致整个人情绪不高。
+     >
+     > 第三天就来到了拒信。希望上面的信息对大家有用，求加米。
+
+450. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Pass | 在职跳槽
+
+     > 为了还愿，贡献一个BB家的过经。
+     >
+     > 以下内容需要积分高于 188 您已经可以浏览
+     >
+     > 面试的大组是fixed income core。
+     >
+     > 第一轮两个印度人。印度女出题：一维糖果消消乐（刷题网意义伞舞）；印度男出题：刷题网伊尔斯乌。
+     > 第二轮一个韩国女和一个印度男。印度男出题：LRU浏览器历史，但是把它变成了OOD，followup是把它设计成一个公司系统监控统计每个员工的浏览历史；韩国女出题：OOD，一个appstore，有一些predefined function，要求你增加两个API使之能修改publisher name。
+     > 第三轮两个白人老板，全是BQ，问最骄傲的项目，为啥想从上家离职，介绍了几个正在招人的组，问我有没有偏好，听到这些心理窃喜。
+     > 第四轮他们组30年工作经验的大佬出现了，一上来他先做了一个很长的自我介绍，然后还是BQ，类似的问题：为啥从上家离职，上家做什么才可以不让我离职，然后又介绍了一遍那些招人的组，又问我有没有偏好。
+     > 第五轮HR，跟我套了一下近乎因为她曾经是我上家的HR，然后分析了一下BB和上家的区别，然后问我有没有其他offer或其他面试，可以接受的薪水‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌，然后说第二天给消息。
+     >
+     > 
+     >
+     > 第二天一早收到电话给了口头offer。如果不出意外的话就会接了。
+     >
+     > 祝愿各位在疫情期间奋战在刷题和找工作一线的同志们早日找到理想的工作。
+     >
+     > 第一轮一维糖果消消乐应该是 伊尔令旧 而不是 意义伞舞（当然这道题也是面经）
+
+451. 2020(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Fail | 在职跳槽
+
+     > 1. 两个人白男：design 一个 dealer 的application （OOD）白女：design 一个 top k 的api 去得到出现在news中频率最高的公司（讨论算法更多）
+     >
+     > 2. 两个人
+     >
+     >
+     > 一个人问问题，一个人看戏
+     > 问题是：design 开花堡的网页如何显示全球的news。主要讨论点在于，这个news，只能在local生成，也是欧洲新闻只能在欧洲，亚洲新闻只能在亚洲，你要如何做到把这些news处理了之后，拿到美国总部来（这个过程可以规避掉各个国家地区的一些产权保护的法律），再排序生成新的ranki‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌ng。
+     > 3. manager
+     > 过简历，聊项目。然后问了如何做信息的push notification，把我问懵了，答了一些，不知道是不是他想要的答案。
+
+452. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Other | 在职跳槽
+
+     > 只是知道是一个fixed income下的组 店面时给了个约瑟夫环的题 模拟硬干 竟然过了 昂赛通知说只有两轮 但让准备好半天的时间 说明只有前两轮面好了 才有后面的
+     > 第一轮 两个白人大哥哥 给一堆股票交易量 找出交易额最大的股票 我？ 啊？ 你让我5分钟写不完算我挂吗？然后就是聊天了。。。。
+     > 第二轮 同样两个白人大哥哥 设计电梯系统 画了画图 完事了 让我看着点邮件 拜
+     >
+     > 好 挂了。。。。
+     >
+     > 半‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌小时之后 发邮件让我继续面 第三轮 hm纯bq 第四轮 hr
+     >
+     > 开花包 thats it? 也不知道啥结果
+
+453. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | WaitList | 在职跳槽
+
+     > 整体bb的VO面试感觉很好，不都是网上的面经题，都有变形，而且面试官会一步步引导，开始没有最优解，也会慢慢帮你讨论到最优。感觉网上大家都说bb很玄学，直接给最优解也不过，面得感觉不好也可能过。
+     > 我整体感觉VO题型有新意有难度，面试官有礼貌有提示帮助。重点考察解决问题的思路problem solving和沟通能力。
+     >
+     > 以下内容需要积分高于 120 您已经可以浏览
+     >
+     > VO：（准备的地铁题，马拉松都没考）
+     >
+     > 第一轮
+     > 1. 印度大叔：蠡口伊尔已 Buy stock I, follow-up: 蠡口伊尔而 Buy stock II
+     > 第一题太简单秒，写了code。follow-up没需要写code，大致描述。经典题有准备，就是说的时候有点把自己搞乱了。大叔一直点头，主要可能我交流得比较顺畅，重点是让他听懂最重要，让他看出有解决问题能力，而不是埋头写code。
+     > 2. 亚洲可能国人小哥：cool string: if a string has all characters appear same time or after removing one character, all characters appear same time, then the string is “cool”(return true).
+     > For example, “aabbccdd” is cool, “aabbbcc” is cool. Follow-up edge case: “aaaac” is also cool.
+     > “aabbbccc” is not cool.
+     > 先用一个hashmap存每个字符char出现频次（bb真的很爱考频次topk相关东西）。 然后看每个频次freq出现的次数，我开始在怎么判断最常出现的频次时候卡住了，时间就剩不到10分钟特别慌，还好想出再用一个hashmap存”频次的频次“，然后看结果，如果有多于两种频次（freqmap.size()>2）return false；如果只有一种频次freqmap.size()==1）return true；对于正好两种频次的情况，要讨论一下特殊情况。这里我其实有点混乱，小技巧是当混乱，一定要走一个例子，就会清晰很多。最后面试官还是满意了。
+     > 第二轮
+     > 金发碧眼小哥（shadow三哥网络不好没说话）：
+     > 1. 略像“蠡口巴久武”：实现一个stack，可以实现pop， push，peak（后来把peak去掉了不重要）, 和mode。mode 指返回出现频次最多的数字。可以用任何数据类型，也可以用Java里的stack，重点在于怎么返回mode。略像“蠡口巴久武”，但是pop不需要pop most frequent，只要pop top就好。基本叙述了一遍，没有写code。
+     > 先给了一个解法：linkedlist实现pop，push，Hashmap记录频次，maxheap去做排序，保存mode值。分析了一下时间复杂度。pop，push都需要heapify，O(logN); mode 直接返回maxheap的top, O(1).
+     > 在他提示下，实现另一个解法：用一个stack实现正常的pop， push；用一个hashmap记录出现频次；用另一个stack存放目前为止出现的mode，在pop和push时候需要更新mode，只要update hashmap 然后查询对比会不会要更新mode。
+     > 2. “蠡口一散就”变形：String “appleisgood” 和一个dict = {“apple”, “app”, “is”, “good”}, return “apple is good”. 返回加了空格的字符串。
+     > 是word break变形，先说了一个惯用的dp解法，结果发现app的地方也会加上空格。提示可以用递归去做，简述了做法，比如看“app“在字典里，然后检查剩下的”leisgood“，因为不能分割，所以继续。看到”apple“在字典，剩下的可以返回正确值就”apple “+剩下的返回值。可以划归为子问题，用递归就可以解。也是叙述了一遍，没有写code。
+     >
+     >
+     > 面完两轮还是很慌的，没怎么具体写code，就是都在讨论prob solving。虽然感觉沟通很好，但是也不是见过的题一下就有答案，都是给了一个解法，然后跟着面试官的提示思路完善的。而且面经看bb都很玄学，很多可能表现好也不给后面三四面，或者约之后再面，就很怕没过。没想到竟然进入第三轮。
+     >
+     > 以下内容需要积分高于 110 您已经可以浏览
+     >
+     > 第三轮 印度领导：
+     > 滔滔不绝介绍team，细心学习。问简历背景，谈笑风生。除了一个设计题，如果一个客户很多集中的request，想根据一定时间内request数量限流，怎么设计数据类型。比如，5min，最多300k requests；10min，最多400k requests；15min, 最多450k reqs。
+     > 超级慌，没太听懂。但是还是先说了一个简单想法，比如可以按每分钟bucket，记录每分钟的request数量。然后自己反省说，这样很不‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌连续，很离散。然后马上想出另一个方法，用一个hashmap，有timestamp和累计的numOfReqs, 每来新req，找前一个time，然后value+1； 然后可以去找前5min，10min的值，相减就是最近时间区间里的requests数；然后讨论说其实应该用treemap 才可以按时间排序，查找5min前可以binary search，时间复杂度O(logn)。
+     > 后面聊得不错，人很好，一直在介绍组，因为在bb呆了14年。结束就说叫HR，我幸福要昏厥，HR来了还在聊天。
+     >
+     >
+     > HR
+     > 客套话，问面试感受，我说特别好。基本就顺着说。问我其他offer和薪资。我就刚面过亚麻，有声书，城堡三家，还没offer。很诚实回答，说明天看就给我消息，这意思是录了？
+     >
+     > 补充内容 (2020-7-11 15:15):
+     > 收到offer了 从了
+     > Timeline:
+     > 6/15 Phone Interview 1
+     > 6/17 Phone Interview 2
+     > 7/1 VO 四轮
+     > 7/6 Verbal Offer
+     > 7/8 Written Offer
+     > 祝你也有好消息啊！ 求加个米
+
+454. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 内推 - 技术电面  | Fail | 在职跳槽
+
+     > 一轮店面之后通知VO
+     >
+     > VO四轮：
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > 第一轮：根据progressive tax rate计算个人所得税，追问1：给定所交的税，如何判断收入；追问2：给定实际缴税的平均税率，如何判断收入区间
+     > 第二轮：二叉树中序遍历iterator；地铁题
+     > 第三轮：OOD，根据他们平时业务场景，设计几个类，使用了策略模式
+     > 第四轮：BQ
+     >
+     > 
+     >
+     > 等了几天recruiter邮件说面试反馈都很好，然后小组lead们想和我聊一下，主要介绍各个组。
+     > 高潮在这里，这一步lz都以为基本要稳了，然后就大意了。到了约定时间，粗线两个小组lead，主要介绍每个组做什么，然后绝大部分时间都是我问问题。上来先问我想做什么，lz目前后端，就说想继续后端开发(他家招聘介绍其实没写具体工作role是什么)，结果这俩组都是full stack。本来full stack，lz也很愿意从了，毕竟以前用过js，而且他们说前端就是简单js。但是其中一个lead说他们group有纯后端的组，如果我很想做后端可以帮我和hr说，给安排一下，于是lz就跳进了这个”大坑“。就和他们说还是prefer纯后端，但是如果没有位置，full stack也可以，技术上没有太大blocker。除了这一点，其他时候自我感觉都聊的挺开心的。
+     >
+     > ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌聊过之后，大约一周都失联了，lz心里感觉越来越不好，问recruiter要了下反馈，然后催来了拒信。。。。。
+     >
+     > 经验教训：lz其实很想去开花堡，聊天之前从面试反馈来看自我感觉稳了，就飘了，一听可以换个更合适的role，就提了要求。。。。。大家如果很想去某个公司，但是给的role即使不是最期待的，也还是先从了，以后有机会可以内部慢慢调整。另外lz这个过程和地里其他面经有点区别，发出来希望能给大家个参考。求加米加米，谢谢。
+
+455. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - HR筛选 技术电面 Onsite  | Fail | 在职跳槽
+
+     > 分享一个巨奇葩的bloomberg面试经历，网上本来投的是 derivative team
+     >
+     > 4/28 海投
+     > 5/1 收到HR电面邀请
+     > 5/15 HR电面后并选择技术面时间
+     > 6/2 第一轮电面
+     > 6/4 通知消息并约VO
+     > 6/16 VO
+     >
+     > 具体题目是：
+     > 以下内容需要积分高于 200 您已经可以浏览
+     >
+     > 电面:
+     > 地铁题+json文件扁平化（把nest的dict都变成只有一层key:value的)
+     >
+     > VO:
+     > 第一轮：白人+国人小姐姐
+     > 蠡口
+     > 1. 肆澪漆（写完之后要求在hackerrank直接跑）
+     > 2. 溢耳留（用的trie解的，小姐姐问的很细，要求列举各种corner case，但是没有要求跑）
+     >
+     > 第二轮：两个三哥，听着没什么口音、
+     > 1. interval的题目，给出许多bank的interval的工作时间，求给定时间段能否都cover
+     > follow up是如果输入的数据如何检测是否valid，不知道蠡口号，感觉有类似的？老哥一眼看到了一个typo，要求我跑，跑错了，然后花了几分钟debug。。。
+     > 2. 设计马拉松的system design，要求实现按照名字print和按照排名print，添加人和删除人的功能，和他说了一遍各个结构设计，先是dict+list来存参与人员的信息，问有没有更加好的方法，答曰tire tree, 同意了。说完之后只剩5分钟了，没空写code，就提了几个问题就过去了。
+     >
+     > 第三轮：居然还是tech problem...两个三哥
+     > 三哥不知道是故意的还是懒得换，贴了一道C++的题目，要求是一个实现一个库的功能变成一个service call（就是说假设一个package不存在了，换成一个service）从而以后再也不去call这个库。并且要高效。。
+     > 一开始就高效这一点不是很明白，说可以用cache，同意了，但是说这样会更改function，有没有什么方法可以不更改function？最后解答出来了一种先判定要不要去call这个库，然后整理出来需要call这个库的objects,再实现一个batch_call来实现一次request完成所有的处理，小哥同意了。但是写完这题已经花了40分钟，再加上前面的BQ，还剩10分钟不到，和他们聊聊天就过去了。
+     >
+     > 第四轮：国人大佬manager
+     > 聊了一些bb近年来的发展，以及team是做什么的，人非常好，说最快明天会有hr答复结果。。。等到中
+     >
+     > 
+     >
+     > 然后就不知道莫名奇怪的“挂了”：
+     > 过了一天换了一个HR来联系我和我说“上一个HR把你的名额转到‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌了我这里来，我们觉得你更加适合new grad这个岗位”。我还以为是像亚麻那样面L5发L4这种，想着那就算了呗 你发new grad就new grad吧，
+     >
+     > 结！果！是！告诉我重新面试，从电面开始，重新走全部流程？？？？？什么玩意。。。
+     >
+     > 今天刚面完new grad电面,遇到一个沙雕烙印，问的题目非常简单，
+     >
+     > 以下内容需要积分高于 200 您已经可以浏览
+     >
+     > top frequent element，给出了一个dict + list记录的方法，问为什么要再用一个list，表示这样找最大element的时候就不需要再去遍历dict了，可以节省时间，
+     > 不过怀疑这个烙印没看懂code，问了有5分钟这行code什么意思，最后删了list，要求只用dict。行你是面试官你说的算。
+     >
+     > 
+     >
+     > OK那就做吧，然后还剩15分钟+，足够再做一道题，非得不做，强行结束问题开始what's your question再见了, 你迟到2分钟，提前5分钟挂，我也就只能呵呵了，那就再见吧。
+
+456. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Other | 在职跳槽
+
+     > 店面是五月份的事情了，一天后约onsite, 因为之前以为要面FB就约到了很远以后，后来FB把vo取消了，尴尬的等了几周才等到今天面试。
+     > 第一轮：
+     > 天竺国友人和美国哥， 第一题易思玲简单版，只需输出任意一个结果。讲了递归加memo的思路，两人都沉默，说你先写看吧。我写完，再讲一遍，他们还是没懂的样子。于是让我run， 跑完例子都对，他们才信了。 follow up: 如果要输出所有结果怎么办
+     > 还有个follow up说如果for loop还没有发明，怎么办，我..... 我说那就i+1到底呗，他说yeah that will work, 我自己都觉得懵逼。 然后三哥来出第二道题，恋裱数字相加， 我嘴贱问可能是负数吗，他说anything, 于是就只能随便写了写，开始判断是否负数，用的stack，他又说I think this will work, 我自己都觉得不一定对，蒙蔽， 然后就结束了。
+     > 第二轮:
+     > 开始一道浏览器，我直接用LRU秒掉，面试官说好，请问你做过这题吗？ 尴尬的说，我做过类似题LRU。 然后他说那要是LFU呢，于是随便写了个frequency map的版本，漏了size++，被提醒改过来， 问了复杂度。 第二道题，问了易铒寺鸠， 这题其实很简单也很无聊，但是问题是没法优化， 讲完思路就剩十分钟左右了，问了一下还写吗？ 他说你写吧还有时间，于是写完时间到，我以为就挂了。 然后他们说待会有人。
+     >
+     > 第三轮：
+     > 来了一个大佬，why bb, 其他bq, 又突然问了几个free style的系统设计，我随便编几个queue, cache，race condition类的， 他说好。 这时候他突然说，those are all my questions, 你有什么问题吗？ 我...... 这时才过去20分钟不到，原计划一小时啊，我这么菜吗？ 于是问几个问题准备结束了。然后他又说你timeline是什么？什么时候能上班？你有其他offer吗？ 我突然感觉有戏，最后提前结束了他说一会HR会来。
+     > 第四轮：
+     > HR来了，没问任何问题，why bb 和其他的都没问。就说你有什么compete offer? 数字多少？ 还要细节到break down的数字。 说你想要多少，报了个数字，她说回去商量一下。
+     >
+     > 总的来说，他们家题确实不难，而且都是面经见过的。 但是很玄学。
+     > 个人给点建议：
+     > 高频题，重在准备follow up, 复杂度要掌握，一般自己想一下怎么follow up, 无非是输入改一下，输出改一下格式，多线程会怎么样，‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌或者复杂度怎么优化，多准备好这些比多刷题有用。
+     > 系统设计题，主要是重在概念要掌握，读多，写多其实就那几种套路，常见的kafka redis之类的不是知道名词就行，至少知道什么时候该用, advantages是什么。
+     > 他们家的题，不需要跑结果，所以思路很重要，不一定非得bug free。 最后，如果发现没有想法，写个自己感觉可能对的，面试官很nice会提示，再或者三哥自己也不会，他可能还会说 I think that will work。
+     >
+     > tonymuu 发表于 2020/06/16 23:20:52
+     > 顺便问一下 free style的系统设计都问了哪些啊？
+     > 开始问有个电商网站，想要一个service能知道用户加东西进购物车，之后买或者没买，想拿到这些数据分析。 之后又问了一个东西好像是有6个server，用户下单可能到不同的server, 怎么aggregate。 反正我也没太懂，就随便说了说。
+
+457. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Fail | 在职跳槽
+
+     > 前几天的 bb VO
+     > 第一轮: 例寇而无撒  follow up: 多线程怎么弄 + 设计一个推荐系统，没时间写了，讨论讨论
+     > 第二轮: 里寇伊尔四期 + 蠡口叁贰贰 这一题给的硬币是[25, 10, 5, 1] 然后这样就可以O(1) 求到最少的硬币数.
+     > 这两轮都要分析时间复杂度.
+     >
+     >
+     > 第二轮面试官让我喝喝水准备第三轮，然后第三轮看到hr就被告知今天结束了 lol
+     >
+     > 
+     >
+     > 补充内容 (2020-6-1‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌7 05:07):
+     > 刚收到拒信,当时是hr告诉我今天结束了（潜台词：我们有更好的candidate lol）...
+
+458. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite  | Other | 应届毕业生
+
+     > 昨天的VO，发出来希望攒攒人品求过，就不设限制了，希望能帮到大家。
+     >
+     > 第一轮是个三哥，有一个三姐shadow。why bb，介绍project之后就做题了。
+     > 题都在面经上看见过，第一题力扣幺儿巴，很自然就说了union find的解法，写完了之后感觉小哥好像有点不太懂，这个解释起来也有点麻烦，我写了路径压缩尤其不太好说明白，写完了跑了不少case感觉也没解释通。建议大家碰到了写其他的方法吧。。
+     > 第二题是公司有对应股票值，然后能返回股票值top K的公司，能修改值公司对应的股票值，面经上比较常见的题了。
+     >
+     > 第二轮是两个美国小哥一人一题，两个小哥感觉挺活跃上来介绍自己做什么的，why bb之后就做题。
+     >
+     > 第一题小哥给题目是说，现在给各个币种之间的汇率，比如美元到加元可能是x，加元到人民币可能是y等等，然后实现一下查询从任意一种货币到另一种的总汇率。题目一看是一个求联通路径的问题，但其实没那么明确，小哥就是希望你能问问题把他的意思问明确了，比如是不是会有多种方法来转换，是不是每种方法换起来都是一样的等等，然后他回答说暂定每个路径的汇率按数字算是一样的，但是呢换的不同货币的种类多了可能手续费就高了。。。所以到最后其实就是一个求最短路径，同时算一下路径权重的问题。然后稍微分析了一下dfs bfs之后，选了bfs就开写了。
+     > 第二题是力扣伞酒肆，小哥应该就是希望你说个recursion的，我说可以用recursion或者stack，然后就写了个recursion的，最后另一个小哥还问了recursion写得挺舒服为啥会想用stack。。
+     >
+     > 面完他们说大概15分钟会有hr来，当时感觉稍微舒了一口气。。hr小姐姐大概问了why bb，project，三个对你来说工作中比较重要的点，可能还有一些背景上的问题，现在还有没有其他offer，面试之类的。hr小姐姐人很nice，基本上很认真在听，我回答完之后还会帮我总结我说的点，说的也非常好。然后其实一大部分时间也是她在介绍bb，介绍之后的training program等等。我不是太健谈这轮好像半个小时左右就结束了，结束的时候说可能要讨论一下看看会不会有下一轮，让我在线上等。当时其实有点揪心的‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌，过了一会是另一个hr小姐姐上来说有个senior manager想接触一下，想约一下1个小时之后的时间。
+     >
+     > 然后1个小时之后是个在bb干了20年的帅大叔来面，问了最开始怎么知道bb的sde position，why bb，project，一些背景方面的问题，开始找工作时间有点晚了是怎么想的，关于research和work是怎么想的，对自己的职业规划之类的。这轮其实也就聊了半个小时，其实我还是有点慌的，因为后两轮我其实都不是那么健谈。。
+     >
+     > 总的来说bb的面试题目不算太难，面经里题出镜率挺高的，bq也没有太刁钻的问题，碰到的面试官都是很nice的，多交流应该是很重要的。希望我的经验能给大家带来帮助吧。
+     >
+     > 希望能够拿到offer救我上岸，也希望大家都能在艰难时期找到满意的工作！
+
+459. 2020(4-6月) 码农类General 本科 全职@bloomberg - 猎头 - Onsite 视频面试  | Pass | 在职跳槽
+
+     > 两轮vo，一轮两个面试官的technical和一轮一个面试官的system。
+     >
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > 第一题利口 尔摆
+     > 第二题利口 灸扒
+     >
+     > system面：
+     > 一开始有一个面试官问了设计一个类似于Google doc分享的api，但是面试官的网太差了所以我被reschedule了另一个面试。
+     > 第二个面试官的网没问题，让我设计一个machine里proxy。这个proxy需要redirect很多stock的tick进各个processes。每个process负责一个股票， 但是process会不定期的换股票的。要考虑到process的availability和用到buffer和选择什么样的connection的问题。
+     >
+     > ‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌
+     >
+     > 题目都不是很难，第二天就告诉我过了。之后再约了一轮hr+senior的behavioral面说是最终轮。
+     >
+     > 祝大家都能找到工作！
+     >
+     > 第一个设计Google doc的还是挺简单的就是一个API一个database再设计一下flow就好了，主要是多问clarification。其实多读一下grokking the system design挺有用的。
+     >
+     > 第二个system是我意料之外的，估计是临时抓过来的面试官，在bloomberg工作的了14年的大佬，而且平时就是做infrastructure的所以一开始问的我特别懵逼，后来一直clarify之后了解一些了。我觉得这一轮更多是交流，他会给一些followup比如说如果data太大了怎么办或者如果有一个process特别慢怎么handle。最后设计出来他跟我讲这基本上就是how Kafka handles the data steam。我觉得重要的是交流，尽量抓住面试官问的问题里的hint，想的时候最好不要停顿太久，面试官一般都会引导你的。
+
+460. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 猎头 - 视频面试  | Pass | 在职跳槽
+
+     > tech1: find first unique character；find longest path sum in n-arytree （DFS+BFS两种）
+     > tech2: meeting room II；很casual的system design问题-“user获得登陆验证码”， 没有画图或scale之类的，就随便聊聊API，DB schema
+     >
+     > HR：why BB；什么时候毕业的；GPA（果然是完全把我当new grad）
+     > Manage‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌r：给你两个不同容量的杯子，和无尽的水，能有几种容量的水被量出来。这轮雪崩，被一步步教着硬列了各种情况找pattern，最后也没写出来。。。面完这轮我本来以为肯定挂了
+
+461. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite 视频面试  | WaitList | 在职跳槽
+
+     > 今天早上剛面完，沒有HR 跟 manager 輪應該是涼了，死得不明不白
+     > 職位是 2020 software engineer
+     >
+     > 附上面經
+     >
+     > 第一輪
+     >
+     > 美國小哥跟國人小哥，都很熱情，問了why BB 和一些履歷的問題，接著開始作題，這輪都不用run code
+     >
+     >
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > 1.1
+     > 李寇兒拎揪, 問我會run 哪些 test case, 有一個cornor case 在面試官提醒下解決。follow up, 如果input包含負數這個解還work嗎並解釋原因, Ans: No
+     > 1.2
+     > 給一個西洋棋盤，還有一個騎士的出發點，可以走幾步。問騎士走完有幾種走法。只需要講思路不用寫碼
+     > 給了一個BFS solution, 我覺得有點難解釋給了個presudo code講解。面試官問時間複雜度並要求提升，最後給了dfs + memo，分別提出時間跟空間複雜度
+     > 時間到了這個就沒寫
+     >
+     > 
+     >
+     > 第二輪
+     >
+     > 等了十分鐘，只有一個天竺小哥進來，心裡想大概涼了，一樣問了why BB, most challenge project
+     >
+     > 以下内容需要积分高于 150 您已经可以浏览
+     >
+     > 2.1
+     > 李寇兒時，只有 '(' 的簡易版本, followup 則是完整版，分別給了時間空間複雜度，跑了test case, 秒
+     > 2.2
+     > 給一個包含括弧的算式，判斷裡面括號是不是redudant. e.g. ((a) + b), ((a + b)) , 都算是
+     > 用一個stack 解決, 給時間空間複雜度，也run 了test case, 小哥說 I like your approach
+     >
+     > 
+     >
+     > 時間差不多了問了一些問題，最後說HR過幾天會聯絡我
+     >
+     > 當下有點震驚，因為我以為表現得不錯，BQ也準備了很久，卻沒有發揮的機會
+     >
+     > LZ 在西岸約了個早上八點的時間，為了這個時間還刻意提早一個禮拜調整時差
+     >
+     > 
+     >
+     > 哎好玄啊，已經沒有面試了...
+     >
+     > 不好意思,名字记错了，应该叫bidirectional bfs
+     > 🔗https://link.1point3acres.com/?url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fbidirectional-search%2F
+     > 这能把时复杂度 b^d -> 2 * b^(d/2)
+
+462. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite 视频面试  | Pass | 在职跳槽
+
+     > 上周五面的。
+     > 安排ONSITE的时候HR会神秘兮兮地告诉你有”两轮“，但“可能会有更多轮”。基本上就是看你前两轮的情况再决定要不要继续面。LZ幸运地挺到了最后见HR。
+     > 第一轮： 两个国人。第一题：一个未排序数组，让你返回若以数组中的数为三角形三边可以组成多少个三角形。第二题： 给你各个机场间的航线，让你返回从一始发地到目的地的所有路线（不仅仅是最短的）。都不难。主要是他家的VO平台问题不断，实在有点难用。第二轮： 中东裔米国人+天竺大叔。第一题面经题马拉松（详情见下文的链接），第二题BST iterator。第一题那天竺大叔反复纠结于我的时间和空间复杂度，害我不得不反复重复之前的分析，不知是真的没搞懂还是故意找碴。
+     > 第二轮过后10分钟被告知可以继续再休息半小时，然后继续。
+     >
+     > 第三轮： 国人大叔（在公司已待了18年） + 米国白男。聊天轮，从你的简历作为出发点，主要是问你对一些技术的看法，当初为何选择这么做？比如microservice和monolith各有什么优缺点？funcitonal programming的优点（LZ工作以来奇葩地只用过Scala，大叔所在的组用的是Ocaml)？然后会追问一些项目的细节。我觉得出要就是借你的简历考你的知识储备和工作经验。
+     > 第四轮：天竺MANAGER。问的都是常规BQ, 自己先前面亚麻的时候已准备过，这轮面得还算顺利，也没被刁难。面完告诉我HR过会会来。
+     >
+     > HR来了后问了我有没有pending offer, 还有其它ONSITE吗？ 在告诉她下周还要面脸和狗之后，问我如果给OFFER的话会取消面试吗还是想等都面完了再说？答曰，还是想都面完。旋即她又问包裹得要多大你会立马就接？报了个数字后，她说OK，可以办到，我们下周一就可以出结果（面的时候是上周五）。然后她走之前还暗示初步的反馈不错，让我好好享受周末。本人当时虽然觉得希望挺大， 但自一个月前被雷以来坏消息不断导致整个人还是放松不了。上个周末和这周一的大半天都有点小焦虑，都没什么心思准备脸家ONSITE。结果周一下午四点左右HR打电话给了口头OFFER，心里石头总算落地。OFFER本人很满意‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌，虽然第二天（今天）就要面脸，不过觉得很大可能就从了。
+     >
+     > 说实话，之前一直在备战脸，也没怎么准备BLOOMBERG，面经也是面的时候前一天看了一下。
+
+463. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Fail | 在职跳槽
+
+     > 原题蠡口： 武是陆，follow up 是蠡口 武器
+     >
+     > VO 一共两轮，每轮两个人，每轮两道题，不开视频，只打电话。
+     >
+     > 第一轮
+     >
+     > 第一题：有很多Services（比如说S1, S2, S3），每个S 会有一定的limit,  然后有新的request进来(R1, R2,R3)，R1 可能需要 S1, S2, R1 可能需要 S1, S3。 问如何知道 新的request 可一不可以被执行，如果执行不了（因为所需要的Service 已经达到limit了），设计一个data structure 来存储暂时执行不了的request。我对这种题不是特别明白，就想了一个字典。也太知道对不对。请大神指点一下该从哪个方面去想。
+     > 第二题：蠡口 儿一，有点懵，这么简单。follow up 问如果是很大的数据量分别从两个地方来怎么办，感觉跟系统设计有点关系？稍微有点不清楚他想问啥。
+     >
+     > 第二轮
+     > 第一题：是浏览器如何记录“当前网页”， “向后”，“向前”，好像是蠡口原题，我没做到这道题，有点磕磕绊绊用stack 做了一下。请知道的朋友说一下蠡口号码，我能补一下。
+     > 第二题‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌：蠡口原题，忘记号码了。就是两城市之间的飞机的平均时间。我挺熟这道题，就直接写出来了。followup 问我如果要production的话，需要做什么改进，很懵。
+     >
+     > 不出所料，很快就跪了。
+     >
+     > 总体而言，感觉对算法考察并不难，主要对实际经验和设计有要求，确实我的经验还是差了点，虽然看了系统设计的书，但是不知道对方问问题的点。
+     >
+     > 我现在好像积分还不够，暂还不能回贴。希望大家加米。感谢感谢！:) 大家加油。
+     >
+     > 第一轮第一题暂时执行不了的可不可以放queue？类似于message queue，可以设置lock拿不到的时候retry啥的
+     > 第 ...
+     >
+     > 我开始也想的是用queue ，后来不太行。可能被堵住，太慢。该用dictionary
+     >
+     > 第二题是 瑶山就留
+     >
+     > 第二轮第二题是 蠡口 瑶山就留
+
+464. 2020(1-3月) 码农类General 本科 全职@bloomberg - 网上海投 - Onsite  | Fail | 在职跳槽
+
+     > 发帖攒rp，
+     > BB 一个Java组的面试，
+     >
+     > 店面两道题，第一个题太简单了，大概就是提供一个function判断两个string是不是一个group的，把输入list of string分类。
+     > 第二题是股票相关的一个什么题，我估计其他面经里有。最后讨论就是用treemap 保证一个顺序，同时每次增删操作都有logN的复杂度。
+     >
+     > 面试官是个印度小哥，出人意料的nice，后面一直提醒我时间不够了，赶紧写一个solution。最后问我学不学c++，我说还是prefer java的组，没想到是悲剧的开始。
+     >
+     > onsite面一个java的组，感觉面试官兴趣也不大，东部公司面试文化和西部公司确实不一样，上来问一堆java的基础问题，很长时间不准备早就忘了，答得磕磕绊绊。然后是一个java多线程的什么题，也答得不好。后面是sql的题，算是答出来了吧，最后剩十五分钟给我丢一道LRU。。。幸好我写得快，十分钟写出来了，他也比较意外吧。
+     >
+     > 第二轮一个白人，一个国人。白人看我用过一个build tool，让我定义一下有什么功能，我简单说一下。他也不满意，然后他自己又用更准确详细的语言定义了一下这个tool的功能。我表面附和，说你说的更准确，内心一万个羊驼，心想我是面试程序员，还是考英语。。。白人自己出了一个题，把runnable当输入实现一个什么操作，记不住了，一开始不难，但他主要‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌考察follow up。follow up没时间答了，感觉题出的挺扯淡的，面试之后自己想了一下，他给的答案好像也不对。。。
+     >
+     > 面的时候就知道肯定跪了，后面hr聊聊天就结束了。
+     >
+     > 准备他家java组建议多看看基础，然后准备一下concurrent programming的东西吧，和西部公司面试风格差太多，题并不难，感觉挺扯淡的，看运气吧。
+
+465. 2019(10-12月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Pass | 在职跳槽
+
+     > BBG Sr 面经
+     >
+     > onsite 当天四轮 前两轮是技术面 后两轮都是behavior，由于我是组招 所以都是同组组员在面。
+     > 第一轮是coding， 两道。 第一道是像canda crash 但是是一维，碰到三个或以上一样的 就消掉。 比如abbbaa return 空 因为bbb 消掉了， 变成了aaa， aaa也消掉了 所以就是空；
+     > 第二道题是 对于一个式子 列出所有的可能， 用recursion。 比如11？1， "?" 只有两种可能，0 或者1， 所以你就要列出 1101 和 1111，
+     >
+     > 如果input是 1？？1 则output就该是 1 0/1 0/1 1
+     >
+     > 第二轮是system design, 大致是设计一个kafka
+     > 一般bb的风格是 如果前两轮‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌面得不好就不会有三轮四轮。
+     >
+     > 第三四轮是behavior，大致就是介绍下自己 说说自己项目 知不知道bb 为什么要来面试 balblabla之类的
+     >
+     > Chunky 发表于 2020/05/24 06:33:17
+     > 同问如何设计kafka
+     > 分享一下我的思路：
+     >
+     > kafaka和其他的in memory, disk Db最大的特征就是1） tombstone record。2）不用的consumer可以从不同的offset来读取。
+     >
+     > 面试的时候肯定要明确一下要求，kafka支持的不同的功能太多了。比如kafaka connector要不要实现呀，k-table这种的，顺便秀一下你知道这些🤣🤣
+     >
+     > 1. meta data DB： 这个在nosql和sql存储没什么太大区别，数据量不太大，主要记录每个topic的confi跟： partition数量，replication policy，retention policy， etc。
+     > consumer id之类的
+     >
+     > 2. Backend的data存在memory或者local host里面，replication data到不同的cluster/node。
+     > 3. 如何实现tombstone，一般message queue并不是直接delete message，而是mark as invisible。那么就会在meta data里面存对于consumer a的offset是多少。那么接下来consumer a再继续读的时候，如果read的policy是uncommitted latest， 那么就会从记录的offset来开始读取。
+     > 4. kafka这样的message queue，我个人是觉得server应该是stateless的，需要一个registry service来keep track of哪个topic在哪个server上，replication在哪里。注意registry的replication，防止single point of failure。
+     >
+     > 只是大概上的一点思路。还有很多lb，services三言两语说不大清楚，说得不对的求轻拍。欢迎指导😀😀
+
+466. 2020(1-3月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | Pass | 在职跳槽
+
+     > 发一下时间线：
+     > [hide=188]
+     > 3.8海投
+     > 3.13预约店面
+     > 3.20店面
+     > 3.24预约虚拟昂塞
+     >
+     > 4.23昂塞
+     > 4.28口头过
+     > 店面 蠡口伞伞，followup巴以
+     > 昂塞
+     > 第一轮三个人，一道sequence地理有，输入2，不输出，输入3不输出，输入1输出1，2，3，输入4输出4这样。第二题蠡口幺幺流变种，要左边不是右边，我用python里面的list，还跟面试官解释了一下这是个啥玩
+     > 第二轮一个人全程心不在焉（前两轮都是烙印），一道贰零凌，一道散酒斯，都是秒
+     > HR，why bb，有么有别的offe‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌r之类，介绍了他们公司入职后的培训计划
+     > senior manager：全程bq，此时已经口干舌燥，说话也不流畅，感觉不少瑕疵，但是还是给了
+     > [\hide]
+     > 找工作不容易，特别是这个时候，大家且行且珍惜，加油！
+
+467. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Pass | 在职跳槽
+
+     > 面着玩儿的肯定不去，最重要的是给大家看面经。废话不说了
+     > 1 算法 2道题 第一道太简单忘了
+     > 第二道是 已知有个api 输入矩阵2个点 告诉你这个区域内有没有船 写一个api来输出任意区域有多少船 写了2分法的算法
+     > 2 系统设计
+     > 设计yelp 订餐桌系统 如何确保没有race condition. 如何给大家看一堆附近可以订的餐厅 cache 餐厅的空座信息 如何cache确保数据的一致性 然后如何scale
+     > 3 扯皮 如何跟组员互动 跟pm互动 解决冲突 blah...
+     > 4 继续扯皮
+     > 他们家包裹不太行 240加20签字 拒了不去 最重要的事情‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌是 给大家分享面经！
+
+468. 2020(4-6月) 工程类 硕士 全职@bloomberg - 网上海投 - Onsite  | Other | 在职跳槽
+
+     > 上周四做的virtual onsite 因为在西海岸只约上了三轮
+     > 1. project dive 然后做了一个lottery system
+     >   三个操作，加名字，除名字 选中奖的名字 要求全部o(1)
+     > 2. project dive 然后做了一题是给两个string 找第二个str 的的letter是不是都能在第一个里找到。问了一堆performance improvement的问题
+     >   3 和一个hr 聊了半个小时 说要等‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌这看看feedback再约之后的面试
+
+469. 2020(4-6月) 码农类General 硕士 全职@bloomberg - 内推 - Onsite 视频面试  | Fail | 在职跳槽
+
+     > 简单说下时间线吧
+     > 2月中旬 内推
+     > 3.2 电面
+     > 3.24 Onsite -> 因为Cov19 改成VO
+     >
+     > VO流程和Recruiter确认了好几次都是只有2轮Tech，有点慌因为看网上有帖子说一般都是2轮tech + HR + Manager，心想别这个面试就是走个过场。。
+     > （前两轮视频没连上，面试官都是自己连的音频，我也就跟着用的音频）
+     >
+     >
+     > 以下内容需要积分高于 188 您已经可以浏览
+     >
+     > 1. 第一轮又是设计一个网页浏览器，这回让我自己想有什么功能，用什么数据结构，但是还是得按照most recent来显示，照搬之前写过的，加了add和retrieve功能，用了DLL，然后问他需不需要添加timestamp，他说暂时不用可以先从这俩入手，然后口述了几个test case，并在他要求下在main函数里跑了一个test case，过了，最后问了复杂度。
+     >     然后他说可以了，还有时间就再来一道吧，蠡口散酒司，跟我说不用写code，讲一下思路吧。用的两个stack，然后拿他的一个例子讲了下如何重复和拼接，他说可以，然后问了复杂度，最后就是有什么问题问他就结束了。
+     >
+     > 2. 第二轮是说有一个udp传输的情况，packet是[data, sequence id]的形式，按seq顺序打印data，顺序不到的时候不打印，就是123的话就正常打印，132的话3那轮不打印，等2进来了一块打印23，直接一个PriorityQueue解决了，然后问我复杂度。但是follow up有点懵，问我这个除了可以用来按顺序print，还可以拿这个udp干什么，我说可以把这个function包起来在外面直接调用，他说能当成parameter么，我说可以lambda/Callable，他说他不太懂Java ？？？然后继续问我这个还能干吗，最后问我有什么问题，最后他说让我等着，后面有人来
+     >     （求帮忙分析一下。。感觉就是这轮凉了）‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌
+     >
+     > 3. 第三轮HR，视频连上了一顿BQ，但好在都认真的准备过各种问题，答得也还算可以，然后结束她说会有个manager来聊一下，让我半个小时后重新打过来
+     >
+     > 4. 第四轮manager，一个烙印，聊了下简历上的东西 + most challenge technical difficulty，然后问我有什么想知道的，一顿闲聊就结束了
+     >
+     > 
+     >
+     >
+     > 等了两天没收到hr邮件感觉不太妙。。 果然今天早晨收了拒信，其实昨天就做好准备move on了，但是真拿到拒信还是有点失落，以及有点对不住帮我内推的朋友。
+     >
+     > Anyway，希望能帮助到还在准备面的人吧，求加米求转运！
+
+470. 2019(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - Onsite  | Fail | 在职跳槽
+
+     > 九月底面的bloomberg， 一共五轮
+     > 1. 两个senior developer（白人和印度小哥）， 两道coding题，第一道是丝时尔， 第二道岛屿I， 延伸是不准修改matrix怎么做， 两道都是经典题
+     >
+     > 2. 两个senior developer（白人和阿拉伯小哥）， 设计event register system， 只需要在内存中运行， 不需要存DB
+     > 3. 两个team lead （都是白人）， 刚开要设计一个闹钟系统， 我思考的时候，他让我去白板上去写， 结果一动就
+     >     忘记向他clarify具体的需求了， 估计就是挂在这里了。 然后是各种项目经验和BQ。
+     > 4. manager（貌似东南亚华人），这个说话非常aggressive， 问的问题比如， 你在meeting里面对你的client， 你
+     >   如何说服你的client要用Entity framework， 而不用ado
+     > 5. director（印度人）， 问了一些项目相关的经验
+     > 6. hr聊福利
+     >   总之感觉今年的面试结果都是差那些一点点， 也欠缺一点点的运气。 发贴求转运把， 希‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌望大家都能拿到大offer。
+
+471. 2019(10-12月) 码农类General 硕士 全职@bloomberg - 网上海投 -   | | 在职跳槽
+
+     > 总的说起来就是考的都不会，会的都没考...考前有看到那个combination题但是就觉得也不是面经题就懒得做了，然后就 考到了。。不过这也不是重点，毕竟只考了两道题，被迎面而来的多线程暴击，我现在很后悔，简历上写了多线程，接下来有亚麻的面试，好担心也是多线程轰炸，甚至在想要不要取消面试，换个简历再投。。楼主水平确实菜，平常工作也不怎么接触多线程，就算有也丢给别人做了，以前上学也没有学过...真的是教训了，还是要提高自身的姿势水平，光刷题不够，何况刷题也没到可以高压环境下想出好的解法，而且当时也已经兴致低落了hh，第一轮完了就感觉不好，觉得不太喜欢，对方后来也表达了类似不太match的感觉..
+     >
+     > 1.蠡口伞，2.combination的变形，给一串随机的有重复的数组‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌，比如[1,3,5,7...], 然后{1,3,5},{5,3,1}都算结果，所以要难一些，然后让我写producer和consumer，还有自己实现一个MySet,要保证线程安全，还问了一些很基础的时间复杂度的知识
+
+472. 2019(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Other | 在职跳槽
+
+     > 上星期去了BB店面， 今天上来发面经， 一共面了两个组， 从9点到5点左右才出来。我积分不高所以设了比较低的积分让大家都可以看， 大家加点米吧！
+     > 以下内容需要积分高于 60 您已经可以浏览
+     >
+     > 早上的组3轮：
+     > 1. OOD： 要设计一个书店， 要求实现注册书籍，每个书有作者，书名和类别， 通过书名去检索和通过类别去检索。怎么测试所写的方法，同样的功能怎么设计rest API（具体用POST, GET, DELETE, PUT 都问到了）。然后问到了数据库要怎么设计， 如何得到最多书籍的类别的SQL。
+     > 2. coding： a. 给一个list 银行交易时间和一个order的交易时间段， 问这个order可以执行吗？类似利口 meeting room之类的题。
+     >                  b. 设计一个数据结构， 要实现 getMinOrder() 所有输入的order中最小的, executeOrder() 最后的order最先执行， addOrder（）
+     > 3. 和 manager聊天， 讲一下简历，为什么要离开现公司? 为什么来这里
+     >
+     > 中午和早上组的大boss吃饭聊天， 希腊馆子还不错， 虽然BB楼下就是胡同（新开的中国馆子）。边吃边聊还蛮愉快的，以至于下午回来有点晚， 但大boss不计较说反正不是她的组。
+     >
+     > 下午的组3轮：
+     > 1. coding：a. 2 sum， b.给一个单词 让先frequency 后alphabetical去sort。 比如 frequency 这词， sort完后就是eecfnqry, 利口小岛题。
+     > 2.系统设计： 设计一个交易approval system. 如何让response最快。
+     > 3. 见两个manager，纯聊天。再问了一下为什么要离开现公司? 为什么来这里。
+     > 4. 见大bos‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌s， 纯聊天。
+     > 5. HR讲一下BB的benefits和接下来的流程
+     >
+     > 
+     >
+     > 总体感觉BB人都不错， 大家都想帮面试的人去成功不怎么刁难。 但交流是关键尤其是为什么要来BB。而且大家都十分尊重Engineer的意愿一直问我对什么感兴趣，想做什么方面的东西，而且也有强调说换组非常容易。最后希望大家再给点米吧。
+
+473. 2019(7-9月) 码农类General 硕士 全职@bloomberg - 网上海投 - 技术电面 Onsite  | WaitList | 在职跳槽
+
+     > 电面1：
+     > 给了一个算法的描述，按照描述implement就行，主要是看数据结构的选择吧
+     > 具体题目不记得了 但是大概就是说新员工进公司，要做team matching，while loop就能解决
+     > 电面2：
+     > 本质就是min stack
+     >
+     > onsite：都是设计题
+     >
+     > 以下内容需要积分高于 80 您已经可以浏览
+     >
+     > 第一轮：贪吃蛇
+     >
+     >
+     > 以下内容需要积分高于 80 您已经可以浏览
+     >
+     > 第二轮：第一题是写两个api， 按时间顺序打印出所有最近visit的URL 以及读URL， 本质LRU Cache。 第二题 有一个producer很多consumer，让设计一个logging system，感觉是system design，因为没有太多时间了就讨论了一下，没深入聊，大致讲了一下bottleneck有哪些，读写，感觉这题答的蛮一般的。第三轮：两个team lead，问了各种问题，没啥参考价值就不写了
+     >
+     >
+     > 第三轮完了后让我在这个房间等说去喊第四个人，结果十五分钟后回来说没有第四轮了HR会告诉‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌我next steps的 估计凉了哈哈哈哈
+     > 另外我面的是senior职位，暂时还没收到消息
+     >
+     > 另外给大家贴一个自己整理的面经吧，里面代码就没必要看了，看下题目就好
+     > 祝大家都好运吧！加油！
+
+474. 2019(7-9月) 码农类General 硕士 全职@bloomberg - 猎头 - Onsite  | Other | 在职跳槽
+
+     > 上午
+     > 第一轮 面经里的地铁题
+     > 第二轮 系统设计大综合 input msg发给server server写数据库需要6ms 输入server的input msg burst希望达到1ms的performance 如果不能修改数据库架构 只能改进server 怎么实现1ms 各种followup
+     > 第三轮 跟两个team lead扯淡
+     > 中午跟一个另一个team lead dine out
+     > 下午
+     > 第一轮 给一个带括号的字符串abc(de(fg)h)i(jk)l括号里边相当于摞了一层，即abc i l是一层 de h jk是一层 fg是一层 找出层数最深的所有字符串输出 比如fg 然后是蠡口叁霸气
+     > 第二轮 多线程大综合 若干news source要往一个hashmap里写 如何用多线程handle 如何解决starvation 如何解决重复news
+     > 第三轮 跟mgr扯淡
+     >
+     > 
+     >
+     >
+     > 补充内容 (2019-9-9 19:23):
+     > 以下内容需要积分高于 200 您已经可以浏览
+     >
+     > 上午第一轮还问了个蠡口贰舞叁以及变‍‍‌‌‌‍‌‍‌‌‍‍‌‌‍‍‍‍‌‌种 区间改成double 找任何一个double时刻有几个
+
+     https://www.1point3acres.com/bbs/forum.php?mod=forumdisplay&fid=145&sortid=311&searchoption[3047][value]=bloomberg&searchoption[3047][type]=&sortid=311&filter=sortid&orderby=dateline&page=41
+
+
+
+
+
+
+
+
+
 
 
 

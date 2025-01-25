@@ -3,66 +3,66 @@ package leetcode.question.dp;
 import java.util.Arrays;
 
 /**
- *@Question:  518. Coin Change II
- *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
- *@Frequency: 59.13%
- *@Time  Complexity: O(N*amount) for solution 1, solution 2 and solution 3
- *@Space Complexity: O(N*amount) for solution 1 and solution 2, O(amount) for solution 3
+ * @Question: 518. Coin Change II
+ * @Difculty: 2 [1->Easy, 2->Medium, 3->Hard]
+ * @Frequency: 59.13%
+ * @Time Complexity: O(N*amount) for solution 1, solution 2 and solution 3
+ * @Space Complexity: O(N*amount) for solution 1 and solution 2, O(amount) for solution 3
  */
 
 /**
  * ### 解题思路
- *
+ * <p>
  * 本题目要求找出可以用给定的硬币面值组成指定金额的所有不同组合的数量。我们可以通过动态规划的方法来解决这个问题，提供了三种不同的解法：
- *
+ * <p>
  * #### 1. 递归+记忆化搜索（Top-down DP）
- *
+ * <p>
  * **思路：**
  * - 使用递归的方法，尝试每一种可能的组合，同时利用备忘录保存已经计算过的结果，避免重复计算。
  * - 定义一个递归函数`numberOfWays(i, amount)`表示用从第`i`种硬币开始的硬币可以组成金额`amount`的方法数。
  * - 对于每个硬币，我们有两种选择：
- *   1. 不使用这个硬币，直接跳到下一种硬币，即`numberOfWays(i + 1, amount)`。
- *   2. 使用这个硬币，则递归调用`numberOfWays(i, amount - coins[i])`。
+ * 1. 不使用这个硬币，直接跳到下一种硬币，即`numberOfWays(i + 1, amount)`。
+ * 2. 使用这个硬币，则递归调用`numberOfWays(i, amount - coins[i])`。
  * - 将上述两种情况的结果相加得到总的组合数。
- *
+ * <p>
  * **时间复杂度：** O(N * amount)，其中 N 是硬币的数量，amount 是目标金额。每个状态只计算一次。
- *
+ * <p>
  * **空间复杂度：** O(N * amount)，用于存储备忘录。
- *
+ * <p>
  * #### 2. 动态规划（Bottom-up DP）
- *
+ * <p>
  * **思路：**
  * - 使用二维数组`dp`，其中`dp[i][j]`表示使用前`i`种硬币可以组成金额`j`的方法数。
  * - 初始化`dp`数组，`dp[i][0] = 1`，因为金额为0时只有一种组合方式，即不选择任何硬币。
  * - 对于每种硬币和每个可能的金额，计算包括当前硬币和不包括当前硬币的组合数。
  * - 最终结果为`dp[0][amount]`。
- *
+ * <p>
  * **时间复杂度：** O(N * amount)，因为需要遍历所有硬币和所有可能的金额。
- *
+ * <p>
  * **空间复杂度：** O(N * amount)，用于存储动态规划数组。
- *
+ * <p>
  * #### 3. 空间优化的动态规划
- *
+ * <p>
  * **思路：**
  * - 使用一维数组`dp`，其中`dp[j]`表示组成金额`j`的方法数。
  * - 初始化`dp`数组，`dp[0] = 1`，因为金额为0时只有一种组合方式，即不选择任何硬币。
  * - 对于每种硬币，更新`dp`数组，其中`dp[j] += dp[j - coins[i]]`。
  * - 最终结果为`dp[amount]`。
- *
+ * <p>
  * **时间复杂度：** O(N * amount)，因为需要遍历所有硬币和所有可能的金额。
- *
+ * <p>
  * **空间复杂度：** O(amount)，只需一维数组存储中间结果。
- *
+ * <p>
  * ### 总结
- *
+ * <p>
  * - **时间复杂度：** 三种解法的时间复杂度都是 O(N * amount)。
  * - **空间复杂度：**
- *   - 递归+记忆化搜索和动态规划的空间复杂度为 O(N * amount)。
- *   - 空间优化的动态规划的空间复杂度为 O(amount)。
- *
+ * - 递归+记忆化搜索和动态规划的空间复杂度为 O(N * amount)。
+ * - 空间优化的动态规划的空间复杂度为 O(amount)。
+ * <p>
  * 这三种方法各有优缺点，递归+记忆化搜索适合理解递归思路，动态规划方法适合较为直观的底向上构建解，空间优化的动态规划适合在空间受限的情况下使用。
  */
-public class LeetCode_518_CoinChangeIi{
+public class LeetCode_518_CoinChangeIi {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
@@ -102,27 +102,51 @@ public class LeetCode_518_CoinChangeIi{
 
         //Solution 2: bottom up DP
         public int change2(int amount, int[] coins) {
+            //1. 正序solution
             int n = coins.length;
+            // 初始化 dp 表
             int[][] dp = new int[n + 1][amount + 1];
-            for (int i = 0; i < n; i++) {
-                dp[i][0] = 1;  // 金额为0时，只有一种组合方式，即不选择任何硬币
+            // 初始化首列
+            for (int i = 0; i <= n; i++) {
+                dp[i][0] = 1;
             }
-
-            for (int i = 1; i <= amount; i++) {
-                dp[0][i] = 0;  // 没有硬币时，无法组成非零金额
-            }
-
-            for (int c = n - 1; c >= 0; c--) {
-                for (int j = 1; j <= amount; j++) {
-                    if (coins[c] > j) {
-                        dp[c][j] = dp[c + 1][j];  // 当前硬币面值大于剩余金额，跳过当前硬币
+            // 状态转移
+            for (int i = 1; i <= n; i++) {
+                for (int a = 1; a <= amount; a++) {
+                    if (coins[i - 1] > a) {
+                        // 若超过目标金额，则不选硬币 i
+                        dp[i][a] = dp[i - 1][a];
                     } else {
-                        dp[c][j] = dp[c + 1][j] + dp[c][j - coins[c]];  // 包括和不包括当前硬币的两种情况
+                        // 不选和选硬币 i 这两种方案之和
+                        dp[i][a] = dp[i - 1][a] + dp[i][a - coins[i - 1]];
                     }
                 }
             }
+            return dp[n][amount];
 
-            return dp[0][amount];  // 返回结果
+            //2. 倒序solution
+//            int n = coins.length;
+//            int[][] dp = new int[n + 1][amount + 1];
+//            for (int i = 0; i < n; i++) {
+//                dp[i][0] = 1;  // 金额为0时，只有一种组合方式，即不选择任何硬币
+//            }
+//
+//            for (int i = 1; i <= amount; i++) {
+//                dp[0][i] = 0;  // 没有硬币时，无法组成非零金额
+//            }
+//
+//            for (int c = n - 1; c >= 0; c--) {
+//                for (int j = 1; j <= amount; j++) {
+//                    if (coins[c] > j) {
+//                        dp[c][j] = dp[c + 1][j];  // 当前硬币面值大于剩余金额，跳过当前硬币
+//                    } else {
+//                        dp[c][j] = dp[c + 1][j] + dp[c][j - coins[c]];  // 包括和不包括当前硬币的两种情况
+//                    }
+//                }
+//            }
+//
+//            return dp[0][amount];  // 返回结果
+
         }
 
         //Solution 3: bottom up DP + space optimization
@@ -157,54 +181,53 @@ public class LeetCode_518_CoinChangeIi{
 }
 
 /**
- You are given an integer array coins representing coins of different
- denominations and an integer amount representing a total amount of money.
-
- Return the number of combinations that make up that amount. If that amount of
- money cannot be made up by any combination of the coins, return 0.
-
- You may assume that you have an infinite number of each kind of coin.
-
- The answer is guaranteed to fit into a signed 32-bit integer.
-
-
- Example 1:
-
-
- Input: amount = 5, coins = [1,2,5]
- Output: 4
- Explanation: there are four ways to make up the amount:
- 5=5
- 5=2+2+1
- 5=2+1+1+1
- 5=1+1+1+1+1
-
-
- Example 2:
-
-
- Input: amount = 3, coins = [2]
- Output: 0
- Explanation: the amount of 3 cannot be made up just with coins of 2.
-
-
- Example 3:
-
-
- Input: amount = 10, coins = [10]
- Output: 1
-
-
-
- Constraints:
-
-
- 1 <= coins.length <= 300
- 1 <= coins[i] <= 5000
- All the values of coins are unique.
- 0 <= amount <= 5000
-
-
- Related Topics Array Dynamic Programming 👍 9041 👎 159
-
+ * You are given an integer array coins representing coins of different
+ * denominations and an integer amount representing a total amount of money.
+ * <p>
+ * Return the number of combinations that make up that amount. If that amount of
+ * money cannot be made up by any combination of the coins, return 0.
+ * <p>
+ * You may assume that you have an infinite number of each kind of coin.
+ * <p>
+ * The answer is guaranteed to fit into a signed 32-bit integer.
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * <p>
+ * Input: amount = 5, coins = [1,2,5]
+ * Output: 4
+ * Explanation: there are four ways to make up the amount:
+ * 5=5
+ * 5=2+2+1
+ * 5=2+1+1+1
+ * 5=1+1+1+1+1
+ * <p>
+ * <p>
+ * Example 2:
+ * <p>
+ * <p>
+ * Input: amount = 3, coins = [2]
+ * Output: 0
+ * Explanation: the amount of 3 cannot be made up just with coins of 2.
+ * <p>
+ * <p>
+ * Example 3:
+ * <p>
+ * <p>
+ * Input: amount = 10, coins = [10]
+ * Output: 1
+ * <p>
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * <p>
+ * 1 <= coins.length <= 300
+ * 1 <= coins[i] <= 5000
+ * All the values of coins are unique.
+ * 0 <= amount <= 5000
+ * <p>
+ * <p>
+ * Related Topics Array Dynamic Programming 👍 9041 👎 159
  */

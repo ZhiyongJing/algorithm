@@ -2,7 +2,6 @@ package interview.company.bloomberg;
 
 // Interview questions
 
-import interview.company.airbnb.NestedListIterator;
 import leetcode.question.bfs.LeetCode_127_WordLadder;
 import leetcode.question.bfs.*;
 import leetcode.question.binary_search.LeetCode_1095_FindInMountainArray;
@@ -44,7 +43,7 @@ public class BloombergQuestions {
             , new LeetCode_1209_RemoveAllAdjacentDuplicatesInStringIi() // Remove all adjacent duplicates in a string where duplicates are repeated at least K times. // 删除字符串中所有相邻的重复项，其中重复项至少连续出现 K 次。
             , new LeetCode_200_NumberOfIslands() // Count the number of islands in a 2D grid. // 计算二维网格中的岛屿数量。
             , new LeetCode_443_StringCompression() // Compress a string by replacing repeated characters with the character followed by its count. // 通过将重复字符替换为该字符及其出现次数来压缩字符串。
-            , new NestedListIterator(null) // Implement an iterator to flatten a nested list of integers. // 实现一个迭代器，用于展平成嵌套的整数列表。
+            , new MyLinkedList() // Implement an iterator to flatten a nested list of integers. // 实现一个迭代器，用于展平成嵌套的整数列表。
             , new LeetCode_430_FlattenAMultilevelDoublyLinkedList() // Flatten a multilevel doubly linked list. Time complexity question, follow-up with similar problem maintaining sorted order. // 展平多级双向链表。时间复杂度问题，跟进类似问题保持递增排序。
             , new LeetCode_445_AddTwoNumbersIi() // Add two numbers represented as linked lists in reverse order. // 以链表形式表示的两个数字相加，链表表示的数字是反向的。
             , new LeetCode_139_WordBreak() // Determine if a string can be segmented into words from a dictionary. // 判断字符串是否可以被分割为字典中的单词。
@@ -59,6 +58,7 @@ public class BloombergQuestions {
             , new LeetCode_797_AllPathsFromSourceToTarget() // Find all paths from source to target in a graph. // 查找图中从源节点到目标节点的所有路径。
             , new LeetCode_387_FirstUniqueCharacterInAString() // Find the first non-repeating character in a string. // 找到字符串中第一个不重复的字符。
             , new LeetCode_103_BinaryTreeZigzagLevelOrderTraversal() // Perform a zigzag level order traversal on a binary tree. // 对二叉树执行之字形层次遍历。
+            , new LeetCode_1472_DesignBrowserHistory()
             , new LeetCode_314_BinaryTreeVerticalOrderTraversal() // Perform a vertical order traversal on a binary tree. // 对二叉树执行垂直顺序遍历。
             , new LeetCode_1249_MinimumRemoveToMakeValidParentheses() // Remove the minimum number of parentheses to make the string valid. // 移除最少数量的括号，使字符串有效。
             , new LeetCode_39_CombinationSum() // Candidate can be used unlimited times, optimize memorization. // 候选元素可以无限使用，优化记忆化
@@ -85,6 +85,7 @@ public class BloombergQuestions {
             , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() // Find the maximum depth of nested parentheses. // 找到嵌套括号的最大深度
             , new LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed() // Design a data structure that allows duplicates and supports insert, delete, and get random element in constant time. // 设计一个允许重复的支持插入、删除和随机获取元素的数据结构
             , new LeetCode_78_Subsets() // Generate all possible subsets of a set. // 生成一个集合的所有可能子集
+
             , new LeetCode_430_FlattenAMultilevelDoublyLinkedList() // Flatten a multilevel doubly linked list. // 展平多级双向链表
             , new LeetCode_1169_InvalidTransactions() // Find invalid transactions based on a list of transactions sorted by time. // 根据按时间排序的交易列表找出无效交易
             , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() // Find the maximum depth of nested parentheses using BFS, follow-up with DFS. // 使用 BFS 查找嵌套括号的最大深度，后续使用 DFS

@@ -18,16 +18,13 @@ public class Trie {
         }
     }
 
-    /**
-     * 初始化 Trie（前缀树）。
-     */
+    //初始化 Trie（前缀树）。
+
     public Trie() {
         root = new Node(); // 初始化根节点
     }
 
-    /**
-     * 插入一个单词到 Trie 中。
-     */
+    // 插入一个单词到 Trie 中。
     public void insert(String word
                        //,int value
     ) {
@@ -49,9 +46,7 @@ public class Trie {
         //curNode.value = value;
     }
 
-    /**
-     * 判断单词是否存在于 Trie 中。
-     */
+    //判断单词是否存在于 Trie 中。
     public boolean search(String word) {
         int len = word.length(); // 单词长度
         Node curNode = root; // 从根节点开始
@@ -69,9 +64,8 @@ public class Trie {
         return curNode.isWord; // 判断当前节点是否为单词结尾
     }
 
-    /**
-     * 判断是否存在以指定前缀开头的单词。
-     */
+    //判断是否存在以指定前缀开头的单词。
+
     public boolean startsWith(String prefix) {
         int len = prefix.length(); // 前缀长度
         Node curNode = root; // 从根节点开始

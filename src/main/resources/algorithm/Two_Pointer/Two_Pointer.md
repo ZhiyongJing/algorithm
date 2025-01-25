@@ -24,20 +24,19 @@
 >
 > - 如果问题需要**精确匹配子数组的和**（如 `sum == k`），并且数组**包含负数**，那么**双指针可能无法保证正确性**，通常需要**前缀和 + 哈希表**来优化（如 **LeetCode 325**）。
 >
-> ---
+> **建议：如何判断双指针是否适用？**
 >
-> ### **建议：如何判断双指针是否适用？**
 > 1. **如果问题可以通过单调调整窗口来优化（例如 `sum` 只会增加） → 适用于滑动窗口**。
 > 2. **如果问题涉及有序数组查找（如 Two Sum in Sorted Array）→ 适用于相向双指针**。
 > 3. **如果问题是对称性检查（如回文）→ 适用于背向双指针**。
 > 4. **如果数组包含负数，并且需要精确求和 → 滑动窗口可能失效，使用前缀和 + 哈希表更优**。
->
-> **总结一句话**：
+> 
+>**总结一句话**：
 > **双指针算法适用于非负数和负数列表，但某些情况下（如滑动窗口+负数），可能无法正常工作，需要使用前缀和或其他方法优化！**
->
-> - 背向双指针算法
->
->   > #### **✅ 适用于非负数列表，✅ 适用于负数列表**
+> 
+>- 背向双指针算法
+> 
+>  > #### **✅ 适用于非负数列表，✅ 适用于负数列表**
 >   >
 >   > - **特点**：
 >   >   - 两个指针从**中间向两侧扩展**，通常用于回文检查、寻找对称结构等问题。
@@ -50,8 +49,8 @@
 >   > - **示例**（适用于非负数和负数）：  
 >   >   **LeetCode 125** - **验证回文串** 
 > - 相向双指针算法
->
->   > #### **✅ 适用于非负数列表，✅ 适用于负数列表**
+> 
+>  > #### **✅ 适用于非负数列表，✅ 适用于负数列表**
 >   >
 >   > - **特点**：
 >   >   - 一个指针 `left` 从左向右，另一个指针 `right` 从右向左。
@@ -66,8 +65,8 @@
 >   >   **LeetCode 167** - **两数之和 II**
 >   >   - **适用于负数数组**，因为 `sum = numbers[left] + numbers[right]` 只受**有序性**影响，与数值正负无关。
 > - 同向双指针算法
->
->   > #### **✅ 适用于非负数列表，❌ 可能不适用于包含负数的列表**
+> 
+>  > #### **✅ 适用于非负数列表，❌ 可能不适用于包含负数的列表**
 >   >
 >   > - **特点**：
 >   >   - 两个指针 `left` 和 `right` **从左向右移动**，`left` 始终不超过 `right`。
@@ -112,7 +111,7 @@
 > - **非负数组**（递增或单调性问题）
 > - **字符串匹配、子串统计问题**
 > - **最大/最小满足条件的窗口长度问题**
->   
+>
 >
 > ❌ **滑动窗口不适用于**：
 > - **数组包含负数，并且问题要求子数组的“确切和”**
@@ -125,69 +124,81 @@
 >
 >    > ```java
 >    > /**
->    >  * 滑动窗口使用思路1（寻找最长）
->    >  * ————核心：左右双指针(L,R)在起始点，R向右逐位滑动循环
->    >  * ————每次滑动过程中
->    >  * 如果：窗内元素满足条件，R向右扩大窗口，并更新最优结果
->    >  * 如果：窗内元素不满足条件，L向右缩小窗口
->    >  * ————R到达结尾
+>    >  * 滑动窗口使用思路（寻找最长无重复子串）
+>    >  * ————核心：使用左右双指针（L, R），R 右移扩展窗口，L 右移缩小窗口
+>    >  * ————每次滑动过程中：
+>    >  *      - 如果窗口内元素满足条件，R 右移，并更新最长结果
+>    >  *      - LOOP如果窗口内元素不满足条件，L 右移缩小窗口，直到满足条件
+>    >  * ————直到 R 到达结尾，返回最长子串长度
 >    >  *
->    >  * 初始化 left，right，result，bestResult
->    >  *     while("右指针没有到结尾"){
->    >  *         窗口扩大，加入right对应元素，更新当前result
->    >  *         while("result不满足要求"){
->    >  *             窗口缩小，移除left对应元素，left右移
->    >  *         }
->    >  *         更新最优结果bestResult
->    >  *         right++;
->    >  *     }
->    >  *     返回bestResult
+>    >  * # 算法模版
+>    >  *      1. 初始化 left，right，condition，bestResult；
+>    >  *      2. 初始化 data 用于计算bestResult(如果left, right, condition可用于计算bestResult, 此步可省)
+>    >  *      while("右指针没有到结尾"){
+>    >  *          1. 添加right对应元素到当前condition；
+>    >  *          2. 添加right对应元素到用于计算bestResult的data(基于问题，可省)；
+>    >  *          while("带有right对应元素的condition不满足要求"){
+>    >  *              1. condition移除left对应元素；
+>    >  *              2. data移除left对应元素(基于问题)；
+>    >  *              3. left右移；
+>    >  *          }
+>    >  *          1. 更新最优结果bestResult
+>    >  *          2. right++;
+>    >  *      }
+>    >  *      返回bestResult
 >    >  */
 >    > //算法应用，Leetcode 3: longest substring without dup characters
 >    > public int lengthOfLongestSubstring(String s) {
->    >     Map<Character, Integer> chars = new HashMap();
->    >     int left = 0;
->    >     int right = 0;
->    >     int res = 0;
->    >     while (right < s.length()) {
->    >         char r = s.charAt(right);
->    >         chars.put(r, chars.getOrDefault(r, 0) + 1);
->    >
->    >         while (chars.get(r) > 1) {
->    >             char l = s.charAt(left);
->    >             chars.put(l, chars.get(l) - 1);
->    >             left++;
->    >         }
->    >
->    >         res = Math.max(res, right - left + 1);
->    >         right++;
->    >     }
->    >     return res;
->    > }
+>    >       Map<Character, Integer> chars = new HashMap<>(); // 记录字符及其出现次数
+>    >       int left = 0, right = 0, res = 0; // 初始化左指针、右指针、最长长度
+>    > 
+>    >       while (right < s.length()) {
+>    >           char r = s.charAt(right); // 获取右指针当前字符
+>    >           chars.put(r, chars.getOrDefault(r, 0) + 1); // 更新字符频率
+>    > 
+>    >           //不满足要求：当窗口内存在重复字符时，移动左指针直到窗口内无重复
+>    >           while (chars.get(r) > 1) {
+>    >               char l = s.charAt(left);
+>    >               chars.put(l, chars.get(l) - 1);
+>    >               left++;
+>    >           }
+>    > 
+>    >           // 更新最大长度
+>    >           res = Math.max(res, right - left + 1);
+>    >           right++;
+>    >       }
+>    >       return res;
+>    >   }
 >    > ```
 >    >
 > 2. **滑动窗口使用思路2（寻找最短）**
 >
 >    > ```java
 >    > /**
->    >  * 滑动窗口使用思路2（寻找最短）
->    >  * ————核心：左右双指针(L,R)在起始点，R向右逐位滑动循环
->    >  * ————每次滑动过程中
->    >  * 如果：窗内元素满足条件，L向右缩小窗口，并更新最优结果
->    >  * 如果：窗内元素不满足条件，R向右扩大窗口
->    >  * ————R到达结尾
->    >  *
+>    >  * 滑动窗口使用思路（寻找最短子数组满足和 ≥ target）
+>    >  * ————核心：使用左右双指针（L, R），R 右移扩展窗口，L 右移缩小窗口
+>    >  * ————每次滑动过程中：
+>    >  *      - 如果result不满足要求，右移 R 扩展窗口
+>    >  *      - LOOP如果result满足要求，更新最优结果，并右移 L 缩小窗口
+>    >  * ————直到 R 到达结尾，返回最小长度
 >    >  * # 算法模版
->    >  * 初始化 left，right，result，bestResult
->    >  * while("右指针没有到结尾"){
->    >  *     窗口扩大，加入right对应元素，更新当前result
->    >  *     while("result满足要求"){
->    >  *         更新最优结果bestResult
->    >  *         窗口缩小，移除left对应元素，left右移
->    >  *     }
->    >  *     right++;
->    >  * }
->    >  * 返回bestResult
+>    >  *
+>    >  *      1. 初始化 left，right，condition，bestResult；
+>    >  *      2. 初始化 data 用于计算bestResult(如果left, right, condition可用于计算bestResult, 此步可省)
+>    >  *
+>    >  *      while("右指针没有到结尾"){
+>    >  *          1. 添加right对应元素到当前condition；
+>    >  *          2. 添加right对应元素到用于计算bestResult的data(基于问题，可省)；
+>    >  *          while("带有right对应元素的condition满足要求"){
+>    >  *              1. 更新最优结果bestResult；
+>    >  *              2. condition移除left对应元素；
+>    >  *              3. data移除left对应元素(基于问题，可省)；
+>    >  *              4. left右移；
+>    >  *          }
+>    >  *          right++;
+>    >  *      }
+>    >  *
+>    >  *      返回bestResult；
 >    >  */
 >    > //Leetcode 209数组中满足和 ≥target长度最小的连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] 
 >    > public int minSubArrayLen(int target, int[] nums) {

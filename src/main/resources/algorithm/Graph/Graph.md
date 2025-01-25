@@ -129,21 +129,25 @@ $$
 以下是基于邻接矩阵表示图的实现代码：
 
 ```java
-/* 基于邻接矩阵实现的无向图类 */
-class GraphAdjMat {
-    List<Integer> vertices; // 顶点列表，元素代表“顶点值”，索引代表“顶点索引”
+package interview.company.bloomberg;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GraphAdjMat {
+    List<Integer> points; // 顶点列表，元素代表“顶点值”，索引代表“顶点索引”
     List<List<Integer>> adjMat; // 邻接矩阵，行列索引对应“顶点索引”
 
     /* 构造方法 */
-    public GraphAdjMat(int[] vertices, int[][] edges) {
-        this.vertices = new ArrayList<>();
+    public GraphAdjMat(int[] points, int[][] edges) {
+        this.points = new ArrayList<>();
         this.adjMat = new ArrayList<>();
         // 添加顶点
-        for (int val : vertices) {
-            addVertex(val);
+        for (int val : points) {
+            addPoint(val);
         }
         // 添加边
-        // 请注意，edges 元素代表顶点索引，即对应 vertices 元素索引
+        // 请注意，edges 元素代表顶点索引，即对应 points 元素索引
         for (int[] e : edges) {
             addEdge(e[0], e[1]);
         }
@@ -151,14 +155,14 @@ class GraphAdjMat {
 
     /* 获取顶点数量 */
     public int size() {
-        return vertices.size();
+        return points.size();
     }
 
     /* 添加顶点 */
-    public void addVertex(int val) {
+    public void addPoint(int val) {
         int n = size();
         // 向顶点列表中添加新顶点的值
-        vertices.add(val);
+        points.add(val);
         // 在邻接矩阵中添加一行
         List<Integer> newRow = new ArrayList<>(n);
         for (int j = 0; j < n; j++) {
@@ -172,11 +176,11 @@ class GraphAdjMat {
     }
 
     /* 删除顶点 */
-    public void removeVertex(int index) {
+    public void removePoint(int index) {
         if (index >= size())
             throw new IndexOutOfBoundsException();
         // 在顶点列表中移除索引 index 的顶点
-        vertices.remove(index);
+        points.remove(index);
         // 在邻接矩阵中删除索引 index 的行
         adjMat.remove(index);
         // 在邻接矩阵中删除索引 index 的列
@@ -186,7 +190,7 @@ class GraphAdjMat {
     }
 
     /* 添加边 */
-    // 参数 i, j 对应 vertices 元素索引
+    // 参数 i, j 对应 points 元素索引
     public void addEdge(int i, int j) {
         // 索引越界与相等处理
         if (i < 0 || j < 0 || i >= size() || j >= size() || i == j)
@@ -197,7 +201,7 @@ class GraphAdjMat {
     }
 
     /* 删除边 */
-    // 参数 i, j 对应 vertices 元素索引
+    // 参数 i, j 对应 points 元素索引
     public void removeEdge(int i, int j) {
         // 索引越界与相等处理
         if (i < 0 || j < 0 || i >= size() || j >= size() || i == j)
@@ -209,11 +213,29 @@ class GraphAdjMat {
     /* 打印邻接矩阵 */
     public void print() {
         System.out.print("顶点列表 = ");
-        System.out.println(vertices);
+        System.out.println(points);
         System.out.println("邻接矩阵 =");
-        PrintUtil.printMatrix(adjMat);
+        this.print2DArrayMatrixFormat(adjMat);
+    }
+
+    public void print2DArrayMatrixFormat(List<List<Integer>> array) {
+        for (List<Integer> row : array) {
+            for (int col : row) {
+                System.out.print(col + "\t"); // 使用制表符对齐
+            }
+            System.out.println(); // 换行
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] points = {1, 3, 2, 5, 4};
+        int[][] ini = {{0, 1}, {0, 3}, {1, 2}, {2, 3}, {2, 4}, {3, 4}};
+        template.GraphAdjMat graph = new template.GraphAdjMat(points, ini);
+        graph.print();
+
     }
 }
+
 ```
 
 ## 2.2 基于邻接表的实现
@@ -237,18 +259,25 @@ class GraphAdjMat {
 另外，我们在邻接表中使用 `Vertex` 类来表示顶点，这样做的原因是：如果与邻接矩阵一样，用列表索引来区分不同顶点，那么假设要删除索引为 $i$ 的顶点，则需遍历整个邻接表，将所有大于 $i$ 的索引全部减 $1$ ，效率很低。而如果每个顶点都是唯一的 `Vertex` 实例，删除某一顶点之后就无须改动其他顶点了。
 
 ```java
+package interview.company.bloomberg;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /* 基于邻接表实现的无向图类 */
-class GraphAdjList {
+public class GraphAdjList {
     // 邻接表，key：顶点，value：该顶点的所有邻接顶点
-    Map<Vertex, List<Vertex>> adjList;
+    Map<Integer, List<Integer>> adjList;
 
     /* 构造方法 */
-    public GraphAdjList(Vertex[][] edges) {
+    public GraphAdjList(Integer[][] edges) {
         this.adjList = new HashMap<>();
         // 添加所有顶点和边
-        for (Vertex[] edge : edges) {
-            addVertex(edge[0]);
-            addVertex(edge[1]);
+        for (Integer[] edge : edges) {
+            addPoint(edge[0]);
+            addPoint(edge[1]);
             addEdge(edge[0], edge[1]);
         }
     }
@@ -259,54 +288,70 @@ class GraphAdjList {
     }
 
     /* 添加边 */
-    public void addEdge(Vertex vet1, Vertex vet2) {
-        if (!adjList.containsKey(vet1) || !adjList.containsKey(vet2) || vet1 == vet2)
+    public void addEdge(Integer point1, Integer point2) {
+        if (!adjList.containsKey(point1) || !adjList.containsKey(point2) || point1 == point2)
             throw new IllegalArgumentException();
-        // 添加边 vet1 - vet2
-        adjList.get(vet1).add(vet2);
-        adjList.get(vet2).add(vet1);
+        // 添加边 point1 - point2
+        adjList.get(point1).add(point2);
+        adjList.get(point2).add(point1);
     }
 
     /* 删除边 */
-    public void removeEdge(Vertex vet1, Vertex vet2) {
-        if (!adjList.containsKey(vet1) || !adjList.containsKey(vet2) || vet1 == vet2)
+    public void removeEdge(Integer point1, Integer point2) {
+        if (!adjList.containsKey(point1) || !adjList.containsKey(point2) || point1 == point2)
             throw new IllegalArgumentException();
-        // 删除边 vet1 - vet2
-        adjList.get(vet1).remove(vet2);
-        adjList.get(vet2).remove(vet1);
+        // 删除边 point1 - point2
+        adjList.get(point1).remove(point2);
+        adjList.get(point2).remove(point1);
     }
 
     /* 添加顶点 */
-    public void addVertex(Vertex vet) {
-        if (adjList.containsKey(vet))
+    public void addPoint(Integer point) {
+        if (adjList.containsKey(point))
             return;
         // 在邻接表中添加一个新链表
-        adjList.put(vet, new ArrayList<>());
+        adjList.put(point, new ArrayList<>());
     }
 
     /* 删除顶点 */
-    public void removeVertex(Vertex vet) {
-        if (!adjList.containsKey(vet))
+    public void removePoint(Integer point) {
+        if (!adjList.containsKey(point))
             throw new IllegalArgumentException();
-        // 在邻接表中删除顶点 vet 对应的链表
-        adjList.remove(vet);
-        // 遍历其他顶点的链表，删除所有包含 vet 的边
-        for (List<Vertex> list : adjList.values()) {
-            list.remove(vet);
+        // 在邻接表中删除顶点 point 对应的链表
+        adjList.remove(point);
+        // 遍历其他顶点的链表，删除所有包含 point 的边
+        for (List<Integer> list : adjList.values()) {
+            list.remove(point);
         }
     }
 
     /* 打印邻接表 */
     public void print() {
         System.out.println("邻接表 =");
-        for (Map.Entry<Vertex, List<Vertex>> pair : adjList.entrySet()) {
+        for (Map.Entry<Integer, List<Integer>> pair : adjList.entrySet()) {
             List<Integer> tmp = new ArrayList<>();
-            for (Vertex vertex : pair.getValue())
-                tmp.add(vertex.val);
-            System.out.println(pair.getKey().val + ": " + tmp + ",");
+            for (Integer vertex : pair.getValue())
+                tmp.add(vertex);
+            System.out.println(pair.getKey() + ": " + tmp + ",");
         }
     }
-}
+
+    public static void main(String... args) {
+        Integer[][] ini = {{1, 5}, {1, 3}, {3, 2}, {2, 5}, {5, 4}, {2, 4}};
+        template.GraphAdjList graph = new template.GraphAdjList(ini);
+        graph.print();
+        /**
+         邻接表 =
+         1: [5, 3],
+         2: [3, 5, 4],
+         3: [1, 2],
+         4: [5, 2],
+         5: [1, 2, 4],
+         }
+         **/
+    }
+
+
 ```
 
 ## 2.3 效率对比
@@ -356,31 +401,61 @@ BFS 通常借助队列来实现，代码如下所示。队列具有“先入先�
 
 ```java
 /* 广度优先遍历 */
-// 使用邻接表来表示图，以便获取指定顶点的所有邻接顶点
-List<Vertex> graphBFS(GraphAdjList graph, Vertex startVet) {
-    // 顶点遍历序列
-    List<Vertex> res = new ArrayList<>();
-    // 哈希集合，用于记录已被访问过的顶点
-    Set<Vertex> visited = new HashSet<>();
-    visited.add(startVet);
-    // 队列用于实现 BFS
-    Queue<Vertex> que = new LinkedList<>();
-    que.offer(startVet);
-    // 以顶点 vet 为起点，循环直至访问完所有顶点
-    while (!que.isEmpty()) {
-        Vertex vet = que.poll(); // 队首顶点出队
-        res.add(vet);            // 记录访问顶点
-        // 遍历该顶点的所有邻接顶点
-        for (Vertex adjVet : graph.adjList.get(vet)) {
-            if (visited.contains(adjVet))
-                continue;        // 跳过已被访问的顶点
-            que.offer(adjVet);   // 只入队未访问的顶点
-            visited.add(adjVet); // 标记该顶点已被访问
+    List<Integer> graphBFS(GraphAdjList graph, Integer startVet) {
+        // 顶点遍历序列
+        List<Integer> res = new ArrayList<>();
+        // 哈希集合，用于记录已被访问过的顶点
+        Set<Integer> visited = new HashSet<>();
+        visited.add(startVet);
+        // 队列用于实现 BFS
+        Queue<Integer> que = new LinkedList<>();
+        que.offer(startVet);
+        // 以顶点 vet 为起点，循环直至访问完所有顶点
+        while (!que.isEmpty()) {
+            Integer vet = que.poll(); // 队首顶点出队
+            res.add(vet);            // 记录访问顶点
+            // 遍历该顶点的所有邻接顶点
+            for (Integer adjVet : graph.adjList.get(vet)) {
+                if (visited.contains(adjVet))
+                    continue;        // 跳过已被访问的顶点
+                que.offer(adjVet);   // 只入队未访问的顶点
+                visited.add(adjVet); // 标记该顶点已被访问
+            }
         }
+        // 返回顶点遍历序列
+        return res;
     }
-    // 返回顶点遍历序列
-    return res;
-}
+
+    /* 广度优先遍历 */
+    List<List<Integer>> graphBFSByLevel(GraphAdjList graph, Integer startVet) {
+        // 顶点遍历序列
+        List<List<Integer>> res = new ArrayList<>();
+        // 哈希集合，用于记录已被访问过的顶点
+        Set<Integer> visited = new HashSet<>();
+        visited.add(startVet);
+        // 队列用于实现 BFS
+        Queue<Integer> que = new LinkedList<>();
+        que.offer(startVet);
+        // 以顶点 vet 为起点，循环直至访问完所有顶点
+        while (!que.isEmpty()) {
+            int currentSize = que.size();
+            List<Integer> currentLevel = new ArrayList<>();
+            // 遍历该顶点的所有邻接顶点
+            for(int i = 0; i < currentSize; i++){
+                int point = que.poll();
+                currentLevel.add(point);
+                for(Integer adjVet : graph.adjList.get(point)){
+                    if(visited.contains(adjVet)) continue;
+                    que.offer(adjVet);
+                    visited.add(adjVet);
+                }
+
+            }
+            res.add(currentLevel);
+        }
+        // 返回顶点遍历序列
+        return res;
+    }
 ```
 
 代码相对抽象，建议对照下图来加深理解。
@@ -451,3 +526,322 @@ List<Vertex> graphDFS(GraphAdjList graph, Vertex startVet) {
 **时间复杂度**：所有顶点都会被访问 $1$ 次，使用 $O(|V|)$ 时间；所有边都会被访问 $2$ 次，使用 $O(2|E|)$ 时间；总体使用 $O(|V| + |E|)$ 时间。
 
 **空间复杂度**：列表 `res` ，哈希集合 `visited` 顶点数量最多为 $|V|$ ，递归深度最大为 $|V|$ ，因此使用 $O(|V|)$ 空间。
+
+
+
+## 3.3 权重图(weighted graph)遍历
+
+Dijkstra（迪杰斯特拉）算法解决的问题是：
+
+> 在一个有向图中，求图中一个节点到其他所有节点的最短距离
+
+### 3.3.1 算法实现
+
+通过Dijkstra计算图G中的最短路径时，需要指定起点s(即从顶点s开始计算)。 
+
+此外，引进两个集合S和U。S的作用是记录已求出最短路径的顶点(以及相应的最短路径长度)，而U则是记录还未求出最短路径的顶点(以及该顶点到起点s的距离)。 
+
+初始时，S中只有起点s；U中是除s之外的顶点，并且U中顶点的路径是"起点s到该顶点的路径"。然后，从U中找出路径最短的顶点，并将其加入到S中；接着，更新U中的顶点和顶点对应的路径。 然后，再从U中找出路径最短的顶点，并将其加入到S中；接着，更新U中的顶点和顶点对应的路径。 ... 重复该操作，直到遍历完所有顶点。
+
+![img](Graph.assets/02.jpg)
+
+```java
+package interview.company.bloomberg;
+
+import javafx.util.Pair;
+
+import java.util.Arrays;
+import java.util.PriorityQueue;
+/*
+ * 题目描述：
+ * Dijkstra 算法用于计算 **单源最短路径**，即从 **起点（source）** 到 **图中所有其他顶点的最短路径**。
+ * 该算法适用于 **无负权边** 的图，并可使用 **邻接矩阵** 或 **邻接表 + 优先队列（最小堆）** 实现。
+ *
+ * 输入：
+ * - `graph`：邻接矩阵或邻接表，表示图的所有边及其权重。
+ * - `source`：起始顶点索引，从该顶点出发计算最短路径。
+ *
+ * 输出：
+ * - `dist[]`：一个数组，其中 `dist[i]` 表示从 `source` 到 `i` 的最短路径长度。
+ * - 过程日志：每一步的路径更新情况。
+ *
+ * 示例：
+ * 输入：
+ *   graph = [
+ *      {0, 12, 0, 0, 0, 14, 16},
+ *      {12, 0, 10, 0, 0, 0, 7},
+ *      {0, 10, 0, 3, 5, 0, 6},
+ *      {0, 0, 3, 0, 4, 0, 0},
+ *      {0, 0, 5, 4, 0, 8, 2},
+ *      {14, 0, 0, 0, 8, 0, 9},
+ *      {16, 7, 6, 0, 2, 9, 0}
+ *   ]
+ *   source = 3
+ * 输出：
+ *   dist = [22, 13, 3, 0, 4, 12, 6]
+ *   并打印路径更新日志：
+ *   current step 0: a: INF ,b: INF ,c: 3 ,d: 0 ,e: 4 ,f: INF ,g: INF ,
+ *   current step 1: a: INF ,b: 13 ,c: 3 ,d: 0 ,e: 4 ,f: INF ,g: 9 ,
+ *   ...
+ */
+
+/*
+ * 解题思路：
+ * Dijkstra 算法是一种 **贪心算法**，用于计算 **单源最短路径**。
+ *
+ * **方法 1：使用邻接矩阵（O(V²)）**
+ * 1️⃣ **初始化**
+ * - 创建 `dist[]` 数组，初始值为 `Integer.MAX_VALUE`，表示所有顶点与 `source` 不可达。
+ * - `dist[source] = 0`，起点到自身的距离为 `0`。
+ * - `visited[]` 数组，记录哪些顶点已经计算了最短路径，初始值均为 `false`。
+ *
+ * 2️⃣ **迭代 V-1 次，每次选择当前最短的未访问顶点**
+ * - 通过 `minDistance()` 找到 `dist[]` 中 **未访问** 且 **最短路径最小** 的顶点 `u`。
+ * - 标记 `u` 为已访问。
+ * - 遍历 `u` 的所有邻接顶点 `v`：
+ *   - 如果 `v` **未访问** 且 `u -> v` 存在边：
+ *   - 计算 `source -> v` 的新路径 `dist[v] = min(dist[v], dist[u] + graph[u][v])`。
+ *
+ * 3️⃣ **终止**
+ * - 经过 `V-1` 次迭代后，所有顶点的最短路径已确定，`dist[]` 结果即为最终解。
+ * - 输出 `dist[]` 以及每一步的 `current step` 状态。
+ *
+ * 示例计算：
+ * 以 `source = 3 (d)` 作为起点，初始 `dist[]`：
+ * ```
+ *  d: 0, a: INF, b: INF, c: 3, e: 4, f: INF, g: INF
+ * ```
+ * 第一步：
+ * - 选择 `c (3)`，更新 `c` 的邻居：
+ * ```
+ *  d: 0, a: INF, b: 13, c: 3, e: 4, f: INF, g: 9
+ * ```
+ * 第二步：
+ * - 选择 `e (4)`，更新 `e` 的邻居：
+ * ```
+ *  d: 0, a: INF, b: 13, c: 3, e: 4, f: 12, g: 6
+ * ```
+ * ...
+ * 直到所有顶点的最短路径更新完毕，最终 `dist[]`：
+ * ```
+ *  d: 0, a: 22, b: 13, c: 3, e: 4, f: 12, g: 6
+ * ```
+ *
+ * **方法 2：使用优先队列优化（O((V+E) log V)）**
+ * 1️⃣ **初始化**
+ * - 使用 `PriorityQueue`（最小堆）维护未访问顶点的最短路径。
+ * - `dist[]` 记录 `source` 到各顶点的最短距离，初始值为 `Integer.MAX_VALUE`。
+ * - `minHeap` 存储 `{顶点, 最短路径}`，初始时 `{source, 0}` 入队。
+ *
+ * 2️⃣ **主循环**
+ * - 每次取出 `minHeap` 中 `dist` 最小的顶点 `u`，然后更新 `u` 的所有邻接顶点 `v`：
+ *   - 计算 `newDist = dist[u] + weight[u][v]`
+ *   - 若 `newDist < dist[v]`，则更新 `dist[v]` 并将 `{v, newDist}` 放入 `minHeap`。
+ *
+ * 3️⃣ **终止**
+ * - 直到 `minHeap` 为空时，所有最短路径已确定。
+ * - `dist[]` 记录最终结果。
+ *
+ * 示例：
+ * - `minHeap` 维护 `{3, 0} -> {c, 3} -> {e, 4} -> {g, 6} -> {b, 13} -> {f, 12} -> {a, 22}`
+ *
+ */
+
+/*
+ * 时间和空间复杂度分析：
+ *
+ * **方法 1（邻接矩阵 + 线性查找 `minDistance()`）**
+ * - **时间复杂度：** `O(V^2)`
+ *   - 查找 `minDistance()` 需要 `O(V)` 遍历 `dist[]`，共执行 `V` 次。
+ *   - 更新所有邻接顶点 `O(V)`，总共 `V` 次。
+ *   - **总复杂度：O(V^2)**
+ * - **空间复杂度：** `O(V^2)`（邻接矩阵存储所有边）。
+ *
+ * **方法 2（邻接表 + 优先队列 `PriorityQueue`）**
+ * - **时间复杂度：** `O((V+E) log V)`
+ *   - `PriorityQueue` 插入和删除操作 `O(log V)`。
+ *   - `V` 个顶点被 `log V` 访问，每个 `E` 条边更新 `log V` 次。
+ *   - **总复杂度：O((V+E) log V)**，适用于 **稀疏图**。
+ * - **空间复杂度：** `O(V + E)`
+ *   - 需要存储 `V` 个顶点的 `dist[]`，以及 `E` 条边的邻接表。
+ *
+ * **不同实现方式的时间复杂度对比**
+ * |  实现方式   | 时间复杂度 | 适用场景 |
+ * |------------|------------|----------|
+ * | **邻接矩阵 + 线性查找 `minDistance()`** | `O(V^2)` | 适用于小规模图 |
+ * | **邻接表 + 优先队列 `PriorityQueue`** | `O((V+E) log V)` | 适用于大规模稀疏图 |
+ *
+ * **算法适用场景**
+ * - **适用于** 稠密图（`E ≈ V^2`）时 `O(V^2)` 的实现较快，适用于较小的 `V`。
+ * - **适用于** 稀疏图（`E ≪ V^2`）时，建议使用 **优先队列优化** 以提升性能。
+ */
+
+
+public class Dijkstra {
+    /**
+     * 选择当前未访问的顶点中，最短路径值最小的顶点
+     * @param dist 存储从源点到各顶点的最短路径长度
+     * @param visited 记录哪些顶点已经被访问
+     * @return 具有最小距离的未访问顶点索引
+     */
+    private static int minDistance(int[] dist, boolean[] visited) {
+        int min = Integer.MAX_VALUE; // 记录当前最短距离，初始为无穷大
+        int minIndex = -1; // 记录最短路径的顶点索引
+
+        // 遍历所有顶点，找到未访问且距离最小的顶点
+        for (int i = 0; i < dist.length; i++) {
+            if (!visited[i] && dist[i] <= min) {
+                min = dist[i]; // 更新最小距离
+                minIndex = i; // 记录该顶点索引
+            }
+        }
+        return minIndex;
+    }
+
+    /**
+     * Solution1: 使用邻接矩阵实现 Dijkstra 算法
+     * 计算从源点到所有顶点的最短路径
+     * @param graph 邻接矩阵表示的图，graph[i][j] 表示 i 到 j 的边权重
+     * @param source 源点索引
+     */
+    private static void dijkstra(int[][] graph, int source) {
+        int numVertices = graph.length; // 顶点个数
+        int[] dist = new int[numVertices]; // 存储从源点到各顶点的最短路径值
+        boolean[] visited = new boolean[numVertices]; // 记录哪些顶点已经被访问
+
+        Arrays.fill(dist, Integer.MAX_VALUE); // 初始化所有顶点的最短路径为无穷大
+        dist[source] = 0; // 源点到自身的距离为 0
+
+        // 计算所有顶点的最短路径
+        for (int count = 0; count < numVertices - 1; count++) {
+            int u = minDistance(dist, visited); // 选择当前未访问顶点中最短路径值最小的顶点
+            visited[u] = true; // 标记该顶点已访问
+
+            // 更新所有邻接顶点的最短路径
+            for (int v = 0; v < numVertices; v++) {
+                // 只有满足以下条件才进行更新：
+                // 1. 该顶点未访问
+                // 2. u 到 v 之间存在边（即 graph[u][v] != 0）
+                // 3. u 到源点的路径值不是无穷大
+                // 4. 通过 u 到达 v 使路径变短
+                if (!visited[v] && graph[u][v] != 0 && dist[u] != Integer.MAX_VALUE
+                        && dist[u] + graph[u][v] < dist[v]) {
+                    dist[v] = dist[u] + graph[u][v]; // 更新最短路径
+                }
+            }
+
+            // 输出当前步骤的最短路径信息
+            System.out.print("current step " + count + ": ");
+            for (int i = 0; i < numVertices; i++) {
+                System.out.print((char) (i + 'a') + ": " + dist[i] + " ,");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Solution2: 使用最小堆（优先队列）优化 Dijkstra 算法
+     * 计算从源点到所有顶点的最短路径
+     * @param graph 邻接矩阵表示的图
+     * @param start 源点索引
+     * @return 返回从起点到所有顶点的最短路径数组
+     */
+    public static int[] dijkstra2(int[][] graph, int start) {
+        int numVertices = graph.length; // 图的顶点数量
+        int[] dist = new int[numVertices]; // 距离数组
+        boolean[] visited = new boolean[numVertices]; // 访问标记数组
+        PriorityQueue<Pair<Integer, Integer>> minHeap = new PriorityQueue<>(
+                (p1, p2) -> Integer.compare(p1.getValue(), p2.getValue())
+        ); // 最小堆（存储顶点及其当前最短路径值）
+
+        // 初始化距离数组
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[start] = 0; // 起点到自身的距离为 0
+        minHeap.add(new Pair<>(start, 0)); // 将起点加入优先队列
+
+        while (!minHeap.isEmpty()) {
+            Pair<Integer, Integer> currentNode = minHeap.poll(); // 取出当前最短路径的顶点
+            int currentVertex = currentNode.getKey();
+
+            // 如果当前节点已经访问过，则跳过
+            if (visited[currentVertex]) {
+                continue;
+            }
+            visited[currentVertex] = true; // 标记该节点为已访问
+
+            // 遍历所有邻接顶点
+            for (int neighbor = 0; neighbor < numVertices; neighbor++) {
+                if (graph[currentVertex][neighbor] != 0 && !visited[neighbor]) {
+                    int newDist = dist[currentVertex] + graph[currentVertex][neighbor];
+                    // 如果新路径更短，则更新距离
+                    if (newDist < dist[neighbor]) {
+                        dist[neighbor] = newDist;
+                        minHeap.add(new Pair<>(neighbor, newDist)); // 将更新的节点加入优先队列
+                    }
+                }
+            }
+
+            // 输出当前步骤的最短路径信息
+            System.out.print("current step " + minHeap.size() + ": ");
+            for (int i = 0; i < dist.length; i++) {
+                System.out.print((char) (i + 'a') + ": " + dist[i] + " ,");
+            }
+            System.out.println();
+        }
+
+        return dist; // 返回从起点到各个节点的最短距离
+    }
+
+    public static void main(String[] args) {
+        // 图的邻接矩阵表示，0 表示没有边
+        int[][] graph = {
+                {0, 12, 0, 0, 0, 14, 16},
+                {12, 0, 10, 0, 0, 0, 7},
+                {0, 10, 0, 3, 5, 0, 6},
+                {0, 0, 3, 0, 4, 0, 0},
+                {0, 0, 5, 4, 0, 8, 2},
+                {14, 0, 0, 0, 8, 0, 9},
+                {16, 7, 6, 0, 2, 9, 0}
+        };
+
+        int source = 3; // 以 'd' 作为源点（索引 3）
+
+        // 测试 Solution 1：邻接矩阵实现 Dijkstra
+        System.out.println("Dijkstra using adjacency matrix:");
+        dijkstra(graph, source);
+
+        // 测试 Solution 2：优先队列实现 Dijkstra
+        System.out.println("\nDijkstra using priority queue:");
+        dijkstra2(graph, source);
+    }
+}
+
+
+```
+
+### 3.3.2 算法实现
+
+**时间复杂度**：
+
+> - 方法 1（邻接矩阵 + 线性查找 `minDistance()`）
+>
+>   > 查找 `minDistance()` 需要 `O(V)` 遍历 `dist[]`，共执行 `V` 次。更新所有邻接顶点 `O(V)`，总共 `V` 次。
+>   >
+>   > **总复杂度：O(V^2)**
+>
+>         * 方法 2（邻接表 + 优先队列 `PriorityQueue`）
+>         
+>   > `PriorityQueue` 插入和删除操作 `O(log V)`。`V` 个顶点被 `log V` 访问，每个 `E` 条边更新 `log V` 次。
+>   >
+>   > **总复杂度：O((V+E) log V)**，适用于 **稀疏图**。
+
+**空间复杂度**：
+
+> - 方法 1（邻接矩阵 + 线性查找 `minDistance()`）
+>
+>   > `O(V^2)`（邻接矩阵存储所有边）。
+>
+>    * 方法 2（邻接表 + 优先队列 `PriorityQueue`）
+>
+>      > `O(V + E)`需要存储 `V` 个顶点的 `dist[]`，以及 `E` 条边的邻接表。
+

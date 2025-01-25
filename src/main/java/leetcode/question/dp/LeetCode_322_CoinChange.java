@@ -9,119 +9,219 @@ import java.util.Arrays;
  *@Space Complexity: O(S)
  */
 
-/**
- * ### 解题思路
+/*
+ * 题目描述：
+ * LeetCode 322 - Coin Change
+ * 给定一个整数数组 `coins`，其中 `coins[i]` 表示不同面额的硬币，以及一个目标金额 `amount`。
+ * 你需要计算 **拼凑出该金额所需的最少硬币个数**，如果无法拼凑出该金额，则返回 `-1`。
  *
- * 这道题目是经典的零钱找零问题，要求找出组成给定金额所需的最少硬币数量。两种常见的动态规划方法被用来解决这个问题：自顶向下（Top-Down）的递归和自底向上（Bottom-Up）的迭代。
+ * **输入：**
+ * - `int[] coins`：可选硬币的面额数组（无重复元素）。
+ * - `int amount`：目标金额。
  *
- * #### 自顶向下的递归动态规划（Solution 1）
+ * **输出：**
+ * - `int`：所需的最少硬币数量，如果无法拼凑则返回 `-1`。
  *
- * - **定义状态：** 定义一个状态函数 `coinChange(coins, rem, count)` 表示在给定硬币面额 `coins` 的情况下，
- * 组成金额 `rem` 所需的最小硬币数量。`count` 数组用于记忆中间结果，避免重复计算。
+ * **示例：**
+ * ```
+ * 输入: coins = [1, 2, 5], amount = 11
+ * 输出: 3
+ * 解释: 11 = 5 + 5 + 1
  *
- * - **状态转移方程：** 利用递归，对于金额 `rem`，尝试减去每个硬币的面额，得到子问题的解，然后选择其中最小的解加1作为当前问题的解。
- * 即 `coinChange(coins, rem) = 1 + min{coinChange(coins, rem - coin)}`，其中 `coin` 为硬币面额。
+ * 输入: coins = [2], amount = 3
+ * 输出: -1
  *
- * - **初始化：** 对于递归终止条件，如果 `rem < 0`，说明无解，返回 `-1`；如果 `rem == 0`，说明已经达到目标金额，返回 `0`。
- *
- * - **递归计算：** 使用递归进行计算，利用 `count` 数组保存中间结果，避免重复计算。
- *
- * - **时间复杂度：** 由于存在重叠子问题，递归的时间复杂度较高，为 O(S*N)，其中 `S` 为金额，`N` 为硬币种类。
- *
- * - **空间复杂度：** 递归调用栈的深度，最坏情况下为金额 `S`，因此空间复杂度为 O(S)。
- *
- * #### 自底向上的迭代动态规划（Solution 2）
- *
- * - **定义状态：** 定义一个状态数组 `dp`，其中 `dp[i]` 表示组成金额 `i` 所需的最小硬币数量。
- *
- * - **状态转移方程：** 对于每个金额 `i`，遍历硬币面额 `coins[j]`，如果 `coins[j] <= i`，
- * 则更新状态 `dp[i] = min(dp[i], dp[i - coins[j]] + 1)`。
- *
- * - **初始化：** 初始条件为 `dp[0] = 0`，即组成金额为0时需要0个硬币。其他金额初始化为一个较大的值，
- * 例如 `max + 1`，表示初始状态下无解。
- *
- * - **递推计算：** 从小金额递推到目标金额，更新状态数组。
- *
- * - **时间复杂度：** 双重循环，时间复杂度为 O(S*N)，其中 `S` 为金额，`N` 为硬币种类。
- *
- * - **空间复杂度：** 状态数组 `dp` 的长度为金额 `S + 1`，因此空间复杂度为 O(S)。
- *
- * ### 总结
- *
- * 自底向上的迭代动态规划相较于自顶向下的递归动态规划更为高效，因为它避免了递归调用的重复计算，将问题拆解成更小的子问题，
- * 通过迭代求解，得到最终的解。在实际应用中，可以根据具体问题的特点选择合适的动态规划方法。
+ * 输入: coins = [1], amount = 0
+ * 输出: 0
+ * ```
  */
 
-public class LeetCode_322_CoinChange{
+/*
+ * 解题思路：
+ * 该问题是 **完全背包问题** 的变种，需要计算出组成 `amount` 的 **最优解（最少硬币数）**。
+ *
+ * **方法 1：递归 + 记忆化搜索（Top-Down DP）**
+ * ------------------------------------------------------
+ * 1️⃣ **递归拆解问题**
+ *    - 递归计算 `dp[amount]`，其中 `dp[i]` 表示拼凑 `i` 金额所需的最少硬币数。
+ *    - 递归公式：
+ *      ```
+ *      dp(amount) = min(dp(amount - coin) + 1)  (for each coin in coins)
+ *      ```
+ * 2️⃣ **使用记忆化数组 `count[]`**
+ *    - 避免重复计算，存储已计算的 `dp[i]` 值，加速计算。
+ *    - 递归终止条件：
+ *      - `amount == 0`：返回 `0`（无需任何硬币）。
+ *      - `amount < 0`：返回 `-1`（无法拼凑）。
+ *
+ * **示例**
+ * ```
+ * coins = [1, 2, 5], amount = 11
+ * 递归调用：
+ * dp(11) = min(dp(10), dp(9), dp(6)) + 1
+ * dp(10) = min(dp(9), dp(8), dp(5)) + 1
+ * ...
+ * 最终得到 dp(11) = 3
+ * ```
+ * **时间复杂度：O(amount * coins.length)**
+ * **空间复杂度：O(amount)**
+ *
+ * ------------------------------------------------------
+ * **方法 2：自底向上 DP（Bottom-Up DP）**
+ * ------------------------------------------------------
+ * 1️⃣ **定义 `dp[i]`**：
+ *    - `dp[i]` 表示拼凑金额 `i` 所需的最少硬币数。
+ *    - 初始化 `dp[i] = amount + 1`（表示无解）。
+ *    - `dp[0] = 0`（拼凑 `0` 需要 `0` 个硬币）。
+ *
+ * 2️⃣ **状态转移方程**
+ *    ```
+ *    dp[i] = min(dp[i], dp[i - coin] + 1)  (for each coin in coins)
+ *    ```
+ * 3️⃣ **遍历顺序**
+ *    - `i` 从 `1` 到 `amount` 遍历。
+ *    - `coin` 遍历 `coins[]`，计算 `dp[i]` 的最优解。
+ *
+ * **示例**
+ * ```
+ * coins = [1, 2, 5], amount = 11
+ * 初始化 dp[] = [0, ∞, ∞, ∞, ∞, ∞, ∞, ∞, ∞, ∞, ∞, ∞]
+ * 遍历 i=1: dp[1] = min(dp[1], dp[0]+1) = 1
+ * 遍历 i=2: dp[2] = min(dp[2], dp[1]+1) = 1
+ * 遍历 i=5: dp[5] = min(dp[5], dp[0]+1) = 1
+ * 计算最终 dp[11] = 3
+ * ```
+ * **时间复杂度：O(amount * coins.length)**
+ * **空间复杂度：O(amount)**
+ *
+ * ------------------------------------------------------
+ * **方法 3：二维 DP（完全背包问题解法）**
+ * ------------------------------------------------------
+ * 1️⃣ **定义 `dp[i][j]`**
+ *    - `dp[i][j]` 表示 **使用前 `i` 种硬币**，拼凑金额 `j` 的最少硬币数。
+ *    - `dp[i][j] = min(dp[i-1][j], dp[i][j - coins[i-1]] + 1)`
+ *
+ * 2️⃣ **状态转移**
+ *    - 如果 `coins[i-1] > j`，不能选 `coins[i-1]`，则 `dp[i][j] = dp[i-1][j]`
+ *    - 否则：可以选或不选：
+ *      ```
+ *      dp[i][j] = min(dp[i-1][j], dp[i][j - coins[i-1]] + 1)
+ *      ```
+ *
+ * **示例**
+ * ```
+ * coins = [1, 2, 5], amount = 11
+ * 初始化 DP 矩阵：
+ *     0  1  2  3  4  5  6  7  8  9 10 11
+ *  1  0  1  2  3  4  5  6  7  8  9 10 11
+ *  2  0  1  1  2  2  3  3  4  4  5  5  6
+ *  5  0  1  1  2  2  1  2  2  3  3  2  3
+ * 最终答案：dp[3][11] = 3
+ * ```
+ * **时间复杂度：O(n * amount)**
+ * **空间复杂度：O(n * amount)**
+ */
+
+/*
+ * 时间和空间复杂度分析：
+ *
+ * **方法 1（递归 + 记忆化搜索，Top-Down DP）**
+ * - **时间复杂度：O(amount * coins.length)**（每个子问题最多被计算一次）
+ * - **空间复杂度：O(amount)**（递归深度最多为 `amount`）
+ *
+ * **方法 2（自底向上 DP，Bottom-Up DP）**
+ * - **时间复杂度：O(amount * coins.length)**（遍历 `amount` 次，每次遍历 `coins`）
+ * - **空间复杂度：O(amount)**（使用一维 `dp[]` 数组存储结果）
+ *
+ * **方法 3（二维 DP，完全背包）**
+ * - **时间复杂度：O(n * amount)**（遍历 `n` 种硬币，每种硬币遍历 `amount` 次）
+ * - **空间复杂度：O(n * amount)**（使用二维 `dp[][]` 数组存储结果）
+ *
+ * **推荐选择**
+ * | 方法 | 时间复杂度 | 空间复杂度 | 适用场景 |
+ * |------|----------|----------|--------|
+ * | **递归 + 记忆化搜索** | `O(amount * n)` | `O(amount)` | 适用于小 `amount`，但递归可能导致栈溢出 |
+ * | **自底向上 DP** | `O(amount * n)` | `O(amount)` | **最优解**，适用于大规模 `amount` |
+ * | **二维 DP** | `O(n * amount)` | `O(n * amount)` | 适用于学习背包问题的动态规划 |
+ */
+
+public class LeetCode_322_CoinChange {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     public class Solution {
 
-        // Solution 1: 自顶向下的动态规划
+        // Solution 1: 递归 + 记忆化搜索（自顶向下的动态规划）
         public int coinChange1(int[] coins, int amount) {
-            if (amount < 1) return 0;
-            return coinChange(coins, amount, new int[amount]);
+            if (amount < 1) return 0; // 金额为 0 时，直接返回 0
+            return coinChange(coins, amount, new int[amount]); // 递归计算最优解
         }
 
-        // 递归函数，用于计算组成金额rem所需的最小硬币数
+        // 递归函数：计算组成金额 rem 所需的最少硬币数
         private int coinChange(int[] coins, int rem, int[] count) {
-            if (rem < 0) return -1;  // 无解的情况
-            if (rem == 0) return 0;  // 达到目标金额的情况
-            if (count[rem - 1] != 0) return count[rem - 1];  // 如果已经计算过，直接返回
+            if (rem < 0) return -1; // 如果金额小于 0，说明无法组成，返回 -1
+            if (rem == 0) return 0; // 如果金额正好为 0，则不需要任何硬币，返回 0
+            if (count[rem - 1] != 0) return count[rem - 1]; // 如果之前计算过，直接返回缓存值
+
             int min = Integer.MAX_VALUE;
-            for (int coin : coins) {
-                int res = coinChange(coins, rem - coin, count);
-                if (res >= 0 && res < min){
-                    min = 1 + res;  // 更新最小硬币数
+            for (int coin : coins) { // 遍历所有硬币
+                int res = coinChange(coins, rem - coin, count); // 递归计算剩余金额所需的最小硬币数
+                if (res >= 0 && res < min) {
+                    min = 1 + res; // 选择最优方案，当前硬币 + 子问题的解
                 }
             }
-            count[rem - 1] = (min == Integer.MAX_VALUE) ? -1 : min;  // 将结果存储在数组中
+
+            count[rem - 1] = (min == Integer.MAX_VALUE) ? -1 : min; // 缓存结果
             return count[rem - 1];
         }
 
-        // Solution 2: 自底向上的动态规划
+        // Solution 2: 自底向上的动态规划（状态转移方程：dp[i] = min(dp[i], dp[i - coin] + 1)）
         public int coinChange2(int[] coins, int amount) {
             int max = amount + 1;
             int[] dp = new int[amount + 1];
-            Arrays.fill(dp, max);
-            dp[0] = 0;  // 初始条件，金额为0时需要0个硬币
-            for (int i = 1; i <= amount; i++) {
-                for (int j = 0; j < coins.length; j++) {
+            Arrays.fill(dp, max); // 初始化所有 dp[i] 为一个不可能的最大值
+            dp[0] = 0; // 初始条件，金额为 0 时不需要硬币
+
+            for (int i = 1; i <= amount; i++) { // 遍历每个金额
+                for (int j = 0; j < coins.length; j++) { // 遍历每个硬币
                     if (coins[j] <= i) {
-                        dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+                        dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1); // 取最小值
                     }
                 }
             }
-            return dp[amount] > amount ? -1 : dp[amount];  // 返回最终结果，如果大于amount说明无解
+            return dp[amount] > amount ? -1 : dp[amount]; // 如果金额无法组成，返回 -1
         }
 
-        // Solution 2: 自底向上的动态规划
-        //dp[i][a] = min(dp[i-1][a] + 1, dp[i-1][a-coins[i]]) i is the coin, a is ammount
+        // Solution 3: 二维动态规划 (DP)（完全背包问题解法）
         public int coinChange(int[] coins, int amount) {
             int n = coins.length;
             int[][] dp = new int[n + 1][amount + 1];
             int maxs = amount + 1;
-            dp[0][0] = 0;  // 初始条件，金额为0时需要0个硬币
-            for( int i = 0; i < n + 1; i++){
+
+            // 初始化 DP 数组：dp[i][0] = 0（金额为 0 时硬币数为 0）
+            for (int i = 0; i <= n; i++) {
                 dp[i][0] = 0;
             }
-            for( int j = 0; j < amount + 1; j++){
-                dp[0][j] =  maxs;
+
+            // 初始化 DP 数组：dp[0][j] = maxs（没有硬币时，所有金额都无法组成）
+            for (int j = 1; j <= amount; j++) {
+                dp[0][j] = maxs;
             }
 
-            for (int i = 1; i <= coins.length; i++) {
+            for (int c = 1; c <= coins.length; c++) {
                 for (int a = 1; a <= amount; a++) {
-                    if (coins[i-1]  > a) {
-                        dp[i][a] = dp[i-1][a];
+                    if (coins[c - 1] > a) { // 当前硬币值大于金额
+                        dp[c][a] = dp[c - 1][a]; // 不能选当前硬币
                     } else {
-                        dp[i][a] = Math.min(dp[i-1][a], dp[i][a-coins[i-1]] + 1);
+                        dp[c][a] = Math.min(dp[c - 1][a], dp[c][a - coins[c - 1]] + 1); // 选或不选当前硬币
                     }
                 }
             }
-//            printMatrix(dp);
-            return dp[n][amount] >= maxs ? -1 : dp[n][amount];
+
+            return dp[n][amount] >= maxs ? -1 : dp[n][amount]; // 如果 dp[n][amount] 仍为 maxs，说明无法组成该金额
         }
-        private  void printMatrix(int[][] matrix) {
+
+        // 打印 DP 矩阵（调试用）
+        private void printMatrix(int[][] matrix) {
             for (int i = 0; i < matrix.length; i++) {
                 for (int j = 0; j < matrix[0].length; j++) {
                     System.out.print(matrix[i][j] + " ");
@@ -129,21 +229,35 @@ public class LeetCode_322_CoinChange{
                 System.out.println();
             }
         }
-
     }
     //leetcode submit region end(Prohibit modification and deletion)
 
-
-
     public static void main(String[] args) {
         Solution solution = new LeetCode_322_CoinChange().new Solution();
-        // 测试代码
-        int[] coins = {1, 2, 5};
-        int amount = 11;
-//        System.out.println(solution.coinChange1(coins, amount));  // 测试 Solution 1
-        System.out.println(solution.coinChange(coins, amount));    // 测试 Solution 2
+
+        // 测试用例 1
+        int[] coins1 = {1, 2, 5};
+        int amount1 = 11;
+        System.out.println("Solution 1 (Memoized Recursion): " + solution.coinChange1(coins1, amount1));  // 预期输出: 3
+        System.out.println("Solution 2 (Bottom-up DP): " + solution.coinChange2(coins1, amount1));  // 预期输出: 3
+        System.out.println("Solution 3 (2D DP): " + solution.coinChange(coins1, amount1));  // 预期输出: 3
+
+        // 测试用例 2
+        int[] coins2 = {2};
+        int amount2 = 3;
+        System.out.println("Solution 1 (Memoized Recursion): " + solution.coinChange1(coins2, amount2));  // 预期输出: -1
+        System.out.println("Solution 2 (Bottom-up DP): " + solution.coinChange2(coins2, amount2));  // 预期输出: -1
+        System.out.println("Solution 3 (2D DP): " + solution.coinChange(coins2, amount2));  // 预期输出: -1
+
+        // 测试用例 3
+        int[] coins3 = {1};
+        int amount3 = 0;
+        System.out.println("Solution 1 (Memoized Recursion): " + solution.coinChange1(coins3, amount3));  // 预期输出: 0
+        System.out.println("Solution 2 (Bottom-up DP): " + solution.coinChange2(coins3, amount3));  // 预期输出: 0
+        System.out.println("Solution 3 (2D DP): " + solution.coinChange(coins3, amount3));  // 预期输出: 0
     }
 }
+
 
 /**
 You are given an integer array coins representing coins of different 

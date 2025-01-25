@@ -57,7 +57,9 @@ public class LeetCode_1244_DesignALeaderboard{
         // 返回最高的K个玩家的总分
         public int top(int K) {
             // 使用最小堆来记录最高的K个分数
-            PriorityQueue<Map.Entry<Integer, Integer>> heap = new PriorityQueue<>((a, b) -> a.getValue() - b.getValue());
+            PriorityQueue<Map.Entry<Integer, Integer>> heap = new PriorityQueue<>(
+                    (a, b) -> a.getValue() - b.getValue()
+            );
 
             // 遍历所有玩家的分数并添加到堆中
             for (Map.Entry<Integer, Integer> entry : this.scores.entrySet()) {

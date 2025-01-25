@@ -8,6 +8,9 @@ package leetcode.question.map_set;
  *@Space Complexity: O(1)
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * 这道题的解题思路比较简单：
  *
@@ -15,7 +18,8 @@ package leetcode.question.map_set;
  * 2. 对于字符串 t 中的每个字符，我们增加其出现频率。
  * 3. 对于字符串 s 中的每个字符，我们减少其出现频率。
  * 4. 统计每个字符的频率差值，这个差值表示我们需要转换的次数，因为我们想要使得两个字符串成为字母异位词，因此字符的频率应该是相同的。
- * 5. 最后，对于每个字符的频率差值，如果大于零，表示 t 中字符的频率大于 s 中字符的频率，我们需要将多余的字符转换成 s 中的字符，转换的次数即为频率差值；如果小于等于零，表示 t 中字符的频率小于等于 s 中字符的频率，这些字符无需转换，不需要额外的步骤。
+ * 5. 最后，对于每个字符的频率差值，如果大于零，表示 t 中字符的频率大于 s 中字符的频率，我们需要将多余的字符转换成 s 中的字符，转换的次数即为频率差值；
+ * 如果小于等于零，表示 t 中字符的频率小于等于 s 中字符的频率，这些字符无需转换，不需要额外的步骤。
  *
  * 时间复杂度：假设字符串长度为 N，统计频率需要遍历每个字符，因此时间复杂度为 O(N)。
  *
@@ -35,6 +39,7 @@ public class LeetCode_1347_MinimumNumberOfStepsToMakeTwoStringsAnagram{
                 // 将 s 中字符的频率减一
                 count[s.charAt(i) - 'a']--;
             }
+            System.out.println(new ArrayList<>(Arrays.asList(count)));
 
             int ans = 0;
             // 计算使得两个字符串成为字母异位词所需的最小步骤数
@@ -56,7 +61,7 @@ public class LeetCode_1347_MinimumNumberOfStepsToMakeTwoStringsAnagram{
     public static void main(String[] args) {
         Solution solution = new LeetCode_1347_MinimumNumberOfStepsToMakeTwoStringsAnagram().new Solution();
         // TO TEST
-        // solution.minSteps("leetcode", "practice");
+         solution.minSteps("leetcode", "practice");
     }
 }
 

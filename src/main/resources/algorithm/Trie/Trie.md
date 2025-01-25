@@ -18,34 +18,33 @@
 > ![image-20240613154851638](Trie.assets/image-20240613154851638.png)
 >
 > ```java
-> public class Trie {
+> package template;
 > 
->     private Node root; // 根节点
+>    public class Trie {
 > 
->     // 定义前缀树的节点
->     private class Node {
->         private Node[] dict; // 使用数组存储子节点，每个节点代表一个字母
+>        private Node root; // 根节点
+>    
+>        // 定义前缀树的节点
+>        private class Node {
+>            private Node[] dict; // 使用数组存储子节点，每个节点代表一个字母
 >         private boolean isWord; // 标记当前节点是否为单词的结尾
->         private int value; // 可选项，可以用作单词出现的frequency，或者对应值
-> 
->         // 构造函数，初始化子节点数组和单词标记
->         public Node() {
->             dict = new Node[26]; // 数组长度为26，对应字母 a-z
->             this.isWord = false;
->             this.value = 0; // 可选项，可以用作单词出现的frequency，或者对应值
+>            private int value; // 可选项，可以用作单词出现的frequency，或者对应值
+>    
+>            // 构造函数，初始化子节点数组和单词标记
+>            public Node() {
+>                dict = new Node[26]; // 数组长度为26，对应字母 a-z
+>                this.isWord = false;
+>                this.value = 0; // 可选项，可以用作单词出现的frequency，或者对应值
 >         }
->     }
+>        }
 > 
->     /**
->      * 初始化 Trie（前缀树）。
->      */
+>     //初始化 Trie（前缀树）。
+> 
 >     public Trie() {
 >         root = new Node(); // 初始化根节点
 >     }
 > 
->     /**
->      * 插入一个单词到 Trie 中。
->      */
+>     // 插入一个单词到 Trie 中。
 >     public void insert(String word
 >                        //,int value
 >     ) {
@@ -67,9 +66,7 @@
 >         //curNode.value = value;
 >     }
 > 
->     /**
->      * 判断单词是否存在于 Trie 中。
->      */
+>     //判断单词是否存在于 Trie 中。
 >     public boolean search(String word) {
 >         int len = word.length(); // 单词长度
 >         Node curNode = root; // 从根节点开始
@@ -87,9 +84,8 @@
 >         return curNode.isWord; // 判断当前节点是否为单词结尾
 >     }
 > 
->     /**
->      * 判断是否存在以指定前缀开头的单词。
->      */
+>     //判断是否存在以指定前缀开头的单词。
+> 
 >     public boolean startsWith(String prefix) {
 >         int len = prefix.length(); // 前缀长度
 >         Node curNode = root; // 从根节点开始
@@ -166,8 +162,9 @@
 >         System.out.println(search5); // 输出 true (匹配 "helloworld")
 >     }
 > }
+> 
 > ```
->
+> 
 
 # 4. 时间复杂度
 

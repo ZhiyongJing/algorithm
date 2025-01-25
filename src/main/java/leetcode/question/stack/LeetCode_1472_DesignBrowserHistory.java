@@ -57,7 +57,10 @@ public class LeetCode_1472_DesignBrowserHistory{
             history.push(current);
             current = url;
             // 需要清空 'future' 栈中的所有记录。
-            future = new Stack<String>();
+            if(future.size() !=0){
+                future = new Stack<String>();
+            }
+
         }
 
         // 后退指定步数，从 'history' 栈中取出记录，放入 'future' 栈

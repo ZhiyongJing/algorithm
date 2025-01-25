@@ -73,7 +73,7 @@ LeetCode 797：所有从源节点到目标节点的路径 (All Paths From Source
 
 ### 时间和空间复杂度分析
 
-**时间复杂度：O(2^n)**
+**时间复杂度：O(2^n * n)**
 - 对于一个有向无环图（DAG），最坏情况下可能有 2^n 条路径（例如，每个节点都可以到达目标节点）。
 - 因此，时间复杂度是 **O(2^n)**，其中 `n` 是节点的数量。
 
@@ -86,24 +86,19 @@ public class LeetCode_797_AllPathsFromSourceToTarget{
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        // 定义全局变量：目标节点、图、结果集
-        private int target;
-        private int[][] graph;
-        private List<List<Integer>> results;
-
         // 定义回溯方法
-        protected void backtrack(int currNode, List<Integer> path) {
+        protected void backtrack(int currNode, List<Integer> path, int target, int[][] graph, List<List<Integer>> results) {
             // 如果当前节点等于目标节点，将路径添加到结果集中
-            if (currNode == this.target) {
-                this.results.add(new ArrayList<Integer>(path));
+            if (currNode == target) {
+                results.add(new ArrayList<Integer>(path));
                 return;
             }
             // 遍历当前节点的邻居节点
-            for (int nextNode : this.graph[currNode]) {
+            for (int nextNode : graph[currNode]) {
                 // 在回溯前将选择标记在路径中
                 path.add(nextNode);
                 // 递归调用回溯方法
-                this.backtrack(nextNode, path);
+                this.backtrack(nextNode, path, target, graph, results);
                 // 移除前一个选择，尝试下一个选择
                 path.remove(path.size() - 1);
             }
@@ -112,14 +107,13 @@ public class LeetCode_797_AllPathsFromSourceToTarget{
         // 定义求解方法
         public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
             // 初始化目标节点、图、结果集
-            this.target = graph.length - 1;
-            this.graph = graph;
-            this.results = new ArrayList<List<Integer>>();
+            int target = graph.length - 1;
+            ArrayList<List<Integer>>results = new ArrayList<List<Integer>>();
             // 从源节点（节点0）开始回溯
             List<Integer> path = new ArrayList<Integer>();
             path.add(0);
-            this.backtrack(0, path);
-            return this.results;
+            backtrack(0, path, target, graph, results);
+            return results;
         }
 
     }

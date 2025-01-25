@@ -112,12 +112,12 @@ public class LeetCode_518_CoinChangeIi{
                 dp[0][i] = 0;  // 没有硬币时，无法组成非零金额
             }
 
-            for (int i = n - 1; i >= 0; i--) {
+            for (int c = n - 1; c >= 0; c--) {
                 for (int j = 1; j <= amount; j++) {
-                    if (coins[i] > j) {
-                        dp[i][j] = dp[i + 1][j];  // 当前硬币面值大于剩余金额，跳过当前硬币
+                    if (coins[c] > j) {
+                        dp[c][j] = dp[c + 1][j];  // 当前硬币面值大于剩余金额，跳过当前硬币
                     } else {
-                        dp[i][j] = dp[i + 1][j] + dp[i][j - coins[i]];  // 包括和不包括当前硬币的两种情况
+                        dp[c][j] = dp[c + 1][j] + dp[c][j - coins[c]];  // 包括和不包括当前硬币的两种情况
                     }
                 }
             }

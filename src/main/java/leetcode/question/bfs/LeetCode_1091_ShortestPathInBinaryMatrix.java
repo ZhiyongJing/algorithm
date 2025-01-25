@@ -1,7 +1,7 @@
 package leetcode.question.bfs;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
@@ -28,7 +28,8 @@ import java.util.Queue;
        - 从起点（0,0）开始，进行广度优先搜索，逐层遍历每个相邻的单元格。
        - BFS 是最常用于找到最短路径的算法，因为它会层层扩展，每次扩展都会是当前最短的路径。
        - BFS 的关键是队列，我们需要使用队列存储当前需要访问的单元格的位置。
-       - 在 BFS 中，每次从队列中取出一个单元格，并遍历它的八个相邻单元格。如果相邻单元格值为 0，则表示可以访问，将其加入队列，并更新该单元格的路径长度（即当前单元格的路径长度加1）。
+       - 在 BFS 中，每次从队列中取出一个单元格，并遍历它的八个相邻单元格。如果相邻单元格值为 0，则表示可以访问，
+       将其加入队列，并更新该单元格的路径长度（即当前单元格的路径长度加1）。
        - 如果访问到终点（n-1,m-1），立即返回当前路径长度。
        - 例如，给定 `grid = {{0, 1}, {1, 0}}`，从起点（0,0）出发，经过两步可到达终点（1,1），返回路径长度2。
 
@@ -68,13 +69,13 @@ public class LeetCode_1091_ShortestPathInBinaryMatrix{
             }
 
             // 设置 BFS 队列
-            Queue<int[]> queue = new ArrayDeque<>();
+            Queue<int[]> queue = new LinkedList<>();
             grid[0][0] = 1; // 表示该单元格已经被访问，同时用于记录路径长度
             queue.add(new int[]{0, 0});
 
             // 执行 BFS
             while (!queue.isEmpty()) {
-                int[] cell = queue.remove(); // 从队列中取出当前单元格
+                int[] cell = queue.poll(); // 从队列中取出当前单元格
                 int row = cell[0];           // 获取当前单元格的行坐标
                 int col = cell[1];           // 获取当前单元格的列坐标
                 int distance = grid[row][col]; // 获取当前单元格的路径长度（即访问深度）
@@ -88,7 +89,7 @@ public class LeetCode_1091_ShortestPathInBinaryMatrix{
                 for (int[] neighbour : getNeighbours(row, col, grid)) {
                     int neighbourRow = neighbour[0]; // 获取相邻单元格的行坐标
                     int neighbourCol = neighbour[1]; // 获取相邻单元格的列坐标
-                    queue.add(new int[]{neighbourRow, neighbourCol}); // 将相邻单元格加入队列
+                    queue.offer(new int[]{neighbourRow, neighbourCol}); // 将相邻单元格加入队列
                     grid[neighbourRow][neighbourCol] = distance + 1; // 更新相邻单元格的路径长度
                 }
             }

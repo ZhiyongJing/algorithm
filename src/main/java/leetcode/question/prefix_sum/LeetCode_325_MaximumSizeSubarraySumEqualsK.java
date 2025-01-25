@@ -89,7 +89,7 @@ public class LeetCode_325_MaximumSizeSubarraySumEqualsK {
 
                 // 如果当前前缀和等于 k，说明从索引 0 到 i 形成的子数组满足条件
                 if (prefixSum == k) {
-                    longestSubarray = i + 1; // 更新最大子数组长度
+                    longestSubarray = Math.max(longestSubarray, i + 1); // 更新最大子数组长度
                 }
 
                 // 如果 prefixSum - k 在 map 中存在，则说明存在一个子数组的和等于 k

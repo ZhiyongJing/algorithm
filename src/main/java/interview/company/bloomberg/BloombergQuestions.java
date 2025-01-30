@@ -19,6 +19,7 @@ import leetcode.question.linked_list.LeetCode_430_FlattenAMultilevelDoublyLinked
 import leetcode.question.linked_list.LeetCode_445_AddTwoNumbersIi;
 import leetcode.question.map_set.*;
 import leetcode.question.stack.*;
+import leetcode.question.string_list.LeetCode_2423_RemoveLetterToEqualizeFrequency;
 import leetcode.question.string_list.LeetCode_8_StringToIntegerAtoi;
 import leetcode.question.two_pointer.*;
 
@@ -59,6 +60,7 @@ public class BloombergQuestions {
             , new LeetCode_387_FirstUniqueCharacterInAString() // Find the first non-repeating character in a string. // 找到字符串中第一个不重复的字符。
             , new LeetCode_103_BinaryTreeZigzagLevelOrderTraversal() // Perform a zigzag level order traversal on a binary tree. // 对二叉树执行之字形层次遍历。
             , new LeetCode_1472_DesignBrowserHistory()
+            , new LeetCode_399_EvaluateDivision() 
             , new LeetCode_314_BinaryTreeVerticalOrderTraversal() // Perform a vertical order traversal on a binary tree. // 对二叉树执行垂直顺序遍历。
             , new LeetCode_1249_MinimumRemoveToMakeValidParentheses() // Remove the minimum number of parentheses to make the string valid. // 移除最少数量的括号，使字符串有效。
             , new LeetCode_39_CombinationSum() // Candidate can be used unlimited times, optimize memorization. // 候选元素可以无限使用，优化记忆化
@@ -69,6 +71,7 @@ public class BloombergQuestions {
             , new LeetCode_656_CoinPath() // Find the minimum cost path using coins, similar to LeetCode_322. // 找到使用硬币的最小成本路径，类似于 LeetCode_322
             , new LeetCode_8_StringToIntegerAtoi() // Convert a string to an integer with edge cases. // 将字符串转换为整数，处理边界情况
             , new LeetCode_91_DecodeWays() // Decode a string with encoding rules. // 解码字符串，按编码规则解码
+            , new LeetCode_2423_RemoveLetterToEqualizeFrequency()
             , new LeetCode_1656_DesignAnOrderedStream() // Design an ordered stream data structure. // 设计一个有序流数据结构
             , new LeetCode_450_DeleteNodeInABst() // Delete a node in a Binary Search Tree. // 在二叉搜索树中删除节点
             , new LeetCode_428_SerializeAndDeserializeNAryTree() // Serialize and deserialize an N-ary tree. // 序列化和反序列化 N 叉树
@@ -89,7 +92,7 @@ public class BloombergQuestions {
             , new LeetCode_430_FlattenAMultilevelDoublyLinkedList() // Flatten a multilevel doubly linked list. // 展平多级双向链表
             , new LeetCode_1169_InvalidTransactions() // Find invalid transactions based on a list of transactions sorted by time. // 根据按时间排序的交易列表找出无效交易
             , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() // Find the maximum depth of nested parentheses using BFS, follow-up with DFS. // 使用 BFS 查找嵌套括号的最大深度，后续使用 DFS
-            , new LeetCode_394_DecodeString() // Decode a string with encoded patterns (e.g., "3[a2[c]]"). // 解码带有编码模式的字符串（例如，"3[a2[c]]"）
+            , new LeetCode_117_PopulatingNextRightPointersInEachNodeIi()
             , new LeetCode_642_DesignSearchAutocompleteSystem() // Design an autocomplete system that suggests completions based on input. // 设计一个自动完成系统，根据输入建议补全
             , new LeetCode_138_CopyListWithRandomPointer() // Copy a linked list with random pointers. // 复制带有随机指针的链表
             , new LeetCode_987_VerticalOrderTraversalOfABinaryTree() // Traverse a binary tree in vertical order. // 以垂直顺序遍历二叉树

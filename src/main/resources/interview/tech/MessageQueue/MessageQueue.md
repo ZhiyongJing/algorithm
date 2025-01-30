@@ -6,7 +6,7 @@
 >
 > ![image-20240325152828970](MessageQueue.assets/kafka-structure.png)
 
-### 2. Kafka producer
+### 2. Kafka producer-生产者
 
 > 在消息发送的过程中，涉及到了两个线程——**main** 线程和 **Sender** 线程。在 main 线程中创建了一个双端队列 **RecordAccumulator**。main 线程将消息发送给 RecordAccumulator，Sender 线程不断从RecordAccumulator 中拉取消息发送到Kafka Broker。
 >
@@ -37,21 +37,21 @@
 > }
 > ```
 
-### 3. Kafka Partition for producer
+### 3. Kafka Partition for producer-生产者分区
 
 > （1）便于合理使用存储资源，每个Partition在一个Broker上存储，可以把海量的数据按照分区存储在多台Broker上。合理控制分区的任务，可以实现负载均衡的效果。
 >
 > （2）提高并行度，生产者可以以分区为单位发送数据；消费者可以以分区为单位进行消费数据。
 >
-> ![image-20240325155825023](../Kafka/Kafka.assets/partition_for_producer.png)
+> ![image-20240325155825023](MessageQueue.assets/partition_for_producer.png)
 >
 > ![image-20240325155938824](MessageQueue.assets/partition_stratety_for_producer.png)
 
-### 4. Kafka How to improve the througput of producer
+### 4. Kafka 生产者提高吞吐量
 
 > ![image-20240328223924455](MessageQueue.assets/image-20240328223924455.png)
 
-### 5. Kafka How to improve the data reliality of producer
+### 5. Kafka 生产者提高数据可靠性
 
 > 1. **ACK 应答级别**
 >
@@ -67,7 +67,7 @@
 >
 >    精确一次（**Exactly Once**）**=** 幂等性**+** 至少一次（**ack=-1 +** 分区副本数**>=2 + ISR**最小副本数量**>=2**）。
 >
->    重复数据的判断标准：具有<PID, Partition, SeqNumber>相同主键的消息提交时，Broker只会持久化一条。其中PID是Kafka每次重启都会分配一个新的；Partition 表示分区号；Sequence Number是单调自增的。所以幂等性只能保证的是在单分区单会话内不重复。开启参数**enable.idempotence** 默认为true，false 关闭。
+>    重复数据的判断标准：具有<PID, Partition, SeqNumber>相同主键的消息提交时，Broker只会持久化一条。其中PID是Kafka每次重启都会分配一个新的；Partition 表示分区号；Sequence Number是单调自增的。所以**幂等性只能保证的是在单分区单会话内不重复**。 开启参数**enable.idempotence** 默认为true，false 关闭。
 >
 >    ![image-20240328224633977](MessageQueue.assets/image-20240328224633977.png)
 >
@@ -137,7 +137,7 @@
 >
 >       粘性分区定义：可以理解为分配的结果带有“粘性的”。即在执行一次新的分配之前，考虑上一次分配的结果，尽量少的调整分配的变动，可以节省大量的开销。在出现同一消费者组内消费者出现问题的时候，会尽量保持原有分配的分区不变化。
 
-### 9. Kafka Cousumer offset
+### 9. Kafka Cousumer offset-偏移量
 
 > 从0.9版本开始，consumer默认将offset保存在Kafka一个内置的topic中，该topic为__consumer_offsets. __consumer_offsets 主题里面采用 key 和 value 的方式存储数据。key 是 group.id+topic+分区号，value 就是当前 offset 的值。每隔一段时间，kafka 内部会对这个 topic 进行compact，也就是每个group.id+topic+分区号就保留最新数据。
 >
@@ -180,7 +180,7 @@
 >
 > 
 
-### 10. Kafka how to improve the speed of comsuming data
+### 10. Kafka 消费端提高消费数据能力
 
 > 1）如果是Kafka消费能力不足，可以考虑增加Topic的分区数，并且同时提升消费组的消费者数量，消费者数= 分区数（缺一不可）
 >
@@ -253,3 +253,143 @@
 >     > 分区数不是越多越好，也不是越少越好，需要搭建完集群，进行压测，再灵活调整分区
 >     >
 >     > 个数
+
+### 12. Kafka 消息不丢失
+
+> - **生产者端的配置与优化**
+>
+> > 1. 保消息持久化（acks = all） 
+> >
+> >    > **`acks` 参数**控制生产者在消息被认为“已提交”之前，需要等待 Kafka 集群的响应。
+> >    >
+> >    > - **`acks=0`**：生产者不会等待任何确认，消息可能会丢失。
+> >    > - **`acks=1`**：生产者会等待领导副本确认，但如果领导副本失败，消息可能会丢失。
+> >    > - **`acks=all`** 或 **`acks=-1`**：生产者会等待所有同步副本确认，提供最高的可靠性，确保消息不会丢失（前提是 Kafka 集群的副本配置正确）。
+> >
+> > 2. 启用幂等性生产者（Idempotent Producer）
+> >
+> >    > **幂等性生产者**确保在重试发送的过程中，消息不会被重复写入，即使网络问题导致消息重传.
+> >    >
+> >    > enable.idempotence=true
+> >
+> > 3. 配置重试机制（Retries）
+> >
+> >    > **重试机制**允许生产者在发送失败时自动重试，增加消息成功发送的概率。
+> >    >
+> >    > **注意事项**：
+> >    >
+> >    > - 配置合适的重试次数和间隔，避免过多重试导致性能问题。
+> >    > - 与幂等性生产者结合使用，确保重试过程中消息不会重复。
+> >    >
+> >    > retries=5
+> >    >
+> >    > retry.backoff.ms=100
+> >
+> > 4. 使用事务（Transactions）
+> >
+> >    > **事务**确保一系列消息的原子性提交，要么全部成功，要么全部失败。
+> >    >
+> >    > - 适用场景：
+> >    >   - 需要在多个主题或分区中保证消息的一致性。
+> >    >   - 实现精确一次（Exactly-Once）语义。
+>
+> - **集群(Broker)的配置与优化**
+>
+> > 1. 分区与副本（Partitions & Replicas）
+> >
+> >    > **分区数（Partitions）**：
+> >    >
+> >    > - **作用**：增加并行度，提升吞吐量。
+> >    > - **建议**：根据预期的消费并发度和数据量，合理设置分区数。分区数应大于或等于消费者实例数，以充分利用消费者并行能力。
+> >    >
+> >    > **副本数（Replicas）**：
+> >    >
+> >    > - **作用**：提高数据的可用性和容错性。
+> >    > - **建议**：通常设置副本数为3，确保在一个副本故障时，其他副本可以接管。
+> >
+> > 2. 副本因子（Replication Factor）
+> >
+> >    > **定义**：每个分区拥有的副本数量。
+> >    >
+> >    > **建议**：
+> >    >
+> >    > - **生产环境**：副本因子至少为3，以确保高可用性。
+> >    > - **测试环境**：根据需要，可以设置为较低的值以节省资源。
+> >
+> > 3. 确保 ISR（In-Sync Replicas）数量
+> >
+> >    > **ISR 定义**：与领导副本保持同步的所有副本集合。
+> >    >
+> >    > **监控方法**：
+> >    >
+> >    > - 使用 Kafka 的监控工具（如 Prometheus、Grafana）监控 ISR 状态。
+> >    > - 确保 ISR 数量始终满足预期，避免过多副本落后导致数据不可用。
+> >
+> > 4. 日志保留策略（Log Retention Policies）
+> >
+> >    > **日志保留时间**：
+> >    >
+> >    > - **配置参数**：`log.retention.hours`
+> >    > - **建议**：根据业务需求设置合理的保留时间，确保消息在被消费前不会被删除。
+> >    >
+> >    > **日志保留大小**：
+> >    >
+> >    > - **配置参数**：`log.retention.bytes`
+> >    > - **建议**：结合保留时间设置，确保磁盘空间充足。
+>
+> - **消费者端的配置与优化**
+>
+> > 1. 手动提交偏移量（Manual Offset Commit）
+> >
+> >    > **手动提交偏移量**允许消费者在成功处理消息后，才提交偏移量，确保消息不会在处理前被视为已消费。
+> >    >
+> >    > enable.auto.commit=false
+> >    >
+> >    > **实现步骤**：
+> >    >
+> >    > 1. **拉取消息并处理**。
+> >    > 2. 手动提交偏移量：
+> >    >    - **同步提交**：`consumer.commitSync();`
+> >    >    - **异步提交**：`consumer.commitAsync();`
+> >
+> > 2. 幂等性与事务处理
+> >
+> >    > **幂等性**：确保消费者处理同一条消息多次不会导致数据不一致。
+> >    >
+> >    > - **实现方法**：在业务逻辑中加入去重机制，或在数据库操作中使用唯一约束。
+> >    >
+> >    > **事务处理**：在处理消息时，结合数据库事务，确保数据操作的原子性。
+> >    >
+> >    > > `````java
+> >    > > try {
+> >    > >     connection.setAutoCommit(false);
+> >    > >     // 处理消息
+> >    > >     processRecord(record);
+> >    > >     // 提交数据库事务
+> >    > >     connection.commit();
+> >    > >     // 提交 Kafka 偏移量
+> >    > >     consumer.commitSync();
+> >    > > } catch (Exception e) {
+> >    > >     connection.rollback();
+> >    > >     // 处理异常
+> >    > > };
+> >    > > `````
+> >
+> > 3. 消费者故障恢复
+> >
+> >    > **确保消费者实例的高可用性**：
+> >    >
+> >    > - 部署多个消费者实例，确保其中一个故障时，其他实例能够接管其分区。
+> >    > - 确保消费者组内的消费者数量不超过主题的分区数，以充分利用并行消费能力
+> >    > - 使用自动重启机制（如 Kubernetes 的 liveness 和 readiness probes）确保消费者实例的持续运行。
+> >    >
+> >    > **处理重复消费**：
+> >    >
+> >    > - 即使使用手动提交偏移量，消费者故障后，未提交的偏移量会导致消息被重新消费。
+> >    > - 通过幂等性处理确保消息处理的安全性。
+> >    >
+> >    > **分区再平衡**：
+> >    >
+> >    > - 在消费者组内添加或移除消费者时，Kafka 会自动进行分区再平衡，可能导致消费者短暂的消费中断。
+> >    > - 设计消费者应用程序以处理分区再平衡的情况，避免数据丢失或重复处理。
+

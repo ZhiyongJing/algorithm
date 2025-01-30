@@ -6,7 +6,7 @@ import java.util.List;
  *@Question:  797. All Paths From Source to Target
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
  *@Frequency: 29.14%
- *@Time  Complexity: O(2^N * N)
+ *@Time  Complexity: O(2^N * N), there are 2^(n -1) - 1 path, each path take N step to build path
  *@Space Complexity: O(N)
  */
 /*
@@ -87,20 +87,29 @@ public class LeetCode_797_AllPathsFromSourceToTarget{
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         // 定义回溯方法
-        protected void backtrack(int currNode, List<Integer> path, int target, int[][] graph, List<List<Integer>> results) {
+        protected void backtrack(int currNode, List<Integer> path, int[][] graph, List<List<Integer>> results) {
             // 如果当前节点等于目标节点，将路径添加到结果集中
-            if (currNode == target) {
+            if (currNode == graph.length - 1) {
                 results.add(new ArrayList<Integer>(path));
                 return;
             }
             // 遍历当前节点的邻居节点
-            for (int nextNode : graph[currNode]) {
-                // 在回溯前将选择标记在路径中
-                path.add(nextNode);
-                // 递归调用回溯方法
-                this.backtrack(nextNode, path, target, graph, results);
-                // 移除前一个选择，尝试下一个选择
+//            for (int nextNode : graph[currNode]) {
+//                // 在回溯前将选择标记在路径中
+//                path.add(nextNode);
+//                // 递归调用回溯方法
+//                this.backtrack(nextNode, path,  graph, results);
+//                // 移除前一个选择，尝试下一个选择
+//                path.remove(path.size() - 1);
+//            }
+            //第二种for loop写法
+            for(int i = 0; i < graph[currNode].length; i++){
+                // System.out.println( graph[i][0]+" " + current +" "+ j);
+                path.add(graph[currNode][i]);
+                backtrack(graph[currNode][i], path, graph, results);
                 path.remove(path.size() - 1);
+
+
             }
         }
 
@@ -112,7 +121,7 @@ public class LeetCode_797_AllPathsFromSourceToTarget{
             // 从源节点（节点0）开始回溯
             List<Integer> path = new ArrayList<Integer>();
             path.add(0);
-            backtrack(0, path, target, graph, results);
+            backtrack(0, path, graph, results);
             return results;
         }
 

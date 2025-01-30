@@ -20,6 +20,7 @@ public class LeetCode_1656_DesignAnOrderedStream{
     
 //leetcode submit region begin(Prohibit modification and deletion)
 class OrderedStream {
+    //Solution: when argument has size n
     int ptr;
     String[] res;
 
@@ -39,6 +40,27 @@ class OrderedStream {
 
         return list;
     }
+    //Solution: when no size n
+
+//    private int currentPtr;
+//    private Map<Integer, String> map;
+//
+//    public OrderedStream(int n) {
+//        currentPtr = 1;
+//        map = new HashMap<>();
+//    }
+//
+//    public List<String> insert(int idKey, String value) {
+//        map.put(idKey, value);
+//        List<String> result = new ArrayList<>();
+//        if(idKey > currentPtr){
+//            return result;
+//        }
+//        while(map.containsKey(currentPtr)){
+//            result.add(map.get(currentPtr++));
+//        }
+//        return result;
+//    }
 }
 
 /**

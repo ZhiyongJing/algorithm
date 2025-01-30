@@ -25,6 +25,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_399_EvaluateDivision.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_399_EvaluateDivision.md" />
+              <option name="frontendQuestionId" value="leetcode.com399" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_399_EvaluateDivision.java" />
+              <option name="titleSlug" value="evaluate-division" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_518_CoinChangeIi.java">
           <value>
             <LeetcodeEditor>
@@ -66,6 +77,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_1091_ShortestPathInBinaryMatrix.java" />
               <option name="titleSlug" value="shortest-path-in-binary-matrix" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_117_PopulatingNextRightPointersInEachNodeIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_117_PopulatingNextRightPointersInEachNodeIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com117" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_117_PopulatingNextRightPointersInEachNodeIi.java" />
+              <option name="titleSlug" value="populating-next-right-pointers-in-each-node-ii" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -278,6 +300,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_399_EvaluateDivision.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_399_EvaluateDivision.md" />
+              <option name="frontendQuestionId" value="leetcode.com399" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_399_EvaluateDivision.java" />
+              <option name="titleSlug" value="evaluate-division" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_417_PacificAtlanticWaterFlow.java">
           <value>
             <LeetcodeEditor>
@@ -286,6 +319,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_417_PacificAtlanticWaterFlow.java" />
               <option name="titleSlug" value="pacific-atlantic-water-flow" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_428_SerializeAndDeserializeNAryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_428_SerializeAndDeserializeNAryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com428" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_428_SerializeAndDeserializeNAryTree.java" />
+              <option name="titleSlug" value="serialize-and-deserialize-n-ary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1246,6 +1290,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_297_SerializeAndDeserializeBinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_297_SerializeAndDeserializeBinaryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com297" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_297_SerializeAndDeserializeBinaryTree.java" />
+              <option name="titleSlug" value="serialize-and-deserialize-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_2_AddTwoNumbers.java">
           <value>
             <LeetcodeEditor>
@@ -1359,10 +1414,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_399_EvaluateDivision.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_399_EvaluateDivision.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_399_EvaluateDivision.md" />
               <option name="frontendQuestionId" value="leetcode.com399" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_399_EvaluateDivision.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_399_EvaluateDivision.java" />
               <option name="titleSlug" value="evaluate-division" />
             </LeetcodeEditor>
           </value>
@@ -1436,10 +1491,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_428_SerializeAndDeserializeNAryTree.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_428_SerializeAndDeserializeNAryTree.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_428_SerializeAndDeserializeNAryTree.md" />
               <option name="frontendQuestionId" value="leetcode.com428" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_428_SerializeAndDeserializeNAryTree.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_428_SerializeAndDeserializeNAryTree.java" />
               <option name="titleSlug" value="serialize-and-deserialize-n-ary-tree" />
             </LeetcodeEditor>
           </value>
@@ -4029,6 +4084,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_2423_RemoveLetterToEqualizeFrequency.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_2423_RemoveLetterToEqualizeFrequency.md" />
+              <option name="frontendQuestionId" value="leetcode.com2423" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_2423_RemoveLetterToEqualizeFrequency.java" />
+              <option name="titleSlug" value="remove-letter-to-equalize-frequency" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_242_ValidAnagram.java">
           <value>
             <LeetcodeEditor>
@@ -4312,6 +4378,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/trie/LeetCode_1268_SearchSuggestionsSystem.java" />
               <option name="titleSlug" value="search-suggestions-system" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/trie/LeetCode_14_LongestCommonPrefix.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/trie/doc/content/LeetCode_14_LongestCommonPrefix.md" />
+              <option name="frontendQuestionId" value="leetcode.com14" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/trie/LeetCode_14_LongestCommonPrefix.java" />
+              <option name="titleSlug" value="longest-common-prefix" />
             </LeetcodeEditor>
           </value>
         </entry>

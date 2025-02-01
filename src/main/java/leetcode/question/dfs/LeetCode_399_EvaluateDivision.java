@@ -2,6 +2,8 @@
 package leetcode.question.dfs;
 
 // 导入Java标准库中的所有类，包含集合框架等
+import javafx.util.Pair;
+
 import java.util.*;
 
 /**
@@ -26,7 +28,7 @@ public class LeetCode_399_EvaluateDivision {
          * @param queries   要查询的方程列表
          * @return 查询结果的数组
          */
-        public double[] calcEquation(List<List<String>> equations, double[] values,
+        public double[] calcEquation1(List<List<String>> equations, double[] values,
                                      List<List<String>> queries) {
 
             // 创建一个图的数据结构，使用HashMap表示
@@ -134,6 +136,54 @@ public class LeetCode_399_EvaluateDivision {
 
         //Solution2: bfs
         // 这里可以添加基于BFS的解决方案
+        public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+            Map<String, List<Pair<String, Double>>> graph = new HashMap<>();
+            for (int i = 0; i < equations.size(); i++) {
+                List<String> equation = equations.get(i);
+                double value = values[i];
+                String from = equation.get(0);
+                String to = equation.get(1);
+                graph.putIfAbsent(from, new ArrayList<>());
+                graph.putIfAbsent(to, new ArrayList<>());
+                graph.get(from).add(new Pair<>(to, value));
+                graph.get(to).add(new Pair<>(from, 1.0 / value));
+            }
+
+            double[] res = new double[queries.size()];
+            Arrays.fill(res, -1.0);
+            for (int i = 0; i < queries.size(); i++) {
+                List<String> query = queries.get(i);
+                String from = query.get(0);
+                String to = query.get(1);
+                if (!graph.containsKey(from) || !graph.containsKey(to)) continue;
+                if (from.equals(to)) {
+                    res[i] = 1.0;
+                    continue;
+                }
+                Queue<Pair<String, Double>> queue = new LinkedList<>();
+                queue.add(new Pair<>(from, 1.0));
+                System.out.println(graph);
+                Set<String> visited = new HashSet<>();
+                visited.add(from);
+                while (!queue.isEmpty()) {
+                    Pair<String, Double> pair = queue.poll();
+                    String key = pair.getKey();
+                    double value = pair.getValue();
+                    if(to.equals(key)) {
+                        res[i] = value;
+                        break;
+                    }
+                    for(Pair<String, Double> neighbor : graph.get(key)) {
+                        if (!visited.contains(neighbor.getKey())) {
+                            queue.offer(new Pair<>(neighbor.getKey(), value * neighbor.getValue()));
+                            visited.add(neighbor.getKey());
+                        }
+                    }
+                }
+            }
+            return res;
+        }
+
     }
     //leetcode submit region end(Prohibit modification and deletion)
 

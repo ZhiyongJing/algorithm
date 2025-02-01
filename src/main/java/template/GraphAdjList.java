@@ -137,6 +137,83 @@ public class GraphAdjList {
         return res;
     }
 
+    // 判断是否存在从 source 到 destination 的路径
+    public boolean existingPathBFS(int n, int[][] edges, int source, int destination) {
+        // 如果 edges 为空或者没有边，直接返回 true（即视为存在路径）
+        if (edges == null || edges.length == 0) return true;
+
+        // 用一个 Map 来表示邻接表，key 是节点，value 是与 key 直接相连的节点列表
+        Map<Integer, List<Integer>> adj = new HashMap<>();
+
+        // 遍历 edges 数组，构建邻接表
+        for (int[] edge : edges) {
+            // 对于每条边的第一个节点，添加它的相邻节点
+            adj.computeIfAbsent(edge[0], val -> new ArrayList<>()).add(edge[1]);
+            // 对于每条边的第二个节点，添加它的相邻节点
+            adj.computeIfAbsent(edge[1], val -> new ArrayList<>()).add(edge[0]);
+        }
+
+        // 如果 source 节点不在邻接表中，说明无法到达 destination，直接返回 false
+        if (!adj.containsKey(source)) return false;
+
+        // 使用队列进行广度优先搜索（BFS）
+        Queue<Integer> queue = new LinkedList<>();
+        // 使用 Set 来记录访问过的节点，避免重复访问
+        Set<Integer> visited = new HashSet<>();
+
+        // 将起始节点 source 入队，并标记为已访问
+        queue.offer(source);
+        visited.add(source);
+
+        // 开始 BFS
+        while (queue.size() != 0) {
+            int currentSize = queue.size(); // 当前层的节点数量
+            for (int i = 0; i < currentSize; i++) {
+                int currentNode = queue.poll(); // 取出当前节点
+                if (currentNode == destination) return true;// 如果当前节点是目标节点，返回 true 表示存在路径
+                visited.add(currentNode);// 标记当前节点为已访问
+                for (int child : adj.get(currentNode)) { // 遍历当前节点的所有相邻节点
+                    if (visited.contains(child)) continue;  // 如果相邻节点已经访问过，跳过
+                    // 将未访问的相邻节点加入队列，并标记为已访问
+                    queue.offer(child);
+                    visited.add(child);
+                }
+            }
+        }
+        // 如果 BFS 结束还未找到 destination，返回 false
+        return false;
+    }
+
+    // 判断是否存在从 source 到 destination 的路径
+    public boolean existingPathDFS(int n, int[][] edges, int source, int destination) {
+        // 如果 edges 为空或者没有边，直接返回 true（即视为存在路径）
+        if (edges == null || edges.length == 0) return true;
+
+        // 用一个 Map 来表示邻接表，key 是节点，value 是与 key 直接相连的节点列表
+        Map<Integer, List<Integer>> adj = new HashMap<>();
+
+        // 遍历 edges 数组，构建邻接表
+        for (int[] edge : edges) {
+            // 对于每条边的第一个节点，添加它的相邻节点
+            adj.computeIfAbsent(edge[0], val -> new ArrayList<>()).add(edge[1]);
+            // 对于每条边的第二个节点，添加它的相邻节点
+            adj.computeIfAbsent(edge[1], val -> new ArrayList<>()).add(edge[0]);
+        }
+        Set<Integer> visited = new HashSet<>();
+        return dfs(adj, visited, source, destination);
+
+    }
+    private boolean dfs(Map<Integer, List<Integer>> adj, Set<Integer> visited, int currentNode, int desitination){
+        if(currentNode == desitination) return true;
+        if(!visited.contains(currentNode)){
+            for(int child: adj.get(currentNode)){
+                visited.add(child);
+                return dfs(adj, visited,child, desitination);
+            }
+        }
+        return false;
+    }
+
         public static void main(String... args){
             Integer[][] ini = {
                     {0, 1}, {0, 3}, // Connections from node 0

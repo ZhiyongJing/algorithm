@@ -5,21 +5,21 @@ import java.util.Queue;
 
 /**
  * You are given a 2D grid (m x n), where:
- *
+ * <p>
  * Each cell can have one of two values:
  * 0: A cell that can be passed through.
  * -1: A cell that represents a blockage and cannot be passed through.
  * You can move in 8 possible directions: up, down, left, right, and diagonally.
  * Each move has a cost of 1.
- *
+ * <p>
  * Write a function to determine if it is possible to travel between two given points (start and end) within a given maximum cost (maxCost).
  * The function should return true if such a path exists and false otherwise.
  * arr = {
- *     {0, 0, 0, -1, 0},
- *     {-1, 0, 0, -1, -1},
- *     {0, 0, 0, -1, 0},
- *     {-1, 0, 0, 0, 0},
- *     {0, 0, -1, 0, 0}
+ * {0, 0, 0, -1, 0},
+ * {-1, 0, 0, -1, -1},
+ * {0, 0, 0, -1, 0},
+ * {-1, 0, 0, 0, 0},
+ * {0, 0, -1, 0, 0}
  * };
  * start = [0, 0];
  * end = [4, 4];
@@ -27,121 +27,118 @@ import java.util.Queue;
  */
 public class FindPathInMatrix {
     //Solution1: DFS
-    public  boolean isPathPossibleDFS(int[][] arr, int[] start, int[] end, int maxCost) {
-        int m = arr.length; // 行数
-        int n = arr[0].length; // 列数
+    public static boolean canReachWithDFS(int[][] grid, int[] start, int[] end, int maxCost) {
+        int m = grid.length;
+        int n = grid[0].length;
 
-        // 如果起点或终点被阻塞，直接返回 false
-        if (arr[start[0]][start[1]] == -1 || arr[end[0]][end[1]] == -1) {
+        // 若起点或终点不可达，直接返回 false
+        if (grid[start[0]][start[1]] == -1 || grid[end[0]][end[1]] == -1) {
             return false;
         }
 
-        // 记录访问状态
+        // 创建访问标记
         boolean[][] visited = new boolean[m][n];
-
-        // 通过 DFS 检查是否存在路径
-        return dfs(arr, start[0], start[1], end[0], end[1], visited, maxCost, 0);
+        // 从起点开始 DFS，当前消耗初始为 0
+        return dfs(grid, start[0], start[1], end, maxCost, 0, visited);
     }
 
-    private  boolean dfs(int[][] arr, int x, int y, int destX, int destY, boolean[][] visited, int maxCost, int currentCost) {
-        // 如果已经超过最大允许成本，返回 false
+    private static boolean dfs(int[][] grid, int row, int col, int[] end,
+                               int maxCost, int currentCost, boolean[][] visited) {
+        // 如果超出 maxCost，剪枝
         if (currentCost > maxCost) {
             return false;
         }
-
-        // 如果到达目标点，返回 true
-        if (x == destX && y == destY) {
+        // 如果到达终点，且当前 cost <= maxCost
+        if (row == end[0] && col == end[1]) {
             return true;
         }
 
-        // 标记当前点为已访问
-        visited[x][y] = true;
+        visited[row][col] = true;
 
-        // 定义 8 个方向（包括对角线移动）
-        int[][] directions = {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
-
-        // 遍历 8 个方向
-        for (int[] dir : directions) {
-            int newX = x + dir[0];
-            int newY = y + dir[1];
-
-            // 检查新点是否在边界内、未访问且可通过
-            if (newX >= 0 && newY >= 0 && newX < arr.length && newY < arr[0].length &&
-                    arr[newX][newY] == 0 && !visited[newX][newY]) {
-                // 递归调用 DFS，如果找到路径则返回 true
-                if (dfs(arr, newX, newY, destX, destY, visited, maxCost, currentCost + 1)) {
+        // 尝试 8 个方向
+        for (int[] dir : DIRECTIONS) {
+            int newRow = row + dir[0];
+            int newCol = col + dir[1];
+            // 边界判断、阻塞判断、访问判断
+            if (isValid(grid, newRow, newCol) && !visited[newRow][newCol]) {
+                // 递归调用，步数 +1
+                if (dfs(grid, newRow, newCol, end, maxCost, currentCost + 1, visited)) {
                     return true;
                 }
             }
         }
 
-        // 回溯时取消访问标记
-        visited[x][y] = false;
-
-        // 如果所有方向都无法到达目标点，返回 false
+        // 回溯，标记为未访问，便于其他路径尝试
+        visited[row][col] = false;
         return false;
     }
 
-    //Solution2:BFS
-    public static boolean isPathPossibleBFS(int[][] arr, int[] start, int[] end, int maxCost) {
-        int m = arr.length;
-        int n = arr[0].length;
+    private static boolean isValid(int[][] grid, int r, int c) {
+        return r >= 0 && r < grid.length && c >= 0 && c < grid[0].length && grid[r][c] != -1;
+    }
 
-        // 如果起点或终点被阻塞，直接返回 false
-        if (arr[start[0]][start[1]] == -1 || arr[end[0]][end[1]] == -1) {
+    //Solution2:BFS
+    // 8 个方向移动：上、下、左、右以及 4 个对角线
+    private static final int[][] DIRECTIONS = {
+            {-1, 0}, {1, 0}, {0, -1}, {0, 1},
+            {-1, -1}, {-1, 1}, {1, -1}, {1, 1}
+    };
+
+    public static boolean canReachWithBFS(int[][] grid, int[] start, int[] end, int maxCost) {
+        // 行、列数
+        int m = grid.length;
+        int n = grid[0].length;
+
+        // 边界条件判断
+        if (grid[start[0]][start[1]] == -1 || grid[end[0]][end[1]] == -1) {
             return false;
         }
 
-        // 队列存储当前点的坐标和累计的移动成本
+        // 创建一个队列，用于存储 (row, col, distance)
         Queue<int[]> queue = new LinkedList<>();
-        boolean[][] visited = new boolean[m][n];
-        queue.offer(new int[]{start[0], start[1], 0}); // x, y, cost
-        visited[start[0]][start[1]] = true;
+        queue.offer(new int[]{start[0], start[1], 0});
 
-        // 定义 8 个方向（包括对角线移动）
-        int[][] directions = {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
+        // 创建一个 visited 数组，防止重复访问
+        boolean[][] visited = new boolean[m][n];
+        visited[start[0]][start[1]] = true;
 
         while (!queue.isEmpty()) {
             int[] current = queue.poll();
-            int x = current[0];
-            int y = current[1];
-            int cost = current[2];
+            int curRow = current[0];
+            int curCol = current[1];
+            int curDist = current[2];
 
-            // 如果达到目标点且在成本限制内，返回 true
-            if (x == end[0] && y == end[1]) {
+            // 如果已经到达终点，并且距离 <= maxCost
+            if (curRow == end[0] && curCol == end[1] && curDist <= maxCost) {
                 return true;
             }
 
+            // 如果距离已经超过 maxCost，就无需再继续
+            if (curDist >= maxCost) {
+                continue;
+            }
+
             // 遍历 8 个方向
-            for (int[] dir : directions) {
-                int newX = x + dir[0];
-                int newY = y + dir[1];
+            for (int[] dir : DIRECTIONS) {
+                int newRow = curRow + dir[0];
+                int newCol = curCol + dir[1];
 
-                // 检查新点是否在边界内、未访问且可通过
-                if (newX >= 0 && newY >= 0 && newX < m && newY < n &&
-                        arr[newX][newY] == 0 && !visited[newX][newY]) {
-                    int newCost = cost + 1;
-
-                    // 如果新路径的成本超过限制，不添加到队列
-                    if (newCost > maxCost) {
-                        continue;
-                    }
-
-                    // 将新的点加入队列
-                    queue.offer(new int[]{newX, newY, newCost});
-                    visited[newX][newY] = true;
+                // 判断新坐标是否在有效范围内，且不是 -1，且未访问
+                if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n
+                        && grid[newRow][newCol] != -1
+                        && !visited[newRow][newCol]) {
+                    visited[newRow][newCol] = true;
+                    queue.offer(new int[]{newRow, newCol, curDist + 1});
                 }
             }
         }
 
-        // 如果无法到达目标点，返回 false
+        // BFS 结束后仍未找到符合要求的路径
         return false;
     }
 
 
-
     public static void main(String[] args) {
-        FindPathInMatrix s = new FindPathInMatrix();
         int[][] arr = {
                 {0, 0, 0, -1, 0},
                 {-1, 0, 0, -1, -1},
@@ -149,10 +146,15 @@ public class FindPathInMatrix {
                 {-1, 0, 0, 0, 0},
                 {0, 0, -1, 0, 0}
         };
+        int[] start = {0, 0};
+        int[] end = {4, 4};
+        int maxCost = 6;
 
-        // 测试用例
-        System.out.println(s.isPathPossibleDFS(arr, new int[]{0, 0}, new int[]{4, 4}, 6) ? "Yes" : "No"); // 输出: Yes
-        System.out.println(s.isPathPossibleDFS(arr, new int[]{0, 0}, new int[]{4, 4}, 4) ? "Yes" : "No"); // 输出: No
+        boolean canReach = canReachWithDFS(arr, start, end, maxCost);
+        System.out.println("DFS: " + canReach);
+
+        boolean canReach1 = canReachWithBFS(arr, start, end, maxCost);
+        System.out.println("BFS: " + canReach1);
     }
 
 }

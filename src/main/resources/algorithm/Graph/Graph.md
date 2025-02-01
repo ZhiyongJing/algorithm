@@ -423,7 +423,7 @@ BFS 通常借助队列来实现，代码如下所示。队列具有“先入先�
             }
         }
         // 返回顶点遍历序列
-        return res;
+        return res; //[0, 1, 3, 2, 4, 6, 5, 7, 8]
     }
 
     /* 广度优先遍历 */
@@ -454,7 +454,7 @@ BFS 通常借助队列来实现，代码如下所示。队列具有“先入先�
             res.add(currentLevel);
         }
         // 返回顶点遍历序列
-        return res;
+        return res;//[[0], [1, 3], [2, 4, 6], [5, 7], [8]]
     }
 ```
 
@@ -543,10 +543,14 @@ Dijkstra（迪杰斯特拉）算法解决的问题是：
 
 初始时，S中只有起点s；U中是除s之外的顶点，并且U中顶点的路径是"起点s到该顶点的路径"。然后，从U中找出路径最短的顶点，并将其加入到S中；接着，更新U中的顶点和顶点对应的路径。 然后，再从U中找出路径最短的顶点，并将其加入到S中；接着，更新U中的顶点和顶点对应的路径。 ... 重复该操作，直到遍历完所有顶点。
 
+图中b标注应该是b(13)
+
+
+
 ![img](Graph.assets/02.jpg)
 
 ```java
-package interview.company.bloomberg;
+package template;
 
 import javafx.util.Pair;
 
@@ -567,21 +571,21 @@ import java.util.PriorityQueue;
  *
  * 示例：
  * 输入：
- *   graph = [
- *      {0, 12, 0, 0, 0, 14, 16},
- *      {12, 0, 10, 0, 0, 0, 7},
- *      {0, 10, 0, 3, 5, 0, 6},
- *      {0, 0, 3, 0, 4, 0, 0},
- *      {0, 0, 5, 4, 0, 8, 2},
- *      {14, 0, 0, 0, 8, 0, 9},
- *      {16, 7, 6, 0, 2, 9, 0}
- *   ]
+ *   graph = graph = {
+                {0, 12, 0, 0, 0, 16, 14},//a
+                {12, 0, 10, 0, 0, 7, 0},//b
+                {0, 10, 0, 3, 5, 6, 0},//c
+                {0, 0, 3, 0, 4, 0, 0},//d
+                {0, 0, 5, 4, 0, 2, 8},//e
+                {16, 7, 6, 0, 2, 0, 9},//f
+                {14, 0, 0, 0, 8, 9, 0}//g
+        };
  *   source = 3
  * 输出：
- *   dist = [22, 13, 3, 0, 4, 12, 6]
+ *   dist = [22, 13, 3, 0, 4, 6, 12]
  *   并打印路径更新日志：
  *   current step 0: a: INF ,b: INF ,c: 3 ,d: 0 ,e: 4 ,f: INF ,g: INF ,
- *   current step 1: a: INF ,b: 13 ,c: 3 ,d: 0 ,e: 4 ,f: INF ,g: 9 ,
+ *   current step 1: a: INF ,b: 13 ,c: 3 ,d: 0 ,e: 4 ,f: INF ,g: INF ,
  *   ...
  */
 
@@ -614,17 +618,17 @@ import java.util.PriorityQueue;
  * 第一步：
  * - 选择 `c (3)`，更新 `c` 的邻居：
  * ```
- *  d: 0, a: INF, b: 13, c: 3, e: 4, f: INF, g: 9
+ *  d: 0, a: INF, b: 13, c: 3, e: 4, f: 9, g: INF
  * ```
  * 第二步：
  * - 选择 `e (4)`，更新 `e` 的邻居：
  * ```
- *  d: 0, a: INF, b: 13, c: 3, e: 4, f: 12, g: 6
+ *  d: 0, a: INF, b: 13, c: 3, e: 4, f: 6, g: 12
  * ```
  * ...
  * 直到所有顶点的最短路径更新完毕，最终 `dist[]`：
  * ```
- *  d: 0, a: 22, b: 13, c: 3, e: 4, f: 12, g: 6
+ *  d: 0, a: 22, b: 13, c: 3, e: 4, f: 6, g: 12
  * ```
  *
  * **方法 2：使用优先队列优化（O((V+E) log V)）**
@@ -795,13 +799,13 @@ public class Dijkstra {
     public static void main(String[] args) {
         // 图的邻接矩阵表示，0 表示没有边
         int[][] graph = {
-                {0, 12, 0, 0, 0, 14, 16},
-                {12, 0, 10, 0, 0, 0, 7},
-                {0, 10, 0, 3, 5, 0, 6},
-                {0, 0, 3, 0, 4, 0, 0},
-                {0, 0, 5, 4, 0, 8, 2},
-                {14, 0, 0, 0, 8, 0, 9},
-                {16, 7, 6, 0, 2, 9, 0}
+                {0, 12, 0, 0, 0, 16, 14},//a
+                {12, 0, 10, 0, 0, 7, 0},//b
+                {0, 10, 0, 3, 5, 6, 0},//c
+                {0, 0, 3, 0, 4, 0, 0},//d
+                {0, 0, 5, 4, 0, 2, 8},//e
+                {16, 7, 6, 0, 2, 0, 9},//f
+                {14, 0, 0, 0, 8, 9, 0}//g
         };
 
         int source = 3; // 以 'd' 作为源点（索引 3）
@@ -815,7 +819,6 @@ public class Dijkstra {
         dijkstra2(graph, source);
     }
 }
-
 
 ```
 
@@ -844,4 +847,93 @@ public class Dijkstra {
 >    * 方法 2（邻接表 + 优先队列 `PriorityQueue`）
 >
 >      > `O(V + E)`需要存储 `V` 个顶点的 `dist[]`，以及 `E` 条边的邻接表。
+
+# 4. 图的搜索
+
+## 4.1 判断路径是否存在
+
+`````java
+
+//Leetcode 1971
+// 判断是否存在从 source 到 destination 的路径
+public boolean existingPathBFS(int n, int[][] edges, int source, int destination) {
+    // 如果 edges 为空或者没有边，直接返回 true（即视为存在路径）
+    if (edges == null || edges.length == 0) return true;
+
+    // 用一个 Map 来表示邻接表，key 是节点，value 是与 key 直接相连的节点列表
+    Map<Integer, List<Integer>> adj = new HashMap<>();
+
+    // 遍历 edges 数组，构建邻接表
+    for (int[] edge : edges) {
+        // 对于每条边的第一个节点，添加它的相邻节点
+        adj.computeIfAbsent(edge[0], val -> new ArrayList<>()).add(edge[1]);
+        // 对于每条边的第二个节点，添加它的相邻节点
+        adj.computeIfAbsent(edge[1], val -> new ArrayList<>()).add(edge[0]);
+    }
+
+    // 如果 source 节点不在邻接表中，说明无法到达 destination，直接返回 false
+    if (!adj.containsKey(source)) return false;
+
+    // 使用队列进行广度优先搜索（BFS）
+    Queue<Integer> queue = new LinkedList<>();
+    // 使用 Set 来记录访问过的节点，避免重复访问
+    Set<Integer> visited = new HashSet<>();
+
+    // 将起始节点 source 入队，并标记为已访问
+    queue.offer(source);
+    visited.add(source);
+
+    // 开始 BFS
+    while (queue.size() != 0) {
+        int currentSize = queue.size(); // 当前层的节点数量
+        for (int i = 0; i < currentSize; i++) {
+            int currentNode = queue.poll(); // 取出当前节点
+            if (currentNode == destination) return true;// 如果当前节点是目标节点，返回 true 表示存在路径
+            visited.add(currentNode);// 标记当前节点为已访问
+            for (int child : adj.get(currentNode)) { // 遍历当前节点的所有相邻节点
+                if (visited.contains(child)) continue;  // 如果相邻节点已经访问过，跳过
+                // 将未访问的相邻节点加入队列，并标记为已访问
+                queue.offer(child);
+                visited.add(child);
+            }
+        }
+    }
+    // 如果 BFS 结束还未找到 destination，返回 false
+    return false;
+}
+
+public boolean existingPathDFS(int n, int[][] edges, int source, int destination) {
+        // 如果 edges 为空或者没有边，直接返回 true（即视为存在路径）
+        if (edges == null || edges.length == 0) return true;
+
+        // 用一个 Map 来表示邻接表，key 是节点，value 是与 key 直接相连的节点列表
+        Map<Integer, List<Integer>> adj = new HashMap<>();
+
+        // 遍历 edges 数组，构建邻接表
+        for (int[] edge : edges) {
+            // 对于每条边的第一个节点，添加它的相邻节点
+            adj.computeIfAbsent(edge[0], val -> new ArrayList<>()).add(edge[1]);
+            // 对于每条边的第二个节点，添加它的相邻节点
+            adj.computeIfAbsent(edge[1], val -> new ArrayList<>()).add(edge[0]);
+        }
+        Set<Integer> visited = new HashSet<>();
+        return dfs(adj, visited, source, destination);
+
+    }
+private boolean dfs(
+  Map<Integer, List<Integer>> adj, Set<Integer> visited, int currentNode, int desitination){
+        if(currentNode == desitination) return true;
+        if(!visited.contains(currentNode)){
+            for(int child: adj.get(currentNode)){
+                visited.add(child);
+                return dfs(adj, visited,child, desitination);
+            }
+        }
+        return false;
+    }
+    
+
+`````
+
+
 

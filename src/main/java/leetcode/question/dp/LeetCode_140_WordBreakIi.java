@@ -5,8 +5,12 @@ import java.util.*;
  *@Question:  140. Word Break II
  *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]
  *@Frequency: 66.6%
- *@Time  Complexity: O()
- *@Space Complexity: O()
+ *@Time  Complexity: O(N * 2^N), N is length of s. While memoization avoids redundant computations,
+ * it does not change the overall number of subproblems that need to be solved. In the worst case,
+ * there are still unique 2^n possible substrings that need to be explored,
+ * leading to an exponential time complexity. For each subproblem, O(n) work is performed,
+ * so the overall complexity is O(n⋅2^n)
+ *@Space Complexity: O(N * 2^N)
  */
 
 /**

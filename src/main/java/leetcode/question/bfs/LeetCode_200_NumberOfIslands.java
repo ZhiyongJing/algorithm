@@ -191,9 +191,9 @@ public class LeetCode_200_NumberOfIslands {
                         while (!neighbors.isEmpty()) {
                             // 从队列移除一个节点
                             int id = neighbors.remove();
-                            // row为该节点在网格中的行下标
+                            // row为该节点在网格中的行index
                             int row = id / nc;
-                            // col为该节点在网格中的列下标
+                            // col为该节点在网格中的列index
                             int col = id % nc;
 
                             // 检查上方是否是陆地('1')

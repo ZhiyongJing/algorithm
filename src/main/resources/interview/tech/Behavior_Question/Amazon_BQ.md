@@ -22,8 +22,6 @@
 
 ### 2. BQ questions
 
->  
-
 #### 2.1 **Tell me about a time you failed**
 
 - This aligns with the "Learn and Be Curious" principle. Amazon encourages employees to take risks and learn from failures.

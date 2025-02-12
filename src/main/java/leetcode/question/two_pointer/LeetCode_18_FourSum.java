@@ -96,14 +96,30 @@ public class LeetCode_18_FourSum {
             List<List<Integer>> res = new ArrayList<>();
             int lo = start, hi = nums.length - 1;
 
+//            while (lo < hi) {
+//                int currSum = nums[lo] + nums[hi];
+//                if (currSum < target || (lo > start && nums[lo] == nums[lo - 1])) {
+//                    ++lo;
+//                } else if (currSum > target || (hi < nums.length - 1 && nums[hi] == nums[hi + 1])) {
+//                    --hi;
+//                } else {
+//                    res.add(Arrays.asList(nums[lo++], nums[hi--]));
+//                     while (lo < hi && nums[lo] == nums[lo - 1]) {
+//                         ++lo;
+//                     }
+//                }
+//            }
             while (lo < hi) {
                 int currSum = nums[lo] + nums[hi];
-                if (currSum < target || (lo > start && nums[lo] == nums[lo - 1])) {
+                if (currSum < target ) {
                     ++lo;
-                } else if (currSum > target || (hi < nums.length - 1 && nums[hi] == nums[hi + 1])) {
+                } else if (currSum > target) {
                     --hi;
                 } else {
                     res.add(Arrays.asList(nums[lo++], nums[hi--]));
+                    while (lo < hi && nums[lo] == nums[lo - 1]) {
+                        ++lo;
+                    }
                 }
             }
 
@@ -115,10 +131,26 @@ public class LeetCode_18_FourSum {
     public static void main(String[] args) {
         Solution solution = new LeetCode_18_FourSum().new Solution();
         // TO TEST
-        int[] nums = {1, 0, -1, 0, -2, 2};
-        int target = 0;
-        List<List<Integer>> result = solution.fourSum(nums, target);
-        System.out.println(result);
+//        int[] nums = {1, 0, -1, 0, -2, 2};
+//        int target = 0;
+//        List<List<Integer>> result = solution.fourSum(nums, target);
+//        System.out.println(result);
+        int[] nums1 = new int[]{2, 4, 5 , 7};
+        Arrays.sort(nums1);
+        int target1 = 9;
+        List<List<Integer>> result1 = solution.kSum(nums1, target1, 0, 2);
+        System.out.println(result1);
+
+//        int[] nums2 = new int[]{-1, 0, 1, 2, -1, -4};
+//        Arrays.sort(nums2);
+//        int target2 = 0;
+//        List<List<Integer>> result2 = solution.kSum(nums2, target2, 0, 3);
+//        System.out.println(result2);
+
+
+
+
+
     }
 }
 

@@ -234,7 +234,7 @@ public class Dijkstra {
             }
 
             // 输出当前步骤的最短路径信息
-            System.out.print("current step " + minHeap.size() + ": ");
+            System.out.print("current minHeap " + minHeap + ": ");
             for (int i = 0; i < dist.length; i++) {
                 System.out.print((char) (i + 'a') + ": " + dist[i] + " ,");
             }

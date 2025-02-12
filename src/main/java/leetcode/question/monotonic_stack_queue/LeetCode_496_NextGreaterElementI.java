@@ -70,6 +70,8 @@ public class LeetCode_496_NextGreaterElementI{
             while (!stack.empty()) {
                 map.put(stack.pop(), -1); // 将栈中元素弹出，并记录其下一个更大元素为 -1
             }
+            System.out.println(map);
+
 
             int[] res = new int[nums1.length]; // 创建结果数组
             // 遍历 nums1 数组，根据哈希表中的记录填充结果数组

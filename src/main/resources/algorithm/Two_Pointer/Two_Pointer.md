@@ -235,26 +235,39 @@
 >
 > ```java
 > //算法模版
-> public void find (int[] list) {
+> public List<List<Integer>> find (int[] list, int target) {
+>   // 1. 数组排序
+>   Arrays.sort(nums);
+>   List<List<Integer>> result = new ArrayList<>();
 >   var left = 0;
->   var right = list.length - 1;
->
->   //遍历数组
+>   var right = list.size() - 1;
+> 
+>   // 2. 遍历数组
 >   while (left < right) {
->     left++;
->     // 一些条件判断 和处理
->     ... ...
->     right--;
+>     if(大于目标值){
+>       right--;
+>     }
+>     else if(小于目标值){
+>       left++;
+>     }
+>     else{ //等于目标值
+>       //3. 添加到结果，继续找下一对
+>       result.add(Arrarys.asList(list[left++], list[right++]));
+>       //4. 跳过重复值
+>       while(left < right && list[left] == list[left - 1]){
+>         left++;
+>       }
+>     }
 >   }
 > }
->
+> 
 > //算法应用，Two Sum II - Input Array Is Sorted
 > public int[] twoSum(int[] numbers, int target) {
 >     int low = 0;
 >     int high = numbers.length - 1;
 >     while (low < high) {
 >         int sum = numbers[low] + numbers[high];
->
+> 
 >         if (sum == target) {
 >             return new int[]{low + 1, high + 1};
 >         } else if (sum < target) {
@@ -266,7 +279,7 @@
 >     // In case there is no solution, return {-1, -1}.
 >     return new int[]{-1, -1};
 > }
->
+> 
 > ```
 
 ### 3.1.3 背向双指针， 即马拉车算法(Manacher)

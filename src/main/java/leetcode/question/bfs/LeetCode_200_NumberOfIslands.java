@@ -102,16 +102,22 @@ public class LeetCode_200_NumberOfIslands {
                 return;
             }
 
-            // 将当前访问到的陆地标记为'0'，表示已访问
-            grid[r][c] = '0';
-            // 递归向上方搜索
-            dfs(grid, r - 1, c);
-            // 递归向下方搜索
-            dfs(grid, r + 1, c);
-            // 递归向左方搜索
-            dfs(grid, r, c - 1);
-            // 递归向右方搜索
-            dfs(grid, r, c + 1);
+//            // 将当前访问到的陆地标记为'0'，表示已访问
+//            grid[r][c] = '0';
+//            // 递归向上方搜索
+//            dfs(grid, r - 1, c);
+//            // 递归向下方搜索
+//            dfs(grid, r + 1, c);
+//            // 递归向左方搜索
+//            dfs(grid, r, c - 1);
+//            // 递归向右方搜索
+//            dfs(grid, r, c + 1);
+            int[][] direction = {{1, 0}, {0, -1}, {-1, 0}, {0, 1}};
+
+            for(int[] dir: direction){
+                grid[r][c] = '0';
+                dfs(grid, r+dir[0], c+dir[1]);
+            }
         }
 
         /**

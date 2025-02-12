@@ -3,6 +3,7 @@ package leetcode.question.bfs;
 import javafx.util.Pair;
 
 import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -55,7 +56,7 @@ public class LeetCode_994_RottingOranges{
             for (int r = 0; r < ROWS; ++r) {
                 for (int c = 0; c < COLS; ++c) {
                     if (grid[r][c] == 2) // 如果当前位置的橘子已经腐烂
-                        queue.offer(new Pair(r, c)); // 将该坐标对加入队列
+                        queue.offer(new Pair<>(r, c)); // 将该坐标对加入队列
                     else if (grid[r][c] == 1) // 如果当前位置的橘子是新鲜的
                         freshOranges++; // 新鲜橘子数量加一
                 }
@@ -102,6 +103,52 @@ public class LeetCode_994_RottingOranges{
             // return elapsed minutes if no fresh orange left
             return freshOranges == 0 ? minutesElapsed : -1; // 如果没有新鲜橘子剩余，返回经过的分钟数；否则返回 -1
         }
+
+        //way2: level travel
+        public int orangesRotting2(int[][] grid) {
+
+            Queue<Pair<Integer, Integer>> graph = new LinkedList<>();
+            int freashCount = 0;
+            int nRow = grid.length;
+            int nCol = grid[0].length;
+
+            for(int row = 0; row < nRow; row++){
+                for(int col = 0; col < nCol; col++){
+                    if(grid[row][col] == 1) freashCount++;
+                    if(grid[row][col] == 2){
+                        graph.offer(new Pair<>(row, col));
+                    }
+                }
+
+
+            }
+            if(freashCount == 0) return 0;
+
+            System.out.println(freashCount);
+            int[][] dirs = {{1, 0}, {0, -1}, {-1, 0}, {0, 1}};
+            int minumtes = 0;
+            while(graph.size() != 0){
+                int currentSize = graph.size();
+                for(int i = 0; i < currentSize; i++){
+                    Pair<Integer, Integer> currentNode = graph.poll();
+
+                    for(int[] dir: dirs){
+                        int neighborRow = currentNode.getKey() + dir[0];
+                        int neighborCol = currentNode.getValue() + dir[1];
+                        if(neighborRow >= 0 && neighborRow < nRow && neighborCol >=0 && neighborCol < nCol){
+                            if(grid[neighborRow][neighborCol] == 1){
+                                grid[neighborRow][neighborCol] = 2;
+                                freashCount--;
+                                graph.offer(new Pair<>(neighborRow, neighborCol));
+                            }
+
+                        }
+                    }
+                }
+                minumtes++;
+            }
+            return freashCount == 0 ? minumtes -1: -1;
+        }
     }
     // leetcode submit region end(Prohibit modification and deletion)
 
@@ -112,8 +159,8 @@ public class LeetCode_994_RottingOranges{
         int[][] grid1 = {{2,1,1},{1,1,0},{0,1,1}}; // 定义第一个网格
         System.out.println(solution.orangesRotting(grid1)); // 打印输出结果
         // 测试用例2
-        int[][] grid2 = {{2,1,1},{0,1,1},{1,0,1}}; // 定义第二个网格
-        System.out.println(solution.orangesRotting(grid2)); // 打印输出结果
+//        int[][] grid2 = {{2,1,1},{0,1,1},{1,0,1}}; // 定义第二个网格
+//        System.out.println(solution.orangesRotting(grid2)); // 打印输出结果
     }
 }
 

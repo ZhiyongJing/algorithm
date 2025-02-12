@@ -1,6 +1,8 @@
 package leetcode.question.map_set;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -45,11 +47,11 @@ public class LeetCode_1_TwoSum{
             // 遍历数组
             for (int i = 0; i < nums.length; i++) {
                 // 计算当前元素的补数
-                int complement = target - nums[i];
+                int rest = target - nums[i];
 
                 // 如果补数在哈希表中存在，返回补数的索引和当前元素的索引
-                if (map.containsKey(complement)) {
-                    return new int[] { map.get(complement), i };
+                if (map.containsKey(rest)) {
+                    return new int[] { map.get(rest), i };
                 }
 
                 // 将当前元素及其索引存入哈希表
@@ -57,6 +59,36 @@ public class LeetCode_1_TwoSum{
             }
             // 如果没有找到满足条件的两个数，则返回 null
             return null;
+        }
+        /**
+         * if input contians dup element,
+         */
+        public List<int[]> twoSum2(int[] nums, int target) {
+            // 创建一个哈希表来存储数组值及其索引
+            Map<Integer, List<Integer>> map = new HashMap<>();
+            List<int []> result = new ArrayList<>();
+
+            // 遍历数组
+            for (int i = 0; i < nums.length; i++) {
+                // 计算当前元素的补数
+                int rest = target - nums[i];
+
+                // 如果补数在哈希表中存在，返回补数的索引和当前元素的索引
+                if (map.containsKey(rest)) {
+                    for(int index: map.get(rest)){
+                        result.add(new int[]{index, i});
+                    }
+                }
+                if(!map.containsKey(nums[i])){
+                    map.put(nums[i], new ArrayList<>());
+                }
+
+
+                // 将当前元素及其索引存入哈希表
+                map.get(nums[i]).add(i);
+            }
+            // 如果没有找到满足条件的两个数，则返回 null
+            return result;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)
@@ -77,6 +109,13 @@ public class LeetCode_1_TwoSum{
             System.out.println("索引: " + result[0] + ", " + result[1]);
         } else {
             System.out.println("没有找到满足条件的两个数。");
+
+        }
+        int[] nums2 = {3, 3, 4, 2, 5, 1, 6};
+        List<int[]> res = new ArrayList<>();
+        res= solution.twoSum2(nums2, 7);
+        for( int[] pair: res){
+            System.out.println(pair[0] +" "+ pair[1]);
         }
     }
 }

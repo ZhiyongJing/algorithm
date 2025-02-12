@@ -1,8 +1,6 @@
 package leetcode.question.heap;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 /**
  *@Question:  253. Meeting Rooms II
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
@@ -42,8 +40,8 @@ public class LeetCode_253_MeetingRoomsIi {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        // 方法：最小堆
-        public int minMeetingRooms(int[][] intervals) {
+        // 方法1：最小堆
+        public int minMeetingRooms1(int[][] intervals) {
 
             // 检查基本情况。如果没有会议，返回 0
             if (intervals.length == 0) {
@@ -91,6 +89,57 @@ public class LeetCode_253_MeetingRoomsIi {
 
             // 堆的大小告诉我们需要多少个房间来容纳所有的会议。
             return allocator.size();
+        }
+
+        //方法2: sweep LINE
+        // 定义一个内部类 Node，用于表示时间点的事件
+        private class Node {
+            public int time; // 事件发生的时间点
+            public int flag; // 标志位，1 表示飞机起飞，-1 表示飞机降落
+
+            // 构造函数，初始化时间和标志位
+            public Node(int time, int flag) {
+                this.time = time;
+                this.flag = flag;
+            }
+        }
+        public int minMeetingRooms(int[][] intervals) {
+            int count = 0; // 记录当前空中的飞机数量
+            List<Node> list = new ArrayList<Node>(); // 存储所有起飞和降落的时间事件
+
+            // 遍历所有飞机的起飞和降落时间
+            for(int[] interval: intervals) {
+                // 将起飞时间作为一个事件，flag = 1
+                list.add(new Node(interval[0], 1));
+                // 将降落时间作为一个事件，flag = -1
+                list.add(new Node(interval[1], -1));
+            }
+
+            // 对所有时间点进行排序：
+            // 1. 先按时间从小到大排序
+            // 2. 如果时间相同，则按照 flag 升序排序（-1 先于 1），保证同一时刻先降落再起飞
+            Collections.sort(list, (a, b) -> a.time != b.time ? a.time - b.time : a.flag - b.flag);
+
+            int maxplane = 0; // 记录历史最大同时在空中的飞机数
+
+            // 遍历所有事件
+            for(int i = 0; i < list.size(); i++) {
+                Node node = list.get(i);
+
+                // 如果是起飞事件，空中的飞机数 +1
+                if(node.flag == 1) {
+                    count++;
+                }
+                // 如果是降落事件，空中的飞机数 -1
+                else {
+                    count--;
+                }
+
+                // 更新最大同时在空中的飞机数
+                maxplane = Math.max(maxplane, count);
+            }
+
+            return maxplane;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

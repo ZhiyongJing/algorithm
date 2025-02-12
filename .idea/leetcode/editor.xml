@@ -25,6 +25,39 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_15_ThreeSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_15_ThreeSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com15" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_15_ThreeSum.java" />
+              <option name="titleSlug" value="3sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_16_ThreeSumClosest.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_16_ThreeSumClosest.md" />
+              <option name="frontendQuestionId" value="leetcode.com16" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_16_ThreeSumClosest.java" />
+              <option name="titleSlug" value="3sum-closest" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_347_TopKFrequentElements.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_347_TopKFrequentElements.md" />
+              <option name="frontendQuestionId" value="leetcode.com347" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_347_TopKFrequentElements.java" />
+              <option name="titleSlug" value="top-k-frequent-elements" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_399_EvaluateDivision.java">
           <value>
             <LeetcodeEditor>
@@ -729,6 +762,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_57_InsertInterval.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_57_InsertInterval.md" />
+              <option name="frontendQuestionId" value="leetcode.com57" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_57_InsertInterval.java" />
+              <option name="titleSlug" value="insert-interval" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_611_ValidTriangleNumber.java">
           <value>
             <LeetcodeEditor>
@@ -1136,6 +1180,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1823_FindTheWinnerOfTheCircularGame.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_1823_FindTheWinnerOfTheCircularGame.md" />
+              <option name="frontendQuestionId" value="leetcode.com1823" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1823_FindTheWinnerOfTheCircularGame.java" />
+              <option name="titleSlug" value="find-the-winner-of-the-circular-game" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_199_BinaryTreeRightSideView.java">
           <value>
             <LeetcodeEditor>
@@ -1199,6 +1254,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_21_MergeTwoSortedLists.java" />
               <option name="titleSlug" value="merge-two-sorted-lists" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_222_CountCompleteTreeNodes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_222_CountCompleteTreeNodes.md" />
+              <option name="frontendQuestionId" value="leetcode.com222" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_222_CountCompleteTreeNodes.java" />
+              <option name="titleSlug" value="count-complete-tree-nodes" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -2896,13 +2962,24 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_347_TopKFrequentElements.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_347_TopKFrequentElements.md" />
+              <option name="frontendQuestionId" value="leetcode.com347" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_347_TopKFrequentElements.java" />
+              <option name="titleSlug" value="top-k-frequent-elements" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_347_TopKquestionElements.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_347_TopKFrequentElements.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_347_TopKFrequentElements.md" />
               <option name="frontendQuestionId" value="leetcode.com347" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_347_TopKFrequentElements.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_347_TopKFrequentElements.java" />
               <option name="titleSlug" value="top-k-frequent-elements" />
             </LeetcodeEditor>
           </value>
@@ -3322,6 +3399,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1656_DesignAnOrderedStream.java" />
               <option name="titleSlug" value="design-an-ordered-stream" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1679_MaxNumberOfKSumPairs.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_1679_MaxNumberOfKSumPairs.md" />
+              <option name="frontendQuestionId" value="leetcode.com1679" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1679_MaxNumberOfKSumPairs.java" />
+              <option name="titleSlug" value="max-number-of-k-sum-pairs" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4051,6 +4139,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1583_CountUnhappyFriends.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_1583_CountUnhappyFriends.md" />
+              <option name="frontendQuestionId" value="leetcode.com1583" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1583_CountUnhappyFriends.java" />
+              <option name="titleSlug" value="count-unhappy-friends" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_168_ExcelSheetColumnTitle.java">
           <value>
             <LeetcodeEditor>
@@ -4136,6 +4235,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_287_FindTheDuplicateNumber.java" />
               <option name="titleSlug" value="find-the-duplicate-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_349_IntersectionOfTwoArrays.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_349_IntersectionOfTwoArrays.md" />
+              <option name="frontendQuestionId" value="leetcode.com349" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_349_IntersectionOfTwoArrays.java" />
+              <option name="titleSlug" value="intersection-of-two-arrays" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4535,6 +4645,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1506_FindRootOfNAryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_1506_FindRootOfNAryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com1506" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1506_FindRootOfNAryTree.java" />
+              <option name="titleSlug" value="find-root-of-n-ary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_1508_RangeSumOfSortedSubarraySums.java">
           <value>
             <LeetcodeEditor>
@@ -4582,10 +4703,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_15_ThreeSum.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_15_ThreeSum.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_15_ThreeSum.md" />
               <option name="frontendQuestionId" value="leetcode.com15" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_15_ThreeSum.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_15_ThreeSum.java" />
               <option name="titleSlug" value="3sum" />
             </LeetcodeEditor>
           </value>
@@ -4615,10 +4736,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_16_ThreeSumClosest.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_16_ThreeSumClosest.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_16_ThreeSumClosest.md" />
               <option name="frontendQuestionId" value="leetcode.com16" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_16_ThreeSumClosest.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_16_ThreeSumClosest.java" />
               <option name="titleSlug" value="3sum-closest" />
             </LeetcodeEditor>
           </value>
@@ -4895,6 +5016,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_42_TrappingRainWater.java" />
               <option name="titleSlug" value="trapping-rain-water" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_438_FindAllAnagramsInAString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_438_FindAllAnagramsInAString.md" />
+              <option name="frontendQuestionId" value="leetcode.com438" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_438_FindAllAnagramsInAString.java" />
+              <option name="titleSlug" value="find-all-anagrams-in-a-string" />
             </LeetcodeEditor>
           </value>
         </entry>

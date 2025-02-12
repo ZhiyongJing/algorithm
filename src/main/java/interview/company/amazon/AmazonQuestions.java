@@ -3,13 +3,12 @@ package interview.company.amazon;
 import leetcode.question.bfs.*;
 import leetcode.question.binary_search.LeetCode_528_RandomPickWithWeight;
 import leetcode.question.dfs.*;
-import leetcode.question.dp.LeetCode_1125_SmallestSufficientTeam;
-import leetcode.question.dp.LeetCode_140_WordBreakIi;
-import leetcode.question.dp.LeetCode_518_CoinChangeIi;
+import leetcode.question.dp.*;
 import leetcode.question.greedy.LeetCode_135_Candy;
 import leetcode.question.greedy.LeetCode_409_LongestPalindrome;
 import leetcode.question.heap.*;
 import leetcode.question.map_set.*;
+import leetcode.question.monotonic_stack_queue.LeetCode_496_NextGreaterElementI;
 import leetcode.question.sort.LeetCode_56_MergeIntervals;
 import leetcode.question.stack.LeetCode_1249_MinimumRemoveToMakeValidParentheses;
 import leetcode.question.stack.LeetCode_20_ValidParentheses;
@@ -25,9 +24,17 @@ import java.util.List;
 public class AmazonQuestions {
 
     List<Object> questions = Arrays.asList(
+
             new LeetCode_12_IntegerToRoman()
             , new LeetCode_15_ThreeSum()
             , new LeetCode_16_ThreeSumClosest()
+            , new LeetCode_199_BinaryTreeRightSideView()
+            , new LeetCode_496_NextGreaterElementI()
+            , new LeetCode_1152_AnalyzeUserWebsiteVisitPattern()
+            , new LeetCode_55_JumpGame()
+            , new LeetCode_45_JumpGameIi()
+            , new LeetCode_222_CountCompleteTreeNodes()
+
             , new LeetCode_20_ValidParentheses()
             , new LeetCode_23_MergeKSortedLists()
             , new LeetCode_36_ValidSudoku()

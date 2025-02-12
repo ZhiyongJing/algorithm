@@ -18,7 +18,9 @@ import leetcode.question.linked_list.LeetCode_2_AddTwoNumbers;
 import leetcode.question.linked_list.LeetCode_430_FlattenAMultilevelDoublyLinkedList;
 import leetcode.question.linked_list.LeetCode_445_AddTwoNumbersIi;
 import leetcode.question.map_set.*;
+import leetcode.question.prefix_sum.LeetCode_53_MaximumSubarray;
 import leetcode.question.stack.*;
+import leetcode.question.string_list.LeetCode_1583_CountUnhappyFriends;
 import leetcode.question.string_list.LeetCode_2423_RemoveLetterToEqualizeFrequency;
 import leetcode.question.string_list.LeetCode_8_StringToIntegerAtoi;
 import leetcode.question.two_pointer.*;
@@ -41,6 +43,7 @@ public class BloombergQuestions {
             , new LeetCode_19_RemoveNthNodeFromEndOfList() // Remove the N-th node from the end of a linked list. // 删除链表中的倒数第 N 个节点。
             , new LeetCode_146_LruCache() // Design and implement a Least Recently Used (LRU) cache. // 设计并实现一个最近最少使用（LRU）的缓存机制。
             , new LeetCode_33_SearchInRotatedSortedArray() // Search for a target value in a rotated sorted array. // 在旋转排序数组中查找目标值。
+                //           ?? 不是=k 而是>=2
             , new LeetCode_1209_RemoveAllAdjacentDuplicatesInStringIi() // Remove all adjacent duplicates in a string where duplicates are repeated at least K times. // 删除字符串中所有相邻的重复项，其中重复项至少连续出现 K 次。
             , new LeetCode_200_NumberOfIslands() // Count the number of islands in a 2D grid. // 计算二维网格中的岛屿数量。
             , new LeetCode_443_StringCompression() // Compress a string by replacing repeated characters with the character followed by its count. // 通过将重复字符替换为该字符及其出现次数来压缩字符串。
@@ -60,7 +63,10 @@ public class BloombergQuestions {
             , new LeetCode_387_FirstUniqueCharacterInAString() // Find the first non-repeating character in a string. // 找到字符串中第一个不重复的字符。
             , new LeetCode_103_BinaryTreeZigzagLevelOrderTraversal() // Perform a zigzag level order traversal on a binary tree. // 对二叉树执行之字形层次遍历。
             , new LeetCode_1472_DesignBrowserHistory()
-            , new LeetCode_399_EvaluateDivision() 
+                , new LeetCode_723_CandyCrush()
+                , new LeetCode_1583_CountUnhappyFriends()
+
+            , new LeetCode_399_EvaluateDivision()
             , new LeetCode_314_BinaryTreeVerticalOrderTraversal() // Perform a vertical order traversal on a binary tree. // 对二叉树执行垂直顺序遍历。
             , new LeetCode_1249_MinimumRemoveToMakeValidParentheses() // Remove the minimum number of parentheses to make the string valid. // 移除最少数量的括号，使字符串有效。
             , new LeetCode_39_CombinationSum() // Candidate can be used unlimited times, optimize memorization. // 候选元素可以无限使用，优化记忆化
@@ -88,7 +94,7 @@ public class BloombergQuestions {
             , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() // Find the maximum depth of nested parentheses. // 找到嵌套括号的最大深度
             , new LeetCode_381_InsertDeleteGetrandomO1DuplicatesAllowed() // Design a data structure that allows duplicates and supports insert, delete, and get random element in constant time. // 设计一个允许重复的支持插入、删除和随机获取元素的数据结构
             , new LeetCode_78_Subsets() // Generate all possible subsets of a set. // 生成一个集合的所有可能子集
-
+            , new LeetCode_53_MaximumSubarray()
             , new LeetCode_430_FlattenAMultilevelDoublyLinkedList() // Flatten a multilevel doubly linked list. // 展平多级双向链表
             , new LeetCode_1169_InvalidTransactions() // Find invalid transactions based on a list of transactions sorted by time. // 根据按时间排序的交易列表找出无效交易
             , new LeetCode_1614_MaximumNestingDepthOfTheParentheses() // Find the maximum depth of nested parentheses using BFS, follow-up with DFS. // 使用 BFS 查找嵌套括号的最大深度，后续使用 DFS

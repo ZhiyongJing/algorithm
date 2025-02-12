@@ -135,6 +135,7 @@ public class LeetCode_314_BinaryTreeVerticalOrderTraversal {
                     queue.offer(new Pair(root.right, column + 1));
                 }
             }
+            System.out.println(columnTable);
 
             // 将所有列号排序
             List<Integer> sortedKeys = new ArrayList<Integer>(columnTable.keySet());

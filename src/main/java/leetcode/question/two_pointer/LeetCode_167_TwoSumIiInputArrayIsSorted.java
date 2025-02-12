@@ -4,8 +4,8 @@ package leetcode.question.two_pointer;
   *@Question:  167. Two Sum II - Input Array Is Sorted     
   *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
   *@Frequency: 50.91%      
-  *@Time  Complexity: O()
-  *@Space Complexity: O()
+  *@Time  Complexity: O(N)
+  *@Space Complexity: O(1)
  */
 
 public class LeetCode_167_TwoSumIiInputArrayIsSorted{
@@ -27,6 +27,7 @@ class Solution {
         return new int[]{-1, -1};
         
     }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
@@ -35,6 +36,11 @@ class Solution {
         Solution solution = new LeetCode_167_TwoSumIiInputArrayIsSorted().new Solution();
         // TO TEST
         //solution.
+        int[] nums = {2, 2, 7, 7};
+        int[] result = new int[2];
+        result = solution.twoSum(nums, 9);
+        System.out.println(result[0] +" "+ result[1]);
+
     }
 }
 /**

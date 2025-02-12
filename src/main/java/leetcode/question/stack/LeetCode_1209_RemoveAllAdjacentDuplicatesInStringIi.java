@@ -137,6 +137,7 @@ public class LeetCode_1209_RemoveAllAdjacentDuplicatesInStringIi{
             // 遍历字符串中的每个字符
             for (int i = 0; i < sb.length(); ++i) {
                 // 如果是第一个字符或当前字符与前一个字符不同，将计数压栈为1
+                System.out.println("current stack: " + counts);
                 if (i == 0 || sb.charAt(i) != sb.charAt(i - 1)) {
                     counts.push(1);
                 } else {

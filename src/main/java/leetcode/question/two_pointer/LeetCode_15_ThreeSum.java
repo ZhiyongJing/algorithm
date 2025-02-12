@@ -60,20 +60,33 @@ public class LeetCode_15_ThreeSum {
 
         // 计算两数之和
         void twoSumII(int[] nums, int i, List<List<Integer>> res) {
-            int lo = i + 1, hi = nums.length - 1;
+//            int lo = i + 1, hi = nums.length - 1;
+//            while (lo < hi) {
+//                int sum = nums[i] + nums[lo] + nums[hi];
+//                if (sum < 0) {
+//                    ++lo;
+//                } else if (sum > 0) {
+//                    --hi;
+//                } else {
+//                    // 找到符合条件的三元组，添加到结果集中
+//                    res.add(Arrays.asList(nums[i], nums[lo++], nums[hi--]));
+//                    // 避免重复计算，跳过相同元素
+//                    while (lo < hi && nums[lo] == nums[lo - 1]) {
+//                        ++lo;
+//                    }
+//                }
+//            }
+            int lo = i+ 1, hi = nums.length - 1;
+            //[-4, -1, -1, , 0, 1, 2]
             while (lo < hi) {
-                int sum = nums[i] + nums[lo] + nums[hi];
-                if (sum < 0) {
+                int currSum = nums[lo] + nums[hi] + nums[i];
+                if (currSum < 0 || (lo > 0 && nums[lo] == nums[lo - 1])) {
                     ++lo;
-                } else if (sum > 0) {
+                } else if (currSum > 0 || (hi < nums.length - 1 && nums[hi] == nums[hi + 1])) {
                     --hi;
                 } else {
-                    // 找到符合条件的三元组，添加到结果集中
+                    // res.add(Arrays.asList(nums[lo++], nums[hi--]));
                     res.add(Arrays.asList(nums[i], nums[lo++], nums[hi--]));
-                    // 避免重复计算，跳过相同元素
-                    while (lo < hi && nums[lo] == nums[lo - 1]) {
-                        ++lo;
-                    }
                 }
             }
         }
@@ -88,62 +101,62 @@ public class LeetCode_15_ThreeSum {
         int[] nums1 = {-1, 0, 1, 2, -1, -4};
         List<List<Integer>> result1 = solution.threeSum(nums1);
         System.out.println("测试数组1的三元组：" + result1);
-
-        int[] nums2 = {0, 1, 1};
-        List<List<Integer>> result2 = solution.threeSum(nums2);
-        System.out.println("测试数组2的三元组：" + result2);
-
-        int[] nums3 = {0, 0, 0};
-        List<List<Integer>> result3 = solution.threeSum(nums3);
-        System.out.println("测试数组3的三元组：" + result3);
+//
+//        int[] nums2 = {0, 1, 1};
+//        List<List<Integer>> result2 = solution.threeSum(nums2);
+//        System.out.println("测试数组2的三元组：" + result2);
+//
+//        int[] nums3 = {0, 0, 0};
+//        List<List<Integer>> result3 = solution.threeSum(nums3);
+//        System.out.println("测试数组3的三元组：" + result3);
     }
 }
 
 /**
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
- such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. 
+ Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
+ such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
- Notice that the solution set must not contain duplicate triplets. 
+ Notice that the solution set must not contain duplicate triplets.
 
- 
- Example 1: 
 
- 
-Input: nums = [-1,0,1,2,-1,-4]
-Output: [[-1,-1,2],[-1,0,1]]
-Explanation: 
-nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
-nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
-nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
-The distinct triplets are [-1,0,1] and [-1,-1,2].
-Notice that the order of the output and the order of the triplets does not 
-matter.
- 
+ Example 1:
 
- Example 2: 
 
- 
-Input: nums = [0,1,1]
-Output: []
-Explanation: The only possible triplet does not sum up to 0.
- 
+ Input: nums = [-1,0,1,2,-1,-4]
+ Output: [[-1,-1,2],[-1,0,1]]
+ Explanation:
+ nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+ nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+ nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+ The distinct triplets are [-1,0,1] and [-1,-1,2].
+ Notice that the order of the output and the order of the triplets does not
+ matter.
 
- Example 3: 
 
- 
-Input: nums = [0,0,0]
-Output: [[0,0,0]]
-Explanation: The only possible triplet sums up to 0.
- 
+ Example 2:
 
- 
- Constraints: 
 
- 
- 3 <= nums.length <= 3000 
- -10⁵ <= nums[i] <= 10⁵ 
- 
+ Input: nums = [0,1,1]
+ Output: []
+ Explanation: The only possible triplet does not sum up to 0.
+
+
+ Example 3:
+
+
+ Input: nums = [0,0,0]
+ Output: [[0,0,0]]
+ Explanation: The only possible triplet sums up to 0.
+
+
+
+ Constraints:
+
+
+ 3 <= nums.length <= 3000
+ -10⁵ <= nums[i] <= 10⁵
+
 
  Related Topics Array Two Pointers Sorting 👍 29387 👎 2670
 
-*/
+ */

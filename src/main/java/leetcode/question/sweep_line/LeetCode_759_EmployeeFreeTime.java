@@ -1,137 +1,210 @@
+// package 语句，声明当前类所在的包
 package leetcode.question.sweep_line;
+// 导入 Java 需要的工具包
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import java.util.PriorityQueue;
 
 /**
  *@Question:  759. Employee Free Time
  *@Difculty:  3 [1->Easy, 2->Medium, 3->Hard]
- *@Frequency: 0.0%
- *@Time  Complexity: O(N log K) 其中 N 是所有时间间隔的总数，K 是员工的数量
+ *@Frequency: 57.11999999999999%
+ *@Time  Complexity: O(N log N) N is the number of interval
  *@Space Complexity: O(N)
  */
-/**
- * ### 解题思路详细讲解
+/*
+ * 一、题目描述
+ *    在一组员工的工作时间表中，每个员工的日程安排由多个不重叠的时间区间 [start, end] 组成。
+ *    要求找出所有员工共同的空闲时间段，即所有人都不工作的时间段，并返回这些空闲时间区间。
  *
- * #### 问题理解
- * 给定每个员工的工作时间表，找到所有员工的空闲时间，即每个员工的工作时间中没有重叠的时间段。每个员工的工作时间都是按照时间顺序排列的。
+ *    示例：
+ *      输入：
+ *      [[(1,3), (5,6)], [(2,3), (6,8)]]
+ *      输出：
+ *      [[3,5]] （所有人都空闲的时间段）
  *
- * #### 解题步骤
+ * 二、解题思路（超级详细）
+ *    1. **事件排序 + 扫描线算法**
+ *       - 由于所有时间区间都是不重叠的，所以可以将所有时间区间的起始和结束时间转换为 "事件"。
+ *       - 使用 `int[] {time, type}` 表示一个事件，其中：
+ *         - `type = 0` 表示“区间开始” (OPEN)
+ *         - `type = 1` 表示“区间结束” (CLOSE)
+ *       - 这样，我们可以将所有区间转换为一个**事件列表**，然后按照时间排序。
  *
- * 1. **使用优先队列（最小堆）来排序区间**：
- *    - 创建一个优先队列（最小堆），优先级是每个区间的开始时间。
- *    - 对于每个员工，将他们的第一个工作区间加入优先队列。
+ *    2. **排序规则**
+ *       - 先按照时间 `event[0]` 升序排序
+ *       - 如果时间相同，则按照 `event[1]` 升序排序（即 OPEN 事件优先于 CLOSE 事件）
  *
- * 2. **遍历优先队列，合并区间**：
- *    - 使用一个变量 `prev` 来记录前一个区间的结束时间，初始化为优先队列中最早的开始时间。
- *    - 每次从优先队列中取出最早开始的区间，比较这个区间的开始时间与 `prev` 之间的关系。
- *    - 如果当前区间的开始时间大于 `prev`，说明存在一个空闲时间段，将这个空闲时间段加入结果列表。
- *    - 更新 `prev` 为当前区间的结束时间与 `prev` 中的较大值。
- *    - 如果当前员工还有更多的区间，将下一个区间加入优先队列。
+ *    3. **扫描线算法**
+ *       - 维护一个 `bal` 变量来表示当前工作时间段的重叠数：
+ *         - `bal += 1` 代表有员工开始工作
+ *         - `bal -= 1` 代表有员工结束工作
+ *       - 只有在 `bal == 0` 时，说明此时所有员工都不在工作，可以记录一个空闲时间段。
  *
- * 3. **处理剩余区间**：
- *    - 如果优先队列中还有未处理的区间，继续从优先队列中取出区间并处理。
+ *    4. **具体执行步骤**
+ *       - 遍历已排序的 `events` 数组：
+ *         - 当 `bal == 0` 且 `prev >= 0` 时，说明 `prev` 到 `当前时间` 是一个有效的空闲时间段。
+ *         - 更新 `bal` 的值（遇到 OPEN 加 1，遇到 CLOSE 减 1）
+ *         - 记录 `prev = event[0]`，用于检查下一段是否仍然是空闲时间。
  *
- * 4. **返回结果**：
- *    - 最终的结果列表包含所有员工的空闲时间段。
+ *    **举例解析**
+ *    ```
+ *    输入： [[(1,3), (5,6)], [(2,3), (6,8)]]
+ *    转换为事件：
+ *      [(1, OPEN), (3, CLOSE), (5, OPEN), (6, CLOSE)]
+ *      [(2, OPEN), (3, CLOSE), (6, OPEN), (8, CLOSE)]
  *
- * ### 时间和空间复杂度分析
+ *    排序后：
+ *      [(1, OPEN), (2, OPEN), (3, CLOSE), (3, CLOSE), (5, OPEN), (6, CLOSE), (6, OPEN), (8, CLOSE)]
  *
- * #### 时间复杂度：
- * - **初始化优先队列**：将每个员工的第一个区间加入优先队列，时间复杂度为 O(K)，其中 K 是员工的数量。
- * - **遍历优先队列**：每个区间最多进出优先队列一次，优先队列的操作（插入和删除）时间复杂度为 O(log K)。因为每个员工最多有 N 个区间，总的时间复杂度为 O(N log K)，其中 N 是所有区间的总数。
+ *    扫描线计算：
+ *    - 1: bal = 1
+ *    - 2: bal = 2
+ *    - 3: bal = 1 （第一次 CLOSE）
+ *    - 3: bal = 0 （所有人都下班，prev=3）
+ *    - 5: bal = 1 （发现 OPEN，空闲区间 [3,5]）
+ *    - 6: bal = 0
+ *    - 6: bal = 1
+ *    - 8: bal = 0
+ *    结果： [[3,5]]
+ *    ```
  *
- * #### 空间复杂度：
- * - **优先队列的空间复杂度**：优先队列最多包含 K 个元素（每个员工一个当前区间），空间复杂度为 O(K)。
- * - **结果列表的空间复杂度**：结果列表存储所有的空闲时间段，最坏情况下的空间复杂度为 O(N)。
- * - 因此，总的空间复杂度为 O(N)，其中 N 是所有区间的总数。
+ * 三、时间和空间复杂度分析
+ *    1. **时间复杂度**
+ *       - 构造 `events` 数组需要 O(N) 遍历所有区间。
+ *       - 事件排序的复杂度是 O(N log N)。
+ *       - 扫描所有事件需要 O(N)。
+ *       - 总体时间复杂度为 **O(N log N)**。
  *
- * 通过这种方法，可以有效地找到所有员工的空闲时间段，保证时间和空间复杂度在合理范围内。
+ *    2. **空间复杂度**
+ *       - 额外存储 `events` 数组，需要 O(N) 额外空间。
+ *       - 存储最终的 `ans` 结果，最坏情况也需要 O(N)。
+ *       - 因此空间复杂度为 **O(N)**。
  */
 
+
+// 定义公共类 LeetCode_759_EmployeeFreeTime
 public class LeetCode_759_EmployeeFreeTime{
+    static class Interval {
+        public int start; // 区间起始时间
+        public int end;   // 区间结束时间
 
-    // 定义区间类
-    class Interval {
-        public int start;
-        public int end;
-        public Interval(int start, int end) {
-            this.start = start;
-            this.end = end;
+        public Interval() {}
+
+        public Interval(int _start, int _end) {
+            start = _start;
+            end = _end;
         }
-    }
+    };
+// leetcode 提交区域开始（不可修改）
+//leetcode submit region begin(Prohibit modification and deletion)
 
-    //leetcode submit region begin(Prohibit modification and deletion)
+    // 定义区间类 Interval
+
+
+    // 定义 Solution 内部类
     class Solution {
-        public List<Interval> employeeFreeTime(List<List<Interval>> schedule) {
-            // 创建优先队列，根据区间开始时间排序
-            PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) ->
-                    schedule.get(a[0]).get(a[1]).start - schedule.get(b[0]).get(b[1]).start);
+        // 计算员工的空闲时间区间
+        public List<Interval> employeeFreeTime(List<List<Interval>> avails) {
+            int OPEN = 0, CLOSE = 1; // 定义开始和结束事件类型
 
-            // 初始化优先队列，存储每个员工的第一个区间
-            for (int i = 0; i < schedule.size(); i++) {
-                pq.add(new int[] {i, 0});
-            }
-
-            List<Interval> res = new ArrayList<>(); // 存储结果的列表
-            // 记录第一个区间的开始时间
-            int prev = schedule.get(pq.peek()[0]).get(pq.peek()[1]).start;
-
-            // 遍历优先队列
-            while (!pq.isEmpty()) {
-                int[] index = pq.poll(); // 获取优先队列中最小开始时间的区间
-                Interval interval = schedule.get(index[0]).get(index[1]); // 当前区间
-
-                // 如果当前区间的开始时间大于上一个区间的结束时间，则存在空闲时间
-                if (interval.start > prev) {
-                    res.add(new Interval(prev, interval.start)); // 添加空闲时间到结果中
+            // 存储所有时间事件（开始和结束）
+            List<int[]> events = new ArrayList();
+            for (List<Interval> employee: avails) // 遍历每个员工的时间安排
+                for (Interval iv: employee) {
+                    events.add(new int[]{iv.start, OPEN});  // 记录区间开始时间
+                    events.add(new int[]{iv.end, CLOSE});   // 记录区间结束时间
                 }
 
-                // 更新上一个区间的结束时间
-                prev = Math.max(prev, interval.end);
+            // 对所有时间事件进行排序：
+            // 1. 先按照时间排序
+            // 2. 若时间相同，则优先处理开始事件（OPEN 在前）
+            Collections.sort(events, (a, b) -> a[0] != b[0] ? a[0] - b[0] : a[1] - b[1]);
 
-                // 如果当前员工还有下一个区间，将下一个区间加入优先队列
-                if (schedule.get(index[0]).size() > index[1] + 1) {
-                    pq.add(new int[] {index[0], index[1] + 1});
-                }
+            List<Interval> ans = new ArrayList(); // 存储最终的空闲时间区间
+            int prev = -1, bal = 0; // 记录上一个时间点和当前的区间平衡值
+
+            for (int[] event: events) {
+                // event[0] = 时间点，event[1] = 事件类型
+                // 只有在没有员工工作的时间段（bal == 0）且 prev >= 0 时，才记录空闲时间
+                if (bal == 0 && prev >= 0)
+                    ans.add(new Interval(prev, event[0]));
+
+                // 更新区间平衡值，若是 OPEN，表示进入新的工作时间 +1，否则结束 -1
+                bal += event[1] == OPEN ? 1 : -1;
+
+                // 更新 prev，继续处理下一个事件
+                prev = event[0];
             }
-            return res; // 返回结果列表
+
+            return ans; // 返回最终的空闲时间区间
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
+
+    // main 方法，用于测试代码
     public static void main(String[] args) {
+        // 创建 Solution 实例
         Solution solution = new LeetCode_759_EmployeeFreeTime().new Solution();
 
-        // 测试样例
+        // 构造测试用例
         List<List<Interval>> schedule = new ArrayList<>();
+        schedule.add(Arrays.asList(new Interval(1, 3), new Interval(5, 6)));
+        schedule.add(Arrays.asList(new Interval(2, 3), new Interval(6, 8)));
 
-        List<Interval> employee1 = new ArrayList<>();
-        employee1.add(new LeetCode_759_EmployeeFreeTime().new Interval(1, 2));
-        employee1.add(new LeetCode_759_EmployeeFreeTime().new Interval(5, 6));
-
-        List<Interval> employee2 = new ArrayList<>();
-        employee2.add(new LeetCode_759_EmployeeFreeTime().new Interval(1, 3));
-
-        List<Interval> employee3 = new ArrayList<>();
-        employee3.add(new LeetCode_759_EmployeeFreeTime().new Interval(4, 10));
-
-        schedule.add(employee1);
-        schedule.add(employee2);
-        schedule.add(employee3);
-
-        List<Interval> freeTimes = solution.employeeFreeTime(schedule);
-
-        // 输出结果
-        for (Interval interval : freeTimes) {
-            System.out.println("Free time from " + interval.start + " to " + interval.end);
+        // 预期输出: [[3, 5]] (3-5 是所有人都空闲的时间段)
+        List<Interval> result = solution.employeeFreeTime(schedule);
+        System.out.println("Test Case 1: ");
+        for (Interval interval : result) {
+            System.out.println("[" + interval.start + ", " + interval.end + "]");
         }
-        // 预期输出: Free time from 3 to 4
     }
 }
 
 /**
-Related Topics Array Sorting Heap (Priority Queue) 👍 1895 👎 133
+We are given a list schedule of employees, which represents the working time 
+for each employee. 
+
+ Each employee has a list of non-overlapping Intervals, and these intervals are 
+in sorted order. 
+
+ Return the list of finite intervals representing common, positive-length free 
+time for all employees, also in sorted order. 
+
+ (Even though we are representing Intervals in the form [x, y], the objects 
+inside are Intervals, not lists or arrays. For example, schedule[0][0].start = 1, 
+schedule[0][0].end = 2, and schedule[0][0][0] is not defined). Also, we wouldn't 
+include intervals like [5, 5] in our answer, as they have zero length. 
+
+ 
+ Example 1: 
+
+ 
+Input: schedule = [[[1,2],[5,6]],[[1,3]],[[4,10]]]
+Output: [[3,4]]
+Explanation: There are a total of three employees, and all common
+free time intervals would be [-inf, 1], [3, 4], [10, inf].
+We discard any intervals that contain inf as they aren't finite.
+ 
+
+ Example 2: 
+
+ 
+Input: schedule = [[[1,3],[6,7]],[[2,4]],[[2,5],[9,12]]]
+Output: [[5,6],[7,9]]
+ 
+
+ 
+ Constraints: 
+
+ 
+ 1 <= schedule.length , schedule[i].length <= 50 
+ 0 <= schedule[i].start < schedule[i].end <= 10^8 
+ 
+
+ Related Topics Array Sorting Heap (Priority Queue) 👍 1919 👎 138
 
 */

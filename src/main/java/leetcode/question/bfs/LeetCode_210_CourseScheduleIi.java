@@ -1,89 +1,59 @@
 package leetcode.question.bfs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
-/**
- *@Question:  210. Course Schedule II
- *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
- *@Frequency: 65.05%
- *@Time  Complexity: O(V + E), V represents the number of courses, and E represents the number of prerequisites.
- *@Space Complexity: O(V + E)
- */
-
-/**
- * 这道题是经典的拓扑排序问题，用于解决有向图中的依赖关系排序问题。在这个问题中，课程之间存在先修关系，我们需要找出一种上课的顺序，满足每个课程的先修条件。
- *
- * ### 解题思路：
- * 1. **构建有向图：** 首先，我们根据给定的先修关系构建有向图的邻接表表示。邻接表中的每个顶点表示一个课程，列表中的元素表示当前课程的后继课程。
- *
- * 2. **计算入度：** 我们统计每个顶点的入度，即指向当前顶点的边的数量。这样，入度为 0 的顶点就是没有先修课程的课程，它们可以作为拓扑排序的起点。
- *
- * 3. **拓扑排序：** 使用队列来进行拓扑排序。我们从入度为 0 的顶点开始，将其加入队列，并在拓扑排序的过程中逐步减小其邻接顶点的入度。如果某个邻接顶点的入度减小为 0，则将其加入队列。直到队列为空时，拓扑排序结束。
- *
- * 4. **检查结果：** 如果拓扑排序成功（即排序后的顶点数量等于总课程数量），则返回拓扑排序的结果，否则说明有环，无法完成所有课程的学习。
- *
- * ### 时间复杂度分析：
- * - 遍历先修关系数组构建邻接表：O(E)，E 表示先修关系的数量。
- * - 计算入度：O(E)。
- * - 拓扑排序：O(V + E)，V 表示课程数量，E 表示先修关系的数量。
- * 总时间复杂度为 O(E) + O(E) + O(V + E) = O(V + E)。
- *
- * ### 空间复杂度分析：
- * - 邻接表：O(E)，E 表示先修关系的数量。
- * - 入度数组：O(V)，V 表示课程数量。
- * - 队列：O(V)，最坏情况下所有课程都入队。
- * 总空间复杂度为 O(E) + O(V) + O(V) = O(V + E)。
- */
-
-public class LeetCode_210_CourseScheduleIi{
+public class LeetCode_210_CourseScheduleIi {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] findOrder(int numCourses, int[][] prerequisites) {
 
+            // 变量 isPossible 用于标记是否可能完成所有课程
             boolean isPossible = true;
-            Map<Integer, List<Integer>> adjList = new HashMap<Integer, List<Integer>>();
+
+            // 使用邻接表表示有向图，key: 课程, value: 依赖它的课程列表
+            Map<Integer, List<Integer>> adjList = new HashMap<>();
+
+            // 记录每个课程的入度，即需要先完成多少门课程
             int[] indegree = new int[numCourses];
+
+            // 用于存储最终的课程安排顺序
             int[] topologicalOrder = new int[numCourses];
 
-            // 创建图的邻接表表示
+            // 构建有向图
             for (int i = 0; i < prerequisites.length; i++) {
-                int dest = prerequisites[i][0];
-                int src = prerequisites[i][1];
-                List<Integer> lst = adjList.getOrDefault(src, new ArrayList<Integer>());
+                int dest = prerequisites[i][0]; // 课程
+                int src = prerequisites[i][1]; // 先修课程
+
+                // 在邻接表中添加依赖关系
+                List<Integer> lst = adjList.getOrDefault(src, new ArrayList<>());
                 lst.add(dest);
                 adjList.put(src, lst);
 
-                // 记录每个顶点的入度
+                // 增加目标课程的入度
                 indegree[dest] += 1;
             }
 
-            // 将所有入度为 0 的顶点加入队列
-            Queue<Integer> q = new LinkedList<Integer>();
+            // 创建一个队列用于存储入度为 0 的课程（可以直接学习的课程）
+            Queue<Integer> q = new LinkedList<>();
             for (int i = 0; i < numCourses; i++) {
-                if (indegree[i] == 0) {
+                if (indegree[i] == 0) { // 没有前置课程的课程
                     q.add(i);
                 }
             }
 
-            int i = 0;
-            // 处理直到队列为空
+            int i = 0; // 记录当前拓扑排序的位置
+            // 进行拓扑排序
             while (!q.isEmpty()) {
-                int node = q.remove();
-                topologicalOrder[i++] = node;
+                int node = q.remove(); // 取出入度为 0 的课程
+                topologicalOrder[i++] = node; // 将其加入拓扑排序结果
 
-                // 将每个邻接顶点的入度减 1
+                // 遍历该课程的所有后续课程
                 if (adjList.containsKey(node)) {
                     for (Integer neighbor : adjList.get(node)) {
-                        indegree[neighbor]--;
+                        indegree[neighbor]--; // 该课程的先修课程完成，入度减少
 
-                        // 如果邻接顶点的入度变为 0，则加入队列
+                        // 如果入度减少到 0，表示可以学习该课程
                         if (indegree[neighbor] == 0) {
                             q.add(neighbor);
                         }
@@ -91,27 +61,44 @@ public class LeetCode_210_CourseScheduleIi{
                 }
             }
 
-            // 检查拓扑排序是否可能
+            // 如果拓扑排序包含所有课程，说明可以完成，返回拓扑排序
             if (i == numCourses) {
                 return topologicalOrder;
             }
 
+            // 如果无法完成所有课程，返回空数组
             return new int[0];
         }
     }
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 
     public static void main(String[] args) {
-        Solution solution = new LeetCode_210_CourseScheduleIi().new Solution();
-        // 测试
-        int numCourses = 4;
-        int[][] prerequisites = {{1,0},{2,0},{3,1},{3,2}};
-        int[] result = solution.findOrder(numCourses, prerequisites);
-        System.out.println(Arrays.toString(result));
-        // 应返回 [0,1,2,3]，表示可行的课程顺序
+        LeetCode_210_CourseScheduleIi.Solution solution = new LeetCode_210_CourseScheduleIi().new Solution();
+
+        // 测试用例1
+        int numCourses1 = 4;
+        int[][] prerequisites1 = {{1, 0}, {2, 0}, {3, 1}, {3, 2}};
+        int[] result1 = solution.findOrder(numCourses1, prerequisites1);
+        System.out.println(Arrays.toString(result1));
+        // 可能的输出: [0, 1, 2, 3] 或 [0, 2, 1, 3]，表示可行的课程顺序
+
+        // 测试用例2：没有先修课程
+        int numCourses2 = 2;
+        int[][] prerequisites2 = {};
+        int[] result2 = solution.findOrder(numCourses2, prerequisites2);
+        System.out.println(Arrays.toString(result2));
+        // 可能的输出: [0,1] 或 [1,0]
+
+        // 测试用例3：存在环，无法完成所有课程
+        int numCourses3 = 3;
+        int[][] prerequisites3 = {{1, 0}, {0, 1}};
+        int[] result3 = solution.findOrder(numCourses3, prerequisites3);
+        System.out.println(Arrays.toString(result3));
+        // 输出: [] （由于存在环，无法完成所有课程）
     }
 }
+
 
 /**
  There are a total of numCourses courses you have to take, labeled from 0 to

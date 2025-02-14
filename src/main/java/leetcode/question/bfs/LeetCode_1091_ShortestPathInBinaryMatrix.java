@@ -75,23 +75,27 @@ public class LeetCode_1091_ShortestPathInBinaryMatrix{
 
             // 执行 BFS
             while (!queue.isEmpty()) {
-                int[] cell = queue.poll(); // 从队列中取出当前单元格
-                int row = cell[0];           // 获取当前单元格的行坐标
-                int col = cell[1];           // 获取当前单元格的列坐标
-                int distance = grid[row][col]; // 获取当前单元格的路径长度（即访问深度）
+                int n = queue.size();
+                for(int i = 0; i < n; i++){
+                    int[] cell = queue.poll(); // 从队列中取出当前单元格
+                    int row = cell[0];           // 获取当前单元格的行坐标
+                    int col = cell[1];           // 获取当前单元格的列坐标
+                    int distance = grid[row][col]; // 获取当前单元格的路径长度（即访问深度）
 
-                // 到达目标单元格时返回路径长度
-                if (row == grid.length - 1 && col == grid[0].length - 1) {
-                    return distance;
+                    // 到达目标单元格时返回路径长度
+                    if (row == grid.length - 1 && col == grid[0].length - 1) {
+                        return distance;
+                    }
+
+                    // 获取相邻的单元格
+                    for (int[] neighbour : getNeighbours(row, col, grid)) {
+                        int neighbourRow = neighbour[0]; // 获取相邻单元格的行坐标
+                        int neighbourCol = neighbour[1]; // 获取相邻单元格的列坐标
+                        queue.offer(new int[]{neighbourRow, neighbourCol}); // 将相邻单元格加入队列
+                        grid[neighbourRow][neighbourCol] = distance + 1; // 更新相邻单元格的路径长度
+                    }
                 }
 
-                // 获取相邻的单元格
-                for (int[] neighbour : getNeighbours(row, col, grid)) {
-                    int neighbourRow = neighbour[0]; // 获取相邻单元格的行坐标
-                    int neighbourCol = neighbour[1]; // 获取相邻单元格的列坐标
-                    queue.offer(new int[]{neighbourRow, neighbourCol}); // 将相邻单元格加入队列
-                    grid[neighbourRow][neighbourCol] = distance + 1; // 更新相邻单元格的路径长度
-                }
             }
 
             // 目标单元格不可达

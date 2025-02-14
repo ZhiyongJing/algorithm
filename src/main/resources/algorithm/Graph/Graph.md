@@ -383,7 +383,19 @@ public class GraphAdjList {
 
 **广度优先遍历是一种由近及远的遍历方式，从某个节点出发，始终优先访问距离最近的顶点，并一层层向外扩张**。如下图所示，从左上角顶点出发，首先遍历该顶点的所有邻接顶点，然后遍历下一个顶点的所有邻接顶点，以此类推，直至所有顶点访问完毕。
 
-![图的广度优先遍历](Graph.assets/graph_bfs.png)
+有两种广度优先遍历方式：
+
+1. 不带层级的遍历
+
+   > <img src="Graph.assets/graph_bfs.png" alt="图的广度优先遍历" style="zoom:50%;" />
+   >
+   > <img src="Graph.assets/v2-d40cfddeaa5d0142abd621993d311fe0_b.webp" alt="动图" style="zoom: 67%;" />
+
+2. 带层级的遍历
+
+   > <img src="Graph.assets/v2-0c3a851199c97535bacfee1807e7ab67_1440w.jpg" alt="img" style="zoom:50%;" />
+   >
+   > <img src="Graph.assets/v2-1d7ed8b851b97e444baba2a5b586c1a5_b.webp" alt="动图" style="zoom:67%;" />
 
 ### 3.1.1 算法实现
 
@@ -527,15 +539,100 @@ List<Vertex> graphDFS(GraphAdjList graph, Vertex startVet) {
 
 **空间复杂度**：列表 `res` ，哈希集合 `visited` 顶点数量最多为 $|V|$ ，递归深度最大为 $|V|$ ，因此使用 $O(|V|)$ 空间。
 
+# 4. 图的最短路径
+
+## 4.1 无权重图(unweighted graph)
+
+在一棵树中，一个结点到另一个结点的路径是唯一的，但在图中，结点之间可能有多条路径，其中哪条路最近呢？这一类问题称为**最短路径问题**。最短路径问题也是 BFS 的典型应用，而且其方法与层序遍历关系密切。
+
+在二叉树中，BFS 可以实现一层一层的遍历。在图中同样如此。从源点出发，BFS 首先遍历到第一层结点，到源点的距离为 1，然后遍历到第二层结点，到源点的距离为 2…… 可以看到，用 BFS 的话，距离源点更近的点会先被遍历到，这样就能找到到某个点的最短路径了。
+
+**小贴士：**
+很多同学一看到「最短路径」，就条件反射地想到「[Dijkstra 算法](https://zhida.zhihu.com/search?content_id=118394171&content_type=Article&match_order=1&q=Dijkstra+算法&zhida_source=entity)」。为什么 BFS 遍历也能找到最短路径呢？
+这是因为，Dijkstra 算法解决的是**带权最短路径问题**，而我们这里关注的是**无权最短路径问题**。也可以看成每条边的权重都是 1。这样的最短路径问题，用 BFS 求解就行了。
+在面试中，你可能更希望写 BFS 而不是 Dijkstra。毕竟，敢保证自己能写对 Dijkstra 算法的人不多。
+
+<img src="Graph.assets/v2-b5c8a688affdd4391baa898ad8eb292b_1440w.jpg" alt="img" style="zoom:50%;" />
 
 
-## 3.3 权重图(weighted graph)遍历
+
+### 4.1.1 算法实现
+
+**LeetCode 1162. As Far from Land as Possible** 离开陆地的最远距离（Medium）
+
+> 你现在手里有一份大小  为的地图网格`grid`，上面的每个单元格都标记为 0 或者 1，其中 0 代表海洋，1 代表陆地，请你找出一个海洋区域，这个海洋区域到离它最近的陆地区域的距离是最大的。
+> 我们这里说的距离是「[曼哈顿距离](https://zhida.zhihu.com/search?content_id=118394171&content_type=Article&match_order=1&q=曼哈顿距离&zhida_source=entity)」。 和 这两个区域之间的距离是 。
+> 如果我们的地图上只有陆地或者海洋，请返回 -1。
+
+这道题就是一个在网格结构中求最短路径的问题。同时，它也是一个「岛屿问题」，即用网格中的 1 和 0 表示陆地和海洋，模拟出若干个岛屿。这道题要找的是距离陆地最远的海洋格子。假设网格中只有一个陆地格子，我们可以从这个陆地格子出发做层序遍历，直到所有格子都遍历完。最终遍历了几层，[海洋格子](https://zhida.zhihu.com/search?content_id=118394171&content_type=Article&match_order=2&q=海洋格子&zhida_source=entity)的最远距离就是几
+
+<img src="Graph.assets/v2-84cd136f9b88aa391a59d0e25a945bfe_b.webp" alt="动图" style="zoom:50%;" />
+
+那么有多个陆地格子的时候怎么办呢？一种方法是将每个陆地格子都作为起点做一次层序遍历，但是这样的时间开销太大。
+
+**BFS 完全可以以多个格子同时作为起点**。我们可以把所有的陆地格子同时放入初始队列，然后开始层序遍历.这种遍历方法实际上叫做「**多源 BFS**」。
+
+<img src="Graph.assets/v2-2d8c210f89e5b483ca0d0699635c4f43_b.jpg" alt="动图封面" style="zoom:50%;" />
+
+```java
+public int maxDistance(int[][] grid) {
+    int N = grid.length;
+
+    Queue<int[]> queue = new ArrayDeque<>();
+    // 将所有的陆地格子加入队列
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (grid[i][j] == 1) {
+                queue.add(new int[]{i, j});
+            }
+        }
+    }
+
+    // 如果地图上只有陆地或者海洋，返回 -1
+    if (queue.isEmpty() || queue.size() == N * N) {
+        return -1;
+    }
+
+    int[][] moves = {
+        {-1, 0}, {1, 0}, {0, -1}, {0, 1},
+    };
+
+    int distance = -1; // 记录当前遍历的层数（距离）
+    while (!queue.isEmpty()) {
+        distance++;
+        int n = queue.size();
+        for (int i = 0; i < n; i++) { 
+            int[] node = queue.poll();
+            int r = node[0];
+            int c = node[1];
+            for (int[] move : moves) {
+                int r2 = r + move[0];
+                int c2 = c + move[1];
+                if (inArea(grid, r2, c2) && grid[r2][c2] == 0) {
+                    grid[r2][c2] = 2;
+                    queue.add(new int[]{r2, c2});
+                }
+            }
+        }
+    }
+
+    return distance;
+}
+
+// 判断坐标 (r, c) 是否在网格中
+boolean inArea(int[][] grid, int r, int c) {
+    return 0 <= r && r < grid.length 
+        && 0 <= c && c < grid[0].length;
+}
+```
+
+## 4.2权重图(weighted graph)
 
 Dijkstra（迪杰斯特拉）算法解决的问题是：
 
 > 在一个有向图中，求图中一个节点到其他所有节点的最短距离
 
-### 3.3.1 算法实现
+### 4.2.1 算法实现
 
 通过Dijkstra计算图G中的最短路径时，需要指定起点s(即从顶点s开始计算)。 
 
@@ -822,8 +919,6 @@ public class Dijkstra {
 
 ```
 
-### 3.3.2 算法实现
-
 **时间复杂度**：
 
 > - 方法 1（邻接矩阵 + 线性查找 `minDistance()`）
@@ -848,9 +943,9 @@ public class Dijkstra {
 >
 >      > `O(V + E)`需要存储 `V` 个顶点的 `dist[]`，以及 `E` 条边的邻接表。
 
-# 4. 图的搜索
+# 5. 图的搜索
 
-## 4.1 判断路径是否存在
+## 5.1 判断路径是否存在
 
 `````java
 
@@ -935,5 +1030,378 @@ private boolean dfs(
 
 `````
 
-### 4.2 判断路径是否存在
+## 5.2 判断路径能否到达
+
+````java
+public class FindPathInMatrix {
+    //Solution1: DFS
+    public static boolean canReachWithDFS(int[][] grid, int[] start, int[] end, int maxCost) {
+        int m = grid.length;
+        int n = grid[0].length;
+
+        // 若起点或终点不可达，直接返回 false
+        if (grid[start[0]][start[1]] == -1 || grid[end[0]][end[1]] == -1) {
+            return false;
+        }
+
+        // 创建访问标记
+        boolean[][] visited = new boolean[m][n];
+        // 从起点开始 DFS，当前消耗初始为 0
+        return dfs(grid, start[0], start[1], end, maxCost, 0, visited);
+    }
+
+    private static boolean dfs(int[][] grid, int row, int col, int[] end,
+                               int maxCost, int currentCost, boolean[][] visited) {
+        // 如果超出 maxCost，剪枝
+        if (currentCost > maxCost) {
+            return false;
+        }
+        // 如果到达终点，且当前 cost <= maxCost
+        if (row == end[0] && col == end[1]) {
+            return true;
+        }
+
+        visited[row][col] = true;
+
+        // 尝试 8 个方向
+        for (int[] dir : DIRECTIONS) {
+            int newRow = row + dir[0];
+            int newCol = col + dir[1];
+            // 边界判断、阻塞判断、访问判断
+            if (isValid(grid, newRow, newCol) && !visited[newRow][newCol]) {
+                // 递归调用，步数 +1
+                if (dfs(grid, newRow, newCol, end, maxCost, currentCost + 1, visited)) {
+                    return true;
+                }
+            }
+        }
+
+        // 回溯，标记为未访问，便于其他路径尝试
+        visited[row][col] = false;
+        return false;
+    }
+
+    private static boolean isValid(int[][] grid, int r, int c) {
+        return r >= 0 && r < grid.length && c >= 0 && c < grid[0].length && grid[r][c] != -1;
+    }
+
+    //Solution2:BFS
+    // 8 个方向移动：上、下、左、右以及 4 个对角线
+    private static final int[][] DIRECTIONS = {
+            {-1, 0}, {1, 0}, {0, -1}, {0, 1},
+            {-1, -1}, {-1, 1}, {1, -1}, {1, 1}
+    };
+
+    public static boolean canReachWithBFS(int[][] grid, int[] start, int[] end, int maxCost) {
+        // 行、列数
+        int m = grid.length;
+        int n = grid[0].length;
+
+        // 边界条件判断
+        if (grid[start[0]][start[1]] == -1 || grid[end[0]][end[1]] == -1) {
+            return false;
+        }
+
+        // 创建一个队列，用于存储 (row, col, distance)
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{start[0], start[1], 0});
+
+        // 创建一个 visited 数组，防止重复访问
+        boolean[][] visited = new boolean[m][n];
+        visited[start[0]][start[1]] = true;
+
+        while (!queue.isEmpty()) {
+            int[] current = queue.poll();
+            int curRow = current[0];
+            int curCol = current[1];
+            int curDist = current[2];
+
+            // 如果已经到达终点，并且距离 <= maxCost
+            if (curRow == end[0] && curCol == end[1] && curDist <= maxCost) {
+                return true;
+            }
+
+            // 如果距离已经超过 maxCost，就无需再继续
+            if (curDist >= maxCost) {
+                continue;
+            }
+
+            // 遍历 8 个方向
+            for (int[] dir : DIRECTIONS) {
+                int newRow = curRow + dir[0];
+                int newCol = curCol + dir[1];
+
+                // 判断新坐标是否在有效范围内，且不是 -1，且未访问
+                if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n
+                        && grid[newRow][newCol] != -1
+                        && !visited[newRow][newCol]) {
+                    visited[newRow][newCol] = true;
+                    queue.offer(new int[]{newRow, newCol, curDist + 1});
+                }
+            }
+        }
+
+        // BFS 结束后仍未找到符合要求的路径
+        return false;
+    }
+
+
+    public static void main(String[] args) {
+        int[][] arr = {
+                {0, 0, 0, -1, 0},
+                {-1, 0, 0, -1, -1},
+                {0, 0, 0, -1, 0},
+                {-1, 0, 0, 0, 0},
+                {0, 0, -1, 0, 0}
+        };
+        int[] start = {0, 0};
+        int[] end = {4, 4};
+        int maxCost = 6;
+
+        boolean canReach = canReachWithDFS(arr, start, end, maxCost);
+        System.out.println("DFS: " + canReach);
+
+        boolean canReach1 = canReachWithBFS(arr, start, end, maxCost);
+        System.out.println("BFS: " + canReach1);
+    }
+
+}
+````
+
+# 6. 拓扑排序(Topological Order)
+
+DAG（有向无环图）是一种图结构，其中的边有方向，并且不会形成循环。每个节点代表一个任务或数据，而边表示任务之间的依赖关系。由于没有环，DAG 确保了在执行任务时没有依赖于自身的循环。
+
+构建DAG有以下步骤
+
+1. 录入节点信息
+2. 确定依赖信息（节点之间的关系）
+3. 构建图结构（使用邻接边，邻接矩阵，边集等表示） #todo
+4. 根据节点之间的依赖关系，确定节点的执行顺序，可以使用拓扑排序实现。
+
+图的存储结构可以通过前面的文章来了解。下面我们介绍下拓扑排序的实现
+
+## 6.1 BFS Kahn算法
+
+1. 计算每个节点的入度（即指向它的边数）。
+2. 将入度为 0 的节点加入队列。
+3. 从队列中取出一个节点，将其输出，并减少所有后继节点的入度。
+4. 如果某个后继节点的入度变为 0，则将其加入队列。
+5. 重复上述步骤直到队列为空。如果输出的节点数等于 DAG 的节点数，则排序成功，否则图中存在循环依赖。
+6. 算法在进行拓扑排序时同时检测有向图中是否存在环。如果发现环，则无法进行拓扑排序。
+
+
+
+例如：下图所示的有向无环图，采用入度表的方法获取拓扑排序过程。
+
+<img src="Graph.assets/GSORT-1.png" alt="img" style="zoom:50%;" />
+
+1. 选择图中入度为0的顶点1，输出顶点1。删除顶点1，并删除以顶点1为尾的边。删除后图为：
+   <img src="Graph.assets/GSORT-2.png" alt="img" style="zoom:50%;" />
+2. 继续选择入度为0的顶点。现在，图中入度为0的顶点有2和4，这里我们选择顶点2，输出顶点2。删除顶点2，并删除以顶点2为尾的边。删除后图为
+
+​	<img src="Graph.assets/GSORT-3.png" alt="img" style="zoom:50%;" />
+
+3. 选择入度为0的顶点4，输出顶点4.删除顶点4，并删除以顶点4为尾的边。删除后图为：
+   <img src="Graph.assets/GSORT-4.png" alt="img" style="zoom:50%;" />
+4. 选择入度为0的顶点3，输出顶点3.删除顶点3，并删除以顶点3为尾的边。删除后图为：
+   <img src="Graph.assets/GSORT-5.png" alt="img" style="zoom:50%;" />
+5. 最后剩余顶点5，输出顶点5，拓扑排序过程结束。最终的输出结果为：
+   <img src="Graph.assets/GSORT-6.png" alt="img" style="zoom:50%;" />
+
+```java
+package template;
+import java.util.*;
+
+//public class TopologicalSort {
+
+
+    class Edge {
+        String start;
+        String end;
+
+        public Edge(String start, String end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
+
+    public class TopologicalSort {
+
+        // 拓扑排序方法
+        private static List<String> topologicalSort(List<Edge> edges) {
+            // 存储节点的入度和邻接表
+            Map<String, Integer> inDegree = new HashMap<>();
+            Map<String, List<String>> graph = new HashMap<>();
+
+            // 初始化图和入度
+            for (Edge edge : edges) {
+                graph.putIfAbsent(edge.start, new ArrayList<>());
+                graph.putIfAbsent(edge.end, new ArrayList<>());
+                graph.get(edge.start).add(edge.end);
+
+                inDegree.put(edge.end, inDegree.getOrDefault(edge.end, 0) + 1);
+                inDegree.putIfAbsent(edge.start, 0);
+            }
+
+            // 入度为 0 的节点加入队列
+            Queue<String> queue = new LinkedList<>();
+            for (Map.Entry<String, Integer> entry : inDegree.entrySet()) {
+                if (entry.getValue() == 0) {
+                    queue.offer(entry.getKey());
+                }
+            }
+
+            // 拓扑排序结果
+            List<String> sortedOrder = new ArrayList<>();
+            while (!queue.isEmpty()) {
+                String node = queue.poll();
+                sortedOrder.add(node);
+
+                // 遍历当前节点的后继节点
+                if (graph.containsKey(node)) {
+                    for (String neighbor : graph.get(node)) {
+                        inDegree.put(neighbor, inDegree.get(neighbor) - 1);
+                        if (inDegree.get(neighbor) == 0) {
+                            queue.offer(neighbor);
+                        }
+                    }
+                }
+            }
+
+            // 检查是否存在循环依赖
+            if (sortedOrder.size() != inDegree.size()) {
+                throw new RuntimeException("图中存在循环依赖，不是一个DAG！");
+            }
+
+            return sortedOrder;
+        }
+
+        public static void main(String[] args) {
+            // 定义边列表
+            List<Edge> edges = new ArrayList<>();
+            edges.add(new Edge("1", "4"));
+            edges.add(new Edge("1", "2"));
+            edges.add(new Edge("2", "3"));
+            edges.add(new Edge("4", "3"));
+            edges.add(new Edge("4", "5"));
+            edges.add(new Edge("3", "5"));
+
+            // 打印拓扑排序结果
+            List<String> sortedNodes = topologicalSort(edges);
+            System.out.println("拓扑排序的节点顺序: " + sortedNodes);
+        }
+    }
+
+```
+
+复杂度分析
+
+- 该算法的时间复杂度为 O(V + E)，其中 V 是节点数，E 是边数。
+- 通过 Kahn 算法，我们可以保证节点按照拓扑顺序输出，即在 DAG 中所有节点按照其依赖关系排序。
+
+## 6.2 DFS 算法
+
+深度优先搜索过程中，当到达出度为0的顶点时，需要进行回退。在执行回退时记录出度为0的顶点，将其入栈。则最终出栈顺序的逆序即为拓扑排序序列。
+
+##### 算法流程
+
+1. 对图执行深度优先搜索。
+2. 在执行深度优先搜索时，若某个顶点不能继续前进，即顶点的出度为0，则将此顶点入栈。
+3. 最后得到栈中顺序的逆序即为拓扑排序顺序。
+
+实例图解
+
+<img src="Graph.assets/GSORT-1.png" alt="img" style="zoom:50%;" />
+
+1. 选择起点为顶点1,，开始执行深度优先搜索。顺序为1->2->3->5。深度优先搜索到达顶点5时，顶点5出度为0。将顶点5入栈。
+   <img src="Graph.assets/GSORT-10.png" alt="img" style="zoom:50%;" />
+2. 深度优先搜索执行回退，回退至顶点3。此时顶点3的出度为0，将顶点3入栈。
+
+​	<img src="Graph.assets/GSORT-10-20250213225807087.png" alt="img" style="zoom:50%;" />
+
+3. 回退至顶点2，顶点2出度为0，顶点2入栈
+
+   ​	<img src="Graph.assets/GSORT-11.png" alt="img" style="zoom:50%;" />
+
+
+
+4. 回退至顶点1，顶点1可以前进位置为顶点4，顺序为1->4。
+5. 顶点4出度为0，顶点4入栈。
+   <img src="Graph.assets/GSORT-13.png" alt="img" style="zoom:50%;" />
+6. 回退至顶点1，顶点1出度为0，顶点1入栈
+   <img src="Graph.assets/GSORT-14.png" alt="img" style="zoom:50%;" />
+7. 栈的逆序为1->4->2->3->5。此顺序为拓扑排序结果。
+
+```java
+import java.util.*;
+
+public class TopologicalSortWithCycleDetection {
+    private final Map<String, List<String>> graph = new HashMap<>();
+    private final Set<String> visited = new HashSet<>();
+    private final Set<String> recStack = new HashSet<>(); // 用于检测环
+    private final Stack<String> stack = new Stack<>(); // 存储拓扑排序结果
+
+    // 添加边
+    public void addEdge(String fromNode, String toNode) {
+        graph.computeIfAbsent(fromNode, k -> new ArrayList<>()).add(toNode);
+    }
+
+    // 拓扑排序方法
+    public List<String> topologicalSort() {
+        for (String node : graph.keySet()) {
+            if (!visited.contains(node)) {
+                if (topologicalSortUtil(node)) {
+                    throw new IllegalStateException("图中存在环，无法进行拓扑排序");
+                }
+            }
+        }
+        List<String> sortedOrder = new ArrayList<>();
+        while (!stack.isEmpty()) {
+            sortedOrder.add(stack.pop());
+        }
+        return sortedOrder;
+    }
+
+    // DFS 辅助方法，进行拓扑排序和环检测
+    private boolean topologicalSortUtil(String node) {
+        visited.add(node);
+        recStack.add(node); // 将节点标记为访问中
+
+        for (String neighbor : graph.getOrDefault(node, Collections.emptyList())) {
+            if (!visited.contains(neighbor)) {
+                if (topologicalSortUtil(neighbor)) {
+                    return true; // 如果发现环，返回 true
+                }
+            } else if (recStack.contains(neighbor)) {
+                return true; // 如果邻居在递归栈中，说明存在环
+            }
+        }
+
+        recStack.remove(node); // 当前节点的所有邻居访问完毕，移出递归栈
+        stack.push(node); // 将当前节点推入栈中
+        return false; // 无环
+    }
+
+    public static void main(String[] args) {
+        TopologicalSortWithCycleDetection dag = new TopologicalSortWithCycleDetection();
+        dag.addEdge("A", "B");
+        dag.addEdge("B", "C");
+        dag.addEdge("C", "D");
+        // dag.addEdge("D", "A"); // Uncomment this line to create a cycle
+
+        try {
+            List<String> sortedOrder = dag.topologicalSort();
+            System.out.println("拓扑排序结果: " + sortedOrder);
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+```
+
+复杂度分析
+
+- **时间复杂度**：O(V + E)，V 是节点数，E 是边数。
+- **空间复杂度**：O(V)，用于存储状态和结果栈。
 

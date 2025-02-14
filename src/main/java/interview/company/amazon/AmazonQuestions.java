@@ -7,6 +7,7 @@ import leetcode.question.dp.*;
 import leetcode.question.greedy.LeetCode_135_Candy;
 import leetcode.question.greedy.LeetCode_409_LongestPalindrome;
 import leetcode.question.heap.*;
+import leetcode.question.linked_list.LeetCode_141_LinkedListCycle;
 import leetcode.question.map_set.*;
 import leetcode.question.monotonic_stack_queue.LeetCode_496_NextGreaterElementI;
 import leetcode.question.sort.LeetCode_56_MergeIntervals;
@@ -17,6 +18,8 @@ import leetcode.question.string_list.*;
 import leetcode.question.trie.LeetCode_1268_SearchSuggestionsSystem;
 import leetcode.question.two_pointer.LeetCode_15_ThreeSum;
 import leetcode.question.two_pointer.LeetCode_16_ThreeSumClosest;
+import leetcode.question.two_pointer.LeetCode_19_RemoveNthNodeFromEndOfList;
+import leetcode.question.two_pointer.LeetCode_3_LongestSubstringWithoutRepeatingCharacters;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +37,13 @@ public class AmazonQuestions {
             , new LeetCode_55_JumpGame()
             , new LeetCode_45_JumpGameIi()
             , new LeetCode_222_CountCompleteTreeNodes()
+            , new LeetCode_97_InterleavingString()
+            , new LeetCode_19_RemoveNthNodeFromEndOfList()
+            , new LeetCode_141_LinkedListCycle()
+            , new LeetCode_3_LongestSubstringWithoutRepeatingCharacters()
+            , new LeetCode_23_MergeKSortedLists()
+            , new LeetCode_348_DesignTicTacToe()
+            , new LeetCode_79_WordSearch()
 
             , new LeetCode_20_ValidParentheses()
             , new LeetCode_23_MergeKSortedLists()

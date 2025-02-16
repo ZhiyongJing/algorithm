@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
-  *@Question:  323. Number of Connected Components in an Undirected Graph     
-  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
-  *@Frequency: 11.43%      
-  *@Time  Complexity: O(E + V) E = Number of edges, V = Number of vertices.
-  *@Space Complexity: O(E + V)
+ *@Question:  323. Number of Connected Components in an Undirected Graph
+ *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
+ *@Frequency: 11.43%
+ *@Time  Complexity: O(E + V) E = Number of edges, V = Number of vertices.
+ *@Space Complexity: O(E + V)
  */
 
 /**
@@ -95,40 +95,40 @@ public class LeetCode_323_NumberOfConnectedComponentsInAnUndirectedGraph {
 }
 
 /**
-You have a graph of n nodes. You are given an integer n and an array edges 
-where edges[i] = [ai, bi] indicates that there is an edge between ai and bi in the 
-graph. 
+ You have a graph of n nodes. You are given an integer n and an array edges
+ where edges[i] = [ai, bi] indicates that there is an edge between ai and bi in the
+ graph.
 
- Return the number of connected components in the graph. 
+ Return the number of connected components in the graph.
 
- 
- Example 1: 
- 
- 
-Input: n = 5, edges = [[0,1],[1,2],[3,4]]
-Output: 2
- 
 
- Example 2: 
- 
- 
-Input: n = 5, edges = [[0,1],[1,2],[2,3],[3,4]]
-Output: 1
- 
+ Example 1:
 
- 
- Constraints: 
 
- 
- 1 <= n <= 2000 
- 1 <= edges.length <= 5000 
- edges[i].length == 2 
- 0 <= ai <= bi < n 
- ai != bi 
- There are no repeated edges. 
- 
+ Input: n = 5, edges = [[0,1],[1,2],[3,4]]
+ Output: 2
+
+
+ Example 2:
+
+
+ Input: n = 5, edges = [[0,1],[1,2],[2,3],[3,4]]
+ Output: 1
+
+
+
+ Constraints:
+
+
+ 1 <= n <= 2000
+ 1 <= edges.length <= 5000
+ edges[i].length == 2
+ 0 <= ai <= bi < n
+ ai != bi
+ There are no repeated edges.
+
 
  Related Topics Depth-First Search Breadth-First Search Union Find Graph 👍 2606
  👎 98
 
-*/
+ */

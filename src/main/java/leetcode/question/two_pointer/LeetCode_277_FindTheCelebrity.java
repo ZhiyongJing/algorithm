@@ -60,6 +60,7 @@ public class LeetCode_277_FindTheCelebrity {
                 }
             }
 
+
             // 判断是否是真正的名人
             if (isCelebrity(celebrityCandidate)) {
                 return celebrityCandidate;

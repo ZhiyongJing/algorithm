@@ -39,9 +39,9 @@ public class LeetCode_212_WordSearchIi{
         String word = null;
         public TrieNode() {}
 
-//        public String toString(){
-//            return "\tTrieNode{\n" + "\tword" + "=" + word + ",\n"+ "\tchildren" + children.toString();
-//        }
+        public String toString(){
+            return "\tTrieNode{\n" + "\tword" + "=" + word + ",\n"+ "\tchildren" + children.toString();
+        }
     }
 
     class Solution {

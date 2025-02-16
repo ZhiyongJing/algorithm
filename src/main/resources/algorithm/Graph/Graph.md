@@ -1211,88 +1211,76 @@ DAG（有向无环图）是一种图结构，其中的边有方向，并且不�
 
 ```java
 package template;
+
 import java.util.*;
 
-//public class TopologicalSort {
+public class TopologicalSort {
 
 
-    class Edge {
-        String start;
-        String end;
+    // 拓扑排序方法
+    private static List<String> topologicalSort(List<List<String>> edges) {
+        //1. 存储节点的入度和邻接表, 并初始化图和入度
+        Map<String, Integer> inDegree = new HashMap<>();
+        Map<String, List<String>> graph = new HashMap<>();
+        for (List<String> edge : edges) {
+            graph.putIfAbsent(edge.get(0), new ArrayList<>());
+            graph.putIfAbsent(edge.get(1), new ArrayList<>());
+            graph.get(edge.get(0)).add(edge.get(1));
 
-        public Edge(String start, String end) {
-            this.start = start;
-            this.end = end;
+            inDegree.put(edge.get(1), inDegree.getOrDefault(edge.get(1), 0) + 1);
+            inDegree.putIfAbsent(edge.get(0), 0);
         }
-    }
+        System.out.println("indDegree: " + inDegree);//indDegree: {1=0, 2=1, 3=2, 4=1, 5=2}
+        System.out.println("graph" + graph);//graph{1=[2, 4], 2=[3], 3=[5], 4=[3, 5], 5=[]}
 
-    public class TopologicalSort {
-
-        // 拓扑排序方法
-        private static List<String> topologicalSort(List<Edge> edges) {
-            // 存储节点的入度和邻接表
-            Map<String, Integer> inDegree = new HashMap<>();
-            Map<String, List<String>> graph = new HashMap<>();
-
-            // 初始化图和入度
-            for (Edge edge : edges) {
-                graph.putIfAbsent(edge.start, new ArrayList<>());
-                graph.putIfAbsent(edge.end, new ArrayList<>());
-                graph.get(edge.start).add(edge.end);
-
-                inDegree.put(edge.end, inDegree.getOrDefault(edge.end, 0) + 1);
-                inDegree.putIfAbsent(edge.start, 0);
+        //2. 入度为 0 的节点加入队列. 如果有两个入度为0的节点，则这个图是分裂的
+        Queue<String> queue = new LinkedList<>();
+        for (Map.Entry<String, Integer> entry : inDegree.entrySet()) {
+            if (entry.getValue() == 0) {
+                queue.offer(entry.getKey());
             }
+        }
 
-            // 入度为 0 的节点加入队列
-            Queue<String> queue = new LinkedList<>();
-            for (Map.Entry<String, Integer> entry : inDegree.entrySet()) {
-                if (entry.getValue() == 0) {
-                    queue.offer(entry.getKey());
-                }
-            }
+        //3. 拓扑排序结果
+        List<String> sortedOrder = new ArrayList<>();
+        while (!queue.isEmpty()) {
+            String node = queue.poll();
+            sortedOrder.add(node);
 
-            // 拓扑排序结果
-            List<String> sortedOrder = new ArrayList<>();
-            while (!queue.isEmpty()) {
-                String node = queue.poll();
-                sortedOrder.add(node);
-
-                // 遍历当前节点的后继节点
-                if (graph.containsKey(node)) {
-                    for (String neighbor : graph.get(node)) {
-                        inDegree.put(neighbor, inDegree.get(neighbor) - 1);
-                        if (inDegree.get(neighbor) == 0) {
-                            queue.offer(neighbor);
-                        }
+            // 遍历当前节点的后继节点
+            if (graph.containsKey(node)) {
+                for (String neighbor : graph.get(node)) {
+                    inDegree.put(neighbor, inDegree.get(neighbor) - 1);
+                    if (inDegree.get(neighbor) == 0) {
+                        queue.offer(neighbor);
                     }
                 }
             }
-
-            // 检查是否存在循环依赖
-            if (sortedOrder.size() != inDegree.size()) {
-                throw new RuntimeException("图中存在循环依赖，不是一个DAG！");
-            }
-
-            return sortedOrder;
         }
 
-        public static void main(String[] args) {
-            // 定义边列表
-            List<Edge> edges = new ArrayList<>();
-            edges.add(new Edge("1", "4"));
-            edges.add(new Edge("1", "2"));
-            edges.add(new Edge("2", "3"));
-            edges.add(new Edge("4", "3"));
-            edges.add(new Edge("4", "5"));
-            edges.add(new Edge("3", "5"));
-
-            // 打印拓扑排序结果
-            List<String> sortedNodes = topologicalSort(edges);
-            System.out.println("拓扑排序的节点顺序: " + sortedNodes);
+        // 检查是否存在循环依赖
+        if (sortedOrder.size() != inDegree.size()) {
+            throw new RuntimeException("图中存在循环依赖，不是一个DAG！");
         }
+
+        return sortedOrder;
     }
 
+    public static void main(String[] args) {
+        // 定义边列表
+        List<List<String>> edges = new ArrayList<>();
+        edges.add(Arrays.asList("1", "2"));
+        edges.add(Arrays.asList("1", "4"));
+        edges.add(Arrays.asList("2", "3"));
+        edges.add(Arrays.asList("4", "3"));
+        edges.add(Arrays.asList("4", "5"));
+        edges.add(Arrays.asList("3", "5"));
+
+        // 打印拓扑排序结果
+        List<String> sortedNodes = topologicalSort(edges);
+        System.out.println("拓扑排序的节点顺序: " + sortedNodes);
+    }
+}
 ```
 
 复杂度分析
@@ -1334,9 +1322,12 @@ import java.util.*;
 7. 栈的逆序为1->4->2->3->5。此顺序为拓扑排序结果。
 
 ```java
+package template;
+
 import java.util.*;
 
-public class TopologicalSortWithCycleDetection {
+
+public class TopologicalSortDFS {
     private final Map<String, List<String>> graph = new HashMap<>();
     private final Set<String> visited = new HashSet<>();
     private final Set<String> recStack = new HashSet<>(); // 用于检测环
@@ -1364,6 +1355,15 @@ public class TopologicalSortWithCycleDetection {
     }
 
     // DFS 辅助方法，进行拓扑排序和环检测
+    //1. 将当前节点标记为访问中（加入递归栈 recStack）。
+    //2. 递归访问每个邻居节点：
+    //	2.1如果邻居未访问，则递归访问该邻居。
+    //	2.2如果邻居已经在递归栈中，说明图中存在环，返回 true。
+    //3. 访问完所有邻居后，当前节点从递归栈中移除，并推入结果栈中。
+    //4. 返回 false 表示没有环。
+ 
+
+
     private boolean topologicalSortUtil(String node) {
         visited.add(node);
         recStack.add(node); // 将节点标记为访问中
@@ -1384,11 +1384,14 @@ public class TopologicalSortWithCycleDetection {
     }
 
     public static void main(String[] args) {
-        TopologicalSortWithCycleDetection dag = new TopologicalSortWithCycleDetection();
-        dag.addEdge("A", "B");
-        dag.addEdge("B", "C");
-        dag.addEdge("C", "D");
-        // dag.addEdge("D", "A"); // Uncomment this line to create a cycle
+        TopologicalSortDFS dag = new TopologicalSortDFS();
+        dag.addEdge("1", "2");
+        dag.addEdge("1", "4");
+        dag.addEdge("2", "3");
+        dag.addEdge("4", "3");
+        dag.addEdge("4", "5");
+        dag.addEdge("3", "5");
+//        dag.addEdge("4", "1"); // Uncomment this line to create a cycle
 
         try {
             List<String> sortedOrder = dag.topologicalSort();

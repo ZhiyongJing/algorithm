@@ -1,6 +1,5 @@
 package interview.company.microsoft;
 
-import leetcode.question.bfs.LeetCode_200_NumberOfIslands;
 import leetcode.question.bfs.*;
 import leetcode.question.binary_search.*;
 import leetcode.question.dfs.*;
@@ -13,7 +12,6 @@ import leetcode.question.heap.LeetCode_295_FindMedianFromDataStream;
 import leetcode.question.linked_list.*;
 import leetcode.question.map_set.*;
 import leetcode.question.prefix_sum.LeetCode_53_MaximumSubarray;
-import leetcode.question.queue.LeetCode_54_SpiralMatrix;
 import leetcode.question.sort.LeetCode_215_KthLargestElementInAnArray;
 import leetcode.question.sort.LeetCode_56_MergeIntervals;
 import leetcode.question.sort.LeetCode_75_SortColors;

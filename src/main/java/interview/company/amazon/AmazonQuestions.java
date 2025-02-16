@@ -1,6 +1,7 @@
 package interview.company.amazon;
 
 import leetcode.question.bfs.*;
+import leetcode.question.binary_search.LeetCode_34_FindFirstAndLastPositionOfElementInSortedArray;
 import leetcode.question.binary_search.LeetCode_528_RandomPickWithWeight;
 import leetcode.question.dfs.*;
 import leetcode.question.dp.*;
@@ -13,13 +14,11 @@ import leetcode.question.monotonic_stack_queue.LeetCode_496_NextGreaterElementI;
 import leetcode.question.sort.LeetCode_56_MergeIntervals;
 import leetcode.question.stack.LeetCode_1249_MinimumRemoveToMakeValidParentheses;
 import leetcode.question.stack.LeetCode_20_ValidParentheses;
+import leetcode.question.stack.LeetCode_227_BasicCalculatorIi;
 import leetcode.question.stack.LeetCode_735_AsteroidCollision;
 import leetcode.question.string_list.*;
 import leetcode.question.trie.LeetCode_1268_SearchSuggestionsSystem;
-import leetcode.question.two_pointer.LeetCode_15_ThreeSum;
-import leetcode.question.two_pointer.LeetCode_16_ThreeSumClosest;
-import leetcode.question.two_pointer.LeetCode_19_RemoveNthNodeFromEndOfList;
-import leetcode.question.two_pointer.LeetCode_3_LongestSubstringWithoutRepeatingCharacters;
+import leetcode.question.two_pointer.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +43,18 @@ public class AmazonQuestions {
             , new LeetCode_23_MergeKSortedLists()
             , new LeetCode_348_DesignTicTacToe()
             , new LeetCode_79_WordSearch()
+            , new LeetCode_212_WordSearchIi()
+            , new LeetCode_98_ValidateBinarySearchTree()
+            , new LeetCode_997_FindTheTownJudge()
+            , new LeetCode_54_SpiralMatrix()
+            , new LeetCode_11_ContainerWithMostWater()
+            , new LeetCode_34_FindFirstAndLastPositionOfElementInSortedArray()
+            , new LeetCode_55_JumpGame()
+            , new LeetCode_277_FindTheCelebrity()
+            , new LeetCode_227_BasicCalculatorIi()
+            , new LeetCode_543_DiameterOfBinaryTree()
+            , new LeetCode_39_CombinationSum()
+            , new LeetCode_297_SerializeAndDeserializeBinaryTree()
 
             , new LeetCode_20_ValidParentheses()
             , new LeetCode_23_MergeKSortedLists()

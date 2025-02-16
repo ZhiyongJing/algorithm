@@ -1197,16 +1197,23 @@ DAG（有向无环图）是一种图结构，其中的边有方向，并且不�
 <img src="Graph.assets/GSORT-1.png" alt="img" style="zoom:50%;" />
 
 1. 选择图中入度为0的顶点1，输出顶点1。删除顶点1，并删除以顶点1为尾的边。删除后图为：
-   <img src="Graph.assets/GSORT-2.png" alt="img" style="zoom:50%;" />
-2. 继续选择入度为0的顶点。现在，图中入度为0的顶点有2和4，这里我们选择顶点2，输出顶点2。删除顶点2，并删除以顶点2为尾的边。删除后图为
 
-​	<img src="Graph.assets/GSORT-3.png" alt="img" style="zoom:50%;" />
+  <img src="Graph.assets/GSORT-2.png" alt="img" style="zoom:50%;" />
+
+2. 继续选择入度为0的顶点。现在，图中入度为0的顶点有2和4，我们选择顶点2，输出顶点2。删除顶点2，并删除以顶点2为尾的边。删除后图为
+
+  <img src="Graph.assets/GSORT-3.png" alt="img" style="zoom:50%;" />
 
 3. 选择入度为0的顶点4，输出顶点4.删除顶点4，并删除以顶点4为尾的边。删除后图为：
-   <img src="Graph.assets/GSORT-4.png" alt="img" style="zoom:50%;" />
+
+  <img src="Graph.assets/GSORT-4.png" alt="img" style="zoom:50%;" />
+
 4. 选择入度为0的顶点3，输出顶点3.删除顶点3，并删除以顶点3为尾的边。删除后图为：
-   <img src="Graph.assets/GSORT-5.png" alt="img" style="zoom:50%;" />
+
+  <img src="Graph.assets/GSORT-5.png" alt="img" style="zoom:50%;" />
+
 5. 最后剩余顶点5，输出顶点5，拓扑排序过程结束。最终的输出结果为：
+
    <img src="Graph.assets/GSORT-6.png" alt="img" style="zoom:50%;" />
 
 ```java
@@ -1303,23 +1310,28 @@ public class TopologicalSort {
 <img src="Graph.assets/GSORT-1.png" alt="img" style="zoom:50%;" />
 
 1. 选择起点为顶点1,，开始执行深度优先搜索。顺序为1->2->3->5。深度优先搜索到达顶点5时，顶点5出度为0。将顶点5入栈。
+
    <img src="Graph.assets/GSORT-10.png" alt="img" style="zoom:50%;" />
+
 2. 深度优先搜索执行回退，回退至顶点3。此时顶点3的出度为0，将顶点3入栈。
 
-​	<img src="Graph.assets/GSORT-10-20250213225807087.png" alt="img" style="zoom:50%;" />
+   <img src="Graph.assets/GSORT-10-20250213225807087.png" alt="img" style="zoom:50%;" />
 
 3. 回退至顶点2，顶点2出度为0，顶点2入栈
 
-   ​	<img src="Graph.assets/GSORT-11.png" alt="img" style="zoom:50%;" />
+   <img src="Graph.assets/GSORT-11.png" alt="img" style="zoom:50%;" />
 
 
 
-4. 回退至顶点1，顶点1可以前进位置为顶点4，顺序为1->4。
-5. 顶点4出度为0，顶点4入栈。
+4. 回退至顶点1，顶点1可以前进位置为顶点4，顺序为1->4。顶点4出度为0，顶点4入栈。
+
    <img src="Graph.assets/GSORT-13.png" alt="img" style="zoom:50%;" />
-6. 回退至顶点1，顶点1出度为0，顶点1入栈
+
+5. 回退至顶点1，顶点1出度为0，顶点1入栈
+
    <img src="Graph.assets/GSORT-14.png" alt="img" style="zoom:50%;" />
-7. 栈的逆序为1->4->2->3->5。此顺序为拓扑排序结果。
+
+6. 栈的逆序为1->4->2->3->5。此顺序为拓扑排序结果。
 
 ```java
 package template;

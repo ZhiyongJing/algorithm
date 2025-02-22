@@ -221,7 +221,9 @@
 >    > 
 >    > ```
 
-## 3.3 `Quick-Union`之基于Size优化
+## 3.3 `Quick-Union`优化
+
+### 3.3 `Quick-Union`之基于Size优化
 
 > 我们优化后的算法`union`，如果要把并查集中所有的数据连通，仍然至少要调用`N-1`次`union`方法，但是，我们发现`union`方法中已经没有了`for`循环，所以`union`算法的时间复杂度由`O(N^2)`变为了`O(N)`。但是这个算法仍然有问题，因为我们之前不仅修改了`union`算法，还修改了`find`算法。我们修改前的`find`算法的时间复杂度在任何情况下都为`O(1)`，但修改后的`find`算法在最坏情况下是`O(N)`， 在`union`方法中调用了`find`方法，所以在最坏情况下`union`算法的时间复杂度仍然为`O(N^2)`。
 >
@@ -313,7 +315,7 @@
 > }
 > ```
 
-## 3.4 `Quick-Union`之基于rank优化
+### 3.4 `Quick-Union`之基于rank优化
 
 > 合并后集合层数唯一会变的情况，就是**两个集合的层数一模一样时**。假设两个集合都只有一个元素，那么这两个集合的层数都为一层，层数相同时，此时谁的根节点的父亲节点指向另一个根节点都无所谓了，但是这样合并后的集合层数要比原来多了一层，其中rank可以理解为树高。
 >
@@ -394,11 +396,122 @@
 > }
 > `````
 >
+
+## 3.4 `Quick-Union`最优解string compression
+
+> 并查集里的 find 函数里可以进行路径压缩，是为了更快速的查找一个点的根节点。对于一个集合树来说，它的根节点下面可以依附着许多的节点，因此，我们可以尝试在 find 的过程中，从底向上，如果此时访问的节点不是根节点的话，那么我们可以把这个节点尽量的往上挪一挪，减少数的层数，这个过程就叫做路径压缩。
+>
+> 如下图中，find(4) 的过程就可以路径压缩，让数的层数更少。
+>
+> <img src="Union_Find.assets/compress-01.png" alt="img" style="zoom:50%;" />
+>
+> <img src="Union_Find.assets/compress-02.png" alt="img" style="zoom:50%;" />
+>
+> <img src="Union_Find.assets/compress-03.png" alt="img" style="zoom:50%;" />
+>
+> find 过程代码修改为 ：
+>
+> ```java
+> // 查找过程, 查找元素p所对应的集合编号
+> // O(h)复杂度, h为树的高度
+> private int find(int p){
+>     assert( p >= 0 && p < count );
+>     // path compression 1
+>     while( p != parent[p] ){
+>         parent[p] = parent[parent[p]];
+>         p = parent[p];
+>     }
+>     return p;
+> }
+> ```
+>
+> 上述路径压缩并不是最优的方式，我们可以把最初的树压缩成下图所示，层数是最少的。
+>
+> <img src="Union_Find.assets/conpress-04.png" alt="img" style="zoom:50%;" />
+>
+> 这个 find 过程代表表示为：
+>
+> ```java
+> // 查找过程, 查找元素p所对应的集合编号
+> // O(h)复杂度, h为树的高度
+> private int find(int p) {
+>     assert (p >= 0 && p < count);
+>     //第二种路径压缩算法
+>     if (p != parent[p])
+>         parent[p] = find(parent[p]);
+>     return parent[p];
+> }
+> ```
+>
+> 整体代码为：
+>
+> ```java
 > 
+> /**
+>  * 基于rank的优化
+>  */
+> public class UnionFind4 {
+> 
+>     private int[] rank;   // rank[i]表示以i为根的集合所表示的树的层数
+>     private int[] parent; // parent[i]表示第i个元素所指向的父节点
+>     private int count;    // 数据个数
+> 
+>     // 构造函数
+>     public UnionFind4(int count){
+>         rank = new int[count];
+>         parent = new int[count];
+>         this.count = count;
+>         // 初始化, 每一个parent[i]指向自己, 表示每一个元素自己自成一个集合
+>         for( int i = 0 ; i < count ; i ++ ){
+>             parent[i] = i;
+>             rank[i] = 1;
+>         }
+>     }
+> 
+>     // 查找过程, 查找元素p所对应的集合编号
+>     // O(h)复杂度, h为树的高度
+>     private int find(int p){
+>         //第二种路径压缩算法
+>         if( p != parent[p] )
+>         		parent[p] = find( parent[p] );
+>         return parent[p];
+>     }
+> 
+>     // 查看元素p和元素q是否所属一个集合
+>     // O(h)复杂度, h为树的高度
+>     public boolean isConnected( int p , int q ){
+>         return find(p) == find(q);
+>     }
+> 
+>     // 合并元素p和元素q所属的集合
+>     // O(h)复杂度, h为树的高度
+>     public void unionElements(int p, int q){
+> 
+>         int pRoot = find(p);
+>         int qRoot = find(q);
+> 
+>         if( pRoot == qRoot )
+>             return;
+> 
+>         if( rank[pRoot] < rank[qRoot] ){
+>             parent[pRoot] = qRoot;
+>         }
+>         else if( rank[qRoot] < rank[pRoot]){
+>             parent[qRoot] = pRoot;
+>         }
+>         else{ // rank[pRoot] == rank[qRoot]
+>             parent[pRoot] = qRoot;
+>             rank[qRoot] += 1;   // 维护rank的值
+>         }
+>     }
+> }
+> ```
+
+
 
 # 4. 算法复杂度
 
-> - 时间复杂度
+> - 时间复杂度, O(N * a(N)), a(N) is constant value, almost 1;
 >
 >   > ![image-20240613141034063](Union_Find.assets/image-20240613141034063.png)
 >

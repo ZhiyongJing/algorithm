@@ -747,7 +747,7 @@ This relates with “Deliver Results”
 > **Result:**
 > My manger aggree on me, i lean how to sho wthe comimit and how to instis on my own ieda.
 
-### **Tell me about a time you disagreed with your manager**
+#### **Tell me about a time you disagreed with your manager**
 
 - This relates to "Dive Deep" (challenging assumptions and respectfully disagreeing to achieve better outcomes) and "Have Backbone; Disagree and Commit" (voicing dissent while still supporting the team's decisions).
 

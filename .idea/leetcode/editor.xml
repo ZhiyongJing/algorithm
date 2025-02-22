@@ -146,6 +146,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_1162_AsFarFromLandAsPossible.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_1162_AsFarFromLandAsPossible.md" />
+              <option name="frontendQuestionId" value="leetcode.com1162" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_1162_AsFarFromLandAsPossible.java" />
+              <option name="titleSlug" value="as-far-from-land-as-possible" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_117_PopulatingNextRightPointersInEachNodeIi.java">
           <value>
             <LeetcodeEditor>
@@ -1815,6 +1826,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_669_TrimABinarySearchTree.java" />
               <option name="titleSlug" value="trim-a-binary-search-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_684_RedundantConnection.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_684_RedundantConnection.md" />
+              <option name="frontendQuestionId" value="leetcode.com684" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_684_RedundantConnection.java" />
+              <option name="titleSlug" value="redundant-connection" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3952,6 +3974,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/queue/LeetCode_933_NumberOfRecentCalls.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/doc/content/LeetCode_933_NumberOfRecentCalls.md" />
+              <option name="frontendQuestionId" value="leetcode.com933" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/LeetCode_933_NumberOfRecentCalls.java" />
+              <option name="titleSlug" value="number-of-recent-calls" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/sort/LeetCode_148_SortList.java">
           <value>
             <LeetcodeEditor>
@@ -4367,6 +4400,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_477_TotalHammingDistance.java" />
               <option name="titleSlug" value="total-hamming-distance" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_48_RotateImage.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_48_RotateImage.md" />
+              <option name="frontendQuestionId" value="leetcode.com48" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_48_RotateImage.java" />
+              <option name="titleSlug" value="rotate-image" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -5302,6 +5346,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_88_MergeSortedArray.java" />
               <option name="titleSlug" value="merge-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_933_NumberOfRecentCalls.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/doc/content/LeetCode_933_NumberOfRecentCalls.md" />
+              <option name="frontendQuestionId" value="leetcode.com933" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/queue/LeetCode_933_NumberOfRecentCalls.java" />
+              <option name="titleSlug" value="number-of-recent-calls" />
             </LeetcodeEditor>
           </value>
         </entry>

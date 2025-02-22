@@ -55,6 +55,7 @@ public class AmazonQuestions {
             , new LeetCode_543_DiameterOfBinaryTree()
             , new LeetCode_39_CombinationSum()
             , new LeetCode_297_SerializeAndDeserializeBinaryTree()
+            , new LeetCode_1162_AsFarFromLandAsPossible()
 
             , new LeetCode_20_ValidParentheses()
             , new LeetCode_23_MergeKSortedLists()

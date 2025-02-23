@@ -3501,6 +3501,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1726_TupleWithSameProduct.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_1726_TupleWithSameProduct.md" />
+              <option name="frontendQuestionId" value="leetcode.com1726" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1726_TupleWithSameProduct.java" />
+              <option name="titleSlug" value="tuple-with-same-product" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_1_TwoSum.java">
           <value>
             <LeetcodeEditor>
@@ -3553,6 +3564,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_311_SparseMatrixMultiplication.java" />
               <option name="titleSlug" value="sparse-matrix-multiplication" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.md" />
+              <option name="frontendQuestionId" value="leetcode.com3160" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.java" />
+              <option name="titleSlug" value="find-the-number-of-distinct-colors-among-the-balls" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3630,6 +3652,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_387_FirstUniqueCharacterInAString.java" />
               <option name="titleSlug" value="first-unique-character-in-a-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_451_SortCharactersByFrequency.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_451_SortCharactersByFrequency.md" />
+              <option name="frontendQuestionId" value="leetcode.com451" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_451_SortCharactersByFrequency.java" />
+              <option name="titleSlug" value="sort-characters-by-frequency" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4279,6 +4312,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_172_FactorialTrailingZeroes.java" />
               <option name="titleSlug" value="factorial-trailing-zeroes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1910_RemoveAllOccurrencesOfASubstring.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_1910_RemoveAllOccurrencesOfASubstring.md" />
+              <option name="frontendQuestionId" value="leetcode.com1910" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1910_RemoveAllOccurrencesOfASubstring.java" />
+              <option name="titleSlug" value="remove-all-occurrences-of-a-substring" />
             </LeetcodeEditor>
           </value>
         </entry>

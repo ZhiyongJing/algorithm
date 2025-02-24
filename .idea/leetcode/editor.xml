@@ -2995,6 +2995,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_2342_MaxSumOfAPairWithEqualSumOfDigits.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/doc/content/LeetCode_2342_MaxSumOfAPairWithEqualSumOfDigits.md" />
+              <option name="frontendQuestionId" value="leetcode.com2342" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_2342_MaxSumOfAPairWithEqualSumOfDigits.java" />
+              <option name="titleSlug" value="max-sum-of-a-pair-with-equal-sum-of-digits" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/heap/LeetCode_23_MergeKSortedLists.java">
           <value>
             <LeetcodeEditor>
@@ -3267,6 +3278,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/LeetCode_2_AddTwoNumbers.java" />
               <option name="titleSlug" value="add-two-numbers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/LeetCode_328_OddEvenLinkedList.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/doc/content/LeetCode_328_OddEvenLinkedList.md" />
+              <option name="frontendQuestionId" value="leetcode.com328" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/LeetCode_328_OddEvenLinkedList.java" />
+              <option name="titleSlug" value="odd-even-linked-list" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3570,10 +3592,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/doc/content/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.md" />
               <option name="frontendQuestionId" value="leetcode.com3160" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.java" />
               <option name="titleSlug" value="find-the-number-of-distinct-colors-among-the-balls" />
             </LeetcodeEditor>
           </value>
@@ -3754,6 +3776,39 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/doc/content/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.md" />
+              <option name="frontendQuestionId" value="leetcode.com3160" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls.java" />
+              <option name="titleSlug" value="find-the-number-of-distinct-colors-among-the-balls" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_316_RemoveDuplicateLetters.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/doc/content/LeetCode_316_RemoveDuplicateLetters.md" />
+              <option name="frontendQuestionId" value="leetcode.com316" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_316_RemoveDuplicateLetters.java" />
+              <option name="titleSlug" value="remove-duplicate-letters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_402_RemoveKDigits.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/doc/content/LeetCode_402_RemoveKDigits.md" />
+              <option name="frontendQuestionId" value="leetcode.com402" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_402_RemoveKDigits.java" />
+              <option name="titleSlug" value="remove-k-digits" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_496_NextGreaterElementI.java">
           <value>
             <LeetcodeEditor>
@@ -3831,6 +3886,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_1352_ProductOfTheLastKNumbers.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/doc/content/LeetCode_1352_ProductOfTheLastKNumbers.md" />
+              <option name="frontendQuestionId" value="leetcode.com1352" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_1352_ProductOfTheLastKNumbers.java" />
+              <option name="titleSlug" value="product-of-the-last-k-numbers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_1423_MaximumPointsYouCanObtainFromCards.java">
           <value>
             <LeetcodeEditor>
@@ -3839,6 +3905,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_1423_MaximumPointsYouCanObtainFromCards.java" />
               <option name="titleSlug" value="maximum-points-you-can-obtain-from-cards" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_1769_MinimumNumberOfOperationsToMoveAllBallsToEachBox.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/doc/content/LeetCode_1769_MinimumNumberOfOperationsToMoveAllBallsToEachBox.md" />
+              <option name="frontendQuestionId" value="leetcode.com1769" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_1769_MinimumNumberOfOperationsToMoveAllBallsToEachBox.java" />
+              <option name="titleSlug" value="minimum-number-of-operations-to-move-all-balls-to-each-box" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_303_RangeSumQueryImmutable.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/doc/content/LeetCode_303_RangeSumQueryImmutable.md" />
+              <option name="frontendQuestionId" value="leetcode.com303" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/prefix_sum/LeetCode_303_RangeSumQueryImmutable.java" />
+              <option name="titleSlug" value="range-sum-query-immutable" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -5115,6 +5203,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_340_LongestSubstringWithAtMostKDistinctCharacters.java" />
               <option name="titleSlug" value="longest-substring-with-at-most-k-distinct-characters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_344_ReverseString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_344_ReverseString.md" />
+              <option name="frontendQuestionId" value="leetcode.com344" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_344_ReverseString.java" />
+              <option name="titleSlug" value="reverse-string" />
             </LeetcodeEditor>
           </value>
         </entry>

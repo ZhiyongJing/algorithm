@@ -167,32 +167,38 @@ Str2 = "ABCDABD"
      *
      * @param dest
      */
-    public int[] buildKmpNext(String dest) {
-        int[] next = new int[dest.length()];
-        // 第一个字符的前缀和后缀都没有，所以不会有公共元素，因此必定为 0
-        next[0] = 0;
-        for (int i = 1, j = 0; i < dest.length(); i++) {
-            /*
-              ABCDA
-              前缀：`A、AB、ABC、ABCD`
-              后缀：`BCDA、CDA、DA、A`
-              公共元素 A
-              部分匹配值：1
-             */
-            // 当  dest.charAt(i) != dest.charAt(j) 时
-            // 需要从 next[j-1] 中获取新的 j
-            // 这步骤是 部分匹配表的 核心点
-            while (j > 0 && dest.charAt(i) != dest.charAt(j)) {
-                j = next[j - 1];
+    // 计算 KMP 算法的最长前缀后缀数组 (LPS)
+        private int[] computeLongestPrefixSuffix(String pattern) {
+            // 创建 LPS 数组，存储每个位置的最长前缀后缀匹配长度
+            int[] lps = new int[pattern.length()];
+
+            // 初始化两个指针：
+            // `current` 指向当前处理的字符
+            // `prefixLength` 记录当前最长匹配前缀的长度
+            for (int current = 1, prefixLength = 0; current < pattern.length();) {
+                
+                // 如果 pattern[current] 与 pattern[prefixLength] 匹配，说明当前前后缀可以扩展
+                if (pattern.charAt(current) == pattern.charAt(prefixLength)) {
+                    // 更新 LPS 当前索引值，并增加 prefixLength 和 current
+                    lps[current] = ++prefixLength;
+                    current++;
+                } 
+                // 如果当前字符与前缀字符不匹配，且 prefixLength 不为 0
+                // 说明需要回退到之前最长的可匹配前缀，以尝试新的匹配
+                else if (prefixLength != 0) {
+                    // 通过 LPS 回溯到较短的匹配前缀位置
+                    prefixLength = lps[prefixLength - 1];
+                } 
+                // 如果当前字符与前缀字符不匹配，且 prefixLength 为 0
+                // 说明此位置无法形成有效的前缀匹配，直接设置 LPS 值为 0 并继续下一个字符
+                else {
+                    lps[current] = 0;
+                    current++;
+                }
             }
-            // 当相等时，表示有一个部分匹配值
-            if (dest.charAt(i) == dest.charAt(j)) {
-                j++;
-            }
-            next[i] = j;
+            // 返回计算出的 LPS 数组
+            return lps;
         }
-        return next;
-    }
 ```
 
 

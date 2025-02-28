@@ -487,6 +487,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_802_FindEventualSafeStates.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_802_FindEventualSafeStates.md" />
+              <option name="frontendQuestionId" value="leetcode.com802" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_802_FindEventualSafeStates.java" />
+              <option name="titleSlug" value="find-eventual-safe-states" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_815_BusRoutes.java">
           <value>
             <LeetcodeEditor>
@@ -2104,6 +2115,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1014_BestSightseeingPair.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_1014_BestSightseeingPair.md" />
+              <option name="frontendQuestionId" value="leetcode.com1014" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1014_BestSightseeingPair.java" />
+              <option name="titleSlug" value="best-sightseeing-pair" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_1043_PartitionArrayForMaximumSum.java">
           <value>
             <LeetcodeEditor>
@@ -2544,6 +2566,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_416_PartitionEqualSubsetSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_416_PartitionEqualSubsetSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com416" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_416_PartitionEqualSubsetSum.java" />
+              <option name="titleSlug" value="partition-equal-subset-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_42_TrappingRainWater.java">
           <value>
             <LeetcodeEditor>
@@ -2596,6 +2629,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_465_OptimalAccountBalancing.java" />
               <option name="titleSlug" value="optimal-account-balancing" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_494_TargetSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_494_TargetSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com494" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_494_TargetSum.java" />
+              <option name="titleSlug" value="target-sum" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4403,6 +4447,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1781_SumOfBeautyOfAllSubstrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_1781_SumOfBeautyOfAllSubstrings.md" />
+              <option name="frontendQuestionId" value="leetcode.com1781" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1781_SumOfBeautyOfAllSubstrings.java" />
+              <option name="titleSlug" value="sum-of-beauty-of-all-substrings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1910_RemoveAllOccurrencesOfASubstring.java">
           <value>
             <LeetcodeEditor>
@@ -4631,6 +4686,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_8_StringToIntegerAtoi.java" />
               <option name="titleSlug" value="string-to-integer-atoi" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_916_WordSubsets.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_916_WordSubsets.md" />
+              <option name="frontendQuestionId" value="leetcode.com916" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_916_WordSubsets.java" />
+              <option name="titleSlug" value="word-subsets" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -5283,6 +5349,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_416_PartitionEqualSubsetSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/doc/content/LeetCode_416_PartitionEqualSubsetSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com416" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dp/LeetCode_416_PartitionEqualSubsetSum.java" />
+              <option name="titleSlug" value="partition-equal-subset-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_424_LongestRepeatingCharacterReplacement.java">
           <value>
             <LeetcodeEditor>
@@ -5522,6 +5599,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_977_SquaresOfASortedArray.java" />
               <option name="titleSlug" value="squares-of-a-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_992_SubarraysWithKDifferentIntegers.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_992_SubarraysWithKDifferentIntegers.md" />
+              <option name="frontendQuestionId" value="leetcode.com992" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_992_SubarraysWithKDifferentIntegers.java" />
+              <option name="titleSlug" value="subarrays-with-k-different-integers" />
             </LeetcodeEditor>
           </value>
         </entry>

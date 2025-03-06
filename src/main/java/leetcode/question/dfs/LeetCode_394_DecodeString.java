@@ -144,6 +144,8 @@ public class LeetCode_394_DecodeString{
                     for (; currentK > 0; currentK--) {
                         decodedString.append(currentString);
                     }
+                    System.out.println("currentString is : " + currentString);
+                    System.out.println("decodedString is : " + decodedString);
                     currentString = decodedString; // 更新当前字符串
                 } else {
                     // 普通字符直接追加到当前字符串
@@ -164,9 +166,9 @@ public class LeetCode_394_DecodeString{
         String s2 = "3[a2[c]]";
         String s3 = "2[abc]3[cd]ef";
 
-        System.out.println(solution.decodeString(s1)); // 输出: "aaabcbc"
+//        System.out.println(solution.decodeString(s1)); // 输出: "aaabcbc"
         System.out.println(solution.decodeString(s2)); // 输出: "accaccacc"
-        System.out.println(solution.decodeString(s3)); // 输出: "abcabccdcdcdef"
+//        System.out.println(solution.decodeString(s3)); // 输出: "abcabccdcdcdef"
     }
 }
 

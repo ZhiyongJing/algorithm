@@ -18,9 +18,12 @@ import leetcode.question.linked_list.LeetCode_2_AddTwoNumbers;
 import leetcode.question.linked_list.LeetCode_430_FlattenAMultilevelDoublyLinkedList;
 import leetcode.question.linked_list.LeetCode_445_AddTwoNumbersIi;
 import leetcode.question.map_set.*;
+import leetcode.question.prefix_sum.LeetCode_1352_ProductOfTheLastKNumbers;
 import leetcode.question.prefix_sum.LeetCode_53_MaximumSubarray;
+import leetcode.question.prefix_sum.LeetCode_560_SubarraySumEqualsK;
 import leetcode.question.stack.*;
 import leetcode.question.string_list.LeetCode_1583_CountUnhappyFriends;
+import leetcode.question.string_list.LeetCode_1910_RemoveAllOccurrencesOfASubstring;
 import leetcode.question.string_list.LeetCode_2423_RemoveLetterToEqualizeFrequency;
 import leetcode.question.string_list.LeetCode_8_StringToIntegerAtoi;
 import leetcode.question.two_pointer.*;
@@ -38,6 +41,8 @@ public class BloombergQuestions {
                 , new LeetCode_189_RotateArray()
                 , new LeetCode_203_RemoveLinkedListElements()
                 , new LeetCode_98_ValidateBinarySearchTree()
+                , new LeetCode_3160_FindTheNumberOfDistinctColorsAmongTheBalls()
+                , new LeetCode_386_LexicographicalNumbers()
             , new LeetCode_797_AllPathsFromSourceToTarget() // Find all paths from source to target in a graph. // 查找图中从源节点到目标节点的所有路径。
             , new LeetCode_380_InsertDeleteGetrandomO1() // Design a data structure that supports insert, delete, and get random element in constant time. // 设计一个支持插入、删除和随机获取元素的数据结构。
             , new LeetCode_19_RemoveNthNodeFromEndOfList() // Remove the N-th node from the end of a linked list. // 删除链表中的倒数第 N 个节点。
@@ -65,6 +70,10 @@ public class BloombergQuestions {
             , new LeetCode_1472_DesignBrowserHistory()
                 , new LeetCode_723_CandyCrush()
                 , new LeetCode_1583_CountUnhappyFriends()
+                , new LeetCode_560_SubarraySumEqualsK()
+                , new LeetCode_62_UniquePaths()
+                , new LeetCode_1352_ProductOfTheLastKNumbers()
+                , new LeetCode_1910_RemoveAllOccurrencesOfASubstring()
 
             , new LeetCode_399_EvaluateDivision()
             , new LeetCode_314_BinaryTreeVerticalOrderTraversal() // Perform a vertical order traversal on a binary tree. // 对二叉树执行垂直顺序遍历。

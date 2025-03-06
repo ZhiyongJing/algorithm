@@ -6,7 +6,7 @@ import java.util.Stack;
  *@Question:  1910. Remove All Occurrences of a Substring
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
  *@Frequency: 65.12%
- *@Time  Complexity: O(N^2) for solution1, n is length of string s, O(N + M) for solution2
+ *@Time  Complexity: O(N^2) for solution1, n is length of string s, O(N + M) for solution2, m is length of substring
  *@Space Complexity: O(n) for solution1, O(n + m) for solution2
  */
 /**

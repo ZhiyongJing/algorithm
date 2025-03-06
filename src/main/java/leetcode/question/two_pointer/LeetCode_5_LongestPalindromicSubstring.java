@@ -4,101 +4,160 @@ package leetcode.question.two_pointer;
  *@Question:  5. Longest Palindromic Substring
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
  *@Frequency: 98.05%
- *@Time  Complexity: O(n)
- *@Space Complexity: O(n)
+ *@Time  Complexity: O(n^2) for solution1, O(n) for solution2
+ *@Space Complexity: O(1) for solution1, O(n) for solution2
  */
 /**
- * ==============================
- * 题目描述：LeetCode 5 - Longest Palindromic Substring
- * ==============================
- * 给定一个字符串 `s`，请找出其中的**最长回文子串**。
+ * 题目描述：
+ * 给定一个字符串 s，找到 s 中最长的回文子串。
+ * 回文字符串指的是正着读和反着读都相同的字符串，例如 "aba"、"racecar"。
  *
- * **回文子串的定义：**
- * - 回文字符串是指正着读和反着读都一样的字符串。
- * - 例如，`"aba"` 和 `"racecar"` 是回文字符串，而 `"hello"` 不是。
+ * 示例 1：
+ * 输入：s = "babad"
+ * 输出："bab" 或 "aba"
+ * 解释：两个子串都是最长回文子串。
  *
- * **要求：**
- * - 你需要返回输入字符串中**最长的回文子串**。
+ * 示例 2：
+ * 输入：s = "cbbd"
+ * 输出："bb"
+ * 解释："bb" 是最长回文子串。
  *
- * **输入/输出示例：**
- * - 输入：`s = "babad"`
- * - 输出：`"bab"` 或 `"aba"`（两者都是有效答案）。
+ * 示例 3：
+ * 输入：s = "a"
+ * 输出："a"
+ * 解释：只有一个字符，必然是最长回文子串。
  *
- * - 输入：`s = "cbbd"`
- * - 输出：`"bb"`。
+ * 示例 4：
+ * 输入：s = "ac"
+ * 输出："a" 或 "c"
+ * 解释：两个子串长度都为1，任意一个都可以作为答案。
+ *
+ * 约束：
+ * - 1 <= s.length <= 1000
+ * - s 仅由数字和英文字母组成。
  */
 
 /**
- * ==============================
  * 解题思路：
- * ==============================
- * **核心思想：使用 Manacher's Algorithm 找到最长回文子串**
  *
- * - Manacher’s Algorithm 是一种优化算法，可以在 **O(n)** 的时间内找到一个字符串的最长回文子串。
- * - 通过在原字符串的每个字符之间插入一个特殊字符 `#`，我们可以将奇数长度和偶数长度的回文串统一处理。
- * - 然后使用一个回文半径数组 `palindromeRadii` 来存储每个字符为中心时回文串的半径长度。
+ * 方案 1（中心扩展法）：
+ * 1. 遍历字符串的每个字符，将其作为回文中心。
+ * 2. 对于每个中心点，向两侧扩展，查找最大回文子串。
+ * 3. 由于回文串可能是奇数或偶数长度，因此分别从 (i, i) 和 (i, i+1) 进行扩展。
+ * 4. 记录最长的回文子串的起始索引和结束索引，最后从原字符串截取该子串返回。
  *
- * ------------------------------
- * **解法步骤：**
- * ------------------------------
- * **步骤1：构造新字符串 `sPrime`**
- * - 遍历原字符串 `s`，在每个字符前后插入 `#`，并在开头和结尾分别添加 `#`。
- * - 例如，原字符串 `s = "abc"` 变为 `sPrime = "#a#b#c#"`。
- * - 这样可以将奇数长度和偶数长度的回文串统一处理。
+ * 举例：
+ * 输入：s = "babad"
+ * 1. 以 'b' 为中心扩展 -> "b"
+ * 2. 以 'a' 为中心扩展 -> "bab"
+ * 3. 以 'b' 为中心扩展 -> "aba"
+ * 4. 以 'a' 为中心扩展 -> "a"
+ * 5. 以 'd' 为中心扩展 -> "d"
+ * 最长回文子串是 "bab" 或 "aba"。
  *
- * **步骤2：定义回文半径数组 `palindromeRadii`**
- * - 创建一个数组 `palindromeRadii`，用于存储每个位置为中心时回文串的半径长度。
- * - 初始化两个变量：
- *   - `center`：当前已知回文串的中心位置。
- *   - `radius`：当前已知回文串的右边界位置。
+ * 方案 2（Manacher's Algorithm）：
+ * 1. 预处理字符串，在每个字符之间插入特殊字符 '#’，以便统一处理奇偶长度的回文串。
+ * 2. 维护一个回文半径数组 palindromeRadii[i]，表示以 i 为中心的回文子串的半径。
+ * 3. 维护回文中心 center 和右边界 radius：
+ *    - 如果 i 在当前回文半径内，则可以利用对称性减少计算。
+ *    - 继续扩展以找到最大回文半径，并更新回文中心。
+ * 4. 遍历找到最大的回文半径及其中心点，转换回原始字符串索引并返回子串。
  *
- * **步骤3：遍历新字符串 `sPrime`**
- * - 对于每个位置 `i`：
- *   1. 计算 `mirror = 2 * center - i`，即位置 `i` 关于当前回文中心的镜像位置。
- *   2. 如果当前位置在右边界内，则将镜像位置的半径值赋给当前半径值。
- *   3. 尝试向外扩展回文串，比较左右字符是否相等，直到不能继续扩展。
- *   4. 如果当前回文串的右边界超过了之前的右边界，则更新中心位置和右边界位置。
- *
- * **步骤4：找到最长回文半径及其对应的中心点**
- * - 遍历 `palindromeRadii` 数组，找到最大的回文半径值及其对应的中心点。
- * - 通过中心点和半径值计算出原字符串中的回文子串的起始和结束位置。
- *
- * **步骤5：截取原字符串中的最长回文子串**
- * - 根据计算出的起始位置和结束位置，截取原字符串中的最长回文子串并返回。
- *
- * ------------------------------
- * **举例解释：**
- * **示例1：**
- * - 输入：`s = "babad"`
- * - 构造的新字符串：`sPrime = "#b#a#b#a#d#"`
- * - 回文半径数组：`[0, 1, 0, 3, 0, 1, 0, 1, 0]`
- * - 最大回文半径为 3，对应的中心点为 3。
- * - 回文子串的起始索引为 `(3 - 3) / 2 = 0`，长度为 3。
- * - 截取原字符串中的子串：`s.substring(0, 3) = "bab"`。
- * - 输出结果：`"bab"`。
-
- * **示例2：**
- * - 输入：`s = "cbbd"`
- * - 构造的新字符串：`sPrime = "#c#b#b#d#"`
- * - 回文半径数组：`[0, 1, 0, 2, 0, 1, 0]`
- * - 最大回文半径为 2，对应的中心点为 3。
- * - 回文子串的起始索引为 `(3 - 2) / 2 = 1`，长度为 2。
- * - 截取原字符串中的子串：`s.substring(1, 3) = "bb"`。
- * - 输出结果：`"bb"`。
-
+ * 举例：
+ * 输入：s = "babad"
+ * 1. 预处理："#b#a#b#a#d#"
+ * 2. 计算回文半径：[0,1,0,3,0,1,0,3,0,1,0]
+ * 3. 最大回文半径对应的中心点 -> 原始字符串索引 -> 得到 "aba" 或 "bab"。
  */
 
 /**
- * ==============================
- * 时间和空间复杂度分析：
- * ==============================
- * **时间复杂度：O(n)**
- * - `n` 是字符串的长度。
- * - 使用 Manacher’s Algorithm，可以在线性时间内计算最长回文子串。
+ * 时间和空间复杂度：
+ *
+ * 方案 1（中心扩展法）：
+ * - 时间复杂度：O(n^2)，遍历每个字符 O(n)，每次扩展最多 O(n)，整体 O(n^2)。
+ * - 空间复杂度：O(1)，只使用了常数额外空间。
+ *
+ * 方案 2（Manacher’s Algorithm）：
+ * - 时间复杂度：O(n)，每个字符最多计算一次，利用对称性减少计算。
+ * - 空间复杂度：O(n)，存储转换后的字符串及回文半径数组。
+ */
+/**
+ * 题目描述：
+ *
+ * 给定一个字符串 s，找到 s 中最长的回文子串。回文串是指从前往后和从后往前读取都相同的字符串。
+ *
+ * 示例 1：
+ * 输入：s = "babad"
+ * 输出："bab" 或 "aba"
+ * 解释：长度为 3 的回文子串 "bab" 或 "aba" 均符合要求。
+ *
+ * 示例 2：
+ * 输入：s = "cbbd"
+ * 输出："bb"
+ * 解释：最长回文子串为 "bb"，长度为 2。
+ *
+ * 示例 3：
+ * 输入：s = "a"
+ * 输出："a"
+ * 解释：单个字符本身就是回文串。
+ *
+ * 示例 4：
+ * 输入：s = "ac"
+ * 输出："a" 或 "c"
+ * 解释：两个字符均为回文子串，长度相同，返回任意一个均可。
+ *
+ * 约束：
+ * - 1 <= s.length <= 1000
+ * - s 仅由数字和英文字母组成。
+ */
 
- * **空间复杂度：O(n)**
- * - 需要创建一个长度为 `2n + 1` 的新字符串 `sPrime`。
- * - 需要一个长度为 `2n + 1` 的回文半径数组 `palindromeRadii`。
+/**
+ * 解题思路：
+ *
+ * 方案 1：中心扩展法
+ * 1. 遍历字符串的每个字符，将其作为回文中心，尝试向左右扩展，找到最大回文子串。
+ * 2. 由于回文串可能是奇数长度（单个字符为中心，如 "aba"）或偶数长度（两个字符为中心，如 "abba"），
+ *    需要分别尝试以单个字符和两个字符为中心进行扩展。
+ * 3. 维护一个变量存储当前找到的最长回文子串的起始索引和结束索引，每次扩展后检查是否更新。
+ * 4. 遍历完成后，提取最长回文子串并返回。
+ *
+ * 例子：
+ * 假设 s = "babad"，遍历到 i = 2 ('b' 在索引 2)：
+ * - 以 "b" 为中心扩展："bab" 是最长回文。
+ * - 以 "ba" 为中心扩展，无法形成回文。
+ * - 继续遍历，最终最长回文子串可能是 "bab" 或 "aba"。
+ *
+ * 假设 s = "cbbd"，遍历到 i = 1 ('b' 在索引 1)：
+ * - 以 "b" 为中心扩展："b" 是回文，但不是最长的。
+ * - 以 "bb" 为中心扩展："bb" 是最长回文。
+ *
+ * 方案 2：Manacher 算法（线性时间复杂度）
+ * 1. 通过在原字符串中插入特殊字符 "#"，确保所有回文子串都是奇数长度（如 "abc" -> "#a#b#c#"）。
+ * 2. 维护一个数组 `palindromeRadii`，存储以每个字符为中心的回文半径。
+ * 3. 维护两个变量：
+ *    - `center`：当前最长回文子串的中心。
+ *    - `radius`：当前最长回文子串的右边界。
+ * 4. 遍历新字符串：
+ *    - 计算当前字符在 `center` 的镜像位置 `mirror`，如果 `mirror` 位置的回文半径可利用，则复制其值。
+ *    - 继续尝试扩展回文半径，更新 `center` 和 `radius`。
+ * 5. 遍历完成后，找到最长回文子串并返回。
+ *
+ * 例子：
+ * 假设 s = "babad"，处理后变成 `#b#a#b#a#d#`，回文半径数组为：
+ * [0, 1, 0, 3, 0, 3, 0, 1, 0]
+ * 其中，最大回文半径为 3，对应的子串是 "aba"。
+ */
+
+/**
+ * 时间和空间复杂度：
+ *
+ * 方案 1（中心扩展法）：
+ * - 时间复杂度：O(n^2)，因为每个字符都可能扩展 O(n) 次。
+ * - 空间复杂度：O(1)，仅使用了常数额外空间。
+ *
+ * 方案 2（Manacher 算法）：
+ * - 时间复杂度：O(n)，每个字符仅被访问一次。
+ * - 空间复杂度：O(n)，用于存储新字符串和回文半径数组。
  */
 
 
@@ -107,12 +166,71 @@ public class LeetCode_5_LongestPalindromicSubstring {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         /**
-         * 寻找最长回文子串
+         * 方法1：中心扩展法
+         * 计算最长回文子串
          * @param s 输入字符串
          * @return 最长回文子串
          */
         public String longestPalindrome(String s) {
-            // step1: 使用 Manacher's Algorithm 构造新字符串，在每个字符之间插入特殊字符 '#'，以便处理奇数和偶数长度的回文串
+            // 用数组存储回文子串的起始索引和结束索引
+            int[] ans = new int[]{0, 0};
+
+            // 遍历字符串的每个字符，尝试作为回文中心
+            for (int i = 0; i < s.length(); i++) {
+                // 计算以 i 作为中心的奇数长度回文串的最大长度
+                int oddLength = expand(i, i, s);
+                if (oddLength > ans[1] - ans[0] + 1) {
+                    int dist = oddLength / 2;
+                    ans[0] = i - dist;
+                    ans[1] = i + dist;
+                }
+
+                // 计算以 i 和 i+1 作为中心的偶数长度回文串的最大长度
+                int evenLength = expand(i, i + 1, s);
+                if (evenLength > ans[1] - ans[0] + 1) {
+                    int dist = (evenLength / 2) - 1;
+                    ans[0] = i - dist;
+                    ans[1] = i + 1 + dist;
+                }
+            }
+
+            // 提取最长回文子串
+            int i = ans[0];
+            int j = ans[1];
+            return s.substring(i, j + 1);
+        }
+
+        /**
+         * 辅助方法：从中心扩展查找最大回文长度
+         * @param i 左指针
+         * @param j 右指针
+         * @param s 输入字符串
+         * @return 回文子串的长度
+         */
+        private int expand(int i, int j, String s) {
+            int left = i;
+            int right = j;
+
+            // 向两侧扩展，直到遇到不同的字符或越界
+            while (
+                    left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)
+            ) {
+                left--;
+                right++;
+            }
+
+            // 计算回文子串长度
+            return right - left - 1;
+        }
+
+        /**
+         * 方法2：Manacher 算法
+         * 使用 Manacher’s Algorithm 计算最长回文子串
+         * @param s 输入字符串
+         * @return 最长回文子串
+         */
+        public String longestPalindrome2(String s) {
+            // step1: 预处理字符串，在每个字符之间插入 '#'
             StringBuilder sPrime = new StringBuilder("#");
             for (char c : s.toCharArray()) {
                 sPrime.append(c).append("#");
@@ -120,39 +238,39 @@ public class LeetCode_5_LongestPalindromicSubstring {
 
             // 获取新字符串的长度
             int n = sPrime.length();
-            // 定义一个数组来存储每个位置的回文半径
+            // 存储每个字符的回文半径
             int[] palindromeRadii = new int[n];
-            // 当前已知的回文串的中心和右边界
+            // 记录当前的回文中心和右边界
             int center = 0;
             int radius = 0;
 
-            // 遍历新字符串的每个字符
+            // 遍历新字符串
             for (int i = 0; i < n; i++) {
-                // 计算当前字符在回文中心的镜像位置
+                // 计算 i 位置的镜像位置
                 int mirror = 2 * center - i;
 
-                // 如果当前字符在右边界内，则取已知半径和当前右边界距离的最小值
+                // 如果 i 在当前回文范围内，则初始化回文半径
                 if (i < radius) {
                     palindromeRadii[i] = Math.min(radius - i, palindromeRadii[mirror]);
                 }
 
-                // 尝试扩展回文半径，比较左右字符是否相等
+                // 尝试扩展回文半径
                 while (i + 1 + palindromeRadii[i] < n &&
                         i - 1 - palindromeRadii[i] >= 0 &&
                         sPrime.charAt(i + 1 + palindromeRadii[i]) == sPrime.charAt(i - 1 - palindromeRadii[i])) {
                     palindromeRadii[i]++;
                 }
 
-                // 如果当前回文串的右边界超过了之前的右边界，更新中心点和右边界
+                // 更新回文中心和右边界
                 if (i + palindromeRadii[i] > radius) {
                     center = i;
                     radius = i + palindromeRadii[i];
                 }
             }
 
-            // 寻找最大回文半径及其对应的中心点
-            int maxLength = 0; // 最大回文长度
-            int centerIndex = 0; // 最大回文的中心点索引
+            // 寻找最大回文半径及其中心
+            int maxLength = 0;
+            int centerIndex = 0;
             for (int i = 0; i < n; i++) {
                 if (palindromeRadii[i] > maxLength) {
                     maxLength = palindromeRadii[i];
@@ -162,10 +280,7 @@ public class LeetCode_5_LongestPalindromicSubstring {
 
             // 计算原字符串的起始索引
             int startIndex = (centerIndex - maxLength) / 2;
-            // 截取最长回文子串
-            String longestPalindrome = s.substring(startIndex, startIndex + maxLength);
-
-            return longestPalindrome;
+            return s.substring(startIndex, startIndex + maxLength);
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

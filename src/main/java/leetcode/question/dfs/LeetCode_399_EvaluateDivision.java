@@ -148,6 +148,7 @@ public class LeetCode_399_EvaluateDivision {
                 graph.get(from).add(new Pair<>(to, value));
                 graph.get(to).add(new Pair<>(from, 1.0 / value));
             }
+            System.out.println(graph);
 
             double[] res = new double[queries.size()];
             Arrays.fill(res, -1.0);
@@ -162,7 +163,6 @@ public class LeetCode_399_EvaluateDivision {
                 }
                 Queue<Pair<String, Double>> queue = new LinkedList<>();
                 queue.add(new Pair<>(from, 1.0));
-                System.out.println(graph);
                 Set<String> visited = new HashSet<>();
                 visited.add(from);
                 while (!queue.isEmpty()) {

@@ -11,13 +11,12 @@ import leetcode.question.dfs.*;
 import leetcode.question.dp.*;
 import leetcode.question.greedy.LeetCode_1029_TwoCityScheduling;
 import leetcode.question.greedy.LeetCode_134_GasStation;
+import leetcode.question.heap.LeetCode_2342_MaxSumOfAPairWithEqualSumOfDigits;
 import leetcode.question.heap.LeetCode_253_MeetingRoomsIi;
 import leetcode.question.heap.LeetCode_642_DesignSearchAutocompleteSystem;
-import leetcode.question.linked_list.LeetCode_203_RemoveLinkedListElements;
-import leetcode.question.linked_list.LeetCode_2_AddTwoNumbers;
-import leetcode.question.linked_list.LeetCode_430_FlattenAMultilevelDoublyLinkedList;
-import leetcode.question.linked_list.LeetCode_445_AddTwoNumbersIi;
+import leetcode.question.linked_list.*;
 import leetcode.question.map_set.*;
+import leetcode.question.monotonic_stack_queue.LeetCode_402_RemoveKDigits;
 import leetcode.question.prefix_sum.LeetCode_1352_ProductOfTheLastKNumbers;
 import leetcode.question.prefix_sum.LeetCode_53_MaximumSubarray;
 import leetcode.question.prefix_sum.LeetCode_560_SubarraySumEqualsK;
@@ -74,6 +73,12 @@ public class BloombergQuestions {
                 , new LeetCode_62_UniquePaths()
                 , new LeetCode_1352_ProductOfTheLastKNumbers()
                 , new LeetCode_1910_RemoveAllOccurrencesOfASubstring()
+                , new LeetCode_402_RemoveKDigits()
+                , new LeetCode_24_SwapNodesInPairs()
+                , new LeetCode_1570_DotProductOfTwoSparseVectors()
+                , new LeetCode_2342_MaxSumOfAPairWithEqualSumOfDigits()
+
+
 
             , new LeetCode_399_EvaluateDivision()
             , new LeetCode_314_BinaryTreeVerticalOrderTraversal() // Perform a vertical order traversal on a binary tree. // 对二叉树执行垂直顺序遍历。

@@ -91,6 +91,7 @@ public class LeetCode_2342_MaxSumOfAPairWithEqualSumOfDigits{
                     Comparator.comparing(Pair<Integer, Integer>::getKey)
                             .thenComparing(Pair<Integer, Integer>::getValue)
             );
+            System.out.println(Arrays.toString(digitSumPairs));
 
             int maxPairSum = -1; // 记录最大数对和
 

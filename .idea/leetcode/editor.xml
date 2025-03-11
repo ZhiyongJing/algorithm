@@ -91,6 +91,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_528_RandomPickWithWeight.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_528_RandomPickWithWeight.md" />
+              <option name="frontendQuestionId" value="leetcode.com528" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_528_RandomPickWithWeight.java" />
+              <option name="titleSlug" value="random-pick-with-weight" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_973_KClosestPointsToOrigin.java">
           <value>
             <LeetcodeEditor>
@@ -809,10 +820,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_528_RandomPickWithWeight.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/doc/content/LeetCode_528_RandomPickWithWeight.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/doc/content/LeetCode_528_RandomPickWithWeight.md" />
               <option name="frontendQuestionId" value="leetcode.com528" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/interview/company/amazon/LeetCode_528_RandomPickWithWeight.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/binary_search/LeetCode_528_RandomPickWithWeight.java" />
               <option name="titleSlug" value="random-pick-with-weight" />
             </LeetcodeEditor>
           </value>
@@ -5338,6 +5349,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_246_StrobogrammaticNumber.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_246_StrobogrammaticNumber.md" />
+              <option name="frontendQuestionId" value="leetcode.com246" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_246_StrobogrammaticNumber.java" />
+              <option name="titleSlug" value="strobogrammatic-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_251_Flatten2dVector.java">
           <value>
             <LeetcodeEditor>
@@ -5731,6 +5753,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_669_TrimABinarySearchTree.java" />
               <option name="titleSlug" value="trim-a-binary-search-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_680_ValidPalindromeIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_680_ValidPalindromeIi.md" />
+              <option name="frontendQuestionId" value="leetcode.com680" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_680_ValidPalindromeIi.java" />
+              <option name="titleSlug" value="valid-palindrome-ii" />
             </LeetcodeEditor>
           </value>
         </entry>

@@ -78,15 +78,30 @@ public class LeetCode_15_ThreeSum {
 //            }
             int lo = i+ 1, hi = nums.length - 1;
             //[-4, -1, -1, , 0, 1, 2]
+//            while (lo < hi) {
+//                int currSum = nums[lo] + nums[hi] + nums[i];
+//                if (currSum < 0 || (lo > 0 && nums[lo] == nums[lo - 1])) {
+//                    ++lo;
+//                } else if (currSum > 0 || (hi < nums.length - 1 && nums[hi] == nums[hi + 1])) {
+//                    --hi;
+//                } else {
+//                    // res.add(Arrays.asList(nums[lo++], nums[hi--]));
+//                    res.add(Arrays.asList(nums[i], nums[lo++], nums[hi--]));
+//                }
+//            }
             while (lo < hi) {
                 int currSum = nums[lo] + nums[hi] + nums[i];
-                if (currSum < 0 || (lo > 0 && nums[lo] == nums[lo - 1])) {
+                if (currSum < 0 ) {
                     ++lo;
-                } else if (currSum > 0 || (hi < nums.length - 1 && nums[hi] == nums[hi + 1])) {
+                } else if (currSum > 0 ) {
                     --hi;
                 } else {
                     // res.add(Arrays.asList(nums[lo++], nums[hi--]));
                     res.add(Arrays.asList(nums[i], nums[lo++], nums[hi--]));
+                    //4. 跳过重复值
+                    while(lo < hi && nums[lo] == nums[lo - 1]){
+                        lo++;
+                    }
                 }
             }
         }

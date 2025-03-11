@@ -117,6 +117,7 @@ public class LeetCode_560_SubarraySumEqualsK{
                 // 记录当前前缀和的出现次数
                 map.put(sum, map.getOrDefault(sum, 0) + 1);
             }
+            System.out.println(map);
             return count; // 返回满足条件的子数组总数
         }
     }

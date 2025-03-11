@@ -34,7 +34,7 @@
 >       }
 >       return binarySearch(nums, target, 0, len - 1);
 >   }
->   
+>     
 >   /**
 >      * 在数组 arr 的子区间 [left..right] 里搜索目标元素
 >    *
@@ -76,7 +76,18 @@
 >   >
 >   > **必须向左边**，继续看下去，才能确定 `nums[mid]`是不是我们要找的元素。为了避免死循环，一般使用 **模版二** 写法。
 >   >
+>   > - `mid` **向下取整**，使其更靠近 `left`。
+>   >
+>   > - 这样可以保证 **当目标值重复出现时，搜索会往左靠拢**，最终 `left` 会停在 `target` 的最左侧位置
+>   >
 >   > **必须向右边**，继续看下去，才能确定 `nums[mid]`是不是我们要找的元素。为了避免死循环，一般使用 **模版三** 写法。
+>   >
+>   > - `mid` **向上取整**，使其更靠近 `right`。
+>   >
+>   > - 这样可以保证 **当目标值重复出现时，搜索会往右靠拢**，最终 `right` 会停在 `target` 的最右侧位置。
+>   >
+>   > 
+>   >
 >   > ![image-20241230145111298](Binary_Search.assets/中间值.png)
 >
 > - **情况2:** 如果当前猜的数 `nums[mid]` 符合某个性质，我们还确定它一定就是我们要找的元素，那就直接返回。
@@ -89,97 +100,176 @@
 >
 > ```java
 > /* 模版一：（双闭区间） */
-> int binarySearch(int[] nums, int target) {
->     // 初始化双闭区间 [0, n-1] ，即 start, end 分别指向数组首元素、尾元素
->     int start = 0, end = nums.length - 1;
->     // 循环，当搜索区间为空时跳出（当 start > end 时为空）
->     while (start <= end) {
->         int m = start + (end - start) / 2; // 计算中点索引 m
->         if (nums[m] < target) // 此情况说明 target 在区间 [m+1, end] 中
->             start = m + 1;
->         else if (nums[m] > target) // 此情况说明 target 在区间 [start, m-1] 中
->             end = m - 1;
->         else // 找到目标元素，返回其索引
->             return m;
+>     int binarySearch1(int[] nums, int target) {
+>         // 初始化双闭区间 [0, n-1] ，即 left, right 分别指向数组首元素、尾元素
+>         int left = 0, right = nums.length - 1;
+>         // 循环，当搜索区间为空时跳出（当 left > right 时为空）
+>         while (left <= right) {
+>             int m = left + (right - left) / 2; // 计算中点索引 m
+>             if (nums[m] < target) // 此情况说明 target 在区间 [m+1, right] 中
+>                 left = m + 1;
+>             else if (nums[m] > target) // 此情况说明 target 在区间 [left, m-1] 中
+>                 right = m - 1;
+>             else // 找到目标元素，返回其索引
+>                 return m;
+>         }
+>         // 未找到目标元素，返回 -1
+>         return -1;
 >     }
->     // 未找到目标元素，返回 -1
->     return -1;
-> }
 > 
-> /* 模版二，向左偏移 */
-> int binarySearchLeftMost(int[] nums, int target) {
->     // 初始化双闭区间 [0, n-1] ，即 left, right 分别指向数组首元素、尾元素
->     int left = 0, right = nums.length - 1;
->     // 循环，当搜索区间为空时跳出（当 left = right 时为空）
->     while (left < right) {
->         int m = left + (right - left) / 2; // 计算中点索引 m
->         // 小于一定不是解
->         if (nums[mid] < target) {
->             // 下一轮搜索区间是 [mid + 1..right]
->             left = mid + 1;
->         } else {
->             // nums[mid] > target，下一轮搜索区间是 [left..mid]
->             right = mid;
+>     /* 模版二，向左偏移 */
+>     //mid 向下取整，使其更靠近 left。
+>     //这样可以保证 当目标值重复出现时，搜索会往左靠拢，最终 left 会停在 target 的最左侧位置。
+>     int binarySearch2LeftMost(int[] nums, int target) {
+>         if (nums == null || nums.length == 0) return -1;
+>         // 初始化双闭区间 [0, n-1] ，即 left, right 分别指向数组首元素、尾元素
+>         int left = 0, right = nums.length - 1;
+>         // 循环，当搜索区间为空时跳出（当 left = right 时为空）
+>         while (left < right) {
+>             int mid = left + (right - left) / 2; // 计算中点索引 m
+> 
+>             //第一种写法， 容易理解
+>             if (nums[mid] < target) {
+>                 left = mid + 1;
+>             } else if (nums[mid] == target) {
+>                 right = mid;
+>             } else {
+>                 right = mid - 1;
 >             }
->     }
->   	// 退出循环以后不能确定 nums[left] 是否等于 target，因此需要再判断一次
+> 
+> //            //第二种写法： 小于一定不是解
+> //            if (nums[mid] < target) {
+> //                // 下一轮搜索区间是 [mid + 1..right]
+> //                left = mid + 1;
+> //            } else {
+> //                // nums[mid] > target，下一轮搜索区间是 [left..mid]
+> //                right = mid;
+> //            }
+>         }
+>         // 退出循环以后不能确定 nums[left] 是否等于 target，因此需要再判断一次
 >         if (nums[left] == target) {
 >             return left;
 >         }
->     // 未找到目标元素，返回 -1
->     return -1;
-> }
+>         // 未找到目标元素，返回 -1
+>         return -1;
+>     }
 > 
-> /* 模版三，向右偏移 */
-> int binarySearchRightMost(int[] nums, int target) {
->     // 初始化双闭区间 [0, n-1] ，即 left, right 分别指向数组首元素、尾元素
->     int left = 0, right = nums.length - 1;
->     // 循环，当搜索区间为空时跳出（当 left = right 时为空）
->     while (left < right) {
+>     /* 模版三，向右偏移 */
+>     int binarySearch3RightMost(int[] nums, int target) {
+>         if (nums == null || nums.length == 0) return -1;
+>         // 初始化双闭区间 [0, n-1] ，即 left, right 分别指向数组首元素、尾元素
+>         int left = 0, right = nums.length - 1;
+>         // 循环，当搜索区间为空时跳出（当 left = right 时为空）
+>         while (left < right) {
 >             int mid = left + (right - left + 1) / 2;
+>             //第一种写法， 容易理解
 >             if (nums[mid] > target) {
->                 // 下一轮搜索区间是 [left..mid - 1]
 >                 right = mid - 1;
->             } else
->                 // 下一轮搜索区间是 [mid..right]
+>             } else if (nums[mid] < target) {
+>                 left = mid + 1;
+>             } else {
 >                 left = mid;
 >             }
+> 
+> //            //第二种写法
+> //            if (nums[mid] > target) {
+> //                // 下一轮搜索区间是 [left..mid - 1]
+> //                right = mid - 1;
+> //            } else {
+> //                // 下一轮搜索区间是 [mid..right]
+> //                left = mid;
+> //            }
 >         }
->   	// 退出循环以后不能确定 nums[right] 是否等于 target，因此需要再判断一次
+> 
+>         // 退出循环以后不能确定 nums[right] 是否等于 target，因此需要再判断一次
 >         if (nums[right] == target) {
 >             return right;
 >         }
->     // 未找到目标元素，返回 -1
->     return -1;
-> }
-> 
-> /* 模版四，专门解决stack overflow */
-> int binarySearch(int[] nums, int target) {
->     // 初始化双闭区间 [0, n-1] ，即 start, end 分别指向数组首元素、尾元素
->     int start = 0, end = nums.length - 1;
->     // 循环，当搜索区间仅剩下start 和 end 两个时跳出
->     while (start + 1 < end) {
->         int m = start + (end - start) / 2; // 计算中点索引 m
->         if (nums[m] < target) // 此情况说明 target 在区间 [m, end] 中
->             start = m;
->         else if (nums[m] > target) // 此情况说明 target 在区间 [start, m] 中
->             end = m;
->         else // 找到目标元素，返回其索引
->             return m;
+>         // 未找到目标元素，返回 -1
+>         return -1;
 >     }
 > 
-> //  	//进行判断，情况一：向右偏移
-> //    if(list.get(end) == target) return end;
-> //    if(list.get(start) == target) return start;
+>     /* 模版四，专门解决stack overflow, 找到某个值*/
+>     int binarySearch4(int[] nums, int target) {
+>         // 初始化双闭区间 [0, n-1] ，即 left, right 分别指向数组首元素、尾元素
+>         int left = 0, right = nums.length - 1;
+>         // 循环，当搜索区间仅剩下left 和 right 两个时跳出
+>         while (left + 1 < right) {
+>             int m = left + (right - left) / 2; // 计算中点索引 m
+>             if (nums[m] < target) // 此情况说明 target 在区间 [m, right] 中
+>                 left = m;
+>             else if (nums[m] > target) // 此情况说明 target 在区间 [left, m] 中
+>                 right = m;
+>             else { // 找到目标元素，返回其索引
+>                 return m;
+>             }
+>         }
+>         return -1;
+>     }
 > 
->   	//进行判断，情况二：向左偏移
->     if(list.get(start) == target) return start;  
->     if(list.get(end) == target) return end;
+>     /* 模版四，专门解决stack overflow, 找到最左某个值*/
+>     int binarySearch4FindMostLeft(int[] nums, int target) {
+>         // 初始化双闭区间 [0, n-1] ，即 left, right 分别指向数组首元素、尾元素
+>         int left = 0, right = nums.length - 1;
+>         // 循环，当搜索区间仅剩下left 和 right 两个时跳出
+> 
+>         while (left + 1 < right) {
+>             int mid = left + (right - left) / 2;
+>             //第一种写法,容易理解
+>             if (nums[mid] < target) {
+>                 left = mid;
+>             } else if (nums[mid] > target) {
+>                 right = mid;
+>             } else {
+>                 right = mid; //找到目标值，继续向左找
+>             }
+> //            //第二种写法
+> //            if (nums[mid] < target) {
+> //                left = mid;
+> //            } else {
+> //                right = mid;
+> //            }
+>         }
+> 
+>         //Condition: left + 1 == right， 需要向左偏移(find most left position)
+>         if (nums[left] == target) return left;
+>         if (nums[right] == target) return right;
+>         return -1;
 > 
 > 
->     // 未找到目标元素，返回 -1
->     return -1;
-> }
+>     }
+> 
+>     /* 模版四，专门解决stack overflow, 找到最右某个值*/
+>     int binarySearch4FindMostRight(int[] nums, int target) {
+>         // 初始化双闭区间 [0, n-1] ，即 left, right 分别指向数组首元素、尾元素
+>         int left = 0, right = nums.length - 1;
+>         // 循环，当搜索区间仅剩下left 和 right 两个时跳出
+>         //Find Most right
+>         while (left + 1 < right) {
+>             // Prevent (left + right) overflow
+>             int mid = left + (right - left) / 2;
+>             //第一种写法,容易理解
+>             if (nums[mid] > target) {
+>                 right = mid;
+>             } else if (nums[mid] < target) {
+>                 left = mid;
+>             } else {
+>                 left = mid; //继续向右查找
+>             }
+> //            //第二种写法
+> //            if (nums[mid] > target) {
+> //                right = mid;
+> //            } else {
+> //                left = mid;
+> //            }
+>         }
+> 
+>         //Condition: left + 1 == right， 需要向右偏移(find most right position)
+>         if (nums[right] == target) return right;
+>         if (nums[left] == target) return left;
+>         return -1;
+> 
+>     }
 > ```
 
 

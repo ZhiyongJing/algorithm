@@ -2,7 +2,6 @@ package interview.company.amazon;
 
 import leetcode.question.bfs.*;
 import leetcode.question.binary_search.LeetCode_34_FindFirstAndLastPositionOfElementInSortedArray;
-import leetcode.question.binary_search.LeetCode_528_RandomPickWithWeight;
 import leetcode.question.dfs.*;
 import leetcode.question.dp.*;
 import leetcode.question.greedy.LeetCode_135_Candy;

@@ -292,10 +292,10 @@
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_270_ClosestBinarySearchTreeValue.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/doc/content/LeetCode_270_ClosestBinarySearchTreeValue.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_270_ClosestBinarySearchTreeValue.md" />
               <option name="frontendQuestionId" value="leetcode.com270" />
               <option name="host" value="leetcode.com" />
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_270_ClosestBinarySearchTreeValue.java" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_270_ClosestBinarySearchTreeValue.java" />
               <option name="titleSlug" value="closest-binary-search-tree-value" />
             </LeetcodeEditor>
           </value>
@@ -1444,6 +1444,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_270_ClosestBinarySearchTreeValue.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_270_ClosestBinarySearchTreeValue.md" />
+              <option name="frontendQuestionId" value="leetcode.com270" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_270_ClosestBinarySearchTreeValue.java" />
+              <option name="titleSlug" value="closest-binary-search-tree-value" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_285_InorderSuccessorInBst.java">
           <value>
             <LeetcodeEditor>
@@ -1518,6 +1529,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_333_LargestBstSubtree.java" />
               <option name="titleSlug" value="largest-bst-subtree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_339_NestedListWeightSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_339_NestedListWeightSum.md" />
+              <option name="frontendQuestionId" value="leetcode.com339" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_339_NestedListWeightSum.java" />
+              <option name="titleSlug" value="nested-list-weight-sum" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1664,6 +1686,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_426_ConvertBinarySearchTreeToSortedDoublyLinkedList.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_426_ConvertBinarySearchTreeToSortedDoublyLinkedList.md" />
+              <option name="frontendQuestionId" value="leetcode.com426" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_426_ConvertBinarySearchTreeToSortedDoublyLinkedList.java" />
+              <option name="titleSlug" value="convert-binary-search-tree-to-sorted-doubly-linked-list" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_427_ConstructQuadTree.java">
           <value>
             <LeetcodeEditor>
@@ -1807,6 +1840,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_529_Minesweeper.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_529_Minesweeper.md" />
+              <option name="frontendQuestionId" value="leetcode.com529" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_529_Minesweeper.java" />
+              <option name="titleSlug" value="minesweeper" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_536_ConstructBinaryTreeFromString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_536_ConstructBinaryTreeFromString.md" />
+              <option name="frontendQuestionId" value="leetcode.com536" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_536_ConstructBinaryTreeFromString.java" />
+              <option name="titleSlug" value="construct-binary-tree-from-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_543_DiameterOfBinaryTree.java">
           <value>
             <LeetcodeEditor>
@@ -1815,6 +1870,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_543_DiameterOfBinaryTree.java" />
               <option name="titleSlug" value="diameter-of-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_545_BoundaryOfBinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_545_BoundaryOfBinaryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com545" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_545_BoundaryOfBinaryTree.java" />
+              <option name="titleSlug" value="boundary-of-binary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1892,6 +1958,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_653_TwoSumIvInputIsABst.java" />
               <option name="titleSlug" value="two-sum-iv-input-is-a-bst" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_655_PrintBinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_655_PrintBinaryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com655" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_655_PrintBinaryTree.java" />
+              <option name="titleSlug" value="print-binary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>

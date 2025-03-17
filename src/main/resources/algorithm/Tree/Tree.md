@@ -621,34 +621,40 @@ DFS 搜索类的基本套路就是从入口开始做 dfs，然后在 dfs 内部�
 
 套路模板：
 
-```py
-# 其中 path 是树的路径， 如果需要就带上，不需要就不带
-def dfs(root, path):
-    # 空节点
-    if not root: return
-    # 叶子节点
-    if not root.left and not root.right: return
-    path.append(root)
-    # 逻辑可以写这里，此时是前序遍历
-    dfs(root.left)
-    dfs(root.right)
-    # 需要弹出，不然会错误计算。
-    # 比如对于如下树：
-    """
-              5
-             / \
-            4   8
-           /   / \
-          11  13  4
-         /  \    / \
-        7    2  5   1
-    """
-    # 如果不 pop，那么 5 -> 4 -> 11 -> 2 这条路径会变成 5 -> 4 -> 11 -> 7 -> 2，其 7 被错误地添加到了 path
+```java
+public class DFSExample {
+    public void dfs(TreeNode root, List<TreeNode> path) {
+        // 处理空节点
+        if (root == null) return;
+        // 处理叶子节点
+        if (root.left == null && root.right == null) return;
+        
+        // 将当前节点加入路径
+        path.add(root);
+        
+        // 逻辑可以写在这里，表示前序遍历
+        dfs(root.left, path);
+        dfs(root.right, path);
+        
+        // 需要弹出，不然路径会错误
+        // 例如，对于以下树：
+        /*
+                  5
+                 / \
+                4   8
+               /   / \
+              11  13  4
+             /  \    / \
+            7    2  5   1
+        */
+        // 如果不移除 `path` 中的最后一个节点，
+        // 路径 5 -> 4 -> 11 -> 2 可能变成 5 -> 4 -> 11 -> 7 -> 2
+        path.remove(path.size() - 1);
 
-    path.pop()
-    # 逻辑也可以写这里，此时是后序遍历
+        // 逻辑也可以写在这里，表示后序遍历
+    }
 
-    return 你想返回的数据
+}
 
 ```
 
@@ -658,30 +664,39 @@ def dfs(root, path):
 
 > 由于需要找到所有的路径，而不仅仅是一条，因此这里适合使用回溯暴力枚举。关于回溯，可以参考我的 [回溯专题](https://github.com/azl397985856/leetcode/blob/master/thinkings/backtrack.md "回溯专题")
 
-```py
+```java
+class Solution {
+    public List<List<Integer>> pathSum(TreeNode root, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        backtrack(ans, new ArrayList<>(), root, target);
+        return ans;
+    }
 
-class Solution:
-    def pathSum(self, root: TreeNode, target: int) -> List[List[int]]:
-        def backtrack(nodes, path, cur, remain):
-            # 空节点
-            if not cur: return
-            # 叶子节点
-            if cur and not cur.left and not cur.right:
-                if remain == cur.val:
-                    nodes.append((path + [cur.val]).copy())
-                return
-            # 选择
-            path.append(cur.val)
-            # 递归左右子树
-            backtrack(nodes, path, cur.left, remain - cur.val)
-            backtrack(nodes, path, cur.right, remain - cur.val)
-            # 撤销选择
-            path.pop(-1)
-        ans = []
-        # 入口，路径，目标值全部传进去，其中路径和path都是扩展的参数
-        backtrack(ans, [], root, target)
-        return ans
+    private void backtrack(List<List<Integer>> nodes, List<Integer> path, TreeNode cur, int remain) {
+        // 空节点
+        if (cur == null) return;
+        
+        // 叶子节点
+        if (cur.left == null && cur.right == null) {
+            if (remain == cur.val) {
+                nodes.add(new ArrayList<>(path)); // 复制当前路径
+                nodes.get(nodes.size() - 1).add(cur.val); // 添加当前节点值
+            }
+            return;
+        }
 
+        // 选择当前节点
+        path.add(cur.val);
+
+        // 递归左右子树
+        backtrack(nodes, path, cur.left, remain - cur.val);
+        backtrack(nodes, path, cur.right, remain - cur.val);
+
+        // 撤销选择
+        path.remove(path.size() - 1);
+    }
+
+}
 
 ```
 
@@ -726,20 +741,34 @@ next_direction = cur_direction * - 1
 
 > 我的代码是 Python，这里的 lru_cache 就是一个缓存，大家可以使用自己语言的字典模拟实现。
 
-```py
-class Solution:
-    @lru_cache(None)
-    def dfs(self, root, dir):
-        if not root:
-            return 0
-        if dir == -1:
-            return int(root.left != None) + self.dfs(root.left, dir * -1)
-        return int(root.right != None) + self.dfs(root.right, dir * -1)
+```java
+class Solution {
+    private Map<String, Integer> memo = new HashMap<>();
 
-    def longestZigZag(self, root: TreeNode) -> int:
-        if not root:
-            return 0
-        return max(self.dfs(root, 1), self.dfs(root, -1), self.longestZigZag(root.left), self.longestZigZag(root.right))
+    private int dfs(TreeNode root, int dir) {
+        if (root == null) return 0;
+
+        String key = root.hashCode() + "_" + dir;
+        if (memo.containsKey(key)) return memo.get(key);
+
+        int result;
+        if (dir == -1) {
+            result = (root.left != null ? 1 : 0) + dfs(root.left, dir * -1);
+        } else {
+            result = (root.right != null ? 1 : 0) + dfs(root.right, dir * -1);
+        }
+
+        memo.put(key, result);
+        return result;
+    }
+
+    public int longestZigZag(TreeNode root) {
+        if (root == null) return 0;
+        return Math.max(dfs(root, 1), Math.max(dfs(root, -1), 
+               Math.max(longestZigZag(root.left), longestZigZag(root.right))));
+    }
+}
+
 ```
 
 这个代码不懂没关系，大家只有知道搜索类题目的大方向即可，具体做法我们后面会介绍，大家留个印象就行。更多的题目以及这些技巧的详细使用方式放在**七个技巧部分**展开。
@@ -919,35 +948,53 @@ class Solution {
 
 参考代码：
 
-```py
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+```java
+class Solution {
+    public int widthOfBinaryTree(TreeNode root) {
+        if (root == null) return 0;
 
-class Solution:
-    def widthOfBinaryTree(self, root: TreeNode) -> int:
-        q = collections.deque([(root, 0)])
-        steps = 0
-        cur_depth = leftmost = ans = 0
+        Queue<Pair<TreeNode, Integer>> q = new LinkedList<>();
+        q.offer(new Pair<>(root, 0));
+        int steps = 0, curDepth = 0, leftmost = 0, ans = 0;
 
-        while q:
-            for _ in range(len(q)):
-                node, pos = q.popleft()
-                if node:
-                    # 节点编号关关系是不是用上了？
-                    q.append((node.left, pos * 2))
-                    q.append((node.right, pos * 2 + 1))
-                    # 逻辑开始
-                    if cur_depth != steps:
-                        cur_depth = steps
-                        leftmost = pos
-                    ans = max(ans, pos - leftmost + 1)
-                    # 逻辑结束
-            steps += 1
-        return ans
+        while (!q.isEmpty()) {
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                Pair<TreeNode, Integer> pair = q.poll();
+                TreeNode node = pair.getKey();
+                int pos = pair.getValue();
+
+                if (node != null) {
+                    q.offer(new Pair<>(node.left, pos * 2));
+                    q.offer(new Pair<>(node.right, pos * 2 + 1));
+
+                    if (curDepth != steps) {
+                        curDepth = steps;
+                        leftmost = pos;
+                    }
+                    ans = Math.max(ans, pos - leftmost + 1);
+                }
+            }
+            steps++;
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        // 构建示例树
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(2);
+        root.left.left = new TreeNode(5);
+        root.left.right = new TreeNode(3);
+        root.right.right = new TreeNode(9);
+
+        Solution solution = new Solution();
+        System.out.println("二叉树的最大宽度: " + solution.widthOfBinaryTree(root));
+        // 预期输出: 4
+    }
+}
+
 ```
 
 再比如[剑指 Offer 37. 序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/)。如果我将一个二叉树的完全二叉树形式序列化，然后通过 BFS 反序列化，这不就是力扣官方序列化树的方式么？比如：
@@ -966,23 +1013,34 @@ class Solution:
 
 将一颗普通树序列化为完全二叉树很简单，只要将空节点当成普通节点入队处理即可。代码：
 
-```py
-class Codec:
+```java
+class Codec {
 
-    def serialize(self, root):
-        q = collections.deque([root])
-        ans = ''
-        while q:
-            cur = q.popleft()
-            if cur:
-                ans += str(cur.val) + ','
-                q.append(cur.left)
-                q.append(cur.right)
-            else:
-                # 除了这里不一样，其他和普通的不记录层的 BFS 没区别
-                ans += 'null,'
-        # 末尾会多一个逗号，我们去掉它。
-        return ans[:-1]
+    // 序列化
+    public String serialize(TreeNode root) {
+        if (root == null) return "";
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        StringBuilder ans = new StringBuilder();
+
+        while (!q.isEmpty()) {
+            TreeNode cur = q.poll();
+            if (cur != null) {
+                ans.append(cur.val).append(",");
+                q.offer(cur.left);
+                q.offer(cur.right);
+            } else {
+                // 记录 "null" 以确保反序列化时结构一致
+                ans.append("null,");
+            }
+        }
+
+        // 删除末尾多余的逗号
+        return ans.substring(0, ans.length() - 1);
+    }
+}
+
 ```
 
 细心的同学可能会发现，我上面的代码其实并不是将树序列化成了完全二叉树，这个我们稍后就会讲到。另外后面多余的空节点也一并序列化了。这其实是可以优化的，优化的方式也很简单，那就是去除末尾的 null 即可。
@@ -1047,28 +1105,51 @@ class Codec:
 
 因此代码就不难写出了。反序列化代码如下：
 
-```py
-def deserialize(self, data):
-    if data == 'null': return None
-    nodes = data.split(',')
-    root = TreeNode(nodes[0])
-    q = collections.deque([root])
-    i = 0
-    while q and i < len(nodes) - 2:
-        cur = q.popleft()
-        lv = nodes[i + 1]
-        rv = nodes[i + 2]
-        i += 2
-        if lv != 'null':
-            l = TreeNode(lv)
-            q.append(l)
-            cur.left = l
-        if rv != 'null':
-            r = TreeNode(rv)
-            q.append(r)
-            cur.right = r
+```java
+class Codec {
 
-    return root
+    // 反序列化
+    public TreeNode deserialize(String data) {
+        if (data.equals("null")) return null;
+
+        String[] nodes = data.split(",");
+        TreeNode root = new TreeNode(Integer.parseInt(nodes[0]));
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        int i = 0;
+
+        while (!q.isEmpty() && i < nodes.length - 2) {
+            TreeNode cur = q.poll();
+            String lv = nodes[i + 1];
+            String rv = nodes[i + 2];
+            i += 2;
+
+            if (!lv.equals("null")) {
+                TreeNode leftNode = new TreeNode(Integer.parseInt(lv));
+                cur.left = leftNode;
+                q.offer(leftNode);
+            }
+
+            if (!rv.equals("null")) {
+                TreeNode rightNode = new TreeNode(Integer.parseInt(rv));
+                cur.right = rightNode;
+                q.offer(rightNode);
+            }
+        }
+        return root;
+    }
+
+    public static void main(String[] args) {
+        Codec codec = new Codec();
+
+        // 序列化的测试数据
+        String data = "1,2,3,null,null,4,5";
+        TreeNode root = codec.deserialize(data);
+        System.out.println("反序列化完成，根节点值: " + (root != null ? root.val : "null"));
+        // 预期输出: 反序列化完成，根节点值: 1
+    }
+}
+
 ```
 
 这个题目虽然并不是完全二叉树的题目，但是却和完全二叉树很像，有借鉴完全二叉树的地方。
@@ -1096,7 +1177,7 @@ def deserialize(self, data):
 - 路径可以由一个节点做成，可以由两个节点组成，也可以由三个节点组成等等，但是必须连续。
 - 路径必须是”直来直去“的，不能有分叉。 比如上图的路径的左下角是 3，当然也可以是 2，但是 2 比较小。但是不可以 2 和 3 同时选。
 
-我们继续回到 124 题。题目说是 ”从任意节点出发.......“ 看完这个描述我会想到大概率是要么全局记录最大值，要么双递归。
+我们继续回到 124 题。题目说是 ”从任意节点出发.......“ **看完这个描述我会想到大概率是要么全局记录最大值，要么双递归**。 
 
 - 如果使用双递归，那么复杂度就是 $O(N^2)$，实际上，子树的路径和计算出来了，可以推导出父节点的最大路径和，因此如果使用双递归会有重复计算。一个可行的方式是记忆化递归。
 - 如果使用全局记录最大值，只需要在递归的时候 return 当前的一条边（上面提了不能拐），并在函数内部计算以当前节点出发的最大路径和，并更新全局最大值即可。 这里的核心其实是 return 较大的一条边，因为较小的边不可能是答案。
@@ -1105,20 +1186,29 @@ def deserialize(self, data):
 
 代码：
 
-```py
-class Solution:
-    ans = float('-inf')
-    def maxPathSum(self, root: TreeNode) -> int:
-        def dfs(node):
-            if not node: return 0
-            l = dfs(node.left)
-            r = dfs(node.right)
-            # 选择当前的节点，并选择左右两边，当然左右两边也可以不选。必要时更新全局最大值
-            self.ans = max(self.ans, max(l,0) + max(r, 0) + node.val)
-            # 只返回一边，因此我们挑大的返回。当然左右两边也可以不选
-            return max(l, r, 0) + node.val
-        dfs(root)
-        return self.ans
+```java
+class Solution {
+    private int ans = Integer.MIN_VALUE; // 全局最大路径和
+
+    public int maxPathSum(TreeNode root) {
+        dfs(root);
+        return ans;
+    }
+
+    private int dfs(TreeNode node) {
+        if (node == null) return 0;
+
+        int left = dfs(node.left); // 递归计算左子树的最大路径和
+        int right = dfs(node.right); // 递归计算右子树的最大路径和
+
+        // 计算当前节点的最大路径和（包括当前节点以及其左/右子树）
+        ans = Math.max(ans, Math.max(left, 0) + Math.max(right, 0) + node.val);
+
+        // 返回包含当前节点的**单侧**最大路径，确保路径是连续的
+        return Math.max(Math.max(left, right), 0) + node.val;
+    }
+}
+
 ```
 
 > 类似题目 [113. 路径总和 I](https://github.com/azl397985856/leetcode/blob/master/problems/113.path-sum-ii.md "113. 路径总和 I")

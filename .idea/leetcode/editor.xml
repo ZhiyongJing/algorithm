@@ -124,6 +124,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/array_list/LeetCode_498_DiagonalTraverse.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_498_DiagonalTraverse.md" />
+              <option name="frontendQuestionId" value="leetcode.com498" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_498_DiagonalTraverse.java" />
+              <option name="titleSlug" value="diagonal-traverse" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/bfs/LeetCode_102_BinaryTreeLevelOrderTraversal.java">
           <value>
             <LeetcodeEditor>
@@ -1155,6 +1166,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1335_MinimumDifficultyOfAJobSchedule.java" />
               <option name="titleSlug" value="minimum-difficulty-of-a-job-schedule" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1372_LongestZigzagPathInABinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/doc/content/LeetCode_1372_LongestZigzagPathInABinaryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.com1372" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/dfs/LeetCode_1372_LongestZigzagPathInABinaryTree.java" />
+              <option name="titleSlug" value="longest-zigzag-path-in-a-binary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -3204,6 +3226,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_670_MaximumSwap.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/doc/content/LeetCode_670_MaximumSwap.md" />
+              <option name="frontendQuestionId" value="leetcode.com670" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_670_MaximumSwap.java" />
+              <option name="titleSlug" value="maximum-swap" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/greedy/LeetCode_765_CouplesHoldingHands.java">
           <value>
             <LeetcodeEditor>
@@ -3567,6 +3600,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/LeetCode_708_InsertIntoASortedCircularLinkedList.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/doc/content/LeetCode_708_InsertIntoASortedCircularLinkedList.md" />
+              <option name="frontendQuestionId" value="leetcode.com708" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/LeetCode_708_InsertIntoASortedCircularLinkedList.java" />
+              <option name="titleSlug" value="insert-into-a-sorted-circular-linked-list" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/linked_list/LeetCode_82_RemoveDuplicatesFromSortedListIi.java">
           <value>
             <LeetcodeEditor>
@@ -3809,6 +3853,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_249_GroupShiftedStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_249_GroupShiftedStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.com249" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_249_GroupShiftedStrings.java" />
+              <option name="titleSlug" value="group-shifted-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_287_FindTheDuplicateNumber.java">
           <value>
             <LeetcodeEditor>
@@ -3941,6 +3996,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_398_RandomPickIndex.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/doc/content/LeetCode_398_RandomPickIndex.md" />
+              <option name="frontendQuestionId" value="leetcode.com398" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_398_RandomPickIndex.java" />
+              <option name="titleSlug" value="random-pick-index" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_451_SortCharactersByFrequency.java">
           <value>
             <LeetcodeEditor>
@@ -4026,6 +4092,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/map_set/LeetCode_939_MinimumAreaRectangle.java" />
               <option name="titleSlug" value="minimum-area-rectangle" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_1762_BuildingsWithAnOceanView.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/doc/content/LeetCode_1762_BuildingsWithAnOceanView.md" />
+              <option name="frontendQuestionId" value="leetcode.com1762" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_1762_BuildingsWithAnOceanView.java" />
+              <option name="titleSlug" value="buildings-with-an-ocean-view" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4568,6 +4645,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_1762_BuildingsWithAnOceanView.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/doc/content/LeetCode_1762_BuildingsWithAnOceanView.md" />
+              <option name="frontendQuestionId" value="leetcode.com1762" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/monotonic_stack_queue/LeetCode_1762_BuildingsWithAnOceanView.java" />
+              <option name="titleSlug" value="buildings-with-an-ocean-view" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_20_ValidParentheses.java">
           <value>
             <LeetcodeEditor>
@@ -4609,6 +4697,28 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_232_ImplementQueueUsingStacks.java" />
               <option name="titleSlug" value="implement-queue-using-stacks" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_385_MiniParser.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/doc/content/LeetCode_385_MiniParser.md" />
+              <option name="frontendQuestionId" value="leetcode.com385" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_385_MiniParser.java" />
+              <option name="titleSlug" value="mini-parser" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_636_ExclusiveTimeOfFunctions.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/doc/content/LeetCode_636_ExclusiveTimeOfFunctions.md" />
+              <option name="frontendQuestionId" value="leetcode.com636" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_636_ExclusiveTimeOfFunctions.java" />
+              <option name="titleSlug" value="exclusive-time-of-functions" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4664,6 +4774,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_772_BasicCalculatorIii.java" />
               <option name="titleSlug" value="basic-calculator-iii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_783_MinimumDistanceBetweenBstNodes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/doc/content/LeetCode_783_MinimumDistanceBetweenBstNodes.md" />
+              <option name="frontendQuestionId" value="leetcode.com783" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/stack/LeetCode_783_MinimumDistanceBetweenBstNodes.java" />
+              <option name="titleSlug" value="minimum-distance-between-bst-nodes" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -4851,6 +4972,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_48_RotateImage.java" />
               <option name="titleSlug" value="rotate-image" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_498_DiagonalTraverse.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_498_DiagonalTraverse.md" />
+              <option name="frontendQuestionId" value="leetcode.com498" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_498_DiagonalTraverse.java" />
+              <option name="titleSlug" value="diagonal-traverse" />
             </LeetcodeEditor>
           </value>
         </entry>

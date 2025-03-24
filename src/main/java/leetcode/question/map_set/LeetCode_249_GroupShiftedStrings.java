@@ -128,6 +128,7 @@ public class LeetCode_249_GroupShiftedStrings{
                 // 将当前字符串加入对应的哈希键的列表中
                 mapHashToList.get(hashKey).add(str);
             }
+            System.out.println(mapHashToList);
 
             // 遍历哈希映射，收集所有分组
             List<List<String>> groups = new ArrayList<>();

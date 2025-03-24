@@ -130,6 +130,8 @@ class Solution {
 
     public static void main(String[] args) {
         Solution solution = new LeetCode_301_RemoveInvalidParentheses().new Solution();
+        solution.removeInvalidParentheses("(a)())()");
+        solution.removeInvalidParentheses(")(");
         // TO TEST
         //solution.
     }

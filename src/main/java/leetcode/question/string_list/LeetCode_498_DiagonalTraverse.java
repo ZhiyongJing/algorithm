@@ -118,6 +118,8 @@ public class LeetCode_498_DiagonalTraverse{
                 int r = d < M ? 0 : d - M + 1; // 行索引
                 int c = d < M ? d : M - 1;     // 列索引
 
+                System.out.println("row is: " + r + ", col is: "  + c);
+
                 // 沿着对角线遍历，直到超出矩阵边界
                 while (r < N && c > -1) {
                     intermediate.add(matrix[r][c]); // 添加元素到临时列表
@@ -152,20 +154,20 @@ public class LeetCode_498_DiagonalTraverse{
         System.out.println("对角线遍历结果: " + Arrays.toString(solution.findDiagonalOrder(matrix1)));
         // 预期输出: [1, 2, 4, 7, 5, 3, 6, 8, 9]
 
-        // 测试用例 2
-        int[][] matrix2 = {
-                {1, 2},
-                {3, 4}
-        };
-        System.out.println("对角线遍历结果: " + Arrays.toString(solution.findDiagonalOrder(matrix2)));
-        // 预期输出: [1, 2, 3, 4]
-
-        // 测试用例 3
-        int[][] matrix3 = {
-                {1}
-        };
-        System.out.println("对角线遍历结果: " + Arrays.toString(solution.findDiagonalOrder(matrix3)));
-        // 预期输出: [1]
+//        // 测试用例 2
+//        int[][] matrix2 = {
+//                {1, 2},
+//                {3, 4}
+//        };
+//        System.out.println("对角线遍历结果: " + Arrays.toString(solution.findDiagonalOrder(matrix2)));
+//        // 预期输出: [1, 2, 3, 4]
+//
+//        // 测试用例 3
+//        int[][] matrix3 = {
+//                {1}
+//        };
+//        System.out.println("对角线遍历结果: " + Arrays.toString(solution.findDiagonalOrder(matrix3)));
+//        // 预期输出: [1]
     }
 }
 

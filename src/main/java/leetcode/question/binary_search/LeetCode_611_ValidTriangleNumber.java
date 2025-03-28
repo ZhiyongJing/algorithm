@@ -44,6 +44,32 @@ public class LeetCode_611_ValidTriangleNumber{
 
     // 定义Solution类
     public class Solution {
+        public int triangleNumber(int[] nums) {
+            // 对数组进行排序
+            Arrays.sort(nums);
+            int ans = 0;
+            int n = nums.length;
+
+            // 固定最长边 c（从后往前遍历）
+            for (int i = n - 1; i >= 2; i--) {
+                int c = nums[i];
+                int start = 0;
+                int end = i - 1;
+
+                // 使用双指针从头和尾部收缩寻找满足条件的 a + b > c 的组合
+                while (start < end) {
+                    // 如果 nums[start] + nums[end] > c，说明 [start, end-1] 所有都满足
+                    if (nums[start] + nums[end] > c) {
+                        ans += end - start;
+                        end--;
+                    } else {
+                        start++;
+                    }
+                }
+            }
+
+            return ans;
+        }
         // 定义binarySearch方法，用于在有序数组中查找第一个大于等于x的元素的位置
         int binarySearch(int nums[], int l, int r, int x) {
             while (r >= l && r < nums.length) {
@@ -56,7 +82,7 @@ public class LeetCode_611_ValidTriangleNumber{
             return l; // 返回l的值，即第一个大于等于x的元素的位置
         }
         // 定义triangleNumber方法，用于计算可以组成三角形的三元组的数量
-        public int triangleNumber(int[] nums) {
+        public int triangleNumber1(int[] nums) {
             int count = 0; // 初始化计数器为0
             Arrays.sort(nums); // 对数组进行排序
             for (int i = 0; i < nums.length - 2; i++) { // 遍历数组，保证第一个较小的边

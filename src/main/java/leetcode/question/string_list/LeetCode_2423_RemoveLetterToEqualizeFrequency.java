@@ -15,8 +15,6 @@ LeetCode 2423: Remove Letter To Equalize Frequency (删除一个字母使频率�
 - 如果存在这样一个删除方案，则返回 `true`，否则返回 `false`。
 
 示例输入输出：
-输入: "aabb"
-输出: `true` (删除 'b' 使得 'a' 频率相等)
 
 输入: "abc"
 输出: `true` (删除 'a' 使得 'b' 和 'c' 频率相等)

@@ -191,7 +191,7 @@ public class LeetCode_322_CoinChange {
             return dp[amount] > amount ? -1 : dp[amount]; // 如果金额无法组成，返回 -1
         }
 
-        // Solution 3: 二维动态规划 (DP)（完全背包问题解法）
+        // Solution 3: 二维动态规划 (DP)（完全背包问题解法）`dp[i][j]` 表示 **使用前 `i` 种硬币**，拼凑金额 `j` 的最少硬币数
         public int coinChange(int[] coins, int amount) {
             int n = coins.length;
             int[][] dp = new int[n + 1][amount + 1];

@@ -1,4 +1,4 @@
-package leetcode.question.dp;
+package leetcode.question.binary_search;
 /**
  *@Question:  2560. House Robber IV
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
@@ -10,7 +10,8 @@ package leetcode.question.dp;
 /**
  * ### 解题思路
  *
- * 这道题目是 "House Robber IV"，它要求我们找到一个最小的能力值，使得我们可以从数组中偷取至少 `k` 个不相邻的房子，并且这些房子的值都不超过该能力值。我们可以使用二分查找法来解决这个问题。
+ * 这道题目是 "House Robber IV"，它要求我们找到一个最小的能力值，使得我们可以从数组中偷取至少 `k` 个不相邻的房子，并且这些房子的值都不超过该能力值。
+ * 我们可以使用二分查找法来解决这个问题。
  *
  * #### 步骤详解：
  *

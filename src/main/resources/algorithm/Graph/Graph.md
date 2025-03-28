@@ -984,7 +984,7 @@ public boolean existingPathBFS(int n, int[][] edges, int source, int destination
         for (int i = 0; i < currentSize; i++) {
             int currentNode = queue.poll(); // 取出当前节点
             if (currentNode == destination) return true;// 如果当前节点是目标节点，返回 true 表示存在路径
-            visited.add(currentNode);// 标记当前节点为已访问
+
             for (int child : adj.get(currentNode)) { // 遍历当前节点的所有相邻节点
                 if (visited.contains(child)) continue;  // 如果相邻节点已经访问过，跳过
                 // 将未访问的相邻节点加入队列，并标记为已访问

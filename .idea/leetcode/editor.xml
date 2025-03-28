@@ -4843,6 +4843,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1400_ConstructKPalindromeStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_1400_ConstructKPalindromeStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.com1400" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1400_ConstructKPalindromeStrings.java" />
+              <option name="titleSlug" value="construct-k-palindrome-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_1583_CountUnhappyFriends.java">
           <value>
             <LeetcodeEditor>
@@ -4917,6 +4928,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_214_ShortestPalindrome.java" />
               <option name="titleSlug" value="shortest-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_228_SummaryRanges.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_228_SummaryRanges.md" />
+              <option name="frontendQuestionId" value="leetcode.com228" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_228_SummaryRanges.java" />
+              <option name="titleSlug" value="summary-ranges" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -5019,6 +5041,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_459_RepeatedSubstringPattern.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_459_RepeatedSubstringPattern.md" />
+              <option name="frontendQuestionId" value="leetcode.com459" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_459_RepeatedSubstringPattern.java" />
+              <option name="titleSlug" value="repeated-substring-pattern" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_461_HammingDistance.java">
           <value>
             <LeetcodeEditor>
@@ -5038,6 +5071,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_477_TotalHammingDistance.java" />
               <option name="titleSlug" value="total-hamming-distance" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_485_MaxConsecutiveOnes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/doc/content/LeetCode_485_MaxConsecutiveOnes.md" />
+              <option name="frontendQuestionId" value="leetcode.com485" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/string_list/LeetCode_485_MaxConsecutiveOnes.java" />
+              <option name="titleSlug" value="max-consecutive-ones" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -5203,6 +5247,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_218_TheSkylineProblem.java" />
               <option name="titleSlug" value="the-skyline-problem" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_3394_CheckIfGridCanBeCutIntoSections.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/doc/content/LeetCode_3394_CheckIfGridCanBeCutIntoSections.md" />
+              <option name="frontendQuestionId" value="leetcode.com3394" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/sweep_line/LeetCode_3394_CheckIfGridCanBeCutIntoSections.java" />
+              <option name="titleSlug" value="check-if-grid-can-be-cut-into-sections" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -5852,6 +5907,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_344_ReverseString.java" />
               <option name="titleSlug" value="reverse-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_3453_SeparateSquaresI.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/doc/content/LeetCode_3453_SeparateSquaresI.md" />
+              <option name="frontendQuestionId" value="leetcode.com3453" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/question/two_pointer/LeetCode_3453_SeparateSquaresI.java" />
+              <option name="titleSlug" value="separate-squares-i" />
             </LeetcodeEditor>
           </value>
         </entry>

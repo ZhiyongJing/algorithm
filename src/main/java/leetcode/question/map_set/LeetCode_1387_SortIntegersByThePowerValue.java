@@ -150,6 +150,7 @@ public class LeetCode_1387_SortIntegersByThePowerValue {
                     maxHeap.remove();
                 }
             }
+            System.out.println(maxHeap);
 
             // 最后堆中剩下的第一个元素就是第 k 小的数字，返回其值
             return maxHeap.remove().num;
@@ -193,6 +194,10 @@ public class LeetCode_1387_SortIntegersByThePowerValue {
         public Item(int num, int power) {
             this.num = num;
             this.power = power;
+        }
+
+        public String toString(){
+            return num + " ->" + power;
         }
     }
 

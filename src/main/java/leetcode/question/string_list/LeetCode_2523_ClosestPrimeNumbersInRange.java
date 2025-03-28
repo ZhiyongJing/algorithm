@@ -160,6 +160,7 @@ public class LeetCode_2523_ClosestPrimeNumbersInRange{
                 if (sieve[number] == 1) { // 如果当前数是质数
                     // 将 number 的所有倍数标记为非质数
                     for (int multiple = number * number; multiple <= upperLimit; multiple += number) {
+                        System.out.println("number is: "+ number + ",multiple is: " + multiple);
                         sieve[multiple] = 0; // 标记为非质数
                     }
                 }
@@ -176,21 +177,21 @@ public class LeetCode_2523_ClosestPrimeNumbersInRange{
         int[] result1 = solution.closestPrimes(10, 19);
         System.out.println(Arrays.toString(result1)); // 预期输出: [11, 13]
 
-        // 测试案例 2：范围 [4, 6]，无两个质数对，返回 {-1, -1}
-        int[] result2 = solution.closestPrimes(4, 6);
-        System.out.println(Arrays.toString(result2)); // 预期输出: [-1, -1]
-
-        // 测试案例 3：范围 [1, 10]，最近的两个质数是 (2, 3)
-        int[] result3 = solution.closestPrimes(1, 10);
-        System.out.println(Arrays.toString(result3)); // 预期输出: [2, 3]
-
-        // 测试案例 4：范围 [20, 50]，最近的两个质数是 (29, 31)
-        int[] result4 = solution.closestPrimes(20, 50);
-        System.out.println(Arrays.toString(result4)); // 预期输出: [29, 31]
-
-        // 测试案例 5：范围 [100, 110]，最近的两个质数是 (101, 103)
-        int[] result5 = solution.closestPrimes(100, 110);
-        System.out.println(Arrays.toString(result5)); // 预期输出: [101, 103]
+//        // 测试案例 2：范围 [4, 6]，无两个质数对，返回 {-1, -1}
+//        int[] result2 = solution.closestPrimes(4, 6);
+//        System.out.println(Arrays.toString(result2)); // 预期输出: [-1, -1]
+//
+//        // 测试案例 3：范围 [1, 10]，最近的两个质数是 (2, 3)
+//        int[] result3 = solution.closestPrimes(1, 10);
+//        System.out.println(Arrays.toString(result3)); // 预期输出: [2, 3]
+//
+//        // 测试案例 4：范围 [20, 50]，最近的两个质数是 (29, 31)
+//        int[] result4 = solution.closestPrimes(20, 50);
+//        System.out.println(Arrays.toString(result4)); // 预期输出: [29, 31]
+//
+//        // 测试案例 5：范围 [100, 110]，最近的两个质数是 (101, 103)
+//        int[] result5 = solution.closestPrimes(100, 110);
+//        System.out.println(Arrays.toString(result5)); // 预期输出: [101, 103]
     }
 }
 

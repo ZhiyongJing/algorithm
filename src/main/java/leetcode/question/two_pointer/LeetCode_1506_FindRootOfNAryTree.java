@@ -1,4 +1,3 @@
-// 这是包名，表示当前类位于 leetcode.question.two_pointer 包下
 package leetcode.question.two_pointer;
 // 导入 Java 中常用的工具类，如 List、ArrayList 等
 

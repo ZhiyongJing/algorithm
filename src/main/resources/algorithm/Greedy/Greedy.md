@@ -2,6 +2,8 @@
 
 > 贪心算法（greedy algorithm）是一种常见的解决优化问题的算法，**其基本思想是在问题的每个决策阶段，都选择当前看起来最优的选择，即贪心地做出局部最优的决策，以期获得全局最优解**。贪心算法简洁且高效，在许多实际问题中有着广泛的应用。
 >
+> 很多同学一想到贪心算法，就会想到一句俗语“有便宜就占”，没错，是这个样子的。换句话说，贪心算法就是，先取出局部的最优解，然后“累加”起来，找出整体的最优解。比如说，我们拿过来一个题，我们感觉可以用贪心算法来解决，那么我们就试一下上面先找出局部，再累加成全局。如果找到了，且没有反例，那么不妨试一下贪心算法。总的来说，贪心算法就是先找出[局部最优解](https://zhida.zhihu.com/search?content_id=192722820&content_type=Article&match_order=1&q=局部最优解&zhida_source=entity)，然后累加成[全局最优解](https://zhida.zhihu.com/search?content_id=192722820&content_type=Article&match_order=1&q=全局最优解&zhida_source=entity)，最后看一下能不能找出反例。在下面的例题中，我会带着大家一直践行这句话。
+>
 > - 贪心算法和动态规划都常用于解决优化问题。它们之间存在一些相似之处，比如都依赖最优子结构性质，但工作原理不同。
 >
 >   > - 动态规划会根据之前阶段的所有决策来考虑当前决策，并使用过去子问题的解来构建当前子问题的解。
@@ -66,9 +68,6 @@
 >    >
 >    > 例如零钱兑换问题，我们虽然能够容易地举出反例，对贪心选择性质进行证伪，但证实的难度较大。如果问：**满足什么条件的硬币组合可以使用贪心算法求解**？我们往往只能凭借直觉或举例子来给出一个模棱两可的答案，而难以给出严谨的数学证明。
 >
-> 
->
-> 
 
 # 3. 算法模版
 
@@ -295,14 +294,13 @@
 >   >    > $$
 >   >    > cap[i, i+1], cap[i, i+2], \dots, cap[i, j-2], cap[i, j-1]
 >   >    > $$
->   >   >
 >   >    > <img src="Greedy.assets/max_capacity_skipped_states.png" alt="移动短板导致被跳过的状态" style="zoom:50%;" />
->   >   >
+>   >    >
 >   >    > 观察发现，**这些被跳过的状态实际上就是将长板 $j$ 向内移动的所有状态**。前面我们已经证明内移长板一定会导致容量变小。也就是说，被跳过的状态都不可能是最优解，**跳过它们不会导致错过最优解**。
 >   >    >
 >   >    > 以上分析说明，移动短板的操作是“安全”的，贪心策略是有效的.
 >   
-> - 最大切分乘积
+>   - 最大切分乘积
 >   给定一个正整数 $n$ ，将其切分为至少两个正整数的和，求切分后所有整数的乘积最大是多少，如下图所示。
 > 
 >   > 1. 问题分析
@@ -311,10 +309,9 @@
 >   >    >
 >   >    > 假设我们将 $n$ 切分为 $m$ 个整数因子，其中第 $i$ 个因子记为 $n_i$ ，即
 >   >    >
->     >    > $$
+>   >    > $$
 >   >    > n = \sum_{i=1}^{m}n_i
 >   >    > $$
->  >    >
 >   >    > 本题的目标是求得所有整数因子的最大乘积，即
 >   >    >
 >   >    > $$
@@ -407,12 +404,229 @@
 >   >    > 3. **切分方案最多包含两个 $2$** ：假设最优切分方案中包含三个 $2$ ，那么一定可以替换为两个 $3$ ，乘积更大。这与假设矛盾。
 > 
 
+# 5. LeetCode题型
+
+[![贪心算法大纲](Greedy.assets/68747470733a2f2f66696c652e6b616d61636f6465722e636f6d2f706963732f32303231303931373130343331352e706e67.png)](https://camo.githubusercontent.com/00c7f78a2a696c1c7e3083c14c00d94a4d20be5ee0b975c5c5de5d4bd4145c8e/68747470733a2f2f66696c652e6b616d61636f6465722e636f6d2f706963732f32303231303931373130343331352e706e67)
+
+贪心算法一般分为如下四步：
+
+- 将问题分解为若干个子问题
+- 找出适合的贪心策略
+- 求解每一个子问题的最优解
+- 将局部最优解堆叠成全局最优解
+
+这个四步其实过于理论化了，我们平时在做贪心类的题目时，如果按照这四步去思考，真是有点“鸡肋”。
+
+做题的时候，只要想清楚 局部最优 是什么，如果推导出全局最优，其实就够了。
+
+## [简单] 455. 分发饼干
+
+[原题链接](https://leetcode.cn/problems/assign-cookies/description/)
+贪心思路，优先把大的饼干分给胃口大的。
+
+```java
+class Solution {
+    public int findContentChildren(int[] g, int[] s) {
+        Arrays.sort(s);
+        Arrays.sort(g);
+        int ans = 0;
+        int j = s.length - 1;
+        for(int i = g.length - 1; i >= 0 && j >= 0; i--){
+            if(s[j] >= g[i]){
+                j--;
+                ans++;
+            }
+        }
+        return ans;
+    }
+}
+
+```
+
+## [中等] 376. 摆动序列
+原题链接
+初次提交无法通过[0,1,1,2,2]这样的示例，没有判断出带平坡的单调递增，需要注意，只在result++的时候才去记录prediff的值，因为没有判断出result++的节点理论上是被删掉了，下一轮循环使用的还是同一个prediff
+prediff初值设置为0是假设nums[0] 前面有一个跟他一样的节点。
+
+```java
+class Solution {
+    public int wiggleMaxLength(int[] nums) {
+        int prediff = 0;
+        int curdiff;
+        int length = nums.length;
+        if(length <= 1) return length;
+        int result = 1;
+        for(int i = 0; i < length - 1; i++){
+            curdiff = nums[i + 1] - nums[i];
+            if((prediff <= 0 && curdiff > 0) || (prediff >= 0 && curdiff < 0)) {
+                result++;
+                prediff = curdiff;
+            }
+        }
+        return result;
+    }
+}
+
+```
+
+## [中等] 53. 最大子数组和
+
+[原题链接](https://leetcode.cn/problems/maximum-subarray/description/)
+
+从左到右开始累加，如果[0 - i] 的累加<=0,说明这一段肯定不是结果的一部分，可以直接抛弃。
+
+```java
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int result = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int i = 0; i < nums.length; i++){
+            sum += nums[i];
+            if(sum > result){
+                result = sum;
+            }
+            if(sum <=0 ) sum = 0;
+        }
+        return result;
+    }
+}
+
+```
+
+## [中等] 122. 买卖股票的最佳时机 II
+
+[原题链接](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/)
+
+就按每天的差值来进行交易，差值为正就购入，算入总和。
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int ans = 0;
+        for(int i = 1; i < prices.length; i++){
+            int count = prices[i] - prices[i - 1];
+            if(count > 0) ans += count;
+        }
+        return ans;
+    }
+}
+
+```
+
+## [中等] 55. 跳跃游戏
+
+[原题链接](https://leetcode.cn/problems/jump-game/description/)
+
+不需要考虑具体跳到哪里，只要知道能跳的最大范围即可，比如`nums = [3,2,1,0,4]`中，从第一个位置开始跳，不管跳到 `nums[1]/nums[2]/nums[3]`，他们最多也都是够到下标为3，所以最后会是false。
+
+```java
+class Solution {
+    public boolean canJump(int[] nums) {
+        int cover = 0;
+        for(int i = 0; i <= cover ; i++) {
+            cover = Integer.max(i + nums[i], cover);
+            if(cover >= nums.length - 1) return true;
+        }
+        return false;
+    }
+}
+
+```
+
+## [中等] 45. 跳跃游戏 II
+
+[原题链接](https://leetcode.cn/problems/jump-game-ii/description/)
+
+```java
+class Solution {
+    public int jump(int[] nums) {
+        int count = 0;
+        int lastCover = 0;
+        int newCover =0;
+        while(newCover < nums.length - 1){
+            count++;
+            int k = lastCover;
+            lastCover = newCover;
+            int j = newCover;
+            for(int i = k; i <= j; i++){
+                newCover = newCover > i + nums[i] ? newCover : i + nums[i];
+            }
+        }
+        return count;
+    }
+}
+
+```
+
+
+
+## [简单] 134. 加油站
+
+[原题链接](https://leetcode.cn/problems/gas-station/description/)
+
+```java
+class Solution {
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int curSum = 0;
+        int totalSum = 0;
+        int start = 0;
+        for(int i = 0; i < gas.length; i++){
+            curSum += gas[i] - cost[i];
+            totalSum += gas[i] - cost[i];
+            if(curSum < 0){
+                start = i + 1;
+                curSum = 0;
+            }
+        }
+        if(totalSum < 0) return -1;
+        return start;
+    }
+}
+
+```
+
+[困难] 135. 分发糖果
+原题链接
+
+先从左到右遍历，保证右边ratings大于左边时，candy数量也是右边大于左边
+再从右往左遍历，保证左边ratings大于右边时，candy数量也能保证左边大于右边，如果本身candy[i] > candy[i + 1]，则无需改变，否则需要给上candy[i + 1] + 1的值
+
+```java
+class Solution {
+    public int candy(int[] ratings) {
+        int length = ratings.length;
+        //找到rating最小
+        int[] candy = new int[length];
+        candy[0] = 1;
+        //从左到有遍历，保证右边大于左边的 数字正确
+        for(int i = 1; i < length; i++){
+            if(ratings[i] > ratings[i - 1])
+                candy[i] = candy[i - 1] + 1;
+            else
+                candy[i] = 1;
+        }
+        int sum = candy[length - 1];
+        //从右到左遍历，保证左边大于右边的 数字正确
+        for(int i = length - 2; i >= 0; i--){
+            if(ratings[i] > ratings[i + 1]) {
+                candy[i] = candy[i] > candy[i + 1] + 1 ? candy[i] : candy[i + 1] + 1;
+            }
+            sum += candy[i];
+        }
+        return sum;
+    }
+}
+
+```
 
 
 
 
-# 4. 算法复杂度
 
-> - 时间复杂度：O()
-> - 空间复杂度: O()
+
+
+# 6. 算法复杂度
+
+> - 时间复杂度：O(?)
+> - 空间复杂度: O(?)
 

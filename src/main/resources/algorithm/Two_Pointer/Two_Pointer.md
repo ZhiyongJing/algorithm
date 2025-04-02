@@ -175,6 +175,7 @@
 >    >   }
 >    > ```
 >    >
+>
 > 2. **滑动窗口使用思路2（寻找最短）**
 >
 >    > ```java
@@ -231,6 +232,37 @@
 >    > }
 >    > ```
 >    >
+>
+> 3. **滑动窗口使用思路3（寻找连续固定 K size subarray最值）**
+>
+>    > ```java
+>    > /**
+>    >  * 滑动窗口使用思路（寻找寻找固定K size 连续subarray最值）
+>    >  * 1. 找出前K element 总值
+>    >  * 2. for loop 遍历，找出固定K size 连续subarray最值
+>    >  */
+>    > //Leetcode 643 findMaxAverage
+>    > public double findMaxAverage(int[] nums, int k) {
+>    >     // 初始化前 k 个元素的和
+>    >     int sum = 0;
+>    >     for(int i = 0; i < k; i ++)
+>    >         sum += nums[i];
+>    > 
+>    >     // 初始化最大和为当前的 sum
+>    >     int maxSum = sum;
+>    > 
+>    >     // 使用滑动窗口遍历数组，从第 k 个元素开始
+>    >     for(int i = k; i < nums.length; i ++) {
+>    >         // 滑动窗口：加上新元素，减去窗口左端旧元素
+>    >         sum += nums[i] - nums[i - k];
+>    >         // 更新最大和
+>    >         maxSum = Math.max(maxSum, sum);
+>    >     }
+>    > 
+>    >     // 返回最大平均值（注意类型转换）
+>    >     return (double)maxSum / k;
+>    > }
+>    > ```
 
 ### 3.1.2 相向双指针
 

@@ -49,13 +49,21 @@ public class LeetCode_162_FindPeakElement {
             while (l < r) {
                 int mid = (l + r) / 2;
 
-                // 比较当前位置和下一个位置的元素大小
-                if (nums[mid] > nums[mid + 1]) {
-                    // 如果当前位置元素大于下一个位置元素，说明峰值在当前位置或左侧
+//                // 比较当前位置和下一个位置的元素大小
+//                if (nums[mid] > nums[mid + 1]) {
+//                    // 如果当前位置元素大于下一个位置元素，说明峰值在当前位置或左侧
+//                    r = mid;
+//                } else {
+//                    // 如果当前位置元素小于等于下一个位置元素，说明峰值在右侧
+//                    l = mid + 1;
+//                }
+                if(nums[mid] > nums[mid + 1]){
                     r = mid;
-                } else {
-                    // 如果当前位置元素小于等于下一个位置元素，说明峰值在右侧
+                }else if(nums[mid] < nums[mid + 1]){
                     l = mid + 1;
+                }else{
+                    //left = mid + 1; //works
+                    r = mid -1; //works
                 }
             }
 

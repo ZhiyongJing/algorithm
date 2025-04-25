@@ -69,6 +69,20 @@ public class LeetCode_278_FirstBadVersion {
             // 最终left和right相等，返回其中一个即可
             return right;
         }
+        public int firstBadVersion2(int n) {
+            int left = 1;
+            int right = n;
+            while(left < right){
+                int mid = left + (right - left) / 2;
+                if(isBadVersion(mid)){
+                    right = mid;
+                }else{
+                    left = mid + 1;
+                }
+            }
+            return left;
+
+        }
     }
     //leetcode submit region end(Prohibit modification and deletion)
 

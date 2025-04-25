@@ -54,7 +54,7 @@ public class LeetCode_540_SingleElementInASortedArray {
 
             while (lo < hi) {
                 int mid = lo + (hi - lo) / 2;
-                boolean halvesAreEven = (hi - mid) % 2 == 0;
+                boolean halvesAreEven = (hi - mid) % 2 == 0;//not include num[mid]
 
                 //[1,1,2,3,3,4,4,8,8]
                 //[1,1,2,2,4,4,5,8,8]

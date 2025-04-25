@@ -103,14 +103,21 @@ public class LeetCode_69_Sqrtx {
             long num;
             int pivot, left = 1, right = x / 2;
             // 使用二分查找法查找平方根
+            //find right most number when number * number < x;
             while (left < right) {
                 pivot =  (left + right + 1) / 2;
                 num = (long) pivot * pivot;
                 if (num > x) {
                     // 如果平方大于 x，缩小搜索范围至左侧
                     right = pivot - 1;
-                } else {
+                }
+//                else {
+//                    left = pivot;
+//                }
+                else if ( num < x){
                     left = pivot;
+                }else{
+                    return pivot;
                 }
             }
             return left;

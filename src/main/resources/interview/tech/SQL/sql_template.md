@@ -1,6 +1,4 @@
-
-
-## 1. 窗口函数
+### 1. 窗口函数
 
 ```sql
 /* ====================== 常用窗口函数总结 ======================
@@ -124,7 +122,206 @@
 */
 ```
 
-## 2. SQL 模版
+### 2. 聚合函数
+
+```sql
+/* ================= 常用聚合函数模板 =================
+
+【1. COUNT() - 计数】
+--------------------------------------------------
+场景：
+- 统计总行数、去重数量
+- 判断是否有数据
+示例：
+-- 统计所有订单数
+SELECT COUNT(*) AS total_orders FROM orders;
+
+-- 统计不同客户数
+SELECT COUNT(DISTINCT customer_id) AS unique_customers FROM orders;
+
+
+【2. SUM() - 求和】
+--------------------------------------------------
+场景：
+- 计算金额、销量、分数总和
+示例：
+-- 总销售额
+SELECT SUM(amount) AS total_sales FROM orders;
+
+-- 每个客户的总消费
+SELECT customer_id, SUM(amount) AS total_spent
+FROM orders
+GROUP BY customer_id;
+
+
+【3. AVG() - 平均值】
+--------------------------------------------------
+场景：
+- 计算平均消费、平均成绩
+示例：
+-- 平均订单金额
+SELECT AVG(amount) AS avg_order_amount FROM orders;
+
+-- 每个客户的平均订单金额
+SELECT customer_id, AVG(amount) AS avg_spent
+FROM orders
+GROUP BY customer_id;
+
+
+【4. MIN() - 最小值】
+--------------------------------------------------
+场景：
+- 找到最小金额、最早日期、最低分
+示例：
+-- 最早下单时间
+SELECT MIN(order_date) AS first_order FROM orders;
+
+-- 每个客户的最低消费金额
+SELECT customer_id, MIN(amount) AS min_amount
+FROM orders
+GROUP BY customer_id;
+
+
+【5. MAX() - 最大值】
+--------------------------------------------------
+场景：
+- 找到最大金额、最晚日期、最高分
+示例：
+-- 最大订单金额
+SELECT MAX(amount) AS max_order_amount FROM orders;
+
+-- 每个客户的最大单笔消费
+SELECT customer_id, MAX(amount) AS max_amount
+FROM orders
+GROUP BY customer_id;
+
+
+【6. GROUP_CONCAT() - 拼接字符串（MySQL 专用）】
+--------------------------------------------------
+场景：
+- 把分组内的值拼接成一个字符串
+示例：
+-- 每个客户的所有订单号拼成一行
+SELECT customer_id, GROUP_CONCAT(order_id) AS order_list
+FROM orders
+GROUP BY customer_id;
+
+
+【7. HAVING 与聚合函数结合】
+--------------------------------------------------
+场景：
+- 在聚合结果上做过滤
+示例：
+-- 筛选出消费总额超过 1000 的客户
+SELECT customer_id, SUM(amount) AS total_spent
+FROM orders
+GROUP BY customer_id
+HAVING SUM(amount) > 1000;
+
+
+================================================================
+总结：
+- COUNT() → 数量
+- SUM()   → 总和
+- AVG()   → 平均
+- MIN()   → 最小
+- MAX()   → 最大
+- GROUP_CONCAT() → 拼接字符串
+================================================================
+*/
+
+```
+
+
+
+### 3. 聚合函数+窗口函数模版
+
+```sql
+/* ========== 聚合函数 + 窗口函数 常用模板 ==========
+
+【1. 总体 vs 分组 vs 分组内排名】
+--------------------------------------------------
+场景：既要总数/平均值，又要每组内的排名
+示例：
+SELECT customer_id,
+       order_id,
+       amount,
+       COUNT(*)  OVER()                          AS total_orders,    -- 全部订单总数
+       SUM(amount) OVER(PARTITION BY customer_id) AS cust_total,     -- 每个客户的总消费
+       RANK()      OVER(PARTITION BY customer_id ORDER BY amount DESC) AS order_rank -- 客户内排名
+FROM orders;
+
+
+【2. 累计统计（Running Total / Running Avg）】
+--------------------------------------------------
+场景：随着时间累计统计，做趋势分析
+示例：
+SELECT order_date,
+       amount,
+       SUM(amount) OVER(ORDER BY order_date)            AS running_total, -- 累计和
+       AVG(amount) OVER(ORDER BY order_date)            AS running_avg,   -- 累计均值
+       COUNT(*)    OVER(ORDER BY order_date)            AS running_count  -- 累计数量
+FROM sales;
+
+
+【3. 分组内比例分析】
+--------------------------------------------------
+场景：算占比、渗透率、贡献度
+示例：
+SELECT customer_id,
+       amount,
+       SUM(amount) OVER(PARTITION BY customer_id)        AS cust_total,
+       amount / SUM(amount) OVER(PARTITION BY customer_id) AS pct_within_customer
+FROM orders;
+
+
+【4. 排名前N（Top-N with total context）】
+--------------------------------------------------
+场景：既要取Top-N，又要带总量/平均对比
+示例：
+SELECT order_id,
+       customer_id,
+       amount,
+       ROW_NUMBER() OVER(PARTITION BY customer_id ORDER BY amount DESC) AS rn,
+       SUM(amount) OVER(PARTITION BY customer_id)                        AS cust_total,
+       AVG(amount) OVER(PARTITION BY customer_id)                        AS cust_avg
+FROM orders
+WHERE rn <= 3;  -- 每个客户前3单
+
+
+【5. 窗口聚合 + 移动分析】
+--------------------------------------------------
+场景：移动平均、环比、同比
+示例：
+SELECT order_date,
+       amount,
+       SUM(amount) OVER(ORDER BY order_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS rolling_7days_sum,  -- 7日移动和
+       amount - LAG(amount,1,0) OVER(ORDER BY order_date) AS day_diff                -- 昨日差值
+FROM sales;
+
+
+【6. 窗口聚合 + 分位数】
+--------------------------------------------------
+场景：分组内分布分析（四分位、十分位）
+示例：
+SELECT customer_id,
+       amount,
+       NTILE(4) OVER(PARTITION BY customer_id ORDER BY amount) AS quartile,  -- 四分位
+       PERCENT_RANK() OVER(PARTITION BY customer_id ORDER BY amount) AS pct_rank
+FROM orders;
+
+
+================================================================
+总结：
+- 聚合函数 + GROUP BY → 汇总到一行
+- 窗口函数 + 聚合函数 → 保留明细 + 增加统计列
+- 常见场景：累计统计、占比、Top-N、移动分析、分位数
+================================================================
+*/
+
+```
+
+### 4. SQL 模版
 
 ```sql
 

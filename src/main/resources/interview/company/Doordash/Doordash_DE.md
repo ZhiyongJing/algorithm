@@ -82,13 +82,58 @@
    >    定义 “活跃用户”：在Devices表中至少有一条is_active = 1的记录
    >    定义 “仅用手机的用户”：对于每个活跃用户，其所有is_active = 1的device_type都 等于'mobile'
    >    计算 “仅用手机的用户” 在 “活跃用户” 总数中的占比（百分比，保留两位小数）
-   >
-   > 
+   >    
+   >    ```sql
+   >    WITH active_users AS (
+   >        SELECT DISTINCT user_id
+   >        FROM Devices
+   >        WHERE is_active = 1
+   >    ),
+   >    only_mobile_users AS (
+   >        SELECT user_id
+   >        FROM Devices
+   >        WHERE is_active = 1
+   >        GROUP BY user_id
+   >        HAVING COUNT(DISTINCT CASE WHEN device_type <> 'mobile' THEN device_type END) = 0
+   >    )
+   >    SELECT 
+   >        ROUND(
+   >            COUNT(DISTINCT om.user_id) * 100.0 / COUNT(DISTINCT au.user_id),
+   >            2
+   >        ) AS mobile_only_ratio_percent
+   >    FROM active_users au
+   >    LEFT JOIN only_mobile_users om
+   >           ON au.user_id = om.user_id;
+   >    ```
    >
    > 4. 给定一个表
    >    Orders(id, order_date)，要求对每个id，计算连续下单天数，并返回：id, 
    >    segment_start：该连续段的起始日期
    >    segment_end：该连续段的结束日期
+   >
+   >    ```sql
+   >    with unique_id_order_date as (
+   >        select DISTINCT id, order_date
+   >        from orders2
+   >    ),
+   >    seq as (
+   >        select id, order_date,
+   >               row_number() over (partition by id order by order_date) as rk
+   >        from unique_id_order_date
+   >    ),
+   >    group_key as (
+   >        select id, order_date, rk,
+   >               date_sub(order_date, interval rk day) as grp
+   >        from seq
+   >    )
+   >    select id, 
+   >           min(order_date) as start_date,
+   >           max(order_date) as end_date
+   >           from group_key
+   >    group by id, grp
+   >    ```
+   >
+   > 
    >
    > 总的来讲别人家第三题或者第四题他们直接第一题，我以为第一轮phone screen 不会考这么难的，估计直接挂。。。。
 

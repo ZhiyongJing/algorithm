@@ -3,6 +3,108 @@
    > python 20 分钟
    > 1道题目 sliding window 的题目
    > 陆思伞的变种，是和不是average，还要给出所有的start
+   >
+   > ```java
+   > /*
+   > 第一步：题目描述
+   > 给定一个整数数组，每个元素表示当天的earning（收入）。
+   > 我们需要计算所有连续7天的区间的总和，并找出最大值。
+   > 最终返回：
+   > 1. 最大的7天总和（highest_earning）
+   > 2. 所有达到最大值的起始下标（从哪一天开始算的）。
+   > 
+   > 例如：
+   > 输入：[2, 1, 5, 6, 2, 3, 4, 8, 1]
+   > 连续7天的区间和有：
+   > [2..8] -> sum
+   > 然后取最大值。
+   > 如果多个区间和一样大，就都返回。
+   > */
+   > 
+   > /*
+   > 第二步：解题思路（举例）
+   > 1. 使用滑动窗口（sliding window），窗口大小为7。
+   > 2. 首先计算前7天的和，作为初始最大值。
+   >    举例：[2,1,5,6,2,3,4] -> sum = 23
+   > 3. 然后每天往后移动一位，减去窗口最左边的值，加上新进入窗口的值。
+   >    比如第2天到第8天：sum = 23 - 2 + 8 = 29。
+   > 4. 在移动过程中，随时比较是否比当前最大值大：
+   >    - 如果更大，就更新最大值，并清空并加入新的起始下标。
+   >    - 如果等于最大值，就把新的起始下标也加入结果。
+   > 5. 遍历到最后，返回 [最大值, 所有起始下标]。
+   > 
+   > 举例：
+   > [2,1,5,6,2,3,4,8,1]
+   > 前7天 sum = 23（index=0）
+   > 第二个窗口 sum = 29（index=1） → 更新最大值=29，起点=[1]
+   > 第三个窗口 sum = 29（index=2） → 和最大值相等，起点加上 [2]
+   > 返回结果：[29, [1,2]]
+   > */
+   > 
+   > /*
+   > 第三步：时间和空间复杂度分析
+   > - 时间复杂度：O(n)，其中 n 是数组长度。因为滑动窗口只需要一次遍历。
+   > - 空间复杂度：O(k)，k是存放结果起点的数量。整体额外空间只用来存储结果下标。
+   > */
+   > 
+   > /*
+   > 第四步：Java代码（含中文注释）
+   > */
+   > 
+   > import java.util.*;
+   > 
+   > public class MaxEarning7Days {
+   >     public static List<Object> highest7DayEarning(int[] earnings) {
+   >         List<Object> result = new ArrayList<>();
+   >         if (earnings == null || earnings.length < 7) {
+   >             return result; // 不足7天，返回空
+   >         }
+   > 
+   >         int n = earnings.length;
+   >         int windowSum = 0;
+   > 
+   >         // 计算前7天的和
+   >         for (int i = 0; i < 7; i++) {
+   >             windowSum += earnings[i];
+   >         }
+   > 
+   >         int maxSum = windowSum;
+   >         List<Integer> startDays = new ArrayList<>();
+   >         startDays.add(0);
+   > 
+   >         // 滑动窗口，从第8天开始
+   >         for (int i = 7; i < n; i++) {
+   >             // 移动窗口：减去最左边，加上新一天
+   >             windowSum = windowSum - earnings[i - 7] + earnings[i];
+   > 
+   >             // 如果更大，更新最大值，清空之前的起点
+   >             if (windowSum > maxSum) {
+   >                 maxSum = windowSum;
+   >                 startDays.clear();
+   >                 startDays.add(i - 6); // 新窗口起点
+   >             } 
+   >             // 如果相等，加入新的起点
+   >             else if (windowSum == maxSum) {
+   >                 startDays.add(i - 6);
+   >             }
+   >         }
+   > 
+   >         result.add(maxSum);
+   >         result.add(startDays);
+   >         return result;
+   >     }
+   > 
+   >     public static void main(String[] args) {
+   >         int[] earnings = {2, 1, 5, 6, 2, 3, 4, 8, 1};
+   >         System.out.println(highest7DayEarning(earnings));
+   >         // 输出：[29, [1, 2]]
+   >     }
+   > }
+   > 
+   > ```
+   >
+   > 
+   >
    > sql 总共4 道题目一共30 分钟 不是原题全是变种
    >
    > 1. 统计并输出每个区间标签下的员工 总数。
@@ -146,9 +248,79 @@
    >
    > 同样的数据库， 有merchant, consumer，order, dasher, menu, item
    > 第一题是根据餐厅的距离来创建bucket
+   >
+   > ```sql
+   > SELECT
+   >   CASE
+   >     WHEN m.distance_km < 1  THEN '[0,1)km'
+   >     WHEN m.distance_km < 3  THEN '[1,3)km'
+   >     WHEN m.distance_km < 5  THEN '[3,5)km'
+   >     ELSE '>=5km'
+   >   END AS distance_bucket,
+   >   COUNT(*) AS merchant_count
+   > FROM merchant m
+   > WHERE m.is_active = 1
+   > GROUP BY 1
+   > ORDER BY 1;
+   > 
+   > ```
+   >
+   > 
+   >
    > 第二题是根据餐厅的评分，要取top5，现根据评分然后根据餐厅名排列
    >
+   > ```sql
+   > SELECT merchant_id, name, city, rating
+   > FROM (
+   >   SELECT
+   >     m.*,
+   >     ROW_NUMBER() OVER (PARTITION BY m.city ORDER BY m.rating DESC, m.name ASC) AS rn
+   >   FROM merchant m
+   >   WHERE m.is_active = 1
+   > ) t
+   > WHERE rn <= 5
+   > ORDER BY city, rating DESC, name;
+   > 
+   > ```
+   >
+   > 
+   >
    > 第三题是算vegetarian餐厅在所有餐厅的percentage，menu和餐厅都要active
+   >
+   > ```sql
+   > -- 认为“素食餐厅”= 其活跃菜单上所有活跃菜品都是素食；且商家、菜单均 active
+   > WITH all_active_merchants AS (
+   >   SELECT DISTINCT m.merchant_id
+   >   FROM merchant m
+   >   JOIN menu mn ON mn.merchant_id = m.merchant_id AND mn.is_active = 1
+   >   WHERE m.is_active = 1
+   > ),
+   > merchant_item_stat AS (
+   >   SELECT
+   >     m.merchant_id,
+   >     SUM(CASE WHEN i.is_active = 1 THEN 1 ELSE 0 END) AS active_items,
+   >     SUM(CASE WHEN i.is_active = 1 AND i.is_vegetarian = 1 THEN 1 ELSE 0 END) AS active_veg_items
+   >   FROM merchant m
+   >   JOIN menu mn ON mn.merchant_id = m.merchant_id AND mn.is_active = 1
+   >   JOIN item i  ON i.menu_id = mn.menu_id
+   >   WHERE m.is_active = 1
+   >   GROUP BY m.merchant_id
+   > ),
+   > strict_veg_merchants AS (
+   >   SELECT merchant_id
+   >   FROM merchant_item_stat
+   >   WHERE active_items > 0 AND active_items = active_veg_items
+   > )
+   > SELECT
+   >   (SELECT COUNT(*) FROM strict_veg_merchants) AS veg_cnt,
+   >   (SELECT COUNT(*) FROM all_active_merchants) AS total_cnt,
+   >   ROUND((SELECT COUNT(*) FROM strict_veg_merchants) / (SELECT COUNT(*) FROM all_active_merchants) * 100, 2) AS veg_pct
+   > ;
+   > 
+   > ```
+   >
+   > 
+   >
    > 第四题是如果一个consumer连续几天order food，把records compress
    > 比如
    > Consumer ｜ Order_Date
@@ -164,7 +336,185 @@
    > 1                    01-01          01-03
    > 1                    01-08          01-09
    >
+   > ```sql
+   > -- 先把订单按“天”去重（同一天多单算一天）
+   > WITH days AS (
+   >   SELECT DISTINCT
+   >     o.consumer_id,
+   >     DATE(o.order_time) AS d
+   >   FROM `order` o
+   >   WHERE o.status = 'completed'      -- 如需
+   > ),
+   > 
+   > -- 连续段分组核心：用 row_number 和日期做“等差”对齐
+   > rnk AS (
+   >   SELECT
+   >     consumer_id,
+   >     d,
+   >     ROW_NUMBER() OVER (PARTITION BY consumer_id ORDER BY d) AS rn
+   >   FROM days
+   > ),
+   > 
+   > -- key = d - rn 天；对同一消费者，连续日期会得到相同的 key
+   > grp AS (
+   >   SELECT
+   >     consumer_id,
+   >     d,
+   >     DATE_SUB(d, INTERVAL rn DAY) AS grp_key
+   >   FROM rnk
+   > )
+   > 
+   > -- 聚合得到每段的起止
+   > SELECT
+   >   consumer_id,
+   >   MIN(d) AS start_date,
+   >   MAX(d) AS end_date
+   > FROM grp
+   > GROUP BY consumer_id, grp_key
+   > ORDER BY consumer_id, start_date;
+   > 
+   > ```
+   >
+   > 
+   >
    > Python是一个ETL 的graph，如果上游fail了下游也会fail，输出下游fail了以后哪些上游job不能run 了
+   >
+   > ```java
+   > /*
+   > 第一步：题目描述
+   > 给定一个有向无环图（DAG）表示ETL依赖：边 u -> v 表示 v 依赖 u（u 是上游，v 是下游）。
+   > 规则：若某个作业失败，则其所有可达的下游作业都无法继续运行（被“阻断”）。
+   > 输入：边列表（依赖关系）、初始失败作业集合 failedJobs。
+   > 输出：所有“无法运行”的作业集合（包含所有初始失败作业及其所有下游可达作业）。
+   > 说明：如果需要，也可以输出每个被阻断作业对应的“首个导致阻断的失败祖先”。
+   > 
+   > 第二步：解题思路（举例说明）
+   > 1) 建图
+   >    - 用邻接表表示：adj[u] 存放所有直接下游节点 v（存在边 u -> v）。
+   > 2) 多源遍历
+   >    - 以所有初始失败作业为起点，进行 BFS/DFS 沿边方向向下游扩散。
+   >    - 所有被访问到的节点（含起点）均标记为“不能运行”。
+   > 3) 去重与停止条件
+   >    - 用 visited 集合避免重复遍历。
+   > 4) 可选：记录阻断来源
+   >    - 在入队时携带“来源失败作业”，首次访问某被阻断节点时记录其来源。
+   > 5) 举例
+   >    - 依赖：A->B, A->C, B->D, C->D, D->E
+   >    - 初始失败：B
+   >    - 从 B 出发能达 D, E，因此“不能运行”={B, D, E}。
+   >    - 若初始失败为 {C, B}，则“不能运行”={B, C, D, E}。
+   > 
+   > 第三步：时间与空间复杂度
+   > - 设节点数为 N、边数为 M、失败源数为 F。
+   > - 时间复杂度：O(N + M)，每条边至多被遍历一次（多源BFS/DFS）。
+   > - 空间复杂度：O(N + M)，邻接表与 visited / 队列存储。
+   > 
+   > 第四步：Java 实现（含详细中文注释）
+   > */
+   > 
+   > import java.util.*;
+   > 
+   > public class EtlFailurePropagation {
+   >     /**
+   >      * 计算所有“不能运行”的作业（包含初始失败作业及其所有下游）
+   >      * @param edges 依赖边列表，边 [u, v] 表示 v 依赖 u（u->v）
+   >      * @param failedJobs 初始失败作业集合
+   >      * @return 一个结果对象，包含：
+   >      *   - blocked: Set<String> 所有不能运行的作业（含初始失败）
+   >      *   - blockerOf: Map<String,String> 每个被阻断作业 -> 首个导致阻断的失败祖先（初始失败之一）
+   >      */
+   >     public static Result computeBlockedJobs(List<String[]> edges, Set<String> failedJobs) {
+   >         // 1) 建立邻接表：u -> list of v（v 是 u 的直接下游）
+   >         Map<String, List<String>> adj = new HashMap<>();
+   >         // 收集所有出现过的节点，避免遗漏无出边/无入边节点
+   >         Set<String> allNodes = new HashSet<>();
+   > 
+   >         for (String[] e : edges) {
+   >             String u = e[0], v = e[1];
+   >             allNodes.add(u);
+   >             allNodes.add(v);
+   >             adj.computeIfAbsent(u, k -> new ArrayList<>()).add(v);
+   >         }
+   >         // 确保所有节点都有键
+   >         for (String node : allNodes) {
+   >             adj.computeIfAbsent(node, k -> new ArrayList<>());
+   >         }
+   > 
+   >         // 2) 多源BFS：从所有初始失败作业出发，向下游扩散
+   >         Set<String> blocked = new HashSet<>();          // 不能运行的集合
+   >         Map<String, String> blockerOf = new HashMap<>(); // 记录被阻断作业 -> 首个失败祖先
+   >         Deque<String> dq = new ArrayDeque<>();
+   > 
+   >         // 初始化：把所有初始失败作业入队，且它们的阻断来源就是自己
+   >         for (String f : failedJobs) {
+   >             if (!allNodes.contains(f)) {
+   >                 // 如果失败作业未在图中出现，也加入集合，使结果可见
+   >                 allNodes.add(f);
+   >                 adj.putIfAbsent(f, new ArrayList<>());
+   >             }
+   >             if (blocked.add(f)) {
+   >                 blockerOf.put(f, f); // 自身失败的来源是自己
+   >                 dq.offer(f);
+   >             }
+   >         }
+   > 
+   >         // BFS
+   >         while (!dq.isEmpty()) {
+   >             String cur = dq.poll();
+   >             String originFailed = blockerOf.get(cur); // 当前节点的失败来源（初始失败之一）
+   >             for (String nxt : adj.getOrDefault(cur, Collections.emptyList())) {
+   >                 if (!blocked.contains(nxt)) {
+   >                     blocked.add(nxt);
+   >                     // 该下游第一次被访问，记录其阻断来源为当前节点的来源
+   >                     blockerOf.put(nxt, originFailed);
+   >                     dq.offer(nxt);
+   >                 }
+   >             }
+   >         }
+   > 
+   >         return new Result(blocked, blockerOf);
+   >     }
+   > 
+   >     // 结果封装
+   >     public static class Result {
+   >         public final Set<String> blocked;
+   >         public final Map<String, String> blockerOf;
+   > 
+   >         public Result(Set<String> blocked, Map<String, String> blockerOf) {
+   >             this.blocked = blocked;
+   >             this.blockerOf = blockerOf;
+   >         }
+   >     }
+   > 
+   >     // 演示
+   >     public static void main(String[] args) {
+   >         // 图：A->B, A->C, B->D, C->D, D->E
+   >         List<String[]> edges = Arrays.asList(
+   >             new String[]{"A", "B"},
+   >             new String[]{"A", "C"},
+   >             new String[]{"B", "D"},
+   >             new String[]{"C", "D"},
+   >             new String[]{"D", "E"}
+   >         );
+   > 
+   >         // 初始失败：B
+   >         Set<String> failed = new HashSet<>(Arrays.asList("B"));
+   > 
+   >         Result r1 = computeBlockedJobs(edges, failed);
+   >         System.out.println("Blocked (fail=B): " + r1.blocked);         // 期望: [B, D, E]
+   >         System.out.println("BlockerOf: " + r1.blockerOf);               // D/E 的来源应为 B
+   > 
+   >         // 初始失败：B, C
+   >         Set<String> failed2 = new HashSet<>(Arrays.asList("B", "C"));
+   >         Result r2 = computeBlockedJobs(edges, failed2);
+   >         System.out.println("Blocked (fail=B,C): " + r2.blocked);        // 期望: [B, C, D, E]
+   >         System.out.println("BlockerOf: " + r2.blockerOf);               // D/E 的来源可能为 B 或 C（取决于首次访问）
+   >     }
+   > }
+   > 
+   > ```
+   >
+   > 
    >
    > 借楼，上周同样面试了DD，他们的SQL题目的Schema也是一样的，也是这几个表。各位要投DD的要好好想想这个结构了
    >
@@ -198,9 +548,161 @@
    > 第三轮 sql zoom面试，三道sql题
    >
    > 第一题：
-   >     找到一个用户的第一单和第二单的间隔时间。
-   >     计算用户两个订单之间向差的平均需要天数，我理解的是找到第一单跟第二单相差的天数，第二单跟第三单相差的天数，求和然后除以总单数。
-   >     每个月订单超过30单的是高频用户，找到每个月高频用户的百分比。
+   >  找到一个用户的第一单和第二单的间隔时间。
+   >
+   > ```sql
+   > /*
+   > 第一步：题目描述
+   > 给定订单表 Orders(user_id, order_id, order_time, status, ...)，请计算每个用户“第一单”和“第二单”之间的时间间隔。
+   > 若某用户订单数 < 2，则不输出该用户。时间单位可按需返回（秒/小时/天）。
+   > 
+   > 第二步：解题思路
+   > 1) 先用窗口函数按 user_id 分区、按 order_time（必要时再加 order_id）排序，给每笔订单打序号 rn。
+   > 2) 取 rn=1 与 rn=2 的两笔订单，做同一用户内的聚合/自连接，计算第二单时间 - 第一单时间。
+   > 3) 实务中常需要过滤无效订单（如取消），可在 WHERE status='completed' 先过滤。
+   > 4) 若同一时间戳有并列，建议用 (order_time, order_id) 作为确定性排序键。
+   > 
+   > 第三步：时间/空间复杂度
+   > - 时间：O(N log N)（排序主导，按每个 user 分区排序）；窗口打标本身 O(N)。
+   > - 空间：O(N)（窗口帧与中间结果）。
+   > 
+   > 第四步：SQL 方案
+   > -- 下面分别给出 MySQL 8+（窗口函数）、MySQL 5.x（无窗口函数）、PostgreSQL、BigQuery 四种写法。
+   > */
+   > 
+   > -- =========================
+   > -- A. MySQL 8+（推荐）
+   > -- =========================
+   > WITH ranked AS (
+   >   SELECT
+   >     user_id,
+   >     order_id,
+   >     order_time,
+   >     ROW_NUMBER() OVER (
+   >       PARTITION BY user_id
+   >       ORDER BY order_time ASC, order_id ASC
+   >     ) AS rn
+   >   FROM Orders
+   >   WHERE status = 'completed'  -- 如需
+   > ),
+   > first_two AS (
+   >   SELECT user_id,
+   >          MAX(CASE WHEN rn = 1 THEN order_time END) AS first_order_time,
+   >          MAX(CASE WHEN rn = 2 THEN order_time END) AS second_order_time
+   >   FROM ranked
+   >   WHERE rn IN (1, 2)
+   >   GROUP BY user_id
+   > )
+   > SELECT
+   >   user_id,
+   >   first_order_time,
+   >   second_order_time,
+   >   TIMESTAMPDIFF(SECOND, first_order_time, second_order_time) AS diff_seconds,
+   >   TIMESTAMPDIFF(HOUR,   first_order_time, second_order_time) AS diff_hours,
+   >   TIMESTAMPDIFF(DAY,    first_order_time, second_order_time) AS diff_days
+   > FROM first_two
+   > WHERE second_order_time IS NOT NULL
+   > ORDER BY user_id;
+   > 
+   > -- 说明：
+   > -- 1) ranked 给每个用户的订单按时间排 rn=1,2,...
+   > -- 2) 聚合到 first_two 后，仅保留有第二单的用户（second_order_time IS NOT NULL）。
+   > -- 3) TIMESTAMPDIFF 可自由选择单位（SECOND/HOUR/DAY）。
+   > 
+   > ```
+   >
+   > 
+   >
+   >  计算用户两个订单之间向差的平均需要天数，我理解的是找到第一单跟第二单相差的天数，第二单跟第三单相差的天数，求和然后除以总单数。
+   >  每个月订单超过30单的是高频用户，找到每个月高频用户的百分比。
+   >
+   > ```sql
+   > -- 题意拆解：
+   > -- A) 计算每个用户“相邻两单之间”的平均间隔天数：
+   > --    正确做法是：按时间给订单排序，计算相邻两单的差值（第二单-第一单、第三单-第二单...），
+   > --    然后对这些差值取平均。分母是“相邻对数 = 订单数 - 1”，而不是“总订单数”。
+   > 
+   > -- B) 定义“高频用户”：某月下单次数 > 30。
+   > --    计算“每个月高频用户的百分比” = （该月高频用户数 / 该月有下单的活跃用户数）* 100%。
+   > --    注：分母仅统计当月有下单的用户（活跃用户）。
+   > 
+   > /* ================================
+   >    A) 每个用户相邻订单的平均间隔天数（MySQL 8+）
+   >    表：Orders(user_id, order_id, order_time, status, ...)
+   >    如需只算有效订单，可在 WHERE 里加上 status='completed'
+   > =================================*/
+   > WITH ordered AS (
+   >   SELECT
+   >     user_id,
+   >     order_id,
+   >     order_time,
+   >     LAG(order_time) OVER (
+   >       PARTITION BY user_id
+   >       ORDER BY order_time ASC, order_id ASC
+   >     ) AS prev_time
+   >   FROM Orders
+   >   -- WHERE status = 'completed'
+   > ),
+   > gaps AS (
+   >   SELECT
+   >     user_id,
+   >     TIMESTAMPDIFF(DAY, prev_time, order_time) AS gap_days
+   >   FROM ordered
+   >   WHERE prev_time IS NOT NULL
+   > )
+   > SELECT
+   >   user_id,
+   >   ROUND(AVG(gap_days), 2)        AS avg_gap_days,  -- 平均相邻间隔（天）
+   >   COUNT(*)                        AS gap_count,     -- 相邻对数（分母）
+   >   MIN(gap_days)                   AS min_gap_days,  -- 可选：最短间隔
+   >   MAX(gap_days)                   AS max_gap_days   -- 可选：最长间隔
+   > FROM gaps
+   > GROUP BY user_id
+   > ORDER BY user_id;
+   > 
+   > -- 说明：
+   > -- 1) LAG 拿到“上一单”的时间，TIMESTAMPDIFF(DAY, prev, curr) 计算天数差。
+   > -- 2) 对每个 user_id 聚合即可得到平均间隔天数。
+   > 
+   > 
+   > /* ============================================
+   >    B) 每个月高频用户（>30单）占比（MySQL 8+）
+   >    月份分桶：用 DATE_FORMAT(order_time, '%Y-%m-01') 代表当月第一天
+   > =============================================*/
+   > WITH monthly_counts AS (
+   >   SELECT
+   >     DATE_FORMAT(order_time, '%Y-%m-01') AS month_start,  -- 或者使用 DATE(order_time) 再归一到月初
+   >     user_id,
+   >     COUNT(*) AS monthly_orders
+   >   FROM Orders
+   >   -- WHERE status = 'completed'
+   >   GROUP BY 1, 2
+   > ),
+   > agg AS (
+   >   SELECT
+   >     month_start,
+   >     COUNT(*) AS active_users,                                              -- 当月有下单的用户数
+   >     SUM(CASE WHEN monthly_orders > 30 THEN 1 ELSE 0 END) AS high_freq_users -- 当月>30单的用户数
+   >   FROM monthly_counts
+   >   GROUP BY month_start
+   > )
+   > SELECT
+   >   month_start,
+   >   active_users,
+   >   high_freq_users,
+   >   ROUND(high_freq_users / active_users * 100, 2) AS high_freq_pct
+   > FROM agg
+   > ORDER BY month_start;
+   > 
+   > -- 备注与优化建议：
+   > -- - 并列时间戳：排序键中加入 order_id，确保顺序稳定（已在窗口里处理）。
+   > -- - 时区统一：order_time 建议统一存 UTC，展示时再转换。
+   > -- - 性能：给 (user_id, order_time) 建联合索引；若量大，按日期做分区表。
+   > -- - 口径可调：如需仅统计“完成订单”，在两段查询的 WHERE 注释处解开 status 过滤。
+   > 
+   > ```
+   >
+   > 
    >
    > 前两次的面试体验蛮好的，都是国人。尤其是第二轮的小哥还说你是ng 我理解可能没什么经验 还讲了团队成长之类的。
    > 第二轮的sql面感觉是个abc，就是着急finish的感觉。后边想要跟他交流一些条件的定义 他直接说 你不用写了就是把大概的思路给我说一下就好。我说完了 他就说 oh that makes sense 就完了 也是全程无交流。 面试挂了很难受，求加米 求安慰。

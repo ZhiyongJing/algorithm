@@ -26,7 +26,7 @@
 
 # 1. 图
 
-图（graph）是一种非线性数据结构，由**顶点**（vertex）和**边**（edge）组成。我们可以将图 $G$ 抽象地表示为一组顶点 $V$ 和一组边 $E$ 的集合。以下示例展示了一个包含 5 个顶点和 7 条边的图。 
+图（graph）是一种非线性数据结构，由**顶点**（vertex）和**边**（edge）组成。我们可以将图 $G$ 抽象地表示为一组顶点 $V$ 和一组边 $E$ 的集合。以下示例展示了一个包含 5 个顶点和 7 条边的图。
 
 $$
 \begin{aligned}
@@ -42,7 +42,7 @@ $$
 
 ## 1.1 图的常见类型与术语
 
-根据边是否具有方向，可分为**无向图**（undirected graph）和**有向图**（directed graph），如下图所示。 
+根据边是否具有方向，可分为**无向图**（undirected graph）和**有向图**（directed graph），如下图所示。
 
 - 在无向图中，边表示两顶点之间的“双向”连接关系，例如微信或 QQ 中的“好友关系”。
 - 在有向图中，边具有方向性，即 $A \rightarrow B$ 和 $A \leftarrow B$ 两个方向的边是相互独立的，例如微博或抖音上的“关注”与“被关注”关系。
@@ -100,15 +100,13 @@ $$
 
 如下表所示，许多现实系统可以用图来建模，相应的问题也可以约化为图计算问题。
 
-<p align="center"> 表 <id> &nbsp; 现实生活中常见的图 </p>
+<p align="center"> 表 <id>   现实生活中常见的图 </p>
 
 |          | 顶点 | 边                   | 图计算问题   |
 | -------- | ---- | -------------------- | ------------ |
 | 社交网络 | 用户 | 好友关系             | 潜在好友推荐 |
 | 地铁线路 | 站点 | 站点间的连通性       | 最短路线推荐 |
 | 太阳系   | 星体 | 星体间的万有引力作用 | 行星轨道计算 |
-
-
 
 # 2. 图的基础操作
 
@@ -122,9 +120,7 @@ $$
 - **添加顶点**：在邻接矩阵的尾部添加一行一列，并全部填 $0$ 即可，使用 $O(n)$ 时间。
 - **删除顶点**：在邻接矩阵中删除一行一列。当删除首行首列时达到最差情况，需要将 $(n-1)^2$ 个元素“向左上移动”，从而使用 $O(n^2)$ 时间。
 - **初始化**：传入 $n$ 个顶点，初始化长度为 $n$ 的顶点列表 `vertices` ，使用 $O(n)$ 时间；初始化 $n \times n$ 大小的邻接矩阵 `adjMat` ，使用 $O(n^2)$ 时间。
-      ![邻接矩阵的初始化、增删边、增删顶点](Graph.assets/adjacency_matrix_steps.gif)
-
-
+  ![邻接矩阵的初始化、增删边、增删顶点](Graph.assets/adjacency_matrix_steps.gif)
 
 以下是基于邻接矩阵表示图的实现代码：
 
@@ -247,9 +243,7 @@ public class GraphAdjMat {
 - **添加顶点**：在邻接表中添加一个链表，并将新增顶点作为链表头节点，使用 $O(1)$ 时间。
 - **删除顶点**：需遍历整个邻接表，删除包含指定顶点的所有边，使用 $O(n + m)$ 时间。
 - **初始化**：在邻接表中创建 $n$ 个顶点和 $2m$ 条边，使用 $O(n + m)$ 时间。
-      ![邻接表的初始化、增删边、增删顶点](Graph.assets/adjacency_list_steps.gif)
-
-
+  ![邻接表的初始化、增删边、增删顶点](Graph.assets/adjacency_list_steps.gif)
 
 以下是邻接表的代码实现。对比上图，实际代码有以下不同。
 
@@ -358,20 +352,18 @@ public class GraphAdjList {
 
 设图中共有 $n$ 个顶点和 $m$ 条边，下表对比了邻接矩阵和邻接表的时间效率和空间效率。
 
-<p align="center"> 表 <id> &nbsp; 邻接矩阵与邻接表对比 </p>
+<p align="center"> 表 <id>   邻接矩阵与邻接表对比 </p>
 
-|              | 邻接矩阵 | 邻接表（链表） | 邻接表（哈希表） |
-| ------------ | -------- | -------------- | ---------------- |
-| 判断是否邻接 | $O(1)$   | $O(m)$         | $O(1)$           |
-| 添加边       | $O(1)$   | $O(1)$         | $O(1)$           |
-| 删除边       | $O(1)$   | $O(m)$         | $O(1)$           |
-| 添加顶点     | $O(n)$   | $O(1)$         | $O(1)$           |
-| 删除顶点     | $O(n^2)$ | $O(n + m)$     | $O(n)$           |
-| 内存空间占用 | $O(n^2)$ | $O(n + m)$     | $O(n + m)$       |
+|              | 邻接矩阵   | 邻接表（链表） | 邻接表（哈希表） |
+| ------------ | ---------- | -------------- | ---------------- |
+| 判断是否邻接 | $O(1)$   | $O(m)$       | $O(1)$         |
+| 添加边       | $O(1)$   | $O(1)$       | $O(1)$         |
+| 删除边       | $O(1)$   | $O(m)$       | $O(1)$         |
+| 添加顶点     | $O(n)$   | $O(1)$       | $O(1)$         |
+| 删除顶点     | $O(n^2)$ | $O(n + m)$   | $O(n)$         |
+| 内存空间占用 | $O(n^2)$ | $O(n + m)$   | $O(n + m)$     |
 
 观察上表，似乎邻接表（哈希表）的时间效率与空间效率最优。但实际上，在邻接矩阵中操作边的效率更高，只需一次数组访问或赋值操作即可。综合来看，邻接矩阵体现了“以空间换时间”的原则，而邻接表体现了“以时间换空间”的原则。
-
-
 
 # 3. 图的遍历
 
@@ -390,12 +382,13 @@ public class GraphAdjList {
    > <img src="Graph.assets/graph_bfs.png" alt="图的广度优先遍历" style="zoom:50%;" />
    >
    > <img src="Graph.assets/v2-d40cfddeaa5d0142abd621993d311fe0_b.webp" alt="动图" style="zoom: 67%;" />
-
+   >
 2. 带层级的遍历
 
    > <img src="Graph.assets/v2-0c3a851199c97535bacfee1807e7ab67_1440w.jpg" alt="img" style="zoom:50%;" />
    >
    > <img src="Graph.assets/v2-1d7ed8b851b97e444baba2a5b586c1a5_b.webp" alt="动图" style="zoom:67%;" />
+   >
 
 ### 3.1.1 算法实现
 
@@ -409,7 +402,7 @@ BFS 通常借助队列来实现，代码如下所示。队列具有“先入先�
 
 !!! tip
 
-    哈希集合可以看作一个只存储 `key` 而不存储 `value` 的哈希表，它可以在 $O(1)$ 时间复杂度下进行 `key` 的增删查改操作。根据 `key` 的唯一性，哈希集合通常用于数据去重等场景。
+    哈希集合可以看作一个只存储`key` 而不存储 `value` 的哈希表，它可以在 $O(1)$ 时间复杂度下进行 `key` 的增删查改操作。根据 `key` 的唯一性，哈希集合通常用于数据去重等场景。
 
 ```java
 /* 广度优先遍历 */
@@ -530,8 +523,8 @@ List<Vertex> graphDFS(GraphAdjList graph, Vertex startVet) {
 !!! question "深度优先遍历的序列是否唯一？"
 
     与广度优先遍历类似，深度优先遍历序列的顺序也不是唯一的。给定某顶点，先往哪个方向探索都可以，即邻接顶点的顺序可以任意打乱，都是深度优先遍历。
-    
-    以树的遍历为例，“根 $\rightarrow$ 左 $\rightarrow$ 右”“左 $\rightarrow$ 根 $\rightarrow$ 右”“左 $\rightarrow$ 右 $\rightarrow$ 根”分别对应前序、中序、后序遍历，它们展示了三种遍历优先级，然而这三者都属于深度优先遍历。
+
+    以树的遍历为例，“根$\rightarrow$ 左 $\rightarrow$ 右”“左 $\rightarrow$ 根 $\rightarrow$ 右”“左 $\rightarrow$ 右 $\rightarrow$ 根”分别对应前序、中序、后序遍历，它们展示了三种遍历优先级，然而这三者都属于深度优先遍历。
 
 ### 3.2.2 复杂度分析
 
@@ -554,13 +547,11 @@ List<Vertex> graphDFS(GraphAdjList graph, Vertex startVet) {
 
 <img src="Graph.assets/v2-b5c8a688affdd4391baa898ad8eb292b_1440w.jpg" alt="img" style="zoom:50%;" />
 
-
-
 ### 4.1.1 算法实现
 
 **LeetCode 1162. As Far from Land as Possible** 离开陆地的最远距离（Medium）
 
-> 你现在手里有一份大小  为的地图网格`grid`，上面的每个单元格都标记为 0 或者 1，其中 0 代表海洋，1 代表陆地，请你找出一个海洋区域，这个海洋区域到离它最近的陆地区域的距离是最大的。
+> 你现在手里有一份大小  为的地图网格 `grid`，上面的每个单元格都标记为 0 或者 1，其中 0 代表海洋，1 代表陆地，请你找出一个海洋区域，这个海洋区域到离它最近的陆地区域的距离是最大的。
 > 我们这里说的距离是「[曼哈顿距离](https://zhida.zhihu.com/search?content_id=118394171&content_type=Article&match_order=1&q=曼哈顿距离&zhida_source=entity)」。 和 这两个区域之间的距离是 。
 > 如果我们的地图上只有陆地或者海洋，请返回 -1。
 
@@ -634,15 +625,13 @@ Dijkstra（迪杰斯特拉）算法解决的问题是：
 
 ### 4.2.1 算法实现
 
-通过Dijkstra计算图G中的最短路径时，需要指定起点s(即从顶点s开始计算)。 
+通过Dijkstra计算图G中的最短路径时，需要指定起点s(即从顶点s开始计算)。
 
-此外，引进两个集合S和U。S的作用是记录已求出最短路径的顶点(以及相应的最短路径长度)，而U则是记录还未求出最短路径的顶点(以及该顶点到起点s的距离)。 
+此外，引进两个集合S和U。S的作用是记录已求出最短路径的顶点(以及相应的最短路径长度)，而U则是记录还未求出最短路径的顶点(以及该顶点到起点s的距离)。
 
 初始时，S中只有起点s；U中是除s之外的顶点，并且U中顶点的路径是"起点s到该顶点的路径"。然后，从U中找出路径最短的顶点，并将其加入到S中；接着，更新U中的顶点和顶点对应的路径。 然后，再从U中找出路径最短的顶点，并将其加入到S中；接着，更新U中的顶点和顶点对应的路径。 ... 重复该操作，直到遍历完所有顶点。
 
 图中b标注应该是b(13)
-
-
 
 ![img](Graph.assets/02.jpg)
 
@@ -926,22 +915,26 @@ public class Dijkstra {
 >   > 查找 `minDistance()` 需要 `O(V)` 遍历 `dist[]`，共执行 `V` 次。更新所有邻接顶点 `O(V)`，总共 `V` 次。
 >   >
 >   > **总复杂度：O(V^2)**
+>   >
 >
->         * 方法 2（邻接表 + 优先队列 `PriorityQueue`）
->         
+>   * 方法 2（邻接表 + 优先队列 `PriorityQueue`）
+>
 >   > `PriorityQueue` 插入和删除操作 `O(log V)`。`V` 个顶点被 `log V` 访问，每个 `E` 条边更新 `log V` 次。
 >   >
 >   > **总复杂度：O((V+E) log V)**，适用于 **稀疏图**。
+>   >
 
 **空间复杂度**：
 
 > - 方法 1（邻接矩阵 + 线性查找 `minDistance()`）
 >
 >   > `O(V^2)`（邻接矩阵存储所有边）。
+>   >
 >
->    * 方法 2（邻接表 + 优先队列 `PriorityQueue`）
+>   * 方法 2（邻接表 + 优先队列 `PriorityQueue`）
 >
->      > `O(V + E)`需要存储 `V` 个顶点的 `dist[]`，以及 `E` 条边的邻接表。
+>     > `O(V + E)`需要存储 `V` 个顶点的 `dist[]`，以及 `E` 条边的邻接表。
+>     >
 
 # 5. 图的搜索
 
@@ -1026,7 +1019,7 @@ private boolean dfs(
         }
         return false;
     }
-    
+  
 
 `````
 
@@ -1190,27 +1183,25 @@ DAG（有向无环图）是一种图结构，其中的边有方向，并且不�
 5. 重复上述步骤直到队列为空。如果输出的节点数等于 DAG 的节点数，则排序成功，否则图中存在循环依赖。
 6. 算法在进行拓扑排序时同时检测有向图中是否存在环。如果发现环，则无法进行拓扑排序。
 
-
-
 例如：下图所示的有向无环图，采用入度表的方法获取拓扑排序过程。
 
 <img src="Graph.assets/GSORT-1.png" alt="img" style="zoom:50%;" />
 
 1. 选择图中入度为0的顶点1，输出顶点1。删除顶点1，并删除以顶点1为尾的边。删除后图为：
 
-  <img src="Graph.assets/GSORT-2.png" alt="img" style="zoom:50%;" />
+<img src="Graph.assets/GSORT-2.png" alt="img" style="zoom:50%;" />
 
 2. 继续选择入度为0的顶点。现在，图中入度为0的顶点有2和4，我们选择顶点2，输出顶点2。删除顶点2，并删除以顶点2为尾的边。删除后图为
 
-  <img src="Graph.assets/GSORT-3.png" alt="img" style="zoom:50%;" />
+<img src="Graph.assets/GSORT-3.png" alt="img" style="zoom:50%;" />
 
 3. 选择入度为0的顶点4，输出顶点4.删除顶点4，并删除以顶点4为尾的边。删除后图为：
 
-  <img src="Graph.assets/GSORT-4.png" alt="img" style="zoom:50%;" />
+<img src="Graph.assets/GSORT-4.png" alt="img" style="zoom:50%;" />
 
 4. 选择入度为0的顶点3，输出顶点3.删除顶点3，并删除以顶点3为尾的边。删除后图为：
 
-  <img src="Graph.assets/GSORT-5.png" alt="img" style="zoom:50%;" />
+<img src="Graph.assets/GSORT-5.png" alt="img" style="zoom:50%;" />
 
 5. 最后剩余顶点5，输出顶点5，拓扑排序过程结束。最终的输出结果为：
 
@@ -1230,7 +1221,7 @@ public class TopologicalSort {
         Map<String, Integer> inDegree = new HashMap<>();
         Map<String, List<String>> graph = new HashMap<>();
         for (List<String> edge : edges) {
-            graph.putIfAbsent(edge.get(0), new ArrayList<>());
+            graph.putIfAbsent(edge.get(0), new ArrayList<>());//只有在 key 不存在时才插入
             graph.putIfAbsent(edge.get(1), new ArrayList<>());
             graph.get(edge.get(0)).add(edge.get(1));
 
@@ -1312,25 +1303,18 @@ public class TopologicalSort {
 1. 选择起点为顶点1,，开始执行深度优先搜索。顺序为1->2->3->5。深度优先搜索到达顶点5时，顶点5出度为0。将顶点5入栈。
 
    <img src="Graph.assets/GSORT-10.png" alt="img" style="zoom:50%;" />
-
 2. 深度优先搜索执行回退，回退至顶点3。此时顶点3的出度为0，将顶点3入栈。
 
    <img src="Graph.assets/GSORT-10-20250213225807087.png" alt="img" style="zoom:50%;" />
-
 3. 回退至顶点2，顶点2出度为0，顶点2入栈
 
    <img src="Graph.assets/GSORT-11.png" alt="img" style="zoom:50%;" />
-
-
-
 4. 回退至顶点1，顶点1可以前进位置为顶点4，顺序为1->4。顶点4出度为0，顶点4入栈。
 
    <img src="Graph.assets/GSORT-13.png" alt="img" style="zoom:50%;" />
-
 5. 回退至顶点1，顶点1出度为0，顶点1入栈
 
    <img src="Graph.assets/GSORT-14.png" alt="img" style="zoom:50%;" />
-
 6. 栈的逆序为1->4->2->3->5。此顺序为拓扑排序结果。
 
 ```java
@@ -1419,4 +1403,3 @@ public class TopologicalSortDFS {
 
 - **时间复杂度**：O(V + E)，V 是节点数，E 是边数。
 - **空间复杂度**：O(V)，用于存储状态和结果栈。
-

@@ -310,31 +310,142 @@
 >    >
 > 3. **子查询的分类**: 我们按内查询是否被执行多次，将子查询划分为 相关(或关联)子查询 和 不相关(或非关联)子查询 。
 >
->    > 1. **相关子查询**
->    >
->    >    > 如果子查询的执行依赖于外部查询，通常情况下都是因为子查询中的表用到了外部的表，并进行了条件关联，**因此每执行一次外部查询，子查询都要重新计算一次，这样的子查询就称之为 关联子查询** 。
->    >    >
->    >    > ```sql
->    >    > -- 若employees表中employee_id与job_history表中employee_id相同的数目不小于2，输出这些相同 id的员工的employee_id,last_name和其job_id
->    >    > SELECT e.employee_id, last_name,e.job_id
->    >    > FROM   employees e
->    >    > WHERE  2 <= (SELECT COUNT(*)
->    >    > FROM   job_history
->    >    >           WHERE  employee_id = e.employee_id);
->    >    > ```
->    >    >
->    > 2. **关联子查询**
->    >
->    >    > 关联子查询通常也会和 EXISTS操作符一起来使用，用来检查在子查询中是否存在满足条件的行。题目中可以使用子查询，也可以使用自连接。一般情况建议你使用自连接，因为在许多 DBMS 的处理过 程中，对于自连接的处理速度要比子查询快得多。
->    >    >
->    >    > ```sql
->    >    > -- 查询公司管理者的employee_id，last_name，job_id，department_id信息 
->    >    > SELECT employee_id, last_name, job_id, department_id FROM employees e1 
->    >    > WHERE EXISTS ( SELECT * FROM employees e2 WHERE e2.manager_id = e1.employee_id);
->    >    >
->    >    > ```
->    >    >
->    >
+>
+> > 1. **相关子查询**
+> >
+> >    > 如果子查询的执行依赖于外部查询，通常情况下都是因为子查询中的表用到了外部的表，并进行了条件关联，**因此每执行一次外部查询，子查询都要重新计算一次，这样的子查询就称之为 关联子查询** 。
+> >    >
+> >    > ```sql
+> >    > -- 若employees表中employee_id与job_history表中employee_id相同的数目不小于2，输出这些相同 id的员工的employee_id,last_name和其job_id
+> >    > SELECT e.employee_id, last_name,e.job_id
+> >    > FROM   employees e
+> >    > WHERE  2 <= (SELECT COUNT(*)
+> >    > FROM   job_history
+> >    >           WHERE  employee_id = e.employee_id);
+> >    > ```
+> >    >
+> > 2. **关联子查询**
+> >
+> >    > 关联子查询通常也会和 EXISTS操作符一起来使用，用来检查在子查询中是否存在满足条件的行。题目中可以使用子查询，也可以使用自连接。一般情况建议你使用自连接，因为在许多 DBMS 的处理过 程中，对于自连接的处理速度要比子查询快得多。
+> >    >
+> >    > ```sql
+> >    > -- 查询公司管理者的employee_id，last_name，job_id，department_id信息 
+> >    > SELECT employee_id, last_name, job_id, department_id FROM employees e1 
+> >    > WHERE EXISTS ( SELECT * FROM employees e2 WHERE e2.manager_id = e1.employee_id);
+> >    >
+> >    > ```
+> >    >
+> >
+>
+> 4. 子查询的位置
+>
+>    ```sql
+>    /* ============================================================
+>    1. SELECT 子句
+>       - 把子查询当作一个计算列
+>    ============================================================ */
+>    SELECT name,
+>           (SELECT COUNT(*) FROM Orders o WHERE o.user_id = u.id) AS order_count
+>    FROM Users u;
+>    
+>    -- 输出：每个用户及其订单数
+>    
+>    
+>    /* ============================================================
+>    2. FROM 子句（派生表/内联视图）
+>       - 先计算出一个结果集，再当成表使用
+>    ============================================================ */
+>    SELECT t.user_id, t.total_amount
+>    FROM (
+>      SELECT user_id, SUM(amount) AS total_amount
+>      FROM Orders
+>      GROUP BY user_id
+>    ) t
+>    WHERE t.total_amount > 500;
+>    
+>    -- 输出：总金额 > 500 的用户及金额
+>    
+>    
+>    /* ============================================================
+>    3. WHERE 子句
+>       - 最常见，作为筛选条件
+>    ============================================================ */
+>    SELECT name
+>    FROM Users
+>    WHERE id IN (SELECT user_id FROM Orders);
+>    
+>    -- 输出：有下过订单的用户名字
+>    
+>    
+>    /* ============================================================
+>    4. HAVING 子句
+>       - 对分组结果进一步筛选
+>    ============================================================ */
+>    SELECT user_id, COUNT(*) AS order_count
+>    FROM Orders
+>    GROUP BY user_id
+>    HAVING COUNT(*) > (SELECT AVG(cnt)
+>                       FROM (SELECT COUNT(*) AS cnt
+>                             FROM Orders
+>                             GROUP BY user_id) t);
+>    
+>    -- 输出：订单数大于平均订单数的用户
+>    
+>    
+>    /* ============================================================
+>    5. JOIN 子句
+>       - 在 JOIN 里用子查询做表
+>    ============================================================ */
+>    SELECT u.name, t.total_amount
+>    FROM Users u
+>    JOIN (
+>      SELECT user_id, SUM(amount) AS total_amount
+>      FROM Orders
+>      GROUP BY user_id
+>    ) t
+>    ON u.id = t.user_id;
+>    
+>    -- 输出：用户及其总金额
+>    
+>    
+>    /* ============================================================
+>    6. INSERT 中的子查询
+>    ============================================================ */
+>    INSERT INTO HighValueUsers (user_id, total_amount)
+>    SELECT user_id, SUM(amount)
+>    FROM Orders
+>    GROUP BY user_id
+>    HAVING SUM(amount) > 1000;
+>    
+>    -- 输出：插入所有总金额 > 1000 的用户
+>    
+>    
+>    /* ============================================================
+>    7. UPDATE 中的子查询
+>    ============================================================ */
+>    UPDATE Users u
+>    SET u.vip = 1
+>    WHERE u.id IN (
+>      SELECT user_id
+>      FROM Orders
+>      GROUP BY user_id
+>      HAVING SUM(amount) > 1000
+>    );
+>    
+>    -- 输出：把总金额 > 1000 的用户标记为 VIP
+>    
+>    
+>    /* ============================================================
+>    8. DELETE 中的子查询
+>    ============================================================ */
+>    DELETE FROM Users
+>    WHERE id NOT IN (SELECT DISTINCT user_id FROM Orders);
+>    
+>    -- 输出：删除没有下单的用户
+>    
+>    ```
+>
+>    
 
 ## 4. 流程控制
 
@@ -500,4 +611,3 @@
 >   > END //
 >   > DELIMITER ;
 >   > ```
->   >

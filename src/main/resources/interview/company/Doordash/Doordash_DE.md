@@ -727,8 +727,278 @@
    > 以下内容需要积分高于 100 您已经可以浏览
    >
    > 1. Data Modeling case study: 围绕一个app。有很多小问，app是一个健身软件，用户付费之后可以看里面的视频。问设计metrics条件判断怎样才算是daily active users。然后data modeling entity design。最后sql统计各个 category的一周的 daliy active users统计，大概是这样
+   >    ```sql
+   >    /*
+   >    ============================================================
+   >    Data Modeling Case Study: 健身 App (Fitness Video Platform)
+   >    ============================================================
+   >    
+   >    1. 场景描述
+   >    ------------------------------------------------------------
+   >    - App：健身视频平台。
+   >    - 用户：注册用户，可以付费订阅。
+   >    - 功能：用户付费后可以观看视频。
+   >    - 分析目标：统计 DAU (Daily Active Users)，并做 category 维度的活跃分析。
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    2. DAU 定义 (Daily Active Users)
+   >    ------------------------------------------------------------
+   >    条件判断：
+   >    - 用户在某一天有以下行为之一：
+   >      * 登录 app
+   >      * 播放视频 (>=1 次)
+   >      * 其他可选 engagement 行为 (like/comment/share)
+   >    - 因为这是付费内容平台，"active" 更核心的定义通常为
+   >      “在当天有观看视频行为的用户数”。
+   >    
+   >    所以 DAU 判定逻辑：
+   >    - DISTINCT(user_id) WHERE action_type IN ('login', 'video_play') ON that date。
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    3. Data Modeling (Entity Design)
+   >    ------------------------------------------------------------
+   >    主要实体：
+   >    - User (用户)
+   >    - Subscription (订阅)
+   >    - Video (视频)
+   >    - Category (视频分类)
+   >    - UserAction (用户行为事件)
+   >    
+   >    表结构设计：
+   >    
+   >    User
+   >    - user_id (PK)
+   >    - name
+   >    - email
+   >    - signup_date
+   >    
+   >    Subscription
+   >    - sub_id (PK)
+   >    - user_id (FK -> User)
+   >    - plan_type (monthly/annual)
+   >    - start_date
+   >    - end_date
+   >    - status (active/expired)
+   >    
+   >    Video
+   >    - video_id (PK)
+   >    - title
+   >    - category_id (FK -> Category)
+   >    - duration
+   >    
+   >    Category
+   >    - category_id (PK)
+   >    - category_name
+   >    
+   >    UserAction
+   >    - action_id (PK)
+   >    - user_id (FK -> User)
+   >    - video_id (FK -> Video, nullable if action=login)
+   >    - action_type (login, video_play, like, share)
+   >    - action_time (timestamp)
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    4. SQL 题目：统计各个 category 的一周的 Daily Active Users
+   >    ------------------------------------------------------------
+   >    目标：
+   >    - 输出表：每天每个 category 的 DAU (去重用户数)。
+   >    
+   >    SQL (MySQL 8+ 示例)：
+   >    
+   >    SELECT 
+   >        DATE(ua.action_time) AS action_date,
+   >        v.category_id,
+   >        c.category_name,
+   >        COUNT(DISTINCT ua.user_id) AS daily_active_users
+   >    FROM UserAction ua
+   >    JOIN Video v ON ua.video_id = v.video_id
+   >    JOIN Category c ON v.category_id = c.category_id
+   >    WHERE ua.action_type = 'video_play'
+   >      AND ua.action_time >= CURDATE() - INTERVAL 7 DAY
+   >    GROUP BY DATE(ua.action_time), v.category_id, c.category_name
+   >    ORDER BY action_date, category_name;
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    5. 结果示例 (预期输出)
+   >    ------------------------------------------------------------
+   >    +------------+-------------+---------------+-------------------+
+   >    | action_date| category_id | category_name | daily_active_users|
+   >    +------------+-------------+---------------+-------------------+
+   >    | 2023-08-01 | 1           | Yoga          | 150               |
+   >    | 2023-08-01 | 2           | HIIT          |  80               |
+   >    | 2023-08-01 | 3           | Pilates       |  45               |
+   >    | 2023-08-02 | 1           | Yoga          | 160               |
+   >    | 2023-08-02 | 2           | HIIT          |  95               |
+   >    | ...        | ...         | ...           | ...               |
+   >    +------------+-------------+---------------+-------------------+
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    6. 总结
+   >    ------------------------------------------------------------
+   >    - DAU 定义需要结合业务目标 (健身 app → 核心是 video play)。
+   >    - Data Modeling 实体：User, Subscription, Video, Category, UserAction。
+   >    - SQL：用 DISTINCT user_id 按日期 + category 聚合。
+   >    - 可扩展：
+   >      * 加维度：设备类型、会员类型。
+   >      * 加指标：WAU/MAU，付费转化率。
+   >    ============================================================
+   >    */
+   >    
+   >    ```
+   >
+   >    
+   >
    > 2. ETL Design。设计一个pipeline汇总各个AWS service的billing，好制作report
+   >    ```java 
+   >    /*
+   >    ============================================================
+   >    System Design: ETL Pipeline for AWS Billing
+   >    ============================================================
+   >    
+   >    1. Functional Requirements 功能需求
+   >    - 从 AWS 各个服务 (S3, EC2, Lambda, RDS) 收集 billing usage events。
+   >    - 存储到 Data Lake (S3) 原始层。
+   >    - 统一清洗/转换字段 (标准 schema)。
+   >    - 聚合账单 (daily / monthly)。
+   >    - Load 到 Billing Warehouse (Redshift / Snowflake)。
+   >    - 提供查询接口给 Customer Portal / Athena / BI 工具。
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    2. Non-Functional Requirements 非功能需求
+   >    - 可扩展性：支持 TB 级别日志。
+   >    - 准确性：账单必须和 AWS CUR 一致，可审计。
+   >    - 实时性：支持 T+1 或分钟级实时。
+   >    - 安全性：数据加密 (KMS)，隔离多租户。
+   >    - 可维护性：可观测 (CloudWatch Metrics)。
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    3. Data Sources 数据源
+   >    - AWS Cost and Usage Report (CUR) → CSV/Parquet 存在 S3。
+   >    - CloudWatch Metrics → 实时 usage。
+   >    - 各服务日志：
+   >      * S3 Access Logs (存储量/请求数)
+   >      * EC2 CloudWatch Logs (Compute hours/EBS IO)
+   >      * Lambda Metrics (invocations/duration)
+   >      * RDS Enhanced Monitoring (CPU, Storage)
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    4. ETL Pipeline 设计
+   >    
+   >    E - Extract
+   >    - Batch：从 CUR (S3) 拉取 CSV/Parquet。
+   >    - Streaming：Kinesis Firehose 收集 usage events。
+   >    
+   >    T - Transform
+   >    - Glue/Spark：
+   >      * 清洗去重、补充缺失字段。
+   >      * 标准化 schema：
+   >        { account_id, service, usage_type, usage_amount, unit, region, cost, timestamp }
+   >      * 应用 pricing model。
+   >    
+   >    L - Load
+   >    - Raw Layer：S3 (原始 CUR + 日志)。
+   >    - Transformed Layer：Glue 输出 Parquet → S3 curated。
+   >    - Aggregated Layer：Redshift / Snowflake。
+   >    - Cache Layer：Redis / DynamoDB (Portal 快速查询)。
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    5. Data Model 表设计
+   >    
+   >    BillingEvent (原始事件)
+   >    - event_id | account_id | service | usage_type | usage_amount | unit | cost | timestamp
+   >    
+   >    BillingDailySummary
+   >    - account_id | service | date | total_usage | total_cost
+   >    
+   >    BillingMonthlySummary
+   >    - account_id | service | year_month | total_cost | breakdown_json
+   >    
+   >    AccountBudget
+   >    - account_id | budget | threshold_pct | notify_email
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    6. Workflow 数据流 (ASCII 图)
+   >    
+   >             +-------------------+
+   >             | AWS Services (S3, |
+   >             | EC2, Lambda, RDS) |
+   >             +-------------------+
+   >                       |
+   >                       v
+   >            +-------------------------+
+   >            | CloudWatch / CUR Report |
+   >            +-------------------------+
+   >                       |
+   >             +---------+---------+
+   >             |                   |
+   >             v                   v
+   >    +-----------------+   +-----------------+
+   >    | Kinesis Firehose|   | S3 (CUR Files)  |
+   >    | (Streaming)     |   | (Batch)         |
+   >    +-----------------+   +-----------------+
+   >             |                   |
+   >             v                   v
+   >          +-----------------------------+
+   >          | AWS Glue ETL / Spark Jobs   |
+   >          | - 清洗 / 转换 / 定价计算    |
+   >          +-----------------------------+
+   >                       |
+   >                       v
+   >             +---------------------+
+   >             | Data Lake (S3)      |
+   >             | - Raw / Curated     |
+   >             +---------------------+
+   >                       |
+   >                       v
+   >             +---------------------+
+   >             | Redshift / Snowflake|
+   >             | Billing Warehouse   |
+   >             +---------------------+
+   >                       |
+   >             +---------------------+
+   >             | Portal API / Athena |
+   >             | / QuickSight / BI   |
+   >             +---------------------+
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    7. Scaling / Optimization 扩展策略
+   >    - 数据量大 → 日志写 S3，Glue ETL → Redshift Spectrum 查询。
+   >    - 实时性 → Kinesis + Flink 流式聚合，Portal 查询 DynamoDB。
+   >    - 成本优化 → 冷数据归档 S3 Glacier；Redshift 仅存聚合。
+   >    - 可靠性 → Glue Job Bookmark 防重复；CUR 分区加载。
+   >    
+   >    ------------------------------------------------------------
+   >    
+   >    8. 面试 Follow-up 问答
+   >    Q: 如何支持实时账单？
+   >    A: CUR 批处理保证权威，流式 ETL 提供实时预览。
+   >    
+   >    Q: 如何保证和 AWS 官方账单一致？
+   >    A: 定期 reconcile，CUR vs 内部计算，写审计日志。
+   >    
+   >    Q: 如何实现多租户隔离？
+   >    A: account_id 强制过滤；Redshift/Snowflake 启用 Row-Level Security。
+   >    
+   >    ============================================================
+   >    */
+   >    
+   >    ```
+   >
+   >    
+   >
    > 3. Hiring Manager: BQ
+   >
    > 4. Data scientist team的人来面，基本上也是bq。
    >
    > 不到一个星期就出结果了，说是过了，然后第二天约了一个组的manager team match。结果没match上。然后recruiter说我这个级别(E3, E4)只有那个组有空位，所以就没有offer了。

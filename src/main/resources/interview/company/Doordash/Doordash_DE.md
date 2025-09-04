@@ -1,4 +1,198 @@
-1. 2025(4-6月) DataEng 本科 全职@doordash - 内推 - 技术电面  | 😐 Neutral 😣 Hard | Other | 在职跳槽
+1. 2025(8-9)
+
+   > ```sql
+   > /* 
+   > 【第一步：详细解题思路】
+   > 
+   > 目标：统计满足以下全部条件的订单数量（返回一行一列 total_orders）
+   > 1) 送货单（delivery），而不是自取单 → is_pickup_flg = 0
+   > 2) 订单已完成 → status = 'COMPLETED'（为避免大小写问题，统一用 UPPER 比较）
+   > 3) 订单评分为“最高评分” → rating 等于在满足前两条过滤条件后的最大 rating
+   > 
+   > 关键点与边界：
+   > - rating 可能为 NULL：MAX() 会自动忽略 NULL，但等号比较需要排除 NULL（加 rating IS NOT NULL）。
+   > - “最高评分”通常是全局最大值（不是分组内、也不是每商家），题干也给了全局总数输出，因此用子查询求全局最大 rating。
+   > - 为了更严谨，子查询与外层过滤条件保持一致（只在已完成的送货单里找最大评分）。
+   > - is_pickup_flg 字段通常 0/1，0 表示非自取（即配送）；如平台定义相反，可按实际字段语义调整。
+   > 
+   > 输出：一行一列 total_orders。
+   > 
+   > 
+   > /* ==============================
+   >    MySQL 版本（8.0+）
+   >    ============================== */
+   > SELECT COUNT(*) AS total_orders
+   > FROM orders o
+   > WHERE o.is_pickup_flg = 0                                  -- 送货单（不是自取）
+   >   AND UPPER(o.status) = 'COMPLETED'                        -- 已完成
+   >   AND o.rating IS NOT NULL                                 -- 排除空评分
+   >   AND o.rating = (
+   >         SELECT MAX(i.rating)
+   >         FROM orders i
+   >         WHERE i.is_pickup_flg = 0
+   >           AND UPPER(i.status) = 'COMPLETED'
+   >           AND i.rating IS NOT NULL
+   >       );
+   > -- 说明：
+   > -- 1) 子查询先在“完成且为送货单”的记录中求最大 rating。
+   > -- 2) 外层再过滤 rating 等于该最大值的订单，并计数。
+   > -- 3) 若题目确认 status 固定大小写，可去掉 UPPER()；这里为保险起见保留。
+   > 
+   > 
+   > /* ==============================
+   >    Snowflake 版本
+   >    ============================== */
+   > SELECT COUNT(*) AS total_orders
+   > FROM orders o
+   > WHERE o.is_pickup_flg = 0
+   >   AND UPPER(o.status) = 'COMPLETED'
+   >   AND o.rating IS NOT NULL
+   >   AND o.rating = (
+   >         SELECT MAX(i.rating)
+   >         FROM orders i
+   >         WHERE i.is_pickup_flg = 0
+   >           AND UPPER(i.status) = 'COMPLETED'
+   >           AND i.rating IS NOT NULL
+   >       );
+   > -- 说明与 MySQL 相同；Snowflake 对大小写不敏感的字符串比较通常更宽松，但为规避脏数据仍显式使用 UPPER()。
+   > */
+   > 
+   > /* 
+   > 【第一步：详细解题思路】
+   > 
+   > 目标：找出符合以下任意一个条件的 dasher 的 ID（输出列为 dasher_id）：
+   > 1. 从未完成过任何配送（orders 表中没有出现）
+   > 2. 做过配送但所有订单都没有 rating（即 rating 全为 NULL）
+   > 
+   > 思路分解：
+   > ① 所有 dashers 的全集 → 来自 dashers 表
+   > ② 每个 dasher 的配送记录 → 来自 orders 表中的 dasher_id
+   > ③ rating 字段中 NULL 表示“未评分” ⇒ 可用聚合方式判断（COUNT(rating) = 0）
+   > 
+   > 实现方式：
+   > 使用两个 LEFT JOIN 或子查询过滤方式：
+   > - 找出没有配送记录的 dasher ⇒ NOT EXISTS (SELECT 1 FROM orders o WHERE o.dasher_id = d.id)
+   > - 或有配送但评分全为 NULL ⇒ EXISTS(SELECT 1 FROM orders o WHERE o.dasher_id = d.id) AND
+   >                                        NOT EXISTS(SELECT 1 FROM orders o WHERE o.dasher_id = d.id AND o.rating IS NOT NULL)
+   > 
+   > 也可用聚合方式统计每个 dasher 的配送总数与非空评分数：
+   > - GROUP BY dasher_id，HAVING COUNT(*) > 0 AND COUNT(rating) = 0
+   > 
+   > 建议使用 UNION 拼接两类 dasher（从未配送，配送但没评分）
+   > 
+   > */
+   > 
+   > /* ==============================
+   >    MySQL / Snowflake 通用版本
+   >    ============================== */
+   > -- 第一类：从未配送过
+   > SELECT d.id AS dasher_id
+   > FROM dashers d
+   > LEFT JOIN orders o ON d.id = o.dasher_id
+   > WHERE o.id IS NULL
+   > 
+   > UNION
+   > 
+   > -- 第二类：配送过但没有评分（所有 rating 为 NULL）
+   > SELECT o.dasher_id
+   > FROM orders o
+   > GROUP BY o.dasher_id
+   > HAVING COUNT(*) > 0                -- 确保配送过
+   >    AND COUNT(o.rating) = 0;       -- 所有 rating 都是 NULL（COUNT 忽略 NULL）
+   > 
+   > -- 说明：
+   > -- - LEFT JOIN + o.id IS NULL 得到“完全没有配送记录”的 dasher
+   > -- - 第二部分用 GROUP BY + COUNT 实现“配送但全为无评分”判断
+   > -- - UNION 自动去重，返回所有符合任一条件的 dasher_id
+   > 
+   > /* 
+   > 【第一步：详细解题思路】
+   > 
+   > 目标：找出某商品在某 merchant 店内，连续 3 天都满足以下条件：
+   >   1. 单日销量排名第一（即 merchant_id, order_date 下销量最多）；
+   >   2. 该商品当天销量 ≥ 2；
+   >   3. 连续 3 天都是上述第一且符合销量条件。
+   > 
+   > 输出字段：
+   > merchant_id、merchant_name、item_name
+   > 
+   > 涉及表：
+   > - merchants(id, name)
+   > - items(id, name)
+   > - orders(id, merchant_id, order_date)
+   > - order_items(order_id, item_id, quantity)
+   > 
+   > 步骤拆解：
+   > ① 按 merchant_id + item_id + order_date 聚合出每天每个商品的销量（SUM(quantity))。
+   > ② 用窗口函数计算 merchant 内每天销量排名（RANK() OVER (PARTITION BY merchant_id, order_date ORDER BY SUM(quantity) DESC)）。
+   > ③ 过滤出「当天销量排名 = 1 且销量 ≥ 2」的记录。
+   > ④ 对满足条件的 (merchant_id, item_id) + order_date，进行连续性判断：
+   >     → 用 DENSE_RANK() 生成 order_date 的行号，然后用 date_diff - row_num trick 找出连续区间
+   >     → 最后 GROUP BY 判断是否连续 ≥ 3 天（同一 merchant_id + item_id + 差值 group）
+   > 
+   > 最终 JOIN 回 merchants 和 items 表拿到名字。
+   > 
+   > */
+   > 
+   > /* ==============================
+   >    MySQL 8+ 或 Snowflake 通用解法
+   >    ============================== */
+   > WITH daily_sales AS (
+   >   -- 第一步：计算每天每个商品销量
+   >   SELECT 
+   >     o.merchant_id,
+   >     oi.item_id,
+   >     o.order_date,
+   >     SUM(oi.quantity) AS total_sold
+   >   FROM orders o
+   >   JOIN order_items oi ON o.id = oi.order_id
+   >   GROUP BY o.merchant_id, oi.item_id, o.order_date
+   > ),
+   > ranked_sales AS (
+   >   -- 第二步：对每天每个商家商品进行销量排名
+   >   SELECT *,
+   >     RANK() OVER (PARTITION BY merchant_id, order_date ORDER BY total_sold DESC) AS sales_rank
+   >   FROM daily_sales
+   > ),
+   > top_selling_items AS (
+   >   -- 第三步：只保留每天排名第1且销量>=2的商品
+   >   SELECT *
+   >   FROM ranked_sales
+   >   WHERE sales_rank = 1 AND total_sold >= 2
+   > ),
+   > with_sequence AS (
+   >   -- 第四步：为每个 merchant + item 的有效记录做连续性分组（用差值法）
+   >   SELECT *,
+   >     DENSE_RANK() OVER (PARTITION BY merchant_id, item_id ORDER BY order_date) 
+   >       - DATEDIFF(order_date, DATE '2000-01-01') AS gap_group
+   >   FROM top_selling_items
+   > ),
+   > grouped_consecutive_days AS (
+   >   -- 第五步：按 merchant + item + gap_group 分组，统计连续天数
+   >   SELECT merchant_id, item_id, COUNT(*) AS consecutive_days
+   >   FROM with_sequence
+   >   GROUP BY merchant_id, item_id, gap_group
+   >   HAVING COUNT(*) >= 3
+   > )
+   > -- 第六步：JOIN 回名字
+   > SELECT 
+   >   g.merchant_id,
+   >   m.name AS merchant_name,
+   >   i.name AS item_name
+   > FROM grouped_consecutive_days g
+   > JOIN merchants m ON g.merchant_id = m.id
+   > JOIN items i ON g.item_id = i.id;
+   > 
+   > -- 说明：
+   > -- - gap_group 差值法用于识别连续自然日；
+   > -- - COUNT(*) >= 3 表示连续3天都排名第一且销量≥2；
+   > -- - 最终输出符合条件的 merchant + item 名称。
+   > 
+   > ```
+   >
+   > 
+
+2. 2025(4-6月) DataEng 本科 全职@doordash - 内推 - 技术电面  | 😐 Neutral 😣 Hard | Other | 在职跳槽
 
    > python 20 分钟
    > 1道题目 sliding window 的题目
@@ -239,7 +433,7 @@
    >
    > 总的来讲别人家第三题或者第四题他们直接第一题，我以为第一轮phone screen 不会考这么难的，估计直接挂。。。。
 
-2. 2025(1-3月) DataEng 硕士 全职@DoorDash - 猎头 - 技术电面  | 😐 Neutral 😐 Average | Fail | 在职跳槽
+3. 2025(1-3月) DataEng 硕士 全职@DoorDash - 猎头 - 技术电面  | 😐 Neutral 😐 Average | Fail | 在职跳槽
 
    > 今早刚面的
    > 1 python and 4 sql
@@ -522,7 +716,7 @@
    >
    > 时间还是挺紧张的，祝大家都能找到理想的工作
 
-3. 2024(10-12月) DataEng 硕士 全职@doordash - Other - 其他  | 😃 Positive 😐 Average | Fail | 其他
+4. 2024(10-12月) DataEng 硕士 全职@doordash - Other - 其他  | 😃 Positive 😐 Average | Fail | 其他
 
    > 楼主是之前在职的时候收到过他们家HR对于DE岗的邀请，无奈那个时候刚入职实在没精力弄面试，但是6月份被裁了所以腆着脸去reach out并且要到了一个面试lol
    >
@@ -540,7 +734,7 @@
    >
    > 天竺小哥在我写代码的时候走神了一会，但是还是提供了一些帮助的，感觉应该挂了但是目前还没有收到消息，总之求米求米！！
 
-4. 2024(4-6月) DataEng 硕士 合同工@doordash - 猎头 - 技术电面  | 😃 Positive 😣 Hard | Fail | 应届毕业生
+5. 2024(4-6月) DataEng 硕士 合同工@doordash - 猎头 - 技术电面  | 😃 Positive 😣 Hard | Fail | 应届毕业生
 
    > 新鲜DoorDash面经 总共4轮，面到第三轮挂了。
    > 第一轮 猎头phone call，相关背景询问
@@ -707,7 +901,7 @@
    > 前两次的面试体验蛮好的，都是国人。尤其是第二轮的小哥还说你是ng 我理解可能没什么经验 还讲了团队成长之类的。
    > 第二轮的sql面感觉是个abc，就是着急finish的感觉。后边想要跟他交流一些条件的定义 他直接说 你不用写了就是把大概的思路给我说一下就好。我说完了 他就说 oh that makes sense 就完了 也是全程无交流。 面试挂了很难受，求加米 求安慰。
 
-5. 2024(1-3月) DataEng 硕士 全职@doordash - 内推 - Onsite  | 😐 Neutral 😣 Hard | Fail | 在职跳槽
+6. 2024(1-3月) DataEng 硕士 全职@doordash - 内推 - Onsite  | 😐 Neutral 😣 Hard | Fail | 在职跳槽
 
    > 数据工程师onsite 面筋
    > 1. case study - 送餐eta 这个metric怎么衡量，我说就是搞个别的metrics比如真实到达时间和eta的差距。然后问如果你这个metric最近不断下降怎么办。
@@ -721,7 +915,7 @@
    > 请问是 data engineer 这个title吗？ 还是software engineer in data platform? 谢谢
    > 他叫software engineer - data engineer, 实际上就是data engineer，和data platform无关
 
-6. 2022(4-6月) DataEng 硕士 全职@doordash - 内推 - Onsite  | 😃 Positive 😐 Average | Pass | 在职跳槽
+7. 2022(4-6月) DataEng 硕士 全职@doordash - 内推 - Onsite  | 😃 Positive 😐 Average | Pass | 在职跳槽
 
    > 两周前面的VO，一共4轮：
    > 以下内容需要积分高于 100 您已经可以浏览
@@ -732,16 +926,16 @@
    >    ============================================================
    >    Data Modeling Case Study: 健身 App (Fitness Video Platform)
    >    ============================================================
-   >    
+   >       
    >    1. 场景描述
    >    ------------------------------------------------------------
    >    - App：健身视频平台。
    >    - 用户：注册用户，可以付费订阅。
    >    - 功能：用户付费后可以观看视频。
    >    - 分析目标：统计 DAU (Daily Active Users)，并做 category 维度的活跃分析。
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    2. DAU 定义 (Daily Active Users)
    >    ------------------------------------------------------------
    >    条件判断：
@@ -751,12 +945,12 @@
    >      * 其他可选 engagement 行为 (like/comment/share)
    >    - 因为这是付费内容平台，"active" 更核心的定义通常为
    >      “在当天有观看视频行为的用户数”。
-   >    
+   >       
    >    所以 DAU 判定逻辑：
    >    - DISTINCT(user_id) WHERE action_type IN ('login', 'video_play') ON that date。
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    3. Data Modeling (Entity Design)
    >    ------------------------------------------------------------
    >    主要实体：
@@ -765,15 +959,15 @@
    >    - Video (视频)
    >    - Category (视频分类)
    >    - UserAction (用户行为事件)
-   >    
+   >       
    >    表结构设计：
-   >    
+   >       
    >    User
    >    - user_id (PK)
    >    - name
    >    - email
    >    - signup_date
-   >    
+   >       
    >    Subscription
    >    - sub_id (PK)
    >    - user_id (FK -> User)
@@ -781,33 +975,33 @@
    >    - start_date
    >    - end_date
    >    - status (active/expired)
-   >    
+   >       
    >    Video
    >    - video_id (PK)
    >    - title
    >    - category_id (FK -> Category)
    >    - duration
-   >    
+   >       
    >    Category
    >    - category_id (PK)
    >    - category_name
-   >    
+   >       
    >    UserAction
    >    - action_id (PK)
    >    - user_id (FK -> User)
    >    - video_id (FK -> Video, nullable if action=login)
    >    - action_type (login, video_play, like, share)
    >    - action_time (timestamp)
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    4. SQL 题目：统计各个 category 的一周的 Daily Active Users
    >    ------------------------------------------------------------
    >    目标：
    >    - 输出表：每天每个 category 的 DAU (去重用户数)。
-   >    
+   >       
    >    SQL (MySQL 8+ 示例)：
-   >    
+   >       
    >    SELECT 
    >        DATE(ua.action_time) AS action_date,
    >        v.category_id,
@@ -820,9 +1014,9 @@
    >      AND ua.action_time >= CURDATE() - INTERVAL 7 DAY
    >    GROUP BY DATE(ua.action_time), v.category_id, c.category_name
    >    ORDER BY action_date, category_name;
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    5. 结果示例 (预期输出)
    >    ------------------------------------------------------------
    >    +------------+-------------+---------------+-------------------+
@@ -835,9 +1029,9 @@
    >    | 2023-08-02 | 2           | HIIT          |  95               |
    >    | ...        | ...         | ...           | ...               |
    >    +------------+-------------+---------------+-------------------+
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    6. 总结
    >    ------------------------------------------------------------
    >    - DAU 定义需要结合业务目标 (健身 app → 核心是 video play)。
@@ -848,7 +1042,7 @@
    >      * 加指标：WAU/MAU，付费转化率。
    >    ============================================================
    >    */
-   >    
+   >       
    >    ```
    >
    >    
@@ -859,7 +1053,7 @@
    >    ============================================================
    >    System Design: ETL Pipeline for AWS Billing
    >    ============================================================
-   >    
+   >       
    >    1. Functional Requirements 功能需求
    >    - 从 AWS 各个服务 (S3, EC2, Lambda, RDS) 收集 billing usage events。
    >    - 存储到 Data Lake (S3) 原始层。
@@ -867,18 +1061,18 @@
    >    - 聚合账单 (daily / monthly)。
    >    - Load 到 Billing Warehouse (Redshift / Snowflake)。
    >    - 提供查询接口给 Customer Portal / Athena / BI 工具。
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    2. Non-Functional Requirements 非功能需求
    >    - 可扩展性：支持 TB 级别日志。
    >    - 准确性：账单必须和 AWS CUR 一致，可审计。
    >    - 实时性：支持 T+1 或分钟级实时。
    >    - 安全性：数据加密 (KMS)，隔离多租户。
    >    - 可维护性：可观测 (CloudWatch Metrics)。
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    3. Data Sources 数据源
    >    - AWS Cost and Usage Report (CUR) → CSV/Parquet 存在 S3。
    >    - CloudWatch Metrics → 实时 usage。
@@ -887,48 +1081,48 @@
    >      * EC2 CloudWatch Logs (Compute hours/EBS IO)
    >      * Lambda Metrics (invocations/duration)
    >      * RDS Enhanced Monitoring (CPU, Storage)
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    4. ETL Pipeline 设计
-   >    
+   >       
    >    E - Extract
    >    - Batch：从 CUR (S3) 拉取 CSV/Parquet。
    >    - Streaming：Kinesis Firehose 收集 usage events。
-   >    
+   >       
    >    T - Transform
    >    - Glue/Spark：
    >      * 清洗去重、补充缺失字段。
    >      * 标准化 schema：
    >        { account_id, service, usage_type, usage_amount, unit, region, cost, timestamp }
    >      * 应用 pricing model。
-   >    
+   >       
    >    L - Load
    >    - Raw Layer：S3 (原始 CUR + 日志)。
    >    - Transformed Layer：Glue 输出 Parquet → S3 curated。
    >    - Aggregated Layer：Redshift / Snowflake。
    >    - Cache Layer：Redis / DynamoDB (Portal 快速查询)。
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    5. Data Model 表设计
-   >    
+   >       
    >    BillingEvent (原始事件)
    >    - event_id | account_id | service | usage_type | usage_amount | unit | cost | timestamp
-   >    
+   >       
    >    BillingDailySummary
    >    - account_id | service | date | total_usage | total_cost
-   >    
+   >       
    >    BillingMonthlySummary
    >    - account_id | service | year_month | total_cost | breakdown_json
-   >    
+   >       
    >    AccountBudget
    >    - account_id | budget | threshold_pct | notify_email
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    6. Workflow 数据流 (ASCII 图)
-   >    
+   >       
    >             +-------------------+
    >             | AWS Services (S3, |
    >             | EC2, Lambda, RDS) |
@@ -969,30 +1163,30 @@
    >             | Portal API / Athena |
    >             | / QuickSight / BI   |
    >             +---------------------+
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    7. Scaling / Optimization 扩展策略
    >    - 数据量大 → 日志写 S3，Glue ETL → Redshift Spectrum 查询。
    >    - 实时性 → Kinesis + Flink 流式聚合，Portal 查询 DynamoDB。
    >    - 成本优化 → 冷数据归档 S3 Glacier；Redshift 仅存聚合。
    >    - 可靠性 → Glue Job Bookmark 防重复；CUR 分区加载。
-   >    
+   >       
    >    ------------------------------------------------------------
-   >    
+   >       
    >    8. 面试 Follow-up 问答
    >    Q: 如何支持实时账单？
    >    A: CUR 批处理保证权威，流式 ETL 提供实时预览。
-   >    
+   >       
    >    Q: 如何保证和 AWS 官方账单一致？
    >    A: 定期 reconcile，CUR vs 内部计算，写审计日志。
-   >    
+   >       
    >    Q: 如何实现多租户隔离？
    >    A: account_id 强制过滤；Redshift/Snowflake 启用 Row-Level Security。
-   >    
+   >       
    >    ============================================================
    >    */
-   >    
+   >       
    >    ```
    >
    >    
@@ -1004,11 +1198,11 @@
    > 不到一个星期就出结果了，说是过了，然后第二天约了一个组的manager team match。结果没match上。然后recruiter说我这个级别(E3, E4)只有那个组有空位，所以就没有offer了。
    > 祝好运，求加米！
 
-7. 2022(4-6月) DataEng 硕士 全职@doordash - 猎头 - 技术电面  | 😐 Neutral 😐 Average | WaitList | 在职跳槽
+8. 2022(4-6月) DataEng 硕士 全职@doordash - 猎头 - 技术电面  | 😐 Neutral 😐 Average | WaitList | 在职跳槽
 
    > L C 要而丝，有两个extension。1个是终结点只能是打了星号的node，而且path只能有首位两个打星号的。2是把path也返回出来。
 
-8. 2021(10-12月) DataEng 硕士 全职@doordash - 猎头 - Onsite 在线笔试  | 😐 Neutral 😐 Average | WaitList | 在职跳槽
+9. 2021(10-12月) DataEng 硕士 全职@doordash - 猎头 - Onsite 在线笔试  | 😐 Neutral 😐 Average | WaitList | 在职跳槽
 
    > 约了两轮VO,
    > 第一轮先是Project Deep Dive, 介绍自己曾经做过的项目，项目的难点，delivery 的状态，总结教训，如果重新做此项目你会如何避免之前犯的那些问题。
@@ -1027,7 +1221,7 @@
    >
    > 希望能帮到大家，如果有米请打米，很多帖子看不全，谢谢！
 
-9. 2019(10-12月) DataEng 硕士 全职@doordash - 网上海投 - 技术电面  | | Other | 在职跳槽
+10. 2019(10-12月) DataEng 硕士 全职@doordash - 网上海投 - 技术电面  | | Other | 在职跳槽
 
    > 貌似是个abc，讲话好快，聊天时信号也一般，基本听词猜意。。题不难。
    > 以下内容需要积分高于 200 您已经可以浏览

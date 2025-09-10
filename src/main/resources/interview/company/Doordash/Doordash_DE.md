@@ -905,6 +905,66 @@
 
    > 数据工程师onsite 面筋
    > 1. case study - 送餐eta 这个metric怎么衡量，我说就是搞个别的metrics比如真实到达时间和eta的差距。然后问如果你这个metric最近不断下降怎么办。
+   >    ```java
+   >    /*
+   >    ===============================================================
+   >    Case Study: 送餐 ETA Metric 衡量 & 指标下降的应对方案
+   >    ===============================================================
+   >    
+   >    1. 如何衡量 ETA 准确性 (Metrics)
+   >    ---------------------------------------------------------------
+   >    - ETA Error = | Actual_Arrival_Time – Predicted_ETA |
+   >    - Mean Absolute Error (MAE): 平均误差
+   >    - P90 / P95 Error: 检查长尾订单的预测效果
+   >    - On-time Rate: 误差 ≤ 5 分钟的订单占比
+   >    - Bias: 判断预测是偏早还是偏晚
+   >    
+   >    作为 Data Engineer 的职责：
+   >    - 确保 Actual_Arrival_Time 来源准确（GPS/订单完成时间）。
+   >    - 确保 Predicted_ETA 有版本信息（模型版本追踪）。
+   >    - 增加 Data Quality Check（时间戳缺失、丢单、时区错误）。
+   >    
+   >    2. 如果 ETA Metric 持续下降怎么办
+   >    ---------------------------------------------------------------
+   >    Step 1: 检查数据质量问题
+   >    - GPS 是否缺失或延迟？
+   >    - 订单完成事件是否延迟进入 Kafka？
+   >    - 是否有数据分布倾斜（某些城市数据缺失）？
+   >    
+   >    Step 2: 考虑外部环境变化
+   >    - 天气：暴雨、下雪 → 普遍送餐延迟。
+   >    - 交通：节假日、道路封闭。
+   >    - 供需：高峰期 Dasher 不足。
+   >    
+   >    Step 3: 检查模型或特征问题
+   >    - 模型 Drift（训练数据 vs 实际分布）。
+   >    - 特征缺失（traffic、餐厅 prep time 没有写入 pipeline）。
+   >    - 模型版本切换后误差增加。
+   >    
+   >    3. 解决方案
+   >    ---------------------------------------------------------------
+   >    短期：
+   >    - 回滚到旧 ETA 模型。
+   >    - 临时增加 buffer，例如 ETA + 5 分钟。
+   >    
+   >    长期：
+   >    - 加强监控：数据新鲜度、完整性、分布。
+   >    - 特征改进：引入实时交通、天气、餐厅负载。
+   >    - 定期 retrain 模型，避免 drift。
+   >    
+   >    ===============================================================
+   >    总结：
+   >    作为 Data Engineer：
+   >    - 先定义清楚指标 (MAE / P95 / On-time Rate)。
+   >    - 建立数据管道监控 (质量 & 延迟)。
+   >    - 分层排查 (数据 → 外部环境 → 模型)。
+   >    - 提供短期补救方案 + 长期优化策略。
+   >    ===============================================================
+   >    */
+   >    
+   >    ```
+   >
+   >    
    > 2. system design - 设计一个customer portal 可以看cloud service的billing information。 比如s3 是怎么产生各种费用然后如何report给user。 需要从源头开始设计，我只会设计etl pipeline，源头数据怎么产生的完全乱说了。希望有大佬讲讲。。。
    >
    > 3. lp， 没什么好说的，印度哥全程哈欠
@@ -920,22 +980,22 @@
    > 两周前面的VO，一共4轮：
    > 以下内容需要积分高于 100 您已经可以浏览
    >
-   > 1. Data Modeling case study: 围绕一个app。有很多小问，app是一个健身软件，用户付费之后可以看里面的视频。问设计metrics条件判断怎样才算是daily active users。然后data modeling entity design。最后sql统计各个 category的一周的 daliy active users统计，大概是这样
+   > 1. Data Modeling case study: 围绕一个app。有很多小问，app是一个健身软件，用户付费之后可以看里面的视频。问设计metrics条件判断怎样才算是daily active users。然后data modeling entity design。如何满足实时或者batch查询， 最后sql统计各个 category的一周的 daliy active users统计，大概是这样
    >    ```sql
    >    /*
    >    ============================================================
    >    Data Modeling Case Study: 健身 App (Fitness Video Platform)
    >    ============================================================
-   >       
+   >          
    >    1. 场景描述
    >    ------------------------------------------------------------
    >    - App：健身视频平台。
    >    - 用户：注册用户，可以付费订阅。
    >    - 功能：用户付费后可以观看视频。
    >    - 分析目标：统计 DAU (Daily Active Users)，并做 category 维度的活跃分析。
-   >       
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    2. DAU 定义 (Daily Active Users)
    >    ------------------------------------------------------------
    >    条件判断：
@@ -945,12 +1005,12 @@
    >      * 其他可选 engagement 行为 (like/comment/share)
    >    - 因为这是付费内容平台，"active" 更核心的定义通常为
    >      “在当天有观看视频行为的用户数”。
-   >       
+   >          
    >    所以 DAU 判定逻辑：
    >    - DISTINCT(user_id) WHERE action_type IN ('login', 'video_play') ON that date。
-   >       
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    3. Data Modeling (Entity Design)
    >    ------------------------------------------------------------
    >    主要实体：
@@ -959,15 +1019,15 @@
    >    - Video (视频)
    >    - Category (视频分类)
    >    - UserAction (用户行为事件)
-   >       
+   >          
    >    表结构设计：
-   >       
+   >          
    >    User
    >    - user_id (PK)
    >    - name
    >    - email
    >    - signup_date
-   >       
+   >          
    >    Subscription
    >    - sub_id (PK)
    >    - user_id (FK -> User)
@@ -975,33 +1035,33 @@
    >    - start_date
    >    - end_date
    >    - status (active/expired)
-   >       
+   >          
    >    Video
    >    - video_id (PK)
    >    - title
    >    - category_id (FK -> Category)
    >    - duration
-   >       
+   >          
    >    Category
    >    - category_id (PK)
    >    - category_name
-   >       
+   >          
    >    UserAction
    >    - action_id (PK)
    >    - user_id (FK -> User)
    >    - video_id (FK -> Video, nullable if action=login)
    >    - action_type (login, video_play, like, share)
    >    - action_time (timestamp)
-   >       
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    4. SQL 题目：统计各个 category 的一周的 Daily Active Users
    >    ------------------------------------------------------------
    >    目标：
    >    - 输出表：每天每个 category 的 DAU (去重用户数)。
-   >       
+   >          
    >    SQL (MySQL 8+ 示例)：
-   >       
+   >          
    >    SELECT 
    >        DATE(ua.action_time) AS action_date,
    >        v.category_id,
@@ -1014,9 +1074,9 @@
    >      AND ua.action_time >= CURDATE() - INTERVAL 7 DAY
    >    GROUP BY DATE(ua.action_time), v.category_id, c.category_name
    >    ORDER BY action_date, category_name;
-   >       
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    5. 结果示例 (预期输出)
    >    ------------------------------------------------------------
    >    +------------+-------------+---------------+-------------------+
@@ -1029,9 +1089,9 @@
    >    | 2023-08-02 | 2           | HIIT          |  95               |
    >    | ...        | ...         | ...           | ...               |
    >    +------------+-------------+---------------+-------------------+
-   >       
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    6. 总结
    >    ------------------------------------------------------------
    >    - DAU 定义需要结合业务目标 (健身 app → 核心是 video play)。
@@ -1042,10 +1102,10 @@
    >      * 加指标：WAU/MAU，付费转化率。
    >    ============================================================
    >    */
-   >       
+   >          
    >    ```
    >
-   >    
+   > 
    >
    > 2. ETL Design。设计一个pipeline汇总各个AWS service的billing，好制作report
    >    ```java 
@@ -1053,151 +1113,120 @@
    >    ============================================================
    >    System Design: ETL Pipeline for AWS Billing
    >    ============================================================
-   >       
-   >    1. Functional Requirements 功能需求
-   >    - 从 AWS 各个服务 (S3, EC2, Lambda, RDS) 收集 billing usage events。
-   >    - 存储到 Data Lake (S3) 原始层。
-   >    - 统一清洗/转换字段 (标准 schema)。
-   >    - 聚合账单 (daily / monthly)。
-   >    - Load 到 Billing Warehouse (Redshift / Snowflake)。
-   >    - 提供查询接口给 Customer Portal / Athena / BI 工具。
-   >       
+   >          
+   >    用户登录 Customer Portal 查看自己的 cloud billing。
+   >    支持多种 cloud service（S3, EC2, RDS, Lambda …）。
+   >    显示费用细节：
+   >    存储容量（GB/月）
+   >    请求次数（GET/PUT/DELETE）
+   >    数据传输带宽（GB 出站流量）
+   >    支持 汇总 + 明细报表（daily / monthly）。
+   >    用户可以下载账单 (CSV/PDF)。
+   >    可扩展：未来支持多云 (AWS, GCP, Azure)。
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    2. Non-Functional Requirements 非功能需求
-   >    - 可扩展性：支持 TB 级别日志。
-   >    - 准确性：账单必须和 AWS CUR 一致，可审计。
-   >    - 实时性：支持 T+1 或分钟级实时。
-   >    - 安全性：数据加密 (KMS)，隔离多租户。
-   >    - 可维护性：可观测 (CloudWatch Metrics)。
-   >       
+   >    Scalability：支持百万级用户查询账单。
+   >    Reliability：保证账单计算准确，不丢数据。
+   >    Security：账单涉及用户隐私，需隔离和加密。
+   >    Freshness：账单延迟不超过 1 小时（near real-time）。
+   >    Cost efficiency：ETL/计算必须在合理成本内运行。
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    3. Data Sources 数据源
-   >    - AWS Cost and Usage Report (CUR) → CSV/Parquet 存在 S3。
-   >    - CloudWatch Metrics → 实时 usage。
-   >    - 各服务日志：
-   >      * S3 Access Logs (存储量/请求数)
-   >      * EC2 CloudWatch Logs (Compute hours/EBS IO)
-   >      * Lambda Metrics (invocations/duration)
-   >      * RDS Enhanced Monitoring (CPU, Storage)
-   >       
+   >    以 AWS S3 为例：
+   >    存储费用：按 GB/月计费 → 每小时采样存储容量。
+   >    请求费用：按请求次数 (GET, PUT, DELETE) 计费 → 来自 CloudTrail / access log。
+   >    流量费用：按出站流量 GB 计费 → 来自 VPC Flow Log / CloudWatch Metrics。
+   >    👉 AWS 内部会有 Metering Service，不断产生日志和计量事件。
+   >          
+   >    QPS 估算：
+   >    假设 1M 用户，每个用户每天 1K API 调用。
+   >    日请求量 = 1B events/day ≈ 11.5K events/s。
+   >    存储估算：
+   >    每条 event ~ 200 bytes。
+   >    每天 ~ 200 GB → 一年 ~ 73 TB。
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    4. ETL Pipeline 设计
-   >       
-   >    E - Extract
-   >    - Batch：从 CUR (S3) 拉取 CSV/Parquet。
-   >    - Streaming：Kinesis Firehose 收集 usage events。
-   >       
-   >    T - Transform
-   >    - Glue/Spark：
-   >      * 清洗去重、补充缺失字段。
-   >      * 标准化 schema：
-   >        { account_id, service, usage_type, usage_amount, unit, region, cost, timestamp }
-   >      * 应用 pricing model。
-   >       
-   >    L - Load
-   >    - Raw Layer：S3 (原始 CUR + 日志)。
-   >    - Transformed Layer：Glue 输出 Parquet → S3 curated。
-   >    - Aggregated Layer：Redshift / Snowflake。
-   >    - Cache Layer：Redis / DynamoDB (Portal 快速查询)。
-   >       
+   >          
+   >    Data Ingestion (数据采集)
+   >    	Cloud service (S3, EC2) → 事件写入 Kafka / Kinesis。
+   >    Billing Processor (实时计费引擎)
+   >    	使用 Flink / Spark Streaming → 聚合 usage metrics。
+   >    	生成 (user_id, service_id, usage_type, amount, timestamp)。
+   >    Billing Database (账单存储)
+   >      OLTP：存储用户账单明细（Postgres / Aurora）。
+   >      OLAP：存储聚合账单（Snowflake / BigQuery / Redshift）。
+   >    API Gateway
+   >    	提供 REST/GraphQL API 给 Customer Portal。
+   >    Customer Portal (前端)
+   >    	React/Next.js + Auth Service (IAM/SSO)。
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    5. Data Model 表设计
-   >       
+   >          
    >    BillingEvent (原始事件)
    >    - event_id | account_id | service | usage_type | usage_amount | unit | cost | timestamp
-   >       
+   >          
    >    BillingDailySummary
    >    - account_id | service | date | total_usage | total_cost
-   >       
+   >          
    >    BillingMonthlySummary
    >    - account_id | service | year_month | total_cost | breakdown_json
-   >       
+   >          
    >    AccountBudget
    >    - account_id | budget | threshold_pct | notify_email
-   >       
+   >          
    >    ------------------------------------------------------------
-   >       
+   >          
    >    6. Workflow 数据流 (ASCII 图)
-   >       
-   >             +-------------------+
-   >             | AWS Services (S3, |
-   >             | EC2, Lambda, RDS) |
-   >             +-------------------+
-   >                       |
-   >                       v
-   >            +-------------------------+
-   >            | CloudWatch / CUR Report |
-   >            +-------------------------+
-   >                       |
-   >             +---------+---------+
-   >             |                   |
-   >             v                   v
-   >    +-----------------+   +-----------------+
-   >    | Kinesis Firehose|   | S3 (CUR Files)  |
-   >    | (Streaming)     |   | (Batch)         |
-   >    +-----------------+   +-----------------+
-   >             |                   |
-   >             v                   v
-   >          +-----------------------------+
-   >          | AWS Glue ETL / Spark Jobs   |
-   >          | - 清洗 / 转换 / 定价计算    |
-   >          +-----------------------------+
-   >                       |
-   >                       v
-   >             +---------------------+
-   >             | Data Lake (S3)      |
-   >             | - Raw / Curated     |
-   >             +---------------------+
-   >                       |
-   >                       v
-   >             +---------------------+
-   >             | Redshift / Snowflake|
-   >             | Billing Warehouse   |
-   >             +---------------------+
-   >                       |
-   >             +---------------------+
-   >             | Portal API / Athena |
-   >             | / QuickSight / BI   |
-   >             +---------------------+
+   >    [Cloud Service (S3/EC2 Logs)]
+   >              │
+   >              ▼
+   >       [Kafka / Kinesis]  ← ingestion
+   >              │
+   >              ▼
+   >       [Flink / Spark Streaming] ← 实时聚合 usage
+   >              │
+   >              ├── [OLTP DB: Aurora] ← 存储账单明细 (实时查询)
+   >              └── [OLAP DB: Snowflake/BigQuery] ← 汇总报表 (BI)
+   >              │
+   >              ▼
+   >       [API Gateway + Billing Service]
+   >              │
+   >              ▼
+   >       [Customer Portal (React/Next.js)]
+   >        7. Scaling / Optimization 扩展策略
+   >          
+   >       - 数据量大 → 日志写 S3，Glue ETL → Redshift Spectrum 查询。
+   >          - 实时性 → Kinesis + Flink 流式聚合，Portal 查询 DynamoDB。
+   >       - 成本优化 → 冷数据归档 S3 Glacier；Redshift 仅存聚合。
+   >       - 可靠性 → Glue Job Bookmark 防重复；CUR 分区加载。
    >       
    >    ------------------------------------------------------------
    >       
-   >    7. Scaling / Optimization 扩展策略
-   >    - 数据量大 → 日志写 S3，Glue ETL → Redshift Spectrum 查询。
-   >    - 实时性 → Kinesis + Flink 流式聚合，Portal 查询 DynamoDB。
-   >    - 成本优化 → 冷数据归档 S3 Glacier；Redshift 仅存聚合。
-   >    - 可靠性 → Glue Job Bookmark 防重复；CUR 分区加载。
+   >       8. 面试 Follow-up 问答
+   >       Q: 如何支持实时账单？
+   >          A: CUR 批处理保证权威，流式 ETL 提供实时预览。
    >       
-   >    ------------------------------------------------------------
-   >       
-   >    8. 面试 Follow-up 问答
-   >    Q: 如何支持实时账单？
-   >    A: CUR 批处理保证权威，流式 ETL 提供实时预览。
-   >       
-   >    Q: 如何保证和 AWS 官方账单一致？
-   >    A: 定期 reconcile，CUR vs 内部计算，写审计日志。
-   >       
-   >    Q: 如何实现多租户隔离？
-   >    A: account_id 强制过滤；Redshift/Snowflake 启用 Row-Level Security。
-   >       
-   >    ============================================================
-   >    */
-   >       
-   >    ```
-   >
+   >       Q: 如何保证和 AWS 官方账单一致？
+   >       A: 定期 reconcile，CUR vs 内部计算，写审计日志。
+   >          
+   >       Q: 如何实现多租户隔离？
+   >       A: account_id 强制过滤；Redshift/Snowflake 启用 Row-Level Security。
    >    
-   >
    > 3. Hiring Manager: BQ
-   >
-   > 4. Data scientist team的人来面，基本上也是bq。
-   >
+   > 
+   >    4. Data scientist team的人来面，基本上也是bq。
+   > 
    > 不到一个星期就出结果了，说是过了，然后第二天约了一个组的manager team match。结果没match上。然后recruiter说我这个级别(E3, E4)只有那个组有空位，所以就没有offer了。
-   > 祝好运，求加米！
-
+   >    祝好运，求加米！
+   
 8. 2022(4-6月) DataEng 硕士 全职@doordash - 猎头 - 技术电面  | 😐 Neutral 😐 Average | WaitList | 在职跳槽
 
    > L C 要而丝，有两个extension。1个是终结点只能是打了星号的node，而且path只能有首位两个打星号的。2是把path也返回出来。

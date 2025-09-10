@@ -443,25 +443,21 @@
 > 9. **difference between colapse and repartition**
 >
 >       > 1. colapse 作用：缩减分区数，用于大数据集过滤后，提高小数据集的执行效率。
->   > 2. repartition 作用：根据分区数，重新通过网络随机洗牌所有数据。
->    > 3. coalesce重新分区，可以选择是否进行shuffle过程。由参数shuffle: Boolean = false/true决定。
->   > 4. repartition实际上是调用的coalesce，默认是进行shuffle的。
-> 
+>       > 1. repartition 作用：根据分区数，重新通过网络随机洗牌所有数据。
+>       > 1. coalesce重新分区，可以选择是否进行shuffle过程。由参数shuffle: Boolean = false/true决定。
+>       > 1. repartition实际上是调用的coalesce，默认是进行shuffle的。
 > 10. UDF
 > 
 >     > ```python
->    > //需要注意的是受Scala limit 22限制，自定义UDF最多接受22个参数，不过正常情况下完全够用了
+>     > //需要注意的是受Scala limit 22限制，自定义UDF最多接受22个参数，不过正常情况下完全够用了
 >     > val ds = Seq((1, "foo"), (2, "bar")).toDF("id", "text")
->    > val toUpperCase = functions.udf((s: String) => s.toUpperCase)
+>     > val toUpperCase = functions.udf((s: String) => s.toUpperCase)
 >     > ds.withColumn("text", toUpperCase('text)).show()
->     > 
->     > // 注册可以在sql语句中使用的UDF
+>     >                                   // 注册可以在sql语句中使用的UDF
 >     > spark.udf.register("to_uppercase", (s: String) => s.toUpperCase())
 >     > // 创建一张表
 >     > Seq((1, "foo"), (2, "bar")).toDF("id", "text").createOrReplaceTempView("t_foo")
 >     > spark.sql("select id, to_uppercase(text) from t_foo").show()
->     > ```
-> 
 > 11. What is Hadoop?
 > 
 >     > Apache Hadoop is an open source framework that is used to efficiently store and process large datasets ranging in size from gigabytes to petabytes of data. Instead of using one large computer to store and process the data, Hadoop allows clustering multiple computers to analyze massive datasets in parallel more quickly.
@@ -585,21 +581,19 @@
 Stage and lineage
 
 > > - **Stage** 是 Spark 执行过程中的一个计算阶段。一个 Spark 作业（job）通常会被划分为多个阶段，每个阶段由一组并行的任务（task）组成，这些任务在不同的数据分区上执行相同的计算。
->>
-> >   > - **划分阶段的依据**：
-> >   >   - **Spark 会根据宽依赖（wide dependency）将作业划分为多个阶段**。
-> >   >   
-> >   >     > 宽依赖是指一个 RDD 的多个分区依赖于上一个 RDD 的多个分区，例如 `groupByKey` 和 `reduceByKey` 等操作。
-> >   >     >
-> >   >     > 窄依赖（narrow dependency）是指一个 RDD 的每个分区只依赖于上一个 RDD 的一个分区，例如 `map` 和 `filter` 等操作。
-> >   >   
+>>> - **划分阶段的依据**：
+> 
+> >   > - **Spark 会根据宽依赖（wide dependency）将作业划分为多个阶段**。
+> >   >
+> >   >   > 宽依赖是指一个 RDD 的多个分区依赖于上一个 RDD 的多个分区，例如 `groupByKey` 和 `reduceByKey` 等操作。
+> >   >   >
+> >   >   > 窄依赖（narrow dependency）是指一个 RDD 的每个分区只依赖于上一个 RDD 的一个分区，例如 `map` 和 `filter` 等操作。
+> >   >
 > >   > - **执行顺序**：
 >>   >   - 每个阶段的任务会被提交给集群中的各个节点并行执行。一个阶段完成后，生成的中间数据将被保存，然后开始下一个阶段的计算。
-> >   >   
+> >   >
 >>   > - **DAG（Directed Acyclic Graph）调度器**：
 > >   >   - Spark 使用一个 DAG 调度器来管理和调度阶段。DAG 调度器根据作业的逻辑执行计划，将其转换为一系列的阶段和任务，并确保这些阶段按顺序执行。
-> >
-> > - > - 
 
 ## 2. SQL
 

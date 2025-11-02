@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReadWriteLock {
     class MyCache {
-        //创建map集合
+        //创建map集合 当一个线程修改了这个变量，其他线程能立即看到最新的引用。
         private volatile Map<String, Object> map = new HashMap<>();
 
         //创建读写锁对象

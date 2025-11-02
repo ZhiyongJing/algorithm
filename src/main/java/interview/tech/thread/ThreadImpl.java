@@ -16,10 +16,7 @@ package interview.tech.thread;
  * - **慎用选择**：继承`Thread`类、使用`FutureTask`，除非在特定场景下确有需要。
  */
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.*;
 
 public class ThreadImpl {
     /**
@@ -225,23 +222,23 @@ public class ThreadImpl {
 //        //示例4（使用Lambda表达式）
 //        testThread.lambdaThread.start();
 
-//        // 示例5：实现Callable接口与Future
-////        ExecutorService executorService = Executors.newSingleThreadExecutor();
-//        ExecutorService executorService = Executors.newFixedThreadPool(2);
-//        Callable<Integer> myCallable1 = testThread.new MyCallable();
-//        Callable<Integer> myCallable2 = testThread.new MyCallable();
-//        Future<Integer> future1 = executorService.submit(myCallable1);
-//        Future<Integer> future2 = executorService.submit(myCallable2);
-//        try {
-//            Integer i = future1.get();
-//            Integer j = future2.get();
-//            System.out.println("返回结果" + i);
-//            System.out.println("返回结果" + i);
-//        } catch (InterruptedException | ExecutionException e) {
-//            e.printStackTrace();
-//        } finally {
-//            executorService.shutdown();
-//        }
+        // 示例5：实现Callable接口与Future
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        Callable<Integer> myCallable1 = testThread.new MyCallable();
+        Callable<Integer> myCallable2 = testThread.new MyCallable();
+        Future<Integer> future1 = executorService.submit(myCallable1);
+        Future<Integer> future2 = executorService.submit(myCallable2);
+        try {
+            Integer i = future1.get();
+            Integer j = future2.get();
+            System.out.println("返回结果" + i);
+            System.out.println("返回结果" + i);
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        } finally {
+            executorService.shutdown();
+        }
 //
 //        // 示例6：使用ExecutorService和线程池
 //        for (int i = 0; i < 5; i++) {

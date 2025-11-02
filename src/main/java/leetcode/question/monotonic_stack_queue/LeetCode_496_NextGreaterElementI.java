@@ -57,6 +57,7 @@ public class LeetCode_496_NextGreaterElementI{
             Stack<Integer> stack = new Stack<>(); // 创建一个栈，用于存储 nums2 中的元素
             HashMap<Integer, Integer> map = new HashMap<>(); // 创建一个哈希表，用于存储每个元素的下一个更大元素
 
+            //单调递减栈：Solution1: left -> right
             // 遍历 nums2 数组
             for (int i = 0; i < nums2.length; i++) {
                 // 当栈不为空且当前元素大于栈顶元素时，更新哈希表
@@ -70,7 +71,16 @@ public class LeetCode_496_NextGreaterElementI{
             while (!stack.empty()) {
                 map.put(stack.pop(), -1); // 将栈中元素弹出，并记录其下一个更大元素为 -1
             }
-            System.out.println(map);
+//            //单调递减栈：Solution2:  right -> left
+//            for(int i = nums2.length - 1; i >= 0; i--){
+//
+//                while(!stack.isEmpty() && stack.peek() < nums2[i]){
+//                    stack.pop();
+//                }
+//                map.put(nums2[i], stack.isEmpty()? -1: stack.peek());
+//                stack.add(nums2[i]);
+//
+//            }
 
 
             int[] res = new int[nums1.length]; // 创建结果数组

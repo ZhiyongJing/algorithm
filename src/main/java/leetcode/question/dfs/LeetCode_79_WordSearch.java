@@ -5,6 +5,9 @@ package leetcode.question.dfs;
  *@Difculty:  2 [1->Easy, 2->Medium, 3->Hard]
  *@Frequency: 76.87%
  *@Time  Complexity: O(N * 3^L)  N是board中单元格的数量，L是word的长度
+ * 第一步可以选择 4 个方向
+ * 除第一步外，每个后续步骤最多只能向 3 个方向延伸（不能回头）
+ * 所以是 4 * 3^(L-1)，约等于 O(3^L)
  *@Space Complexity: O(L)  递归调用的栈空间
  */
 

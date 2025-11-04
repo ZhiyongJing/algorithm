@@ -41,8 +41,8 @@
 >   >
 > - 不要用 `DFS` 的场景
 >
->   > 1. 连通块问题（一定要用 `BFS`，否则 `StackOverflow`）
->   > 2. 拓扑排序（一定要用 `BFS`，否则 `StackOverflow`）
+>   > 1. 连通块问题（一定要用 `BFS`，dfs可能导致 `StackOverflow`）
+>   > 2. 拓扑排序（最好用 `BFS`，dfs可能导致 `StackOverflow`）
 >   > 3. 一切 `BFS` 可以解决的问题
 >   >
 
